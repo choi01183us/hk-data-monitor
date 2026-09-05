@@ -6,9 +6,9 @@
 //
 // 規矩：唔准老作數字。所有換算常數都要有出處（見 CONSTANTS）。
 
-import { formatNumber, formatChineseMagnitude, formatPercentChange } from "./format.js";
+import { formatNumber, formatChineseMagnitude, formatPercentChange, formatPeriodZh } from "./format.js";
 
-export { formatNumber, formatChineseMagnitude, formatPercentChange };
+export { formatNumber, formatChineseMagnitude, formatPercentChange, formatPeriodZh };
 
 /** 換算常數。每個都要有 note（點解係咁）同 source（邊度睇返）。 */
 export const CONSTANTS = {
@@ -45,10 +45,35 @@ export function anchorVersusYear(series, targetPeriod, { label } = {}) {
   if (!then || !now || then.period === now.period) return null;
   const delta = formatPercentChange(then.value, now.value);
   if (!delta) return null;
+  const suffix = formatPeriodZh;
   return {
     id: `vs-${targetPeriod}`,
-    text_zh: `對比 ${then.period} 年${label ? `（${label}）` : ""}，${delta.text}`,
-    basis_zh: `${then.period} 年 ${formatNumber(then.value)} → ${now.period} 年 ${formatNumber(now.value)}`,
+    text_zh: `對比 ${suffix(then.period)}${label ? `（${label}）` : ""}，${delta.text}`,
+    basis_zh: `${suffix(then.period)} ${formatNumber(then.value)} → ${suffix(now.period)} ${formatNumber(now.value)}`,
+  };
+}
+
+/**
+ * 過去 N 年平均每年變幾多。
+ *
+ * 呢個錨點嘅好處係:分子分母全部喺同一條 series 入面攞,
+ * 唔使引入任何外部常數,學生想驗算就一定驗得返。
+ */
+export function anchorAverageChange(series, { years = 10, noun = "" } = {}) {
+  const withValues = series.filter((point) => Number.isFinite(point.value));
+  const now = withValues.at(-1);
+  if (!now) return null;
+  const nowYear = Number(String(now.period).slice(0, 4));
+  const then = withValues.find((point) => Number(String(point.period).slice(0, 4)) >= nowYear - years);
+  if (!then || then.period === now.period) return null;
+  const span = Number(String(now.period).slice(0, 4)) - Number(String(then.period).slice(0, 4));
+  if (span <= 0) return null;
+  const perYear = (now.value - then.value) / span;
+  const verb = perYear >= 0 ? "增加" : "減少";
+  return {
+    id: "avg-change",
+    text_zh: `過去 ${span} 年,平均每年${verb} ${formatChineseMagnitude(Math.abs(perYear))}${noun}`,
+    basis_zh: `(${formatNumber(now.value)} − ${formatNumber(then.value)}) ÷ ${span} 年`,
   };
 }
 

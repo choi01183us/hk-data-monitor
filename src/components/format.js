@@ -95,3 +95,30 @@ export function toDate(dateLike) {
   const parsed = new Date(text);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
+
+/**
+ * SPEC 第 5 節嘅 period 字串轉人話。
+ *
+ *   "2025"     -> "2025 年"
+ *   "2026-06"  -> "2026 年 6 月"
+ *   "2026-Q1"  -> "2026 年第 1 季"
+ *   "2025-26"  -> "2025–26 年度"(財政年度)
+ *
+ * 擺喺呢度而唔係各自寫一份:錨點文字同指標頁大字都要用,
+ * 兩邊寫法唔同嘅話,同一個期數會喺同一版出現兩種寫法。
+ */
+export function formatPeriodZh(period) {
+  const text = String(period ?? "");
+  let match = /^(\d{4})-Q(\d)$/.exec(text);
+  if (match) return `${match[1]} 年第 ${match[2]} 季`;
+  match = /^(\d{4})-(\d{2})$/.exec(text);
+  if (match) {
+    const month = Number(match[2]);
+    // 財政年度寫成 "2025-26"(尾兩位係下一年),月份寫成 "2026-06"。
+    // 月份唔會大過 12,所以 13 或以上一定係年度。
+    return month >= 1 && month <= 12 ? `${match[1]} 年 ${month} 月` : `${match[1]}–${match[2]} 年度`;
+  }
+  match = /^(\d{4})-(\d{2})$/.exec(text);
+  if (match) return `${match[1]}–${match[2]} 年度`;
+  return /^\d{4}$/.test(text) ? `${text} 年` : text;
+}

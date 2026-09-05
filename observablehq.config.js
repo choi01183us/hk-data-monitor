@@ -25,7 +25,10 @@ export default {
   pages: [
     {
       name: "指標",
-      pages: [{ name: "人均本地生產總值", path: "/indicators/gdp" }],
+      pages: [
+        { name: "人均本地生產總值", path: "/indicators/gdp" },
+        { name: "香港人口", path: "/indicators/population" },
+      ],
     },
     {
       name: "關於",

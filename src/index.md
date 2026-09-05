@@ -7,8 +7,10 @@ toc: false
 ```js
 import { indicatorCard } from "./components/indicator-card.js";
 
-const gdp = await FileAttachment("./data/gdp.json").json();
-const indicators = [gdp];
+const indicators = await Promise.all([
+  FileAttachment("./data/gdp.json").json(),
+  FileAttachment("./data/population.json").json(),
+]);
 ```
 
 <h1 id="home">香港數據監測站</h1>
@@ -56,8 +58,6 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 <h2 id="status">呢個站砌到邊</h2>
 
 而家係第一階段:先打通一條完整通路(抓數 → 驗證 schema → 出圖 → 顯示出處),
-所以暫時只有一個指標。
-
-已經實測確認可以自動抓嘅來源仲有 9 個(政府開支、政府收入、財政儲備、失業率、
-工資中位數、人口、消費物價指數、住戶入息、四大行業),另外 2 個要人手抄。
+已經實測確認可以自動抓嘅來源仲有 8 個(政府開支、政府收入、財政儲備、失業率、
+工資中位數、消費物價指數、住戶入息、四大行業、上市公司),另外 2 個要人手抄。
 詳情見 repo 入面嘅 `findings.md`。
