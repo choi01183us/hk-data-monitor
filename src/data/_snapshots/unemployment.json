@@ -1,0 +1,469 @@
+{
+  "indicator_id": "unemployment",
+  "name_zh": "失業率",
+  "name_en": "Unemployment rate",
+  "unit_zh": "%",
+  "unit_source_zh": "(%)",
+  "value_digits": 1,
+  "unit_en": "%",
+  "unit_short_zh": "%",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=210-06401",
+  "source_note_zh": "政府統計處綜合住戶統計調查組（三）(統計處表 210-06401:按年齡及性別劃分的失業人數及失業率)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-08-20",
+  "fetched_at": "2026-09-05T01:22:13.516Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "就業",
+  "question_zh": "想搵工但搵唔到嘅人,佔幾多?後生仔女又點?",
+  "notes_zh": "SPEC 原本指定嘅表(210-06101)根本冇年齡維度,攞唔到青年失業率,所以換咗 210-06401。「失業」嘅定義係:冇工開、有搵過工、而且隨時做得。所以讀緊書冇搵工嘅學生唔計入失業。青年嗰條線長期高過整體,係全世界都咁,唔係香港獨有。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [],
+  "category_order": [
+    "全港整體",
+    "15–24 歲青年"
+  ],
+  "series": [
+    {
+      "period": "1985",
+      "category": "15–24 歲青年",
+      "value": 6
+    },
+    {
+      "period": "1985",
+      "category": "全港整體",
+      "value": 3.2
+    },
+    {
+      "period": "1986",
+      "category": "15–24 歲青年",
+      "value": 5.7
+    },
+    {
+      "period": "1986",
+      "category": "全港整體",
+      "value": 2.8
+    },
+    {
+      "period": "1987",
+      "category": "15–24 歲青年",
+      "value": 3.9
+    },
+    {
+      "period": "1987",
+      "category": "全港整體",
+      "value": 1.7
+    },
+    {
+      "period": "1988",
+      "category": "15–24 歲青年",
+      "value": 3.4
+    },
+    {
+      "period": "1988",
+      "category": "全港整體",
+      "value": 1.4
+    },
+    {
+      "period": "1989",
+      "category": "15–24 歲青年",
+      "value": 2.8
+    },
+    {
+      "period": "1989",
+      "category": "全港整體",
+      "value": 1.1
+    },
+    {
+      "period": "1990",
+      "category": "15–24 歲青年",
+      "value": 3.5
+    },
+    {
+      "period": "1990",
+      "category": "全港整體",
+      "value": 1.3
+    },
+    {
+      "period": "1991",
+      "category": "15–24 歲青年",
+      "value": 4.2
+    },
+    {
+      "period": "1991",
+      "category": "全港整體",
+      "value": 1.8
+    },
+    {
+      "period": "1992",
+      "category": "15–24 歲青年",
+      "value": 4.3
+    },
+    {
+      "period": "1992",
+      "category": "全港整體",
+      "value": 2
+    },
+    {
+      "period": "1993",
+      "category": "15–24 歲青年",
+      "value": 4.6
+    },
+    {
+      "period": "1993",
+      "category": "全港整體",
+      "value": 2
+    },
+    {
+      "period": "1994",
+      "category": "15–24 歲青年",
+      "value": 4.5
+    },
+    {
+      "period": "1994",
+      "category": "全港整體",
+      "value": 1.9
+    },
+    {
+      "period": "1995",
+      "category": "15–24 歲青年",
+      "value": 6.9
+    },
+    {
+      "period": "1995",
+      "category": "全港整體",
+      "value": 3.2
+    },
+    {
+      "period": "1996",
+      "category": "15–24 歲青年",
+      "value": 6.4
+    },
+    {
+      "period": "1996",
+      "category": "全港整體",
+      "value": 2.8
+    },
+    {
+      "period": "1997",
+      "category": "15–24 歲青年",
+      "value": 5
+    },
+    {
+      "period": "1997",
+      "category": "全港整體",
+      "value": 2.2
+    },
+    {
+      "period": "1998",
+      "category": "15–24 歲青年",
+      "value": 10.4
+    },
+    {
+      "period": "1998",
+      "category": "全港整體",
+      "value": 4.7
+    },
+    {
+      "period": "1999",
+      "category": "15–24 歲青年",
+      "value": 13.3
+    },
+    {
+      "period": "1999",
+      "category": "全港整體",
+      "value": 6.2
+    },
+    {
+      "period": "2000",
+      "category": "15–24 歲青年",
+      "value": 10.7
+    },
+    {
+      "period": "2000",
+      "category": "全港整體",
+      "value": 4.9
+    },
+    {
+      "period": "2001",
+      "category": "15–24 歲青年",
+      "value": 11.3
+    },
+    {
+      "period": "2001",
+      "category": "全港整體",
+      "value": 5.1
+    },
+    {
+      "period": "2002",
+      "category": "15–24 歲青年",
+      "value": 14.9
+    },
+    {
+      "period": "2002",
+      "category": "全港整體",
+      "value": 7.3
+    },
+    {
+      "period": "2003",
+      "category": "15–24 歲青年",
+      "value": 14.8
+    },
+    {
+      "period": "2003",
+      "category": "全港整體",
+      "value": 7.9
+    },
+    {
+      "period": "2004",
+      "category": "15–24 歲青年",
+      "value": 12
+    },
+    {
+      "period": "2004",
+      "category": "全港整體",
+      "value": 6.8
+    },
+    {
+      "period": "2005",
+      "category": "15–24 歲青年",
+      "value": 10.7
+    },
+    {
+      "period": "2005",
+      "category": "全港整體",
+      "value": 5.6
+    },
+    {
+      "period": "2006",
+      "category": "15–24 歲青年",
+      "value": 10.4
+    },
+    {
+      "period": "2006",
+      "category": "全港整體",
+      "value": 4.8
+    },
+    {
+      "period": "2007",
+      "category": "15–24 歲青年",
+      "value": 8.9
+    },
+    {
+      "period": "2007",
+      "category": "全港整體",
+      "value": 4
+    },
+    {
+      "period": "2008",
+      "category": "15–24 歲青年",
+      "value": 8.4
+    },
+    {
+      "period": "2008",
+      "category": "全港整體",
+      "value": 3.5
+    },
+    {
+      "period": "2009",
+      "category": "15–24 歲青年",
+      "value": 12.6
+    },
+    {
+      "period": "2009",
+      "category": "全港整體",
+      "value": 5.3
+    },
+    {
+      "period": "2010",
+      "category": "15–24 歲青年",
+      "value": 12.2
+    },
+    {
+      "period": "2010",
+      "category": "全港整體",
+      "value": 4.3
+    },
+    {
+      "period": "2011",
+      "category": "15–24 歲青年",
+      "value": 9.3
+    },
+    {
+      "period": "2011",
+      "category": "全港整體",
+      "value": 3.4
+    },
+    {
+      "period": "2012",
+      "category": "15–24 歲青年",
+      "value": 9.3
+    },
+    {
+      "period": "2012",
+      "category": "全港整體",
+      "value": 3.3
+    },
+    {
+      "period": "2013",
+      "category": "15–24 歲青年",
+      "value": 9.5
+    },
+    {
+      "period": "2013",
+      "category": "全港整體",
+      "value": 3.4
+    },
+    {
+      "period": "2014",
+      "category": "15–24 歲青年",
+      "value": 9.2
+    },
+    {
+      "period": "2014",
+      "category": "全港整體",
+      "value": 3.3
+    },
+    {
+      "period": "2015",
+      "category": "15–24 歲青年",
+      "value": 10.5
+    },
+    {
+      "period": "2015",
+      "category": "全港整體",
+      "value": 3.3
+    },
+    {
+      "period": "2016",
+      "category": "15–24 歲青年",
+      "value": 9.8
+    },
+    {
+      "period": "2016",
+      "category": "全港整體",
+      "value": 3.4
+    },
+    {
+      "period": "2017",
+      "category": "15–24 歲青年",
+      "value": 8.6
+    },
+    {
+      "period": "2017",
+      "category": "全港整體",
+      "value": 3.1
+    },
+    {
+      "period": "2018",
+      "category": "15–24 歲青年",
+      "value": 8.7
+    },
+    {
+      "period": "2018",
+      "category": "全港整體",
+      "value": 2.8
+    },
+    {
+      "period": "2019",
+      "category": "15–24 歲青年",
+      "value": 8.5
+    },
+    {
+      "period": "2019",
+      "category": "全港整體",
+      "value": 2.9
+    },
+    {
+      "period": "2020",
+      "category": "15–24 歲青年",
+      "value": 15.6
+    },
+    {
+      "period": "2020",
+      "category": "全港整體",
+      "value": 5.8
+    },
+    {
+      "period": "2021",
+      "category": "15–24 歲青年",
+      "value": 12.8
+    },
+    {
+      "period": "2021",
+      "category": "全港整體",
+      "value": 5.2
+    },
+    {
+      "period": "2022",
+      "category": "15–24 歲青年",
+      "value": 11
+    },
+    {
+      "period": "2022",
+      "category": "全港整體",
+      "value": 4.3
+    },
+    {
+      "period": "2023",
+      "category": "15–24 歲青年",
+      "value": 8.9
+    },
+    {
+      "period": "2023",
+      "category": "全港整體",
+      "value": 2.9
+    },
+    {
+      "period": "2024",
+      "category": "15–24 歲青年",
+      "value": 9.5
+    },
+    {
+      "period": "2024",
+      "category": "全港整體",
+      "value": 3
+    },
+    {
+      "period": "2025",
+      "category": "15–24 歲青年",
+      "value": 11.2
+    },
+    {
+      "period": "2025",
+      "category": "全港整體",
+      "value": 3.7
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "全港整體",
+      "period": "2025",
+      "value": 3.7
+    },
+    {
+      "category": "15–24 歲青年",
+      "period": "2025",
+      "value": 11.2
+    }
+  ],
+  "coverage": {
+    "start": "1985",
+    "end": "2025",
+    "points": 82,
+    "points_with_value": 82
+  },
+  "latest": {
+    "period": "2025",
+    "category": "全港整體",
+    "value": 3.7
+  },
+  "content_hash": "sha256:d32b002a06e4aaba",
+  "data_version": "2026.09.3"
+}

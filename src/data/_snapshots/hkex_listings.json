@@ -1,0 +1,219 @@
+{
+  "indicator_id": "hkex_listings",
+  "name_zh": "香港交易所上市公司數目",
+  "name_en": "Number of companies listed on HKEX",
+  "unit_zh": "間",
+  "unit_source_zh": "數目",
+  "value_digits": 0,
+  "unit_en": "companies",
+  "unit_short_zh": "間",
+  "source_zh": "香港交易及結算所有限公司(經政府統計處發布)",
+  "source_en": "Hong Kong Exchanges and Clearing Limited (published via C&SD)",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=340-95003",
+  "source_note_zh": "香港交易及結算所有限公司(統計處表 340-95003:在香港交易所上市的公司數目、總市值、所有上市證券平均每日成交金額、新證券發行數目及新證券發行集資金額)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-06-30",
+  "fetched_at": "2026-09-05T01:22:44.921Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "經濟",
+  "question_zh": "有幾多間公司喺香港上市?",
+  "notes_zh": "呢個表冇「總計」行,所以主板同 GEM 分開兩條線,想要總數就自己加埋。上市公司數目多唔一定代表市場好 —— 仲要睇市值同成交額。",
+  "chart": {
+    "type": "line",
+    "y_zero": false
+  },
+  "anchors": [],
+  "category_order": [
+    "主板",
+    "GEM"
+  ],
+  "series": [
+    {
+      "period": "2010",
+      "category": "GEM",
+      "value": 169
+    },
+    {
+      "period": "2010",
+      "category": "主板",
+      "value": 1244
+    },
+    {
+      "period": "2011",
+      "category": "GEM",
+      "value": 170
+    },
+    {
+      "period": "2011",
+      "category": "主板",
+      "value": 1326
+    },
+    {
+      "period": "2012",
+      "category": "GEM",
+      "value": 179
+    },
+    {
+      "period": "2012",
+      "category": "主板",
+      "value": 1368
+    },
+    {
+      "period": "2013",
+      "category": "GEM",
+      "value": 192
+    },
+    {
+      "period": "2013",
+      "category": "主板",
+      "value": 1451
+    },
+    {
+      "period": "2014",
+      "category": "GEM",
+      "value": 204
+    },
+    {
+      "period": "2014",
+      "category": "主板",
+      "value": 1548
+    },
+    {
+      "period": "2015",
+      "category": "GEM",
+      "value": 222
+    },
+    {
+      "period": "2015",
+      "category": "主板",
+      "value": 1644
+    },
+    {
+      "period": "2016",
+      "category": "GEM",
+      "value": 260
+    },
+    {
+      "period": "2016",
+      "category": "主板",
+      "value": 1713
+    },
+    {
+      "period": "2017",
+      "category": "GEM",
+      "value": 324
+    },
+    {
+      "period": "2017",
+      "category": "主板",
+      "value": 1794
+    },
+    {
+      "period": "2018",
+      "category": "GEM",
+      "value": 389
+    },
+    {
+      "period": "2018",
+      "category": "主板",
+      "value": 1926
+    },
+    {
+      "period": "2019",
+      "category": "GEM",
+      "value": 378
+    },
+    {
+      "period": "2019",
+      "category": "主板",
+      "value": 2071
+    },
+    {
+      "period": "2020",
+      "category": "GEM",
+      "value": 368
+    },
+    {
+      "period": "2020",
+      "category": "主板",
+      "value": 2170
+    },
+    {
+      "period": "2021",
+      "category": "GEM",
+      "value": 353
+    },
+    {
+      "period": "2021",
+      "category": "主板",
+      "value": 2219
+    },
+    {
+      "period": "2022",
+      "category": "GEM",
+      "value": 340
+    },
+    {
+      "period": "2022",
+      "category": "主板",
+      "value": 2257
+    },
+    {
+      "period": "2023",
+      "category": "GEM",
+      "value": 326
+    },
+    {
+      "period": "2023",
+      "category": "主板",
+      "value": 2283
+    },
+    {
+      "period": "2024",
+      "category": "GEM",
+      "value": 323
+    },
+    {
+      "period": "2024",
+      "category": "主板",
+      "value": 2308
+    },
+    {
+      "period": "2025",
+      "category": "GEM",
+      "value": 312
+    },
+    {
+      "period": "2025",
+      "category": "主板",
+      "value": 2374
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "主板",
+      "period": "2025",
+      "value": 2374
+    },
+    {
+      "category": "GEM",
+      "period": "2025",
+      "value": 312
+    }
+  ],
+  "coverage": {
+    "start": "2010",
+    "end": "2025",
+    "points": 32,
+    "points_with_value": 32
+  },
+  "latest": {
+    "period": "2025",
+    "category": "主板",
+    "value": 2374
+  },
+  "content_hash": "sha256:3aa1b800c10027b6",
+  "data_version": "2026.09.3"
+}

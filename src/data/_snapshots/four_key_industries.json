@@ -1,0 +1,571 @@
+{
+  "indicator_id": "four_key_industries",
+  "name_zh": "四大行業佔本地生產總值比重",
+  "name_en": "Share of the four key industries in GDP",
+  "unit_zh": "%",
+  "unit_source_zh": "佔本地生產總值的百分比",
+  "value_digits": 1,
+  "unit_en": "% of GDP",
+  "unit_short_zh": "%",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=655-82101",
+  "source_note_zh": "按經濟活動劃分的本地生產總值詳細數字、「經濟活動按年統計調查」、香港旅遊發展局的旅遊統計數字及就業綜合估計數字。 政府統計處國民收入統計組 (二)(統計處表 655-82101:四個主要行業的增加價值及就業人數)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-05-15",
+  "fetched_at": "2026-09-05T01:22:38.852Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "經濟",
+  "question_zh": "香港靠邊幾行搵食?比重有冇變過?",
+  "notes_zh": "四條線加埋唔等於 100% —— 四大行業以外仲有製造業、建造業、公營部門等等。睇呢個圖嘅重點唔係邊條線最高,而係邊條線嘅走勢喺變。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [],
+  "category_order": [
+    "金融服務",
+    "旅遊",
+    "貿易及物流",
+    "專業服務及其他工商業支援服務"
+  ],
+  "series": [
+    {
+      "period": "2000",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.6
+    },
+    {
+      "period": "2000",
+      "category": "旅遊",
+      "value": 2.4
+    },
+    {
+      "period": "2000",
+      "category": "貿易及物流",
+      "value": 23.6
+    },
+    {
+      "period": "2000",
+      "category": "金融服務",
+      "value": 12.8
+    },
+    {
+      "period": "2001",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.8
+    },
+    {
+      "period": "2001",
+      "category": "旅遊",
+      "value": 2.3
+    },
+    {
+      "period": "2001",
+      "category": "貿易及物流",
+      "value": 24.1
+    },
+    {
+      "period": "2001",
+      "category": "金融服務",
+      "value": 12.1
+    },
+    {
+      "period": "2002",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.7
+    },
+    {
+      "period": "2002",
+      "category": "旅遊",
+      "value": 2.9
+    },
+    {
+      "period": "2002",
+      "category": "貿易及物流",
+      "value": 24.9
+    },
+    {
+      "period": "2002",
+      "category": "金融服務",
+      "value": 12.3
+    },
+    {
+      "period": "2003",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.7
+    },
+    {
+      "period": "2003",
+      "category": "旅遊",
+      "value": 2.4
+    },
+    {
+      "period": "2003",
+      "category": "貿易及物流",
+      "value": 26.3
+    },
+    {
+      "period": "2003",
+      "category": "金融服務",
+      "value": 13.3
+    },
+    {
+      "period": "2004",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.9
+    },
+    {
+      "period": "2004",
+      "category": "旅遊",
+      "value": 3
+    },
+    {
+      "period": "2004",
+      "category": "貿易及物流",
+      "value": 27.6
+    },
+    {
+      "period": "2004",
+      "category": "金融服務",
+      "value": 13.1
+    },
+    {
+      "period": "2005",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.9
+    },
+    {
+      "period": "2005",
+      "category": "旅遊",
+      "value": 3.2
+    },
+    {
+      "period": "2005",
+      "category": "貿易及物流",
+      "value": 28.5
+    },
+    {
+      "period": "2005",
+      "category": "金融服務",
+      "value": 13.8
+    },
+    {
+      "period": "2006",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.8
+    },
+    {
+      "period": "2006",
+      "category": "旅遊",
+      "value": 3.2
+    },
+    {
+      "period": "2006",
+      "category": "貿易及物流",
+      "value": 27.1
+    },
+    {
+      "period": "2006",
+      "category": "金融服務",
+      "value": 16.7
+    },
+    {
+      "period": "2007",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11.3
+    },
+    {
+      "period": "2007",
+      "category": "旅遊",
+      "value": 3.4
+    },
+    {
+      "period": "2007",
+      "category": "貿易及物流",
+      "value": 25.5
+    },
+    {
+      "period": "2007",
+      "category": "金融服務",
+      "value": 20.1
+    },
+    {
+      "period": "2008",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.2
+    },
+    {
+      "period": "2008",
+      "category": "旅遊",
+      "value": 2.8
+    },
+    {
+      "period": "2008",
+      "category": "貿易及物流",
+      "value": 25.6
+    },
+    {
+      "period": "2008",
+      "category": "金融服務",
+      "value": 17.1
+    },
+    {
+      "period": "2009",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.7
+    },
+    {
+      "period": "2009",
+      "category": "旅遊",
+      "value": 3.2
+    },
+    {
+      "period": "2009",
+      "category": "貿易及物流",
+      "value": 23.9
+    },
+    {
+      "period": "2009",
+      "category": "金融服務",
+      "value": 16.2
+    },
+    {
+      "period": "2010",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.4
+    },
+    {
+      "period": "2010",
+      "category": "旅遊",
+      "value": 4.3
+    },
+    {
+      "period": "2010",
+      "category": "貿易及物流",
+      "value": 25.3
+    },
+    {
+      "period": "2010",
+      "category": "金融服務",
+      "value": 16.3
+    },
+    {
+      "period": "2011",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.4
+    },
+    {
+      "period": "2011",
+      "category": "旅遊",
+      "value": 4.5
+    },
+    {
+      "period": "2011",
+      "category": "貿易及物流",
+      "value": 25.5
+    },
+    {
+      "period": "2011",
+      "category": "金融服務",
+      "value": 16.1
+    },
+    {
+      "period": "2012",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.8
+    },
+    {
+      "period": "2012",
+      "category": "旅遊",
+      "value": 4.7
+    },
+    {
+      "period": "2012",
+      "category": "貿易及物流",
+      "value": 24.6
+    },
+    {
+      "period": "2012",
+      "category": "金融服務",
+      "value": 15.9
+    },
+    {
+      "period": "2013",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.4
+    },
+    {
+      "period": "2013",
+      "category": "旅遊",
+      "value": 5
+    },
+    {
+      "period": "2013",
+      "category": "貿易及物流",
+      "value": 23.9
+    },
+    {
+      "period": "2013",
+      "category": "金融服務",
+      "value": 16.5
+    },
+    {
+      "period": "2014",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.4
+    },
+    {
+      "period": "2014",
+      "category": "旅遊",
+      "value": 5.1
+    },
+    {
+      "period": "2014",
+      "category": "貿易及物流",
+      "value": 23.4
+    },
+    {
+      "period": "2014",
+      "category": "金融服務",
+      "value": 16.7
+    },
+    {
+      "period": "2015",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.3
+    },
+    {
+      "period": "2015",
+      "category": "旅遊",
+      "value": 5
+    },
+    {
+      "period": "2015",
+      "category": "貿易及物流",
+      "value": 22.3
+    },
+    {
+      "period": "2015",
+      "category": "金融服務",
+      "value": 17.6
+    },
+    {
+      "period": "2016",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.5
+    },
+    {
+      "period": "2016",
+      "category": "旅遊",
+      "value": 4.7
+    },
+    {
+      "period": "2016",
+      "category": "貿易及物流",
+      "value": 21.6
+    },
+    {
+      "period": "2016",
+      "category": "金融服務",
+      "value": 17.7
+    },
+    {
+      "period": "2017",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 12.2
+    },
+    {
+      "period": "2017",
+      "category": "旅遊",
+      "value": 4.5
+    },
+    {
+      "period": "2017",
+      "category": "貿易及物流",
+      "value": 21.5
+    },
+    {
+      "period": "2017",
+      "category": "金融服務",
+      "value": 18.8
+    },
+    {
+      "period": "2018",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11.9
+    },
+    {
+      "period": "2018",
+      "category": "旅遊",
+      "value": 4.5
+    },
+    {
+      "period": "2018",
+      "category": "貿易及物流",
+      "value": 21.2
+    },
+    {
+      "period": "2018",
+      "category": "金融服務",
+      "value": 19.8
+    },
+    {
+      "period": "2019",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11.9
+    },
+    {
+      "period": "2019",
+      "category": "旅遊",
+      "value": 3.6
+    },
+    {
+      "period": "2019",
+      "category": "貿易及物流",
+      "value": 19.7
+    },
+    {
+      "period": "2019",
+      "category": "金融服務",
+      "value": 21.2
+    },
+    {
+      "period": "2020",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11.5
+    },
+    {
+      "period": "2020",
+      "category": "旅遊",
+      "value": 0.4
+    },
+    {
+      "period": "2020",
+      "category": "貿易及物流",
+      "value": 19.8
+    },
+    {
+      "period": "2020",
+      "category": "金融服務",
+      "value": 23.4
+    },
+    {
+      "period": "2021",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11.4
+    },
+    {
+      "period": "2021",
+      "category": "旅遊",
+      "value": 0.1
+    },
+    {
+      "period": "2021",
+      "category": "貿易及物流",
+      "value": 23.7
+    },
+    {
+      "period": "2021",
+      "category": "金融服務",
+      "value": 21.3
+    },
+    {
+      "period": "2022",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 11
+    },
+    {
+      "period": "2022",
+      "category": "旅遊",
+      "value": 0.4
+    },
+    {
+      "period": "2022",
+      "category": "貿易及物流",
+      "value": 22.5
+    },
+    {
+      "period": "2022",
+      "category": "金融服務",
+      "value": 22.4
+    },
+    {
+      "period": "2023",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.8
+    },
+    {
+      "period": "2023",
+      "category": "旅遊",
+      "value": 2.6
+    },
+    {
+      "period": "2023",
+      "category": "貿易及物流",
+      "value": 18.8
+    },
+    {
+      "period": "2023",
+      "category": "金融服務",
+      "value": 24.9
+    },
+    {
+      "period": "2024",
+      "category": "專業服務及其他工商業支援服務",
+      "value": 10.3
+    },
+    {
+      "period": "2024",
+      "category": "旅遊",
+      "value": 2.8
+    },
+    {
+      "period": "2024",
+      "category": "貿易及物流",
+      "value": 18.9
+    },
+    {
+      "period": "2024",
+      "category": "金融服務",
+      "value": 26.2
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "金融服務",
+      "period": "2024",
+      "value": 26.2
+    },
+    {
+      "category": "旅遊",
+      "period": "2024",
+      "value": 2.8
+    },
+    {
+      "category": "貿易及物流",
+      "period": "2024",
+      "value": 18.9
+    },
+    {
+      "category": "專業服務及其他工商業支援服務",
+      "period": "2024",
+      "value": 10.3
+    }
+  ],
+  "coverage": {
+    "start": "2000",
+    "end": "2024",
+    "points": 100,
+    "points_with_value": 100
+  },
+  "latest": {
+    "period": "2024",
+    "category": "金融服務",
+    "value": 26.2
+  },
+  "content_hash": "sha256:9af96013af5dbc18",
+  "data_version": "2026.09.3"
+}

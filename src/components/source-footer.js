@@ -28,6 +28,8 @@ export function sourceFooter(indicator) {
     acquisition,
     coverage,
     build,
+    unit_zh,
+    unit_source_zh,
   } = indicator;
 
   return html`<section class="source-footer">
@@ -52,6 +54,16 @@ export function sourceFooter(indicator) {
           <span class="source-footer__note">
             資料本身涵蓋 ${coverage?.start} 至 ${coverage?.end}${FREQUENCY_ZH[frequency] ? `,${FREQUENCY_ZH[frequency]}更新` : ""}
           </span>
+        </dd>
+      </div>
+
+      <div>
+        <dt>單位</dt>
+        <dd>
+          <strong>${unit_zh}</strong>
+          ${unit_source_zh && unit_source_zh !== unit_zh
+            ? html`<span class="source-footer__note">來源原本寫「${unit_source_zh}」</span>`
+            : null}
         </dd>
       </div>
 

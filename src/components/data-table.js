@@ -18,7 +18,7 @@ import { formatNumber } from "./format.js";
  * @param {boolean} [options.open=false]  預設打唔打開
  */
 export function dataTable(indicator, { open = false } = {}) {
-  const { series, unit_zh, name_zh } = indicator;
+  const { series, unit_zh, name_zh, value_digits } = indicator;
   const hasCategory = series.some((point) => point.category !== undefined);
 
   // 最新嘅擺喺上面 —— 學生最想睇最新數,唔想碌到 1961 年。
@@ -49,7 +49,7 @@ export function dataTable(indicator, { open = false } = {}) {
               <td class="data-table__value">
                 ${point.value === null
                   ? html`<span class="data-table__missing" title="嗰期冇數字,唔係零">冇數字</span>`
-                  : formatNumber(point.value)}
+                  : formatNumber(point.value, { digits: value_digits ?? 0 })}
               </td>
             </tr>`
           )}

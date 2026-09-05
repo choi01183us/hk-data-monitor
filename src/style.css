@@ -364,3 +364,29 @@ body {
   white-space: nowrap;
   border: 0;
 }
+
+/* 多分類指標:大字要逐個分類出,並且標明係邊個分類 */
+.headline--multi {
+  gap: 1.75rem;
+}
+
+.headline__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.headline__label {
+  font-size: 0.8rem;
+  color: var(--theme-foreground-muted);
+  margin-bottom: 0.1rem;
+}
+
+.headline--multi .headline__number strong {
+  font-size: clamp(1.8rem, 8vw, 2.4rem);
+}
+
+.indicator-card__scope {
+  margin: -0.1rem 0 0;
+  font-size: 0.78rem;
+  color: var(--theme-foreground-muted);
+}

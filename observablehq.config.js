@@ -28,6 +28,12 @@ export default {
       pages: [
         { name: "人均本地生產總值", path: "/indicators/gdp" },
         { name: "香港人口", path: "/indicators/population" },
+        { name: "失業率", path: "/indicators/unemployment" },
+        { name: "每月工資中位數", path: "/indicators/median_wage" },
+        { name: "住戶每月入息中位數", path: "/indicators/household_income" },
+        { name: "通脹率", path: "/indicators/cpi" },
+        { name: "四大行業佔 GDP 比重", path: "/indicators/four_key_industries" },
+        { name: "上市公司數目", path: "/indicators/hkex_listings" },
       ],
     },
     {

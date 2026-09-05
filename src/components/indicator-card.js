@@ -7,7 +7,17 @@
 
 import { html } from "npm:htl";
 
-import { formatChineseMagnitude, formatDateZh } from "./format.js";
+import { formatChineseMagnitude, formatNumber, formatDateZh } from "./format.js";
+
+/**
+ * 大數字用「萬／億」易入口,但百分比同細數目唔可以縮 ——
+ * 「3.7%」縮成「4」就變咗另一個數。
+ */
+function magnitudeOrExact(value, digits) {
+  if (!Number.isFinite(value)) return "—";
+  if ((digits ?? 0) > 0 || Math.abs(value) < 10000) return formatNumber(value, { digits: digits ?? 0 });
+  return formatChineseMagnitude(value);
+}
 
 /**
  * @param {object} indicator  符合 SPEC 第 5 節 schema 嘅指標 JSON
@@ -23,6 +33,8 @@ export function indicatorCard(indicator, { href } = {}) {
     category,
     question_zh,
     latest,
+    latest_by_category,
+    value_digits,
     updated_at,
     anchors = [],
     build,
@@ -30,6 +42,9 @@ export function indicatorCard(indicator, { href } = {}) {
 
   const link = href ?? `./indicators/${indicator_id}`;
   const headline = anchors[0];
+  // 多分類指標喺卡上只出第一個分類,但一定要寫低係邊個 —— 唔可以扮咗係總數。
+  const shown = latest_by_category?.[0] ?? latest;
+  const shownLabel = latest_by_category?.length ? latest_by_category[0].category : null;
 
   return html`<a class="indicator-card" href=${link}>
     <span class="indicator-card__category">${category ?? "指標"}</span>
@@ -39,10 +54,11 @@ export function indicatorCard(indicator, { href } = {}) {
     ${question_zh ? html`<p class="indicator-card__question">${question_zh}</p>` : null}
 
     <p class="indicator-card__value">
-      <strong>${latest ? formatChineseMagnitude(latest.value) : "—"}</strong>
+      <strong>${shown ? magnitudeOrExact(shown.value, value_digits) : "—"}</strong>
       <span class="indicator-card__unit">${unit_short_zh ?? unit_zh}</span>
-      ${latest ? html`<span class="indicator-card__period">${latest.period}</span>` : null}
+      ${shown ? html`<span class="indicator-card__period">${shown.period}</span>` : null}
     </p>
+    ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;呢個指標有多過一組數</p>` : null}
 
     ${headline
       ? html`<p class="indicator-card__anchor">${headline.text_zh}</p>`

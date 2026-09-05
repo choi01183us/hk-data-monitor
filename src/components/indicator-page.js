@@ -10,17 +10,36 @@ import { html } from "npm:htl";
 
 import { formatNumber, formatPeriodZh } from "./format.js";
 
-/** 大字最新值 + 問題句。 */
+/**
+ * 大字最新值 + 問題句。
+ *
+ * 多分類指標(例如失業率有「全港整體」同「15–24 歲青年」)一定要逐個分類出,
+ * 唔可以淨係出 series 最尾嗰點 —— 咁樣即係幫學生揀咗一個分類而唔講,
+ * 失業率會變成一個冇講明係邊個群組嘅「4%」。
+ */
 export function indicatorHeader(indicator) {
-  const { name_zh, question_zh, latest, unit_zh } = indicator;
+  const { question_zh, latest, latest_by_category, unit_zh, value_digits } = indicator;
+  const digits = value_digits ?? 0;
+  const items =
+    latest_by_category && latest_by_category.length > 0
+      ? latest_by_category
+      : latest
+        ? [{ category: null, period: latest.period, value: latest.value }]
+        : [];
+
   return html`<div>
     ${question_zh ? html`<p class="lede">${question_zh}</p>` : null}
-    <div class="headline">
-      <div class="headline__number">
-        <strong>${latest ? formatNumber(latest.value, { digits: 0 }) : "—"}</strong>
-        <span class="headline__unit">${unit_zh}</span>
-      </div>
-      <div class="headline__period">${latest ? formatPeriodZh(latest.period) : ""}</div>
+    <div class="headline ${items.length > 1 ? "headline--multi" : ""}">
+      ${items.map(
+        (item) => html`<div class="headline__item">
+          ${item.category ? html`<div class="headline__label">${item.category}</div>` : null}
+          <div class="headline__number">
+            <strong>${item.value === null ? "—" : formatNumber(item.value, { digits })}</strong>
+            <span class="headline__unit">${unit_zh}</span>
+          </div>
+          <div class="headline__period">${item.period ? formatPeriodZh(item.period) : ""}</div>
+        </div>`
+      )}
     </div>
   </div>`;
 }

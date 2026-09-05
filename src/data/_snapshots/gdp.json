@@ -3,6 +3,8 @@
   "name_zh": "人均本地生產總值",
   "name_en": "GDP per capita (at current market prices)",
   "unit_zh": "港元",
+  "unit_source_zh": "港元",
+  "value_digits": 0,
   "unit_en": "HK$",
   "unit_short_zh": "元",
   "source_zh": "政府統計處",
@@ -12,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-08-14",
-  "fetched_at": "2026-09-05T00:42:55.739Z",
+  "fetched_at": "2026-09-05T01:21:54.914Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "經濟",
@@ -39,6 +41,7 @@
       "basis_zh": "2015 年 328,924 → 2025 年 444,044"
     }
   ],
+  "category_order": null,
   "series": [
     {
       "period": "1961",
@@ -301,6 +304,7 @@
       "value": 444044
     }
   ],
+  "latest_by_category": null,
   "coverage": {
     "start": "1961",
     "end": "2025",
@@ -311,6 +315,6 @@
     "period": "2025",
     "value": 444044
   },
-  "content_hash": "sha256:a2296fd8c3b71c49",
-  "data_version": "2026.09.2"
+  "content_hash": "sha256:f682c2f4a09cb806",
+  "data_version": "2026.09.4"
 }

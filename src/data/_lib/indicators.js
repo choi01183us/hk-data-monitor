@@ -48,6 +48,10 @@ export const CENSTATD_INDICATORS = {
     freq: "Y",
     period_start: "196101",
 
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "港元",
+    value_digits: 0,
     name_zh: "人均本地生產總值",
     name_en: "GDP per capita (at current market prices)",
     unit_en: "HK$",
@@ -83,6 +87,10 @@ export const CENSTATD_INDICATORS = {
     period_start: "196106",
     pin: { SEX: "", AGE: "" },
 
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "人",
+    value_digits: 0,
     name_zh: "香港人口",
     name_en: "Population of Hong Kong",
     unit_en: "persons",
@@ -144,6 +152,192 @@ export const CENSTATD_INDICATORS = {
         anchorAverageChange(series, { years: 10, noun: "人" })
       ),
   },
+
+  unemployment: {
+    table: "210-06401",
+    sv: "UR",
+    stat_pres: "Rate_1dp_%_n",
+    // AGE 同 SEX 都係必填。SEX 釘死喺 Total,AGE 就係我哋想比較嘅兩條線。
+    // ⚠️ AGE 有兩個重疊嘅分組(15-24 同 15-19/20-24 同時存在),
+    //    唔可以撈埋一齊用,否則會 double count。
+    cv: { AGE: ["15-24"], SEX: ["M", "F"] },
+    freq: "Y",
+    period_start: "198501",
+    pin: { SEX: "" },
+    category_dim: "AGE",
+    categories: [
+      { code: "", label_zh: "全港整體" },
+      { code: "15-24", label_zh: "15–24 歲青年" },
+    ],
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "%",
+    value_digits: 1,
+    name_zh: "失業率",
+    name_en: "Unemployment rate",
+    unit_en: "%",
+    unit_short_zh: "%",
+    category: "就業",
+    question_zh: "想搵工但搵唔到嘅人,佔幾多?後生仔女又點?",
+    notes_zh:
+      "SPEC 原本指定嘅表(210-06101)根本冇年齡維度,攞唔到青年失業率,所以換咗 210-06401。" +
+      "「失業」嘅定義係:冇工開、有搵過工、而且隨時做得。所以讀緊書冇搵工嘅學生唔計入失業。" +
+      "青年嗰條線長期高過整體,係全世界都咁,唔係香港獨有。",
+    chart: { type: "line", y_zero: true },
+  },
+
+  median_wage: {
+    table: "220-23011",
+    sv: "MW",
+    stat_pres: "50%tile_hkd_d",
+    cv: { SEX: ["M", "F"], EMP_NATURE: ["1"] },
+    freq: "Y",
+    period_start: "200901",
+    pin: { SEX: "" },
+    // 「所有僱員」定「全職僱員」—— 呢個口徑本身就係要拍板嘅嘢。
+    // 兩個單位一樣(港元),所以索性兩條線都出,喺畫面講清楚分別,
+    // 好過我哋幫學生揀咗一個然後唔講。
+    category_dim: "EMP_NATURE",
+    categories: [
+      { code: "", label_zh: "所有僱員" },
+      { code: "1", label_zh: "全職僱員" },
+    ],
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "港元",
+    value_digits: 0,
+    name_zh: "每月工資中位數",
+    name_en: "Median monthly wage",
+    unit_en: "HK$",
+    unit_short_zh: "元",
+    category: "就業",
+    question_zh: "香港打工仔一個月賺幾多?",
+    notes_zh:
+      "「中位數」唔係「平均數」:把所有人由低到高排,企喺正中間嗰個就係中位數。" +
+      "用中位數係因為少數極高收入會把平均數扯高,中位數就唔會。" +
+      "「所有僱員」包埋兼職,所以低過「全職僱員」。2009–2010 年係該年第二季嘅數,2011 年起係 5 至 6 月。",
+    chart: { type: "line", y_zero: false },
+  },
+
+  household_income: {
+    table: "130-06102",
+    sv: "MED_DH_INC",
+    stat_pres: "Raw_hkd_d",
+    // 呢個表冇任何非時間維度,所以 cv:{} 係合法嘅。
+    cv: {},
+    freq: "Y",
+    period_start: "198501",
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "港元",
+    value_digits: 0,
+    name_zh: "住戶每月入息中位數",
+    name_en: "Median monthly domestic household income",
+    unit_en: "HK$",
+    unit_short_zh: "元",
+    category: "就業",
+    question_zh: "一頭家一個月總共收入幾多?",
+    notes_zh:
+      "呢個係成個住戶加埋嘅收入,唔係一個人。所以佢同「每月工資中位數」唔可以直接比 —— " +
+      "一個三人家庭可能有兩個人返緊工。" +
+      "統計處另有「不包括外籍家庭傭工」嘅版本(MED_DH_INC_XFDH),數字會高啲。",
+    chart: { type: "line", y_zero: false },
+  },
+
+  cpi: {
+    table: "510-60001",
+    sv: "CC_CM_1920",
+    stat_pres: "YoY_1dp_%_s",
+    cv: {},
+    freq: "M",
+    period_start: "198101",
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "%",
+    value_digits: 1,
+    name_zh: "通脹率(綜合消費物價指數按年變動)",
+    name_en: "Composite CPI, year-on-year change",
+    unit_en: "%",
+    unit_short_zh: "%",
+    category: "物價",
+    question_zh: "同一籃嘢,今年比舊年貴咗幾多?",
+    notes_zh:
+      "呢條線係「按年變動百分率」,唔係物價本身。線跌落嚟唔代表嘢平咗 —— " +
+      "只要仲喺零以上,價錢就仲係升緊,只係升得慢咗。跌穿零先叫通縮。" +
+      "統計處另有甲／乙／丙三類指數,分別對應唔同開支水平嘅住戶,感受到嘅通脹可以好唔同。",
+    chart: { type: "line", y_zero: true },
+  },
+
+  four_key_industries: {
+    table: "655-82101",
+    sv: "VA_KEY_AND_SELECTED_IND",
+    stat_pres: "Prop_1dp_%_n",
+    cv: {
+      IND: ["ind_KEY_IND_1", "ind_KEY_IND_2", "ind_KEY_IND_3", "ind_KEY_IND_4"],
+    },
+    freq: "Y",
+    period_start: "200001",
+    category_dim: "IND",
+    // ⚠️ 呢度一定要明文列齊。cv 唔填嘅話 API 照回 Success,
+    //    但幾個分類組會溝埋 —— 實測「貿易及物流」會由 18.9 變成 18.8。
+    categories: [
+      { code: "ind_KEY_IND_1", label_zh: "金融服務" },
+      { code: "ind_KEY_IND_2", label_zh: "旅遊" },
+      { code: "ind_KEY_IND_3", label_zh: "貿易及物流" },
+      { code: "ind_KEY_IND_4", label_zh: "專業服務及其他工商業支援服務" },
+    ],
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "%",
+    value_digits: 1,
+    name_zh: "四大行業佔本地生產總值比重",
+    name_en: "Share of the four key industries in GDP",
+    unit_en: "% of GDP",
+    unit_short_zh: "%",
+    category: "經濟",
+    question_zh: "香港靠邊幾行搵食?比重有冇變過?",
+    notes_zh:
+      "四條線加埋唔等於 100% —— 四大行業以外仲有製造業、建造業、公營部門等等。" +
+      "睇呢個圖嘅重點唔係邊條線最高,而係邊條線嘅走勢喺變。",
+    chart: { type: "line", y_zero: true },
+  },
+
+  hkex_listings: {
+    table: "340-95003",
+    sv: "LC",
+    stat_pres: "Raw_num_n",
+    cv: { SECURITIES_MARKET: ["MB", "GEM"] },
+    freq: "Y",
+    period_start: "201001",
+    category_dim: "SECURITIES_MARKET",
+    categories: [
+      { code: "MB", label_zh: "主板" },
+      { code: "GEM", label_zh: "GEM" },
+    ],
+
+    // 統計處出嘅單位描述好長(例如「第五十個百分位數（港元）」),
+    // 直接擺上大字會蓋過個數。乾淨單位擺 unit_zh,原文照留喺 unit_source_zh 做出處。
+    unit_zh: "間",
+    value_digits: 0,
+    name_zh: "香港交易所上市公司數目",
+    name_en: "Number of companies listed on HKEX",
+    unit_en: "companies",
+    unit_short_zh: "間",
+    category: "經濟",
+    question_zh: "有幾多間公司喺香港上市?",
+    // 原始數據擁有人係港交所,統計處只係編製／轉載平台。標註要兩層都寫。
+    source_override_zh: "香港交易及結算所有限公司(經政府統計處發布)",
+    source_override_en: "Hong Kong Exchanges and Clearing Limited (published via C&SD)",
+    notes_zh:
+      "呢個表冇「總計」行,所以主板同 GEM 分開兩條線,想要總數就自己加埋。" +
+      "上市公司數目多唔一定代表市場好 —— 仲要睇市值同成交額。",
+    chart: { type: "line", y_zero: false },
+  },
 };
 
 function latestValue(series) {
@@ -204,18 +398,20 @@ function toSeries(rows, spec) {
   return series.sort((a, b) => a.period.localeCompare(b.period) || a.category.localeCompare(b.category));
 }
 
-/** 剪走尾段全部係 null 嘅期數(未出嘅數),中間嘅 null 要留低。 */
-function trimTrailingGaps(series) {
+/**
+ * 剪走頭尾全部係 null 嘅期數。中間嘅 null 一定要留低 ——
+ * 「嗰期真係冇數」本身係一件要畀學生見到嘅事,唔可以當冇發生。
+ *
+ * 頭段都要剪:例如按年變動率,有紀錄嘅第一年冇得同上一年比,一定係 null。
+ */
+function trimGaps(series) {
   const periods = [...new Set(series.map((point) => point.period))].sort();
-  let last = -1;
-  for (let i = periods.length - 1; i >= 0; i--) {
-    if (series.some((point) => point.period === periods[i] && point.value !== null)) {
-      last = i;
-      break;
-    }
-  }
-  if (last === -1) return [];
-  const keep = new Set(periods.slice(0, last + 1));
+  const hasValue = (period) => series.some((point) => point.period === period && point.value !== null);
+  let first = periods.findIndex(hasValue);
+  if (first === -1) return [];
+  let last = periods.length - 1;
+  while (last > first && !hasValue(periods[last])) last -= 1;
+  const keep = new Set(periods.slice(first, last + 1));
   return series.filter((point) => keep.has(point.period));
 }
 
@@ -235,7 +431,7 @@ export async function loadCenstatdIndicator(id) {
 
   // 指標自己嘅健康檢查。統計處個 API 大部分錯法都唔會報錯,
   // 所以邊個指標有得驗嘅不變式,就一定要驗。
-  const series = trimTrailingGaps(toSeries(rows, spec));
+  const series = trimGaps(toSeries(rows, spec));
   if (series.length === 0) {
     throw new Error(`${id}:篩完之後冇任何有數嘅期數,唔應該出街`);
   }
@@ -251,12 +447,15 @@ export async function loadCenstatdIndicator(id) {
     name_zh: spec.name_zh,
     name_en: spec.name_en,
 
-    unit_zh: spec.unit_override_zh ?? statPresLabel(meta, spec.sv, spec.stat_pres),
+    unit_zh: spec.unit_zh,
+    // 統計處自己點叫呢個數 —— 保留返做出處,喺來源欄顯示。
+    unit_source_zh: statPresLabel(meta, spec.sv, spec.stat_pres),
+    value_digits: spec.value_digits ?? 0,
     unit_en: spec.unit_en,
     unit_short_zh: spec.unit_short_zh,
 
-    source_zh: CENSTATD_LICENCE.source_zh,
-    source_en: CENSTATD_LICENCE.source_en,
+    source_zh: spec.source_override_zh ?? CENSTATD_LICENCE.source_zh,
+    source_en: spec.source_override_en ?? CENSTATD_LICENCE.source_en,
     // 畀學生撳去核對嘅係人睇嘅版面,唔係 API endpoint。
     source_url: `https://www.censtatd.gov.hk/tc/web_table.html?id=${spec.table}`,
     source_note_zh: `${info.source}(統計處表 ${spec.table}:${info.title})`,
@@ -274,10 +473,20 @@ export async function loadCenstatdIndicator(id) {
     notes_zh: spec.notes_zh ?? null,
     chart: spec.chart ?? { type: "line", y_zero: false },
     anchors: spec.anchors ? spec.anchors(series) : [],
+    category_order: spec.categories?.map((c) => c.label_zh) ?? null,
 
     series,
   });
 }
 
 /** 首頁指標卡嘅排序同分組用。 */
-export const INDICATOR_ORDER = ["gdp", "population"];
+export const INDICATOR_ORDER = [
+  "gdp",
+  "population",
+  "unemployment",
+  "median_wage",
+  "household_income",
+  "cpi",
+  "four_key_industries",
+  "hkex_listings",
+];

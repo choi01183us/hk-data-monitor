@@ -3,6 +3,8 @@
   "name_zh": "香港人口",
   "name_en": "Population of Hong Kong",
   "unit_zh": "人",
+  "unit_source_zh": "數目 ('000)",
+  "value_digits": 0,
   "unit_en": "persons",
   "unit_short_zh": "人",
   "source_zh": "政府統計處",
@@ -12,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-08-18",
-  "fetched_at": "2026-09-05T01:12:17.444Z",
+  "fetched_at": "2026-09-05T01:22:04.821Z",
   "frequency": "biannual",
   "acquisition": "api",
   "category": "人口",
@@ -39,6 +41,7 @@
       "basis_zh": "(7,518,300 − 7,336,600) ÷ 10 年"
     }
   ],
+  "category_order": null,
   "series": [
     {
       "period": "1961-06",
@@ -565,6 +568,7 @@
       "value": 7518300
     }
   ],
+  "latest_by_category": null,
   "coverage": {
     "start": "1961-06",
     "end": "2026-06",
@@ -575,6 +579,6 @@
     "period": "2026-06",
     "value": 7518300
   },
-  "content_hash": "sha256:0a741adcef842c7e",
-  "data_version": "2026.09.6"
+  "content_hash": "sha256:bbe9b7c1882dd94d",
+  "data_version": "2026.09.8"
 }

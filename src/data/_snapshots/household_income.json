@@ -1,0 +1,208 @@
+{
+  "indicator_id": "household_income",
+  "name_zh": "住戶每月入息中位數",
+  "name_en": "Median monthly domestic household income",
+  "unit_zh": "港元",
+  "unit_source_zh": "港元",
+  "value_digits": 0,
+  "unit_en": "HK$",
+  "unit_short_zh": "元",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=130-06102",
+  "source_note_zh": "政府統計處綜合住戶統計調查組（三）(統計處表 130-06102:家庭住戶統計數字)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-08-20",
+  "fetched_at": "2026-09-05T01:22:26.317Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "就業",
+  "question_zh": "一頭家一個月總共收入幾多?",
+  "notes_zh": "呢個係成個住戶加埋嘅收入,唔係一個人。所以佢同「每月工資中位數」唔可以直接比 —— 一個三人家庭可能有兩個人返緊工。統計處另有「不包括外籍家庭傭工」嘅版本(MED_DH_INC_XFDH),數字會高啲。",
+  "chart": {
+    "type": "line",
+    "y_zero": false
+  },
+  "anchors": [],
+  "category_order": null,
+  "series": [
+    {
+      "period": "1985",
+      "value": 4900
+    },
+    {
+      "period": "1986",
+      "value": 5300
+    },
+    {
+      "period": "1987",
+      "value": 6000
+    },
+    {
+      "period": "1988",
+      "value": 6800
+    },
+    {
+      "period": "1989",
+      "value": 8000
+    },
+    {
+      "period": "1990",
+      "value": 9400
+    },
+    {
+      "period": "1991",
+      "value": 10400
+    },
+    {
+      "period": "1992",
+      "value": 11500
+    },
+    {
+      "period": "1993",
+      "value": 13000
+    },
+    {
+      "period": "1994",
+      "value": 15000
+    },
+    {
+      "period": "1995",
+      "value": 16000
+    },
+    {
+      "period": "1996",
+      "value": 17600
+    },
+    {
+      "period": "1997",
+      "value": 19000
+    },
+    {
+      "period": "1998",
+      "value": 18000
+    },
+    {
+      "period": "1999",
+      "value": 17500
+    },
+    {
+      "period": "2000",
+      "value": 18000
+    },
+    {
+      "period": "2001",
+      "value": 18000
+    },
+    {
+      "period": "2002",
+      "value": 17000
+    },
+    {
+      "period": "2003",
+      "value": 16000
+    },
+    {
+      "period": "2004",
+      "value": 16000
+    },
+    {
+      "period": "2005",
+      "value": 16000
+    },
+    {
+      "period": "2006",
+      "value": 17000
+    },
+    {
+      "period": "2007",
+      "value": 17500
+    },
+    {
+      "period": "2008",
+      "value": 18400
+    },
+    {
+      "period": "2009",
+      "value": 18000
+    },
+    {
+      "period": "2010",
+      "value": 18000
+    },
+    {
+      "period": "2011",
+      "value": 20000
+    },
+    {
+      "period": "2012",
+      "value": 21000
+    },
+    {
+      "period": "2013",
+      "value": 22200
+    },
+    {
+      "period": "2014",
+      "value": 23200
+    },
+    {
+      "period": "2015",
+      "value": 24800
+    },
+    {
+      "period": "2016",
+      "value": 25200
+    },
+    {
+      "period": "2017",
+      "value": 26600
+    },
+    {
+      "period": "2018",
+      "value": 28500
+    },
+    {
+      "period": "2019",
+      "value": 29000
+    },
+    {
+      "period": "2020",
+      "value": 27500
+    },
+    {
+      "period": "2021",
+      "value": 27500
+    },
+    {
+      "period": "2022",
+      "value": 28300
+    },
+    {
+      "period": "2023",
+      "value": 30000
+    },
+    {
+      "period": "2024",
+      "value": 30000
+    },
+    {
+      "period": "2025",
+      "value": 30000
+    }
+  ],
+  "latest_by_category": null,
+  "coverage": {
+    "start": "1985",
+    "end": "2025",
+    "points": 41,
+    "points_with_value": 41
+  },
+  "latest": {
+    "period": "2025",
+    "value": 30000
+  },
+  "content_hash": "sha256:b1606105c92a6cbb",
+  "data_version": "2026.09.3"
+}
