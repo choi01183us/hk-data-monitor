@@ -1,0 +1,11 @@
+# 建置輸出 — 由 source 重新產生
+dist/
+
+# Observable Framework 嘅 data loader 快取（唔係我哋要保留嘅「上一版」，
+# 真正要入 repo 嘅係 data/snapshots/）
+src/.observablehq/cache/
+
+# 本機
+.DS_Store
+*.log
+.wrangler/

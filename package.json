@@ -1,0 +1,21 @@
+{
+  "name": "hk-data-monitor",
+  "version": "0.1.0",
+  "description": "香港數據監測站 — 畀中學生睇嘅公開數據儀表板（Observable Framework 純靜態網站）",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "observable preview",
+    "build": "observable build && node scripts/postbuild.mjs",
+    "refresh": "node scripts/refresh-data.mjs",
+    "validate": "node scripts/validate-snapshots.mjs",
+    "clean": "rm -rf dist src/.observablehq/cache"
+  },
+  "devDependencies": {
+    "@observablehq/framework": "1.13.4"
+  }
+}
