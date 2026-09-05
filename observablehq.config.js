@@ -24,16 +24,29 @@ export default {
 
   pages: [
     {
-      name: "指標",
+      name: "公共財政",
+      pages: [
+        { name: "政府經常開支", path: "/indicators/govt_expenditure" },
+        { name: "政府收入", path: "/indicators/govt_revenue" },
+        { name: "財政儲備", path: "/indicators/fiscal_reserves" },
+      ],
+    },
+    {
+      name: "經濟同人口",
       pages: [
         { name: "人均本地生產總值", path: "/indicators/gdp" },
         { name: "香港人口", path: "/indicators/population" },
+        { name: "四大行業佔 GDP 比重", path: "/indicators/four_key_industries" },
+        { name: "上市公司數目", path: "/indicators/hkex_listings" },
+      ],
+    },
+    {
+      name: "就業同物價",
+      pages: [
         { name: "失業率", path: "/indicators/unemployment" },
         { name: "每月工資中位數", path: "/indicators/median_wage" },
         { name: "住戶每月入息中位數", path: "/indicators/household_income" },
         { name: "通脹率", path: "/indicators/cpi" },
-        { name: "四大行業佔 GDP 比重", path: "/indicators/four_key_industries" },
-        { name: "上市公司數目", path: "/indicators/hkex_listings" },
       ],
     },
     {

@@ -1,0 +1,813 @@
+{
+  "indicator_id": "govt_expenditure",
+  "name_zh": "政府經常開支",
+  "name_en": "Government recurrent expenditure by policy area",
+  "unit_zh": "港元",
+  "unit_en": "HK$",
+  "unit_short_zh": "元",
+  "unit_source_zh": "百萬元",
+  "value_digits": 0,
+  "source_zh": "財經事務及庫務局(經資料一線通 DATA.GOV.HK 提供)",
+  "source_en": "Financial Services and the Treasury Bureau, via DATA.GOV.HK",
+  "source_url": "https://data.gov.hk/tc-data/dataset/hk-fstb-tsyb-financial-statistics",
+  "source_note_zh": "檔案 fin-stats_recurrent-exp_a_tc.csv(https://www.fstb.gov.hk/datagovhk/tsyb/financial-statistics/tc/fin-stats_recurrent-exp_a_tc.csv)",
+  "licence": "data.gov.hk 使用條款",
+  "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
+  "updated_at": "2026-05-19",
+  "fetched_at": "2026-09-05T05:42:11.802Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "公共財政",
+  "question_zh": "政府每年使幾多錢?使喺邊度?",
+  "notes_zh": "原始檔用「百萬元」做單位,呢度已經乘返一百萬換算成「港元」,方便同人口相除。最新期數係預算數字,唔係實際數:2026-27(原來預算)、2025-26(修訂預算)。呢個係「經常開支」(年年都要使嘅,例如人工、津貼),唔係「開支總額」—— 基建呢類一次過嘅唔計喺度。「其他」佔咗四成,因為呢份檔只拆四類;十個政策組別嘅完整拆法只有預算案附錄 PDF,要人手抄(見 manual/)。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "per-capita",
+      "text_zh": "相當於每名香港市民一年約 HK$79,762",
+      "basis_zh": "5,997 億 元 ÷ 2026 年 6 月人口 752 萬 人"
+    },
+    {
+      "id": "edu-share",
+      "text_zh": "每 100 元經常開支,有 17.1 元使喺教育",
+      "basis_zh": "教育 1,023 億 ÷ 經常開支總額 5,997 億 × 100"
+    },
+    {
+      "id": "vs-1997-98",
+      "text_zh": "對比 1997–98 年度（回歸嗰年,總額），升咗 301.4%",
+      "basis_zh": "1997–98 年度 1,494 億 → 2026–27 年度 5,997 億"
+    }
+  ],
+  "category_order": [
+    "教育",
+    "社會福利",
+    "衞生",
+    "其他"
+  ],
+  "totals": [
+    {
+      "period": "1997-98",
+      "value": 149386000000
+    },
+    {
+      "period": "1998-99",
+      "value": 164277000000
+    },
+    {
+      "period": "1999-00",
+      "value": 173913000000
+    },
+    {
+      "period": "2000-01",
+      "value": 184522000000
+    },
+    {
+      "period": "2001-02",
+      "value": 195592000000
+    },
+    {
+      "period": "2002-03",
+      "value": 198004000000
+    },
+    {
+      "period": "2003-04",
+      "value": 197291000000
+    },
+    {
+      "period": "2004-05",
+      "value": 192295000000
+    },
+    {
+      "period": "2005-06",
+      "value": 187162000000
+    },
+    {
+      "period": "2006-07",
+      "value": 189498000000
+    },
+    {
+      "period": "2007-08",
+      "value": 199446000000
+    },
+    {
+      "period": "2008-09",
+      "value": 214119000000
+    },
+    {
+      "period": "2009-10",
+      "value": 221180000000
+    },
+    {
+      "period": "2010-11",
+      "value": 223173000000
+    },
+    {
+      "period": "2011-12",
+      "value": 242496000000
+    },
+    {
+      "period": "2012-13",
+      "value": 262321000000
+    },
+    {
+      "period": "2013-14",
+      "value": 284389000000
+    },
+    {
+      "period": "2014-15",
+      "value": 305090000000
+    },
+    {
+      "period": "2015-16",
+      "value": 324532000000
+    },
+    {
+      "period": "2016-17",
+      "value": 344638000000
+    },
+    {
+      "period": "2017-18",
+      "value": 361812000000
+    },
+    {
+      "period": "2018-19",
+      "value": 402990000000
+    },
+    {
+      "period": "2019-20",
+      "value": 438760000000
+    },
+    {
+      "period": "2020-21",
+      "value": 467094000000
+    },
+    {
+      "period": "2021-22",
+      "value": 493202000000
+    },
+    {
+      "period": "2022-23",
+      "value": 539862000000
+    },
+    {
+      "period": "2023-24",
+      "value": 539109000000
+    },
+    {
+      "period": "2024-25",
+      "value": 560133000000
+    },
+    {
+      "period": "2025-26",
+      "value": 572369000000
+    },
+    {
+      "period": "2026-27",
+      "value": 599677000000
+    }
+  ],
+  "period_notes": {
+    "2026-27": "原來預算",
+    "2025-26": "修訂預算"
+  },
+  "series": [
+    {
+      "period": "1997-98",
+      "category": "其他",
+      "value": 66094000000
+    },
+    {
+      "period": "1997-98",
+      "category": "教育",
+      "value": 37325000000
+    },
+    {
+      "period": "1997-98",
+      "category": "社會福利",
+      "value": 19962000000
+    },
+    {
+      "period": "1997-98",
+      "category": "衞生",
+      "value": 26005000000
+    },
+    {
+      "period": "1998-99",
+      "category": "其他",
+      "value": 68995000000
+    },
+    {
+      "period": "1998-99",
+      "category": "教育",
+      "value": 41614000000
+    },
+    {
+      "period": "1998-99",
+      "category": "社會福利",
+      "value": 24906000000
+    },
+    {
+      "period": "1998-99",
+      "category": "衞生",
+      "value": 28762000000
+    },
+    {
+      "period": "1999-00",
+      "category": "其他",
+      "value": 74030000000
+    },
+    {
+      "period": "1999-00",
+      "category": "教育",
+      "value": 43627000000
+    },
+    {
+      "period": "1999-00",
+      "category": "社會福利",
+      "value": 26376000000
+    },
+    {
+      "period": "1999-00",
+      "category": "衞生",
+      "value": 29880000000
+    },
+    {
+      "period": "2000-01",
+      "category": "其他",
+      "value": 81988000000
+    },
+    {
+      "period": "2000-01",
+      "category": "教育",
+      "value": 45030000000
+    },
+    {
+      "period": "2000-01",
+      "category": "社會福利",
+      "value": 27025000000
+    },
+    {
+      "period": "2000-01",
+      "category": "衞生",
+      "value": 30479000000
+    },
+    {
+      "period": "2001-02",
+      "category": "其他",
+      "value": 88045000000
+    },
+    {
+      "period": "2001-02",
+      "category": "教育",
+      "value": 47023000000
+    },
+    {
+      "period": "2001-02",
+      "category": "社會福利",
+      "value": 28594000000
+    },
+    {
+      "period": "2001-02",
+      "category": "衞生",
+      "value": 31930000000
+    },
+    {
+      "period": "2002-03",
+      "category": "其他",
+      "value": 87104000000
+    },
+    {
+      "period": "2002-03",
+      "category": "教育",
+      "value": 47775000000
+    },
+    {
+      "period": "2002-03",
+      "category": "社會福利",
+      "value": 30802000000
+    },
+    {
+      "period": "2002-03",
+      "category": "衞生",
+      "value": 32323000000
+    },
+    {
+      "period": "2003-04",
+      "category": "其他",
+      "value": 86521000000
+    },
+    {
+      "period": "2003-04",
+      "category": "教育",
+      "value": 47203000000
+    },
+    {
+      "period": "2003-04",
+      "category": "社會福利",
+      "value": 31917000000
+    },
+    {
+      "period": "2003-04",
+      "category": "衞生",
+      "value": 31650000000
+    },
+    {
+      "period": "2004-05",
+      "category": "其他",
+      "value": 85133000000
+    },
+    {
+      "period": "2004-05",
+      "category": "教育",
+      "value": 45116000000
+    },
+    {
+      "period": "2004-05",
+      "category": "社會福利",
+      "value": 31910000000
+    },
+    {
+      "period": "2004-05",
+      "category": "衞生",
+      "value": 30136000000
+    },
+    {
+      "period": "2005-06",
+      "category": "其他",
+      "value": 81360000000
+    },
+    {
+      "period": "2005-06",
+      "category": "教育",
+      "value": 44527000000
+    },
+    {
+      "period": "2005-06",
+      "category": "社會福利",
+      "value": 31989000000
+    },
+    {
+      "period": "2005-06",
+      "category": "衞生",
+      "value": 29286000000
+    },
+    {
+      "period": "2006-07",
+      "category": "其他",
+      "value": 82642000000
+    },
+    {
+      "period": "2006-07",
+      "category": "教育",
+      "value": 44602000000
+    },
+    {
+      "period": "2006-07",
+      "category": "社會福利",
+      "value": 32424000000
+    },
+    {
+      "period": "2006-07",
+      "category": "衞生",
+      "value": 29830000000
+    },
+    {
+      "period": "2007-08",
+      "category": "其他",
+      "value": 87032000000
+    },
+    {
+      "period": "2007-08",
+      "category": "教育",
+      "value": 46794000000
+    },
+    {
+      "period": "2007-08",
+      "category": "社會福利",
+      "value": 33979000000
+    },
+    {
+      "period": "2007-08",
+      "category": "衞生",
+      "value": 31641000000
+    },
+    {
+      "period": "2008-09",
+      "category": "其他",
+      "value": 91896000000
+    },
+    {
+      "period": "2008-09",
+      "category": "教育",
+      "value": 49863000000
+    },
+    {
+      "period": "2008-09",
+      "category": "社會福利",
+      "value": 38511000000
+    },
+    {
+      "period": "2008-09",
+      "category": "衞生",
+      "value": 33849000000
+    },
+    {
+      "period": "2009-10",
+      "category": "其他",
+      "value": 95611000000
+    },
+    {
+      "period": "2009-10",
+      "category": "教育",
+      "value": 50831000000
+    },
+    {
+      "period": "2009-10",
+      "category": "社會福利",
+      "value": 39405000000
+    },
+    {
+      "period": "2009-10",
+      "category": "衞生",
+      "value": 35333000000
+    },
+    {
+      "period": "2010-11",
+      "category": "其他",
+      "value": 97788000000
+    },
+    {
+      "period": "2010-11",
+      "category": "教育",
+      "value": 51034000000
+    },
+    {
+      "period": "2010-11",
+      "category": "社會福利",
+      "value": 37577000000
+    },
+    {
+      "period": "2010-11",
+      "category": "衞生",
+      "value": 36774000000
+    },
+    {
+      "period": "2011-12",
+      "category": "其他",
+      "value": 105146000000
+    },
+    {
+      "period": "2011-12",
+      "category": "教育",
+      "value": 55526000000
+    },
+    {
+      "period": "2011-12",
+      "category": "社會福利",
+      "value": 40333000000
+    },
+    {
+      "period": "2011-12",
+      "category": "衞生",
+      "value": 41491000000
+    },
+    {
+      "period": "2012-13",
+      "category": "其他",
+      "value": 112833000000
+    },
+    {
+      "period": "2012-13",
+      "category": "教育",
+      "value": 60449000000
+    },
+    {
+      "period": "2012-13",
+      "category": "社會福利",
+      "value": 42813000000
+    },
+    {
+      "period": "2012-13",
+      "category": "衞生",
+      "value": 46226000000
+    },
+    {
+      "period": "2013-14",
+      "category": "其他",
+      "value": 119436000000
+    },
+    {
+      "period": "2013-14",
+      "category": "教育",
+      "value": 63458000000
+    },
+    {
+      "period": "2013-14",
+      "category": "社會福利",
+      "value": 51605000000
+    },
+    {
+      "period": "2013-14",
+      "category": "衞生",
+      "value": 49890000000
+    },
+    {
+      "period": "2014-15",
+      "category": "其他",
+      "value": 128945000000
+    },
+    {
+      "period": "2014-15",
+      "category": "教育",
+      "value": 67803000000
+    },
+    {
+      "period": "2014-15",
+      "category": "社會福利",
+      "value": 54251000000
+    },
+    {
+      "period": "2014-15",
+      "category": "衞生",
+      "value": 54091000000
+    },
+    {
+      "period": "2015-16",
+      "category": "其他",
+      "value": 137474000000
+    },
+    {
+      "period": "2015-16",
+      "category": "教育",
+      "value": 72352000000
+    },
+    {
+      "period": "2015-16",
+      "category": "社會福利",
+      "value": 58233000000
+    },
+    {
+      "period": "2015-16",
+      "category": "衞生",
+      "value": 56473000000
+    },
+    {
+      "period": "2016-17",
+      "category": "其他",
+      "value": 146883000000
+    },
+    {
+      "period": "2016-17",
+      "category": "教育",
+      "value": 75533000000
+    },
+    {
+      "period": "2016-17",
+      "category": "社會福利",
+      "value": 63510000000
+    },
+    {
+      "period": "2016-17",
+      "category": "衞生",
+      "value": 58712000000
+    },
+    {
+      "period": "2017-18",
+      "category": "其他",
+      "value": 153650000000
+    },
+    {
+      "period": "2017-18",
+      "category": "教育",
+      "value": 80233000000
+    },
+    {
+      "period": "2017-18",
+      "category": "社會福利",
+      "value": 65313000000
+    },
+    {
+      "period": "2017-18",
+      "category": "衞生",
+      "value": 62616000000
+    },
+    {
+      "period": "2018-19",
+      "category": "其他",
+      "value": 165484000000
+    },
+    {
+      "period": "2018-19",
+      "category": "教育",
+      "value": 85528000000
+    },
+    {
+      "period": "2018-19",
+      "category": "社會福利",
+      "value": 79449000000
+    },
+    {
+      "period": "2018-19",
+      "category": "衞生",
+      "value": 72529000000
+    },
+    {
+      "period": "2019-20",
+      "category": "其他",
+      "value": 182659000000
+    },
+    {
+      "period": "2019-20",
+      "category": "教育",
+      "value": 92438000000
+    },
+    {
+      "period": "2019-20",
+      "category": "社會福利",
+      "value": 81521000000
+    },
+    {
+      "period": "2019-20",
+      "category": "衞生",
+      "value": 82142000000
+    },
+    {
+      "period": "2020-21",
+      "category": "其他",
+      "value": 193251000000
+    },
+    {
+      "period": "2020-21",
+      "category": "教育",
+      "value": 97297000000
+    },
+    {
+      "period": "2020-21",
+      "category": "社會福利",
+      "value": 88948000000
+    },
+    {
+      "period": "2020-21",
+      "category": "衞生",
+      "value": 87598000000
+    },
+    {
+      "period": "2021-22",
+      "category": "其他",
+      "value": 200585000000
+    },
+    {
+      "period": "2021-22",
+      "category": "教育",
+      "value": 97218000000
+    },
+    {
+      "period": "2021-22",
+      "category": "社會福利",
+      "value": 97070000000
+    },
+    {
+      "period": "2021-22",
+      "category": "衞生",
+      "value": 98329000000
+    },
+    {
+      "period": "2022-23",
+      "category": "其他",
+      "value": 210143000000
+    },
+    {
+      "period": "2022-23",
+      "category": "教育",
+      "value": 97920000000
+    },
+    {
+      "period": "2022-23",
+      "category": "社會福利",
+      "value": 104797000000
+    },
+    {
+      "period": "2022-23",
+      "category": "衞生",
+      "value": 127002000000
+    },
+    {
+      "period": "2023-24",
+      "category": "其他",
+      "value": 220866000000
+    },
+    {
+      "period": "2023-24",
+      "category": "教育",
+      "value": 103683000000
+    },
+    {
+      "period": "2023-24",
+      "category": "社會福利",
+      "value": 110642000000
+    },
+    {
+      "period": "2023-24",
+      "category": "衞生",
+      "value": 103918000000
+    },
+    {
+      "period": "2024-25",
+      "category": "其他",
+      "value": 228718000000
+    },
+    {
+      "period": "2024-25",
+      "category": "教育",
+      "value": 105281000000
+    },
+    {
+      "period": "2024-25",
+      "category": "社會福利",
+      "value": 116887000000
+    },
+    {
+      "period": "2024-25",
+      "category": "衞生",
+      "value": 109247000000
+    },
+    {
+      "period": "2025-26",
+      "category": "其他",
+      "value": 232417000000
+    },
+    {
+      "period": "2025-26",
+      "category": "教育",
+      "value": 101991000000
+    },
+    {
+      "period": "2025-26",
+      "category": "社會福利",
+      "value": 123614000000
+    },
+    {
+      "period": "2025-26",
+      "category": "衞生",
+      "value": 114347000000
+    },
+    {
+      "period": "2026-27",
+      "category": "其他",
+      "value": 242623000000
+    },
+    {
+      "period": "2026-27",
+      "category": "教育",
+      "value": 102308000000
+    },
+    {
+      "period": "2026-27",
+      "category": "社會福利",
+      "value": 135865000000
+    },
+    {
+      "period": "2026-27",
+      "category": "衞生",
+      "value": 118881000000
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "教育",
+      "period": "2026-27",
+      "value": 102308000000
+    },
+    {
+      "category": "社會福利",
+      "period": "2026-27",
+      "value": 135865000000
+    },
+    {
+      "category": "衞生",
+      "period": "2026-27",
+      "value": 118881000000
+    },
+    {
+      "category": "其他",
+      "period": "2026-27",
+      "value": 242623000000
+    }
+  ],
+  "coverage": {
+    "start": "1997-98",
+    "end": "2026-27",
+    "points": 120,
+    "points_with_value": 120
+  },
+  "latest": {
+    "period": "2026-27",
+    "category": "衞生",
+    "value": 118881000000
+  },
+  "content_hash": "sha256:96925153a242135d",
+  "data_version": "2026.09.2"
+}

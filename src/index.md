@@ -8,6 +8,9 @@ toc: false
 import { indicatorCard } from "./components/indicator-card.js";
 
 const indicators = await Promise.all([
+  FileAttachment("./data/govt_expenditure.json").json(),
+  FileAttachment("./data/govt_revenue.json").json(),
+  FileAttachment("./data/fiscal_reserves.json").json(),
   FileAttachment("./data/gdp.json").json(),
   FileAttachment("./data/population.json").json(),
   FileAttachment("./data/unemployment.json").json(),
@@ -63,7 +66,5 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 
 <h2 id="status">呢個站砌到邊</h2>
 
-8 個指標已經接通,全部由官方 API 自動抓、每個都有出處同數據截至日期。
-
-仲未做:政府開支、政府收入、財政儲備(三個都實測過有現成 API,未接);
-公屋輪候時間同 10 組政策開支要人手抄。詳情見 repo 入面嘅 `findings.md`。
+11 個指標已經接通,全部由官方 API 自動抓、每個都有出處同數據截至日期。
+仲有兩個要人手抄(公屋輪候時間、十個政策組別嘅開支),詳情見 repo 入面嘅 `findings.md`。

@@ -88,10 +88,48 @@ export function formatRelativeZh(isoString, now = new Date()) {
   return rtf.format(Math.round(seconds), "second");
 }
 
-/** 年份字串（世界銀行用「2025」）同 ISO 時間（天文台用）都轉成 Date，畀 Plot 畫 x 軸。 */
-export function toDate(dateLike) {
+/**
+ * 呢條 series 係咪財政年度("2025-26")?
+ *
+ * 「2000-01」單睇字串分唔到係「2000 年 1 月」定「2000–01 年度」——
+ * 兩種寫法喺 SPEC 第 5 節都合法。但成條 series 一齊睇就分得到:
+ * 財政年度序列橫跨幾十年,一定有「YY > 12」嘅期數(例如 2026-27);
+ * 月度序列嘅第二段永遠喺 01–12 之間。
+ *
+ * 曾經因為冇做呢個判斷,政府收入 30 年數據得 2000–2011 十二年上到圖,
+ * 其餘全部被靜靜哋掉走 —— 圖表冇報錯,淨係錯咗。
+ */
+export function isFiscalPeriodSeries(periods) {
+  return periods.some((period) => {
+    const match = /^(\d{4})-(\d{2})$/.exec(String(period));
+    if (!match) return false;
+    const second = Number(match[2]);
+    return second > 12 || second === 0;
+  });
+}
+
+/**
+ * SPEC 第 5 節嘅 period 字串轉 Date,畀 Plot 畫 x 軸。
+ *
+ *   "2025"      -> 2025-01-01
+ *   "2026-Q1"   -> 2026-01-01(季度嘅第一個月)
+ *   "2026-06"   -> 2026-06-01(月度)
+ *   "2025-26"   -> 2025-04-01(財政年度由 4 月 1 日開始;要 fiscal: true)
+ *
+ * fiscal 一定要由呼叫者用 isFiscalPeriodSeries() 判斷咗先傳入。
+ */
+export function toDate(dateLike, { fiscal = false } = {}) {
   const text = String(dateLike);
-  if (/^\d{4}$/.test(text)) return new Date(Date.UTC(Number(text), 0, 1));
+  let match = /^(\d{4})$/.exec(text);
+  if (match) return new Date(Date.UTC(Number(match[1]), 0, 1));
+  match = /^(\d{4})-Q([1-4])$/.exec(text);
+  if (match) return new Date(Date.UTC(Number(match[1]), (Number(match[2]) - 1) * 3, 1));
+  match = /^(\d{4})-(\d{2})$/.exec(text);
+  if (match) {
+    if (fiscal) return new Date(Date.UTC(Number(match[1]), 3, 1));
+    const month = Number(match[2]);
+    return month >= 1 && month <= 12 ? new Date(Date.UTC(Number(match[1]), month - 1, 1)) : null;
+  }
   const parsed = new Date(text);
   return Number.isNaN(parsed.getTime()) ? null : parsed;
 }
@@ -107,18 +145,23 @@ export function toDate(dateLike) {
  * 擺喺呢度而唔係各自寫一份:錨點文字同指標頁大字都要用,
  * 兩邊寫法唔同嘅話,同一個期數會喺同一版出現兩種寫法。
  */
-export function formatPeriodZh(period) {
+export function formatPeriodZh(period, { fiscal = false } = {}) {
   const text = String(period ?? "");
   let match = /^(\d{4})-Q(\d)$/.exec(text);
   if (match) return `${match[1]} 年第 ${match[2]} 季`;
   match = /^(\d{4})-(\d{2})$/.exec(text);
   if (match) {
     const month = Number(match[2]);
-    // 財政年度寫成 "2025-26"(尾兩位係下一年),月份寫成 "2026-06"。
-    // 月份唔會大過 12,所以 13 或以上一定係年度。
-    return month >= 1 && month <= 12 ? `${match[1]} 年 ${month} 月` : `${match[1]}–${match[2]} 年度`;
+    // 「2000-01」可以係 2000 年 1 月,亦可以係 2000–01 年度 —— 靠 fiscal 分。
+    // 冇傳 fiscal 嘅話,超出 01–12 嘅一定係年度,其餘當月份。
+    if (fiscal || month > 12 || month === 0) return `${match[1]}–${match[2]} 年度`;
+    return `${match[1]} 年 ${month} 月`;
   }
-  match = /^(\d{4})-(\d{2})$/.exec(text);
-  if (match) return `${match[1]}–${match[2]} 年度`;
   return /^\d{4}$/.test(text) ? `${text} 年` : text;
+}
+
+/** 財政年度嘅 x 軸刻度:Date(4 月 1 日)-> "2019–20" */
+export function fiscalTickLabel(date) {
+  const year = date.getUTCFullYear();
+  return `${year}–${String(year + 1).slice(-2)}`;
 }

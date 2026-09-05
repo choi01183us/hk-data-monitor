@@ -8,7 +8,7 @@
 
 import { html } from "npm:htl";
 
-import { formatNumber, formatPeriodZh } from "./format.js";
+import { formatNumber, formatChineseMagnitude, formatPeriodZh, isFiscalPeriodSeries } from "./format.js";
 
 /**
  * 大字最新值 + 問題句。
@@ -18,30 +18,45 @@ import { formatNumber, formatPeriodZh } from "./format.js";
  * 失業率會變成一個冇講明係邊個群組嘅「4%」。
  */
 export function indicatorHeader(indicator) {
-  const { question_zh, latest, latest_by_category, unit_zh, value_digits } = indicator;
+  const { question_zh, latest, latest_by_category, unit_zh, value_digits, totals, series } = indicator;
   const digits = value_digits ?? 0;
-  const items =
-    latest_by_category && latest_by_category.length > 0
+  const fiscal = isFiscalPeriodSeries((series ?? []).map((point) => point.period));
+  // 有總額(例如政府開支分咗四類)就先出總額,再出各分類 —— 學生先要知有幾大個餅
+  const latestTotal = Array.isArray(totals) ? [...totals].reverse().find((t) => t.value !== null) : null;
+  const items = [
+    ...(latestTotal ? [{ category: "總額", period: latestTotal.period, value: latestTotal.value, total: true }] : []),
+    ...(latest_by_category && latest_by_category.length > 0
       ? latest_by_category
       : latest
         ? [{ category: null, period: latest.period, value: latest.value }]
-        : [];
+        : []),
+  ];
 
   return html`<div>
     ${question_zh ? html`<p class="lede">${question_zh}</p>` : null}
     <div class="headline ${items.length > 1 ? "headline--multi" : ""}">
       ${items.map(
-        (item) => html`<div class="headline__item">
+        (item) => html`<div class="headline__item ${item.total ? "headline__item--total" : ""}">
           ${item.category ? html`<div class="headline__label">${item.category}</div>` : null}
           <div class="headline__number">
-            <strong>${item.value === null ? "—" : formatNumber(item.value, { digits })}</strong>
+            <strong>${item.value === null ? "—" : headlineNumber(item.value, digits)}</strong>
             <span class="headline__unit">${unit_zh}</span>
           </div>
-          <div class="headline__period">${item.period ? formatPeriodZh(item.period) : ""}</div>
+          <div class="headline__period">${item.period ? formatPeriodZh(item.period, { fiscal }) : ""}</div>
         </div>`
       )}
     </div>
   </div>`;
+}
+
+/**
+ * 大字用邊種寫法:
+ *   · 億級(政府開支 599,677,000,000)—— 「5,997 億」,十二位數學生數唔到有幾多個零
+ *   · 其餘(444,044 港元、3.7%)—— 照出原數,四捨五入會變咗另一個數
+ * 資料表嗰邊照出原始數字,想核對就去嗰度。
+ */
+function headlineNumber(value, digits) {
+  return Math.abs(value) >= 1e8 ? formatChineseMagnitude(value) : formatNumber(value, { digits });
 }
 
 /** 期數寫法統一喺 format.js,呢度只係轉出去畀指標頁用。 */

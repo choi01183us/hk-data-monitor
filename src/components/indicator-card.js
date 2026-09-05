@@ -34,6 +34,7 @@ export function indicatorCard(indicator, { href } = {}) {
     question_zh,
     latest,
     latest_by_category,
+    totals,
     value_digits,
     updated_at,
     anchors = [],
@@ -42,9 +43,15 @@ export function indicatorCard(indicator, { href } = {}) {
 
   const link = href ?? `./indicators/${indicator_id}`;
   const headline = anchors[0];
-  // 多分類指標喺卡上只出第一個分類,但一定要寫低係邊個 —— 唔可以扮咗係總數。
-  const shown = latest_by_category?.[0] ?? latest;
-  const shownLabel = latest_by_category?.length ? latest_by_category[0].category : null;
+  // 有總額(政府開支／收入)就出總額;冇嘅話多分類指標只出第一個分類,
+  // 但一定要寫低係邊個 —— 唔可以扮咗係總數。
+  const latestTotal = Array.isArray(totals) ? [...totals].reverse().find((t) => t.value !== null) : null;
+  const shown = latestTotal ?? latest_by_category?.[0] ?? latest;
+  const shownLabel = latestTotal
+    ? "總額"
+    : latest_by_category?.length
+      ? latest_by_category[0].category
+      : null;
 
   return html`<a class="indicator-card" href=${link}>
     <span class="indicator-card__category">${category ?? "指標"}</span>
@@ -58,7 +65,7 @@ export function indicatorCard(indicator, { href } = {}) {
       <span class="indicator-card__unit">${unit_short_zh ?? unit_zh}</span>
       ${shown ? html`<span class="indicator-card__period">${shown.period}</span>` : null}
     </p>
-    ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;呢個指標有多過一組數</p>` : null}
+    ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;入去可以睇分類</p>` : null}
 
     ${headline
       ? html`<p class="indicator-card__anchor">${headline.text_zh}</p>`

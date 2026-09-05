@@ -17,14 +17,18 @@ import {
   CENSTATD_LICENCE,
 } from "./censtatd.js";
 import { buildIndicator } from "./schema.js";
+import { formatNumber, formatChineseMagnitude } from "../../components/format.js";
 import {
   anchorPerDay,
   anchorVersusYear,
   anchorPerClassroom,
   anchorMultipleOf,
   anchorAverageChange,
+  anchorPerCapita,
   collectAnchors,
 } from "../../components/anchor.js";
+import { loadFstbCsvIndicator } from "./fstb.js";
+import { loadFiscalReserves } from "./treasury.js";
 
 /**
  * 統計處指標嘅設定形狀:
@@ -479,8 +483,144 @@ export async function loadCenstatdIndicator(id) {
   });
 }
 
+
+// ── 財政數據(財經事務及庫務局 CSV、庫務署 JSON)──────────────────
+//
+// SPEC 第 1 節三個活動入面,「資源裁定會議(分餅)」同「青年預算備忘」最靠呢三個。
+// 來源同 SPEC 第 6 節寫嘅唔同,實測結果見 findings.md 第 1 節。
+
+const DATA_GOV_HK_FIN_STATS = "https://data.gov.hk/tc-data/dataset/hk-fstb-tsyb-financial-statistics";
+
+function latestTotal(extras) {
+  return [...(extras.totals ?? [])].reverse().find((t) => t.value !== null) ?? null;
+}
+
+export const FISCAL_INDICATORS = {
+  govt_expenditure: {
+    kind: "fstb",
+    file: "fin-stats_recurrent-exp_a_tc.csv",
+    dataset_url: DATA_GOV_HK_FIN_STATS,
+    categories: [
+      { column: "教育", label_zh: "教育" },
+      { column: "社會福利", label_zh: "社會福利" },
+      { column: "衞生", label_zh: "衞生" },
+      { column: "其他", label_zh: "其他" },
+    ],
+    total_column: "經常開支",
+
+    name_zh: "政府經常開支",
+    name_en: "Government recurrent expenditure by policy area",
+    category: "公共財政",
+    question_zh: "政府每年使幾多錢?使喺邊度?",
+    notes_zh:
+      "呢個係「經常開支」(年年都要使嘅,例如人工、津貼),唔係「開支總額」—— 基建呢類一次過嘅唔計喺度。" +
+      "「其他」佔咗四成,因為呢份檔只拆四類;十個政策組別嘅完整拆法只有預算案附錄 PDF,要人手抄(見 manual/)。",
+    chart: { type: "line", y_zero: true },
+    anchors: (series, extras) => {
+      const total = latestTotal(extras);
+      const edu = series.filter((p) => p.category === "教育");
+      const eduLatest = [...edu].reverse().find((p) => p.value !== null);
+      return collectAnchors(
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年" }) : null,
+        total && eduLatest && eduLatest.period === total.period
+          ? {
+              id: "edu-share",
+              text_zh: `每 100 元經常開支,有 ${formatNumber((eduLatest.value / total.value) * 100, { digits: 1 })} 元使喺教育`,
+              basis_zh: `教育 ${formatChineseMagnitude(eduLatest.value)} ÷ 經常開支總額 ${formatChineseMagnitude(total.value)} × 100`,
+            }
+          : null,
+        anchorVersusYear(
+          (extras.totals ?? []).map((t) => ({ period: t.period, value: t.value })),
+          "1997-98",
+          { label: "回歸嗰年,總額" }
+        )
+      );
+    },
+  },
+
+  govt_revenue: {
+    kind: "fstb",
+    file: "fin-stats_govt-revenue_c_tc.csv",
+    dataset_url: DATA_GOV_HK_FIN_STATS,
+    categories: [
+      { column: "利得稅", label_zh: "利得稅" },
+      { column: "薪俸稅", label_zh: "薪俸稅" },
+      { column: "地價收入", label_zh: "地價收入" },
+      { column: "印花稅", label_zh: "印花稅" },
+      { column: "投資收入", label_zh: "投資收入" },
+      { column: "其他收入", label_zh: "其他收入" },
+    ],
+    total_column: "政府收入總額",
+
+    name_zh: "政府收入",
+    name_en: "Government revenue by source",
+    category: "公共財政",
+    question_zh: "政府啲錢由邊度嚟?邊條線最唔穩陣?",
+    notes_zh:
+      "「利得稅」係公司交嘅,「薪俸稅」係打工仔交嘅。「地價收入」係賣地同補地價,唔係稅 —— " +
+      "佢係六條線入面上落最大嗰條,樓市一淡就跌一大截。SPEC 原本以為呢批數只有立法會 PDF,實測上游有齊 CSV。",
+    chart: { type: "line", y_zero: true },
+    anchors: (series, extras) => {
+      const total = latestTotal(extras);
+      const land = series.filter((p) => p.category === "地價收入" && p.value !== null);
+      const peak = land.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
+      const landLatest = land.at(-1);
+      return collectAnchors(
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年貢獻" }) : null,
+        peak && landLatest && peak.period !== landLatest.period
+          ? {
+              id: "land-vs-peak",
+              text_zh: `地價收入最高係 ${peak.period} 年度,最新(${landLatest.period})只係嗰陣嘅 ${formatNumber((landLatest.value / peak.value) * 100, { digits: 0 })}%`,
+              basis_zh: `${formatChineseMagnitude(landLatest.value)} ÷ ${formatChineseMagnitude(peak.value)} × 100`,
+            }
+          : null
+      );
+    },
+  },
+
+  fiscal_reserves: {
+    kind: "treasury",
+    dataset_url: "https://data.gov.hk/tc-data/dataset/hk-try-trymthfinr-press-release-financial-results",
+
+    name_zh: "財政儲備",
+    name_en: "Fiscal reserves",
+    category: "公共財政",
+    question_zh: "政府銀行戶口有幾多錢?夠用幾耐?",
+    notes_zh: "SPEC 原本以為呢個要人手抄庫務署網頁,實測有 JSON,由 2019 年 4 月起每月一點。",
+    chart: { type: "line", y_zero: true },
+    anchors: (series, extras) => {
+      const latest = [...series].reverse().find((p) => p.value !== null);
+      const spend = extras.monthlyExpenditure ?? [];
+      const last12 = spend.slice(-12);
+      const avgMonthly = last12.length === 12 ? last12.reduce((a, p) => a + p.value, 0) / 12 : null;
+      return collectAnchors(
+        latest ? anchorPerCapita(latest.value, latest.period, extras.population, { noun: "每名香港市民" }) : null,
+        latest && avgMonthly
+          ? {
+              id: "months-of-spending",
+              text_zh: `如果政府一蚊收入都冇,呢筆儲備夠使大約 ${formatNumber(latest.value / avgMonthly, { digits: 1 })} 個月`,
+              basis_zh: `儲備 ${formatChineseMagnitude(latest.value)} ÷ 最近 12 個月平均每月開支 ${formatChineseMagnitude(avgMonthly)}`,
+            }
+          : null,
+        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早" })
+      );
+    },
+  },
+};
+
+export async function loadFiscalIndicator(id) {
+  const spec = FISCAL_INDICATORS[id];
+  if (!spec) throw new Error(`指標 "${id}" 唔喺財政登記冊入面`);
+  if (spec.kind === "fstb") return loadFstbCsvIndicator(id, spec);
+  if (spec.kind === "treasury") return loadFiscalReserves(spec);
+  throw new Error(`指標 "${id}" 嘅 kind "${spec.kind}" 唔識`);
+}
+
 /** 首頁指標卡嘅排序同分組用。 */
 export const INDICATOR_ORDER = [
+  "govt_expenditure",
+  "govt_revenue",
+  "fiscal_reserves",
   "gdp",
   "population",
   "unemployment",

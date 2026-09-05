@@ -11,10 +11,15 @@
 
 import * as Plot from "npm:@observablehq/plot";
 
-import { formatNumber, formatChineseMagnitude, toDate } from "./format.js";
+import { formatNumber, formatChineseMagnitude, toDate, isFiscalPeriodSeries, fiscalTickLabel } from "./format.js";
 
-/** 一個指標最多畫幾多條線。多過呢個數,圖就變咗一舊冷氣機。 */
-const MAX_SERIES = 5;
+/**
+ * 一個指標最多畫幾多條線。多過呢個數,圖就變咗一舊冷氣機。
+ * 6 係為咗政府收入(利得稅／薪俸稅／地價／印花稅／投資／其他)—— 六類都有教學價值,
+ * 合併任何兩類都會失去「地價收入大上大落」呢個重點。SPEC 第 9 節嘅「唔超過 5 類」
+ * 講嘅係圓餅圖;折線用 observable10 配色,6 條仲分得開。
+ */
+const MAX_SERIES = 6;
 
 /**
  * @param {object} indicator  符合 SPEC 第 5 節 schema 嘅指標 JSON
@@ -46,19 +51,32 @@ function tooltipTitle(indicator) {
       : `${row.label}\n${formatNumber(row.value)} ${indicator.unit_zh}`;
 }
 
-/** period 字串轉 Date。一個指標得一種 frequency,所以唔會撈亂。 */
+/**
+ * period 字串轉 Date。一個指標得一種 frequency,所以唔會撈亂 ——
+ * 但「2000-01」係年月定財政年度,要睇成條 series 先分得到(見 format.js)。
+ * 轉唔到嘅期數要大聲死,唔可以靜靜哋掉走:曾經因為咁,30 年數據得 12 年上到圖。
+ */
 function toRows(indicator) {
-  return indicator.series.map((point) => ({
-    date: toDate(point.period),
+  const fiscal = isFiscalPeriodSeries(indicator.series.map((point) => point.period));
+  const rows = indicator.series.map((point) => ({
+    date: toDate(point.period, { fiscal }),
     period: point.period,
     category: point.category ?? null,
     value: point.value,
     label: point.category ? `${point.period} · ${point.category}` : point.period,
   }));
+  const broken = rows.filter((row) => row.date === null).map((row) => row.period);
+  if (broken.length > 0) {
+    throw new Error(
+      `${indicator.indicator_id}:有 ${broken.length} 個期數轉唔到做日期(例如「${broken[0]}」),` +
+        `唔可以靜靜哋唔畫佢哋。`
+    );
+  }
+  return { rows, fiscal };
 }
 
 function lineChart(indicator, width) {
-  const rows = toRows(indicator);
+  const { rows, fiscal } = toRows(indicator);
   const categories = [...new Set(rows.map((row) => row.category).filter(Boolean))];
 
   if (categories.length > MAX_SERIES) {
@@ -77,9 +95,15 @@ function lineChart(indicator, width) {
     marginLeft: narrow(width) ? 54 : 66,
     marginBottom: 36,
     marginTop: 16,
-    x: { label: "", type: "utc" },
+    // 財政年度嘅刻度寫「2019–20」,唔好寫「2020」—— 個點喺 2019 年 4 月,寫 2020 會誤導
+    x: fiscal
+      ? { label: null, type: "utc", tickFormat: fiscalTickLabel, ticks: narrow(width) ? 5 : 8 }
+      : { label: null, type: "utc" },
     y: yAxis(indicator),
-    color: isMulti ? { legend: true, scheme: "observable10" } : undefined,
+    // domain 跟登記冊寫嘅次序 —— 否則圖例會字母排序,「其他」可以排喺「教育」前面
+    color: isMulti
+      ? { legend: true, scheme: "observable10", domain: indicator.category_order ?? categories }
+      : undefined,
     marks: [
       // 單條線先填色 —— 多條線疊住填色會互相遮住,睇唔到底下嗰條。
       !isMulti ? Plot.areaY(rows, { x: "date", y: "value", fillOpacity: 0.1 }) : null,

@@ -390,3 +390,15 @@ body {
   font-size: 0.78rem;
   color: var(--theme-foreground-muted);
 }
+
+/* 有總額嘅指標(政府開支／收入):總額行先、大啲,同各分類用一條線分開 */
+.headline__item--total {
+  flex-basis: 100%;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
+  border-bottom: 1px dashed var(--hk-border);
+}
+
+.headline--multi .headline__item--total .headline__number strong {
+  font-size: clamp(2.2rem, 10vw, 3rem);
+}

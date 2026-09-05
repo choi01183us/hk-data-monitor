@@ -6,7 +6,7 @@
 //
 // 規矩：唔准老作數字。所有換算常數都要有出處（見 CONSTANTS）。
 
-import { formatNumber, formatChineseMagnitude, formatPercentChange, formatPeriodZh } from "./format.js";
+import { formatNumber, formatChineseMagnitude, formatPercentChange, formatPeriodZh, isFiscalPeriodSeries } from "./format.js";
 
 export { formatNumber, formatChineseMagnitude, formatPercentChange, formatPeriodZh };
 
@@ -45,12 +45,19 @@ export function anchorVersusYear(series, targetPeriod, { label } = {}) {
   if (!then || !now || then.period === now.period) return null;
   const delta = formatPercentChange(then.value, now.value);
   if (!delta) return null;
-  const suffix = formatPeriodZh;
+  // 「2005-06」係 2005 年 6 月定 2005–06 年度?要睇成條 series 先知。
+  const fiscal = isFiscalPeriodSeries(series.map((point) => point.period));
+  const suffix = (period) => formatPeriodZh(period, { fiscal });
   return {
     id: `vs-${targetPeriod}`,
     text_zh: `對比 ${suffix(then.period)}${label ? `（${label}）` : ""}，${delta.text}`,
-    basis_zh: `${suffix(then.period)} ${formatNumber(then.value)} → ${suffix(now.period)} ${formatNumber(now.value)}`,
+    basis_zh: `${suffix(then.period)} ${big(then.value)} → ${suffix(now.period)} ${big(now.value)}`,
   };
+}
+
+/** 算式入面嘅數:億級用「億」寫,否則「149,386,000,000」呢種學生數唔到有幾多個零。 */
+function big(value) {
+  return Math.abs(value) >= 1e8 ? formatChineseMagnitude(value) : formatNumber(value);
 }
 
 /**
@@ -114,4 +121,48 @@ export function anchorYearsAndMonths(years, { label = "" } = {}) {
 /** 把一堆可能係 null 嘅錨點收埋做一個乾淨陣列。 */
 export function collectAnchors(...anchors) {
   return anchors.filter(Boolean);
+}
+
+/**
+ * SPEC 第 9 節點名要嘅錨點:「呢筆開支相當於每名香港市民 $X」,用當年人口做分母。
+ *
+ * @param {number} value            總額(港元)
+ * @param {string} period           呢筆數嘅期數,例如 "2025-26"(財政年度)或 "2026-04"
+ * @param {Array}  populationSeries 人口指標嘅 series(period 係 "YYYY-06" / "YYYY-12")
+ * @param {object} [options]
+ * @param {string} [options.noun="每名香港市民"]
+ *
+ * 分母點揀:財政年度 "2025-26" 用 2025 年年中人口;月度 "2026-04" 用唔遲過嗰個月嘅
+ * 最近一個年中／年底人口。揀邊個期數會寫入 basis_zh,學生驗得返。
+ */
+export function anchorPerCapita(value, period, populationSeries, { noun = "每名香港市民" } = {}) {
+  if (!Number.isFinite(value) || !Array.isArray(populationSeries) || populationSeries.length === 0) return null;
+
+  const text = String(period);
+  let target;
+  if (/^\d{4}-\d{2}$/.test(text) && Number(text.slice(5, 7)) > 12) {
+    // 財政年度 "2025-26" -> 2025 年年中
+    target = `${text.slice(0, 4)}-06`;
+  } else if (/^\d{4}-\d{2}$/.test(text)) {
+    target = text; // 月度,搵唔遲過佢嘅最近一點
+  } else if (/^\d{4}$/.test(text)) {
+    target = `${text}-06`;
+  } else {
+    return null;
+  }
+
+  const candidates = populationSeries
+    .filter((point) => Number.isFinite(point.value) && String(point.period) <= target)
+    .sort((a, b) => String(a.period).localeCompare(String(b.period)));
+  const denominator = candidates.at(-1);
+  if (!denominator || denominator.value <= 0) return null;
+
+  const perHead = value / denominator.value;
+  return {
+    id: "per-capita",
+    text_zh: `相當於${noun}約 HK$${formatNumber(perHead, { digits: 0 })}`,
+    basis_zh:
+      `${formatChineseMagnitude(value)} 元 ÷ ${formatPeriodZh(denominator.period)}人口 ` +  // 人口序列係月度,唔會係財政年度
+      `${formatChineseMagnitude(denominator.value)} 人`,
+  };
 }

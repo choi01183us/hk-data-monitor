@@ -1,0 +1,1119 @@
+{
+  "indicator_id": "govt_revenue",
+  "name_zh": "政府收入",
+  "name_en": "Government revenue by source",
+  "unit_zh": "港元",
+  "unit_en": "HK$",
+  "unit_short_zh": "元",
+  "unit_source_zh": "百萬元",
+  "value_digits": 0,
+  "source_zh": "財經事務及庫務局(經資料一線通 DATA.GOV.HK 提供)",
+  "source_en": "Financial Services and the Treasury Bureau, via DATA.GOV.HK",
+  "source_url": "https://data.gov.hk/tc-data/dataset/hk-fstb-tsyb-financial-statistics",
+  "source_note_zh": "檔案 fin-stats_govt-revenue_c_tc.csv(https://www.fstb.gov.hk/datagovhk/tsyb/financial-statistics/tc/fin-stats_govt-revenue_c_tc.csv)",
+  "licence": "data.gov.hk 使用條款",
+  "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
+  "updated_at": "2026-05-19",
+  "fetched_at": "2026-09-05T05:40:09.991Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "公共財政",
+  "question_zh": "政府啲錢由邊度嚟?邊條線最唔穩陣?",
+  "notes_zh": "原始檔用「百萬元」做單位,呢度已經乘返一百萬換算成「港元」,方便同人口相除。最新期數係預算數字,唔係實際數:2026-27(原來預算)。「利得稅」係公司交嘅,「薪俸稅」係打工仔交嘅。「地價收入」係賣地同補地價,唔係稅 —— 佢係六條線入面上落最大嗰條,樓市一淡就跌一大截。SPEC 原本以為呢批數只有立法會 PDF,實測上游有齊 CSV。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "per-capita",
+      "text_zh": "相當於每名香港市民一年貢獻約 HK$101,783",
+      "basis_zh": "7,652 億 元 ÷ 2026 年 6 月人口 752 萬 人"
+    },
+    {
+      "id": "land-vs-peak",
+      "text_zh": "地價收入最高係 2017-18 年度,最新(2026-27)只係嗰陣嘅 11%",
+      "basis_zh": "180 億 ÷ 1,648 億 × 100"
+    }
+  ],
+  "category_order": [
+    "利得稅",
+    "薪俸稅",
+    "地價收入",
+    "印花稅",
+    "投資收入",
+    "其他收入"
+  ],
+  "totals": [
+    {
+      "period": "1997-98",
+      "value": 281226000000
+    },
+    {
+      "period": "1998-99",
+      "value": 216115000000
+    },
+    {
+      "period": "1999-00",
+      "value": 232995000000
+    },
+    {
+      "period": "2000-01",
+      "value": 225060000000
+    },
+    {
+      "period": "2001-02",
+      "value": 175559000000
+    },
+    {
+      "period": "2002-03",
+      "value": 177489000000
+    },
+    {
+      "period": "2003-04",
+      "value": 207338000000
+    },
+    {
+      "period": "2004-05",
+      "value": 238197000000
+    },
+    {
+      "period": "2005-06",
+      "value": 247035000000
+    },
+    {
+      "period": "2006-07",
+      "value": 288014000000
+    },
+    {
+      "period": "2007-08",
+      "value": 358465000000
+    },
+    {
+      "period": "2008-09",
+      "value": 316562000000
+    },
+    {
+      "period": "2009-10",
+      "value": 318442000000
+    },
+    {
+      "period": "2010-11",
+      "value": 376481000000
+    },
+    {
+      "period": "2011-12",
+      "value": 437723000000
+    },
+    {
+      "period": "2012-13",
+      "value": 442150000000
+    },
+    {
+      "period": "2013-14",
+      "value": 455346000000
+    },
+    {
+      "period": "2014-15",
+      "value": 478668000000
+    },
+    {
+      "period": "2015-16",
+      "value": 450007000000
+    },
+    {
+      "period": "2016-17",
+      "value": 573124000000
+    },
+    {
+      "period": "2017-18",
+      "value": 619837000000
+    },
+    {
+      "period": "2018-19",
+      "value": 599774000000
+    },
+    {
+      "period": "2019-20",
+      "value": 590926000000
+    },
+    {
+      "period": "2020-21",
+      "value": 564230000000
+    },
+    {
+      "period": "2021-22",
+      "value": 693576000000
+    },
+    {
+      "period": "2022-23",
+      "value": 622147000000
+    },
+    {
+      "period": "2023-24",
+      "value": 549406000000
+    },
+    {
+      "period": "2024-25",
+      "value": 564909000000
+    },
+    {
+      "period": "2025-26",
+      "value": 697469000000
+    },
+    {
+      "period": "2026-27",
+      "value": 765234000000
+    }
+  ],
+  "period_notes": {
+    "2026-27": "原來預算"
+  },
+  "series": [
+    {
+      "period": "1997-98",
+      "category": "其他收入",
+      "value": 86217000000
+    },
+    {
+      "period": "1997-98",
+      "category": "利得稅",
+      "value": 55347000000
+    },
+    {
+      "period": "1997-98",
+      "category": "印花稅",
+      "value": 29097000000
+    },
+    {
+      "period": "1997-98",
+      "category": "地價收入",
+      "value": 62481000000
+    },
+    {
+      "period": "1997-98",
+      "category": "投資收入",
+      "value": 17925000000
+    },
+    {
+      "period": "1997-98",
+      "category": "薪俸稅",
+      "value": 30159000000
+    },
+    {
+      "period": "1998-99",
+      "category": "其他收入",
+      "value": 77035000000
+    },
+    {
+      "period": "1998-99",
+      "category": "利得稅",
+      "value": 45252000000
+    },
+    {
+      "period": "1998-99",
+      "category": "印花稅",
+      "value": 10189000000
+    },
+    {
+      "period": "1998-99",
+      "category": "地價收入",
+      "value": 19251000000
+    },
+    {
+      "period": "1998-99",
+      "category": "投資收入",
+      "value": 39325000000
+    },
+    {
+      "period": "1998-99",
+      "category": "薪俸稅",
+      "value": 25063000000
+    },
+    {
+      "period": "1999-00",
+      "category": "其他收入",
+      "value": 81619000000
+    },
+    {
+      "period": "1999-00",
+      "category": "利得稅",
+      "value": 37699000000
+    },
+    {
+      "period": "1999-00",
+      "category": "印花稅",
+      "value": 12116000000
+    },
+    {
+      "period": "1999-00",
+      "category": "地價收入",
+      "value": 34810000000
+    },
+    {
+      "period": "1999-00",
+      "category": "投資收入",
+      "value": 41920000000
+    },
+    {
+      "period": "1999-00",
+      "category": "薪俸稅",
+      "value": 24831000000
+    },
+    {
+      "period": "2000-01",
+      "category": "其他收入",
+      "value": 91827000000
+    },
+    {
+      "period": "2000-01",
+      "category": "利得稅",
+      "value": 42969000000
+    },
+    {
+      "period": "2000-01",
+      "category": "印花稅",
+      "value": 10911000000
+    },
+    {
+      "period": "2000-01",
+      "category": "地價收入",
+      "value": 29531000000
+    },
+    {
+      "period": "2000-01",
+      "category": "投資收入",
+      "value": 23519000000
+    },
+    {
+      "period": "2000-01",
+      "category": "薪俸稅",
+      "value": 26303000000
+    },
+    {
+      "period": "2001-02",
+      "category": "其他收入",
+      "value": 82713000000
+    },
+    {
+      "period": "2001-02",
+      "category": "利得稅",
+      "value": 44376000000
+    },
+    {
+      "period": "2001-02",
+      "category": "印花稅",
+      "value": 8637000000
+    },
+    {
+      "period": "2001-02",
+      "category": "地價收入",
+      "value": 10327000000
+    },
+    {
+      "period": "2001-02",
+      "category": "投資收入",
+      "value": 872000000
+    },
+    {
+      "period": "2001-02",
+      "category": "薪俸稅",
+      "value": 28634000000
+    },
+    {
+      "period": "2002-03",
+      "category": "其他收入",
+      "value": 72473000000
+    },
+    {
+      "period": "2002-03",
+      "category": "利得稅",
+      "value": 38799000000
+    },
+    {
+      "period": "2002-03",
+      "category": "印花稅",
+      "value": 7458000000
+    },
+    {
+      "period": "2002-03",
+      "category": "地價收入",
+      "value": 11476000000
+    },
+    {
+      "period": "2002-03",
+      "category": "投資收入",
+      "value": 17550000000
+    },
+    {
+      "period": "2002-03",
+      "category": "薪俸稅",
+      "value": 29733000000
+    },
+    {
+      "period": "2003-04",
+      "category": "其他收入",
+      "value": 88035000000
+    },
+    {
+      "period": "2003-04",
+      "category": "利得稅",
+      "value": 48770000000
+    },
+    {
+      "period": "2003-04",
+      "category": "印花稅",
+      "value": 11246000000
+    },
+    {
+      "period": "2003-04",
+      "category": "地價收入",
+      "value": 5415000000
+    },
+    {
+      "period": "2003-04",
+      "category": "投資收入",
+      "value": 25895000000
+    },
+    {
+      "period": "2003-04",
+      "category": "薪俸稅",
+      "value": 27977000000
+    },
+    {
+      "period": "2004-05",
+      "category": "其他收入",
+      "value": 83009000000
+    },
+    {
+      "period": "2004-05",
+      "category": "利得稅",
+      "value": 58640000000
+    },
+    {
+      "period": "2004-05",
+      "category": "印花稅",
+      "value": 15851000000
+    },
+    {
+      "period": "2004-05",
+      "category": "地價收入",
+      "value": 32033000000
+    },
+    {
+      "period": "2004-05",
+      "category": "投資收入",
+      "value": 14674000000
+    },
+    {
+      "period": "2004-05",
+      "category": "薪俸稅",
+      "value": 33990000000
+    },
+    {
+      "period": "2005-06",
+      "category": "其他收入",
+      "value": 82033000000
+    },
+    {
+      "period": "2005-06",
+      "category": "利得稅",
+      "value": 69797000000
+    },
+    {
+      "period": "2005-06",
+      "category": "印花稅",
+      "value": 17867000000
+    },
+    {
+      "period": "2005-06",
+      "category": "地價收入",
+      "value": 29472000000
+    },
+    {
+      "period": "2005-06",
+      "category": "投資收入",
+      "value": 10372000000
+    },
+    {
+      "period": "2005-06",
+      "category": "薪俸稅",
+      "value": 37494000000
+    },
+    {
+      "period": "2006-07",
+      "category": "其他收入",
+      "value": 86013000000
+    },
+    {
+      "period": "2006-07",
+      "category": "利得稅",
+      "value": 71919000000
+    },
+    {
+      "period": "2006-07",
+      "category": "印花稅",
+      "value": 25077000000
+    },
+    {
+      "period": "2006-07",
+      "category": "地價收入",
+      "value": 37001000000
+    },
+    {
+      "period": "2006-07",
+      "category": "投資收入",
+      "value": 29418000000
+    },
+    {
+      "period": "2006-07",
+      "category": "薪俸稅",
+      "value": 38586000000
+    },
+    {
+      "period": "2007-08",
+      "category": "其他收入",
+      "value": 87776000000
+    },
+    {
+      "period": "2007-08",
+      "category": "利得稅",
+      "value": 91423000000
+    },
+    {
+      "period": "2007-08",
+      "category": "印花稅",
+      "value": 51549000000
+    },
+    {
+      "period": "2007-08",
+      "category": "地價收入",
+      "value": 62318000000
+    },
+    {
+      "period": "2007-08",
+      "category": "投資收入",
+      "value": 27920000000
+    },
+    {
+      "period": "2007-08",
+      "category": "薪俸稅",
+      "value": 37479000000
+    },
+    {
+      "period": "2008-09",
+      "category": "其他收入",
+      "value": 77734000000
+    },
+    {
+      "period": "2008-09",
+      "category": "利得稅",
+      "value": 104151000000
+    },
+    {
+      "period": "2008-09",
+      "category": "印花稅",
+      "value": 32162000000
+    },
+    {
+      "period": "2008-09",
+      "category": "地價收入",
+      "value": 16936000000
+    },
+    {
+      "period": "2008-09",
+      "category": "投資收入",
+      "value": 46571000000
+    },
+    {
+      "period": "2008-09",
+      "category": "薪俸稅",
+      "value": 39008000000
+    },
+    {
+      "period": "2009-10",
+      "category": "其他收入",
+      "value": 84952000000
+    },
+    {
+      "period": "2009-10",
+      "category": "利得稅",
+      "value": 76605000000
+    },
+    {
+      "period": "2009-10",
+      "category": "印花稅",
+      "value": 42383000000
+    },
+    {
+      "period": "2009-10",
+      "category": "地價收入",
+      "value": 39632000000
+    },
+    {
+      "period": "2009-10",
+      "category": "投資收入",
+      "value": 33625000000
+    },
+    {
+      "period": "2009-10",
+      "category": "薪俸稅",
+      "value": 41245000000
+    },
+    {
+      "period": "2010-11",
+      "category": "其他收入",
+      "value": 88560000000
+    },
+    {
+      "period": "2010-11",
+      "category": "利得稅",
+      "value": 93183000000
+    },
+    {
+      "period": "2010-11",
+      "category": "印花稅",
+      "value": 51005000000
+    },
+    {
+      "period": "2010-11",
+      "category": "地價收入",
+      "value": 65545000000
+    },
+    {
+      "period": "2010-11",
+      "category": "投資收入",
+      "value": 33933000000
+    },
+    {
+      "period": "2010-11",
+      "category": "薪俸稅",
+      "value": 44255000000
+    },
+    {
+      "period": "2011-12",
+      "category": "其他收入",
+      "value": 101116000000
+    },
+    {
+      "period": "2011-12",
+      "category": "利得稅",
+      "value": 118600000000
+    },
+    {
+      "period": "2011-12",
+      "category": "印花稅",
+      "value": 44356000000
+    },
+    {
+      "period": "2011-12",
+      "category": "地價收入",
+      "value": 84644000000
+    },
+    {
+      "period": "2011-12",
+      "category": "投資收入",
+      "value": 37246000000
+    },
+    {
+      "period": "2011-12",
+      "category": "薪俸稅",
+      "value": 51761000000
+    },
+    {
+      "period": "2012-13",
+      "category": "其他收入",
+      "value": 115607000000
+    },
+    {
+      "period": "2012-13",
+      "category": "利得稅",
+      "value": 125638000000
+    },
+    {
+      "period": "2012-13",
+      "category": "印花稅",
+      "value": 42880000000
+    },
+    {
+      "period": "2012-13",
+      "category": "地價收入",
+      "value": 69563000000
+    },
+    {
+      "period": "2012-13",
+      "category": "投資收入",
+      "value": 37995000000
+    },
+    {
+      "period": "2012-13",
+      "category": "薪俸稅",
+      "value": 50467000000
+    },
+    {
+      "period": "2013-14",
+      "category": "其他收入",
+      "value": 116074000000
+    },
+    {
+      "period": "2013-14",
+      "category": "利得稅",
+      "value": 120882000000
+    },
+    {
+      "period": "2013-14",
+      "category": "印花稅",
+      "value": 41515000000
+    },
+    {
+      "period": "2013-14",
+      "category": "地價收入",
+      "value": 84255000000
+    },
+    {
+      "period": "2013-14",
+      "category": "投資收入",
+      "value": 37000000000
+    },
+    {
+      "period": "2013-14",
+      "category": "薪俸稅",
+      "value": 55620000000
+    },
+    {
+      "period": "2014-15",
+      "category": "其他收入",
+      "value": 128610000000
+    },
+    {
+      "period": "2014-15",
+      "category": "利得稅",
+      "value": 137847000000
+    },
+    {
+      "period": "2014-15",
+      "category": "印花稅",
+      "value": 74845000000
+    },
+    {
+      "period": "2014-15",
+      "category": "地價收入",
+      "value": 77804000000
+    },
+    {
+      "period": "2014-15",
+      "category": "投資收入",
+      "value": 215000000
+    },
+    {
+      "period": "2014-15",
+      "category": "薪俸稅",
+      "value": 59347000000
+    },
+    {
+      "period": "2015-16",
+      "category": "其他收入",
+      "value": 128156000000
+    },
+    {
+      "period": "2015-16",
+      "category": "利得稅",
+      "value": 140227000000
+    },
+    {
+      "period": "2015-16",
+      "category": "印花稅",
+      "value": 62680000000
+    },
+    {
+      "period": "2015-16",
+      "category": "地價收入",
+      "value": 60893000000
+    },
+    {
+      "period": "2015-16",
+      "category": "投資收入",
+      "value": 183000000
+    },
+    {
+      "period": "2015-16",
+      "category": "薪俸稅",
+      "value": 57868000000
+    },
+    {
+      "period": "2016-17",
+      "category": "其他收入",
+      "value": 164215000000
+    },
+    {
+      "period": "2016-17",
+      "category": "利得稅",
+      "value": 139238000000
+    },
+    {
+      "period": "2016-17",
+      "category": "印花稅",
+      "value": 61899000000
+    },
+    {
+      "period": "2016-17",
+      "category": "地價收入",
+      "value": 127970000000
+    },
+    {
+      "period": "2016-17",
+      "category": "投資收入",
+      "value": 20725000000
+    },
+    {
+      "period": "2016-17",
+      "category": "薪俸稅",
+      "value": 59077000000
+    },
+    {
+      "period": "2017-18",
+      "category": "其他收入",
+      "value": 138471000000
+    },
+    {
+      "period": "2017-18",
+      "category": "利得稅",
+      "value": 139100000000
+    },
+    {
+      "period": "2017-18",
+      "category": "印花稅",
+      "value": 95173000000
+    },
+    {
+      "period": "2017-18",
+      "category": "地價收入",
+      "value": 164811000000
+    },
+    {
+      "period": "2017-18",
+      "category": "投資收入",
+      "value": 21443000000
+    },
+    {
+      "period": "2017-18",
+      "category": "薪俸稅",
+      "value": 60839000000
+    },
+    {
+      "period": "2018-19",
+      "category": "其他收入",
+      "value": 135826000000
+    },
+    {
+      "period": "2018-19",
+      "category": "利得稅",
+      "value": 166620000000
+    },
+    {
+      "period": "2018-19",
+      "category": "印花稅",
+      "value": 79979000000
+    },
+    {
+      "period": "2018-19",
+      "category": "地價收入",
+      "value": 116861000000
+    },
+    {
+      "period": "2018-19",
+      "category": "投資收入",
+      "value": 40342000000
+    },
+    {
+      "period": "2018-19",
+      "category": "薪俸稅",
+      "value": 60146000000
+    },
+    {
+      "period": "2019-20",
+      "category": "其他收入",
+      "value": 127289000000
+    },
+    {
+      "period": "2019-20",
+      "category": "利得稅",
+      "value": 155900000000
+    },
+    {
+      "period": "2019-20",
+      "category": "印花稅",
+      "value": 67198000000
+    },
+    {
+      "period": "2019-20",
+      "category": "地價收入",
+      "value": 141728000000
+    },
+    {
+      "period": "2019-20",
+      "category": "投資收入",
+      "value": 48399000000
+    },
+    {
+      "period": "2019-20",
+      "category": "薪俸稅",
+      "value": 50412000000
+    },
+    {
+      "period": "2020-21",
+      "category": "其他收入",
+      "value": 123479000000
+    },
+    {
+      "period": "2020-21",
+      "category": "利得稅",
+      "value": 135540000000
+    },
+    {
+      "period": "2020-21",
+      "category": "印花稅",
+      "value": 89045000000
+    },
+    {
+      "period": "2020-21",
+      "category": "地價收入",
+      "value": 88713000000
+    },
+    {
+      "period": "2020-21",
+      "category": "投資收入",
+      "value": 52426000000
+    },
+    {
+      "period": "2020-21",
+      "category": "薪俸稅",
+      "value": 75027000000
+    },
+    {
+      "period": "2021-22",
+      "category": "其他收入",
+      "value": 127516000000
+    },
+    {
+      "period": "2021-22",
+      "category": "利得稅",
+      "value": 167336000000
+    },
+    {
+      "period": "2021-22",
+      "category": "印花稅",
+      "value": 99677000000
+    },
+    {
+      "period": "2021-22",
+      "category": "地價收入",
+      "value": 143044000000
+    },
+    {
+      "period": "2021-22",
+      "category": "投資收入",
+      "value": 80433000000
+    },
+    {
+      "period": "2021-22",
+      "category": "薪俸稅",
+      "value": 75570000000
+    },
+    {
+      "period": "2022-23",
+      "category": "其他收入",
+      "value": 135239000000
+    },
+    {
+      "period": "2022-23",
+      "category": "利得稅",
+      "value": 174212000000
+    },
+    {
+      "period": "2022-23",
+      "category": "印花稅",
+      "value": 69977000000
+    },
+    {
+      "period": "2022-23",
+      "category": "地價收入",
+      "value": 69928000000
+    },
+    {
+      "period": "2022-23",
+      "category": "投資收入",
+      "value": 93301000000
+    },
+    {
+      "period": "2022-23",
+      "category": "薪俸稅",
+      "value": 79490000000
+    },
+    {
+      "period": "2023-24",
+      "category": "其他收入",
+      "value": 155395000000
+    },
+    {
+      "period": "2023-24",
+      "category": "利得稅",
+      "value": 170498000000
+    },
+    {
+      "period": "2023-24",
+      "category": "印花稅",
+      "value": 49112000000
+    },
+    {
+      "period": "2023-24",
+      "category": "地價收入",
+      "value": 19581000000
+    },
+    {
+      "period": "2023-24",
+      "category": "投資收入",
+      "value": 74950000000
+    },
+    {
+      "period": "2023-24",
+      "category": "薪俸稅",
+      "value": 79870000000
+    },
+    {
+      "period": "2024-25",
+      "category": "其他收入",
+      "value": 176143000000
+    },
+    {
+      "period": "2024-25",
+      "category": "利得稅",
+      "value": 177688000000
+    },
+    {
+      "period": "2024-25",
+      "category": "印花稅",
+      "value": 63880000000
+    },
+    {
+      "period": "2024-25",
+      "category": "地價收入",
+      "value": 13602000000
+    },
+    {
+      "period": "2024-25",
+      "category": "投資收入",
+      "value": 44717000000
+    },
+    {
+      "period": "2024-25",
+      "category": "薪俸稅",
+      "value": 88879000000
+    },
+    {
+      "period": "2025-26",
+      "category": "其他收入",
+      "value": 230530000000
+    },
+    {
+      "period": "2025-26",
+      "category": "利得稅",
+      "value": 212645000000
+    },
+    {
+      "period": "2025-26",
+      "category": "印花稅",
+      "value": 102565000000
+    },
+    {
+      "period": "2025-26",
+      "category": "地價收入",
+      "value": 18569000000
+    },
+    {
+      "period": "2025-26",
+      "category": "投資收入",
+      "value": 35468000000
+    },
+    {
+      "period": "2025-26",
+      "category": "薪俸稅",
+      "value": 97692000000
+    },
+    {
+      "period": "2026-27",
+      "category": "其他收入",
+      "value": 299158000000
+    },
+    {
+      "period": "2026-27",
+      "category": "利得稅",
+      "value": 210000000000
+    },
+    {
+      "period": "2026-27",
+      "category": "印花稅",
+      "value": 101000000000
+    },
+    {
+      "period": "2026-27",
+      "category": "地價收入",
+      "value": 18000000000
+    },
+    {
+      "period": "2026-27",
+      "category": "投資收入",
+      "value": 39076000000
+    },
+    {
+      "period": "2026-27",
+      "category": "薪俸稅",
+      "value": 98000000000
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "利得稅",
+      "period": "2026-27",
+      "value": 210000000000
+    },
+    {
+      "category": "薪俸稅",
+      "period": "2026-27",
+      "value": 98000000000
+    },
+    {
+      "category": "地價收入",
+      "period": "2026-27",
+      "value": 18000000000
+    },
+    {
+      "category": "印花稅",
+      "period": "2026-27",
+      "value": 101000000000
+    },
+    {
+      "category": "投資收入",
+      "period": "2026-27",
+      "value": 39076000000
+    },
+    {
+      "category": "其他收入",
+      "period": "2026-27",
+      "value": 299158000000
+    }
+  ],
+  "coverage": {
+    "start": "1997-98",
+    "end": "2026-27",
+    "points": 180,
+    "points_with_value": 180
+  },
+  "latest": {
+    "period": "2026-27",
+    "category": "薪俸稅",
+    "value": 98000000000
+  },
+  "content_hash": "sha256:bf1f7b17cb571e1a",
+  "data_version": "2026.09.1"
+}
