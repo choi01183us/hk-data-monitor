@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="香港數據監測站">
+  <!-- maskable 安全區:內容盡量留喺中間 80%,免得被圓形／水滴形遮罩切走 -->
+  <rect width="512" height="512" fill="#0f172a"/>
+  <g fill="none" stroke="#38bdf8" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 一條由低走高嘅折線,同站內圖表同一個語言 -->
+    <path d="M110 350 L190 260 L260 300 L330 190 L402 140"/>
+  </g>
+  <g fill="#38bdf8">
+    <circle cx="402" cy="140" r="20"/>
+  </g>
+  <g fill="none" stroke="#475569" stroke-width="16" stroke-linecap="round">
+    <!-- 座標軸 -->
+    <path d="M104 120 L104 396 L408 396"/>
+  </g>
+</svg>

@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T01:22:13.516Z",
+  "fetched_at": "2026-09-05T12:17:42.324Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "就業",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": true
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "per-classroom",
+      "text_zh": "一班 30 人嘅課室，大約有 3.4 個後生仔女搵緊工搵唔到",
+      "basis_zh": "11.2% × 30 人"
+    },
+    {
+      "id": "youth-vs-all",
+      "text_zh": "青年失業率係全港整體嘅 3 倍",
+      "basis_zh": "11.2% ÷ 3.7%"
+    },
+    {
+      "id": "vs-peak",
+      "text_zh": "有紀錄以嚟最高係 2003 年嘅 7.9%,而家係嗰陣嘅 47%",
+      "basis_zh": "3.7% ÷ 7.9% × 100"
+    }
+  ],
   "category_order": [
     "全港整體",
     "15–24 歲青年"
@@ -464,6 +480,6 @@
     "category": "全港整體",
     "value": 3.7
   },
-  "content_hash": "sha256:d32b002a06e4aaba",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:59d6ac778d4a3fb0",
+  "data_version": "2026.09.4"
 }

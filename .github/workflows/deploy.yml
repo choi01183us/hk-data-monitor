@@ -1,0 +1,84 @@
+# 砌站 + 部署去 GitHub Pages。
+#
+# 三個入口:
+#   · push 上 main —— 改咗程式碼就重新部署
+#   · 手動觸發
+#   · 由 refresh-data.yml 叫(workflow_call)—— 因為用 GITHUB_TOKEN 推嘅 commit
+#     唔會自己觸發 Pages build
+#
+# ⚠️ 用 actions/upload-pages-artifact + actions/deploy-pages 呢條路,**唔會**行 Jekyll,
+#    所以唔使 .nojekyll。反而由分支發佈嗰條路先要 —— Jekyll 會掉走所有底線開頭嘅目錄,
+#    而 Framework 出嘅 _observablehq / _npm / _file / _import 全部都係,即係成個站會冇咗。
+#    另外 upload-pages-artifact 預設會排除所有 dotfile,所以就算你放個 .nojekyll 落 dist
+#    佢都上唔到去。
+
+name: 部署去 GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "manual/README.md"
+      - ".github/**.md"
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# GitHub Pages 只准一個部署行緊。cancel-in-progress: false 令排住隊嗰個唔會被斬。
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    name: 砌站
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: 設定 Pages
+        id: pages
+        uses: actions/configure-pages@v6
+
+      - name: 砌站
+        env:
+          # configure-pages 出嘅 base_path 係 "/hk-data-monitor" 或者 ""(自訂網域)。
+          # ⚠️ Framework 收到 "" 會掟錯(base must start with slash),所以一定要補條斜線。
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}/
+          # CI 唔應該再上網抓數 —— 數據已經由 refresh-data.yml commit 咗入 repo。
+          # 咁 build 就唔會因為某個政府 API 一時唔通而失敗,亦都快好多。
+          HKDM_OFFLINE: "1"
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    name: 部署
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

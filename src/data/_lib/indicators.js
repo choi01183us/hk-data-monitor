@@ -189,6 +189,30 @@ export const CENSTATD_INDICATORS = {
       "「失業」嘅定義係:冇工開、有搵過工、而且隨時做得。所以讀緊書冇搵工嘅學生唔計入失業。" +
       "青年嗰條線長期高過整體,係全世界都咁,唔係香港獨有。",
     chart: { type: "line", y_zero: true },
+    anchors: (series) => {
+      const youth = series.filter((p) => p.category === "15–24 歲青年" && p.value !== null);
+      const all = series.filter((p) => p.category === "全港整體" && p.value !== null);
+      const latestYouth = youth.at(-1);
+      const latestAll = all.at(-1);
+      const peakAll = all.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
+      return collectAnchors(
+        latestYouth ? anchorPerClassroom(latestYouth.value, { classSize: 30, subject: "個後生仔女搵緊工搵唔到" }) : null,
+        latestYouth && latestAll
+          ? {
+              id: "youth-vs-all",
+              text_zh: `青年失業率係全港整體嘅 ${formatNumber(latestYouth.value / latestAll.value, { digits: 1 })} 倍`,
+              basis_zh: `${latestYouth.value}% ÷ ${latestAll.value}%`,
+            }
+          : null,
+        peakAll && latestAll && peakAll.period !== latestAll.period
+          ? {
+              id: "vs-peak",
+              text_zh: `有紀錄以嚟最高係 ${peakAll.period} 年嘅 ${peakAll.value}%,而家係嗰陣嘅 ${formatNumber((latestAll.value / peakAll.value) * 100, { digits: 0 })}%`,
+              basis_zh: `${latestAll.value}% ÷ ${peakAll.value}% × 100`,
+            }
+          : null
+      );
+    },
   },
 
   median_wage: {
@@ -223,6 +247,28 @@ export const CENSTATD_INDICATORS = {
       "用中位數係因為少數極高收入會把平均數扯高,中位數就唔會。" +
       "「所有僱員」包埋兼職,所以低過「全職僱員」。2009–2010 年係該年第二季嘅數,2011 年起係 5 至 6 月。",
     chart: { type: "line", y_zero: false },
+    anchors: (series) => {
+      const all = series.filter((p) => p.category === "所有僱員" && p.value !== null);
+      const latest = all.at(-1);
+      const first = all[0];
+      return collectAnchors(
+        latest
+          ? {
+              id: "per-year",
+              text_zh: `一年計就係 ${formatChineseMagnitude(latest.value * 12)} 元(未扣稅同強積金)`,
+              basis_zh: `${formatNumber(latest.value)} 元 × 12 個月`,
+            }
+          : null,
+        anchorVersusYear(all, first?.period, { label: "有紀錄最早" }),
+        latest && first
+          ? {
+              id: "vs-first-per-year",
+              text_zh: `即係比 ${first.period} 年每個月多 ${formatNumber(latest.value - first.value)} 元`,
+              basis_zh: `${formatNumber(latest.value)} − ${formatNumber(first.value)}`,
+            }
+          : null
+      );
+    },
   },
 
   household_income: {
@@ -249,6 +295,21 @@ export const CENSTATD_INDICATORS = {
       "一個三人家庭可能有兩個人返緊工。" +
       "統計處另有「不包括外籍家庭傭工」嘅版本(MED_DH_INC_XFDH),數字會高啲。",
     chart: { type: "line", y_zero: false },
+    anchors: (series) =>
+      collectAnchors(
+        (() => {
+          const latest = [...series].reverse().find((p) => p.value !== null);
+          return latest
+            ? {
+                id: "per-year",
+                text_zh: `一年計就係 ${formatChineseMagnitude(latest.value * 12)} 元(成個住戶加埋)`,
+                basis_zh: `${formatNumber(latest.value)} 元 × 12 個月`,
+              }
+            : null;
+        })(),
+        anchorVersusYear(series, "1997"),
+        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早" })
+      ),
   },
 
   cpi: {
@@ -274,6 +335,40 @@ export const CENSTATD_INDICATORS = {
       "只要仲喺零以上,價錢就仲係升緊,只係升得慢咗。跌穿零先叫通縮。" +
       "統計處另有甲／乙／丙三類指數,分別對應唔同開支水平嘅住戶,感受到嘅通脹可以好唔同。",
     chart: { type: "line", y_zero: true },
+    anchors: (series) => {
+      const withValues = series.filter((p) => p.value !== null);
+      const latest = withValues.at(-1);
+      // 最近 12 個月嘅累積:逐個月 (1 + r/100) 乘埋,唔可以直接加 —— 通脹係複利。
+      const lastYear = withValues.slice(-12);
+      const cumulative =
+        lastYear.length === 12 ? (lastYear.reduce((acc, p) => acc * (1 + p.value / 100), 1) ** (1 / 12) - 1) * 100 : null;
+      return collectAnchors(
+        latest
+          ? {
+              id: "hundred-dollars",
+              text_zh: `舊年 100 蚊買到嘅嘢,今年要 ${formatNumber(100 * (1 + latest.value / 100), { digits: 2 })} 蚊`,
+              basis_zh: `100 × (1 + ${latest.value}% ÷ 100)`,
+            }
+          : null,
+        cumulative !== null
+          ? {
+              id: "avg-12m",
+              text_zh: `最近 12 個月平均每月按年升 ${formatNumber(cumulative, { digits: 2 })}%`,
+              basis_zh: `12 個月嘅 (1 + 每月按年變動) 相乘,再開 12 次方 —— 通脹係複利,唔可以直接加埋除 12`,
+            }
+          : null,
+        latest
+          ? {
+              id: "direction",
+              text_zh:
+                latest.value > 0
+                  ? "而家仲係通脹:物價繼續升,只係升幅有幾大嘅分別"
+                  : "而家係通縮:物價比舊年平咗",
+              basis_zh: `最新按年變動 ${latest.value}%,零以上係通脹,零以下先係通縮`,
+            }
+          : null
+      );
+    },
   },
 
   four_key_industries: {
@@ -309,6 +404,31 @@ export const CENSTATD_INDICATORS = {
       "四條線加埋唔等於 100% —— 四大行業以外仲有製造業、建造業、公營部門等等。" +
       "睇呢個圖嘅重點唔係邊條線最高,而係邊條線嘅走勢喺變。",
     chart: { type: "line", y_zero: true },
+    anchors: (series) => {
+      const latestPeriod = series.filter((p) => p.value !== null).at(-1)?.period;
+      const latest = series.filter((p) => p.period === latestPeriod && p.value !== null);
+      const sum = latest.reduce((acc, p) => acc + p.value, 0);
+      const top = latest.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
+      const finance = series.filter((p) => p.category === "金融服務" && p.value !== null);
+      const trade = series.filter((p) => p.category === "貿易及物流" && p.value !== null);
+      return collectAnchors(
+        latestPeriod
+          ? {
+              id: "sum",
+              text_zh: `四大行業加埋佔 ${formatNumber(sum, { digits: 1 })}% —— 即係每 100 蚊經濟產值,有 ${formatNumber(100 - sum, { digits: 1 })} 蚊嚟自其他行業`,
+              basis_zh: `${latest.map((p) => p.value).join(" + ")} = ${formatNumber(sum, { digits: 1 })}`,
+            }
+          : null,
+        top ? { id: "top", text_zh: `最大嗰個係${top.category},佔 ${top.value}%`, basis_zh: `${latestPeriod} 年四個數入面最大` } : null,
+        finance.length > 1 && trade.length > 1
+          ? {
+              id: "swap",
+              text_zh: `${finance[0].period} 年貿易及物流(${trade[0].value}%)大過金融服務(${finance[0].value}%);${finance.at(-1).period} 年已經調轉`,
+              basis_zh: `貿易及物流 ${trade[0].value}% → ${trade.at(-1).value}%,金融服務 ${finance[0].value}% → ${finance.at(-1).value}%`,
+            }
+          : null
+      );
+    },
   },
 
   hkex_listings: {
@@ -341,6 +461,29 @@ export const CENSTATD_INDICATORS = {
       "呢個表冇「總計」行,所以主板同 GEM 分開兩條線,想要總數就自己加埋。" +
       "上市公司數目多唔一定代表市場好 —— 仲要睇市值同成交額。",
     chart: { type: "line", y_zero: false },
+    anchors: (series) => {
+      const latestPeriod = series.filter((p) => p.value !== null).at(-1)?.period;
+      const latest = series.filter((p) => p.period === latestPeriod && p.value !== null);
+      const total = latest.reduce((acc, p) => acc + p.value, 0);
+      const main = series.filter((p) => p.category === "主板" && p.value !== null);
+      return collectAnchors(
+        latestPeriod
+          ? {
+              id: "total",
+              text_zh: `主板加 GEM 一共 ${formatNumber(total)} 間公司`,
+              basis_zh: `${latest.map((p) => `${p.category} ${p.value}`).join(" + ")}`,
+            }
+          : null,
+        anchorVersusYear(main, main[0]?.period, { label: "主板,有紀錄最早" }),
+        main.length > 1
+          ? {
+              id: "per-year",
+              text_zh: `主板平均每年多 ${formatNumber((main.at(-1).value - main[0].value) / (Number(main.at(-1).period) - Number(main[0].period)), { digits: 0 })} 間`,
+              basis_zh: `(${main.at(-1).value} − ${main[0].value}) ÷ ${Number(main.at(-1).period) - Number(main[0].period)} 年`,
+            }
+          : null
+      );
+    },
   },
 };
 

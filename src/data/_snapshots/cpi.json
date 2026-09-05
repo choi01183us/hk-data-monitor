@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T01:22:32.817Z",
+  "fetched_at": "2026-09-05T12:18:05.388Z",
   "frequency": "monthly",
   "acquisition": "api",
   "category": "物價",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": true
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "hundred-dollars",
+      "text_zh": "舊年 100 蚊買到嘅嘢,今年要 101.7 蚊",
+      "basis_zh": "100 × (1 + 1.7% ÷ 100)"
+    },
+    {
+      "id": "avg-12m",
+      "text_zh": "最近 12 個月平均每月按年升 1.49%",
+      "basis_zh": "12 個月嘅 (1 + 每月按年變動) 相乘,再開 12 次方 —— 通脹係複利,唔可以直接加埋除 12"
+    },
+    {
+      "id": "direction",
+      "text_zh": "而家仲係通脹:物價繼續升,只係升幅有幾大嘅分別",
+      "basis_zh": "最新按年變動 1.7%,零以上係通脹,零以下先係通縮"
+    }
+  ],
   "category_order": null,
   "series": [
     {
@@ -2191,6 +2207,6 @@
     "period": "2026-07",
     "value": 1.7
   },
-  "content_hash": "sha256:d258ca4b7b189fc4",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:ce20633d9ca62202",
+  "data_version": "2026.09.4"
 }

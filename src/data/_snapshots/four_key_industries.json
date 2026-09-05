@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-05-15",
-  "fetched_at": "2026-09-05T01:22:38.852Z",
+  "fetched_at": "2026-09-05T12:18:12.439Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "經濟",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": true
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "sum",
+      "text_zh": "四大行業加埋佔 58.2% —— 即係每 100 蚊經濟產值,有 41.8 蚊嚟自其他行業",
+      "basis_zh": "10.3 + 2.8 + 18.9 + 26.2 = 58.2"
+    },
+    {
+      "id": "top",
+      "text_zh": "最大嗰個係金融服務,佔 26.2%",
+      "basis_zh": "2024 年四個數入面最大"
+    },
+    {
+      "id": "swap",
+      "text_zh": "2000 年貿易及物流(23.6%)大過金融服務(12.8%);2024 年已經調轉",
+      "basis_zh": "貿易及物流 23.6% → 18.9%,金融服務 12.8% → 26.2%"
+    }
+  ],
   "category_order": [
     "金融服務",
     "旅遊",
@@ -566,6 +582,6 @@
     "category": "金融服務",
     "value": 26.2
   },
-  "content_hash": "sha256:9af96013af5dbc18",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:548fba63b2fa6bd1",
+  "data_version": "2026.09.4"
 }

@@ -1,0 +1,113 @@
+# 每週重抓公開數據,有變動先 commit,然後即刻重新部署。
+#
+# SPEC 第 7 節:
+#   · 每星期一次,重跑所有 acquisition: "api" 嘅 loader
+#   · Fail-soft:任何一個抓唔到數,保留上一版 JSON,唔覆蓋唔清空
+#   · 全部失敗 build 仍要成功,但要喺 Actions summary 標紅
+#   · manual/ 永遠唔碰
+#   · 冇實際變動就唔好留空 commit
+#
+# ⚠️ 點解重抓完要喺同一個 workflow 部署:
+#    用 GITHUB_TOKEN 推上去嘅 commit **唔會**觸發其他 workflow,
+#    亦都明文唔會觸發 Pages build。所以「推完等 deploy.yml 自己開工」係行唔通嘅 ——
+#    每週嘅新數據會靜靜哋停留喺 repo,永遠上唔到網站。
+#    呢度用 workflow_call 直接叫 deploy.yml。
+
+name: 每週重抓數據
+
+on:
+  schedule:
+    # 22:17 UTC 星期日 = 06:17 星期一(香港時間,全年冇夏令時間)。
+    # 刻意唔用 :00 —— GitHub 自己講排喺整點嘅 job 會延遲甚至靜靜哋掉咗。
+    - cron: "17 22 * * 0"
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "抓完之後部署?(淨係想試抓數就揀 false)"
+        type: boolean
+        default: true
+
+# 唔好同時跑兩個 —— 兩邊都會 commit,撞埋一齊會 push 失敗。
+# cancel-in-progress 一定要 false:預設嘅「新嘅殺舊嘅」會喺 commit 同 push 中間斬死佢。
+concurrency:
+  group: hkdm-refresh
+  cancel-in-progress: false
+
+# ⚠️ permissions 係「取代」唔係「合併」。新開嘅個人 repo,GITHUB_TOKEN 對 contents
+#    預設係唯讀 —— 冇下面呢兩行,push 會回一個睇落似憑證問題嘅 403。
+permissions:
+  contents: write
+
+defaults:
+  run:
+    # 預設嘅 shell 係 `bash -e {0}`,**冇** pipefail。明文寫 bash 先有 -eo pipefail,
+    # 否則 `curl … | jq …` 入面 curl 死咗都會當成功。
+    shell: bash
+
+jobs:
+  refresh:
+    name: 重抓 + 有變動先 commit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      committed: ${{ steps.commit.outputs.committed }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+
+      - name: 重抓全部 API 指標
+        id: refresh
+        # 單個 loader 失敗係預期之內(fail-soft),script 自己 exit 0。
+        # 只有「抓唔到而且冇上一版」先會 exit 1 —— 嗰個 build 一定死,唔應該扮成功。
+        run: npm run refresh
+
+      - name: 驗證 schema
+        # 抓完即刻驗。唔合規嘅資料寧願唔 commit,唔好等到 build 先發現。
+        run: npm run validate
+
+      - name: 檢查器自證
+        # 順手跑埋。呢個唔使網絡,但如果邊個檢查器壞咗,
+        # 上面嗰個「驗證通過」就係冇意義嘅。
+        run: npm run test:checks
+
+      - name: 有實際變動先 commit
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # ⚠️ 一定要先 add 再睇 --cached。
+          #    `git diff --quiet` 對「新增但未 track 嘅檔」會回 0(即係「冇變」),
+          #    咁一個全新指標嘅第一份快照永遠唔會入到 repo。
+          #
+          # ⚠️ 只 add src/data/_snapshots/ —— SPEC 第 7 節:manual/ 永遠唔碰。
+          git add -A src/data/_snapshots/
+
+          # ⚠️ `git diff --cached --quiet` 有變動嗰陣 exit 1。喺 set -e 之下唔可以
+          #    赤裸擺一行,否則有變動反而會殺咗成個 step。一定要做 if 嘅條件。
+          if git diff --cached --quiet; then
+            echo "數據冇變,唔 commit(SPEC 第 7 節:無變動唔好留空 commit)"
+            echo "committed=false" >> "$GITHUB_OUTPUT"
+          else
+            git diff --cached --stat
+            git commit -m "每週重抓數據 $(date -u +%Y-%m-%d)"
+            git push
+            echo "committed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    name: 重新部署
+    needs: refresh
+    if: ${{ inputs.deploy != false }}
+    uses: ./.github/workflows/deploy.yml
+    # ⚠️ 被叫嘅 workflow 唔會繼承上面嗰個 permissions —— 要喺呢度再寫一次。
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

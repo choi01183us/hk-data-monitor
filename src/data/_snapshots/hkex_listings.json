@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-06-30",
-  "fetched_at": "2026-09-05T01:22:44.921Z",
+  "fetched_at": "2026-09-05T12:18:20.342Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "經濟",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": false
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "total",
+      "text_zh": "主板加 GEM 一共 2,686 間公司",
+      "basis_zh": "GEM 312 + 主板 2374"
+    },
+    {
+      "id": "vs-2010",
+      "text_zh": "對比 2010 年（主板,有紀錄最早），升咗 90.8%",
+      "basis_zh": "2010 年 1,244 → 2025 年 2,374"
+    },
+    {
+      "id": "per-year",
+      "text_zh": "主板平均每年多 75 間",
+      "basis_zh": "(2374 − 1244) ÷ 15 年"
+    }
+  ],
   "category_order": [
     "主板",
     "GEM"
@@ -214,6 +230,6 @@
     "category": "主板",
     "value": 2374
   },
-  "content_hash": "sha256:3aa1b800c10027b6",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:1af9047c1e7f03e5",
+  "data_version": "2026.09.4"
 }

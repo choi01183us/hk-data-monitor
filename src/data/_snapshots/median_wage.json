@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-03-23",
-  "fetched_at": "2026-09-05T01:22:19.694Z",
+  "fetched_at": "2026-09-05T12:17:49.949Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "就業",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": false
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "per-year",
+      "text_zh": "一年計就係 25.4 萬 元(未扣稅同強積金)",
+      "basis_zh": "21,200 元 × 12 個月"
+    },
+    {
+      "id": "vs-2009",
+      "text_zh": "對比 2009 年（有紀錄最早），升咗 84.3%",
+      "basis_zh": "2009 年 11,500 → 2025 年 21,200"
+    },
+    {
+      "id": "vs-first-per-year",
+      "text_zh": "即係比 2009 年每個月多 9,700 元",
+      "basis_zh": "21,200 − 11,500"
+    }
+  ],
   "category_order": [
     "所有僱員",
     "全職僱員"
@@ -224,6 +240,6 @@
     "category": "所有僱員",
     "value": 21200
   },
-  "content_hash": "sha256:72baa0ae7bbd028a",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:60de849f4351aaa5",
+  "data_version": "2026.09.4"
 }

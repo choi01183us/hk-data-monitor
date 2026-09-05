@@ -14,7 +14,7 @@
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
   "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T01:22:26.317Z",
+  "fetched_at": "2026-09-05T12:17:57.874Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "就業",
@@ -24,7 +24,23 @@
     "type": "line",
     "y_zero": false
   },
-  "anchors": [],
+  "anchors": [
+    {
+      "id": "per-year",
+      "text_zh": "一年計就係 36 萬 元(成個住戶加埋)",
+      "basis_zh": "30,000 元 × 12 個月"
+    },
+    {
+      "id": "vs-1997",
+      "text_zh": "對比 1997 年，升咗 57.9%",
+      "basis_zh": "1997 年 19,000 → 2025 年 30,000"
+    },
+    {
+      "id": "vs-1985",
+      "text_zh": "對比 1985 年（有紀錄最早），升咗 512.2%",
+      "basis_zh": "1985 年 4,900 → 2025 年 30,000"
+    }
+  ],
   "category_order": null,
   "series": [
     {
@@ -203,6 +219,6 @@
     "period": "2025",
     "value": 30000
   },
-  "content_hash": "sha256:b1606105c92a6cbb",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:c5f65ae2ceb447d2",
+  "data_version": "2026.09.4"
 }

@@ -22,6 +22,14 @@ export default {
   root: "src",
   output: "dist",
 
+  // GitHub Pages 專案站住喺 /<repo>/ 子路徑。
+  // ⚠️ 喺 1.13.4 度 `base` 幾乎冇作用 —— Framework 出嘅連結全部本身就係相對路徑
+  //    (./ 同 ../),唯一用到 base 嘅係 404.html 嗰個 <base href>。
+  //    所以唔設都唔會爛,設咗就連 404 版嘅相對連結都啱。
+  // ⚠️ base: "" 會掟錯(base must start with slash)。CI 嗰邊會補條斜線,
+  //    因為 actions/configure-pages 對自訂網域出嘅 base_path 就係空字串。
+  base: process.env.BASE_PATH || "/",
+
   pages: [
     {
       name: "公共財政",
@@ -78,11 +86,20 @@ export default {
 
   style: "style.css",
 
-  head: () =>
-    [
+  // head 收到 { title, data, path }。path 例如 "/index"、"/indicators/gdp"。
+  head: ({ path }) => {
+    // 由頁面深度計返站點根嘅相對路徑。
+    // 唔可以寫死 "/sw.js" —— GitHub Pages 專案站住喺 /hk-data-monitor/ 子路徑,
+    // 而 "/" 係 user.github.io 根目錄,屬於另一個 repo。
+    // 又唔可以寫死 "./sw.js" —— 喺 /indicators/gdp 會變成 /indicators/sw.js。
+    const depth = Math.max(0, path.split("/").length - 2);
+    const root = depth === 0 ? "./" : "../".repeat(depth);
+
+    return [
       // Framework 冇 lang 設定,唯有自己改。影響螢幕閱讀器同中文字型選擇。
       `<script>document.documentElement.lang="zh-HK";</script>`,
       `<meta name="color-scheme" content="light dark">`,
+      `<meta name="theme-color" content="#0f172a">`,
       // 用 data: URI 而唔係一個檔案 —— 保持「零第三方、零額外請求」,
       // 順便省返個 favicon.ico 404。
       `<link rel="icon" href="data:image/svg+xml,${encodeURIComponent(
@@ -91,7 +108,34 @@ export default {
       `<meta name="description" content="畀香港中學生用嘅公開數據網站。全部數字都有出處、有更新日期,離線都睇到。">`,
       // 零追蹤:明文叫爬蟲唔好幫我哋建立任何使用者側寫(呢個站本身都冇資料可收)。
       `<meta name="referrer" content="no-referrer">`,
-    ].join(""),
+
+      // ⚠️ manifest 同 sw 都係用 JS 掛,唔用 <link>/<script src>。
+      //    Framework 會把 head 入面 link[href] / script[src] 當成 file attachment:
+      //    加雜湊、搬去 _file/、而且檔案唔存在就直接 build fail。
+      //    manifest 一搬去 _file/,佢個 start_url / scope 就會相對 _file/ 解析,
+      //    整個 PWA 嘅範圍就錯晒。所以呢度砌字串,Framework 唔會掂。
+      `<script>
+(function(){
+  var root = ${JSON.stringify(root)};
+  var link = document.createElement("link");
+  link.rel = "manifest";
+  link.href = root + "manifest.webmanifest";
+  document.head.appendChild(link);
+
+  var banner = document.createElement("script");
+  banner.src = root + "offline-banner.js";
+  banner.defer = true;
+  document.head.appendChild(banner);
+
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function(){
+      navigator.serviceWorker.register(root + "sw.js", { scope: root }).catch(function(){});
+    });
+  }
+})();
+</script>`,
+    ].join("");
+  },
 
   footer: () =>
     [
