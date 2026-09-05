@@ -1,11 +1,14 @@
+# 依賴 — 由 package-lock.json 還原
+node_modules
+
 # 建置輸出 — 由 source 重新產生
 dist/
 
-# Observable Framework 嘅 data loader 快取（唔係我哋要保留嘅「上一版」，
-# 真正要入 repo 嘅係 data/snapshots/）
+# Observable Framework 嘅 data loader 快取。
+# 注意:呢個唔係 SPEC 第 7 節講嘅「上一版 JSON」——
+# 真正要入 repo、fail-soft 靠佢頂住嘅係 src/data/_snapshots/。
 src/.observablehq/cache/
 
 # 本機
 .DS_Store
 *.log
-.wrangler/
