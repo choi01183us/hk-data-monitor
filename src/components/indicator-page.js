@@ -92,3 +92,24 @@ export function indicatorNote(indicator) {
   if (!indicator.notes_zh) return html`<div></div>`;
   return html`<div class="chart-note"><strong>讀呢個數之前:</strong>${indicator.notes_zh}</div>`;
 }
+
+/**
+ * 人手抄嘅指標未填數嗰陣嘅提示。
+ *
+ * SPEC 第 2 節第 4 條:唔准估數,寧願唔出現。所以未填嘅指標首頁唔會出卡;
+ * 但呢一版仲 build 得到,畀維護者見到骨架同抄數指引。
+ */
+export function manualNotice(indicator) {
+  if (indicator.acquisition !== "manual") return html`<div></div>`;
+  if (indicator.manual_status === "filled") {
+    return html`<p class="manual-notice manual-notice--ok">
+      呢個指標嘅數字係人手由官方文件抄落嚟嘅(${indicator.manual_filled} 格已填),唔係自動抓。
+      抄嘅來源同日期喺下面「資料來源」一欄。
+    </p>`;
+  }
+  return html`<div class="manual-notice manual-notice--todo" role="status">
+    <strong>數據未填。</strong>
+    呢個指標要人手由官方文件抄數(${indicator.manual_filled} 格已填),而家仲未填齊,所以首頁唔會出佢。
+    維護者請睇 <code>manual/README.md</code>。呢版唔會顯示任何估算或者預設數字。
+  </div>`;
+}

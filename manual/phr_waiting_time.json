@@ -1,0 +1,35 @@
+{
+  "_maintainer_notes": "去 https://www.hb.gov.hk/tc/publications/housing/cwt/index.html 抄。CWT 同 AWT 定義唔同,唔好撈亂。value 填 null 即係未填。抄完改 updated_at(網頁寫嘅「截至」日期)同 transcribed_at(你抄嗰日)。詳見 manual/README.md。",
+
+  "indicator_id": "phr_waiting_time",
+  "name_zh": "公屋輪候時間",
+  "name_en": "Public rental housing waiting time",
+  "unit_zh": "年",
+  "unit_en": "years",
+  "unit_short_zh": "年",
+  "value_digits": 1,
+
+  "source_zh": "房屋局",
+  "source_en": "Housing Bureau, HKSAR Government",
+  "source_url": "https://www.hb.gov.hk/tc/publications/housing/cwt/index.html",
+  "source_note_zh": "房屋局「公屋輪候時間」網頁,數字喺文字段落入面,冇表格、冇 CSV。歷史數列要由季度 PDF 逐季抄。",
+  "licence": "房屋局網頁(政府網站一般版權告示,冇獨立開放數據授權)",
+  "licence_url": "https://www.hb.gov.hk/tc/common/copyright.html",
+
+  "updated_at": "2026-06-30",
+  "transcribed_at": null,
+  "frequency": "quarterly",
+  "acquisition": "manual",
+
+  "category": "房屋",
+  "question_zh": "申請公屋,要等幾耐?",
+  "notes_zh": "官方同時公布兩個定義唔同嘅數字:「綜合輪候時間」(CWT)計埋簡約公屋,「平均輪候時間」(AWT)只計傳統公屋,所以 AWT 一定長過 CWT。兩個都係一般申請者(家庭同長者家庭)嘅數;長者一人申請者另有優先計劃,輪候時間短好多。呢啲數字係人手由房屋局網頁抄落嚟嘅,唔係自動抓。",
+  "chart": { "type": "line", "y_zero": true },
+  "category_order": ["綜合輪候時間(含簡約公屋)", "平均輪候時間(只計傳統公屋)", "長者一人申請者平均輪候時間"],
+
+  "series": [
+    { "period": "2026-Q2", "category": "綜合輪候時間(含簡約公屋)", "value": null },
+    { "period": "2026-Q2", "category": "平均輪候時間(只計傳統公屋)", "value": null },
+    { "period": "2026-Q2", "category": "長者一人申請者平均輪候時間", "value": null }
+  ]
+}

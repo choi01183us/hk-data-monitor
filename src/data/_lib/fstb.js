@@ -26,6 +26,9 @@ export const DATA_GOV_HK_LICENCE = {
   source_en: "Financial Services and the Treasury Bureau, via DATA.GOV.HK",
 };
 
+/** 分類相加同總額最多差幾多(百萬元)。實測係零,所以呢個純粹係防浮點。 */
+const TOTAL_TOLERANCE_MILLIONS = 1;
+
 /** 單位一定要係「百萬元」。來源改咗單位嘅話要即刻死,唔好靜靜哋出一批細咗一千倍嘅數。 */
 const UNIT_SUFFIX = /\s*[(（]百萬元[)）]\s*$/u;
 
@@ -98,17 +101,22 @@ export async function loadFstbCsvIndicator(id, spec) {
   if (series.length === 0) throw new Error(`${spec.file}:解析完一行數都冇`);
 
   // 分類加埋應該等於總額 —— 呢個係唯一驗得到「我讀啱咗欄」嘅方法。
+  //
+  // 容忍度用**絕對值**唔用百分比:實測兩份檔 30 個年度全部完全相等(零誤差),
+  // 所以來源根本冇四捨五入。用「0.2% 相對誤差」嗰陣,一個 1,000 百萬元嘅
+  // 抄錯／讀錯欄只係 0.167% 偏差,靜靜哋過關 —— 突變測試撞到先發現。
+  // 留 1 百萬元只係防浮點,唔係防真錯。
   if (spec.total_column) {
     for (const total of totals) {
       if (total.value === null) continue;
       const parts = series.filter((p) => p.period === total.period && p.value !== null);
       if (parts.length !== spec.categories.length) continue;
       const sum = parts.reduce((acc, p) => acc + p.value, 0);
-      const drift = Math.abs(sum - total.value) / total.value;
-      if (drift > 0.002) {
+      const diffMillions = Math.abs(sum - total.value) / 1_000_000;
+      if (diffMillions > TOTAL_TOLERANCE_MILLIONS) {
         throw new Error(
-          `${spec.file} ${total.period}:分類相加 ${sum} 對唔上總額 ${total.value}(差 ${(drift * 100).toFixed(2)}%)。` +
-            `唔係讀錯欄就係來源加咗新分類,兩樣都唔可以靜靜哋出街。`
+          `${spec.file} ${total.period}:分類相加 ${sum} 對唔上總額 ${total.value}` +
+            `(差 ${diffMillions.toFixed(0)} 百萬元)。唔係讀錯欄就係來源加咗新分類,兩樣都唔可以靜靜哋出街。`
         );
       }
     }

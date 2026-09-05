@@ -50,6 +50,13 @@ export default {
       ],
     },
     {
+      name: "人手數據",
+      pages: [
+        { name: "政府開支(十個政策組別)", path: "/indicators/govt_expenditure_policy_groups" },
+        { name: "公屋輪候時間", path: "/indicators/phr_waiting_time" },
+      ],
+    },
+    {
       name: "關於",
       pages: [
         { name: "資料來源同授權", path: "/about/sources" },
