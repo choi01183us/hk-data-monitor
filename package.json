@@ -10,9 +10,10 @@
   },
   "scripts": {
     "dev": "observable preview",
-    "build": "observable build && node scripts/postbuild.mjs",
-    "refresh": "node scripts/refresh-data.mjs",
-    "validate": "node scripts/validate-snapshots.mjs",
+    "build": "rm -rf src/.observablehq/cache && observable build",
+    "build:offline": "rm -rf src/.observablehq/cache && HKDM_OFFLINE=1 observable build",
+    "refresh": "HKDM_REFRESH=1 node scripts/refresh-data.mjs",
+    "validate": "node scripts/validate.mjs",
     "clean": "rm -rf dist src/.observablehq/cache"
   },
   "devDependencies": {

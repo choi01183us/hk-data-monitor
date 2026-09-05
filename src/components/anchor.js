@@ -6,7 +6,7 @@
 //
 // 規矩：唔准老作數字。所有換算常數都要有出處（見 CONSTANTS）。
 
-import { formatNumber, formatChineseMagnitude, formatPercentChange } from "../src/components/format.js";
+import { formatNumber, formatChineseMagnitude, formatPercentChange } from "./format.js";
 
 export { formatNumber, formatChineseMagnitude, formatPercentChange };
 
@@ -24,7 +24,7 @@ export const CONSTANTS = {
 // 每個都回傳 { id, text_zh, basis_zh } 或者 null（資料唔夠就唔好夾硬砌）。
 
 /** 一個年度金額，攤返做「每日幾多錢」。 */
-export function anchorPerDay(latestValue, { currency = "USD", label = "每人每日" } = {}) {
+export function anchorPerDay(latestValue, { currency = "HKD", label = "每人每日" } = {}) {
   if (!Number.isFinite(latestValue)) return null;
   const hkd = currency === "USD" ? latestValue * CONSTANTS.usd_to_hkd.value : latestValue;
   const perDay = hkd / 365;
@@ -39,16 +39,16 @@ export function anchorPerDay(latestValue, { currency = "USD", label = "每人每
 }
 
 /** 同某一年比。用嚟講「你出世嗰年到而家變咗幾多」。 */
-export function anchorVersusYear(series, targetDate, { label } = {}) {
-  const then = series.find((point) => String(point.date) === String(targetDate) && Number.isFinite(point.value));
+export function anchorVersusYear(series, targetPeriod, { label } = {}) {
+  const then = series.find((point) => String(point.period) === String(targetPeriod) && Number.isFinite(point.value));
   const now = [...series].reverse().find((point) => Number.isFinite(point.value));
-  if (!then || !now || then.date === now.date) return null;
+  if (!then || !now || then.period === now.period) return null;
   const delta = formatPercentChange(then.value, now.value);
   if (!delta) return null;
   return {
-    id: `vs-${targetDate}`,
-    text_zh: `對比 ${then.date} 年${label ? `（${label}）` : ""}，${delta.text}`,
-    basis_zh: `${then.date} 年 ${formatNumber(then.value)} → ${now.date} 年 ${formatNumber(now.value)}`,
+    id: `vs-${targetPeriod}`,
+    text_zh: `對比 ${then.period} 年${label ? `（${label}）` : ""}，${delta.text}`,
+    basis_zh: `${then.period} 年 ${formatNumber(then.value)} → ${now.period} 年 ${formatNumber(now.value)}`,
   };
 }
 

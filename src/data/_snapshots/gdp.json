@@ -1,0 +1,316 @@
+{
+  "indicator_id": "gdp",
+  "name_zh": "人均本地生產總值",
+  "name_en": "GDP per capita (at current market prices)",
+  "unit_zh": "港元",
+  "unit_en": "HK$",
+  "unit_short_zh": "元",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=310-31001",
+  "source_note_zh": "政府統計處國民收入統計組（一）(統計處表 310-31001:本地生產總值、本地生產總值內含平減物價指數及按人口平均計算的本地生產總值)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-08-14",
+  "fetched_at": "2026-09-05T00:42:55.739Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "經濟",
+  "question_zh": "香港平均每個人,一年創造幾多經濟價值?",
+  "notes_zh": "「以當時市價計算」即係冇扣除通脹。所以呢條線升,唔一定代表大家真係富裕咗 —— 有一部分升幅淨係因為物價升咗。想睇撇除通脹之後嘅變化,要睇「以環比物量計算」嗰個系列。",
+  "chart": {
+    "type": "line",
+    "y_zero": false
+  },
+  "anchors": [
+    {
+      "id": "per-day",
+      "text_zh": "相當於每人每日約 HK$1,217",
+      "basis_zh": "444,044 ÷ 365 日"
+    },
+    {
+      "id": "vs-1997",
+      "text_zh": "對比 1997 年，升咗 109.9%",
+      "basis_zh": "1997 年 211,592 → 2025 年 444,044"
+    },
+    {
+      "id": "vs-2015",
+      "text_zh": "對比 2015 年，升咗 35%",
+      "basis_zh": "2015 年 328,924 → 2025 年 444,044"
+    }
+  ],
+  "series": [
+    {
+      "period": "1961",
+      "value": 2353
+    },
+    {
+      "period": "1962",
+      "value": 2628
+    },
+    {
+      "period": "1963",
+      "value": 3048
+    },
+    {
+      "period": "1964",
+      "value": 3392
+    },
+    {
+      "period": "1965",
+      "value": 3878
+    },
+    {
+      "period": "1966",
+      "value": 3935
+    },
+    {
+      "period": "1967",
+      "value": 4157
+    },
+    {
+      "period": "1968",
+      "value": 4348
+    },
+    {
+      "period": "1969",
+      "value": 5030
+    },
+    {
+      "period": "1970",
+      "value": 5836
+    },
+    {
+      "period": "1971",
+      "value": 6596
+    },
+    {
+      "period": "1972",
+      "value": 7812
+    },
+    {
+      "period": "1973",
+      "value": 9743
+    },
+    {
+      "period": "1974",
+      "value": 10791
+    },
+    {
+      "period": "1975",
+      "value": 11115
+    },
+    {
+      "period": "1976",
+      "value": 13979
+    },
+    {
+      "period": "1977",
+      "value": 15988
+    },
+    {
+      "period": "1978",
+      "value": 18379
+    },
+    {
+      "period": "1979",
+      "value": 22860
+    },
+    {
+      "period": "1980",
+      "value": 28366
+    },
+    {
+      "period": "1981",
+      "value": 33487
+    },
+    {
+      "period": "1982",
+      "value": 37231
+    },
+    {
+      "period": "1983",
+      "value": 40651
+    },
+    {
+      "period": "1984",
+      "value": 48536
+    },
+    {
+      "period": "1985",
+      "value": 50975
+    },
+    {
+      "period": "1986",
+      "value": 58018
+    },
+    {
+      "period": "1987",
+      "value": 70741
+    },
+    {
+      "period": "1988",
+      "value": 82820
+    },
+    {
+      "period": "1989",
+      "value": 94361
+    },
+    {
+      "period": "1990",
+      "value": 105050
+    },
+    {
+      "period": "1991",
+      "value": 120188
+    },
+    {
+      "period": "1992",
+      "value": 139148
+    },
+    {
+      "period": "1993",
+      "value": 157772
+    },
+    {
+      "period": "1994",
+      "value": 173909
+    },
+    {
+      "period": "1995",
+      "value": 181772
+    },
+    {
+      "period": "1996",
+      "value": 191951
+    },
+    {
+      "period": "1997",
+      "value": 211592
+    },
+    {
+      "period": "1998",
+      "value": 199898
+    },
+    {
+      "period": "1999",
+      "value": 194649
+    },
+    {
+      "period": "2000",
+      "value": 200675
+    },
+    {
+      "period": "2001",
+      "value": 196765
+    },
+    {
+      "period": "2002",
+      "value": 192367
+    },
+    {
+      "period": "2003",
+      "value": 186704
+    },
+    {
+      "period": "2004",
+      "value": 194140
+    },
+    {
+      "period": "2005",
+      "value": 207263
+    },
+    {
+      "period": "2006",
+      "value": 219240
+    },
+    {
+      "period": "2007",
+      "value": 238676
+    },
+    {
+      "period": "2008",
+      "value": 245406
+    },
+    {
+      "period": "2009",
+      "value": 237960
+    },
+    {
+      "period": "2010",
+      "value": 252887
+    },
+    {
+      "period": "2011",
+      "value": 273549
+    },
+    {
+      "period": "2012",
+      "value": 284899
+    },
+    {
+      "period": "2013",
+      "value": 297860
+    },
+    {
+      "period": "2014",
+      "value": 312609
+    },
+    {
+      "period": "2015",
+      "value": 328924
+    },
+    {
+      "period": "2016",
+      "value": 339476
+    },
+    {
+      "period": "2017",
+      "value": 359737
+    },
+    {
+      "period": "2018",
+      "value": 380462
+    },
+    {
+      "period": "2019",
+      "value": 378937
+    },
+    {
+      "period": "2020",
+      "value": 357679
+    },
+    {
+      "period": "2021",
+      "value": 386879
+    },
+    {
+      "period": "2022",
+      "value": 382369
+    },
+    {
+      "period": "2023",
+      "value": 395591
+    },
+    {
+      "period": "2024",
+      "value": 423509
+    },
+    {
+      "period": "2025",
+      "value": 444044
+    }
+  ],
+  "coverage": {
+    "start": "1961",
+    "end": "2025",
+    "points": 65,
+    "points_with_value": 65
+  },
+  "latest": {
+    "period": "2025",
+    "value": 444044
+  },
+  "content_hash": "sha256:a2296fd8c3b71c49",
+  "data_version": "2026.09.2"
+}

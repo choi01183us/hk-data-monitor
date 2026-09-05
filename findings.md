@@ -179,3 +179,50 @@ SPEC 第 6 節明文寫「唔好寫 PDF parser。一律人手抄一次」，所�
 | 3 | `population` | 包唔包外傭 |
 | 4 | `household_income` | 加唔加 `130-06806`（十八區）—— 2025 年中西區 $45,000 對觀塘 $24,900，現成嘅貧富差距教材 |
 | 5 | 開支口徑 | 公共開支 定 政府開支（見 5a） |
+
+---
+
+## 8. 已拍板嘅決定(2026-09-05)
+
+| 事項 | 決定 | 影響 |
+|---|---|---|
+| 資料來源 | **SPEC 第 6 節為主**,另保留 World Bank 做少量「國際比較」指標;天文台剔走 | WB 轉接器已由 `src/data/_lib/` 移走(git 歷史仲有),留待國際比較階段按 SPEC 第 5 節重寫 |
+| 部署 | **GitHub Pages**(SPEC 第 3 節「二揀一」) | 抓數同上線同用 GitHub Actions,唔使多開戶口同 secret |
+| Repo | **獨立 repo**,唔再係 gravity 嘅子目錄 | gravity 嘅 `.gitignore` 已加 `hk-data-monitor/`,同 `remotion-app/` 一樣 |
+
+### SPEC 之外加咗嘅嘢(要負責人知)
+
+1. **`src/data/_snapshots/`** —— SPEC 第 4 節冇畫呢個目錄,但第 7 節嘅 fail-soft 需要一個
+   入咗 git 嘅「上一版 JSON」。唔可以用 Framework 自己個 cache:
+   `observable build` 係 `useStale` 模式,見到 cache 就唔會再跑 loader,
+   即係改完 loader 都出舊數而且冇提示;clean build 之後亦乜都冇。
+   用 `_` 開頭跟返 SPEC 自己 `src/data/_lib/` 嘅寫法。
+
+2. **schema 加咗幾個欄位** —— `licence_url`、`content_hash`、`fetched_at`、`build`、
+   `coverage`、`latest`、`category`、`question_zh`、`chart`、`anchors`、`notes_zh`、
+   `source_note_zh`、`unit_short_zh`。逐個理由寫喺 `src/data/_lib/schema.js` 頂。
+   最要緊嗰兩個:`licence_url`(硬規則第 3 條要撳得入去睇條款原文,一個名撳唔到)、
+   `content_hash`(`data_version` 係 `YYYY.MM.序號`,要有嘢判斷「內容有冇變」先加得序號)。
+
+3. **`gdp` 只做人均,唔做總額** —— SPEC 第 5 行寫「GDP 及人均 GDP」,
+   但總額單位係「百萬港元」(3,186,526)、人均係「港元」(444,044),差 7 個數量級,
+   而 schema 得一個 `unit_zh`。夾硬擺埋一齊就一定要用雙 Y 軸,直接違反 SPEC 第 9 節。
+   建議 SPEC 第 6 節第 5 行拆成 `gdp`(人均)同 `gdp_total`(總額)兩個指標。
+
+### 第 1 步驗收記錄
+
+- `npm run build` 出到靜態檔,4 版,0 個 console error
+- 指標頁見到圖、來源連結、數據截至日期(2026-08-14)、授權、`data_version`
+- **零第三方請求**(Playwright 實測 `externalReqs: []`),`<html lang="zh-HK">`
+- 資料表 65 行,錨點 3 個(每個都有算式)
+- **fail-soft 實測過**:故意把表號改壞 → loader exit 0、舊快照 byte 對 byte 冇變、
+  照出 65 點、畫面出「上一次成功更新」提示連技術原因
+- **冪等實測過**:連跑兩次 `HKDM_REFRESH=1`,第二次報 `unchanged`,檔案冇郁 → 唔會有空 commit
+- **驗證閘實測過**:刪走 `source_url` → `npm run validate` 準確報「缺少 SPEC 第 5 節必要欄位 source_url」
+
+### 仲未做(按分階段指令)
+
+- 第 3 步:其餘 9 個可自動抓嘅指標
+- 第 4 步:`manual/`(公屋輪候、10 組政策開支)同 `manual/README.md`
+- 第 5 步:`refresh-data.yml`、service worker、PWA manifest、離線 banner
+- 第 6 步:GitHub Pages 部署
