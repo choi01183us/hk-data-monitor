@@ -8,6 +8,32 @@
 @import url("observablehq:theme-air.css") (prefers-color-scheme: light);
 @import url("observablehq:theme-near-midnight.css") (prefers-color-scheme: dark);
 
+/* 對比度:覆寫 Framework 兩個灰色 token
+ * ---------------------------------------------------------------
+ * 實測 air 主題嘅 --theme-foreground-muted 係 color-mix(#1b1e23 60%, #ffffff)
+ * = #76787B。喺白底 4.43:1(WCAG AA 要 4.5,爭 0.07),再疊我哋 --hk-surface
+ * 嗰層 4% 表面色(#F6F6F6)就跌到 4.1:1。
+ *
+ * 踩得最低嗰個係 .anchor__basis —— 就係要學生自己驗算嗰條算式。
+ * 一條驗算唔到嘅算式,同一個要照單全收嘅數字冇分別。
+ *
+ * --theme-foreground-faint 係頁腳用嘅,淺色 3.25:1、深色 3.87:1。
+ *
+ * 加深百分比就得,唔使改任何 component。
+ * ⚠️ Plot 嘅軸標籤用 --theme-foreground(全前景色)唔係呢兩個,所以唔受影響。
+ */
+:root {
+  --theme-foreground-muted: color-mix(in srgb, #1b1e23 68%, #ffffff);
+  --theme-foreground-faint: color-mix(in srgb, #1b1e23 62%, #ffffff);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --theme-foreground-muted: color-mix(in srgb, #dfdfd6 66%, #161616);
+    --theme-foreground-faint: color-mix(in srgb, #dfdfd6 62%, #161616);
+  }
+}
+
 /* SPEC 第 9 節:手機優先。學生多數用手機或學校平板。
  * 所以下面全部由細螢幕寫起,大螢幕先加 media query。 */
 
