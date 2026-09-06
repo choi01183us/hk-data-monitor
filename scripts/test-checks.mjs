@@ -18,15 +18,20 @@
 //
 // SPEC 第 3 節「避免引入額外 runtime 依賴」,所以唔用測試框架,純 node。
 
-import { mkdtemp, writeFile, rm } from "node:fs/promises";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { writeFile, rm, readFile } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const HERE_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 import { validateIndicator, buildIndicator, computeContentHash, nextDataVersion } from "../src/data/_lib/schema.js";
 import { parseCsv, toNumber } from "../src/data/_lib/csv.js";
 import { parseFiscalYear } from "../src/data/_lib/fstb.js";
 import { parseMonth } from "../src/data/_lib/treasury.js";
 import { isFiscalPeriodSeries, toDate, formatPeriodZh } from "../src/components/format.js";
+import { CENSTATD_INDICATORS } from "../src/data/_lib/indicators.js";
+import { readSnapshot } from "../src/data/_lib/snapshot.js";
 
 let passed = 0;
 let failed = 0;
@@ -230,6 +235,198 @@ console.log("\n[5] manual/ 分類相加對總額 — 突變測試");
     check("未填齊(有 null)唔會報錯", (await tryLoad(GOOD.map((v, i) => (i < 5 ? v : null)))) === null);
   } finally {
     await rm(path, { force: true });
+  }
+}
+
+
+// ══ 回歸測試 ══════════════════════════════════════════════════
+// 以下四組釘死四個真實出現過嘅 bug。全部係「唔報錯,淨係會錯」嗰類,
+// 所以特別易返潮 —— 改壞咗冇人會即刻發現。
+
+// ── R1. 財政年度「2000-01」唔可以當成 2000 年 1 月 ──────────────
+//
+// 真實 bug:toDate("2000-01") 當咗係 2000 年 1 月。政府收入係財政年度序列,
+// 結果 30 個年度入面只有 2000-01 至 2011-12 十二個轉到日期,其餘全部變 null 俾人
+// 靜靜哋掉走 —— 圖上得 12 年,冇任何錯誤訊息。
+//
+// 呢度用**真實快照**嚟測,唔用人造資料:一條真財政年度序列(govt_revenue)
+// 同一條真月度序列(cpi,入面正正有「2005-06」,係 2005 年 6 月唔係 2005–06 年度)。
+console.log("\n[R1] 財政年度 vs 年月 — 用真實快照,確認冇一個期數被靜默掉走");
+{
+  const fiscal = await readSnapshot("govt_revenue");
+  const monthly = await readSnapshot("cpi");
+
+  if (!fiscal || !monthly) {
+    check("R1 需要 govt_revenue 同 cpi 快照", false, "行 `npm run build` 先");
+  } else {
+    const fiscalPeriods = fiscal.series.map((p) => p.period);
+    const monthlyPeriods = monthly.series.map((p) => p.period);
+
+    check("govt_revenue 認得出係財政年度序列", isFiscalPeriodSeries(fiscalPeriods) === true);
+    check("cpi 唔會被誤判成財政年度序列", isFiscalPeriodSeries(monthlyPeriods) === false);
+
+    // 核心:成條 series 逐個轉,一個 null 都唔准有。
+    const fiscalDates = fiscalPeriods.map((period) => toDate(period, { fiscal: true }));
+    const monthlyDates = monthlyPeriods.map((period) => toDate(period, { fiscal: false }));
+    check(
+      `govt_revenue ${fiscalPeriods.length} 個期數全部轉到日期(冇靜默截短)`,
+      fiscalDates.every((d) => d instanceof Date && !Number.isNaN(d.getTime())),
+      `${fiscalDates.filter((d) => d === null).length} 個轉唔到`
+    );
+    check(
+      `cpi ${monthlyPeriods.length} 個期數全部轉到日期(冇靜默截短)`,
+      monthlyDates.every((d) => d instanceof Date && !Number.isNaN(d.getTime())),
+      `${monthlyDates.filter((d) => d === null).length} 個轉唔到`
+    );
+
+    // 呢個係 bug 嘅震央:同一個字串,兩條 series 要有兩個唔同答案。
+    check("財政年度 series 入面 2000-01 -> 2000 年 4 月", toDate("2000-01", { fiscal: true }).getUTCMonth() === 3);
+    check("月度 series 入面 2005-06 -> 2005 年 6 月", toDate("2005-06", { fiscal: false }).getUTCMonth() === 5);
+    check("cpi 快照真係有「2005-06」呢個期數(唔係我砌出嚟)", monthlyPeriods.includes("2005-06"));
+
+    // 如果有人日後把 fiscal 判斷寫死做 true,月度序列就會全部飛去 4 月 —— 呢條會即刻嘈。
+    const wrong = monthlyPeriods.map((period) => toDate(period, { fiscal: true }));
+    check(
+      "把月度 series 當成財政年度會出唔同答案(證明呢個判斷真係有作用)",
+      wrong.some((d, i) => d.getTime() !== monthlyDates[i].getTime())
+    );
+  }
+}
+
+// ── R2. 人口不變式:抽出嚟嘅係總人口,唔係男性人口 ─────────────
+//
+// 真實 bug:第一版嘅 verify 驗「來源資料自己一致唔一致」,而唔係驗「我揀咗嘅行啱唔啱」。
+// 把 pin 由 { SEX: "" }(總計)改成 { SEX: "M" }(男性)—— **完全捉唔到**,
+// 男性人口照樣當成「香港人口」出街。
+//
+// 呢度用人造 API 回應(離線),直接餵畀登記冊入面真正嗰個 verify 函式。
+console.log("\n[R2] 人口不變式 — pin 揀錯行要捉到");
+{
+  const verify = CENSTATD_INDICATORS.population.verify;
+  check("population 有 verify 函式", typeof verify === "function");
+
+  if (typeof verify === "function") {
+    // 模擬統計處回嘅 long-format:每期有 Total、男、女三行(單位千人)
+    const periods = Array.from({ length: 60 }, (_, i) => `${1996 + Math.floor(i / 2)}${i % 2 ? "12" : "06"}`);
+    const rows = periods.flatMap((period, i) => {
+      const male = 3000 + i;
+      const female = 3500 + i;
+      return [
+        { period, SEX: "", AGE: "", freq: "H", figure: male + female, sd_value: "" },
+        { period, SEX: "M", AGE: "", freq: "H", figure: male, sd_value: "" },
+        { period, SEX: "F", AGE: "", freq: "H", figure: female, sd_value: "" },
+      ];
+    });
+    const asSeries = (pick) =>
+      periods.map((period) => ({
+        period: `${period.slice(0, 4)}-${period.slice(4)}`,
+        value: rows.find((r) => r.period === period && (r.SEX ?? "") === pick && (r.AGE ?? "") === "").figure * 1000,
+      }));
+
+    check("pin 喺 Total(啱)-> 通過", throwsWith(() => verify(rows, asSeries(""))) === null);
+
+    const male = throwsWith(() => verify(rows, asSeries("M")));
+    check("pin 改成男性(就係嗰個真實突變)-> 捉到", male !== null, "靜靜哋過關咗");
+
+    const female = throwsWith(() => verify(rows, asSeries("F")));
+    check("pin 改成女性 -> 捉到", female !== null, "靜靜哋過關咗");
+
+    // 換算寫錯(千人 -> 人 用錯乘數)亦要捉到
+    const wrongScale = asSeries("").map((p) => ({ ...p, value: p.value / 10 }));
+    check("換算乘數寫錯 10 倍 -> 捉到", throwsWith(() => verify(rows, wrongScale)) !== null);
+
+    // 「冇數」嘅格唔可以當成 0 —— Number("") 係 0 而且係 finite,呢個坑撞過
+    const withGaps = rows.map((r) => (r.period === "199612" && r.SEX !== "" ? { ...r, figure: "" } : r));
+    check(
+      "某期只有 Total 冇男女細分 -> 唔可以當成「男+女 = 0」而誤報",
+      throwsWith(() => verify(withGaps, asSeries(""))) === null
+    );
+  }
+}
+
+// ── R3. 分類相加:2 百萬元嘅抄錯都要捉到 ────────────────────────
+//
+// 真實 bug:原本用 0.2% **相對**誤差。一個 1,000 百萬元(10 億)嘅抄錯
+// 只係 0.167% 偏差,靜靜哋過關。實測 FSTB 兩份檔 30 個年度相加全部**零誤差**,
+// 所以來源根本冇四捨五入,門檻改成絕對值。
+// (呢組同下面第 5 節嗰組唔同:嗰組測嘅係「捉唔捉到」,呢組釘死嘅係**靈敏度**。)
+console.log("\n[R3] 分類相加 — 絕對誤差門檻嘅靈敏度");
+{
+  const { loadManualIndicator, MANUAL_DIR } = await import("../src/data/_lib/manual.js");
+  const GOOD = [102308, 135865, 118881, 60517, 34727, 26728, 19202, 1226, 18913, 81310];
+  const LABELS = ["教育", "社會福利", "衞生", "保安", "基礎建設", "經濟", "環境及食物", "社區及對外事務", "房屋", "輔助服務"];
+  const id = "_selftest_sensitivity";
+  const path = join(MANUAL_DIR, `${id}.json`);
+
+  async function tryLoad(values) {
+    await writeFile(
+      path,
+      JSON.stringify({
+        indicator_id: id, name_zh: "靈敏度測試", name_en: "Sensitivity",
+        unit_zh: "港元", unit_en: "HK$", source_zh: "測試", source_en: "Test",
+        source_url: "https://example.gov.hk/", licence: "測試", licence_url: "https://example.gov.hk/t",
+        updated_at: "2026-02-25", frequency: "annual", acquisition: "manual",
+        source_value_multiplier: 1000000, expected_totals: { "2026-27": 599677 },
+        series: values.map((value, i) => ({ period: "2026-27", category: LABELS[i], value })),
+      }),
+      "utf8"
+    );
+    try { await loadManualIndicator(id); return null; } catch (e) { return e.message; }
+  }
+  const bump = (i, d) => GOOD.map((v, k) => (k === i ? v + d : v));
+
+  try {
+    check("抄啱 -> 通過", (await tryLoad(GOOD)) === null);
+    // 呢條就係釘死靈敏度嗰條:舊門檻(0.2% = 1,199 百萬)之下,2 百萬完全唔會嘈
+    check("差 2 百萬元 -> 捉到(舊嘅 0.2% 門檻要差過 1,199 百萬先嘈)", (await tryLoad(bump(3, 2))) !== null);
+    check("差 −2 百萬元 -> 捉到", (await tryLoad(bump(7, -2))) !== null);
+    check("差 1,000 百萬元 -> 捉到(呢個就係舊門檻放咗生嗰個)", (await tryLoad(bump(3, 1000))) !== null);
+    check("差 1 百萬元(= 容忍度,防浮點用)-> 唔嘈", (await tryLoad(bump(3, 1))) === null);
+  } finally {
+    await rm(path, { force: true });
+  }
+}
+
+// ── R4. 離線導航一定要走真網絡 ─────────────────────────────────
+//
+// 真實 bug:GitHub Pages 對每個檔送 cache-control: max-age=600(改唔到,冇 _headers 支援)。
+// service worker 個 fetch() 冇 cache: "reload" 就會俾瀏覽器嘅 HTTP 快取答咗 ——
+// 明明斷咗網,fetch 照回 200,worker 以為仲喺線上,離線橫額永遠唔出。
+// 同一次實測仲確認咗 navigator.onLine 斷晒網都回 true,所以佢做唔到後備。
+//
+// ⚠️ 呢度係**源碼層守衛**,唔係行為測試 —— 行為要開瀏覽器,而 Playwright 唔係
+//    本專案嘅依賴(SPEC 第 3 節:避免引入額外 runtime 依賴)。
+//    真正嘅行為測試喺 `npm run test:offline`(要 Playwright + 已 build 嘅 dist)。
+console.log("\n[R4] service worker 導航 — 源碼守衛");
+{
+  const templatePath = join(HERE_ROOT, "public", "sw-template.js");
+  const template = await readFile(templatePath, "utf8");
+  const navBody = template.slice(
+    template.indexOf("async function handleNavigation"),
+    template.indexOf("async function handleAsset")
+  );
+
+  check("導航嘅 fetch 帶住 cache: \"reload\"", /fetch\(\s*request\s*,\s*\{[^}]*cache:\s*"reload"/.test(navBody));
+  check("導航搵唔到快取嗰陣唔會退返首頁(soft-404)", !/caches\.match\(\s*url\(\s*"\.\/"\s*\)\s*\)/.test(navBody));
+  check("導航搵唔到快取嗰陣會出 404 版", navBody.includes('url("./404")'));
+  check("有處理 GitHub Pages 嘅 301 redirect", navBody.includes("response.redirected"));
+
+  // 已 build 嘅 sw.js 都要有 —— 模板啱但 postbuild 出錯嘅話,上線嗰個都係錯。
+  const builtPath = join(HERE_ROOT, "dist", "sw.js");
+  if (existsSync(builtPath)) {
+    const built = await readFile(builtPath, "utf8");
+    // ⚠️ 一定要收窄到 handleNavigation 嗰段先搵。
+    //    第一版寫成搵成份檔,結果拆走導航嗰個 cache:"reload" 之後佢照樣「ok」——
+    //    因為 install 嗰個 precache 迴圈自己都有一個 cache: "reload"。
+    //    突變測試捉到嘅,唔係產品 bug,係我呢條斷言本身太鬆。
+    const builtNav = built.slice(
+      built.indexOf("async function handleNavigation"),
+      built.indexOf("async function handleAsset")
+    );
+    check("已 build 嘅 dist/sw.js 嘅導航段有 cache: \"reload\"", /fetch\(\s*request\s*,\s*\{[^}]*cache:\s*"reload"/.test(builtNav));
+    check("已 build 嘅 dist/sw.js 冇剩低未取代嘅佔位符", !built.includes("__CRITICAL__") && !built.includes("__VERSION__"));
+  } else {
+    console.log("  skip dist/sw.js 未 build,跳過已建置檔案嘅檢查");
   }
 }
 
