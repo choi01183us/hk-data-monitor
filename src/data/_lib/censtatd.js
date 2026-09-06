@@ -61,6 +61,17 @@ function nfcDeep(value) {
 const metaCache = new Map();
 
 /**
+ * 清走元資料快取。
+ *
+ * 錄影交易回滾之後一定要清:唔清嘅話,一個已經回滾咗(即係磁碟上仍然係舊錄影)
+ * 嘅 comp.json 會經呢個 in-process cache 漏去下一個指標,
+ * 令嗰個指標嘅快照建基於「新」meta,但磁碟上嘅錄影仍然係舊 —— 另一個方向嘅 desync。
+ */
+export function resetTableMetaCache() {
+  metaCache.clear();
+}
+
+/**
  * 攞一張表嘅元資料。
  *
  * comp.json  結構:合法 sv x 呈現方式、有咩維度、show_total、since、最後更新日期

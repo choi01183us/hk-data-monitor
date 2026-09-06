@@ -16,6 +16,8 @@ import { appendFile } from "node:fs/promises";
 
 import { CENSTATD_INDICATORS, FISCAL_INDICATORS, loadCenstatdIndicator, loadFiscalIndicator } from "../src/data/_lib/indicators.js";
 import { readSnapshot, finaliseIndicator, writeSnapshot } from "../src/data/_lib/snapshot.js";
+import { withFixtureTransaction } from "../src/data/_lib/http.js";
+import { resetTableMetaCache } from "../src/data/_lib/censtatd.js";
 
 const TARGETS = [
   ...Object.keys(CENSTATD_INDICATORS).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
@@ -26,8 +28,12 @@ const results = [];
 
 for (const { id, load } of TARGETS) {
   const previous = await readSnapshot(id);
+  // 元資料快取要逐個指標清 —— 見 resetTableMetaCache() 嘅註解。
+  resetTableMetaCache();
   try {
-    const fresh = finaliseIndicator(await load(), previous);
+    // 錄影同快照原子更新:呢個指標中途死咗,佢啲錄影一齊丟棄,
+    // 唔可以出現「錄影新、快照舊」。
+    const fresh = finaliseIndicator(await withFixtureTransaction(load), previous);
     const outcome = await writeSnapshot(id, fresh);
     results.push({
       id,

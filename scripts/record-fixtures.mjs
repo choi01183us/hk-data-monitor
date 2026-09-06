@@ -11,6 +11,11 @@
 // 所以錄完之後,快照應該冇變(內容一樣)—— 呢個本身就係一個健康檢查。
 
 import { CENSTATD_INDICATORS, FISCAL_INDICATORS, loadCenstatdIndicator, loadFiscalIndicator } from "../src/data/_lib/indicators.js";
+import { withFixtureTransaction, fixturesTouched, fixtureDir } from "../src/data/_lib/http.js";
+import { readdir, rm } from "node:fs/promises";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { resetTableMetaCache } from "../src/data/_lib/censtatd.js";
 
 if (process.env.HKDM_FIXTURES !== "record") {
   console.error("要用 `npm run fixtures` 行(佢會設 HKDM_FIXTURES=record)");
@@ -24,8 +29,10 @@ const targets = [
 
 let failed = 0;
 for (const { id, load } of targets) {
+  resetTableMetaCache();
   try {
-    const doc = await load();
+    // 中途死咗就丟棄呢個指標嘅全部錄影 —— 唔可以留低半新半舊。
+    const doc = await withFixtureTransaction(load);
     console.log(`  ok   ${id.padEnd(32)} ${doc.series.length} 點`);
   } catch (error) {
     failed += 1;
@@ -33,4 +40,19 @@ for (const { id, load } of targets) {
   }
 }
 console.log(`\n${targets.length} 個指標,${failed} 個錄唔到`);
+
+// 清孤兒 —— **只有全部成功先做**。
+// 有指標失敗嘅話佢啲錄影已經回滾(冇被 touch),照清就會連舊錄影都刪埋,
+// 之後 test:checks 就會話搵唔到錄影。
+const dir = fixtureDir();
+if (failed === 0 && existsSync(dir)) {
+  const touched = fixturesTouched();
+  const orphans = (await readdir(dir)).filter((name) => name.endsWith(".gz") && !touched.has(name));
+  for (const name of orphans) await rm(join(dir, name), { force: true });
+  if (orphans.length > 0) {
+    console.log(`清走 ${orphans.length} 個冇人再讀嘅舊錄影(改咗登記冊之後留低嘅):`);
+    for (const name of orphans) console.log(`  - ${name}`);
+  }
+}
+
 if (failed > 0) process.exit(1);

@@ -33,9 +33,28 @@ import { isFiscalPeriodSeries, toDate, formatPeriodZh } from "../src/components/
 import { CENSTATD_INDICATORS } from "../src/data/_lib/indicators.js";
 import { readSnapshot } from "../src/data/_lib/snapshot.js";
 import { pickDataAsOf, isDisplayed } from "../src/data/_lib/site-meta.js";
+import { readdir, stat, mkdtemp } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { createServer } from "node:http";
 
 let passed = 0;
 let failed = 0;
+
+// R8 用:記低錄影目錄喺測試開始之前嘅狀態。
+// 「零網絡」嘅測試如果會順手錄影,R5 嘅突變測試就係假嘅 ——
+// 改壞 transform 之後錄影跟住變,永遠對得上。
+const FIXTURE_DIR_FOR_AUDIT = join(HERE_ROOT, "src", "data", "_fixtures");
+async function fixtureDirState() {
+  if (!existsSync(FIXTURE_DIR_FOR_AUDIT)) return [];
+  const names = (await readdir(FIXTURE_DIR_FOR_AUDIT)).sort();
+  const out = [];
+  for (const name of names) {
+    const info = await stat(join(FIXTURE_DIR_FOR_AUDIT, name));
+    out.push(`${name}:${info.size}:${info.mtimeMs}`);
+  }
+  return out;
+}
+const fixtureStateAtStart = await fixtureDirState();
 
 function check(name, condition, detail = "") {
   if (condition) {
@@ -557,6 +576,101 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
       `而家係 ${pickDataAsOf(realDocs)}`
     );
   }
+}
+
+
+// ── R7. 錄影同快照要原子更新 ───────────────────────────────────
+//
+// 真實 bug(實測重現過):一個指標唔止打一個 endpoint —— 統計處每個打 3 個
+// (comp.json、lang.json、POST),財政儲備打 8 個。錄影做喺 HTTP 層,
+// 所以「頭幾個成功、最後一個死」嘅時候,成功嗰幾個嘅錄影已經落咗磁碟,
+// 而 fail-soft 保留咗**舊**快照 —— 錄影新、快照舊。
+// 下星期 test:checks 就會攞住半新半舊嘅錄影去對舊快照,爆咗但唔係因為有 bug。
+//
+// 呢度用一個本機 server 測真實路徑(唔係測 mock):一個 200、一個 404,
+// 包喺同一個交易入面,確認 200 嗰個唔會偷步落磁碟。
+console.log("\n[R7] 錄影原子更新 — 一個 endpoint 死咗,同一指標嘅錄影全部丟棄");
+{
+  const { withFixtureTransaction, pendingFixtureCount, fetchJson: fetchJsonForTest } =
+    await import("../src/data/_lib/http.js");
+
+  const server = createServer((request, response) => {
+    if (request.url === "/good") {
+      response.writeHead(200, { "content-type": "application/json" });
+      response.end(JSON.stringify({ ok: true }));
+    } else {
+      response.writeHead(404, { "content-type": "text/plain" });
+      response.end("nope");
+    }
+  });
+  // port 0 = 由系統派一個冇人用嘅。寫死 port 會撞到殘留 process。
+  await new Promise((resolve) => server.listen(0, "127.0.0.1", resolve));
+  const base = `http://127.0.0.1:${server.address().port}`;
+
+  // ⚠️ 寫去臨時目錄,唔好掂真嘅錄影目錄。
+  //    R8 嘅前提係「測試唔准錄影」;R7 如果寫入真目錄,就算佢自己清返都好,
+  //    錄影目錄設唯讀之後 R7 就會爆 —— 撞過。
+  const tempDir = await mkdtemp(join(tmpdir(), "hkdm-fixture-test-"));
+  const listFixtures = async () => (existsSync(tempDir) ? (await readdir(tempDir)).sort() : []);
+  const before = await listFixtures();
+
+  const previousMode = process.env.HKDM_FIXTURES;
+  const previousDir = process.env.HKDM_FIXTURE_DIR;
+  process.env.HKDM_FIXTURES = "record";
+  process.env.HKDM_FIXTURE_DIR = tempDir;
+  try {
+    // 交易中途死 -> 全部丟棄
+    let threw = null;
+    try {
+      await withFixtureTransaction(async () => {
+        await fetchJsonForTest(`${base}/good`, { retries: 1 });
+        check("交易入面成功嘅錄影係入咗緩衝,未落磁碟", pendingFixtureCount() === 1, `緩衝 ${pendingFixtureCount()} 個`);
+        await fetchJsonForTest(`${base}/bad`, { retries: 1 });
+      });
+    } catch (error) {
+      threw = error;
+    }
+    check("交易入面有 endpoint 死咗 -> 掟錯出嚟", threw !== null);
+    check("緩衝已清空", pendingFixtureCount() === 0);
+    const afterRollback = await listFixtures();
+    check(
+      "回滾之後磁碟上一個新錄影都冇",
+      afterRollback.length === before.length && afterRollback.every((f, i) => f === before[i]),
+      `多咗 ${afterRollback.filter((f) => !before.includes(f)).join("、")}`
+    );
+
+    // 交易全部成功 -> 要落磁碟
+    await withFixtureTransaction(async () => {
+      await fetchJsonForTest(`${base}/good`, { retries: 1 });
+    });
+    const afterCommit = await listFixtures();
+    const added = afterCommit.filter((f) => !before.includes(f));
+    check("交易成功之後錄影落咗磁碟", added.length === 1, `多咗 ${added.length} 個`);
+
+  } finally {
+    if (previousMode === undefined) delete process.env.HKDM_FIXTURES;
+    else process.env.HKDM_FIXTURES = previousMode;
+    if (previousDir === undefined) delete process.env.HKDM_FIXTURE_DIR;
+    else process.env.HKDM_FIXTURE_DIR = previousDir;
+    server.close();
+    await rm(tempDir, { recursive: true, force: true });
+  }
+}
+
+// ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
+//
+// R5 嘅突變測試前提係「改壞 transform,錄影唔跟住變」。
+// 如果測試流程任何一條路會觸發錄影,成個突變測試就係假嘅 ——
+// 改壞咗之後錄影一齊變,永遠對得上,永遠綠燈。
+console.log("\n[R8] 測試流程唔准寫錄影");
+{
+  check("HKDM_FIXTURES 唔係 record", process.env.HKDM_FIXTURES !== "record", process.env.HKDM_FIXTURES);
+  const now = await fixtureDirState();
+  check(
+    `跑完成套測試,錄影目錄一個 byte 都冇改(${now.length} 個檔)`,
+    now.length === fixtureStateAtStart.length && now.every((entry, i) => entry === fixtureStateAtStart[i]),
+    "有錄影被改咗 —— R5 嘅突變測試會變成假綠燈"
+  );
 }
 
 // ── 總結 ──────────────────────────────────────────────────────

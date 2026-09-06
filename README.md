@@ -49,6 +49,7 @@ npm run dev          # http://localhost:3000,改完即刻見到
 SPEC.md                      規格(凍結)
 findings.md                  第 0 步探路實測結果 —— 半年後要更新數據就睇呢份
 manual/README.md             人手抄數據嘅年度維護清單
+docs/架構.md                 **三層防護邊層防乜** —— 開工前睇一眼
 docs/部署.md                 部署上 GitHub Pages 嘅步驟
 docs/分階段指令.md            開發流程(第 0 至 6 步)
 
@@ -80,6 +81,15 @@ scripts/                     postbuild、refresh、validate、test:checks、expl
 7. 更新 `findings.md`
 
 ---
+
+## 三層防護
+
+Fixture 重播防**程式碼**回歸、不變式檢查防**上游數據**漂移、fail-soft 防**可用性**。
+三層唔重疊,而且 **fixture 唔保護上游漂移**(錄影同快照一齊更新,會一齊郁)。
+細節見 [`docs/架構.md`](docs/架構.md) —— 呢份唔睇好易以為「fixture 綠燈 = 數據啱」。
+
+**合規唔等於數啱**:schema 驗證只答格式,唔答個數。實測人口換算 ×1000 → ×1001、
+失業率 `pin` 改成男性,兩個 schema 都完全過到,靠對返快照嘅 `content_hash` 先捉到。
 
 ## 六個踩過嘅坑
 

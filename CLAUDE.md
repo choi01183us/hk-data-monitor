@@ -5,7 +5,9 @@
 1. **讀 `SPEC.md`** —— 佢係凍結總綱。開頭明文寫:「如果任何指令同呢份規格有衝突,停低問,唔好自行決定。」
 2. **讀 `findings.md`** —— 第 0 步探路嘅實測結果。**SPEC 第 6 節嘅 12 個來源入面,有 10 個係錯嘅**,
    正確嘅表號同 endpoint 全部喺 findings.md。SPEC 自己都寫咗「實測結果為準」。
-3. 要改人手數據就讀 `manual/README.md`。
+3. **讀 `docs/架構.md`** —— 三層防護邊層防乜。唔睇好易以為「fixture 綠燈 = 數據啱」,
+   但 fixture 同快照係一齊更新嘅,上游漂移兩邊會一齊郁。
+4. 要改人手數據就讀 `manual/README.md`。
 
 呢個 repo **唔屬於** gravity(重力樂園)—— 2026-09-05 抽咗出嚟做獨立 git repo,
 因為要用 GitHub Actions 同 Pages。gravity 嘅 `.gitignore` 已經排除咗佢。
@@ -59,6 +61,12 @@ npm run fixtures       # 重錄上游回應做 fixture
 
 探表 → 寫 registry 設定 → `src/data/<id>.json.js`(三行)→ `src/indicators/<id>.md`(套模板)
 → 加入 `observablehq.config.js` 同 `src/index.md` → build → validate → 更新 `findings.md`。
+
+## 合規唔等於數啱
+
+Schema 驗證只答「格式啱唔啱」。實測人口換算 ×1000 → ×1001、失業率 `pin` 改成男性,
+兩個 schema 都**完全過到**,靠「重播結果嘅 `content_hash` 對返已 commit 嘅快照」先捉到。
+所以驗完 schema 唔代表驗完。
 
 ## 檢查器要自證
 

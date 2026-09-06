@@ -21,7 +21,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { validateIndicator, nextDataVersion, SchemaError } from "./schema.js";
-import { UpstreamError } from "./http.js";
+import { UpstreamError, withFixtureTransaction } from "./http.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -139,7 +139,9 @@ export async function loadIndicator(indicatorId, fetcher, options = {}) {
   }
 
   try {
-    const fresh = finaliseIndicator(await fetcher(), snapshot);
+    // 錄影同快照原子更新(見 http.js 嘅 withFixtureTransaction)。
+    // 冇錄影模式嘅時候呢個 wrapper 乜都唔做,所以正常 build 零成本。
+    const fresh = finaliseIndicator(await withFixtureTransaction(fetcher), snapshot);
     const result = await writeSnapshot(indicatorId, fresh);
     process.stderr.write(
       `[hk-data-monitor] ${indicatorId}: ${result.reason}` +

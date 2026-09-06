@@ -33,7 +33,78 @@ import { fileURLToPath } from "node:url";
 function fixtureMode() {
   return process.env.HKDM_FIXTURES ?? "";
 }
-const FIXTURE_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "_fixtures");
+const DEFAULT_FIXTURE_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "_fixtures");
+
+/**
+ * 錄影目錄。可以由 HKDM_FIXTURE_DIR 覆寫 —— 測試專用。
+ *
+ * 點解要呢個 seam:R7 要證明「交易成功之後錄影真係落磁碟」,即係一定要寫入某處。
+ * 寫入真嘅錄影目錄就等於測試自己喺度錄影 —— 而 R8 嘅前提正正係「測試唔准錄影」。
+ * (實測:錄影目錄設成唯讀之後跑 test:checks,R7 會爆。)
+ * 所以 R7 寫去臨時目錄,真嘅錄影目錄由頭到尾一個 byte 都唔會郁。
+ */
+export function fixtureDir() {
+  return process.env.HKDM_FIXTURE_DIR ?? DEFAULT_FIXTURE_DIR;
+}
+
+/**
+ * 錄影要同快照**原子更新**。
+ *
+ * 實測到嘅問題:一個指標唔止打一個 endpoint —— 統計處每個指標打 3 個
+ * (comp.json、lang.json、POST),財政儲備打 8 個(每個財政年度一份檔)。
+ * 錄影做喺 HTTP 層,所以「頭幾個成功、最後一個 404」嘅時候,
+ * 成功嗰幾個嘅錄影已經寫咗落磁碟,而 fail-soft 保留咗**舊**快照。
+ *
+ * 結果:錄影新、快照舊。下星期 test:checks 重播就會攞住半新半舊嘅錄影
+ * 去對舊快照,爆咗但唔係因為有 bug。
+ *
+ * 所以錄影期間先入緩衝,**成個指標成功先落磁碟**,中途掟錯就全部丟棄。
+ * 可重入:巢狀呼叫會加入外層嗰個交易。
+ */
+let fixtureBuffer = null;
+let transactionDepth = 0;
+
+export async function withFixtureTransaction(fn) {
+  if (transactionDepth === 0) fixtureBuffer = new Map();
+  transactionDepth += 1;
+  try {
+    const result = await fn();
+    transactionDepth -= 1;
+    if (transactionDepth === 0) {
+      const pending = fixtureBuffer;
+      fixtureBuffer = null;
+      for (const [path, bytes] of pending) {
+        await mkdir(dirname(path), { recursive: true });
+        await writeFile(path, bytes);
+      }
+    }
+    return result;
+  } catch (error) {
+    transactionDepth -= 1;
+    // 丟棄:呢個指標唔完整,佢啲錄影唔可以出街
+    if (transactionDepth === 0) fixtureBuffer = null;
+    throw error;
+  }
+}
+
+/** 畀測試用:而家緩衝住幾多個未落磁碟嘅錄影。 */
+export function pendingFixtureCount() {
+  return fixtureBuffer?.size ?? 0;
+}
+
+/**
+ * 呢個 process 用過(讀過或者寫過)嘅錄影檔名。
+ *
+ * 用嚟清孤兒:錄影檔名由 URL + query 內容決定,所以改咗登記冊(例如換咗 cv code
+ * 或者 period_start)就會產生一個新檔,舊嗰個冇人再讀但仍然留喺 repo 度。
+ * 實測過一次:8 個統計處指標,但有 9 個 POST 錄影。
+ */
+const touchedFixtures = new Set();
+
+export function fixturesTouched() {
+  return new Set(touchedFixtures);
+}
+
 
 /** 錄影檔名:睇得出係邊個來源,再加內容雜湊防撞。 */
 function fixtureName(url, method, body) {
@@ -50,7 +121,9 @@ function fixtureName(url, method, body) {
 }
 
 async function readFixture(url, method, body) {
-  const path = join(FIXTURE_DIR, fixtureName(url, method, body));
+  const name = fixtureName(url, method, body);
+  touchedFixtures.add(name);
+  const path = join(fixtureDir(), name);
   if (!existsSync(path)) {
     throw new Error(
       `HKDM_FIXTURES=replay 但搵唔到錄影:${fixtureName(url, method, body)}\n` +
@@ -92,7 +165,6 @@ function withoutVolatile(text) {
 }
 
 async function writeFixture(url, method, body, text, response) {
-  await mkdir(FIXTURE_DIR, { recursive: true });
   const headers = {};
   // 只留 loader 真係讀嘅 header。全部錄低會令錄影檔隨每次抓數而變(date、etag…),
   // 咁 git 就會日日見到改動。
@@ -100,7 +172,9 @@ async function writeFixture(url, method, body, text, response) {
     const value = response.headers.get(name);
     if (value) headers[name] = value;
   }
-  const path = join(FIXTURE_DIR, fixtureName(url, method, body));
+  const name = fixtureName(url, method, body);
+  touchedFixtures.add(name);
+  const path = join(fixtureDir(), name);
   const next = JSON.stringify({ url, method, status: response.status, headers, body: text });
 
   // 內容冇變就唔好覆寫。同 writeSnapshot 一樣嘅理由:每週 cron 都重錄一次,
@@ -119,7 +193,15 @@ async function writeFixture(url, method, body, text, response) {
       // 舊錄影讀唔到就當佢冇,照覆寫
     }
   }
-  await writeFile(path, gzipSync(Buffer.from(next)));
+  const bytes = gzipSync(Buffer.from(next));
+
+  // 有交易行緊就入緩衝,等成個指標做完先落磁碟(見上面 withFixtureTransaction)。
+  if (fixtureBuffer) {
+    fixtureBuffer.set(path, bytes);
+    return;
+  }
+  await mkdir(fixtureDir(), { recursive: true });
+  await writeFile(path, bytes);
 }
 
 /**
