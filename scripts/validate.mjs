@@ -1,9 +1,16 @@
 #!/usr/bin/env node
 // 驗證 src/data/_snapshots/ 入面每一份 JSON 都符合 SPEC 第 5 節 schema。
 //
-// 兩個地方會跑:
+// 三個地方會跑:
+//   · **每次 `npm run build` 開頭** —— 呢個係 6 日新鮮期嘅其中一道補鑊閘:
+//     快照未過期嘅時候 loader 根本唔會跑,所以「改咗 schema 但舊快照唔合規」
+//     呢種情況淨靠 loader 係捉唔到嘅。呢度零網絡、秒跑,所以擺喺 build 前面唔嘥時間。
 //   · GitHub Actions 抓完數之後 —— 唔合規就唔准 commit
 //   · 本機 `npm run validate`
+//
+// 同時驗 manual/:嗰啲檔係人手改嘅,改壞咗 loader 一樣唔會即刻知。
+// 驗法係真係行一次 loadManualIndicator()(離線),所以連「十組相加對唔上總額」
+// 呢類抄錯都會喺呢度捉到。
 //
 // 注意:loader 本身已經喺 finaliseIndicator() 度驗過一次,build 會 fail。
 // 呢個 script 係第二道閘,查嘅係「已經入咗 repo 嘅檔案」——
@@ -16,6 +23,7 @@ import { join } from "node:path";
 
 import { SNAPSHOT_DIR } from "../src/data/_lib/snapshot.js";
 import { validateIndicator, REQUIRED_FIELDS } from "../src/data/_lib/schema.js";
+import { loadManualIndicator, MANUAL_DIR } from "../src/data/_lib/manual.js";
 
 /**
  * SPEC 第 5 節之外,本專案自己加嘅底線。
@@ -87,8 +95,40 @@ async function main() {
     }
   }
 
+  // ── manual/ ──────────────────────────────────────────────────
+  // 真係行一次 loader(離線),咁「十組相加對唔上總額」呢類抄錯都會喺呢度爆。
+  let manualFiles = [];
+  try {
+    manualFiles = (await readdir(MANUAL_DIR)).filter((name) => name.endsWith(".json")).sort();
+  } catch {
+    manualFiles = [];
+  }
+
+  for (const file of manualFiles) {
+    const id = file.replace(/\.json$/, "");
+    try {
+      const doc = await loadManualIndicator(id);
+      // manual 檔本身冇 data_version(佢係輸入,唔係輸出),補一個先驗。
+      const { ok, errors } = validateIndicator({ ...doc, data_version: "2026.01.1" });
+      if (!ok) {
+        failures += 1;
+        console.error(`FAIL manual/${file}`);
+        for (const problem of errors) console.error(`       ${problem}`);
+      } else {
+        console.log(
+          `ok   manual/${id.padEnd(20)} ${String(doc.series.length).padStart(4)} 點  ` +
+            `${doc.manual_status === "todo" ? "未填數" : doc.manual_filled}`
+        );
+      }
+    } catch (error) {
+      failures += 1;
+      console.error(`FAIL manual/${file}`);
+      console.error(`       ${error.message.split("\n")[0]}`);
+    }
+  }
+
   console.log(
-    `\n${files.length} 份快照,${failures} 個唔合格。` +
+    `\n${files.length} 份快照 + ${manualFiles.length} 份人手數據,${failures} 個唔合格。` +
       `\nSPEC 第 5 節必要欄位:${REQUIRED_FIELDS.join("、")}`
   );
 

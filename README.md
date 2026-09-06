@@ -21,8 +21,10 @@ npm run dev          # http://localhost:3000,改完即刻見到
 | `npm run build` | 砌靜態站入 `dist/`,順埋生成 service worker |
 | `npm run build:offline` | 同上,但完全唔上網(用 repo 入面嘅快照)。CI 用呢個 |
 | `npm run refresh` | 重抓全部 API 指標。有變動先寫檔 |
-| `npm run validate` | 驗全部快照符合 SPEC 第 5 節 schema |
-| `npm run test:checks` | **檢查器自證**:故意整壞嘢,確認啲閘真係會嘈 |
+| `npm run validate` | 驗全部快照同 `manual/` 符合 SPEC 第 5 節(零網絡,`build` 開頭會自動跑) |
+| `npm run test:checks` | **檢查器自證**:故意整壞嘢,確認啲閘真係會嘈(零網絡) |
+| `npm run test:offline` | 離線行為測試(要 Playwright,冇就 SKIP) |
+| `npm run fixtures` | 重錄上游回應做離線測試用嘅 fixture |
 | `node tools/serve-dist.mjs` | 喺 `:8787/hk-data-monitor/` 模擬 GitHub Pages,驗離線同子路徑 |
 | `node scripts/explore-table.mjs 310-31001` | 探統計處一張表有咩 sv / cv 代碼 |
 
@@ -57,6 +59,7 @@ src/
   data/<id>.json.js          data loader —— 每個得三行,設定喺 _lib/indicators.js
   data/_lib/                 抓取、正規化、schema 驗證
   data/_snapshots/<id>.json  **入咗 git 嘅資料**。fail-soft 就係靠佢
+  data/_fixtures/*.json.gz   錄低嘅上游回應。test:checks 靠佢零網絡跑完整 transform
   lang/                      介面字串
 manual/<id>.json             人手抄嘅數據(Actions 永遠唔碰)
 public/                      sw-template.js、manifest、圖示、離線橫額
@@ -78,7 +81,7 @@ scripts/                     postbuild、refresh、validate、test:checks、expl
 
 ---
 
-## 五個踩過嘅坑
+## 六個踩過嘅坑
 
 呢啲全部係「**唔會報錯,淨係會錯**」嗰類。詳情同實測證據喺 `findings.md`。
 
@@ -90,26 +93,45 @@ scripts/                     postbuild、refresh、validate、test:checks、expl
 所以 `src/data/_lib/censtatd.js` 逐個 cv code 對返 `table_<id>_lang.json` 驗,驗唔到就 throw。
 **唔好信 `status: Success`。**
 
-### 2. `observable build` 見到快取就唔會再跑 loader
+### 2. Fail-soft **只**覆蓋「攞唔到數」
+
+SPEC 第 7 節嘅 fail-soft 係為咗網絡／HTTP／上游格式變 —— 嗰啲下星期再抓有機會好返。
+
+**schema 驗證失敗、cv code 寫錯、換算寫錯係程式碼錯,一律 hard fail。**
+用 error 類型分(`UpstreamError` vs 其他),唔用 message 分。
+
+點解要分:實測過 loader 寫漏 `source_url`,fail-soft 吞咗,build 綠燈,
+而個站出緊上星期嘅快照 —— 冇人會發現。
+
+### 3. `observable build` 見到快取就唔會再跑 loader
 
 `build` 用 `useStale` 模式。改完 loader 直接 build,出嘅係舊數,而且**冇任何提示**。
 所以 `npm run build` 一定要先 `rm -rf src/.observablehq/cache`(已經寫咗入 package.json)。
 
-### 3. 「2000-01」係 2000 年 1 月定 2000–01 年度?
+仲有一層更陰功嘅:快照有 **6 日新鮮期**,期間 loader **完全唔會執行** ——
+即係改壞咗 transform,`npm run build` 唔會知,CI 用 `HKDM_OFFLINE=1` 更加永遠唔會知。
+
+三道閘一齊擋:
+1. `build` 開頭 `npm run validate` —— 驗現有快照同 `manual/`(零網絡)
+2. `test:checks` 用 `src/data/_fixtures/` 重播一次完整 transform,再對返快照
+   (零網絡、0.2 秒、11 個指標)
+3. schema 錯誤 hard fail,唔行 fail-soft(見上面第 2 條)
+
+### 4. 「2000-01」係 2000 年 1 月定 2000–01 年度?
 
 單睇字串分唔到,兩種喺 SPEC 第 5 節都合法。曾經因為當咗年月,
 **政府收入 30 年數據得 12 年上到圖,其餘靜靜哋掉走**,圖表冇報錯。
 
 而家由成條 series 判斷(財政年度序列一定有 `YY > 12` 嘅期數),轉唔到日期一律 throw。
 
-### 4. `navigator.onLine` 斷晒網都回 `true`
+### 5. `navigator.onLine` 斷晒網都回 `true`
 
 實測確認。所以離線判斷唔可以靠佢,要靠 service worker 真正嘅網絡結果。
 
 而且 GitHub Pages 對每個檔送 `max-age=600`(改唔到),worker 個 `fetch()` 會俾瀏覽器
 HTTP 快取答咗 —— network-first 靜靜哋變 browser-cache-first。導航一定要 `cache: "reload"`。
 
-### 5. Framework 唔會把冇被引用嘅檔案複製入 dist
+### 6. Framework 唔會把冇被引用嘅檔案複製入 dist
 
 `sw.js`、`manifest.webmanifest`、圖示全部唔會自己入到去,要 `scripts/postbuild.mjs` 出手。
 而且 `observable build` 開頭會 `rm -rf dist`,所以呢步一定要喺 build **之後**。

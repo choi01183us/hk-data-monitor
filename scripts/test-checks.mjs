@@ -32,6 +32,7 @@ import { parseMonth } from "../src/data/_lib/treasury.js";
 import { isFiscalPeriodSeries, toDate, formatPeriodZh } from "../src/components/format.js";
 import { CENSTATD_INDICATORS } from "../src/data/_lib/indicators.js";
 import { readSnapshot } from "../src/data/_lib/snapshot.js";
+import { pickDataAsOf, isDisplayed } from "../src/data/_lib/site-meta.js";
 
 let passed = 0;
 let failed = 0;
@@ -427,6 +428,134 @@ console.log("\n[R4] service worker 導航 — 源碼守衛");
     check("已 build 嘅 dist/sw.js 冇剩低未取代嘅佔位符", !built.includes("__CRITICAL__") && !built.includes("__VERSION__"));
   } else {
     console.log("  skip dist/sw.js 未 build,跳過已建置檔案嘅檢查");
+  }
+}
+
+
+// ── R5. Fixture:零網絡跑一次完整 transform ─────────────────────
+//
+// 釘住嘅真實問題:快照有 6 日新鮮期,期間 `observable build` **根本唔會跑 loader**,
+// 所以改壞咗 transform 要等 6 日先浮現;而 CI 部署用 HKDM_OFFLINE=1,永遠唔會浮現。
+// 實測過:loader 寫漏 source_url,build 照樣綠燈,出緊舊快照。
+//
+// 解法:錄低一次上游回應(`npm run fixtures`),喺度重播。
+// 零網絡、0.2 秒跑晒 11 個指標,改壞 transform 即刻嘈。
+//
+// 除咗驗 schema,仲要對返已 commit 嘅快照 —— 「合規」同「數啱」係兩件事。
+console.log("\n[R5] Fixture 重播 — 零網絡跑完整 transform,對返快照");
+{
+  const previousMode = process.env.HKDM_FIXTURES;
+  process.env.HKDM_FIXTURES = "replay";
+  try {
+    const { CENSTATD_INDICATORS: censtatd, FISCAL_INDICATORS: fiscal, loadCenstatdIndicator, loadFiscalIndicator } =
+      await import("../src/data/_lib/indicators.js");
+    const { finaliseIndicator } = await import("../src/data/_lib/snapshot.js");
+
+    const targets = [
+      ...Object.keys(censtatd).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
+      ...Object.keys(fiscal).map((id) => ({ id, load: () => loadFiscalIndicator(id) })),
+    ];
+
+    if (!existsSync(join(HERE_ROOT, "src", "data", "_fixtures"))) {
+      check("有錄影可以重播", false, "行 `npm run fixtures` 先");
+    } else {
+      for (const { id, load } of targets) {
+        let doc;
+        try {
+          doc = await load();
+        } catch (error) {
+          check(`${id} transform 跑得完`, false, error.message.split("\n")[0]);
+          continue;
+        }
+
+        // 1. 出嚟嘅嘢要符合 SPEC 第 5 節
+        const finalised = throwsWith(() => finaliseIndicator(doc, null));
+        check(`${id} transform 輸出符合 schema`, finalised === null, finalised?.split("\n").slice(0, 2).join(" "));
+
+        // 2. 同已 commit 嘅快照對數。合規唔等於數啱 —— 呢條先捉到「靜靜哋計錯」。
+        const snapshot = await readSnapshot(id);
+        if (!snapshot) {
+          check(`${id} 有快照可以對`, false, "冇快照");
+          continue;
+        }
+        check(
+          `${id} 重播結果同快照一致(${doc.series.length} 點)`,
+          doc.content_hash === snapshot.content_hash,
+          `重播 ${doc.content_hash} vs 快照 ${snapshot.content_hash}`
+        );
+      }
+    }
+
+    // 重播模式唔准偷偷上網 —— 錄影唔齊就要大聲死,唔可以跌返去 fetch
+    const { fetchJson } = await import("../src/data/_lib/http.js");
+    let leaked = null;
+    try {
+      await fetchJson("https://example.invalid/never-recorded.json");
+    } catch (error) {
+      leaked = error.message;
+    }
+    check(
+      "重播模式撞到冇錄影嘅 URL 會大聲死(唔會偷偷上網)",
+      leaked !== null && leaked.includes("搵唔到錄影"),
+      leaked ?? "冇掟錯 —— 即係佢真係上咗網"
+    );
+  } finally {
+    if (previousMode === undefined) delete process.env.HKDM_FIXTURES;
+    else process.env.HKDM_FIXTURES = previousMode;
+  }
+}
+
+
+// ── R6. 離線橫額日期只計首頁顯示緊嘅指標 ───────────────────────
+//
+// 真實 bug:橫額顯示「數據截至 2026 年 2 月 25 日」,但嗰個日期嚟自
+// govt_expenditure_policy_groups —— 一個 manual_status: "todo"、一個數都冇填、
+// 首頁根本唔會出嘅指標。學生見到嘅 11 個指標入面最舊其實係 2026-03-23。
+console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢");
+{
+  const displayed = { indicator_id: "shown", updated_at: "2026-03-23", series: [{ period: "2025", value: 1 }] };
+  const todoManual = {
+    indicator_id: "todo_manual",
+    updated_at: "2020-01-01", // 特登設成好舊
+    manual_status: "todo",
+    series: [{ period: "2026-27", value: null }],
+  };
+  const filledManual = {
+    indicator_id: "filled_manual",
+    updated_at: "2026-02-25",
+    manual_status: "filled",
+    series: [{ period: "2026-27", value: 42 }],
+  };
+
+  check("未填數嘅 manual 指標唔算「顯示緊」", isDisplayed(todoManual) === false);
+  check("填咗數嘅 manual 指標算「顯示緊」", isDisplayed(filledManual) === true);
+  check("全部值係 null 嘅指標唔算「顯示緊」", isDisplayed({ series: [{ period: "2025", value: null }] }) === false);
+
+  check(
+    "2020 年嘅 todo 指標唔會拉低橫額日期",
+    pickDataAsOf([displayed, todoManual]) === "2026-03-23",
+    pickDataAsOf([displayed, todoManual])
+  );
+  check(
+    "但佢一填咗數就要計入(規則係「有冇顯示」,唔係「係咪 manual」)",
+    pickDataAsOf([displayed, { ...todoManual, manual_status: "filled", series: [{ period: "2026-27", value: 7 }] }]) ===
+      "2020-01-01"
+  );
+  check("取最舊唔取最新(橫額要保守)", pickDataAsOf([displayed, filledManual]) === "2026-02-25");
+  check("一個都冇顯示 -> null", pickDataAsOf([todoManual]) === null);
+
+  // 對返真實快照:而家 13 份入面有 2 份未填
+  const realDocs = [];
+  for (const id of ["gdp", "median_wage", "govt_expenditure_policy_groups", "phr_waiting_time"]) {
+    const doc = await readSnapshot(id);
+    if (doc) realDocs.push(doc);
+  }
+  if (realDocs.length === 4) {
+    check(
+      "真實快照:兩個未填嘅 manual 指標唔會拉低日期",
+      pickDataAsOf(realDocs) === "2026-03-23",
+      `而家係 ${pickDataAsOf(realDocs)}`
+    );
   }
 }
 

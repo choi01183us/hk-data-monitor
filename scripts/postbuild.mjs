@@ -18,6 +18,8 @@ import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { pickDataAsOf, isDisplayed } from "../src/data/_lib/site-meta.js";
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
 const DIST = join(ROOT, "dist");
@@ -74,17 +76,19 @@ const critical = [
 // 圖表 library:大,但離線畫圖要用。install 嗰陣逐個試,失敗唔會拖冧成個 install。
 const optional = files.filter((file) => isNpm(file.path)).map((file) => file.path);
 
-// 數據截至日期:全站最舊嗰個 —— banner 講「數據截至」要保守,唔可以report 最新嗰個。
-let dataAsOf = null;
+// 數據截至日期:**首頁真係顯示緊嗰批**入面最舊嗰個(見 site-meta.js 嘅註解)。
+// 一個未填數、首頁唔會出嘅 manual 指標,唔應該拉低橫額嘅日期。
+const docs = [];
 let jsonBytes = 0;
 if (existsSync(SNAPSHOTS)) {
   for (const name of (await readdir(SNAPSHOTS)).filter((n) => n.endsWith(".json"))) {
     const raw = await readFile(join(SNAPSHOTS, name), "utf8");
     jsonBytes += Buffer.byteLength(raw);
-    const doc = JSON.parse(raw);
-    if (doc.updated_at && (dataAsOf === null || doc.updated_at < dataAsOf)) dataAsOf = doc.updated_at;
+    docs.push(JSON.parse(raw));
   }
 }
+const dataAsOf = pickDataAsOf(docs);
+const hidden = docs.filter((doc) => !isDisplayed(doc));
 
 // 版本 = 全部要快取嘅檔案路徑嘅雜湊。內容改咗檔名就會變(全部帶 hash),
 // 所以呢個 key 一變就代表真係有嘢唔同咗,舊快取應該退役。
@@ -127,6 +131,12 @@ const mb = (bytes) => `${(bytes / 1024 / 1024).toFixed(2)} MB`;
 console.log(`\npostbuild — service worker 同 PWA`);
 console.log(`  版本            ${version}`);
 console.log(`  數據截至(最舊)  ${dataAsOf ?? "(冇快照)"}`);
+if (hidden.length > 0) {
+  console.log(
+    `  首頁唔顯示      ${hidden.map((doc) => doc.indicator_id).join("、")}` +
+      `(未填數,唔計入上面個日期)`
+  );
+}
 console.log(`  關鍵資源        ${critical.length} 個(頁面 ${htmlPages.length} 版)`);
 console.log(`  盡量快取        ${optional.length} 個(圖表 library)`);
 console.log(`  指標 JSON       ${mb(jsonBytes)}(SPEC 第 8 節上限 ${mb(JSON_BUDGET_BYTES)})`);

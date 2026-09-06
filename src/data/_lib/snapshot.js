@@ -20,7 +20,8 @@ import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { validateIndicator, nextDataVersion } from "./schema.js";
+import { validateIndicator, nextDataVersion, SchemaError } from "./schema.js";
+import { UpstreamError } from "./http.js";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -64,7 +65,7 @@ export function finaliseIndicator(doc, previous) {
   const { ok, errors } = validateIndicator(finalised);
   if (!ok) {
     // 分階段指令第 2 步驗收:「故意整壞一個 loader 嘅輸出,build 要 fail 並準確指出問題。」
-    throw new Error(
+    throw new SchemaError(
       `指標 ${doc.indicator_id ?? "(冇 id)"} 唔符合 SPEC 第 5 節 schema:\n` +
         errors.map((e) => `  - ${e}`).join("\n")
     );
@@ -146,6 +147,17 @@ export async function loadIndicator(indicatorId, fetcher, options = {}) {
     );
     return annotate(fresh, { mode: "live" });
   } catch (error) {
+    // ⚠️ fail-soft 嘅入場券:**只有 UpstreamError**。
+    //
+    // SPEC 第 7 節講嘅係「攞唔到數就保留上一版」——網絡、HTTP、上游格式變。
+    // 其餘一切(schema 驗證失敗、cv code 寫錯、換算寫錯、登記冊打錯字)都係程式碼錯,
+    // 下星期再抓一萬次都一樣錯,fail-soft 只會令個錯潛住而且出緊舊數據。
+    //
+    // 呢個係「安全預設」:唔喺白名單嘅一律 hard fail,而唔係「見到某幾種錯先 hard fail」。
+    // 新加嘅錯誤類型預設會 hard fail,唔會靜靜哋被吞。
+    if (!(error instanceof UpstreamError)) {
+      throw error;
+    }
     if (!snapshot) {
       throw new Error(
         `${indicatorId} 抓唔到,而且冇上一版可以退返去。\n` +

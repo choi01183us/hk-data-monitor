@@ -86,8 +86,13 @@ jobs:
           #    `git diff --quiet` 對「新增但未 track 嘅檔」會回 0(即係「冇變」),
           #    咁一個全新指標嘅第一份快照永遠唔會入到 repo。
           #
-          # ⚠️ 只 add src/data/_snapshots/ —— SPEC 第 7 節:manual/ 永遠唔碰。
-          git add -A src/data/_snapshots/
+          # ⚠️ 只 add 呢兩個目錄 —— SPEC 第 7 節:manual/ 永遠唔碰。
+          #
+          # _fixtures/ 要一齊 commit:佢係 test:checks 離線重播用嘅上游錄影,
+          # 同快照係同一次抓取嘅兩面。唔一齊更新嘅話,下星期 test:checks 嘅
+          # 「重播結果同快照一致」就會爆 —— 唔係因為有 bug,係因為兩者唔同步。
+          # (錄影內容冇變就唔會覆寫,所以唔會產生無謂改動。)
+          git add -A src/data/_snapshots/ src/data/_fixtures/
 
           # ⚠️ `git diff --cached --quiet` 有變動嗰陣 exit 1。喺 set -e 之下唔可以
           #    赤裸擺一行,否則有變動反而會殺咗成個 step。一定要做 if 嘅條件。

@@ -10,9 +10,10 @@
   },
   "scripts": {
     "dev": "observable preview",
-    "build": "rm -rf src/.observablehq/cache && observable build && node scripts/postbuild.mjs",
-    "build:offline": "rm -rf src/.observablehq/cache && HKDM_OFFLINE=1 observable build && node scripts/postbuild.mjs",
-    "refresh": "HKDM_REFRESH=1 node scripts/refresh-data.mjs",
+    "build": "npm run validate && rm -rf src/.observablehq/cache && observable build && node scripts/postbuild.mjs",
+    "build:offline": "npm run validate && rm -rf src/.observablehq/cache && HKDM_OFFLINE=1 observable build && node scripts/postbuild.mjs",
+    "refresh": "HKDM_REFRESH=1 HKDM_FIXTURES=record node scripts/refresh-data.mjs",
+    "fixtures": "HKDM_FIXTURES=record node scripts/record-fixtures.mjs",
     "validate": "node scripts/validate.mjs",
     "test:checks": "node scripts/test-checks.mjs",
     "test:offline": "node scripts/test-offline.mjs",

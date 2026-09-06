@@ -23,12 +23,14 @@ npm run build          # 砌站 + 生成 service worker
 npm run build:offline  # 唔上網砌(CI 用)
 npm run refresh        # 重抓全部 API 指標
 npm run validate       # 驗快照符合 SPEC 第 5 節
-npm run test:checks    # 檢查器自證(52 項,離線)
+npm run test:checks    # 檢查器自證 + fixture 重播(108 項,零網絡)
+npm run test:offline   # 離線行為測試(要 Playwright,冇就 SKIP)
+npm run fixtures       # 重錄上游回應做 fixture
 ```
 
 改完 `server`/loader **一定要真係跑一次**。`npm run validate` 只驗資料,唔驗行為。
 
-## 最容易搞錯嘅五件事
+## 最容易搞錯嘅六件事
 
 1. **統計處 API 有五種錯法係回 `status: Success` 唔報錯嘅。**
    最毒:向錯嘅表要啱嘅 code,會攞到總數冒充分項(總失業率 3.7% 當青年失業率 11.2%)。
@@ -39,11 +41,17 @@ npm run test:checks    # 檢查器自證(52 項,離線)
 
 3. **`src/data/_snapshots/` 先係「上一版資料」,唔係 Framework 個 cache。**
    fail-soft(SPEC 第 7 節)靠佢。呢個目錄入咗 git,唔可以加落 `.gitignore`。
+   `src/data/_fixtures/` 係同一次抓取嘅另一面(transform **之前**嘅上游回應),
+   兩者要一齊 commit,否則 `test:checks` 嘅「重播對快照」會爆。
 
-4. **「2000-01」有歧義**:可以係 2000 年 1 月,亦可以係 2000–01 財政年度。
+4. **Fail-soft 只覆蓋「攞唔到數」。** schema 錯、cv code 錯、換算錯 = 程式碼錯,
+   一律 hard fail。用 error 類型分(`UpstreamError`),唔好用 message 分。
+   加新錯誤類型嘅預設行為係 hard fail —— 呢個係刻意嘅安全預設。
+
+5. **「2000-01」有歧義**:可以係 2000 年 1 月,亦可以係 2000–01 財政年度。
    一定要用 `isFiscalPeriodSeries()` 由**成條 series** 判斷,唔好逐個字串估。
 
-5. **Framework 唔會 copy 冇被引用嘅檔案入 `dist/`。**
+6. **Framework 唔會 copy 冇被引用嘅檔案入 `dist/`。**
    `sw.js` / manifest / 圖示全部靠 `scripts/postbuild.mjs`,而且一定要喺 build **之後**跑
    (`observable build` 開頭會 `rm -rf dist`)。
 
