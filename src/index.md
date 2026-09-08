@@ -2,6 +2,7 @@
 title: 香港數據監測站
 keywords: 香港 數據 統計 開放數據 中學 公民 經濟 社會 分餅 預算 備忘
 toc: false
+sidebar: false
 ---
 
 ```js
@@ -26,13 +27,59 @@ const loaded = await Promise.all([
 const indicators = loaded.filter((indicator) => indicator.manual_status !== "todo");
 ```
 
-<h1 id="home">香港數據監測站</h1>
+<div class="monitor-home">
 
-<p class="lede">
-由生活問題出發，用香港公開數據建立論點，再討論公共資源應該點分。
-</p>
+<header class="monitor-header">
+  <div class="monitor-brand">
+    <span class="monitor-brand__mark" aria-hidden="true">HK</span>
+    <div>
+      <span class="monitor-kicker">認識城市 · 理解生活 · 討論財政</span>
+      <h1 id="home">香港數據監測站</h1>
+    </div>
+  </div>
+  <nav class="monitor-nav" aria-label="首頁導覽">
+    <a href="#learning-routes">學習路線</a>
+    <a class="monitor-nav__primary" href="./learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
 
-<h2 id="learning-routes">揀一條學習路線</h2>
+<div class="monitor-toolbar">
+  <h2 id="indicators">全港數據總覽</h2>
+  <span class="monitor-tag">官方統計 · 定期更新</span>
+  <p>每張卡各有數據日期，點入可睇完整走勢及來源。</p>
+</div>
+
+<div class="monitor-dashboard">
+
+<section class="monitor-map-panel" aria-labelledby="hong-kong-map">
+  <div class="monitor-panel-heading">
+    <div>
+      <span class="monitor-kicker">地理總覽</span>
+      <h2 id="hong-kong-map">讀懂香港，由這裏開始。</h2>
+    </div>
+    <span class="monitor-tag">地域定位</span>
+  </div>
+  <figure class="monitor-map">
+    <img src="./assets/hong-kong-map.svg" width="900" height="560" alt="香港地理輪廓，標示新界、九龍、香港島及大嶼山。" fetchpriority="high">
+    <figcaption>地圖作地域定位；各指標屬全港統計，唔代表單一地區情況。</figcaption>
+  </figure>
+  <div class="monitor-map-footer">
+    <span>地圖：© <a href="https://portal.csdi.gov.hk/csdi-webpage/dataset/landsd_rcd_1637221775627_85634" target="_blank" rel="noopener noreferrer">香港特別行政區政府地政總署</a>；經簡化。</span>
+    <a href="./about/sources#hong-kong-map-source">地圖來源及製作說明 <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+
+```js
+display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCard(indicator))}</div>`);
+```
+
+</div>
+
+<section class="monitor-learning" aria-labelledby="learning-routes">
+<div class="monitor-section-heading">
+  <div><span class="monitor-kicker">由觀察到行動</span><h2 id="learning-routes">帶住問題，繼續探索</h2></div>
+  <p>揀一條路線，將數字變成有根據嘅論點。</p>
+</div>
 
 <nav class="learning-routes" aria-label="學習路線">
   <a class="learning-route" href="./learn/hong-kong">
@@ -52,30 +99,19 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   </a>
 </nav>
 
-<p class="site-assurances">每頁有官方來源同數據日期 · 唔收集個人資料 · 完成離線快取後可離線閱讀</p>
+</section>
 
-<h2 id="indicators">直接揀指標</h2>
-
-已經有研究問題？揀相關指標，先睇日期、單位同「未能證明甚麼」，再引用數字。
-
-```js
-display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCard(indicator))}</div>`);
-```
-
-<h2 id="how-to-use">由睇數到講理由</h2>
-
-先用一句話講清楚你想研究嘅問題。記低數字講緊邊類人、邊個時期同邊種口徑，
-再分開寫「數據顯示咩」同「我建議點做」。同學可以用相同證據提出唔同建議，重點係交代理由同取捨。
-
-<div class="callout">
-
-**寫功課引用嘅時候**,唔好淨係寫「網上資料顯示」。每一頁下面都有「資料來源」一欄,
-入面有機構全名、原文連結同數據截至日期 —— 三樣加埋先算一個站得住嘅出處。
-
+<div class="monitor-notes">
+  <section aria-labelledby="how-to-use">
+    <h2 id="how-to-use">睇數，亦要睇出處</h2>
+    <p>先核對時期、單位、群組同預算狀態，再分開寫「數據顯示咩」同「我建議點做」。指標頁可複製數字連官方來源。</p>
+  </section>
+  <section aria-labelledby="status">
+    <h2 id="status">待填，唔等於零</h2>
+    <p>公共經常開支十組同公屋輪候時間要人手核對。未填指標唔會出卡；需要嗰部分證據時，先記低缺口，等核對後再落結論。</p>
+  </section>
 </div>
 
-<h2 id="status">待填數據點處理</h2>
+<p class="site-assurances">有來源 · 有數據日期 · 唔收集個人資料 · 完成快取後可離線閱讀</p>
 
-公屋輪候時間同公共經常開支十個政策組別要人手核對官方文件。
-標示「數據未填」嘅頁面仍待抄數，未填唔代表零，亦唔會喺上面顯示指標卡。
-如果你嘅論點需要嗰部分數據，先記低證據缺口，等核對完成再落結論。
+</div>

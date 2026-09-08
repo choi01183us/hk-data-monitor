@@ -679,3 +679,291 @@ body {
 .hkdm-offline-banner__close:hover {
   opacity: 1;
 }
+
+/* 首頁城市總覽。只改首頁；指標／工作紙沿用閱讀用淺深主題。 */
+.indicator-card__sparkline {
+  display: block;
+  width: 100%;
+  height: 58px;
+}
+.indicator-card__trend-range {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin: 0.25rem 0 0;
+  font-size: 0.68rem;
+}
+.indicator-card__trend-caption {
+  margin: 0;
+  font-size: 0.68rem;
+}
+.indicator-card__version { display: block; }
+.indicator-panel__source {
+  margin: 0;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid var(--hk-border);
+  font-size: 0.72rem;
+}
+.indicator-panel__source > span { margin-right: 0.6rem; }
+
+@media screen {
+  :root:has(.monitor-home) {
+    color-scheme: dark;
+    --theme-background: #081019;
+    --theme-background-a: #0d1924;
+    --theme-background-alt: #101e2b;
+    --theme-foreground: #e6f0f7;
+    --theme-foreground-alt: #e6f0f7;
+    --theme-foreground-muted: #a5b8c8;
+    --theme-foreground-faint: #93a9bc;
+    --theme-foreground-focus: #65ddc1;
+    --hk-border: #2a4052;
+    --hk-surface: #112330;
+  }
+  body:has(.monitor-home) {
+    background: var(--theme-background);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Noto Sans TC", sans-serif;
+  }
+  body:has(.monitor-home) #observablehq-center { margin: 0; }
+  body:has(.monitor-home) #observablehq-main {
+    width: auto;
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  body:has(.monitor-home) #observablehq-footer {
+    max-width: 1560px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-top: 1px solid var(--hk-border);
+  }
+  .monitor-home {
+    --monitor-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    padding-bottom: 1.2rem;
+  }
+  .monitor-home :is(h1, h2, h3, p, figure, nav, section) { max-width: none; }
+  .monitor-home a { color: var(--theme-foreground-focus); }
+  .monitor-home a:focus-visible {
+    outline: 2px solid var(--theme-foreground-focus);
+    outline-offset: 4px;
+  }
+  .monitor-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--hk-border);
+  }
+  .monitor-brand { display: flex; align-items: center; gap: 0.85rem; }
+  .monitor-brand__mark {
+    display: grid;
+    place-items: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex: none;
+    border: 1px solid var(--theme-foreground-focus);
+    color: var(--theme-foreground-focus);
+    background: #11312f;
+    font: 600 1.15rem var(--monitor-mono);
+    letter-spacing: -0.08em;
+  }
+  .monitor-kicker {
+    display: block;
+    color: var(--theme-foreground-muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+  .monitor-header h1 {
+    margin: 0.2rem 0 0;
+    font-size: clamp(1.3rem, 3vw, 1.65rem);
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .monitor-nav { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+  .monitor-nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.82rem;
+    color: var(--theme-foreground);
+    text-decoration: none;
+  }
+  .monitor-nav .monitor-nav__primary {
+    border: 1px solid #346858;
+    background: #12302f;
+    padding-inline: 0.8rem;
+    gap: 0.6rem;
+    color: #a0f0da;
+  }
+  .monitor-nav a:hover { color: var(--theme-foreground-focus); }
+  .monitor-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 0.85rem;
+    padding: 1rem 0;
+  }
+  .monitor-toolbar h2 { margin: 0; font-size: 0.95rem; font-weight: 600; }
+  .monitor-tag {
+    font-size: 0.67rem;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid #315867;
+    color: #9fd8d6;
+    white-space: nowrap;
+  }
+  .monitor-toolbar p {
+    margin: 0;
+    color: var(--theme-foreground-muted);
+    font-size: 0.75rem;
+  }
+  .monitor-dashboard { display: grid; gap: 0.85rem; }
+  /* 保留首頁原有逐卡資料流程；格線只改呈現次序／大小，唔合併數據。 */
+  .monitor-dashboard > .observablehq,
+  .monitor-dashboard .card-grid { display: contents; }
+  .monitor-map-panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #0b1722;
+    border: 1px solid var(--hk-border);
+    border-radius: 3px;
+  }
+  .monitor-panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.1rem 0.5rem;
+  }
+  .monitor-panel-heading h2 { margin: 0.25rem 0 0; font-size: 1rem; font-weight: 500; }
+  .monitor-map {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin: 0;
+    min-height: 0;
+  }
+  .monitor-map img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    flex: 1;
+    min-height: 0;
+  }
+  .monitor-map figcaption {
+    margin: 0;
+    padding: 0.65rem 1.1rem;
+    color: var(--theme-foreground-muted);
+    font-size: 0.73rem;
+  }
+  .monitor-map-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.4rem 1rem;
+    padding: 0.6rem 1.1rem;
+    border-top: 1px solid var(--hk-border);
+    font-size: 0.68rem;
+    color: var(--theme-foreground-muted);
+  }
+  .monitor-home .indicator-panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: var(--theme-background-alt);
+    border: 1px solid var(--hk-border);
+    border-radius: 3px;
+    transition: border-color 120ms ease;
+  }
+  .monitor-home .indicator-panel:hover,
+  .monitor-home .indicator-panel:focus-within { border-color: #4f9a94; }
+  .monitor-home .indicator-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.85rem 1rem 0.65rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--theme-foreground);
+    transition: none;
+    text-decoration: none;
+  }
+  .monitor-home .indicator-card:is(:hover, :focus-visible) { transform: none; }
+  .monitor-home .indicator-card__category { align-self: flex-start; padding: 0; border: 0; border-radius: 0; font-size: 0.66rem; letter-spacing: 0.15em; color: #8fc4c4; }
+  .monitor-home .indicator-card__name { margin: 0.2rem 0; font-size: 1rem; font-weight: 600; }
+  .monitor-home .indicator-card__question { margin: 0 0 0.25rem; font-size: 0.73rem; }
+  .monitor-home .indicator-card__value { margin: 0.3rem 0; gap: 0.3rem; }
+  .monitor-home .indicator-card__value strong { font: 500 1.95rem/1.2 var(--monitor-mono); color: #e9f5fb; letter-spacing: -0.04em; }
+  .monitor-home .indicator-card__unit { font-size: 0.78rem; }
+  .monitor-home .indicator-card__period { margin-left: auto; font: 0.72rem var(--monitor-mono); }
+  .monitor-home .indicator-card__scope { font-size: 0.7rem; margin: 0; }
+  .monitor-home .indicator-card__trend { margin-top: 0.65rem; color: #65ddc1; }
+  .monitor-home .indicator-card__sparkline { height: 46px; }
+  .monitor-home .indicator-card__trend-range { font: 0.7rem/1.6 var(--monitor-mono); color: var(--theme-foreground-muted); }
+  .monitor-home .indicator-card__trend-caption { color: var(--theme-foreground-muted); font-size: 0.7rem; }
+  .monitor-home .indicator-card__anchor {
+    margin: 0.4rem 0 0;
+    color: #b6d7df;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .monitor-home .indicator-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.6rem;
+    margin: 0.55rem 0 0;
+    padding-top: 0.5rem;
+    border-top: 1px solid #223645;
+    font-size: 0.7rem;
+  }
+  .monitor-home .indicator-card__version { margin-left: auto; font-family: var(--monitor-mono); }
+  .monitor-home .indicator-panel__source { font-size: 0.72rem; padding: 0.5rem 1rem; }
+  .monitor-home .indicator-panel__source > span { color: var(--theme-foreground-muted); }
+  .monitor-section-heading { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 0.5rem; margin: 2.2rem 0 0.8rem; }
+  .monitor-section-heading h2 { font-size: 1.1rem; margin: 0.25rem 0 0; }
+  .monitor-section-heading p { color: var(--theme-foreground-muted); font-size: 0.8rem; margin: 0; }
+  .monitor-home .learning-routes { margin: 0; }
+  .monitor-home .learning-route { border-radius: 3px; background: #101e2b; border-left: 2px solid #4f9a94; }
+  .monitor-home .learning-route strong { font-size: 1rem; }
+  .monitor-home .learning-route span { font-size: 0.75rem; }
+  .monitor-notes { display: grid; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--hk-border); }
+  .monitor-notes h2 { font-size: 0.85rem; margin: 0; }
+  .monitor-notes p { font-size: 0.76rem; color: var(--theme-foreground-muted); margin: 0.4rem 0 0; }
+  .monitor-home .site-assurances { font-size: 0.69rem; margin: 1.5rem 0 0; letter-spacing: 0.04em; }
+  @media (min-width: 700px) {
+    .monitor-dashboard { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .monitor-map-panel { grid-column: 1 / -1; }
+    .monitor-notes { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (min-width: 1100px) {
+    body:has(.monitor-home) #observablehq-main { padding-inline: 1.5rem; }
+    .monitor-dashboard { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .monitor-map-panel { grid-column: span 2; grid-row: span 2; }
+    .monitor-toolbar p { margin-left: auto; }
+  }
+  @media (max-width: 699px) {
+    .monitor-toolbar p { flex-basis: 100%; }
+    .monitor-header { gap: 0.75rem; }
+    .monitor-nav { width: 100%; justify-content: space-between; }
+    .monitor-map figcaption { font-size: 0.72rem; }
+    .monitor-home .indicator-card { padding: 1rem; }
+    .monitor-home .indicator-card__question { font-size: 0.8rem; }
+    .monitor-home .indicator-card__meta,
+    .monitor-home .indicator-panel__source { font-size: 0.7rem; }
+    .monitor-home .indicator-card__trend-caption { font-size: 0.69rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .monitor-home * { transition: none !important; }
+  }
+}

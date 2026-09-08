@@ -764,6 +764,8 @@ const { testTeachingAnchors } = await import("./test-teaching-anchors.mjs");
 await testTeachingAnchors(check);
 const { testCitations } = await import("./test-citations.mjs");
 testCitations(check);
+const { testSparklines } = await import("./test-sparklines.mjs");
+await testSparklines(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

@@ -19,7 +19,7 @@ toc: false
 | 授權 | 適用來源 | 要點 |
 |---|---|---|
 | [政府統計處《知識產權公告》](https://www.censtatd.gov.hk/tc/page_31.html) | 統計處各表 | 商業／非商業都可以,要註明來源、知識產權擁有人**同任何修改** |
-| [data.gov.hk 使用條款](https://data.gov.hk/tc/terms-and-conditions) | 財經事務及庫務局、庫務署 | 商業／非商業都可以,另有彌償條款 |
+| [data.gov.hk 使用條款](https://data.gov.hk/tc/terms-and-conditions) | 財經事務及庫務局、庫務署、地政總署開放地圖 | 商業／非商業都可以,另有彌償條款 |
 | [budget.gov.hk 版權告示](https://www.budget.gov.hk/2026/chi/important.html) | 預算案附錄 PDF | **窄好多**:只准個人參考或教育用途,複製本不能轉售 |
 
 <div class="callout">
@@ -28,6 +28,18 @@ toc: false
 或者把年度金額攤做「每人每日」)都會喺同一頁寫明算式,唔會靜靜哋改咗個數。
 
 </div>
+
+<h2 id="hong-kong-map-source">首頁香港地圖</h2>
+
+地圖：**© 香港特別行政區政府地政總署；經簡化。**
+來源係地政總署[香港 1:50 000 地形圖](https://portal.csdi.gov.hk/csdi-webpage/dataset/landsd_rcd_1637221775627_85634)，
+按 [DATA.GOV.HK 使用條款](https://data.gov.hk/tc/terms-and-conditions)使用。
+本站於 2026 年 9 月 8 日取得開放圖層，製成可離線顯示嘅輪廓圖。
+
+輪廓保留香港島、九龍、新界、大嶼山同離島，沿用香港 1980 方格網並等比例縮放；
+為方便螢幕閱讀，海岸細節經簡化，地名位置亦作排字調整。
+大嶼山屬新界，圖上地名係地域定位標籤，唔係互不重疊嘅行政分區。
+地圖唔顯示人口、收入或開支喺各區嘅分布，亦唔適合用來量地、導航或判斷最新填海進度。
 
 <h2 id="build-time">點解喺建置嗰陣抓數?</h2>
 
