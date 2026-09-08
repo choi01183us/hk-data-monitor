@@ -19,6 +19,7 @@
   "acquisition": "api",
   "category": "就業",
   "question_zh": "一頭家一個月總共收入幾多?",
+  "basis_zh": "整個住戶嘅每月入息中位數，唔係個人月薪",
   "notes_zh": "呢個係成個住戶加埋嘅收入,唔係一個人。所以佢同「每月工資中位數」唔可以直接比 —— 一個三人家庭可能有兩個人返緊工。統計處另有「不包括外籍家庭傭工」嘅版本(MED_DH_INC_XFDH),數字會高啲。",
   "chart": {
     "type": "line",
@@ -219,6 +220,6 @@
     "period": "2025",
     "value": 30000
   },
-  "content_hash": "sha256:c5f65ae2ceb447d2",
-  "data_version": "2026.09.4"
+  "content_hash": "sha256:50abc3b1e9e1df9d",
+  "data_version": "2026.09.5"
 }

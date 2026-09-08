@@ -19,6 +19,7 @@
   "acquisition": "api",
   "category": "經濟",
   "question_zh": "香港靠邊幾行搵食?比重有冇變過?",
+  "basis_zh": "四大行業嘅增加價值佔本地生產總值（GDP）嘅比重",
   "notes_zh": "四條線加埋唔等於 100% —— 四大行業以外仲有製造業、建造業、公營部門等等。睇呢個圖嘅重點唔係邊條線最高,而係邊條線嘅走勢喺變。",
   "chart": {
     "type": "line",
@@ -582,6 +583,6 @@
     "category": "金融服務",
     "value": 26.2
   },
-  "content_hash": "sha256:548fba63b2fa6bd1",
-  "data_version": "2026.09.4"
+  "content_hash": "sha256:60209bb3f6f03d17",
+  "data_version": "2026.09.5"
 }

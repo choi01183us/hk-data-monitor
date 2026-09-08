@@ -19,6 +19,7 @@
   "acquisition": "api",
   "category": "經濟",
   "question_zh": "香港平均每個人,一年創造幾多經濟價值?",
+  "basis_zh": "以當時市價計算嘅人均本地生產總值，未扣除通脹",
   "notes_zh": "「以當時市價計算」即係冇扣除通脹。所以呢條線升,唔一定代表大家真係富裕咗 —— 有一部分升幅淨係因為物價升咗。想睇撇除通脹之後嘅變化,要睇「以環比物量計算」嗰個系列。",
   "chart": {
     "type": "line",
@@ -315,6 +316,6 @@
     "period": "2025",
     "value": 444044
   },
-  "content_hash": "sha256:f682c2f4a09cb806",
-  "data_version": "2026.09.4"
+  "content_hash": "sha256:33d5b651d0ccf0d7",
+  "data_version": "2026.09.5"
 }

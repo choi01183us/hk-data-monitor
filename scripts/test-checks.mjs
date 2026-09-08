@@ -759,6 +759,12 @@ testPublicExpenditureViews(check);
 const { testExpenditureScopeGate } = await import("./test-expenditure-scope-gate.mjs");
 await testExpenditureScopeGate(check);
 
+// ── 教學讀數與引用:已知答案／缺數／錯口徑突變 ───────────────
+const { testTeachingAnchors } = await import("./test-teaching-anchors.mjs");
+await testTeachingAnchors(check);
+const { testCitations } = await import("./test-citations.mjs");
+testCitations(check);
+
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //
 // R5 嘅突變測試前提係「改壞 transform,錄影唔跟住變」。

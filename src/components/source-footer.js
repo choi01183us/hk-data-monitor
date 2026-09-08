@@ -8,13 +8,15 @@
 import { html } from "npm:htl";
 
 import { formatDateZh, formatRelativeZh } from "./format.js";
+import { citationChoices, citationChoiceLabel, createCitation } from "./citation.js";
 
 /**
  * 渲染來源／連結／截至日期／授權。
  *
- * @param {object} indicator  一份符合 SPEC 第 5 節 schema 嘅指標 JSON
+ * @param {object} indicator  一份符合 SPEC 第 5 節 schema 嘅原始指標 JSON
+ * @param {object} [options]  {period} 指定引用初始期數;增減圖用 {comparison:{from,to}},配原始 series
  */
-export function sourceFooter(indicator) {
+export function sourceFooter(indicator, options = {}) {
   const {
     source_zh,
     source_en,
@@ -91,7 +93,91 @@ export function sourceFooter(indicator) {
       想自己核對?撳上面條來源連結,去返政府原本嗰版對數。
       呢個網站唔會改動原始數字,任何換算都會喺圖表下面寫明。
     </p>
+    ${citationPicker(indicator, options)}
   </section>`;
+}
+
+/** 完全在本頁組合文字。剪貼簿不可用時,仍可選取 textarea 手動複製。 */
+export function citationPicker(indicator, options = {}) {
+  let choices;
+  try {
+    choices = citationChoices(indicator, options);
+    // 選項標籤亦屬於引用內容;狀態欄損壞時顯示錯誤,唔令整個來源區消失。
+    for (const choice of choices) citationChoiceLabel(indicator, choice);
+  } catch (error) {
+    return html`<p class="citation-status" role="status">暫時未能提供引用：${error.message}</p>`;
+  }
+  if (choices.length === 0) {
+    return html`<p class="citation-status">未有完整有效數字可供引用；未填值唔代表零。</p>`;
+  }
+
+  const periodSelect = html`<select aria-label="選擇引用期數"></select>`;
+  const measureSelect = html`<select aria-label="選擇引用分類或總額"></select>`;
+  const preview = html`<textarea class="citation-preview" readonly rows="7" aria-label="完整引用文字"></textarea>`;
+  const status = html`<p class="citation-status" role="status" aria-live="polite"></p>`;
+  const copy = html`<button type="button">複製完整引用</button>`;
+  const selectText = html`<button type="button">選取引用文字</button>`;
+  const periodKey = (choice) => choice.from ? `${choice.from}/${choice.to}` : choice.period;
+  const keys = [...new Set(choices.map(periodKey))];
+  periodSelect.replaceChildren(...keys.map((key) => {
+    const choice = choices.find((item) => periodKey(item) === key);
+    return html`<option value=${key}>${citationChoiceLabel(indicator, choice).period}</option>`;
+  }));
+  // 只改初始選項,保留其他有效期數。期數不存在已由 citationChoices 明確拒絕。
+  if (!options.comparison && options.period !== undefined) periodSelect.value = options.period;
+  let shown = [];
+  function updateText() {
+    try {
+      preview.value = createCitation(indicator, shown[Number(measureSelect.value)]);
+      copy.disabled = false;
+      selectText.disabled = false;
+      status.textContent = "引用已包括期數、口徑、單位及來源；可直接複製。";
+    } catch (error) {
+      preview.value = "";
+      copy.disabled = true;
+      selectText.disabled = true;
+      status.textContent = `暫時未能提供引用：${error.message}`;
+    }
+  }
+  function updateMeasures() {
+    shown = choices.filter((choice) => periodKey(choice) === periodSelect.value);
+    measureSelect.replaceChildren(...shown.map((choice, index) =>
+      html`<option value=${index}>${citationChoiceLabel(indicator, choice).measure}</option>`
+    ));
+    updateText();
+  }
+  periodSelect.addEventListener("change", updateMeasures);
+  measureSelect.addEventListener("change", updateText);
+  selectText.addEventListener("click", () => {
+    preview.focus();
+    preview.select();
+    status.textContent = "已選取引用文字，可用裝置嘅複製功能。";
+  });
+  copy.addEventListener("click", async () => {
+    const text = preview.value;
+    if (!text) return;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
+      await navigator.clipboard.writeText(text);
+      status.textContent = "已複製完整引用。";
+    } catch {
+      preview.focus();
+      preview.select();
+      status.textContent = "未能自動複製。引用文字已選取，請用裝置嘅複製功能。";
+    }
+  });
+  updateMeasures();
+  return html`<details class="citation-picker">
+    <summary>複製數字及出處</summary>
+    <p>揀期數及分類，先核對下面嘅完整引用。呢個功能離線都用到。</p>
+    <div class="citation-controls">
+      <label>期數 ${periodSelect}</label>
+      <label>分類／總額 ${measureSelect}</label>
+    </div>
+    <label>引用預覽 ${preview}</label>
+    <div class="citation-controls">${copy} ${selectText}</div>
+    ${status}
+  </details>`;
 }
 
 /**

@@ -32,6 +32,14 @@ export default {
 
   pages: [
     {
+      name: "學習路線",
+      pages: [
+        { name: "香港人點生活", path: "/learn/hong-kong" },
+        { name: "公共資源點分", path: "/learn/public-finance" },
+        { name: "寫青年預算備忘", path: "/learn/budget-memo" },
+      ],
+    },
+    {
       name: "公共財政",
       pages: [
         { name: "政府經常開支", path: "/indicators/govt_expenditure" },

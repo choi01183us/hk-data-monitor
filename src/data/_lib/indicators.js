@@ -17,11 +17,10 @@ import {
   CENSTATD_LICENCE,
 } from "./censtatd.js";
 import { buildIndicator } from "./schema.js";
-import { formatNumber, formatChineseMagnitude } from "../../components/format.js";
+import { formatNumber, formatChineseMagnitude, formatPeriodZh } from "../../components/format.js";
 import {
   anchorPerDay,
   anchorVersusYear,
-  anchorPerClassroom,
   anchorMultipleOf,
   anchorAverageChange,
   anchorPerCapita,
@@ -57,6 +56,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "港元",
     value_digits: 0,
     name_zh: "人均本地生產總值",
+    basis_zh: "以當時市價計算嘅人均本地生產總值，未扣除通脹",
     name_en: "GDP per capita (at current market prices)",
     unit_en: "HK$",
     unit_short_zh: "元",
@@ -96,6 +96,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "人",
     value_digits: 0,
     name_zh: "香港人口",
+    basis_zh: "香港總人口（男女、全年齡，包括外籍家庭傭工）；各期為年中或年底人口",
     name_en: "Population of Hong Kong",
     unit_en: "persons",
     unit_short_zh: "人",
@@ -179,6 +180,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "%",
     value_digits: 1,
     name_zh: "失業率",
+    basis_zh: "各組失業人數佔該組勞動人口嘅百分比；青年組為 15–24 歲青年勞動人口，全港整體組為全港勞動人口，唔係全體青年或學生人口嘅比例",
     name_en: "Unemployment rate",
     unit_en: "%",
     unit_short_zh: "%",
@@ -186,22 +188,28 @@ export const CENSTATD_INDICATORS = {
     question_zh: "想搵工但搵唔到嘅人,佔幾多?後生仔女又點?",
     notes_zh:
       "SPEC 原本指定嘅表(210-06101)根本冇年齡維度,攞唔到青年失業率,所以換咗 210-06401。" +
-      "「失業」嘅定義係:冇工開、有搵過工、而且隨時做得。所以讀緊書冇搵工嘅學生唔計入失業。" +
-      "青年嗰條線長期高過整體,係全世界都咁,唔係香港獨有。",
+      "「失業」一般指冇工開、有搵過工、而且隨時做得。所以讀緊書冇搵工嘅學生唔計入失業。" +
+      "失業率嘅分母係勞動人口(就業人士加失業人士),唔係所有青年或全班學生。青年嗰條線只計 15–24 歲嘅勞動人口。",
     chart: { type: "line", y_zero: true },
     anchors: (series) => {
-      const youth = series.filter((p) => p.category === "15–24 歲青年" && p.value !== null);
-      const all = series.filter((p) => p.category === "全港整體" && p.value !== null);
+      const youth = series.filter((p) => p.category === "15–24 歲青年" && Number.isFinite(p.value));
+      const all = series.filter((p) => p.category === "全港整體" && Number.isFinite(p.value));
       const latestYouth = youth.at(-1);
       const latestAll = all.at(-1);
       const peakAll = all.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
       return collectAnchors(
-        latestYouth ? anchorPerClassroom(latestYouth.value, { classSize: 30, subject: "個後生仔女搵緊工搵唔到" }) : null,
-        latestYouth && latestAll
+        latestYouth
+          ? {
+              id: "youth-per-hundred",
+              text_zh: `${formatPeriodZh(latestYouth.period)}每 100 名 15–24 歲青年勞動人口,約有 ${formatNumber(latestYouth.value, { digits: 1 })} 名失業人士`,
+              basis_zh: `${latestYouth.value}% × 100 人;分母係同年 15–24 歲就業人士加失業人士,唔包括冇參與勞動市場嘅學生`,
+            }
+          : null,
+        latestYouth && latestAll && latestYouth.period === latestAll.period && latestAll.value > 0
           ? {
               id: "youth-vs-all",
-              text_zh: `青年失業率係全港整體嘅 ${formatNumber(latestYouth.value / latestAll.value, { digits: 1 })} 倍`,
-              basis_zh: `${latestYouth.value}% ÷ ${latestAll.value}%`,
+              text_zh: `${formatPeriodZh(latestYouth.period)}青年失業率係全港整體嘅 ${formatNumber(latestYouth.value / latestAll.value, { digits: 1 })} 倍`,
+              basis_zh: `同年青年失業率 ${latestYouth.value}% ÷ 全港整體失業率 ${latestAll.value}%`,
             }
           : null,
         peakAll && latestAll && peakAll.period !== latestAll.period
@@ -237,6 +245,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "港元",
     value_digits: 0,
     name_zh: "每月工資中位數",
+    basis_zh: "每月工資中位數，按所有僱員／全職僱員分類；2009–2010 年為第二季，2011 年起為 5 至 6 月",
     name_en: "Median monthly wage",
     unit_en: "HK$",
     unit_short_zh: "元",
@@ -285,6 +294,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "港元",
     value_digits: 0,
     name_zh: "住戶每月入息中位數",
+    basis_zh: "整個住戶嘅每月入息中位數，唔係個人月薪",
     name_en: "Median monthly domestic household income",
     unit_en: "HK$",
     unit_short_zh: "元",
@@ -325,6 +335,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "%",
     value_digits: 1,
     name_zh: "通脹率(綜合消費物價指數按年變動)",
+    basis_zh: "綜合消費物價指數按年變動百分率，唔係按月變動率或物價指數水平",
     name_en: "Composite CPI, year-on-year change",
     unit_en: "%",
     unit_short_zh: "%",
@@ -336,25 +347,15 @@ export const CENSTATD_INDICATORS = {
       "統計處另有甲／乙／丙三類指數,分別對應唔同開支水平嘅住戶,感受到嘅通脹可以好唔同。",
     chart: { type: "line", y_zero: true },
     anchors: (series) => {
-      const withValues = series.filter((p) => p.value !== null);
+      const withValues = series.filter((p) => Number.isFinite(p.value));
       const latest = withValues.at(-1);
-      // 最近 12 個月嘅累積:逐個月 (1 + r/100) 乘埋,唔可以直接加 —— 通脹係複利。
-      const lastYear = withValues.slice(-12);
-      const cumulative =
-        lastYear.length === 12 ? (lastYear.reduce((acc, p) => acc * (1 + p.value / 100), 1) ** (1 / 12) - 1) * 100 : null;
+      // 輸入係按年率,唔係相接嘅按月升幅。唔可以把十二個重疊按年率當複利相乘。
       return collectAnchors(
         latest
           ? {
               id: "hundred-dollars",
               text_zh: `舊年 100 蚊買到嘅嘢,今年要 ${formatNumber(100 * (1 + latest.value / 100), { digits: 2 })} 蚊`,
-              basis_zh: `100 × (1 + ${latest.value}% ÷ 100)`,
-            }
-          : null,
-        cumulative !== null
-          ? {
-              id: "avg-12m",
-              text_zh: `最近 12 個月平均每月按年升 ${formatNumber(cumulative, { digits: 2 })}%`,
-              basis_zh: `12 個月嘅 (1 + 每月按年變動) 相乘,再開 12 次方 —— 通脹係複利,唔可以直接加埋除 12`,
+              basis_zh: `${formatPeriodZh(latest.period)}按年變動 ${latest.value}%:100 × (1 + ${latest.value} ÷ 100)`,
             }
           : null,
         latest
@@ -362,9 +363,11 @@ export const CENSTATD_INDICATORS = {
               id: "direction",
               text_zh:
                 latest.value > 0
-                  ? "而家仲係通脹:物價繼續升,只係升幅有幾大嘅分別"
-                  : "而家係通縮:物價比舊年平咗",
-              basis_zh: `最新按年變動 ${latest.value}%,零以上係通脹,零以下先係通縮`,
+                  ? "按年通脹:整體物價比一年前同月高"
+                  : latest.value < 0
+                    ? "按年通縮:整體物價比一年前同月低"
+                    : "按年變動為零:按公布數字,整體物價同一年前同月相若",
+              basis_zh: `${formatPeriodZh(latest.period)}按年變動 ${latest.value}%;正數係上升,負數係下降,零係按公布精度不變`,
             }
           : null
       );
@@ -395,6 +398,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "%",
     value_digits: 1,
     name_zh: "四大行業佔本地生產總值比重",
+    basis_zh: "四大行業嘅增加價值佔本地生產總值（GDP）嘅比重",
     name_en: "Share of the four key industries in GDP",
     unit_en: "% of GDP",
     unit_short_zh: "%",
@@ -449,6 +453,7 @@ export const CENSTATD_INDICATORS = {
     unit_zh: "間",
     value_digits: 0,
     name_zh: "香港交易所上市公司數目",
+    basis_zh: "香港交易所主板及 GEM 上市公司數目，按市場分類",
     name_en: "Number of companies listed on HKEX",
     unit_en: "companies",
     unit_short_zh: "間",
@@ -617,6 +622,7 @@ export async function loadCenstatdIndicator(id) {
 
     category: spec.category,
     question_zh: spec.question_zh,
+    basis_zh: spec.basis_zh ?? null,
     notes_zh: spec.notes_zh ?? null,
     chart: spec.chart ?? { type: "line", y_zero: false },
     anchors: spec.anchors ? spec.anchors(series) : [],
@@ -652,6 +658,7 @@ export const FISCAL_INDICATORS = {
     total_column: "經常開支",
 
     name_zh: "政府經常開支",
+    basis_zh: "政府經常開支，只計政府帳目，唔包括營運基金及房屋委員會，亦唔係全年開支總額",
     name_en: "Government recurrent expenditure by policy area",
     category: "公共財政",
     question_zh: "政府經常開支每年有幾多?使喺邊度?",
@@ -666,7 +673,7 @@ export const FISCAL_INDICATORS = {
       const edu = series.filter((p) => p.category === "教育");
       const eduLatest = [...edu].reverse().find((p) => p.value !== null);
       return collectAnchors(
-        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年" }) : null,
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年", fiscal: true }) : null,
         total && eduLatest && eduLatest.period === total.period
           ? {
               id: "edu-share",
@@ -698,6 +705,7 @@ export const FISCAL_INDICATORS = {
     total_column: "政府收入總額",
 
     name_zh: "政府收入",
+    basis_zh: "各財政年度嘅政府收入，按收入來源分類，唔係財政儲備結餘",
     name_en: "Government revenue by source",
     category: "公共財政",
     question_zh: "政府啲錢由邊度嚟?邊條線最唔穩陣?",
@@ -711,7 +719,7 @@ export const FISCAL_INDICATORS = {
       const peak = land.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
       const landLatest = land.at(-1);
       return collectAnchors(
-        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年貢獻" }) : null,
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年貢獻", fiscal: true }) : null,
         peak && landLatest && peak.period !== landLatest.period
           ? {
               id: "land-vs-peak",
@@ -728,6 +736,7 @@ export const FISCAL_INDICATORS = {
     dataset_url: "https://data.gov.hk/tc-data/dataset/hk-try-trymthfinr-press-release-financial-results",
 
     name_zh: "財政儲備",
+    basis_zh: "政府財政儲備嘅月末結餘，唔係全年收入",
     name_en: "Fiscal reserves",
     category: "公共財政",
     question_zh: "政府銀行戶口有幾多錢?夠用幾耐?",
@@ -739,7 +748,7 @@ export const FISCAL_INDICATORS = {
       const last12 = spend.slice(-12);
       const avgMonthly = last12.length === 12 ? last12.reduce((a, p) => a + p.value, 0) / 12 : null;
       return collectAnchors(
-        latest ? anchorPerCapita(latest.value, latest.period, extras.population, { noun: "每名香港市民" }) : null,
+        latest ? anchorPerCapita(latest.value, latest.period, extras.population, { noun: "每名香港市民", fiscal: false }) : null,
         latest && avgMonthly
           ? {
               id: "months-of-spending",

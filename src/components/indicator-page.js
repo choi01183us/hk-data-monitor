@@ -42,7 +42,7 @@ export function indicatorHeader(indicator) {
             <strong>${item.value === null ? "—" : headlineNumber(item.value, digits)}</strong>
             <span class="headline__unit">${unit_zh}</span>
           </div>
-          <div class="headline__period">${item.period ? formatPeriodZh(item.period, { fiscal }) : ""}</div>
+          <div class="headline__period">${item.period ? formatPeriodZh(item.period, { fiscal }) : ""}${indicator.period_notes?.[item.period] ? `（${indicator.period_notes[item.period]}）` : ""}</div>
         </div>`
       )}
     </div>

@@ -25,7 +25,7 @@ npm run build          # 砌站 + 生成 service worker
 npm run build:offline  # 唔上網砌(CI 用)
 npm run refresh        # 重抓全部 API 指標
 npm run validate       # 驗快照符合 SPEC 第 5 節
-npm run test:checks    # 檢查器自證 + fixture 重播(108 項,零網絡)
+npm run test:checks    # 檢查器自證 + fixture 重播 + 教學換算／引用(零網絡)
 npm run test:offline   # 離線行為測試(要 Playwright,冇就 SKIP)
 npm run fixtures       # 重錄上游回應做 fixture
 ```
@@ -51,7 +51,9 @@ npm run fixtures       # 重錄上游回應做 fixture
    加新錯誤類型嘅預設行為係 hard fail —— 呢個係刻意嘅安全預設。
 
 5. **「2000-01」有歧義**:可以係 2000 年 1 月,亦可以係 2000–01 財政年度。
-   一定要用 `isFiscalPeriodSeries()` 由**成條 series** 判斷,唔好逐個字串估。
+   圖表期數用 `isFiscalPeriodSeries()` 由**成條 series** 判斷,唔好逐個字串估。
+   單點人口換算 `anchorPerCapita()` 由呼叫者明文傳 `fiscal: true/false`。
+   年度／財年冇同年6月人口就省略錨點,唔借上一年分母。
 
 6. **Framework 唔會 copy 冇被引用嘅檔案入 `dist/`。**
    `sw.js` / manifest / 圖示全部靠 `scripts/postbuild.mjs`,而且一定要喺 build **之後**跑

@@ -8,6 +8,7 @@ import { indicatorHeader, indicatorAnchors, indicatorNote, manualNotice } from "
 import { indicatorChart } from "../components/indicator-chart.js";
 import { dataTable } from "../components/data-table.js";
 import { sourceFooter } from "../components/source-footer.js";
+import { learningGuidance } from "../components/learning-guidance.js";
 import { publicExpenditureViews } from "../components/public-expenditure-views.js";
 
 const indicator = await FileAttachment("../data/public_expenditure_policy_groups.json").json();
@@ -50,6 +51,7 @@ if (selectedView) display(resize((width) => indicatorChart(selectedView.indicato
 
 ```js
 display(indicatorNote(indicator));
+display(learningGuidance(indicator));
 display(dataTable(indicator));
-display(sourceFooter(indicator));
+display(sourceFooter(indicator, {comparison: selectedView?.comparison, period: selectedView?.indicator.chart.period}));
 ```

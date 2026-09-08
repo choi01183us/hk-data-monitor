@@ -132,6 +132,7 @@ export async function loadFiscalReserves(spec) {
 
     category: spec.category,
     question_zh: spec.question_zh,
+    basis_zh: spec.basis_zh ?? null,
     notes_zh:
       "原始檔用「百萬元」做單位,呢度已經乘返一百萬換算成「港元」。" +
       "「財政儲備」即係政府嘅存款,唔係一年嘅收入;佢每個月都會因為收支而上落。" +

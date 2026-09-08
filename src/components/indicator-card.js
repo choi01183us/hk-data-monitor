@@ -8,6 +8,7 @@
 import { html } from "npm:htl";
 
 import { formatChineseMagnitude, formatNumber, formatDateZh } from "./format.js";
+import { periodWithNote } from "./citation.js";
 
 /**
  * 大數字用「萬／億」易入口,但百分比同細數目唔可以縮 ——
@@ -63,7 +64,7 @@ export function indicatorCard(indicator, { href } = {}) {
     <p class="indicator-card__value">
       <strong>${shown ? magnitudeOrExact(shown.value, value_digits) : "—"}</strong>
       <span class="indicator-card__unit">${unit_short_zh ?? unit_zh}</span>
-      ${shown ? html`<span class="indicator-card__period">${shown.period}</span>` : null}
+      ${shown ? html`<span class="indicator-card__period">${periodWithNote(indicator, shown.period)}</span>` : null}
     </p>
     ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;入去可以睇分類</p>` : null}
 

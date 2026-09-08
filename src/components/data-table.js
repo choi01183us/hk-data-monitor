@@ -10,7 +10,7 @@
 
 import { html } from "npm:htl";
 
-import { formatNumber } from "./format.js";
+import { exactNumber, periodWithNote } from "./citation.js";
 
 /**
  * @param {object} indicator  符合 SPEC 第 5 節 schema 嘅指標 JSON
@@ -18,7 +18,7 @@ import { formatNumber } from "./format.js";
  * @param {boolean} [options.open=false]  預設打唔打開
  */
 export function dataTable(indicator, { open = false } = {}) {
-  const { series, unit_zh, name_zh, value_digits } = indicator;
+  const { series, unit_zh, unit_source_zh, name_zh } = indicator;
   const hasCategory = series.some((point) => point.category !== undefined);
 
   // 最新嘅擺喺上面 —— 學生最想睇最新數,唔想碌到 1961 年。
@@ -28,7 +28,10 @@ export function dataTable(indicator, { open = false } = {}) {
     <summary>資料表(${series.length} 個數據點)</summary>
 
     <p class="data-table__hint">
-      呢度係原始數字,冇經過任何四捨五入或換算。想自己核對就用呢啲數。
+      呢度保留本站資料嘅完整數值,唔縮寫成萬／億。
+      ${unit_source_zh && unit_source_zh !== unit_zh
+        ? `來源單位係「${unit_source_zh}」，本表用「${unit_zh}」；請按頁面嘅單位說明核對。`
+        : `本表單位係「${unit_zh}」。`}
     </p>
 
     <div class="data-table__scroll">
@@ -44,12 +47,12 @@ export function dataTable(indicator, { open = false } = {}) {
         <tbody>
           ${rows.map(
             (point) => html`<tr>
-              <th scope="row">${point.period}</th>
+              <th scope="row">${periodWithNote(indicator, point.period)}</th>
               ${hasCategory ? html`<td>${point.category ?? ""}</td>` : null}
               <td class="data-table__value">
                 ${point.value === null
                   ? html`<span class="data-table__missing" title="嗰期冇數字,唔係零">冇數字</span>`
-                  : formatNumber(point.value, { digits: value_digits ?? 0 })}
+                  : exactNumber(point.value)}
               </td>
             </tr>`
           )}

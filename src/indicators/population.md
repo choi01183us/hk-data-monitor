@@ -8,6 +8,7 @@ import { indicatorHeader, indicatorAnchors, indicatorNote } from "../components/
 import { indicatorChart } from "../components/indicator-chart.js";
 import { dataTable } from "../components/data-table.js";
 import { sourceFooter } from "../components/source-footer.js";
+import { learningGuidance } from "../components/learning-guidance.js";
 
 const population = await FileAttachment("../data/population.json").json();
 ```
@@ -24,6 +25,7 @@ display(indicatorAnchors(population));
 ```js
 display(resize((width) => indicatorChart(population, width)));
 display(indicatorNote(population));
+display(learningGuidance(population));
 display(dataTable(population));
 display(sourceFooter(population));
 ```

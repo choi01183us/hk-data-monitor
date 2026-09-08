@@ -131,28 +131,38 @@ export function collectAnchors(...anchors) {
  * @param {Array}  populationSeries 人口指標嘅 series(period 係 "YYYY-06" / "YYYY-12")
  * @param {object} [options]
  * @param {string} [options.noun="每名香港市民"]
+ * @param {boolean} [options.fiscal=false] 財政年度必須明文傳 true,唔靠尾兩碼猜。
  *
- * 分母點揀:財政年度 "2025-26" 用 2025 年年中人口;月度 "2026-04" 用唔遲過嗰個月嘅
- * 最近一個年中／年底人口。揀邊個期數會寫入 basis_zh,學生驗得返。
+ * 分母點揀:財政年度 "2025-26" 同曆年 "2025" 只用 2025 年年中人口,冇就唔出錨;
+ * 月度 "2026-04" 用唔遲過嗰個月嘅最近一個年中／年底人口。
+ * 揀邊個期數會寫入 basis_zh,學生驗得返。
  */
-export function anchorPerCapita(value, period, populationSeries, { noun = "每名香港市民" } = {}) {
+export function anchorPerCapita(value, period, populationSeries, { noun = "每名香港市民", fiscal = false } = {}) {
   if (!Number.isFinite(value) || !Array.isArray(populationSeries) || populationSeries.length === 0) return null;
 
   const text = String(period);
   let target;
-  if (/^\d{4}-\d{2}$/.test(text) && Number(text.slice(5, 7)) > 12) {
-    // 財政年度 "2025-26" -> 2025 年年中
+  let exactMidYear = false;
+  if (fiscal === true) {
+    const match = /^(\d{4})-(\d{2})$/.exec(text);
+    if (!match || Number(match[2]) !== (Number(match[1]) + 1) % 100) return null;
+    // 包括有歧義嘅 "2000-01"。呼叫者知道係財年,呢度唔再當成 1 月。
     target = `${text.slice(0, 4)}-06`;
-  } else if (/^\d{4}-\d{2}$/.test(text)) {
+    exactMidYear = true;
+  } else if (fiscal !== false) {
+    return null;
+  } else if (/^\d{4}-(0[1-9]|1[0-2])$/.test(text)) {
     target = text; // 月度,搵唔遲過佢嘅最近一點
   } else if (/^\d{4}$/.test(text)) {
     target = `${text}-06`;
+    exactMidYear = true;
   } else {
     return null;
   }
 
   const candidates = populationSeries
-    .filter((point) => Number.isFinite(point.value) && String(point.period) <= target)
+    .filter((point) => Number.isFinite(point.value) && point.value > 0 && /^\d{4}-(06|12)$/.test(point.period) &&
+      (exactMidYear ? point.period === target : point.period <= target))
     .sort((a, b) => String(a.period).localeCompare(String(b.period)));
   const denominator = candidates.at(-1);
   if (!denominator || denominator.value <= 0) return null;

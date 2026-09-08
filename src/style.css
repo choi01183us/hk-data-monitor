@@ -62,31 +62,59 @@ body {
   max-width: 52ch;
 }
 
-/* 首頁三個承諾 ------------------------------------------------ */
+/* 三條課堂學習路線 -------------------------------------------- */
 
-.promises {
+.learning-routes {
   display: grid;
   gap: 0.75rem;
-  margin: 1.5rem 0 2rem;
+  margin: 1rem 0;
 }
 
-.promise {
+.learning-route {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
-  padding: 0.75rem 0.9rem;
+  gap: 0.4rem;
+  padding: 1rem;
+  border: 1px solid var(--hk-border);
   border-left: 3px solid var(--theme-foreground-focus);
   background: var(--hk-surface);
-  border-radius: 0 var(--hk-radius) var(--hk-radius) 0;
+  border-radius: var(--hk-radius);
+  color: inherit;
+  text-decoration: none;
 }
 
-.promise span {
+.learning-route strong {
+  font-size: 1.15rem;
+}
+
+.learning-route span,
+.site-assurances {
   color: var(--theme-foreground-muted);
   font-size: 0.88rem;
 }
 
+.learning-route__eyebrow {
+  font-weight: 600;
+}
+
+.learning-route:hover,
+.learning-route:focus-visible {
+  border-color: var(--theme-foreground-focus);
+  text-decoration: none;
+}
+
+.learning-route:focus-visible,
+.citation-picker :is(button, select, textarea):focus-visible {
+  outline: 2px solid var(--theme-foreground-focus);
+  outline-offset: 3px;
+}
+
+.site-assurances {
+  margin: 0.75rem 0 2rem;
+}
+
 @media (min-width: 720px) {
-  .promises {
+  .learning-routes {
     grid-template-columns: repeat(3, 1fr);
   }
 }
@@ -366,6 +394,167 @@ body {
   border-top: 1px solid var(--hk-border);
   font-size: 0.85rem;
   color: var(--theme-foreground-muted);
+}
+
+/* 引用只在本頁組合；textarea 亦係無剪貼簿權限時嘅手動出口。 */
+.citation-picker {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--hk-border);
+}
+
+.citation-picker summary,
+.teacher-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.35rem 0;
+}
+
+.citation-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+}
+
+.citation-controls label {
+  flex: 1 1 12rem;
+  min-width: 0;
+}
+
+.citation-controls select {
+  display: block;
+  width: 100%;
+}
+
+.citation-picker :is(button, select, textarea) {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--hk-border);
+  border-radius: 6px;
+  background: var(--theme-background);
+  color: var(--theme-foreground);
+  font: inherit;
+  line-height: 1.6;
+  padding: 0.45rem 0.6rem;
+}
+
+.citation-picker button {
+  cursor: pointer;
+}
+
+.citation-picker button:hover {
+  border-color: var(--theme-foreground-focus);
+}
+
+.citation-picker button:disabled {
+  cursor: default;
+  color: var(--theme-foreground-muted);
+}
+
+.citation-picker .citation-preview {
+  display: block;
+  width: 100%;
+  margin-top: 0.35rem;
+  min-height: 13rem;
+  resize: vertical;
+  overflow-wrap: anywhere;
+  font-size: 0.9rem;
+}
+
+.citation-status {
+  color: var(--theme-foreground-muted);
+  font-size: 0.85rem;
+}
+
+/* 課堂讀數提示及可列印嘅備忘工作紙 ---------------------------- */
+.learning-guidance {
+  margin: 1.5rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hk-border);
+  border-radius: var(--hk-radius);
+}
+
+.learning-guidance h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.learning-guidance__limits {
+  color: var(--theme-foreground-muted);
+}
+
+.learning-guidance__question {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hk-border);
+}
+
+.teacher-notes {
+  margin: 1.5rem 0;
+  padding: 0.6rem 1rem;
+  background: var(--hk-surface);
+  border-radius: var(--hk-radius);
+}
+
+.memo-step {
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid var(--hk-border);
+  border-radius: var(--hk-radius);
+  break-inside: avoid;
+}
+
+.memo-step h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.memo-response {
+  min-height: 6rem;
+  margin-top: 1rem;
+  border-top: 1px dashed var(--hk-border);
+}
+
+@media print {
+  /* 列印保留文字同來源，隱藏導覽同需要操作嘅控制。 */
+  #observablehq-sidebar,
+  #observablehq-header,
+  #observablehq-footer,
+  #observablehq-sidebar-toggle,
+  #hkdm-offline-banner,
+  .citation-controls,
+  .citation-status,
+  .teacher-notes {
+    display: none !important;
+  }
+
+  :root {
+    --theme-background: #fff;
+    --theme-background-alt: #fff;
+    --theme-foreground: #000;
+    --theme-foreground-muted: #333;
+    --theme-foreground-faint: #333;
+    --hk-border: #999;
+    --hk-surface: #fff;
+  }
+
+  body,
+  #observablehq-main,
+  .memo-worksheet {
+    width: auto;
+    max-width: none;
+    margin: 0;
+  }
+
+  .memo-worksheet a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .memo-response {
+    min-height: 6rem;
+  }
 }
 
 /* 用咗舊數嗰陣一定要好突出 */

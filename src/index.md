@@ -1,6 +1,6 @@
 ---
 title: 香港數據監測站
-keywords: 香港 數據 統計 開放數據 中學 通識 公民
+keywords: 香港 數據 統計 開放數據 中學 公民 經濟 社會 分餅 預算 備忘
 toc: false
 ---
 
@@ -29,37 +29,43 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
 <h1 id="home">香港數據監測站</h1>
 
 <p class="lede">
-用真實嘅香港公開數據,砌你自己嘅論點。每個數字都撳得入去睇返政府原本嗰版。
+由生活問題出發，用香港公開數據建立論點，再討論公共資源應該點分。
 </p>
 
-<div class="promises">
-  <div class="promise">
-    <strong>每個數字都有出處</strong>
-    <span>來源機構、原文連結、數據截至日期,全部喺同一頁見到。</span>
-  </div>
-  <div class="promise">
-    <strong>唔收集你任何資料</strong>
-    <span>冇帳戶、冇 cookie、冇分析工具。你睇過乜,冇人知。</span>
-  </div>
-  <div class="promise">
-    <strong>冇網絡都用到</strong>
-    <span>數據喺建置嗰陣已經焗死咗做靜態檔,唔使等載入。</span>
-  </div>
-</div>
+<h2 id="learning-routes">揀一條學習路線</h2>
 
-<h2 id="indicators">指標</h2>
+<nav class="learning-routes" aria-label="學習路線">
+  <a class="learning-route" href="./learn/hong-kong">
+    <span class="learning-route__eyebrow">模擬社會體驗</span>
+    <strong>香港人點生活</strong>
+    <span>由工資、家庭入息、物價同就業，理解唔同生活處境。</span>
+  </a>
+  <a class="learning-route" href="./learn/public-finance">
+    <span class="learning-route__eyebrow">資源裁定會議 · 分餅</span>
+    <strong>公共資源點分</strong>
+    <span>先分清開支口徑，再衡量需要、資金來源同取捨。</span>
+  </a>
+  <a class="learning-route" href="./learn/budget-memo">
+    <span class="learning-route__eyebrow">由證據到建議</span>
+    <strong>寫青年預算備忘</strong>
+    <span>跟住工作紙，寫清問題、證據、成本同預期成效。</span>
+  </a>
+</nav>
+
+<p class="site-assurances">每頁有官方來源同數據日期 · 唔收集個人資料 · 完成離線快取後可離線閱讀</p>
+
+<h2 id="indicators">直接揀指標</h2>
+
+已經有研究問題？揀相關指標，先睇日期、單位同「未能證明甚麼」，再引用數字。
 
 ```js
 display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCard(indicator))}</div>`);
 ```
 
-<h2 id="how-to-use">點樣用呢個站</h2>
+<h2 id="how-to-use">由睇數到講理由</h2>
 
-呢個站係配合三個課堂活動整嘅:
-
-- **模擬社會體驗** — 扮角色做理財決策嗰陣,喺度攞真實薪金、物價做背景
-- **資源裁定會議(分餅)** — 決定政府啲錢點分之前,先睇下真實嘅開支結構
-- **青年預算備忘** — 寫財政建議書要引用官方數字,喺度撳個來源連結就抄得
+先用一句話講清楚你想研究嘅問題。記低數字講緊邊類人、邊個時期同邊種口徑，
+再分開寫「數據顯示咩」同「我建議點做」。同學可以用相同證據提出唔同建議，重點係交代理由同取捨。
 
 <div class="callout">
 
@@ -68,7 +74,8 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 
 </div>
 
-<h2 id="status">呢個站砌到邊</h2>
+<h2 id="status">待填數據點處理</h2>
 
-11 個指標由官方 API 自動抓,另外 2 個要人手抄(公屋輪候時間、公共經常開支十個政策組別)——
-人手嗰兩個未填數之前唔會出現喺上面,唔會用估算數字頂住。詳情見 repo 入面嘅 `findings.md` 同 `manual/README.md`。
+公屋輪候時間同公共經常開支十個政策組別要人手核對官方文件。
+標示「數據未填」嘅頁面仍待抄數，未填唔代表零，亦唔會喺上面顯示指標卡。
+如果你嘅論點需要嗰部分數據，先記低證據缺口，等核對完成再落結論。

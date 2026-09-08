@@ -20,6 +20,7 @@ export function publicExpenditureViews(indicator) {
     const later = indicator.series.filter((p) => p.period === to);
     views.push({
       label: `${label(to)} 相比 ${label(from)}：增減金額`,
+      comparison: { from, to },
       indicator: {
         ...indicator,
         chart: { ...indicator.chart, period: to, label_zh: `名義增減(港元)：${to} 減 ${from}` },

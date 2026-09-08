@@ -19,6 +19,7 @@
   "acquisition": "api",
   "category": "經濟",
   "question_zh": "有幾多間公司喺香港上市?",
+  "basis_zh": "香港交易所主板及 GEM 上市公司數目，按市場分類",
   "notes_zh": "呢個表冇「總計」行,所以主板同 GEM 分開兩條線,想要總數就自己加埋。上市公司數目多唔一定代表市場好 —— 仲要睇市值同成交額。",
   "chart": {
     "type": "line",
@@ -230,6 +231,6 @@
     "category": "主板",
     "value": 2374
   },
-  "content_hash": "sha256:1af9047c1e7f03e5",
-  "data_version": "2026.09.4"
+  "content_hash": "sha256:8382873b768e1be9",
+  "data_version": "2026.09.5"
 }

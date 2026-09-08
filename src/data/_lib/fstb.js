@@ -155,6 +155,7 @@ export async function loadFstbCsvIndicator(id, spec) {
 
     category: spec.category,
     question_zh: spec.question_zh,
+    basis_zh: spec.basis_zh ?? null,
     notes_zh:
       "原始檔用「百萬元」做單位,呢度已經乘返一百萬換算成「港元」,方便同人口相除。" +
       (Object.keys(periodNotes).length
