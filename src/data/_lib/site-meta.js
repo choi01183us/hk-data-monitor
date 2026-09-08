@@ -10,7 +10,7 @@
  *
  * 點解唔係「全部快照最舊嗰個」:
  *   實測撞到 —— 橫額顯示「數據截至 2026 年 2 月 25 日」,但嗰個日期嚟自
- *   `govt_expenditure_policy_groups`,一個 `manual_status: "todo"`、
+ *   `public_expenditure_policy_groups`,一個 `manual_status: "todo"`、
  *   一個數都冇填、首頁根本唔會顯示嘅指標。學生見到嘅 11 個指標入面,
  *   最舊嗰個其實係 2026-03-23。即係橫額報咗一個同畫面無關嘅日期。
  *

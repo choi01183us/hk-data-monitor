@@ -15,6 +15,12 @@ const indicator = await FileAttachment("../data/govt_expenditure.json").json();
 <!-- 中文標題嘅 slug 會變空字串,anchor 撳唔到,所以自己寫 id。 -->
 <h1 id="govt-expenditure">政府經常開支</h1>
 
+呢頁用**政府經常開支**口徑。按[預算案附錄 B 第 I 部(PDF p4)](https://www.budget.gov.hk/2026/chi/pdf/c_appendices_b.pdf#page=4)：
+**公共開支 = 政府開支 + 營運基金 + 房屋委員會**。
+
+分餅活動可以睇[公共經常開支十個政策組別](./public_expenditure_policy_groups)。
+兩頁口徑不同，唔可以放埋同一張圖，亦唔可以將兩者總額相加。
+
 ```js
 display(indicatorHeader(indicator));
 display(indicatorAnchors(indicator));

@@ -19,7 +19,7 @@ const loaded = await Promise.all([
   FileAttachment("./data/cpi.json").json(),
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
-  FileAttachment("./data/govt_expenditure_policy_groups.json").json(),
+  FileAttachment("./data/public_expenditure_policy_groups.json").json(),
   FileAttachment("./data/phr_waiting_time.json").json(),
 ]);
 // SPEC 第 2 節第 4 條:未填數嘅人手指標唔出現。首頁唔會有一張「—」嘅卡。
@@ -70,5 +70,5 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 
 <h2 id="status">呢個站砌到邊</h2>
 
-11 個指標由官方 API 自動抓,另外 2 個要人手抄(公屋輪候時間、十個政策組別嘅開支)——
+11 個指標由官方 API 自動抓,另外 2 個要人手抄(公屋輪候時間、公共經常開支十個政策組別)——
 人手嗰兩個未填數之前唔會出現喺上面,唔會用估算數字頂住。詳情見 repo 入面嘅 `findings.md` 同 `manual/README.md`。

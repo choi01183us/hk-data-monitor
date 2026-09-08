@@ -654,10 +654,12 @@ export const FISCAL_INDICATORS = {
     name_zh: "政府經常開支",
     name_en: "Government recurrent expenditure by policy area",
     category: "公共財政",
-    question_zh: "政府每年使幾多錢?使喺邊度?",
+    question_zh: "政府經常開支每年有幾多?使喺邊度?",
     notes_zh:
-      "呢個係「經常開支」(年年都要使嘅,例如人工、津貼),唔係「開支總額」—— 基建呢類一次過嘅唔計喺度。" +
-      "「其他」佔咗四成,因為呢份檔只拆四類;十個政策組別嘅完整拆法只有預算案附錄 PDF,要人手抄(見 manual/)。",
+      "呢頁係政府經常開支,只計政府帳目,唔包括營運基金及房屋委員會,亦唔係全年開支總額。" +
+      "附錄 B 第 I 部嘅結構係:公共開支 = 政府開支 + 營運基金 + 房屋委員會。" +
+      "呢份 CSV 只拆教育、社會福利、衞生及其他四類;另一頁十個政策組別用公共經常開支口徑。" +
+      "兩頁口徑不同,唔可以放埋同一張圖或將總額相加。",
     chart: { type: "line", y_zero: true },
     anchors: (series, extras) => {
       const total = latestTotal(extras);

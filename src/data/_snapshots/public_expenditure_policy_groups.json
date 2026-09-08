@@ -1,7 +1,7 @@
 {
-  "indicator_id": "govt_expenditure_policy_groups",
-  "name_zh": "政府經常開支(按政策組別)",
-  "name_en": "Government recurrent expenditure by policy area group",
+  "indicator_id": "public_expenditure_policy_groups",
+  "name_zh": "公共經常開支(按政策組別)",
+  "name_en": "Public recurrent expenditure by policy area group",
   "unit_zh": "港元",
   "unit_en": "HK$",
   "unit_short_zh": "元",
@@ -10,21 +10,22 @@
   "source_zh": "財政預算案附錄 B(財經事務及庫務局)",
   "source_en": "Budget Appendix B, Financial Services and the Treasury Bureau",
   "source_url": "https://www.budget.gov.hk/2026/chi/pdf/c_appendices_b.pdf",
-  "source_note_zh": "預算案演辭附錄 B 第 II 部「按政策組別劃分的經常開支」,政府開支口徑。PDF 只有三個年度,長數列要逐年開舊預算案嘅附錄 B。",
+  "source_note_zh": "預算案演辭附錄 B 第 II 部 PDF p8(印刷 p22),公共經常開支口徑。2024-25 實際、2025-26 修訂預算、2026-27 預算同列一頁;名義/實質變動百分比唔係開支金額。開支總額註腳來自第 III 部 PDF p11(印刷 p25)。",
   "licence": "budget.gov.hk 版權告示(只准個人參考或教育用途)",
   "licence_url": "https://www.budget.gov.hk/2026/chi/important.html",
   "updated_at": "2026-02-25",
   "frequency": "annual",
   "acquisition": "manual",
-  "basis_zh": "政府經常開支(唔係公共開支)",
+  "basis_zh": "公共經常開支(包括政府、營運基金及房屋委員會)",
   "category": "公共財政",
-  "question_zh": "政府每 100 蚊經常開支,分畀邊十個範疇?各佔幾多?",
-  "notes_zh": "呢個係「政府開支」口徑,唔包房委會等營運基金 —— 所以「房屋」一項細過想像(公共開支口徑會大十幾倍)。數字由預算案附錄 B 人手抄落嚟;三個年度分別係上年度實際、本年度修訂預算、下年度預算。PDF 用「百萬元」,呢度已經乘返一百萬換算成港元。",
+  "question_zh": "公共經常開支分畀邊十個範疇?邊個範疇加咗最多錢?",
+  "notes_zh": "呢頁係公共經常開支。公共開支 = 政府開支 + 營運基金 + 房屋委員會。兩個開支指標口徑不同,唔可以放埋同一張圖或將總額相加。經常開支適合用作分餅活動「每年點分」嘅基礎;基本工程逐年上落較大。註腳:公共開支總額包括經常及非經常開支,2024-25 實際為 801,223 百萬元、2025-26 修訂預算為 844,217 百萬元、2026-27 預算為 904,724 百萬元(附錄 B 第 III 部 PDF p11)。2026-27 公共經常開支 625,033 百萬元並非全年公共開支總額,寫《青年預算備忘》時要連同年度及口徑引用。PDF 用百萬元,呢頁已乘一百萬換算成港元。",
   "chart": {
     "type": "bar",
     "y_zero": true
   },
   "period_notes": {
+    "2024-25": "實際",
     "2025-26": "修訂預算",
     "2026-27": "預算"
   },
@@ -34,10 +35,10 @@
     "衞生",
     "保安",
     "基礎建設",
-    "經濟",
     "環境及食物",
-    "社區及對外事務",
+    "經濟",
     "房屋",
+    "社區及對外事務",
     "輔助服務"
   ],
   "fetched_at": "2026-02-25T00:00:00Z",
@@ -71,22 +72,22 @@
     },
     {
       "period": "2024-25",
-      "category": "經濟",
-      "value": null
-    },
-    {
-      "period": "2024-25",
       "category": "環境及食物",
       "value": null
     },
     {
       "period": "2024-25",
-      "category": "社區及對外事務",
+      "category": "經濟",
       "value": null
     },
     {
       "period": "2024-25",
       "category": "房屋",
+      "value": null
+    },
+    {
+      "period": "2024-25",
+      "category": "社區及對外事務",
       "value": null
     },
     {
@@ -121,22 +122,22 @@
     },
     {
       "period": "2025-26",
-      "category": "經濟",
-      "value": null
-    },
-    {
-      "period": "2025-26",
       "category": "環境及食物",
       "value": null
     },
     {
       "period": "2025-26",
-      "category": "社區及對外事務",
+      "category": "經濟",
       "value": null
     },
     {
       "period": "2025-26",
       "category": "房屋",
+      "value": null
+    },
+    {
+      "period": "2025-26",
+      "category": "社區及對外事務",
       "value": null
     },
     {
@@ -171,22 +172,22 @@
     },
     {
       "period": "2026-27",
-      "category": "經濟",
-      "value": null
-    },
-    {
-      "period": "2026-27",
       "category": "環境及食物",
       "value": null
     },
     {
       "period": "2026-27",
-      "category": "社區及對外事務",
+      "category": "經濟",
       "value": null
     },
     {
       "period": "2026-27",
       "category": "房屋",
+      "value": null
+    },
+    {
+      "period": "2026-27",
+      "category": "社區及對外事務",
       "value": null
     },
     {
@@ -222,22 +223,22 @@
       "value": null
     },
     {
-      "category": "經濟",
-      "period": null,
-      "value": null
-    },
-    {
       "category": "環境及食物",
       "period": null,
       "value": null
     },
     {
-      "category": "社區及對外事務",
+      "category": "經濟",
       "period": null,
       "value": null
     },
     {
       "category": "房屋",
+      "period": null,
+      "value": null
+    },
+    {
+      "category": "社區及對外事務",
       "period": null,
       "value": null
     },
@@ -254,6 +255,6 @@
     "points_with_value": 0
   },
   "latest": null,
-  "content_hash": "sha256:d0095c6024830e9b",
-  "data_version": "2026.09.7"
+  "content_hash": "sha256:fea177575852158f",
+  "data_version": "2026.09.1"
 }

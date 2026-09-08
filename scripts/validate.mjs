@@ -24,6 +24,8 @@ import { join } from "node:path";
 import { SNAPSHOT_DIR } from "../src/data/_lib/snapshot.js";
 import { validateIndicator, REQUIRED_FIELDS } from "../src/data/_lib/schema.js";
 import { loadManualIndicator, MANUAL_DIR } from "../src/data/_lib/manual.js";
+import { assertSeparatedExpenditureSources } from "./expenditure-scope-gate.mjs";
+import { fileURLToPath } from "node:url";
 
 /**
  * SPEC 第 5 節之外,本專案自己加嘅底線。
@@ -49,6 +51,15 @@ async function main() {
   }
 
   let failures = 0;
+
+  // 呢度接真實 src,唔依賴 loader 有冇因快照新鮮期而跳過。
+  try {
+    await assertSeparatedExpenditureSources(fileURLToPath(new URL("../src/", import.meta.url)));
+    console.log("ok   expenditure scopes     政府／公共開支分開顯示");
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL expenditure scopes — ${error.message}`);
+  }
 
   for (const file of files) {
     const label = file.replace(/\.json$/, "");

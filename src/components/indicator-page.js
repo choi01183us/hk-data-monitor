@@ -107,6 +107,12 @@ export function manualNotice(indicator) {
       抄嘅來源同日期喺下面「資料來源」一欄。
     </p>`;
   }
+  if (indicator.manual_status === "partial") {
+    return html`<div class="manual-notice manual-notice--todo" role="status">
+      <strong>數據未填齊。</strong>已填 ${indicator.manual_filled} 格，未填嘅格唔代表零。
+      引用之前請核對年度同資料表；維護者請睇 <code>manual/README.md</code>。
+    </div>`;
+  }
   return html`<div class="manual-notice manual-notice--todo" role="status">
     <strong>數據未填。</strong>
     呢個指標要人手由官方文件抄數(${indicator.manual_filled} 格已填),而家仲未填齊,所以首頁唔會出佢。

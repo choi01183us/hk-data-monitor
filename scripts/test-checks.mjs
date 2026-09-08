@@ -197,64 +197,156 @@ console.log("\n[4] 來源格式解析");
   check('toNumber("-") 回 null 唔係 0', toNumber("-") === null);
 }
 
-// ── 5. 人手數據:分類相加對總額 ────────────────────────────────
-console.log("\n[5] manual/ 分類相加對總額 — 突變測試");
+// ── 5. 人手公共開支:總額、PDF 次序、跨來源錨 ─────────────────
+// 固定已知答案:2026 年預算版本 FSTB 三個共同組別,原始百萬元已換成港元。
+// 呢份只供 §5/R3 自證,唔係網站數據或 fallback。正式 loader 預設仍讀目前政府快照。
+// 刻意唔讀會每年修訂嘅 live snapshot,否則明年 GOOD 基準會因預算變修訂預算而失效。
+const MANUAL_GOVT_ANCHOR_FIXTURE = {
+  indicator_id: "govt_expenditure", unit_zh: "港元", unit_en: "HK$",
+  series: [
+    { period: "2024-25", category: "教育", value: 105281000000 },
+    { period: "2024-25", category: "社會福利", value: 116887000000 },
+    { period: "2024-25", category: "衞生", value: 109247000000 },
+    { period: "2025-26", category: "教育", value: 101991000000 },
+    { period: "2025-26", category: "社會福利", value: 123614000000 },
+    { period: "2025-26", category: "衞生", value: 114347000000 },
+    { period: "2026-27", category: "教育", value: 102308000000 },
+    { period: "2026-27", category: "社會福利", value: 135865000000 },
+    { period: "2026-27", category: "衞生", value: 118881000000 },
+  ],
+};
+console.log("\n[5] manual/ 公共經常開支 — 總額、PDF 次序、跨來源錨突變測試");
 {
-  const { loadManualIndicator, MANUAL_DIR } = await import("../src/data/_lib/manual.js");
-  const GOOD = [102308, 135865, 118881, 60517, 34727, 26728, 19202, 1226, 18913, 81310]; // 相加 = 599677
-  const LABELS = ["教育", "社會福利", "衞生", "保安", "基礎建設", "經濟", "環境及食物", "社區及對外事務", "房屋", "輔助服務"];
+  const { loadManualIndicator, validatePublicExpenditure } = await import("../src/data/_lib/manual.js");
+  // 2026-27 附錄 B 第 II 部 PDF p8,數字同標籤逐項照原表,相加 = 625033。
+  const GOOD = [102308, 135865, 118881, 60517, 35001, 26728, 22875, 22635, 18913, 81310];
+  const LABELS = ["教育", "社會福利", "衞生", "保安", "基礎建設", "環境及食物", "經濟", "房屋", "社區及對外事務", "輔助服務"];
+  const id = "public_expenditure_policy_groups";
+  const tempDir = await mkdtemp(join(tmpdir(), "hkdm-manual-test-"));
+  const path = join(tempDir, `${id}.json`);
+  const govtSnapshotPath = join(tempDir, "govt_expenditure.json");
+  const govt = MANUAL_GOVT_ANCHOR_FIXTURE;
+  await writeFile(govtSnapshotPath, JSON.stringify(govt), "utf8");
+  const base = {
+    indicator_id: id, name_zh: "自我測試", name_en: "Self test",
+    unit_zh: "港元", unit_en: "HK$", source_zh: "測試", source_en: "Test",
+    source_url: "https://example.gov.hk/", licence: "測試", licence_url: "https://example.gov.hk/terms",
+    updated_at: "2026-02-25", frequency: "annual", acquisition: "manual",
+    source_value_multiplier: 1000000,
+    category_order: LABELS,
+    expected_totals: { "2026-27": 625033 },
+    series: GOOD.map((value, index) => ({ period: "2026-27", category: LABELS[index], value })),
+  };
 
-  // 喺 manual/ 度開一個臨時指標,測完即刻刪 —— 唔會掂真檔案
-  const id = "_selftest_sum";
-  const path = join(MANUAL_DIR, `${id}.json`);
-
-  async function tryLoad(values) {
-    await writeFile(
-      path,
-      JSON.stringify({
-        indicator_id: id,
-        name_zh: "自我測試",
-        name_en: "Self test",
-        unit_zh: "港元",
-        unit_en: "HK$",
-        source_zh: "測試",
-        source_en: "Test",
-        source_url: "https://example.gov.hk/",
-        licence: "測試",
-        licence_url: "https://example.gov.hk/terms",
-        updated_at: "2026-02-25",
-        frequency: "annual",
-        acquisition: "manual",
-        source_value_multiplier: 1000000,
-        expected_totals: { "2026-27": 599677 },
-        series: values.map((value, index) => ({ period: "2026-27", category: LABELS[index], value })),
-      }),
-      "utf8"
-    );
+  // 跑正式 loader,人手輸入同固定 govt 錨都真係寫入臨時目錄再讀檔。
+  // 唔會覆寫擁有人嘅 null 骨架,亦證明新檢查真係接咗正式入口。
+  async function tryLoad(overrides = {}) {
+    await writeFile(path, JSON.stringify({ ...base, ...overrides }), "utf8");
     try {
-      await loadManualIndicator(id);
-      return null;
+      return { doc: await loadManualIndicator(id, { manualDir: tempDir, govtSnapshotPath }), error: null };
     } catch (error) {
-      return error.message;
+      return { doc: null, error: error.message };
     }
   }
-
-  const bump = (index, delta) => GOOD.map((v, i) => (i === index ? v + delta : v));
+  const withValues = (values) => ({ series: base.series.map((point, i) => ({ ...point, value: values[i] })) });
+  const bump = (index, delta) => withValues(GOOD.map((v, i) => (i === index ? v + delta : v)));
+  async function rejects(name, overrides, fragment) {
+    const { error } = await tryLoad(overrides);
+    check(name, error?.includes(fragment) === true, error ?? "冇掟錯");
+  }
+  function rejectsAnchor(name, mutate) {
+    const snapshot = structuredClone(govt);
+    const altered = mutate(snapshot);
+    const error = throwsWith(() => validatePublicExpenditure(base, altered === undefined ? snapshot : altered));
+    check(name, error?.includes("跨來源錨") === true, error ?? "冇掟錯");
+  }
 
   try {
-    check("抄啱(相加 = 599677)通過", (await tryLoad(GOOD)) === null);
-    check("一個數大咗 5000 百萬 -> 捉到", (await tryLoad(bump(8, 5000))) !== null);
-    check("一個數大咗 1000 百萬 -> 捉到(舊嘅 0.2% 門檻捉唔到)", (await tryLoad(bump(3, 1000))) !== null);
-    check("一個數大咗 100 百萬 -> 捉到", (await tryLoad(bump(3, 100))) !== null);
-    check("一個數大咗 2 百萬 -> 捉到", (await tryLoad(bump(3, 2))) !== null);
-    check("一個數細咗 3 百萬 -> 捉到", (await tryLoad(bump(5, -3))) !== null);
-    // 已知限制:加總法驗唔到次序
-    const swapped = [GOOD[1], GOOD[0], ...GOOD.slice(2)];
-    check("(已知限制)兩個數調轉位 -> 捉唔到,靠 category_order 鎖次序", (await tryLoad(swapped)) === null);
-    // 未填齊唔應該報錯 —— 唔係「錯」,係「未做」
-    check("未填齊(有 null)唔會報錯", (await tryLoad(GOOD.map((v, i) => (i < 5 ? v : null)))) === null);
+    const good = await tryLoad();
+    check("公共十組抄啱(相加 = 625033)通過正式 loader", good.error === null && good.doc.manual_status === "filled", good.error);
+    check("百萬元換成港元,教育同固定 CSV 錨完全相等", good.doc?.series[0].value === 102308000000);
+    const changedOnDisk = structuredClone(govt);
+    changedOnDisk.series.find((p) => p.period === "2026-27" && p.category === "教育").value += 1000000;
+    await writeFile(govtSnapshotPath, JSON.stringify(changedOnDisk), "utf8");
+    await rejects("正式 loader 真係讀錨檔:檔內教育改壞 -> hard fail", {}, "跨來源錨對唔上");
+    await rm(govtSnapshotPath);
+    await rejects("正式 loader 錨檔被刪 -> hard fail,唔借用正式快照", {}, "跨來源錨 govt_expenditure 快照讀唔到");
+    await writeFile(govtSnapshotPath, JSON.stringify(govt), "utf8");
+    await rejects("一個數大咗 5000 百萬 -> 總額捉到", bump(8, 5000), "分類相加");
+    await rejects("一個數大咗 1000 百萬 -> 捉到(舊 0.2% 門檻捉唔到)", bump(3, 1000), "分類相加");
+    await rejects("一個數大咗 100 百萬 -> 捉到", bump(3, 100), "分類相加");
+    await rejects("一個數大咗 2 百萬 -> 捉到", bump(3, 2), "分類相加");
+    await rejects("一個數細咗 3 百萬 -> 捉到", bump(5, -3), "分類相加");
+
+    const swappedOrder = [...LABELS];
+    [swappedOrder[5], swappedOrder[6]] = [swappedOrder[6], swappedOrder[5]];
+    await rejects("category_order 環境及食物／經濟對調 -> 捉到", { category_order: swappedOrder }, "category_order");
+    const relabelled = base.series.map((point, i) => ({ ...point, category: swappedOrder[i] }));
+    await rejects("series 值留原位、只對調標籤 -> PDF 次序捉到", { series: relabelled }, "series 類別");
+    await rejects("category_order 同 series 一齊排錯 -> 仍然捉到", { category_order: swappedOrder, series: relabelled }, "category_order");
+    await rejects("null 骨架次序錯都要捉到", { series: relabelled.map((p) => ({ ...p, value: null })) }, "series 類別");
+    await rejects("少咗一個類別、其餘未填 -> 捉到", { series: base.series.slice(0, 9).map((p) => ({ ...p, value: null })) }, "series 類別");
+
+    const swappedValues = [GOOD[1], GOOD[0], ...GOOD.slice(2)];
+    await rejects("教育／福利值對調、總和不變 -> 跨來源錨捉到", withValues(swappedValues), "跨來源錨");
+    await rejects("教育差 1 百萬元(總額容忍範圍內) -> 精確錨捉到", bump(0, 1), "跨來源錨");
+    await rejects("福利差 1 百萬元 -> 精確錨捉到", bump(1, 1), "跨來源錨");
+    await rejects("衞生差 1 百萬元 -> 精確錨捉到", bump(2, 1), "跨來源錨");
+    await rejects("乘數改成 1000 -> 單位閘捉到", { source_value_multiplier: 1000 }, "原始百萬元");
+    await rejects("value 寫空字串 -> 唔可以變成 0", withValues(GOOD.map((v, i) => i === 7 ? "" : v)), "value 必須");
+
+    rejectsAnchor("快照缺相同期數 -> 唔會借用最新一期", (snapshot) => {
+      snapshot.series = snapshot.series.filter((p) => p.period !== "2026-27");
+    });
+    rejectsAnchor("快照缺教育類別 -> hard fail", (snapshot) => {
+      snapshot.series = snapshot.series.filter((p) => !(p.period === "2026-27" && p.category === "教育"));
+    });
+    rejectsAnchor("快照錨係 null -> hard fail", (snapshot) => {
+      snapshot.series.find((p) => p.period === "2026-27" && p.category === "教育").value = null;
+    });
+    rejectsAnchor("快照錨係 NaN -> hard fail", (snapshot) => {
+      snapshot.series.find((p) => p.period === "2026-27" && p.category === "教育").value = NaN;
+    });
+    rejectsAnchor("快照有重複錨 -> 唔可以揀第一個過關", (snapshot) => {
+      snapshot.series.push({ ...snapshot.series.find((p) => p.period === "2026-27" && p.category === "教育") });
+    });
+    rejectsAnchor("錯嘅指標唔可以冒充政府快照", (snapshot) => { snapshot.indicator_id = "wrong"; });
+    rejectsAnchor("快照單位係百萬元 -> 唔可以當港元", (snapshot) => { snapshot.unit_zh = "百萬元"; });
+    rejectsAnchor("快照不存在 -> hard fail,唔用預設值", () => null);
+
+    await rejects("十組填齊但 expected_totals 係 null -> 捉到", { expected_totals: { "2026-27": null } }, "必須填寫 PDF 嘅 expected_totals");
+    await rejects("十組填齊但漏填該年 expected_totals -> 捉到", { expected_totals: {} }, "必須填寫 PDF 嘅 expected_totals");
+    await rejects("刪晒 expected_totals 都唔可以繞過檢查", { expected_totals: undefined }, "必須填寫 PDF 嘅 expected_totals");
+    await rejects("expected_totals 寫非數字 -> 唔可以 NaN 繞過", { expected_totals: { "2026-27": "未抄" } }, "expected_totals 必須");
+
+    const partial = withValues(GOOD.map((v, i) => i < 5 ? v : null));
+    const partialResult = await tryLoad({ ...partial, expected_totals: { "2026-27": null } });
+    check("未填齊可留空總額,已填三個錨照驗", partialResult.error === null && partialResult.doc.manual_status === "partial", partialResult.error);
+    await rejects("部分未填但教育已填錯 -> 一樣捉到", withValues(GOOD.map((v, i) => i === 0 ? v + 1 : null)), "跨來源錨");
+    const todo = await tryLoad({ ...withValues(GOOD.map(() => null)), expected_totals: { "2026-27": null } });
+    check("正確次序全 null 骨架通過,維持 todo", todo.error === null && todo.doc.manual_status === "todo", todo.error);
+    check("全 null 骨架無須錨快照", throwsWith(() => validatePublicExpenditure({ ...base, ...withValues(GOOD.map(() => null)) }, null)) === null);
+
+    // 多年度係人造測例,只用嚟證明按期數對錨同總額;唔係抄入網站嘅公共歷史數字。
+    const multi = { series: [], expected_totals: {} };
+    for (const period of ["2024-25", "2025-26", "2026-27"]) {
+      const parts = base.series.map((point, i) => ({
+        ...point, period,
+        value: i < 3 ? govt.series.find((p) => p.period === period && p.category === point.category).value / 1000000 : point.value,
+      }));
+      multi.series.push(...parts);
+      multi.expected_totals[period] = parts.reduce((sum, p) => sum + p.value, 0);
+    }
+    const multiResult = await tryLoad(multi);
+    check("三年度逐期對返各年 CSV 錨及總額 -> 通過", multiResult.error === null && multiResult.doc.series.length === 30, multiResult.error);
+    const wrongYear = structuredClone(multi);
+    wrongYear.series[0].value = GOOD[0];
+    await rejects("舊年度誤用最新教育值 -> 逐期錨捉到", wrongYear, "跨來源錨");
+    const wrongEarlierOrder = structuredClone(multi);
+    [wrongEarlierOrder.series[7], wrongEarlierOrder.series[8]] = [wrongEarlierOrder.series[8], wrongEarlierOrder.series[7]];
+    await rejects("只有舊年度房屋／社區及對外事務調轉 -> 捉到", wrongEarlierOrder, "series 類別");
   } finally {
-    await rm(path, { force: true });
+    await rm(tempDir, { recursive: true, force: true });
   }
 }
 
@@ -370,13 +462,16 @@ console.log("\n[R2] 人口不變式 — pin 揀錯行要捉到");
 // 只係 0.167% 偏差,靜靜哋過關。實測 FSTB 兩份檔 30 個年度相加全部**零誤差**,
 // 所以來源根本冇四捨五入,門檻改成絕對值。
 // (呢組同下面第 5 節嗰組唔同:嗰組測嘅係「捉唔捉到」,呢組釘死嘅係**靈敏度**。)
-console.log("\n[R3] 分類相加 — 絕對誤差門檻嘅靈敏度");
+console.log("\n[R3] 公共經常開支分類相加 — 絕對誤差門檻嘅靈敏度");
 {
-  const { loadManualIndicator, MANUAL_DIR } = await import("../src/data/_lib/manual.js");
-  const GOOD = [102308, 135865, 118881, 60517, 34727, 26728, 19202, 1226, 18913, 81310];
-  const LABELS = ["教育", "社會福利", "衞生", "保安", "基礎建設", "經濟", "環境及食物", "社區及對外事務", "房屋", "輔助服務"];
-  const id = "_selftest_sensitivity";
-  const path = join(MANUAL_DIR, `${id}.json`);
+  const { loadManualIndicator } = await import("../src/data/_lib/manual.js");
+  const GOOD = [102308, 135865, 118881, 60517, 35001, 26728, 22875, 22635, 18913, 81310];
+  const LABELS = ["教育", "社會福利", "衞生", "保安", "基礎建設", "環境及食物", "經濟", "房屋", "社區及對外事務", "輔助服務"];
+  const id = "public_expenditure_policy_groups";
+  const tempDir = await mkdtemp(join(tmpdir(), "hkdm-manual-sensitivity-"));
+  const path = join(tempDir, `${id}.json`);
+  const govtSnapshotPath = join(tempDir, "govt_expenditure.json");
+  await writeFile(govtSnapshotPath, JSON.stringify(MANUAL_GOVT_ANCHOR_FIXTURE), "utf8");
 
   async function tryLoad(values) {
     await writeFile(
@@ -386,24 +481,25 @@ console.log("\n[R3] 分類相加 — 絕對誤差門檻嘅靈敏度");
         unit_zh: "港元", unit_en: "HK$", source_zh: "測試", source_en: "Test",
         source_url: "https://example.gov.hk/", licence: "測試", licence_url: "https://example.gov.hk/t",
         updated_at: "2026-02-25", frequency: "annual", acquisition: "manual",
-        source_value_multiplier: 1000000, expected_totals: { "2026-27": 599677 },
+        category_order: LABELS,
+        source_value_multiplier: 1000000, expected_totals: { "2026-27": 625033 },
         series: values.map((value, i) => ({ period: "2026-27", category: LABELS[i], value })),
       }),
       "utf8"
     );
-    try { await loadManualIndicator(id); return null; } catch (e) { return e.message; }
+    try { await loadManualIndicator(id, { manualDir: tempDir, govtSnapshotPath }); return null; } catch (e) { return e.message; }
   }
   const bump = (i, d) => GOOD.map((v, k) => (k === i ? v + d : v));
 
   try {
     check("抄啱 -> 通過", (await tryLoad(GOOD)) === null);
-    // 呢條就係釘死靈敏度嗰條:舊門檻(0.2% = 1,199 百萬)之下,2 百萬完全唔會嘈
-    check("差 2 百萬元 -> 捉到(舊嘅 0.2% 門檻要差過 1,199 百萬先嘈)", (await tryLoad(bump(3, 2))) !== null);
+    // 呢條就係釘死靈敏度嗰條:公共總額用舊門檻(0.2% ≈ 1,250 百萬)之下,2 百萬完全唔會嘈
+    check("差 2 百萬元 -> 捉到(舊嘅 0.2% 門檻要差過 1,250 百萬先嘈)", (await tryLoad(bump(3, 2))) !== null);
     check("差 −2 百萬元 -> 捉到", (await tryLoad(bump(7, -2))) !== null);
     check("差 1,000 百萬元 -> 捉到(呢個就係舊門檻放咗生嗰個)", (await tryLoad(bump(3, 1000))) !== null);
     check("差 1 百萬元(= 容忍度,防浮點用)-> 唔嘈", (await tryLoad(bump(3, 1))) === null);
   } finally {
-    await rm(path, { force: true });
+    await rm(tempDir, { recursive: true, force: true });
   }
 }
 
@@ -528,7 +624,7 @@ console.log("\n[R5] Fixture 重播 — 零網絡跑完整 transform,對返快照
 // ── R6. 離線橫額日期只計首頁顯示緊嘅指標 ───────────────────────
 //
 // 真實 bug:橫額顯示「數據截至 2026 年 2 月 25 日」,但嗰個日期嚟自
-// govt_expenditure_policy_groups —— 一個 manual_status: "todo"、一個數都冇填、
+// public_expenditure_policy_groups —— 一個 manual_status: "todo"、一個數都冇填、
 // 首頁根本唔會出嘅指標。學生見到嘅 11 個指標入面最舊其實係 2026-03-23。
 console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢");
 {
@@ -565,7 +661,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
 
   // 對返真實快照:而家 13 份入面有 2 份未填
   const realDocs = [];
-  for (const id of ["gdp", "median_wage", "govt_expenditure_policy_groups", "phr_waiting_time"]) {
+  for (const id of ["gdp", "median_wage", "public_expenditure_policy_groups", "phr_waiting_time"]) {
     const doc = await readSnapshot(id);
     if (doc) realDocs.push(doc);
   }
@@ -656,6 +752,12 @@ console.log("\n[R7] 錄影原子更新 — 一個 endpoint 死咗,同一指標�
     await rm(tempDir, { recursive: true, force: true });
   }
 }
+
+// ── 公共開支頁面:總額註腳及年度比較 ──────────────────────────
+const { testPublicExpenditureViews } = await import("./test-public-expenditure-views.mjs");
+testPublicExpenditureViews(check);
+const { testExpenditureScopeGate } = await import("./test-expenditure-scope-gate.mjs");
+await testExpenditureScopeGate(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

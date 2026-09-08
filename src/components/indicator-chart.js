@@ -143,9 +143,9 @@ function barChart(indicator, width) {
     width,
     height: Math.max(180, rows.length * (narrow(width) ? 30 : 36) + 60),
     marginLeft: narrow(width) ? 110 : 160,
-    marginRight: 56,
+    marginRight: 86,
     x: {
-      label: `${indicator.unit_zh}(${period})`,
+      label: indicator.chart?.label_zh ?? `${indicator.unit_zh}(${period})`,
       grid: true,
       tickFormat: (value) => formatChineseMagnitude(value),
     },
@@ -154,14 +154,23 @@ function barChart(indicator, width) {
       Plot.barX(rows, {
         x: "value",
         y: "category",
+        title: (row) => `${row.category}\n${formatNumber(row.value, { digits: 0 })} ${indicator.unit_zh}`,
         sort: { y: "x", reverse: true },
         fillOpacity: 0.85,
       }),
       // 數字直接寫喺條後面 —— 唔使學生對住格線估。
-      Plot.text(rows, {
+      Plot.text(rows.filter((row) => row.value >= 0), {
         x: "value",
         y: "category",
-        text: (row) => formatNumber(row.value),
+        text: (row) => formatChineseMagnitude(row.value),
+        textAnchor: "start",
+        dx: 6,
+      }),
+      Plot.text(rows.filter((row) => row.value < 0), {
+        // 負數嘅值放喺零線右邊,避免同圖左邊嘅中文分類標籤疊住。
+        x: 0,
+        y: "category",
+        text: (row) => formatChineseMagnitude(row.value),
         textAnchor: "start",
         dx: 6,
       }),
