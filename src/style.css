@@ -680,11 +680,96 @@ body {
   opacity: 1;
 }
 
-/* 首頁城市總覽。只改首頁；指標／工作紙沿用閱讀用淺深主題。 */
+/* 城市總覽及科技探索；指標／工作紙沿用閱讀用淺深主題。 */
 .indicator-card__sparkline {
   display: block;
   width: 100%;
   height: 58px;
+}
+
+/* 科技主題沿用城市總覽配色；原生選項及 details，無新 UI 依賴。 */
+.technology-choices { margin: 0; padding: 0; border: 0; }
+.technology-choices legend { margin-bottom: 0.6rem; font-size: 0.85rem; }
+.technology-choices > div { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.technology-choice { display: flex; gap: 0.45rem; align-items: center; padding: 0.7rem 0.85rem; border: 1px solid var(--hk-border); cursor: pointer; }
+.technology-choice input { accent-color: var(--theme-foreground-focus); margin: 0; }
+.technology-choice:has(input:focus-visible) { outline: 2px solid var(--theme-foreground-focus); outline-offset: 3px; }
+.technology-choice:has(input:checked) { border-color: var(--theme-foreground-focus); font-weight: 600; }
+.technology-status { font-size: 0.78rem; color: var(--theme-foreground-muted); }
+.connection-grid { list-style: none; padding: 0; margin: 0; max-width: none; width: 100%; }
+.connection-node { display: flex; flex-direction: column; gap: 0.5rem; padding: 1rem; }
+.connection-node__label { font-size: 0.75rem; color: var(--theme-foreground-muted); }
+.connection-node strong { font-size: 0.95rem; }
+.connection-node a { display: block; font-size: 0.8rem; margin-top: 0.35rem; }
+.technology-evidence { display: grid; gap: 0.85rem; }
+.technology-caveat { font-size: 0.85rem; }
+.technology-investigate { display: grid; gap: 0.85rem; }
+.technology-resource { padding: 1rem; border-top: 1px solid var(--hk-border); }
+.technology-resource > span { display: block; font-size: 0.75rem; color: var(--theme-foreground-muted); }
+.technology-resource > a { display: inline-block; margin: 0.35rem 0; }
+.technology-resource p { font-size: 0.85rem; margin: 0; }
+.technology-resource-date { font-size: 0.72rem; padding: 0 1rem; color: var(--theme-foreground-muted); }
+.technology-proposal details { padding: 0.8rem 1rem; border-top: 1px solid var(--hk-border); }
+.technology-proposal details p { font-size: 0.85rem; margin-bottom: 0; }
+.technology-proposal summary { cursor: pointer; font-size: 0.9rem; }
+.technology-proposal__idea { padding: 0 1rem; font-size: 0.9rem; }
+.technology-proposal__next { display: block; padding: 1rem; font-size: 0.85rem; }
+.technology-memo { padding: 1.2rem 0; margin-top: 1.5rem; border-top: 1px solid var(--hk-border); }
+.technology-memo h2 { font-size: 1.15rem; margin: 0.4rem 0; }
+.technology-memo p { font-size: 0.9rem; }
+
+@media screen {
+  .monitor-topic-entry {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.7rem;
+    padding: 0.8rem 1rem; margin-top: 1rem;
+    border: 1px solid #346858; border-left: 3px solid #65ddc1;
+    background: #102822; text-decoration: none;
+  }
+  .monitor-topic-entry__icon { font: 1.5rem var(--monitor-mono); }
+  .monitor-topic-entry strong { display: block; font-size: 0.95rem; }
+  .monitor-topic-entry > span > span { display: block; color: #b6d7df; font-size: 0.75rem; }
+  .monitor-topic-entry__action { margin-left: auto; font-size: 0.8rem; }
+  .technology-intro {
+    padding: 2rem 1.5rem; margin: 1rem 0 1.5rem; border: 1px solid var(--hk-border);
+    background-color: #0b1722;
+    background-image: linear-gradient(90deg, #0b1722 45%, transparent), repeating-linear-gradient(0deg, transparent 0 31px, #18333a 32px), repeating-linear-gradient(90deg, transparent 0 31px, #18333a 32px);
+  }
+  .technology-intro h2 { font-size: clamp(1.35rem, 3vw, 2rem); margin: 0.5rem 0; font-weight: 500; }
+  .technology-intro p { max-width: 48rem; color: #b6d7df; margin-bottom: 0; font-size: 0.95rem; }
+  .technology-choice { background: #101e2b; border-radius: 3px; min-height: 2.8rem; box-sizing: border-box; font-size: 0.9rem; }
+  .technology-choice:has(input:checked) { color: #a0f0da; background: #12302f; }
+  .technology-focus { padding: 1.2rem 0; border-top: 1px solid var(--hk-border); }
+  .technology-focus h2 { margin: 0.35rem 0; font-size: 1.25rem; font-weight: 500; }
+  .technology-focus p { max-width: 58rem; color: var(--theme-foreground-muted); font-size: 0.9rem; margin-bottom: 0; }
+  .technology-connections, .technology-resources, .technology-proposal { border: 1px solid var(--hk-border); border-radius: 3px; background: #0b1722; }
+  .technology-panel-heading { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: space-between; align-items: center; padding: 0.8rem 1rem; }
+  .technology-panel-heading h3 { font-size: 0.9rem; margin: 0; font-weight: 500; }
+  .technology-panel-heading > span { font-size: 0.73rem; color: var(--theme-foreground-muted); }
+  .connection-grid { display: grid; }
+  .connection-node { border-top: 1px dashed #346858; margin: 0; background: #101e2b; }
+  .connection-node__label { color: #9fd8d6; letter-spacing: 0.08em; }
+  .connection-node > div { margin-top: auto; }
+  .technology-evidence-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1rem; margin: 1.2rem 0 0.6rem; }
+  .technology-evidence-heading h3 { margin: 0; font-size: 1rem; font-weight: 500; }
+  .technology-evidence-heading > span { font-size: 0.75rem; color: var(--theme-foreground-muted); }
+  .technology-caveat { border-left: 2px solid #5c839a; padding: 0.5rem 0.85rem; color: #b6d7df; margin: 0.85rem 0 1.2rem; }
+  .technology-caveat strong { color: var(--theme-foreground); }
+  .technology-resource p, .technology-proposal details p { color: var(--theme-foreground-muted); }
+  .technology-proposal__idea { color: #b6d7df; }
+  .technology-memo { background: #0b1722; padding: 1.2rem; border: 1px solid var(--hk-border); }
+  .technology-memo p { color: var(--theme-foreground-muted); }
+  .technology-memo > a { font-size: 0.85rem; }
+  @media (min-width: 760px) {
+    .connection-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .connection-node + .connection-node { border-left: 1px dashed #346858; }
+    .technology-evidence, .technology-investigate { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 759px) {
+    .technology-choices > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .technology-intro { padding: 1.25rem 1rem; }
+    .technology-choice { padding-inline: 0.6rem; }
+    .monitor-topic-entry__action { flex-basis: 100%; margin-left: 0; }
+  }
 }
 .indicator-card__trend-range {
   display: flex;

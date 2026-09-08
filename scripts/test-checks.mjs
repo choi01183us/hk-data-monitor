@@ -766,6 +766,8 @@ const { testCitations } = await import("./test-citations.mjs");
 testCitations(check);
 const { testSparklines } = await import("./test-sparklines.mjs");
 await testSparklines(check);
+const { testTechnologyData } = await import("./test-technology-data.mjs");
+await testTechnologyData(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

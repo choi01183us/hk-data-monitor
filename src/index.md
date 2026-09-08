@@ -1,6 +1,6 @@
 ---
 title: 香港數據監測站
-keywords: 香港 數據 統計 開放數據 中學 公民 經濟 社會 分餅 預算 備忘
+keywords: 香港 數據 統計 開放數據 中學 公民 經濟 社會 分餅 預算 備忘 科技 創科 研發 上網
 toc: false
 sidebar: false
 ---
@@ -20,6 +20,8 @@ const loaded = await Promise.all([
   FileAttachment("./data/cpi.json").json(),
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
+  FileAttachment("./data/rd_expenditure.json").json(),
+  FileAttachment("./data/household_internet.json").json(),
   FileAttachment("./data/public_expenditure_policy_groups.json").json(),
   FileAttachment("./data/phr_waiting_time.json").json(),
 ]);
@@ -38,10 +40,17 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
     </div>
   </div>
   <nav class="monitor-nav" aria-label="首頁導覽">
+    <a href="./explore/technology">科技與香港</a>
     <a href="#learning-routes">學習路線</a>
     <a class="monitor-nav__primary" href="./learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
+
+<a class="monitor-topic-entry" href="./explore/technology">
+  <span class="monitor-topic-entry__icon" aria-hidden="true">◎</span>
+  <span><strong>科技與香港</strong><span>研發投入 · 數碼共融 · 青年機會</span></span>
+  <span class="monitor-topic-entry__action">連起數據，探索影響 <span aria-hidden="true">↗</span></span>
+</a>
 
 <div class="monitor-toolbar">
   <h2 id="indicators">全港數據總覽</h2>

@@ -43,6 +43,65 @@ import { loadFiscalReserves } from "./treasury.js";
  *   categories    [{code, label_zh}] —— 明文列出要邊幾個,連 Total("")都要寫
  */
 export const CENSTATD_INDICATORS = {
+  rd_expenditure: {
+    table: "710-86001",
+    sv: "GRD_EXP",
+    stat_pres: "Raw_M_1dp_hkd_d",
+    cv: { SECTOR: ["1", "2", "3"] },
+    freq: "Y",
+    // 2018 起納入研發設施隱含使用成本，唔將舊口徑接成同一條可比線。
+    period_start: "201801",
+    pin: { SECTOR: "" },
+    unit_zh: "港元",
+    value_digits: 0,
+    name_zh: "本地研發總開支",
+    name_en: "Gross domestic expenditure on research and development",
+    unit_en: "HK$",
+    unit_short_zh: "元",
+    category: "科技",
+    question_zh: "香港一年投放幾多資源做研究同開發?",
+    basis_zh: "統計年度內在香港進行嘅內部研發活動開支總額，包括工商、高等教育及政府機構；包括境外資助在港研發，唔包括支付境外機構研發嘅開支，唔係政府創科預算",
+    notes_zh: "原表以百萬港元列示，本站乘 1,000,000 換成港元。金額未扣除通脹。" +
+      "自 2018 年起，統計納入研發設施嘅隱含使用成本，不能同較早數字直接比較，所以此圖由 2018 年起。" +
+      "數字包括企業、大學同政府機構在香港進行嘅研發，唔代表全部由政府出資，亦唔可以當政府創科預算或加落公共經常開支總額。",
+    chart: { type: "line", y_zero: true },
+    transform: (value) => (value === null ? null : Math.round(value * 1_000_000)),
+    verify: verifyRdExpenditure,
+    anchors: (series) => collectAnchors(anchorVersusYear(series, "2018", { label: "可直接比較嘅起點" })),
+  },
+
+  household_internet: {
+    table: "720-90001",
+    sv: "IT_HH",
+    stat_pres: "Prop_1dp_%_n",
+    cv: { TYPE_IT_USAGE: ["With_Internet_as"] },
+    freq: "Y",
+    period_start: "201801",
+    pin: { TYPE_IT_USAGE: "With_Internet_as" },
+    unit_zh: "%",
+    value_digits: 1,
+    name_zh: "家中有接駁互聯網嘅住戶比例",
+    name_en: "Percentage of households with Internet access at home",
+    unit_en: "% of households",
+    unit_short_zh: "%",
+    category: "科技",
+    question_zh: "幾多住戶可以喺屋企上網?數碼服務會唔會漏低一啲家庭?",
+    basis_zh: "家中有以任何設備接駁互聯網嘅住戶，佔該統計年份所有住戶嘅百分比；分母係住戶，唔係人數或寬頻用戶數",
+    notes_zh: "資料來自主題性住戶統計調查。年份係統計年份，各次實際調查期間請看來源報告註釋。" +
+      "家中可以上網，唔等於每位成員都有合適設備、負擔得起服務，或者識得使用網上服務。" +
+      "比例嘅升跌以百分點比較；全港平均亦睇唔到個別年齡、收入或地區嘅差距。",
+    chart: { type: "line", y_zero: true },
+    verify: verifyHouseholdInternet,
+    anchors: (series) => {
+      const latest = [...series].reverse().find((point) => Number.isFinite(point.value));
+      return collectAnchors(latest ? {
+        id: "internet-per-hundred-households",
+        text_zh: `${formatPeriodZh(latest.period)}每 100 戶，約有 ${formatNumber(latest.value, { digits: 1 })} 戶喺家中可以上網`,
+        basis_zh: `${latest.value}% × 100 戶；分母係該統計年份所有住戶，唔係人口`,
+      } : null);
+    },
+  },
+
   gdp: {
     table: "310-31001",
     sv: "CURPGDP",
@@ -491,6 +550,50 @@ export const CENSTATD_INDICATORS = {
     },
   },
 };
+
+/** 新科技指標驗最終切片，唔只驗來源自己一致。 */
+export function verifyRdExpenditure(rows, series) {
+  for (const point of series) {
+    if (!/^\d{4}$/.test(point.period) || point.period < "2018") {
+      throw new Error("710-86001:只接受 2018 起可比年度");
+    }
+    const year = rows.filter((row) => row.period === point.period);
+    const sectors = ["", "1", "2", "3"].map((sector) => {
+      const selected = year.filter((row) => row.SECTOR === sector);
+      if (selected.length !== 1) throw new Error(`710-86001 ${point.period}:機構 ${sector || "Total"} 缺少或重複`);
+      const row = selected[0];
+      if (row.freq !== "Y" || row.sv !== "GRD_EXP" || row.svDesc !== "百萬港元") {
+        throw new Error(`710-86001 ${point.period}:研發變項、頻率或來源單位改變`);
+      }
+      const value = toValue(row);
+      if (value !== null && value < 0) throw new Error(`710-86001 ${point.period}:研發開支不可為負數`);
+      return value;
+    });
+    const [total, ...parts] = sectors;
+    const expected = total === null ? null : Math.round(total * 1_000_000);
+    if (point.value !== expected) throw new Error(`710-86001 ${point.period}:最終數列唔等於原表 Total 乘一百萬，檢查 pin 同換算`);
+    // 來源三分項及總數各四捨五入至 0.1 百萬；用整數十分位處理浮點誤差。
+    // 最大捨入差為 0.2 百萬。呢個獨立來源檢查唔會改動財政開支嘅 1 百萬門檻。
+    if (sectors.every((value) => value !== null)) {
+      const difference = Math.abs(Math.round(total * 10) - parts.reduce((sum, value) => sum + Math.round(value * 10), 0));
+      if (difference > 2) throw new Error(`710-86001 ${point.period}:三類機構之和對唔上原表 Total`);
+    }
+  }
+}
+
+export function verifyHouseholdInternet(rows, series) {
+  for (const point of series) {
+    const selected = rows.filter((row) => row.period === point.period && row.TYPE_IT_USAGE === "With_Internet_as");
+    if (selected.length !== 1) throw new Error(`720-90001 ${point.period}:家中上網分類缺少或重複`);
+    const row = selected[0];
+    if (row.freq !== "Y" || row.sv !== "IT_HH" || row.svDesc !== "比率（%）") {
+      throw new Error(`720-90001 ${point.period}:住戶變項、頻率或來源單位改變`);
+    }
+    const expected = toValue(row);
+    if (expected !== null && (expected < 0 || expected > 100)) throw new Error(`720-90001 ${point.period}:住戶比例必須在 0 至 100% 之間`);
+    if (point.value !== expected) throw new Error(`720-90001 ${point.period}:最終數列唔等於原表住戶比例，檢查分類及換算`);
+  }
+}
 
 function latestValue(series) {
   return [...series].reverse().find((point) => Number.isFinite(point.value))?.value ?? null;

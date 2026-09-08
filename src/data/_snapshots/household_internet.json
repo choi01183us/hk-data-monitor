@@ -1,0 +1,83 @@
+{
+  "indicator_id": "household_internet",
+  "name_zh": "家中有接駁互聯網嘅住戶比例",
+  "name_en": "Percentage of households with Internet access at home",
+  "unit_zh": "%",
+  "unit_source_zh": "比率（%）",
+  "value_digits": 1,
+  "unit_en": "% of households",
+  "unit_short_zh": "%",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=720-90001",
+  "source_note_zh": "政府統計處 社會統計調查組（一）(統計處表 720-90001:家中有接駁互聯網的住戶數目)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-07-09",
+  "fetched_at": "2026-09-08T07:30:27.287Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "科技",
+  "question_zh": "幾多住戶可以喺屋企上網?數碼服務會唔會漏低一啲家庭?",
+  "basis_zh": "家中有以任何設備接駁互聯網嘅住戶，佔該統計年份所有住戶嘅百分比；分母係住戶，唔係人數或寬頻用戶數",
+  "notes_zh": "資料來自主題性住戶統計調查。年份係統計年份，各次實際調查期間請看來源報告註釋。家中可以上網，唔等於每位成員都有合適設備、負擔得起服務，或者識得使用網上服務。比例嘅升跌以百分點比較；全港平均亦睇唔到個別年齡、收入或地區嘅差距。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "internet-per-hundred-households",
+      "text_zh": "2025 年每 100 戶，約有 96.9 戶喺家中可以上網",
+      "basis_zh": "96.9% × 100 戶；分母係該統計年份所有住戶，唔係人口"
+    }
+  ],
+  "category_order": null,
+  "series": [
+    {
+      "period": "2018",
+      "value": 92.3
+    },
+    {
+      "period": "2019",
+      "value": 94.1
+    },
+    {
+      "period": "2020",
+      "value": 93.9
+    },
+    {
+      "period": "2021",
+      "value": 94.4
+    },
+    {
+      "period": "2022",
+      "value": 96.1
+    },
+    {
+      "period": "2023",
+      "value": 96.6
+    },
+    {
+      "period": "2024",
+      "value": 96.7
+    },
+    {
+      "period": "2025",
+      "value": 96.9
+    }
+  ],
+  "latest_by_category": null,
+  "coverage": {
+    "start": "2018",
+    "end": "2025",
+    "points": 8,
+    "points_with_value": 8
+  },
+  "latest": {
+    "period": "2025",
+    "value": 96.9
+  },
+  "content_hash": "sha256:eb5245fda3b50763",
+  "data_version": "2026.09.1"
+}

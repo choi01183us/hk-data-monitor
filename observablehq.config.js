@@ -32,6 +32,14 @@ export default {
 
   pages: [
     {
+      name: "主題探索",
+      pages: [
+        { name: "科技與香港", path: "/explore/technology" },
+        { name: "本地研發總開支", path: "/indicators/rd_expenditure" },
+        { name: "住戶上網率", path: "/indicators/household_internet" },
+      ],
+    },
+    {
       name: "學習路線",
       pages: [
         { name: "香港人點生活", path: "/learn/hong-kong" },

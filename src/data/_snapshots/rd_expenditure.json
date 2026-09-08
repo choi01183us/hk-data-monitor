@@ -1,0 +1,79 @@
+{
+  "indicator_id": "rd_expenditure",
+  "name_zh": "本地研發總開支",
+  "name_en": "Gross domestic expenditure on research and development",
+  "unit_zh": "港元",
+  "unit_source_zh": "百萬港元",
+  "value_digits": 0,
+  "unit_en": "HK$",
+  "unit_short_zh": "元",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=710-86001",
+  "source_note_zh": "政府統計處科技統計組(統計處表 710-86001:按進行研發活動的機構類別劃分的本地研發總開支)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-07-09",
+  "fetched_at": "2026-09-08T07:30:23.095Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "科技",
+  "question_zh": "香港一年投放幾多資源做研究同開發?",
+  "basis_zh": "統計年度內在香港進行嘅內部研發活動開支總額，包括工商、高等教育及政府機構；包括境外資助在港研發，唔包括支付境外機構研發嘅開支，唔係政府創科預算",
+  "notes_zh": "原表以百萬港元列示，本站乘 1,000,000 換成港元。金額未扣除通脹。自 2018 年起，統計納入研發設施嘅隱含使用成本，不能同較早數字直接比較，所以此圖由 2018 年起。數字包括企業、大學同政府機構在香港進行嘅研發，唔代表全部由政府出資，亦唔可以當政府創科預算或加落公共經常開支總額。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "vs-2018",
+      "text_zh": "對比 2018 年（可直接比較嘅起點），升咗 46.1%",
+      "basis_zh": "2018 年 245 億 → 2024 年 358 億"
+    }
+  ],
+  "category_order": null,
+  "series": [
+    {
+      "period": "2018",
+      "value": 24478400000
+    },
+    {
+      "period": "2019",
+      "value": 26332600000
+    },
+    {
+      "period": "2020",
+      "value": 26553600000
+    },
+    {
+      "period": "2021",
+      "value": 27826900000
+    },
+    {
+      "period": "2022",
+      "value": 30138400000
+    },
+    {
+      "period": "2023",
+      "value": 33006000000
+    },
+    {
+      "period": "2024",
+      "value": 35771900000
+    }
+  ],
+  "latest_by_category": null,
+  "coverage": {
+    "start": "2018",
+    "end": "2024",
+    "points": 7,
+    "points_with_value": 7
+  },
+  "latest": {
+    "period": "2024",
+    "value": 35771900000
+  },
+  "content_hash": "sha256:4b893f575dffb942",
+  "data_version": "2026.09.1"
+}

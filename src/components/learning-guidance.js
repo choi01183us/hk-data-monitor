@@ -2,6 +2,18 @@
 import { html } from "npm:htl";
 
 const guidance = {
+  rd_expenditure: {
+    can: "睇本地研發投入嘅名義金額點變，分清企業、高校同政府等機構在香港進行嘅研發。",
+    cannot: "本地研發總開支唔係政府科技預算，亦唔代表科研成果或青年就業增加。未扣除通脹，唔好將名義增幅當成實質增幅。",
+    question: "提出研發或實習支援時，除咗投入金額，仲要查邊種技能、受惠者同成效證據？",
+    routeHref: "../explore/technology",
+  },
+  household_internet: {
+    can: "睇住戶在家中接駁互聯網嘅比例，了解數碼服務所處嘅背景。",
+    cannot: "有網絡接駁唔等於設備足夠、連線質素良好或識得使用；全港住戶比例亦唔代表個人上網率或各群組情況。",
+    question: "建議公共服務數碼化之前，仲要查邊啲群組需要設備、操作或面對面支援？",
+    routeHref: "../explore/technology",
+  },
   population: {
     can: "睇香港總人口喺唔同年份有幾多，作為理解服務需求規模嘅背景。",
     cannot: "總人口冇拆年齡，單靠呢條線唔能夠判斷人口老化，亦唔能夠解釋人口變動原因。",
@@ -82,6 +94,11 @@ const guidance = {
   },
 };
 
+const technologyRelated = new Set([
+  "unemployment", "median_wage", "household_income", "population",
+  "gdp", "four_key_industries", "govt_revenue", "fiscal_reserves", "public_expenditure_policy_groups",
+]);
+
 /** 每頁只傳自己嘅指標；待填狀態沿用正式 loader，唔將 null 當零。 */
 export function learningGuidance(indicator) {
   const item = guidance[indicator.indicator_id];
@@ -93,6 +110,7 @@ export function learningGuidance(indicator) {
     <p><strong>可以看甚麼：</strong>${item.can}</p>
     <p class="learning-guidance__limits"><strong>未能證明甚麼：</strong>${item.cannot}</p>
     <p class="learning-guidance__question"><strong>一齊討論：</strong>${item.question}</p>
-    <p><a href=${`../learn/${item.route}`}>繼續學習路線</a> · <a href="../learn/budget-memo">用證據寫青年預算備忘</a></p>
+    <p><a href=${item.routeHref ?? `../learn/${item.route}`}>繼續學習路線</a> · <a href="../learn/budget-memo">用證據寫青年預算備忘</a></p>
+    ${technologyRelated.has(indicator.indicator_id) ? html`<p><a href="../explore/technology">連繫科技、生活與財政：探索相關資料 <span aria-hidden="true">↗</span></a></p>` : null}
   </section>`;
 }
