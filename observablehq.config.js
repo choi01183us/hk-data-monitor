@@ -34,6 +34,7 @@ export default {
     {
       name: "主題探索",
       pages: [
+        { name: "住屋與生活成本", path: "/explore/living-cost" },
         { name: "香港城市觀察", path: "/explore/city" },
         { name: "香港行業・金融與保險", path: "/explore/industries" },
         { name: "十八區人口", path: "/indicators/district_population" },
@@ -78,6 +79,9 @@ export default {
         { name: "每月工資中位數", path: "/indicators/median_wage" },
         { name: "住戶每月入息中位數", path: "/indicators/household_income" },
         { name: "通脹率", path: "/indicators/cpi" },
+        { name: "九類消費物價變動", path: "/indicators/cpi_components" },
+        { name: "私人住宅售價指數", path: "/indicators/private_domestic_price" },
+        { name: "私人住宅租金指數", path: "/indicators/private_domestic_rent" },
       ],
     },
     {

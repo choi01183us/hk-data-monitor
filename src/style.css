@@ -1385,3 +1385,57 @@ body {
 @media print {
   .weather-demo .weather-art, .weather-demo .weather-controls, .weather-demo .weather-reduced-note { display: none !important; }
 }
+
+/* 住屋與生活成本：沿用總覽色彩，圖表保留單位及來源。 */
+@media screen {
+  .living-page { --living-accent: #87e3cc; }
+  .living-hero { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(260px, 1fr); gap: 3rem; padding: 3rem 2.3rem; margin: 1.2rem 0 2rem; border: 1px solid #2c4854; border-radius: 12px; background: radial-gradient(ellipse at 5% 10%, #173e44, transparent 65%), #101e2a; }
+  .living-hero h2 { margin: .6rem 0 1rem; font-size: clamp(2rem, 4vw, 3.8rem); line-height: 1.2; letter-spacing: -.05em; color: #eaf5f7; }
+  .living-hero p { color: #b9cdd8; font-size: .95rem; line-height: 1.85; }
+  .living-jump { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.6rem; }
+  .living-jump a { padding: .55rem .8rem; border: 1px solid #4a7079; border-radius: 5px; font-size: .8rem; text-decoration: none; }
+  .living-jump a:hover { background: #24424b; }
+  .living-reading { align-self: center; border-left: 2px solid #70cbb8; padding-left: 1.5rem; }
+  .living-reading h3 { font-size: 1.2rem; margin: .5rem 0 1rem; }
+  .living-reading dl { margin: 0; }
+  .living-reading dl > div { display: grid; grid-template-columns: 5.5rem 1fr; gap: .6rem; padding: .7rem 0; border-top: 1px solid #29424e; }
+  .living-reading dt { color: #87e3cc; font: 600 .88rem/1.8 var(--monitor-mono); }
+  .living-reading dd { margin: 0; color: #c5d5de; font-size: .82rem; line-height: 1.8; }
+  .living-section { margin: 2.4rem 0; }
+  .living-section > p { color: #b8cbd7; font-size: .87rem; line-height: 1.85; }
+  .living-section-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; border-bottom: 1px solid #2b4250; padding-bottom: 1rem; }
+  .living-section-heading h2 { margin: .2rem 0 0; font-size: 1.35rem; }
+  .living-section-heading > :last-child { margin-left: auto; }
+  .living-section-heading > a { font-size: .8rem; }
+  .living-number { color: #87e3cc; font: 300 2rem/1 var(--monitor-mono); letter-spacing: -.05em; }
+  .living-card-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .living-card-grid .indicator-panel { min-width: 0; }
+  .living-page .indicator-card__sparkline { height: 68px; }
+  .living-prompt { display: flex; align-items: baseline; gap: 1.4rem; padding: 1rem 1.3rem; margin: 1rem 0; border-left: 2px solid #dcb777; background: #17232f; }
+  .living-prompt strong { flex: 0 0 11rem; color: #f0d3a1; font-size: .82rem; }
+  .living-prompt p { margin: 0; color: #c6d3dd; font-size: .84rem; line-height: 1.8; }
+  .living-chart-panel { padding: 1.4rem; border: 1px solid #304958; border-radius: 8px; background: #111f2b; }
+  .living-source { margin: .65rem 0 0; font-size: .76rem; color: #b8cbd7; line-height: 1.8; }
+  .living-context-card { margin-top: 1.2rem; max-width: 650px; }
+  .living-explain { margin: 1rem 0; padding: 1rem 1.2rem; border: 1px solid #304958; border-radius: 6px; }
+  .living-explain summary { color: #cae4e9; font-weight: 600; cursor: pointer; }
+  .living-explain p, .living-explain a { font-size: .85rem; line-height: 1.85; }
+  .living-memo { padding: 2rem; border: 1px solid #3f6a67; border-radius: 10px; background: linear-gradient(125deg, #173d3d, #122430); }
+  .living-memo h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin: .8rem 0 1.6rem; }
+  .living-memo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.4rem; }
+  .living-memo-grid h3 { font-size: .95rem; color: #a0edd9; margin: 0; }
+  .living-memo-grid p { font-size: .85rem; color: #c5d8de; line-height: 1.8; }
+  .living-memo > a { display: inline-block; margin-top: 1rem; font-weight: 600; }
+  @media (max-width: 700px) {
+    .living-hero { grid-template-columns: 1fr; padding: 1.5rem; gap: 1.6rem; }
+    .living-card-grid, .living-memo-grid { grid-template-columns: 1fr; }
+    .living-prompt { display: block; padding: 1rem; }
+    .living-prompt p { margin-top: .5rem; }
+    .living-section-heading { gap: .6rem; }
+    .living-section-heading > :last-child { margin-left: 0; }
+    .living-section-heading h2 { font-size: 1.1rem; }
+    .living-chart-panel { padding: .75rem .4rem; }
+    .living-chart-panel > :not(figure) { margin-left: .4rem; margin-right: .4rem; }
+    .living-memo { padding: 1.3rem; }
+  }
+}

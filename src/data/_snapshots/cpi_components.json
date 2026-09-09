@@ -1,0 +1,3798 @@
+{
+  "indicator_id": "cpi_components",
+  "name_zh": "九類消費物價按年變動",
+  "name_en": "Composite CPI sections, year-on-year change",
+  "unit_zh": "%",
+  "unit_source_zh": "按年變動百分率",
+  "value_digits": 1,
+  "unit_en": "% year-on-year",
+  "unit_short_zh": "%",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=510-60001A",
+  "source_note_zh": "按月零售物價統計調查 政府統計處消費物價指數組(統計處表 510-60001A:消費物價指數（2019年10月至2020年9月 = 100）中各商品／服務類別指數)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-08-20",
+  "fetched_at": "2026-09-09T04:27:50.988Z",
+  "frequency": "monthly",
+  "acquisition": "api",
+  "category": "住屋與生活成本",
+  "question_zh": "食品、住屋、交通同水電，邊類比一年前同月升得快？",
+  "basis_zh": "綜合消費物價指數九大商品／服務類別嘅官方按年變動百分率；基期為 2019 年 10 月至 2020 年 9 月 = 100，唔係按月率、指數點或實際金額",
+  "notes_zh": "食品、住屋等九類反映唔同消費項目嘅價格變動；分類按年率唔可以相加或簡單平均，亦唔等於各類對整體通脹嘅貢獻。綜合指數按涵蓋住戶嘅整體開支模式編製，唔係任何一戶嘅生活賬單，亦唔係自行編製嘅生活成本評分。住屋分類包括租金等項目，唔係買樓售價。此處係未剔除政府一次性紓困措施影響嘅綜合指數；電費補貼等措施會影響部分類別嘅升跌，唔等同基本通脹率。正數代表比一年前同月貴，負數代表較平；正數收窄只係升得慢咗。按年率由統計處以較高精度指數計算，唔用公開一位小數指數自行重算。原表 [φ3] 表示增減少於 0.05%，本站顯示為缺值，唔當精確零；其他未公布數字亦保留缺值。此頁從 2019 年 10 月開始。",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "same-basket-hundred",
+      "text_zh": "同一籃食品，一年前 100 元，按本月公布升跌率相當於 100.5 元",
+      "basis_zh": "2026 年 7 月食品按年變動 0.5%：100 × (1 + 0.5 ÷ 100)。固定一籃嘅示例，唔係任何家庭嘅實際賬單。"
+    }
+  ],
+  "category_order": [
+    "食品",
+    "住屋",
+    "電力、燃氣及水",
+    "煙酒",
+    "衣履",
+    "耐用物品",
+    "雜項物品",
+    "交通",
+    "雜項服務"
+  ],
+  "series": [
+    {
+      "period": "2019-10",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2019-10",
+      "category": "住屋",
+      "value": 3.1
+    },
+    {
+      "period": "2019-10",
+      "category": "煙酒",
+      "value": -0.6
+    },
+    {
+      "period": "2019-10",
+      "category": "耐用物品",
+      "value": -1.7
+    },
+    {
+      "period": "2019-10",
+      "category": "衣履",
+      "value": -3.5
+    },
+    {
+      "period": "2019-10",
+      "category": "雜項服務",
+      "value": 2.6
+    },
+    {
+      "period": "2019-10",
+      "category": "雜項物品",
+      "value": 3.4
+    },
+    {
+      "period": "2019-10",
+      "category": "電力、燃氣及水",
+      "value": -5.8
+    },
+    {
+      "period": "2019-10",
+      "category": "食品",
+      "value": 6.1
+    },
+    {
+      "period": "2019-11",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2019-11",
+      "category": "住屋",
+      "value": 3
+    },
+    {
+      "period": "2019-11",
+      "category": "煙酒",
+      "value": -0.1
+    },
+    {
+      "period": "2019-11",
+      "category": "耐用物品",
+      "value": -2.3
+    },
+    {
+      "period": "2019-11",
+      "category": "衣履",
+      "value": -3.5
+    },
+    {
+      "period": "2019-11",
+      "category": "雜項服務",
+      "value": 1.5
+    },
+    {
+      "period": "2019-11",
+      "category": "雜項物品",
+      "value": 3.3
+    },
+    {
+      "period": "2019-11",
+      "category": "電力、燃氣及水",
+      "value": -6.4
+    },
+    {
+      "period": "2019-11",
+      "category": "食品",
+      "value": 6.3
+    },
+    {
+      "period": "2019-12",
+      "category": "交通",
+      "value": 1.6
+    },
+    {
+      "period": "2019-12",
+      "category": "住屋",
+      "value": 3
+    },
+    {
+      "period": "2019-12",
+      "category": "煙酒",
+      "value": -1.3
+    },
+    {
+      "period": "2019-12",
+      "category": "耐用物品",
+      "value": -2.2
+    },
+    {
+      "period": "2019-12",
+      "category": "衣履",
+      "value": -3.1
+    },
+    {
+      "period": "2019-12",
+      "category": "雜項服務",
+      "value": 1.6
+    },
+    {
+      "period": "2019-12",
+      "category": "雜項物品",
+      "value": 3.4
+    },
+    {
+      "period": "2019-12",
+      "category": "電力、燃氣及水",
+      "value": -6.6
+    },
+    {
+      "period": "2019-12",
+      "category": "食品",
+      "value": 6.1
+    },
+    {
+      "period": "2020-01",
+      "category": "交通",
+      "value": 1.8
+    },
+    {
+      "period": "2020-01",
+      "category": "住屋",
+      "value": -3
+    },
+    {
+      "period": "2020-01",
+      "category": "煙酒",
+      "value": -1.5
+    },
+    {
+      "period": "2020-01",
+      "category": "耐用物品",
+      "value": -2.7
+    },
+    {
+      "period": "2020-01",
+      "category": "衣履",
+      "value": -5.5
+    },
+    {
+      "period": "2020-01",
+      "category": "雜項服務",
+      "value": 4.8
+    },
+    {
+      "period": "2020-01",
+      "category": "雜項物品",
+      "value": 3.6
+    },
+    {
+      "period": "2020-01",
+      "category": "電力、燃氣及水",
+      "value": -16
+    },
+    {
+      "period": "2020-01",
+      "category": "食品",
+      "value": 7.4
+    },
+    {
+      "period": "2020-02",
+      "category": "交通",
+      "value": 1
+    },
+    {
+      "period": "2020-02",
+      "category": "住屋",
+      "value": 2.7
+    },
+    {
+      "period": "2020-02",
+      "category": "煙酒",
+      "value": 0.9
+    },
+    {
+      "period": "2020-02",
+      "category": "耐用物品",
+      "value": -2.4
+    },
+    {
+      "period": "2020-02",
+      "category": "衣履",
+      "value": -3.1
+    },
+    {
+      "period": "2020-02",
+      "category": "雜項服務",
+      "value": -1.3
+    },
+    {
+      "period": "2020-02",
+      "category": "雜項物品",
+      "value": 4.3
+    },
+    {
+      "period": "2020-02",
+      "category": "電力、燃氣及水",
+      "value": -15.9
+    },
+    {
+      "period": "2020-02",
+      "category": "食品",
+      "value": 6.2
+    },
+    {
+      "period": "2020-03",
+      "category": "交通",
+      "value": 1.1
+    },
+    {
+      "period": "2020-03",
+      "category": "住屋",
+      "value": 2.6
+    },
+    {
+      "period": "2020-03",
+      "category": "煙酒",
+      "value": -0.6
+    },
+    {
+      "period": "2020-03",
+      "category": "耐用物品",
+      "value": -2.4
+    },
+    {
+      "period": "2020-03",
+      "category": "衣履",
+      "value": -4
+    },
+    {
+      "period": "2020-03",
+      "category": "雜項服務",
+      "value": 1.1
+    },
+    {
+      "period": "2020-03",
+      "category": "雜項物品",
+      "value": 3.5
+    },
+    {
+      "period": "2020-03",
+      "category": "電力、燃氣及水",
+      "value": -16.1
+    },
+    {
+      "period": "2020-03",
+      "category": "食品",
+      "value": 5.7
+    },
+    {
+      "period": "2020-04",
+      "category": "交通",
+      "value": 0.1
+    },
+    {
+      "period": "2020-04",
+      "category": "住屋",
+      "value": 1.8
+    },
+    {
+      "period": "2020-04",
+      "category": "煙酒",
+      "value": 0.7
+    },
+    {
+      "period": "2020-04",
+      "category": "耐用物品",
+      "value": -3.1
+    },
+    {
+      "period": "2020-04",
+      "category": "衣履",
+      "value": -4.4
+    },
+    {
+      "period": "2020-04",
+      "category": "雜項服務",
+      "value": 0.9
+    },
+    {
+      "period": "2020-04",
+      "category": "雜項物品",
+      "value": 2.9
+    },
+    {
+      "period": "2020-04",
+      "category": "電力、燃氣及水",
+      "value": -18.8
+    },
+    {
+      "period": "2020-04",
+      "category": "食品",
+      "value": 6
+    },
+    {
+      "period": "2020-05",
+      "category": "交通",
+      "value": 0.6
+    },
+    {
+      "period": "2020-05",
+      "category": "住屋",
+      "value": 1.6
+    },
+    {
+      "period": "2020-05",
+      "category": "煙酒",
+      "value": null
+    },
+    {
+      "period": "2020-05",
+      "category": "耐用物品",
+      "value": -2.8
+    },
+    {
+      "period": "2020-05",
+      "category": "衣履",
+      "value": -5.4
+    },
+    {
+      "period": "2020-05",
+      "category": "雜項服務",
+      "value": 0.7
+    },
+    {
+      "period": "2020-05",
+      "category": "雜項物品",
+      "value": 2.9
+    },
+    {
+      "period": "2020-05",
+      "category": "電力、燃氣及水",
+      "value": -19.4
+    },
+    {
+      "period": "2020-05",
+      "category": "食品",
+      "value": 4.8
+    },
+    {
+      "period": "2020-06",
+      "category": "交通",
+      "value": null
+    },
+    {
+      "period": "2020-06",
+      "category": "住屋",
+      "value": 1.4
+    },
+    {
+      "period": "2020-06",
+      "category": "煙酒",
+      "value": 0.1
+    },
+    {
+      "period": "2020-06",
+      "category": "耐用物品",
+      "value": -3.5
+    },
+    {
+      "period": "2020-06",
+      "category": "衣履",
+      "value": -5.3
+    },
+    {
+      "period": "2020-06",
+      "category": "雜項服務",
+      "value": 0.8
+    },
+    {
+      "period": "2020-06",
+      "category": "雜項物品",
+      "value": 2.7
+    },
+    {
+      "period": "2020-06",
+      "category": "電力、燃氣及水",
+      "value": -18.6
+    },
+    {
+      "period": "2020-06",
+      "category": "食品",
+      "value": 2.7
+    },
+    {
+      "period": "2020-07",
+      "category": "交通",
+      "value": -3.7
+    },
+    {
+      "period": "2020-07",
+      "category": "住屋",
+      "value": -4.8
+    },
+    {
+      "period": "2020-07",
+      "category": "煙酒",
+      "value": 0.3
+    },
+    {
+      "period": "2020-07",
+      "category": "耐用物品",
+      "value": -3.2
+    },
+    {
+      "period": "2020-07",
+      "category": "衣履",
+      "value": -4.7
+    },
+    {
+      "period": "2020-07",
+      "category": "雜項服務",
+      "value": 0.6
+    },
+    {
+      "period": "2020-07",
+      "category": "雜項物品",
+      "value": 2.3
+    },
+    {
+      "period": "2020-07",
+      "category": "電力、燃氣及水",
+      "value": -18.6
+    },
+    {
+      "period": "2020-07",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2020-08",
+      "category": "交通",
+      "value": -2.4
+    },
+    {
+      "period": "2020-08",
+      "category": "住屋",
+      "value": 0.6
+    },
+    {
+      "period": "2020-08",
+      "category": "煙酒",
+      "value": 1.4
+    },
+    {
+      "period": "2020-08",
+      "category": "耐用物品",
+      "value": -4.2
+    },
+    {
+      "period": "2020-08",
+      "category": "衣履",
+      "value": -7.6
+    },
+    {
+      "period": "2020-08",
+      "category": "雜項服務",
+      "value": 0.7
+    },
+    {
+      "period": "2020-08",
+      "category": "雜項物品",
+      "value": 2.9
+    },
+    {
+      "period": "2020-08",
+      "category": "電力、燃氣及水",
+      "value": -19.3
+    },
+    {
+      "period": "2020-08",
+      "category": "食品",
+      "value": 0.5
+    },
+    {
+      "period": "2020-09",
+      "category": "交通",
+      "value": -2.1
+    },
+    {
+      "period": "2020-09",
+      "category": "住屋",
+      "value": -5.3
+    },
+    {
+      "period": "2020-09",
+      "category": "煙酒",
+      "value": 1.8
+    },
+    {
+      "period": "2020-09",
+      "category": "耐用物品",
+      "value": -3
+    },
+    {
+      "period": "2020-09",
+      "category": "衣履",
+      "value": -7
+    },
+    {
+      "period": "2020-09",
+      "category": "雜項服務",
+      "value": 0.6
+    },
+    {
+      "period": "2020-09",
+      "category": "雜項物品",
+      "value": 1.9
+    },
+    {
+      "period": "2020-09",
+      "category": "電力、燃氣及水",
+      "value": -19.8
+    },
+    {
+      "period": "2020-09",
+      "category": "食品",
+      "value": 1.6
+    },
+    {
+      "period": "2020-10",
+      "category": "交通",
+      "value": -2.5
+    },
+    {
+      "period": "2020-10",
+      "category": "住屋",
+      "value": 0.4
+    },
+    {
+      "period": "2020-10",
+      "category": "煙酒",
+      "value": 0.1
+    },
+    {
+      "period": "2020-10",
+      "category": "耐用物品",
+      "value": -2.3
+    },
+    {
+      "period": "2020-10",
+      "category": "衣履",
+      "value": -5.2
+    },
+    {
+      "period": "2020-10",
+      "category": "雜項服務",
+      "value": 0.6
+    },
+    {
+      "period": "2020-10",
+      "category": "雜項物品",
+      "value": 3.3
+    },
+    {
+      "period": "2020-10",
+      "category": "電力、燃氣及水",
+      "value": -24.5
+    },
+    {
+      "period": "2020-10",
+      "category": "食品",
+      "value": 1.8
+    },
+    {
+      "period": "2020-11",
+      "category": "交通",
+      "value": -2.6
+    },
+    {
+      "period": "2020-11",
+      "category": "住屋",
+      "value": 0.5
+    },
+    {
+      "period": "2020-11",
+      "category": "煙酒",
+      "value": 1.4
+    },
+    {
+      "period": "2020-11",
+      "category": "耐用物品",
+      "value": -1.4
+    },
+    {
+      "period": "2020-11",
+      "category": "衣履",
+      "value": -5.4
+    },
+    {
+      "period": "2020-11",
+      "category": "雜項服務",
+      "value": 0.4
+    },
+    {
+      "period": "2020-11",
+      "category": "雜項物品",
+      "value": 3.4
+    },
+    {
+      "period": "2020-11",
+      "category": "電力、燃氣及水",
+      "value": -25
+    },
+    {
+      "period": "2020-11",
+      "category": "食品",
+      "value": 1.8
+    },
+    {
+      "period": "2020-12",
+      "category": "交通",
+      "value": -2.9
+    },
+    {
+      "period": "2020-12",
+      "category": "住屋",
+      "value": 0.3
+    },
+    {
+      "period": "2020-12",
+      "category": "煙酒",
+      "value": 1.5
+    },
+    {
+      "period": "2020-12",
+      "category": "耐用物品",
+      "value": -1.4
+    },
+    {
+      "period": "2020-12",
+      "category": "衣履",
+      "value": -4.9
+    },
+    {
+      "period": "2020-12",
+      "category": "雜項服務",
+      "value": 0.3
+    },
+    {
+      "period": "2020-12",
+      "category": "雜項物品",
+      "value": 3.8
+    },
+    {
+      "period": "2020-12",
+      "category": "電力、燃氣及水",
+      "value": -35.2
+    },
+    {
+      "period": "2020-12",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2021-01",
+      "category": "交通",
+      "value": -3.3
+    },
+    {
+      "period": "2021-01",
+      "category": "住屋",
+      "value": 5.9
+    },
+    {
+      "period": "2021-01",
+      "category": "煙酒",
+      "value": 2.5
+    },
+    {
+      "period": "2021-01",
+      "category": "耐用物品",
+      "value": -0.8
+    },
+    {
+      "period": "2021-01",
+      "category": "衣履",
+      "value": -1.7
+    },
+    {
+      "period": "2021-01",
+      "category": "雜項服務",
+      "value": 0.1
+    },
+    {
+      "period": "2021-01",
+      "category": "雜項物品",
+      "value": -2.8
+    },
+    {
+      "period": "2021-01",
+      "category": "電力、燃氣及水",
+      "value": 24.9
+    },
+    {
+      "period": "2021-01",
+      "category": "食品",
+      "value": null
+    },
+    {
+      "period": "2021-02",
+      "category": "交通",
+      "value": -2.7
+    },
+    {
+      "period": "2021-02",
+      "category": "住屋",
+      "value": -0.2
+    },
+    {
+      "period": "2021-02",
+      "category": "煙酒",
+      "value": -1
+    },
+    {
+      "period": "2021-02",
+      "category": "耐用物品",
+      "value": -0.8
+    },
+    {
+      "period": "2021-02",
+      "category": "衣履",
+      "value": -3.1
+    },
+    {
+      "period": "2021-02",
+      "category": "雜項服務",
+      "value": 0.9
+    },
+    {
+      "period": "2021-02",
+      "category": "雜項物品",
+      "value": -4.5
+    },
+    {
+      "period": "2021-02",
+      "category": "電力、燃氣及水",
+      "value": 24.8
+    },
+    {
+      "period": "2021-02",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2021-03",
+      "category": "交通",
+      "value": -2.4
+    },
+    {
+      "period": "2021-03",
+      "category": "住屋",
+      "value": -0.5
+    },
+    {
+      "period": "2021-03",
+      "category": "煙酒",
+      "value": 0.3
+    },
+    {
+      "period": "2021-03",
+      "category": "耐用物品",
+      "value": 0.1
+    },
+    {
+      "period": "2021-03",
+      "category": "衣履",
+      "value": 0.4
+    },
+    {
+      "period": "2021-03",
+      "category": "雜項服務",
+      "value": 0.4
+    },
+    {
+      "period": "2021-03",
+      "category": "雜項物品",
+      "value": -5.3
+    },
+    {
+      "period": "2021-03",
+      "category": "電力、燃氣及水",
+      "value": 26.3
+    },
+    {
+      "period": "2021-03",
+      "category": "食品",
+      "value": 1.3
+    },
+    {
+      "period": "2021-04",
+      "category": "交通",
+      "value": 2
+    },
+    {
+      "period": "2021-04",
+      "category": "住屋",
+      "value": -0.7
+    },
+    {
+      "period": "2021-04",
+      "category": "煙酒",
+      "value": -0.6
+    },
+    {
+      "period": "2021-04",
+      "category": "耐用物品",
+      "value": 0.9
+    },
+    {
+      "period": "2021-04",
+      "category": "衣履",
+      "value": 1.5
+    },
+    {
+      "period": "2021-04",
+      "category": "雜項服務",
+      "value": 0.5
+    },
+    {
+      "period": "2021-04",
+      "category": "雜項物品",
+      "value": -4.8
+    },
+    {
+      "period": "2021-04",
+      "category": "電力、燃氣及水",
+      "value": 28.7
+    },
+    {
+      "period": "2021-04",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2021-05",
+      "category": "交通",
+      "value": 2.5
+    },
+    {
+      "period": "2021-05",
+      "category": "住屋",
+      "value": -0.7
+    },
+    {
+      "period": "2021-05",
+      "category": "煙酒",
+      "value": -0.3
+    },
+    {
+      "period": "2021-05",
+      "category": "耐用物品",
+      "value": 0.4
+    },
+    {
+      "period": "2021-05",
+      "category": "衣履",
+      "value": 1.6
+    },
+    {
+      "period": "2021-05",
+      "category": "雜項服務",
+      "value": 0.6
+    },
+    {
+      "period": "2021-05",
+      "category": "雜項物品",
+      "value": -4.4
+    },
+    {
+      "period": "2021-05",
+      "category": "電力、燃氣及水",
+      "value": 32.6
+    },
+    {
+      "period": "2021-05",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2021-06",
+      "category": "交通",
+      "value": 2.5
+    },
+    {
+      "period": "2021-06",
+      "category": "住屋",
+      "value": -0.7
+    },
+    {
+      "period": "2021-06",
+      "category": "煙酒",
+      "value": 0.3
+    },
+    {
+      "period": "2021-06",
+      "category": "耐用物品",
+      "value": 0.8
+    },
+    {
+      "period": "2021-06",
+      "category": "衣履",
+      "value": 3.2
+    },
+    {
+      "period": "2021-06",
+      "category": "雜項服務",
+      "value": 0.6
+    },
+    {
+      "period": "2021-06",
+      "category": "雜項物品",
+      "value": -2.9
+    },
+    {
+      "period": "2021-06",
+      "category": "電力、燃氣及水",
+      "value": 17
+    },
+    {
+      "period": "2021-06",
+      "category": "食品",
+      "value": 1.2
+    },
+    {
+      "period": "2021-07",
+      "category": "交通",
+      "value": 6.3
+    },
+    {
+      "period": "2021-07",
+      "category": "住屋",
+      "value": 5.1
+    },
+    {
+      "period": "2021-07",
+      "category": "煙酒",
+      "value": -0.4
+    },
+    {
+      "period": "2021-07",
+      "category": "耐用物品",
+      "value": 1.1
+    },
+    {
+      "period": "2021-07",
+      "category": "衣履",
+      "value": 2.1
+    },
+    {
+      "period": "2021-07",
+      "category": "雜項服務",
+      "value": 0.7
+    },
+    {
+      "period": "2021-07",
+      "category": "雜項物品",
+      "value": -3
+    },
+    {
+      "period": "2021-07",
+      "category": "電力、燃氣及水",
+      "value": 17.8
+    },
+    {
+      "period": "2021-07",
+      "category": "食品",
+      "value": 2.7
+    },
+    {
+      "period": "2021-08",
+      "category": "交通",
+      "value": 6
+    },
+    {
+      "period": "2021-08",
+      "category": "住屋",
+      "value": -0.7
+    },
+    {
+      "period": "2021-08",
+      "category": "煙酒",
+      "value": -0.1
+    },
+    {
+      "period": "2021-08",
+      "category": "耐用物品",
+      "value": 2.8
+    },
+    {
+      "period": "2021-08",
+      "category": "衣履",
+      "value": 5.3
+    },
+    {
+      "period": "2021-08",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2021-08",
+      "category": "雜項物品",
+      "value": -3.2
+    },
+    {
+      "period": "2021-08",
+      "category": "電力、燃氣及水",
+      "value": 20.1
+    },
+    {
+      "period": "2021-08",
+      "category": "食品",
+      "value": 2.8
+    },
+    {
+      "period": "2021-09",
+      "category": "交通",
+      "value": 5.4
+    },
+    {
+      "period": "2021-09",
+      "category": "住屋",
+      "value": -1.4
+    },
+    {
+      "period": "2021-09",
+      "category": "煙酒",
+      "value": -0.6
+    },
+    {
+      "period": "2021-09",
+      "category": "耐用物品",
+      "value": 2.2
+    },
+    {
+      "period": "2021-09",
+      "category": "衣履",
+      "value": 8.7
+    },
+    {
+      "period": "2021-09",
+      "category": "雜項服務",
+      "value": 0.9
+    },
+    {
+      "period": "2021-09",
+      "category": "雜項物品",
+      "value": -2.1
+    },
+    {
+      "period": "2021-09",
+      "category": "電力、燃氣及水",
+      "value": 23.6
+    },
+    {
+      "period": "2021-09",
+      "category": "食品",
+      "value": 2.2
+    },
+    {
+      "period": "2021-10",
+      "category": "交通",
+      "value": 5.7
+    },
+    {
+      "period": "2021-10",
+      "category": "住屋",
+      "value": -0.6
+    },
+    {
+      "period": "2021-10",
+      "category": "煙酒",
+      "value": 0.7
+    },
+    {
+      "period": "2021-10",
+      "category": "耐用物品",
+      "value": 2
+    },
+    {
+      "period": "2021-10",
+      "category": "衣履",
+      "value": 6.1
+    },
+    {
+      "period": "2021-10",
+      "category": "雜項服務",
+      "value": 0.9
+    },
+    {
+      "period": "2021-10",
+      "category": "雜項物品",
+      "value": -1.6
+    },
+    {
+      "period": "2021-10",
+      "category": "電力、燃氣及水",
+      "value": 28.1
+    },
+    {
+      "period": "2021-10",
+      "category": "食品",
+      "value": 2.2
+    },
+    {
+      "period": "2021-11",
+      "category": "交通",
+      "value": 5.3
+    },
+    {
+      "period": "2021-11",
+      "category": "住屋",
+      "value": -0.6
+    },
+    {
+      "period": "2021-11",
+      "category": "煙酒",
+      "value": -0.6
+    },
+    {
+      "period": "2021-11",
+      "category": "耐用物品",
+      "value": 1.8
+    },
+    {
+      "period": "2021-11",
+      "category": "衣履",
+      "value": 6.7
+    },
+    {
+      "period": "2021-11",
+      "category": "雜項服務",
+      "value": 1.1
+    },
+    {
+      "period": "2021-11",
+      "category": "雜項物品",
+      "value": -1
+    },
+    {
+      "period": "2021-11",
+      "category": "電力、燃氣及水",
+      "value": 31.1
+    },
+    {
+      "period": "2021-11",
+      "category": "食品",
+      "value": 2.2
+    },
+    {
+      "period": "2021-12",
+      "category": "交通",
+      "value": 4.1
+    },
+    {
+      "period": "2021-12",
+      "category": "住屋",
+      "value": -0.5
+    },
+    {
+      "period": "2021-12",
+      "category": "煙酒",
+      "value": 0.6
+    },
+    {
+      "period": "2021-12",
+      "category": "耐用物品",
+      "value": 2.1
+    },
+    {
+      "period": "2021-12",
+      "category": "衣履",
+      "value": 8.7
+    },
+    {
+      "period": "2021-12",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2021-12",
+      "category": "雜項物品",
+      "value": -1.1
+    },
+    {
+      "period": "2021-12",
+      "category": "電力、燃氣及水",
+      "value": 54.2
+    },
+    {
+      "period": "2021-12",
+      "category": "食品",
+      "value": 3
+    },
+    {
+      "period": "2022-01",
+      "category": "交通",
+      "value": 6.4
+    },
+    {
+      "period": "2022-01",
+      "category": "住屋",
+      "value": -0.4
+    },
+    {
+      "period": "2022-01",
+      "category": "煙酒",
+      "value": -0.2
+    },
+    {
+      "period": "2022-01",
+      "category": "耐用物品",
+      "value": 2
+    },
+    {
+      "period": "2022-01",
+      "category": "衣履",
+      "value": 6.1
+    },
+    {
+      "period": "2022-01",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2022-01",
+      "category": "雜項物品",
+      "value": -1.1
+    },
+    {
+      "period": "2022-01",
+      "category": "電力、燃氣及水",
+      "value": -2.4
+    },
+    {
+      "period": "2022-01",
+      "category": "食品",
+      "value": 2.8
+    },
+    {
+      "period": "2022-02",
+      "category": "交通",
+      "value": 7
+    },
+    {
+      "period": "2022-02",
+      "category": "住屋",
+      "value": -0.3
+    },
+    {
+      "period": "2022-02",
+      "category": "煙酒",
+      "value": 1.1
+    },
+    {
+      "period": "2022-02",
+      "category": "耐用物品",
+      "value": 2
+    },
+    {
+      "period": "2022-02",
+      "category": "衣履",
+      "value": 8
+    },
+    {
+      "period": "2022-02",
+      "category": "雜項服務",
+      "value": 1.2
+    },
+    {
+      "period": "2022-02",
+      "category": "雜項物品",
+      "value": 0.1
+    },
+    {
+      "period": "2022-02",
+      "category": "電力、燃氣及水",
+      "value": -2.7
+    },
+    {
+      "period": "2022-02",
+      "category": "食品",
+      "value": 3.6
+    },
+    {
+      "period": "2022-03",
+      "category": "交通",
+      "value": 4.9
+    },
+    {
+      "period": "2022-03",
+      "category": "住屋",
+      "value": -0.1
+    },
+    {
+      "period": "2022-03",
+      "category": "煙酒",
+      "value": null
+    },
+    {
+      "period": "2022-03",
+      "category": "耐用物品",
+      "value": 1.1
+    },
+    {
+      "period": "2022-03",
+      "category": "衣履",
+      "value": 4.3
+    },
+    {
+      "period": "2022-03",
+      "category": "雜項服務",
+      "value": 0.9
+    },
+    {
+      "period": "2022-03",
+      "category": "雜項物品",
+      "value": 0.6
+    },
+    {
+      "period": "2022-03",
+      "category": "電力、燃氣及水",
+      "value": -2
+    },
+    {
+      "period": "2022-03",
+      "category": "食品",
+      "value": 4.6
+    },
+    {
+      "period": "2022-04",
+      "category": "交通",
+      "value": 1.8
+    },
+    {
+      "period": "2022-04",
+      "category": "住屋",
+      "value": -0.6
+    },
+    {
+      "period": "2022-04",
+      "category": "煙酒",
+      "value": 1.7
+    },
+    {
+      "period": "2022-04",
+      "category": "耐用物品",
+      "value": 1.2
+    },
+    {
+      "period": "2022-04",
+      "category": "衣履",
+      "value": 3.6
+    },
+    {
+      "period": "2022-04",
+      "category": "雜項服務",
+      "value": 1.3
+    },
+    {
+      "period": "2022-04",
+      "category": "雜項物品",
+      "value": 0.9
+    },
+    {
+      "period": "2022-04",
+      "category": "電力、燃氣及水",
+      "value": 0.2
+    },
+    {
+      "period": "2022-04",
+      "category": "食品",
+      "value": 4
+    },
+    {
+      "period": "2022-05",
+      "category": "交通",
+      "value": 1.5
+    },
+    {
+      "period": "2022-05",
+      "category": "住屋",
+      "value": -0.5
+    },
+    {
+      "period": "2022-05",
+      "category": "煙酒",
+      "value": 1.1
+    },
+    {
+      "period": "2022-05",
+      "category": "耐用物品",
+      "value": 1.7
+    },
+    {
+      "period": "2022-05",
+      "category": "衣履",
+      "value": 5.6
+    },
+    {
+      "period": "2022-05",
+      "category": "雜項服務",
+      "value": 1.3
+    },
+    {
+      "period": "2022-05",
+      "category": "雜項物品",
+      "value": 0.6
+    },
+    {
+      "period": "2022-05",
+      "category": "電力、燃氣及水",
+      "value": -4.9
+    },
+    {
+      "period": "2022-05",
+      "category": "食品",
+      "value": 4
+    },
+    {
+      "period": "2022-06",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2022-06",
+      "category": "住屋",
+      "value": -0.5
+    },
+    {
+      "period": "2022-06",
+      "category": "煙酒",
+      "value": 1.6
+    },
+    {
+      "period": "2022-06",
+      "category": "耐用物品",
+      "value": 1.9
+    },
+    {
+      "period": "2022-06",
+      "category": "衣履",
+      "value": 5.5
+    },
+    {
+      "period": "2022-06",
+      "category": "雜項服務",
+      "value": 1.2
+    },
+    {
+      "period": "2022-06",
+      "category": "雜項物品",
+      "value": -0.1
+    },
+    {
+      "period": "2022-06",
+      "category": "電力、燃氣及水",
+      "value": 14.1
+    },
+    {
+      "period": "2022-06",
+      "category": "食品",
+      "value": 4
+    },
+    {
+      "period": "2022-07",
+      "category": "交通",
+      "value": 1.5
+    },
+    {
+      "period": "2022-07",
+      "category": "住屋",
+      "value": -0.4
+    },
+    {
+      "period": "2022-07",
+      "category": "煙酒",
+      "value": 2
+    },
+    {
+      "period": "2022-07",
+      "category": "耐用物品",
+      "value": 1.2
+    },
+    {
+      "period": "2022-07",
+      "category": "衣履",
+      "value": 6.5
+    },
+    {
+      "period": "2022-07",
+      "category": "雜項服務",
+      "value": 1.4
+    },
+    {
+      "period": "2022-07",
+      "category": "雜項物品",
+      "value": 0.5
+    },
+    {
+      "period": "2022-07",
+      "category": "電力、燃氣及水",
+      "value": 15.1
+    },
+    {
+      "period": "2022-07",
+      "category": "食品",
+      "value": 4.1
+    },
+    {
+      "period": "2022-08",
+      "category": "交通",
+      "value": 1.9
+    },
+    {
+      "period": "2022-08",
+      "category": "住屋",
+      "value": -0.3
+    },
+    {
+      "period": "2022-08",
+      "category": "煙酒",
+      "value": 1.7
+    },
+    {
+      "period": "2022-08",
+      "category": "耐用物品",
+      "value": 0.6
+    },
+    {
+      "period": "2022-08",
+      "category": "衣履",
+      "value": 5.9
+    },
+    {
+      "period": "2022-08",
+      "category": "雜項服務",
+      "value": 1.1
+    },
+    {
+      "period": "2022-08",
+      "category": "雜項物品",
+      "value": 0.9
+    },
+    {
+      "period": "2022-08",
+      "category": "電力、燃氣及水",
+      "value": 15.2
+    },
+    {
+      "period": "2022-08",
+      "category": "食品",
+      "value": 3.8
+    },
+    {
+      "period": "2022-09",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2022-09",
+      "category": "住屋",
+      "value": 6.4
+    },
+    {
+      "period": "2022-09",
+      "category": "煙酒",
+      "value": 1.9
+    },
+    {
+      "period": "2022-09",
+      "category": "耐用物品",
+      "value": -0.5
+    },
+    {
+      "period": "2022-09",
+      "category": "衣履",
+      "value": 3
+    },
+    {
+      "period": "2022-09",
+      "category": "雜項服務",
+      "value": 1.4
+    },
+    {
+      "period": "2022-09",
+      "category": "雜項物品",
+      "value": 0.4
+    },
+    {
+      "period": "2022-09",
+      "category": "電力、燃氣及水",
+      "value": 14.5
+    },
+    {
+      "period": "2022-09",
+      "category": "食品",
+      "value": 3.8
+    },
+    {
+      "period": "2022-10",
+      "category": "交通",
+      "value": 1.5
+    },
+    {
+      "period": "2022-10",
+      "category": "住屋",
+      "value": 0.1
+    },
+    {
+      "period": "2022-10",
+      "category": "煙酒",
+      "value": 1.9
+    },
+    {
+      "period": "2022-10",
+      "category": "耐用物品",
+      "value": -0.6
+    },
+    {
+      "period": "2022-10",
+      "category": "衣履",
+      "value": 4.5
+    },
+    {
+      "period": "2022-10",
+      "category": "雜項服務",
+      "value": 1.5
+    },
+    {
+      "period": "2022-10",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2022-10",
+      "category": "電力、燃氣及水",
+      "value": 13.4
+    },
+    {
+      "period": "2022-10",
+      "category": "食品",
+      "value": 3.4
+    },
+    {
+      "period": "2022-11",
+      "category": "交通",
+      "value": 1.6
+    },
+    {
+      "period": "2022-11",
+      "category": "住屋",
+      "value": -0.1
+    },
+    {
+      "period": "2022-11",
+      "category": "煙酒",
+      "value": 1.7
+    },
+    {
+      "period": "2022-11",
+      "category": "耐用物品",
+      "value": -1.6
+    },
+    {
+      "period": "2022-11",
+      "category": "衣履",
+      "value": 5.2
+    },
+    {
+      "period": "2022-11",
+      "category": "雜項服務",
+      "value": 1.6
+    },
+    {
+      "period": "2022-11",
+      "category": "雜項物品",
+      "value": 0.4
+    },
+    {
+      "period": "2022-11",
+      "category": "電力、燃氣及水",
+      "value": 14.3
+    },
+    {
+      "period": "2022-11",
+      "category": "食品",
+      "value": 3.5
+    },
+    {
+      "period": "2022-12",
+      "category": "交通",
+      "value": 2.7
+    },
+    {
+      "period": "2022-12",
+      "category": "住屋",
+      "value": -0.1
+    },
+    {
+      "period": "2022-12",
+      "category": "煙酒",
+      "value": 1.6
+    },
+    {
+      "period": "2022-12",
+      "category": "耐用物品",
+      "value": -1.5
+    },
+    {
+      "period": "2022-12",
+      "category": "衣履",
+      "value": 5.1
+    },
+    {
+      "period": "2022-12",
+      "category": "雜項服務",
+      "value": 1.9
+    },
+    {
+      "period": "2022-12",
+      "category": "雜項物品",
+      "value": 0.5
+    },
+    {
+      "period": "2022-12",
+      "category": "電力、燃氣及水",
+      "value": 14.7
+    },
+    {
+      "period": "2022-12",
+      "category": "食品",
+      "value": 3.8
+    },
+    {
+      "period": "2023-01",
+      "category": "交通",
+      "value": 0.9
+    },
+    {
+      "period": "2023-01",
+      "category": "住屋",
+      "value": -0.1
+    },
+    {
+      "period": "2023-01",
+      "category": "煙酒",
+      "value": 0.8
+    },
+    {
+      "period": "2023-01",
+      "category": "耐用物品",
+      "value": -2.2
+    },
+    {
+      "period": "2023-01",
+      "category": "衣履",
+      "value": 5.8
+    },
+    {
+      "period": "2023-01",
+      "category": "雜項服務",
+      "value": 2
+    },
+    {
+      "period": "2023-01",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2023-01",
+      "category": "電力、燃氣及水",
+      "value": 20.6
+    },
+    {
+      "period": "2023-01",
+      "category": "食品",
+      "value": 5
+    },
+    {
+      "period": "2023-02",
+      "category": "交通",
+      "value": 0.4
+    },
+    {
+      "period": "2023-02",
+      "category": "住屋",
+      "value": -0.1
+    },
+    {
+      "period": "2023-02",
+      "category": "煙酒",
+      "value": 14
+    },
+    {
+      "period": "2023-02",
+      "category": "耐用物品",
+      "value": -2.1
+    },
+    {
+      "period": "2023-02",
+      "category": "衣履",
+      "value": 5.5
+    },
+    {
+      "period": "2023-02",
+      "category": "雜項服務",
+      "value": 1.8
+    },
+    {
+      "period": "2023-02",
+      "category": "雜項物品",
+      "value": 0.7
+    },
+    {
+      "period": "2023-02",
+      "category": "電力、燃氣及水",
+      "value": 20.7
+    },
+    {
+      "period": "2023-02",
+      "category": "食品",
+      "value": 2.4
+    },
+    {
+      "period": "2023-03",
+      "category": "交通",
+      "value": 2.8
+    },
+    {
+      "period": "2023-03",
+      "category": "住屋",
+      "value": -0.2
+    },
+    {
+      "period": "2023-03",
+      "category": "煙酒",
+      "value": 18.7
+    },
+    {
+      "period": "2023-03",
+      "category": "耐用物品",
+      "value": -2.8
+    },
+    {
+      "period": "2023-03",
+      "category": "衣履",
+      "value": 6.3
+    },
+    {
+      "period": "2023-03",
+      "category": "雜項服務",
+      "value": 2.7
+    },
+    {
+      "period": "2023-03",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2023-03",
+      "category": "電力、燃氣及水",
+      "value": 19.9
+    },
+    {
+      "period": "2023-03",
+      "category": "食品",
+      "value": 1.6
+    },
+    {
+      "period": "2023-04",
+      "category": "交通",
+      "value": 2.2
+    },
+    {
+      "period": "2023-04",
+      "category": "住屋",
+      "value": 0.5
+    },
+    {
+      "period": "2023-04",
+      "category": "煙酒",
+      "value": 18.2
+    },
+    {
+      "period": "2023-04",
+      "category": "耐用物品",
+      "value": -3.3
+    },
+    {
+      "period": "2023-04",
+      "category": "衣履",
+      "value": 6.4
+    },
+    {
+      "period": "2023-04",
+      "category": "雜項服務",
+      "value": 2.3
+    },
+    {
+      "period": "2023-04",
+      "category": "雜項物品",
+      "value": 0.8
+    },
+    {
+      "period": "2023-04",
+      "category": "電力、燃氣及水",
+      "value": 17.8
+    },
+    {
+      "period": "2023-04",
+      "category": "食品",
+      "value": 2.6
+    },
+    {
+      "period": "2023-05",
+      "category": "交通",
+      "value": 1.5
+    },
+    {
+      "period": "2023-05",
+      "category": "住屋",
+      "value": 0.5
+    },
+    {
+      "period": "2023-05",
+      "category": "煙酒",
+      "value": 19.6
+    },
+    {
+      "period": "2023-05",
+      "category": "耐用物品",
+      "value": -3.7
+    },
+    {
+      "period": "2023-05",
+      "category": "衣履",
+      "value": 5.8
+    },
+    {
+      "period": "2023-05",
+      "category": "雜項服務",
+      "value": 2.7
+    },
+    {
+      "period": "2023-05",
+      "category": "雜項物品",
+      "value": 1.2
+    },
+    {
+      "period": "2023-05",
+      "category": "電力、燃氣及水",
+      "value": 16.6
+    },
+    {
+      "period": "2023-05",
+      "category": "食品",
+      "value": 2.6
+    },
+    {
+      "period": "2023-06",
+      "category": "交通",
+      "value": 1.3
+    },
+    {
+      "period": "2023-06",
+      "category": "住屋",
+      "value": 0.6
+    },
+    {
+      "period": "2023-06",
+      "category": "煙酒",
+      "value": 18.7
+    },
+    {
+      "period": "2023-06",
+      "category": "耐用物品",
+      "value": -3.7
+    },
+    {
+      "period": "2023-06",
+      "category": "衣履",
+      "value": 5.7
+    },
+    {
+      "period": "2023-06",
+      "category": "雜項服務",
+      "value": 2.5
+    },
+    {
+      "period": "2023-06",
+      "category": "雜項物品",
+      "value": 2.3
+    },
+    {
+      "period": "2023-06",
+      "category": "電力、燃氣及水",
+      "value": 13.3
+    },
+    {
+      "period": "2023-06",
+      "category": "食品",
+      "value": 2.4
+    },
+    {
+      "period": "2023-07",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2023-07",
+      "category": "住屋",
+      "value": 0.7
+    },
+    {
+      "period": "2023-07",
+      "category": "煙酒",
+      "value": 18.4
+    },
+    {
+      "period": "2023-07",
+      "category": "耐用物品",
+      "value": -3.3
+    },
+    {
+      "period": "2023-07",
+      "category": "衣履",
+      "value": 6.6
+    },
+    {
+      "period": "2023-07",
+      "category": "雜項服務",
+      "value": 2.4
+    },
+    {
+      "period": "2023-07",
+      "category": "雜項物品",
+      "value": 2
+    },
+    {
+      "period": "2023-07",
+      "category": "電力、燃氣及水",
+      "value": 9.9
+    },
+    {
+      "period": "2023-07",
+      "category": "食品",
+      "value": 2.1
+    },
+    {
+      "period": "2023-08",
+      "category": "交通",
+      "value": 1.5
+    },
+    {
+      "period": "2023-08",
+      "category": "住屋",
+      "value": 0.8
+    },
+    {
+      "period": "2023-08",
+      "category": "煙酒",
+      "value": 19.6
+    },
+    {
+      "period": "2023-08",
+      "category": "耐用物品",
+      "value": -2.5
+    },
+    {
+      "period": "2023-08",
+      "category": "衣履",
+      "value": 6.6
+    },
+    {
+      "period": "2023-08",
+      "category": "雜項服務",
+      "value": 2.4
+    },
+    {
+      "period": "2023-08",
+      "category": "雜項物品",
+      "value": 2.2
+    },
+    {
+      "period": "2023-08",
+      "category": "電力、燃氣及水",
+      "value": 5.7
+    },
+    {
+      "period": "2023-08",
+      "category": "食品",
+      "value": 2.2
+    },
+    {
+      "period": "2023-09",
+      "category": "交通",
+      "value": 2.4
+    },
+    {
+      "period": "2023-09",
+      "category": "住屋",
+      "value": 0.9
+    },
+    {
+      "period": "2023-09",
+      "category": "煙酒",
+      "value": 18.9
+    },
+    {
+      "period": "2023-09",
+      "category": "耐用物品",
+      "value": -1.8
+    },
+    {
+      "period": "2023-09",
+      "category": "衣履",
+      "value": 6.5
+    },
+    {
+      "period": "2023-09",
+      "category": "雜項服務",
+      "value": 2.7
+    },
+    {
+      "period": "2023-09",
+      "category": "雜項物品",
+      "value": 2.5
+    },
+    {
+      "period": "2023-09",
+      "category": "電力、燃氣及水",
+      "value": 2.9
+    },
+    {
+      "period": "2023-09",
+      "category": "食品",
+      "value": 3
+    },
+    {
+      "period": "2023-10",
+      "category": "交通",
+      "value": 2.3
+    },
+    {
+      "period": "2023-10",
+      "category": "住屋",
+      "value": 2.7
+    },
+    {
+      "period": "2023-10",
+      "category": "煙酒",
+      "value": 18.3
+    },
+    {
+      "period": "2023-10",
+      "category": "耐用物品",
+      "value": -1.2
+    },
+    {
+      "period": "2023-10",
+      "category": "衣履",
+      "value": 6.3
+    },
+    {
+      "period": "2023-10",
+      "category": "雜項服務",
+      "value": 3.3
+    },
+    {
+      "period": "2023-10",
+      "category": "雜項物品",
+      "value": 1.9
+    },
+    {
+      "period": "2023-10",
+      "category": "電力、燃氣及水",
+      "value": 0.2
+    },
+    {
+      "period": "2023-10",
+      "category": "食品",
+      "value": 3
+    },
+    {
+      "period": "2023-11",
+      "category": "交通",
+      "value": 2.4
+    },
+    {
+      "period": "2023-11",
+      "category": "住屋",
+      "value": 2.8
+    },
+    {
+      "period": "2023-11",
+      "category": "煙酒",
+      "value": 18.9
+    },
+    {
+      "period": "2023-11",
+      "category": "耐用物品",
+      "value": -1.3
+    },
+    {
+      "period": "2023-11",
+      "category": "衣履",
+      "value": 4.7
+    },
+    {
+      "period": "2023-11",
+      "category": "雜項服務",
+      "value": 3.2
+    },
+    {
+      "period": "2023-11",
+      "category": "雜項物品",
+      "value": 2.6
+    },
+    {
+      "period": "2023-11",
+      "category": "電力、燃氣及水",
+      "value": -2.4
+    },
+    {
+      "period": "2023-11",
+      "category": "食品",
+      "value": 2.7
+    },
+    {
+      "period": "2023-12",
+      "category": "交通",
+      "value": 2.9
+    },
+    {
+      "period": "2023-12",
+      "category": "住屋",
+      "value": 2.8
+    },
+    {
+      "period": "2023-12",
+      "category": "煙酒",
+      "value": 19.2
+    },
+    {
+      "period": "2023-12",
+      "category": "耐用物品",
+      "value": -1
+    },
+    {
+      "period": "2023-12",
+      "category": "衣履",
+      "value": 4
+    },
+    {
+      "period": "2023-12",
+      "category": "雜項服務",
+      "value": 3.2
+    },
+    {
+      "period": "2023-12",
+      "category": "雜項物品",
+      "value": 2.2
+    },
+    {
+      "period": "2023-12",
+      "category": "電力、燃氣及水",
+      "value": -4.8
+    },
+    {
+      "period": "2023-12",
+      "category": "食品",
+      "value": 2.3
+    },
+    {
+      "period": "2024-01",
+      "category": "交通",
+      "value": 1.8
+    },
+    {
+      "period": "2024-01",
+      "category": "住屋",
+      "value": 2.9
+    },
+    {
+      "period": "2024-01",
+      "category": "煙酒",
+      "value": 19.5
+    },
+    {
+      "period": "2024-01",
+      "category": "耐用物品",
+      "value": -1.4
+    },
+    {
+      "period": "2024-01",
+      "category": "衣履",
+      "value": 3.5
+    },
+    {
+      "period": "2024-01",
+      "category": "雜項服務",
+      "value": 2.2
+    },
+    {
+      "period": "2024-01",
+      "category": "雜項物品",
+      "value": 1.9
+    },
+    {
+      "period": "2024-01",
+      "category": "電力、燃氣及水",
+      "value": -7.6
+    },
+    {
+      "period": "2024-01",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2024-02",
+      "category": "交通",
+      "value": 2.3
+    },
+    {
+      "period": "2024-02",
+      "category": "住屋",
+      "value": 3
+    },
+    {
+      "period": "2024-02",
+      "category": "煙酒",
+      "value": 6.1
+    },
+    {
+      "period": "2024-02",
+      "category": "耐用物品",
+      "value": -1.4
+    },
+    {
+      "period": "2024-02",
+      "category": "衣履",
+      "value": 1.3
+    },
+    {
+      "period": "2024-02",
+      "category": "雜項服務",
+      "value": 3.6
+    },
+    {
+      "period": "2024-02",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2024-02",
+      "category": "電力、燃氣及水",
+      "value": -7.8
+    },
+    {
+      "period": "2024-02",
+      "category": "食品",
+      "value": 2.2
+    },
+    {
+      "period": "2024-03",
+      "category": "交通",
+      "value": 2.2
+    },
+    {
+      "period": "2024-03",
+      "category": "住屋",
+      "value": 3.1
+    },
+    {
+      "period": "2024-03",
+      "category": "煙酒",
+      "value": 17.7
+    },
+    {
+      "period": "2024-03",
+      "category": "耐用物品",
+      "value": -1.5
+    },
+    {
+      "period": "2024-03",
+      "category": "衣履",
+      "value": 0.3
+    },
+    {
+      "period": "2024-03",
+      "category": "雜項服務",
+      "value": 2.9
+    },
+    {
+      "period": "2024-03",
+      "category": "雜項物品",
+      "value": 1.2
+    },
+    {
+      "period": "2024-03",
+      "category": "電力、燃氣及水",
+      "value": -8.7
+    },
+    {
+      "period": "2024-03",
+      "category": "食品",
+      "value": 1.9
+    },
+    {
+      "period": "2024-04",
+      "category": "交通",
+      "value": 1.8
+    },
+    {
+      "period": "2024-04",
+      "category": "住屋",
+      "value": 1
+    },
+    {
+      "period": "2024-04",
+      "category": "煙酒",
+      "value": 20.8
+    },
+    {
+      "period": "2024-04",
+      "category": "耐用物品",
+      "value": -0.8
+    },
+    {
+      "period": "2024-04",
+      "category": "衣履",
+      "value": 0.6
+    },
+    {
+      "period": "2024-04",
+      "category": "雜項服務",
+      "value": 2.2
+    },
+    {
+      "period": "2024-04",
+      "category": "雜項物品",
+      "value": 1.1
+    },
+    {
+      "period": "2024-04",
+      "category": "電力、燃氣及水",
+      "value": -9.3
+    },
+    {
+      "period": "2024-04",
+      "category": "食品",
+      "value": 1.8
+    },
+    {
+      "period": "2024-05",
+      "category": "交通",
+      "value": 2.3
+    },
+    {
+      "period": "2024-05",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2024-05",
+      "category": "煙酒",
+      "value": 20.1
+    },
+    {
+      "period": "2024-05",
+      "category": "耐用物品",
+      "value": -0.9
+    },
+    {
+      "period": "2024-05",
+      "category": "衣履",
+      "value": 1.1
+    },
+    {
+      "period": "2024-05",
+      "category": "雜項服務",
+      "value": 2.2
+    },
+    {
+      "period": "2024-05",
+      "category": "雜項物品",
+      "value": 1.2
+    },
+    {
+      "period": "2024-05",
+      "category": "電力、燃氣及水",
+      "value": -10.9
+    },
+    {
+      "period": "2024-05",
+      "category": "食品",
+      "value": 1.9
+    },
+    {
+      "period": "2024-06",
+      "category": "交通",
+      "value": 1.7
+    },
+    {
+      "period": "2024-06",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2024-06",
+      "category": "煙酒",
+      "value": 22
+    },
+    {
+      "period": "2024-06",
+      "category": "耐用物品",
+      "value": -0.6
+    },
+    {
+      "period": "2024-06",
+      "category": "衣履",
+      "value": -0.6
+    },
+    {
+      "period": "2024-06",
+      "category": "雜項服務",
+      "value": 2.5
+    },
+    {
+      "period": "2024-06",
+      "category": "雜項物品",
+      "value": 0.5
+    },
+    {
+      "period": "2024-06",
+      "category": "電力、燃氣及水",
+      "value": 0.1
+    },
+    {
+      "period": "2024-06",
+      "category": "食品",
+      "value": 1.9
+    },
+    {
+      "period": "2024-07",
+      "category": "交通",
+      "value": 2.7
+    },
+    {
+      "period": "2024-07",
+      "category": "住屋",
+      "value": 3.3
+    },
+    {
+      "period": "2024-07",
+      "category": "煙酒",
+      "value": 22.1
+    },
+    {
+      "period": "2024-07",
+      "category": "耐用物品",
+      "value": -0.9
+    },
+    {
+      "period": "2024-07",
+      "category": "衣履",
+      "value": -1.2
+    },
+    {
+      "period": "2024-07",
+      "category": "雜項服務",
+      "value": 2.7
+    },
+    {
+      "period": "2024-07",
+      "category": "雜項物品",
+      "value": 0.9
+    },
+    {
+      "period": "2024-07",
+      "category": "電力、燃氣及水",
+      "value": 2.3
+    },
+    {
+      "period": "2024-07",
+      "category": "食品",
+      "value": 1.9
+    },
+    {
+      "period": "2024-08",
+      "category": "交通",
+      "value": 2.8
+    },
+    {
+      "period": "2024-08",
+      "category": "住屋",
+      "value": 3.3
+    },
+    {
+      "period": "2024-08",
+      "category": "煙酒",
+      "value": 20.8
+    },
+    {
+      "period": "2024-08",
+      "category": "耐用物品",
+      "value": -0.9
+    },
+    {
+      "period": "2024-08",
+      "category": "衣履",
+      "value": -1.8
+    },
+    {
+      "period": "2024-08",
+      "category": "雜項服務",
+      "value": 2.2
+    },
+    {
+      "period": "2024-08",
+      "category": "雜項物品",
+      "value": 0.9
+    },
+    {
+      "period": "2024-08",
+      "category": "電力、燃氣及水",
+      "value": 4.8
+    },
+    {
+      "period": "2024-08",
+      "category": "食品",
+      "value": 1.8
+    },
+    {
+      "period": "2024-09",
+      "category": "交通",
+      "value": 1
+    },
+    {
+      "period": "2024-09",
+      "category": "住屋",
+      "value": 3.3
+    },
+    {
+      "period": "2024-09",
+      "category": "煙酒",
+      "value": 21.4
+    },
+    {
+      "period": "2024-09",
+      "category": "耐用物品",
+      "value": -0.4
+    },
+    {
+      "period": "2024-09",
+      "category": "衣履",
+      "value": -1.6
+    },
+    {
+      "period": "2024-09",
+      "category": "雜項服務",
+      "value": 2
+    },
+    {
+      "period": "2024-09",
+      "category": "雜項物品",
+      "value": 1.2
+    },
+    {
+      "period": "2024-09",
+      "category": "電力、燃氣及水",
+      "value": 6.5
+    },
+    {
+      "period": "2024-09",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2024-10",
+      "category": "交通",
+      "value": 1.6
+    },
+    {
+      "period": "2024-10",
+      "category": "住屋",
+      "value": 1
+    },
+    {
+      "period": "2024-10",
+      "category": "煙酒",
+      "value": 21.8
+    },
+    {
+      "period": "2024-10",
+      "category": "耐用物品",
+      "value": -0.7
+    },
+    {
+      "period": "2024-10",
+      "category": "衣履",
+      "value": -1.4
+    },
+    {
+      "period": "2024-10",
+      "category": "雜項服務",
+      "value": 1.9
+    },
+    {
+      "period": "2024-10",
+      "category": "雜項物品",
+      "value": 1.6
+    },
+    {
+      "period": "2024-10",
+      "category": "電力、燃氣及水",
+      "value": 8.5
+    },
+    {
+      "period": "2024-10",
+      "category": "食品",
+      "value": 0.9
+    },
+    {
+      "period": "2024-11",
+      "category": "交通",
+      "value": 1.3
+    },
+    {
+      "period": "2024-11",
+      "category": "住屋",
+      "value": 0.9
+    },
+    {
+      "period": "2024-11",
+      "category": "煙酒",
+      "value": 21.2
+    },
+    {
+      "period": "2024-11",
+      "category": "耐用物品",
+      "value": -0.3
+    },
+    {
+      "period": "2024-11",
+      "category": "衣履",
+      "value": -2.4
+    },
+    {
+      "period": "2024-11",
+      "category": "雜項服務",
+      "value": 2
+    },
+    {
+      "period": "2024-11",
+      "category": "雜項物品",
+      "value": 0.8
+    },
+    {
+      "period": "2024-11",
+      "category": "電力、燃氣及水",
+      "value": 9.8
+    },
+    {
+      "period": "2024-11",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2024-12",
+      "category": "交通",
+      "value": 2.1
+    },
+    {
+      "period": "2024-12",
+      "category": "住屋",
+      "value": 1
+    },
+    {
+      "period": "2024-12",
+      "category": "煙酒",
+      "value": 21.2
+    },
+    {
+      "period": "2024-12",
+      "category": "耐用物品",
+      "value": -1.6
+    },
+    {
+      "period": "2024-12",
+      "category": "衣履",
+      "value": -3.2
+    },
+    {
+      "period": "2024-12",
+      "category": "雜項服務",
+      "value": 2.1
+    },
+    {
+      "period": "2024-12",
+      "category": "雜項物品",
+      "value": 1.4
+    },
+    {
+      "period": "2024-12",
+      "category": "電力、燃氣及水",
+      "value": 11.4
+    },
+    {
+      "period": "2024-12",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2025-01",
+      "category": "交通",
+      "value": 4
+    },
+    {
+      "period": "2025-01",
+      "category": "住屋",
+      "value": 1.5
+    },
+    {
+      "period": "2025-01",
+      "category": "煙酒",
+      "value": 20.7
+    },
+    {
+      "period": "2025-01",
+      "category": "耐用物品",
+      "value": -1
+    },
+    {
+      "period": "2025-01",
+      "category": "衣履",
+      "value": -3.4
+    },
+    {
+      "period": "2025-01",
+      "category": "雜項服務",
+      "value": 2.8
+    },
+    {
+      "period": "2025-01",
+      "category": "雜項物品",
+      "value": 0.8
+    },
+    {
+      "period": "2025-01",
+      "category": "電力、燃氣及水",
+      "value": 13.2
+    },
+    {
+      "period": "2025-01",
+      "category": "食品",
+      "value": 1.2
+    },
+    {
+      "period": "2025-02",
+      "category": "交通",
+      "value": 2.6
+    },
+    {
+      "period": "2025-02",
+      "category": "住屋",
+      "value": 1.6
+    },
+    {
+      "period": "2025-02",
+      "category": "煙酒",
+      "value": 20.9
+    },
+    {
+      "period": "2025-02",
+      "category": "耐用物品",
+      "value": -1.1
+    },
+    {
+      "period": "2025-02",
+      "category": "衣履",
+      "value": -1.9
+    },
+    {
+      "period": "2025-02",
+      "category": "雜項服務",
+      "value": 1.2
+    },
+    {
+      "period": "2025-02",
+      "category": "雜項物品",
+      "value": 1.4
+    },
+    {
+      "period": "2025-02",
+      "category": "電力、燃氣及水",
+      "value": 13.3
+    },
+    {
+      "period": "2025-02",
+      "category": "食品",
+      "value": 0.1
+    },
+    {
+      "period": "2025-03",
+      "category": "交通",
+      "value": 1.7
+    },
+    {
+      "period": "2025-03",
+      "category": "住屋",
+      "value": 1.7
+    },
+    {
+      "period": "2025-03",
+      "category": "煙酒",
+      "value": 4.4
+    },
+    {
+      "period": "2025-03",
+      "category": "耐用物品",
+      "value": -0.5
+    },
+    {
+      "period": "2025-03",
+      "category": "衣履",
+      "value": -2.8
+    },
+    {
+      "period": "2025-03",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2025-03",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2025-03",
+      "category": "電力、燃氣及水",
+      "value": 14
+    },
+    {
+      "period": "2025-03",
+      "category": "食品",
+      "value": 0.3
+    },
+    {
+      "period": "2025-04",
+      "category": "交通",
+      "value": 3.8
+    },
+    {
+      "period": "2025-04",
+      "category": "住屋",
+      "value": 2.8
+    },
+    {
+      "period": "2025-04",
+      "category": "煙酒",
+      "value": 0.4
+    },
+    {
+      "period": "2025-04",
+      "category": "耐用物品",
+      "value": -1.6
+    },
+    {
+      "period": "2025-04",
+      "category": "衣履",
+      "value": -4.1
+    },
+    {
+      "period": "2025-04",
+      "category": "雜項服務",
+      "value": 2.1
+    },
+    {
+      "period": "2025-04",
+      "category": "雜項物品",
+      "value": 1
+    },
+    {
+      "period": "2025-04",
+      "category": "電力、燃氣及水",
+      "value": 13.2
+    },
+    {
+      "period": "2025-04",
+      "category": "食品",
+      "value": 0.4
+    },
+    {
+      "period": "2025-05",
+      "category": "交通",
+      "value": 2.2
+    },
+    {
+      "period": "2025-05",
+      "category": "住屋",
+      "value": 2.9
+    },
+    {
+      "period": "2025-05",
+      "category": "煙酒",
+      "value": 0.5
+    },
+    {
+      "period": "2025-05",
+      "category": "耐用物品",
+      "value": -2.3
+    },
+    {
+      "period": "2025-05",
+      "category": "衣履",
+      "value": -5.3
+    },
+    {
+      "period": "2025-05",
+      "category": "雜項服務",
+      "value": 1.4
+    },
+    {
+      "period": "2025-05",
+      "category": "雜項物品",
+      "value": 0.5
+    },
+    {
+      "period": "2025-05",
+      "category": "電力、燃氣及水",
+      "value": 19.7
+    },
+    {
+      "period": "2025-05",
+      "category": "食品",
+      "value": 0.4
+    },
+    {
+      "period": "2025-06",
+      "category": "交通",
+      "value": 1.9
+    },
+    {
+      "period": "2025-06",
+      "category": "住屋",
+      "value": 2.8
+    },
+    {
+      "period": "2025-06",
+      "category": "煙酒",
+      "value": 1.4
+    },
+    {
+      "period": "2025-06",
+      "category": "耐用物品",
+      "value": -2.5
+    },
+    {
+      "period": "2025-06",
+      "category": "衣履",
+      "value": -4.1
+    },
+    {
+      "period": "2025-06",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2025-06",
+      "category": "雜項物品",
+      "value": 1.3
+    },
+    {
+      "period": "2025-06",
+      "category": "電力、燃氣及水",
+      "value": 1.6
+    },
+    {
+      "period": "2025-06",
+      "category": "食品",
+      "value": 0.7
+    },
+    {
+      "period": "2025-07",
+      "category": "交通",
+      "value": 1.4
+    },
+    {
+      "period": "2025-07",
+      "category": "住屋",
+      "value": 1.8
+    },
+    {
+      "period": "2025-07",
+      "category": "煙酒",
+      "value": 1.7
+    },
+    {
+      "period": "2025-07",
+      "category": "耐用物品",
+      "value": -2.3
+    },
+    {
+      "period": "2025-07",
+      "category": "衣履",
+      "value": -3.3
+    },
+    {
+      "period": "2025-07",
+      "category": "雜項服務",
+      "value": 1
+    },
+    {
+      "period": "2025-07",
+      "category": "雜項物品",
+      "value": 0.3
+    },
+    {
+      "period": "2025-07",
+      "category": "電力、燃氣及水",
+      "value": 0.7
+    },
+    {
+      "period": "2025-07",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2025-08",
+      "category": "交通",
+      "value": 2.5
+    },
+    {
+      "period": "2025-08",
+      "category": "住屋",
+      "value": 1.7
+    },
+    {
+      "period": "2025-08",
+      "category": "煙酒",
+      "value": 1.8
+    },
+    {
+      "period": "2025-08",
+      "category": "耐用物品",
+      "value": -3.1
+    },
+    {
+      "period": "2025-08",
+      "category": "衣履",
+      "value": -2.8
+    },
+    {
+      "period": "2025-08",
+      "category": "雜項服務",
+      "value": 1.5
+    },
+    {
+      "period": "2025-08",
+      "category": "雜項物品",
+      "value": 0.1
+    },
+    {
+      "period": "2025-08",
+      "category": "電力、燃氣及水",
+      "value": 0.6
+    },
+    {
+      "period": "2025-08",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2025-09",
+      "category": "交通",
+      "value": 2.2
+    },
+    {
+      "period": "2025-09",
+      "category": "住屋",
+      "value": 1.7
+    },
+    {
+      "period": "2025-09",
+      "category": "煙酒",
+      "value": 2
+    },
+    {
+      "period": "2025-09",
+      "category": "耐用物品",
+      "value": -3.1
+    },
+    {
+      "period": "2025-09",
+      "category": "衣履",
+      "value": -3.7
+    },
+    {
+      "period": "2025-09",
+      "category": "雜項服務",
+      "value": 1.6
+    },
+    {
+      "period": "2025-09",
+      "category": "雜項物品",
+      "value": 0.4
+    },
+    {
+      "period": "2025-09",
+      "category": "電力、燃氣及水",
+      "value": 0.4
+    },
+    {
+      "period": "2025-09",
+      "category": "食品",
+      "value": 0.8
+    },
+    {
+      "period": "2025-10",
+      "category": "交通",
+      "value": 3.1
+    },
+    {
+      "period": "2025-10",
+      "category": "住屋",
+      "value": 1.6
+    },
+    {
+      "period": "2025-10",
+      "category": "煙酒",
+      "value": 2
+    },
+    {
+      "period": "2025-10",
+      "category": "耐用物品",
+      "value": -3.3
+    },
+    {
+      "period": "2025-10",
+      "category": "衣履",
+      "value": -4.7
+    },
+    {
+      "period": "2025-10",
+      "category": "雜項服務",
+      "value": 2
+    },
+    {
+      "period": "2025-10",
+      "category": "雜項物品",
+      "value": 1.3
+    },
+    {
+      "period": "2025-10",
+      "category": "電力、燃氣及水",
+      "value": -0.3
+    },
+    {
+      "period": "2025-10",
+      "category": "食品",
+      "value": 0.9
+    },
+    {
+      "period": "2025-11",
+      "category": "交通",
+      "value": 3.5
+    },
+    {
+      "period": "2025-11",
+      "category": "住屋",
+      "value": 1.6
+    },
+    {
+      "period": "2025-11",
+      "category": "煙酒",
+      "value": 2.1
+    },
+    {
+      "period": "2025-11",
+      "category": "耐用物品",
+      "value": -3.3
+    },
+    {
+      "period": "2025-11",
+      "category": "衣履",
+      "value": -4.1
+    },
+    {
+      "period": "2025-11",
+      "category": "雜項服務",
+      "value": 1.9
+    },
+    {
+      "period": "2025-11",
+      "category": "雜項物品",
+      "value": 1.3
+    },
+    {
+      "period": "2025-11",
+      "category": "電力、燃氣及水",
+      "value": -0.5
+    },
+    {
+      "period": "2025-11",
+      "category": "食品",
+      "value": 1.1
+    },
+    {
+      "period": "2025-12",
+      "category": "交通",
+      "value": 4.3
+    },
+    {
+      "period": "2025-12",
+      "category": "住屋",
+      "value": 1.6
+    },
+    {
+      "period": "2025-12",
+      "category": "煙酒",
+      "value": 2
+    },
+    {
+      "period": "2025-12",
+      "category": "耐用物品",
+      "value": -2.6
+    },
+    {
+      "period": "2025-12",
+      "category": "衣履",
+      "value": -1.7
+    },
+    {
+      "period": "2025-12",
+      "category": "雜項服務",
+      "value": 2.3
+    },
+    {
+      "period": "2025-12",
+      "category": "雜項物品",
+      "value": 1.2
+    },
+    {
+      "period": "2025-12",
+      "category": "電力、燃氣及水",
+      "value": -1.6
+    },
+    {
+      "period": "2025-12",
+      "category": "食品",
+      "value": 1
+    },
+    {
+      "period": "2026-01",
+      "category": "交通",
+      "value": 1.3
+    },
+    {
+      "period": "2026-01",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2026-01",
+      "category": "煙酒",
+      "value": 2.7
+    },
+    {
+      "period": "2026-01",
+      "category": "耐用物品",
+      "value": -2.8
+    },
+    {
+      "period": "2026-01",
+      "category": "衣履",
+      "value": -2.3
+    },
+    {
+      "period": "2026-01",
+      "category": "雜項服務",
+      "value": 2.9
+    },
+    {
+      "period": "2026-01",
+      "category": "雜項物品",
+      "value": 2.3
+    },
+    {
+      "period": "2026-01",
+      "category": "電力、燃氣及水",
+      "value": 3
+    },
+    {
+      "period": "2026-01",
+      "category": "食品",
+      "value": 0.5
+    },
+    {
+      "period": "2026-02",
+      "category": "交通",
+      "value": 4.3
+    },
+    {
+      "period": "2026-02",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2026-02",
+      "category": "煙酒",
+      "value": 1.8
+    },
+    {
+      "period": "2026-02",
+      "category": "耐用物品",
+      "value": -2.6
+    },
+    {
+      "period": "2026-02",
+      "category": "衣履",
+      "value": -3.4
+    },
+    {
+      "period": "2026-02",
+      "category": "雜項服務",
+      "value": 4.9
+    },
+    {
+      "period": "2026-02",
+      "category": "雜項物品",
+      "value": 1.8
+    },
+    {
+      "period": "2026-02",
+      "category": "電力、燃氣及水",
+      "value": 3.5
+    },
+    {
+      "period": "2026-02",
+      "category": "食品",
+      "value": 0.9
+    },
+    {
+      "period": "2026-03",
+      "category": "交通",
+      "value": 3.9
+    },
+    {
+      "period": "2026-03",
+      "category": "住屋",
+      "value": 1
+    },
+    {
+      "period": "2026-03",
+      "category": "煙酒",
+      "value": 2.1
+    },
+    {
+      "period": "2026-03",
+      "category": "耐用物品",
+      "value": -2.2
+    },
+    {
+      "period": "2026-03",
+      "category": "衣履",
+      "value": -0.7
+    },
+    {
+      "period": "2026-03",
+      "category": "雜項服務",
+      "value": 4.6
+    },
+    {
+      "period": "2026-03",
+      "category": "雜項物品",
+      "value": 2.8
+    },
+    {
+      "period": "2026-03",
+      "category": "電力、燃氣及水",
+      "value": 3.9
+    },
+    {
+      "period": "2026-03",
+      "category": "食品",
+      "value": 0.9
+    },
+    {
+      "period": "2026-04",
+      "category": "交通",
+      "value": 4.3
+    },
+    {
+      "period": "2026-04",
+      "category": "住屋",
+      "value": 1
+    },
+    {
+      "period": "2026-04",
+      "category": "煙酒",
+      "value": 2.3
+    },
+    {
+      "period": "2026-04",
+      "category": "耐用物品",
+      "value": -1.9
+    },
+    {
+      "period": "2026-04",
+      "category": "衣履",
+      "value": -0.3
+    },
+    {
+      "period": "2026-04",
+      "category": "雜項服務",
+      "value": 4.5
+    },
+    {
+      "period": "2026-04",
+      "category": "雜項物品",
+      "value": 2.6
+    },
+    {
+      "period": "2026-04",
+      "category": "電力、燃氣及水",
+      "value": 5.5
+    },
+    {
+      "period": "2026-04",
+      "category": "食品",
+      "value": 0.7
+    },
+    {
+      "period": "2026-05",
+      "category": "交通",
+      "value": 5.1
+    },
+    {
+      "period": "2026-05",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2026-05",
+      "category": "煙酒",
+      "value": 2.5
+    },
+    {
+      "period": "2026-05",
+      "category": "耐用物品",
+      "value": -1.2
+    },
+    {
+      "period": "2026-05",
+      "category": "衣履",
+      "value": 1
+    },
+    {
+      "period": "2026-05",
+      "category": "雜項服務",
+      "value": 5.1
+    },
+    {
+      "period": "2026-05",
+      "category": "雜項物品",
+      "value": 2.9
+    },
+    {
+      "period": "2026-05",
+      "category": "電力、燃氣及水",
+      "value": 6.6
+    },
+    {
+      "period": "2026-05",
+      "category": "食品",
+      "value": 0.7
+    },
+    {
+      "period": "2026-06",
+      "category": "交通",
+      "value": 5.3
+    },
+    {
+      "period": "2026-06",
+      "category": "住屋",
+      "value": 1.1
+    },
+    {
+      "period": "2026-06",
+      "category": "煙酒",
+      "value": 0.1
+    },
+    {
+      "period": "2026-06",
+      "category": "耐用物品",
+      "value": -1.1
+    },
+    {
+      "period": "2026-06",
+      "category": "衣履",
+      "value": 0.7
+    },
+    {
+      "period": "2026-06",
+      "category": "雜項服務",
+      "value": 5.2
+    },
+    {
+      "period": "2026-06",
+      "category": "雜項物品",
+      "value": 2.3
+    },
+    {
+      "period": "2026-06",
+      "category": "電力、燃氣及水",
+      "value": 9.2
+    },
+    {
+      "period": "2026-06",
+      "category": "食品",
+      "value": 0.3
+    },
+    {
+      "period": "2026-07",
+      "category": "交通",
+      "value": 5
+    },
+    {
+      "period": "2026-07",
+      "category": "住屋",
+      "value": 0.1
+    },
+    {
+      "period": "2026-07",
+      "category": "煙酒",
+      "value": 0.1
+    },
+    {
+      "period": "2026-07",
+      "category": "耐用物品",
+      "value": -0.2
+    },
+    {
+      "period": "2026-07",
+      "category": "衣履",
+      "value": 0.6
+    },
+    {
+      "period": "2026-07",
+      "category": "雜項服務",
+      "value": 4.9
+    },
+    {
+      "period": "2026-07",
+      "category": "雜項物品",
+      "value": 2.3
+    },
+    {
+      "period": "2026-07",
+      "category": "電力、燃氣及水",
+      "value": 10.8
+    },
+    {
+      "period": "2026-07",
+      "category": "食品",
+      "value": 0.5
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "食品",
+      "period": "2026-07",
+      "value": 0.5
+    },
+    {
+      "category": "住屋",
+      "period": "2026-07",
+      "value": 0.1
+    },
+    {
+      "category": "電力、燃氣及水",
+      "period": "2026-07",
+      "value": 10.8
+    },
+    {
+      "category": "煙酒",
+      "period": "2026-07",
+      "value": 0.1
+    },
+    {
+      "category": "衣履",
+      "period": "2026-07",
+      "value": 0.6
+    },
+    {
+      "category": "耐用物品",
+      "period": "2026-07",
+      "value": -0.2
+    },
+    {
+      "category": "雜項物品",
+      "period": "2026-07",
+      "value": 2.3
+    },
+    {
+      "category": "交通",
+      "period": "2026-07",
+      "value": 5
+    },
+    {
+      "category": "雜項服務",
+      "period": "2026-07",
+      "value": 4.9
+    }
+  ],
+  "coverage": {
+    "start": "2019-10",
+    "end": "2026-07",
+    "points": 738,
+    "points_with_value": 734
+  },
+  "latest": {
+    "period": "2026-07",
+    "category": "食品",
+    "value": 0.5
+  },
+  "content_hash": "sha256:92da510d33167d12",
+  "data_version": "2026.09.2"
+}

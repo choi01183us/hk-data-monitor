@@ -19,7 +19,7 @@ toc: false
 | 授權 | 適用來源 | 要點 |
 |---|---|---|
 | [政府統計處《知識產權公告》](https://www.censtatd.gov.hk/tc/page_31.html) | 統計處各表 | 商業／非商業都可以,要註明來源、知識產權擁有人**同任何修改** |
-| [data.gov.hk 使用條款](https://data.gov.hk/tc/terms-and-conditions) | 財經事務及庫務局、庫務署、地政總署開放地圖、新聞處 RSS、機管局開放航班紀錄 | 商業／非商業都可以,另有彌償條款 |
+| [data.gov.hk 使用條款](https://data.gov.hk/tc/terms-and-conditions) | 財經事務及庫務局、庫務署、差餉物業估價署、地政總署開放地圖、新聞處 RSS、機管局開放航班紀錄 | 商業／非商業都可以,另有彌償條款 |
 | [CSDI 使用條款](https://portal.csdi.gov.hk/csdi-webpage/doc/TNC) | 十八區空間資料及地政總署位置 API | 涵蓋 API 資料重用，須保留政府、資料提供者及平台鳴謝 |
 | [budget.gov.hk 版權告示](https://www.budget.gov.hk/2026/chi/important.html) | 預算案附錄 PDF | **窄好多**:只准個人參考或教育用途,複製本不能轉售 |
 
@@ -123,6 +123,31 @@ toc: false
 個人財富另連到 Forbes 原榜閱讀，唔複製排名或估計財富值。
 富豪財富屬第三方估算，唔係官方收入統計，亦唔等於某個地區居民嘅生活水平。
 淨資產概念可參考[投委會資產淨值工具](https://www.ifec.org.hk/web/common/static/tools/tc/net_worth)。
+
+<h2 id="living-cost-sources">住屋與生活成本</h2>
+
+[住屋與生活成本](../explore/living-cost)新增三組官方數列，沿用定期快照；唔係即時報價。
+
+| 指標 | 原始來源 | 讀數限制 |
+|---|---|---|
+| [九類消費物價按年變動](../indicators/cpi_components) | [統計處表 510-60001A](https://www.censtatd.gov.hk/tc/web_table.html?id=510-60001A) | 綜合 CPI 九類按年率，未剔除一次性紓困措施；唔可相加或簡單平均 |
+| [私人住宅售價指數](../indicators/private_domestic_price) | [差估署每月售價 CSV](https://www.rvd.gov.hk/datagovhk/1.4M.csv) | 全港 All Classes，1999 = 100；不包括住宅首次買賣 |
+| [私人住宅租金指數](../indicators/private_domestic_rent) | [差估署每月租金 CSV](https://www.rvd.gov.hk/datagovhk/1.3M.csv) | 全港 All Classes，1999 = 100；新訂租約淨額，不包括差餉、管理費等 |
+
+樓價及租金嘅原始機構係**差餉物業估價署**，由 [DATA.GOV.HK 物業市場統計資料](https://data.gov.hk/tc-data/dataset/hk-rvd-tsinfo_rvd-property-market-statistics)
+提供，按上表 DATA.GOV.HK 條款使用；指數原值冇換算，唔把 A–E 類平均或相加。
+基期、P 臨時數字及 Z 少於 20 宗交易標記，見[數據字典](https://www.rvd.gov.hk/datagovhk/Data_Dic.pdf)表 1.3／1.4；
+租金範圍及質素調整見[技術附註](https://www.rvd.gov.hk/doc/tc/statistics/15_technotes.pdf)第 8–9 段。
+標記按所屬月份跟資料表及引用顯示；更新日期採來源檔 Last-Modified，唔用本次抓取時間冒充。
+
+CPI 此頁從 2019 年 10 月開始，沿用 2019/20 基期嘅官方按年率；
+[φ3] 原表表示增減少於 0.05%，本站保留為缺值，唔當成精確零。其餘缺值亦唔估算。
+數據分類以官方碼逐項對應，圖表及 100 元示例係本站整理，百分率原值冇重算。
+
+CPI 同生活費用指數嘅分別、開支權數及紓困措施影響，參考[統計處《消費物價指數簡介》](https://www.censtatd.gov.hk/en/data/stat_report/product/B8XX0021/att/B8XX0021.pdf)。
+CPI 私人房屋租金涵蓋新訂、續訂及現行租約，自住業主亦用租金等值計算，詳見
+[重訂基期報告](https://www.censtatd.gov.hk/en/data/stat_report/product/B1060003/att/B10600082020XXXXB0100.pdf)第 3.26–3.28 段。
+因此唔等同本頁差估署新訂租約指數、樓價或每月供樓額。以上入口於 2026 年 9 月 9 日核對。
 
 <h2 id="build-time">點解喺建置嗰陣抓數?</h2>
 

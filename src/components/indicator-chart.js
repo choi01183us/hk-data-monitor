@@ -154,7 +154,7 @@ function barChart(indicator, width) {
       Plot.barX(rows, {
         x: "value",
         y: "category",
-        title: (row) => `${row.category}\n${formatNumber(row.value, { digits: 0 })} ${indicator.unit_zh}`,
+        title: (row) => `${row.category}\n${formatNumber(row.value, { digits: indicator.value_digits ?? 0 })} ${indicator.unit_zh}`,
         sort: { y: "x", reverse: true },
         fillOpacity: 0.85,
       }),

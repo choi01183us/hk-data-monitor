@@ -4,8 +4,8 @@
 // SPEC 第 7 節:
 //   · Fail-soft —— 任何一個 loader 抓唔到數,保留 repo 入面上一版 JSON,
 //     唔好覆蓋、唔好清空、唔好用空陣列頂替
-//   · 全部 loader 都失敗 -> 呢個 script 仍然 exit 0(用晒舊數據),
-//     但要喺 Actions summary 標紅
+//   · 只有 UpstreamError 而且全部有舊快照 -> exit 0，Actions summary 標紅
+//   · 程式／schema／換算錯，或首次抓取失敗冇舊快照 -> exit 1，阻止提交部署
 //   · manual/ 嘅檔案永遠唔碰
 //   · 每次數據有實際變動先 commit
 //
@@ -15,13 +15,15 @@
 import { appendFile } from "node:fs/promises";
 
 import { CENSTATD_INDICATORS, FISCAL_INDICATORS, loadCenstatdIndicator, loadFiscalIndicator } from "../src/data/_lib/indicators.js";
+import { PROPERTY_INDICATORS, loadPropertyIndicator } from "../src/data/_lib/property.js";
 import { readSnapshot, finaliseIndicator, writeSnapshot } from "../src/data/_lib/snapshot.js";
-import { withFixtureTransaction } from "../src/data/_lib/http.js";
+import { withFixtureTransaction, UpstreamError } from "../src/data/_lib/http.js";
 import { resetTableMetaCache } from "../src/data/_lib/censtatd.js";
 
 const TARGETS = [
   ...Object.keys(CENSTATD_INDICATORS).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
   ...Object.keys(FISCAL_INDICATORS).map((id) => ({ id, load: () => loadFiscalIndicator(id) })),
+  ...Object.keys(PROPERTY_INDICATORS).map((id) => ({ id, load: () => loadPropertyIndicator(id) })),
 ];
 
 const results = [];
@@ -33,7 +35,7 @@ for (const { id, load } of TARGETS) {
   try {
     // 錄影同快照原子更新:呢個指標中途死咗,佢啲錄影一齊丟棄,
     // 唔可以出現「錄影新、快照舊」。
-    const fresh = finaliseIndicator(await withFixtureTransaction(load), previous);
+    const fresh = await withFixtureTransaction(async () => finaliseIndicator(await load(), previous));
     const outcome = await writeSnapshot(id, fresh);
     results.push({
       id,
@@ -44,15 +46,20 @@ for (const { id, load } of TARGETS) {
       failed: false,
     });
   } catch (error) {
-    // 呢度唔會掂 src/data/_snapshots/<id>.json —— writeSnapshot 冇跑過,
-    // 舊檔一個 byte 都冇改。呢個就係 SPEC 第 7 節嘅「保留上一版」。
+    // Fail-soft 入場券只係 UpstreamError；普通 Error／schema／寫入錯誤
+    // 即使有上一版都要阻止本輪提交同部署，唔靠 message 判斷類型。
+    const hardFailed = !(error instanceof UpstreamError);
+    const reason = error?.message ?? String(error);
     results.push({
       id,
-      status: "失敗",
-      detail: previous
-        ? `保留上一版 ${previous.data_version}(數據截至 ${previous.updated_at})。原因:${error.message}`
-        : `而且冇上一版可以退返去。原因:${error.message}`,
+      status: hardFailed ? "程式／資料錯誤" : "取得失敗",
+      detail: hardFailed
+        ? `非上游取得錯誤，阻止本輪提交及部署。原因:${reason}`
+        : previous
+          ? `保留上一版 ${previous.data_version}(數據截至 ${previous.updated_at})。原因:${reason}`
+          : `而且冇上一版可以退返去。原因:${reason}`,
       failed: true,
+      hardFailed,
       orphan: !previous,
     });
   }
@@ -61,6 +68,7 @@ for (const { id, load } of TARGETS) {
 const failed = results.filter((r) => r.failed);
 const changed = results.filter((r) => r.status === "有更新" || r.status === "新增");
 const orphans = results.filter((r) => r.orphan);
+const hardFailures = results.filter((r) => r.hardFailed);
 
 // ── 終端輸出 ──────────────────────────────────────────────────
 console.log("");
@@ -90,10 +98,16 @@ if (summaryPath) {
     ...results.map((r) => `| ${icon(r)} | \`${r.id}\` | ${r.status} | ${r.detail.replace(/\|/g, "\\|").slice(0, 300)} |`),
     "",
   ];
-  if (failed.length > 0) {
+  if (failed.some((r) => !r.hardFailed && !r.orphan)) {
     lines.push(
-      "> **失敗嘅指標保留咗上一版數據**,網站照樣出得街,",
-      "> 但嗰幾版會顯示「上一次成功更新嗰時嘅版本」提示。",
+      "> 上游取得失敗而有舊快照嘅指標保留上一版，版本及數據日期見上表。",
+      ""
+    );
+  }
+  if (hardFailures.length > 0) {
+    lines.push(
+      `> **${hardFailures.map((r) => r.id).join("、")} 發生程式／資料錯誤：本輪 exit 1，阻止提交及部署。**`,
+      "> 即使有上一版，都唔可以當作成功刷新。",
       ""
     );
   }
@@ -108,9 +122,8 @@ if (summaryPath) {
   await appendFile(summaryPath, lines.join("\n"), "utf8");
 }
 
-// SPEC 第 7 節:全部失敗都仲要 exit 0(用晒舊數據),紅色由 summary 表達。
-// 唯一例外:有指標連上一版都冇 —— 咁 build 一定會死,不如喺呢度就講清楚。
-if (orphans.length > 0) {
-  console.error(`\n有 ${orphans.length} 個指標抓唔到而且冇上一版,build 會失敗`);
+// 只有上游失敗兼有舊數據先能 exit 0。其餘一切預設 hard fail。
+if (hardFailures.length > 0 || orphans.length > 0) {
+  console.error(`\n${hardFailures.length} 個程式／資料錯誤，${orphans.length} 個失敗指標冇上一版；停止本輪提交及部署`);
   process.exit(1);
 }

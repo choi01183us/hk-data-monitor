@@ -30,6 +30,7 @@ import { loadFstbCsvIndicator } from "./fstb.js";
 import { loadFiscalReserves } from "./treasury.js";
 import { DISTRICT_CATEGORIES, DISTRICT_WITH_HK } from "../../components/district-categories.js";
 import { districtThousandsToPersons, verifyDistrictPopulation, verifyDistrictHouseholdIncome } from "./district-invariants.js";
+import { CPI_COMPONENTS_SPEC } from "./cpi-components.js";
 
 /**
  * 統計處指標嘅設定形狀:
@@ -45,6 +46,7 @@ import { districtThousandsToPersons, verifyDistrictPopulation, verifyDistrictHou
  *   categories    [{code, label_zh}] —— 明文列出要邊幾個,連 Total("")都要寫
  */
 export const CENSTATD_INDICATORS = {
+  cpi_components: CPI_COMPONENTS_SPEC,
   district_population: {
     table: "110-06811",
     sv: "PP",
@@ -921,7 +923,7 @@ export async function loadCenstatdIndicator(id) {
 
   // 指標自己嘅健康檢查,驗嘅係**最終 series**。
   // 統計處個 API 大部分錯法都唔會報錯,所以邊個指標有得驗嘅不變式就一定要驗。
-  spec.verify?.(rows, series);
+  spec.verify?.(rows, series, meta);
 
   const info = tableInfo(meta);
 

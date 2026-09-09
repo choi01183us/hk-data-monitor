@@ -18,6 +18,9 @@ const loaded = await Promise.all([
   FileAttachment("./data/median_wage.json").json(),
   FileAttachment("./data/household_income.json").json(),
   FileAttachment("./data/cpi.json").json(),
+  FileAttachment("./data/cpi_components.json").json(),
+  FileAttachment("./data/private_domestic_price.json").json(),
+  FileAttachment("./data/private_domestic_rent.json").json(),
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
   FileAttachment("./data/goods_imports.json").json(),
@@ -48,6 +51,7 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
     <a href="./explore/city">城市觀察</a>
     <a href="./explore/industries">行業・金融保險</a>
     <a href="./explore/technology">科技與香港</a>
+    <a href="./explore/living-cost">住屋・生活成本</a>
     <a href="#weather-effects">天氣特效</a>
     <a href="#learning-routes">學習路線</a>
     <a class="monitor-nav__primary" href="./learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>
@@ -64,6 +68,12 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   <span class="monitor-topic-entry__icon" aria-hidden="true">◇</span>
   <span><strong>香港行業・金融與保險</strong><span>行業做甚麼 · 工作與技能 · 市民生活 · 預算問題</span></span>
   <span class="monitor-topic-entry__action">認識城市背後嘅工作 ↗</span>
+</a>
+
+<a class="monitor-topic-entry" href="./explore/living-cost">
+  <span class="monitor-topic-entry__icon" aria-hidden="true">⌂</span>
+  <span><strong>住屋與生活成本</strong><span>樓價與租金 · 食品交通水電 · 收入與支援需要</span></span>
+  <span class="monitor-topic-entry__action">睇清生活壓力 ↗</span>
 </a>
 
 <a class="monitor-topic-entry" href="./explore/technology">

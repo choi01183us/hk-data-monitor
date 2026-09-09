@@ -565,10 +565,12 @@ console.log("\n[R5] Fixture 重播 — 零網絡跑完整 transform,對返快照
     const { CENSTATD_INDICATORS: censtatd, FISCAL_INDICATORS: fiscal, loadCenstatdIndicator, loadFiscalIndicator } =
       await import("../src/data/_lib/indicators.js");
     const { finaliseIndicator } = await import("../src/data/_lib/snapshot.js");
+    const { PROPERTY_INDICATORS, loadPropertyIndicator } = await import("../src/data/_lib/property.js");
 
     const targets = [
       ...Object.keys(censtatd).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
       ...Object.keys(fiscal).map((id) => ({ id, load: () => loadFiscalIndicator(id) })),
+      ...Object.keys(PROPERTY_INDICATORS).map((id) => ({ id, load: () => loadPropertyIndicator(id) })),
     ];
 
     if (!existsSync(join(HERE_ROOT, "src", "data", "_fixtures"))) {
@@ -788,6 +790,14 @@ await testDistrictGeography(check);
 
 const { testRefreshWorkflows } = await import("./test-refresh-workflows.mjs");
 await testRefreshWorkflows(check);
+
+const { testCpiComponents } = await import("./test-cpi-components.mjs");
+await testCpiComponents(check);
+const { testPropertyData } = await import("./test-property-data.mjs");
+await testPropertyData(check);
+
+const { testRefreshFailures } = await import("./test-refresh-failures.mjs");
+await testRefreshFailures(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //
