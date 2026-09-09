@@ -1573,7 +1573,7 @@ body {
   .map-view-source .district-legend span { display: inline-flex; }
 }
 
-/* 港澳雙城：保留同一地圖工具及資料卡，城市範圍明示。 */
+/* 澳門預留樣式：草稿頁保留同一地圖工具，公開入口暫隱藏。 */
 @media screen {
   .city-switch { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: 1rem 0 0; }
   .city-switch > a { display: flex; align-items: center; gap: .6rem; min-height: 44px; padding: 0 1.1rem; background: #112330; border: 1px solid #2a4052; border-radius: 3px; text-decoration: none; font-size: .9rem; }
@@ -1608,4 +1608,121 @@ body {
   .macau-page :is(.city-marker, .city-map-filters label)[data-type=culture] { color: #f6c677; }
   .macau-page :is(.city-marker, .city-map-filters label)[data-type=urban] { color: #d7b7ff; }
   .macau-page :is(.city-marker, .city-map-filters label)[data-type=nature] { color: #82e6b9; }
+}
+
+/* 地區概況與城市主題：共用本地資料，螢幕控制同列印內容分開。 */
+.district-profile { padding: 1.1rem; }
+.district-profile-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .6rem; }
+.district-profile-heading h3 { margin: .3rem 0; }
+.district-profile-heading > p { font-size: .75rem; margin: 0; }
+.district-profile-current { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin-top: 1rem; }
+.district-profile-current article { padding: .9rem; border: 1px solid; border-radius: 4px; min-width: 0; }
+.district-profile-current h4 { margin: 0 0 .8rem; font-size: .85rem; }
+.district-profile-current dl { margin: 0; }
+.district-profile-current dl > div + div { margin-top: .85rem; }
+.district-profile-current dt { font-size: .7rem; }
+.district-profile-current dd { margin: .2rem 0 0; font: 500 clamp(.85rem, 1.6vw, 1.25rem)/1.6 var(--monospace); font-variant-numeric: tabular-nums; }
+.district-profile :is(.district-profile-note, .district-profile-sources, .district-profile-question, .district-profile-history > p, .district-profile-citations) { font-size: .74rem; line-height: 1.85; }
+.district-profile details { margin-top: .8rem; border-block-start: 1px solid; padding-top: .8rem; }
+.district-profile summary { cursor: pointer; font-size: .8rem; font-weight: 600; padding-block: .4rem; }
+.district-profile-table-wrap { max-width: 100%; overflow-x: auto; }
+.district-profile table { width: 100%; max-width: none; font-size: .7rem; font-variant-numeric: tabular-nums; }
+.district-profile caption { text-align: left; padding: .8rem 0 .4rem; font-weight: 600; }
+.district-profile td { white-space: nowrap; }
+.district-profile th { min-width: 3.1rem; }
+.district-history-chart { margin: 1rem 0; min-width: 0; }
+.district-history-chart figcaption { display: flex; justify-content: space-between; gap: .8rem; font-size: .75rem; }
+.district-history-chart svg { display: block; width: 100%; height: auto; }
+.district-history-chart figcaption span { font-size: .7rem; }
+.district-history-legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: .75rem; margin: 0; }
+.district-profile-citation { white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; padding: .7rem; border: 1px solid; border-radius: 3px; user-select: text; }
+.district-profile-sources { padding-block: .5rem; }
+.district-profile-sources p { margin: .3rem 0; }
+.district-profile-question { padding: .9rem; border: 1px solid; border-radius: 4px; }
+.district-profile-question h4 { margin: 0; font-size: .9rem; }
+.district-profile-question p:last-child { margin-bottom: 0; }
+.institution-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .8rem; }
+.institution-card { display: flex; flex-direction: column; min-width: 0; padding: 1.1rem; border: 1px solid; border-radius: 5px; }
+.institution-identity { display: flex; flex-direction: column; align-items: start; gap: .6rem; }
+.institution-code { font: 600 1.7rem/1.3 var(--monospace); letter-spacing: .04em; }
+.institution-kind { font-size: .69rem; }
+.institution-card h4 { font-size: 1rem; margin: 1rem 0 .6rem; }
+.institution-card > p { font-size: .78rem; line-height: 1.8; }
+.institution-official { margin-top: auto; font-size: .78rem; }
+.institution-card .institution-policy, .institution-note { font-size: .7rem; line-height: 1.8; }
+@media screen {
+  .district-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .district-attraction-filters[hidden] { display: none; }
+  .district-attraction-filters { padding: .8rem 1.1rem; background: #101f2c; border-bottom: 1px solid #35505f; }
+  .district-attraction-search { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; font-size: .75rem; }
+  .district-attraction-search input { flex: 1 1 12rem; min-width: 0; width: 100%; box-sizing: border-box; padding: .7rem; color: #edf4f8; background: #08141f; border: 1px solid #506d81; border-radius: 3px; font: inherit; }
+  .district-attraction-filters fieldset, .city-topic-controls { display: flex; flex-wrap: wrap; gap: .5rem; padding: .7rem 0; margin: .4rem 0; border: 0; }
+  .district-attraction-filters legend, .city-topic-controls legend { font-size: .72rem; color: #b9ceda; }
+  .district-attraction-filters fieldset label { display: flex; align-items: center; gap: .4rem; min-height: 44px; font-size: .75rem; color: #d7e8ef; }
+  .district-attraction-filters input[type=checkbox] { accent-color: #88dfc7; }
+  .district-attraction-filters button, .district-print { cursor: pointer; min-height: 44px; padding: .55rem .75rem; border: 1px solid #61958f; border-radius: 3px; background: #173b3b; color: #bef4e3; font: 600 .74rem var(--sans-serif); }
+  .district-filter-result { margin: 0 0 .8rem; font-size: .74rem; color: #bdcedb; }
+  .district-profile { border-block: 1px solid #35505f; background: #0d1e2b; color: #dce9f0; }
+  .district-profile-heading h3 { color: #f6c677; font-size: 1.05rem; }
+  .district-profile-heading > p { color: #bfd0de; }
+  .district-profile-current article { border-color: #355466; background: #112b38; }
+  .district-profile-current article:first-child { border-top: 2px solid #8bdcc5; }
+  .district-profile-current article:last-child { border-top: 2px solid #f6c677; }
+  .district-profile-current :is(h4, dd) { color: #eef5f9; }
+  .district-profile-current dt { color: #c0d3df; }
+  .district-profile :is(.district-profile-note, .district-profile-sources, .district-profile-history > p, .district-profile-citations) { color: #bfcfdc; }
+  .district-profile details { border-color: #35505f; }
+  .district-profile summary { color: #b9eddf; }
+  .district-profile :is(button, summary, a, select):focus-visible, .district-attraction-filters :is(input, button):focus-visible, .city-topic-controls input:focus-visible + span { outline: 3px solid #f6c677; outline-offset: 3px; }
+  .district-profile table { color: #dce9f0; }
+  .district-profile :is(td, th) { border-color: #395263; }
+  .district-profile :is(caption, th, figcaption) { color: #d2e6ed; }
+  .district-history-chart { color: #b9ceda; }
+  .district-history-line--selected, .district-history-legend span:first-child { color: #8bdcc5; }
+  .district-history-line--comparison, .district-history-legend span:last-child { color: #f6c677; }
+  .district-profile-citation { background: #08141f; color: #d5e6ec; border-color: #385768; }
+  .district-profile-question { background: #142e38; border-color: #3b6970; color: #c5dae1; }
+  .district-profile-question h4 { color: #dff5eb; }
+  .city-topic-controls label { position: relative; cursor: pointer; }
+  .city-topic-controls input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .city-topic-controls span { display: flex; align-items: center; min-height: 44px; padding: 0 .9rem; border: 1px solid #456174; border-radius: 3px; font-size: .8rem; color: #c4d9e5; background: #112330; }
+  .city-topic-controls input:checked + span { border-color: #7fd7c0; background: #193a3a; color: #bef5e1; }
+  .city-topic-intro { margin: .8rem 0 1.2rem; padding-left: 1rem; border-left: 3px solid #75cfb8; }
+  .city-topic-intro h3 { font-size: 1.1rem; margin: 0 0 .5rem; color: #e4f2ef; }
+  .city-topic-intro p { font-size: .85rem; color: #bdcfdd; }
+  .city-topic-intro > a { font-size: .8rem; }
+  .city-economy-explorer .city-economy { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .institution-card { border-color: #3c5969; background: #122936; }
+  .institution-code { font-family: var(--monitor-mono); color: #b4eddd; }
+  .institution-kind, .institution-card > p, .institution-note { color: #c0d2dd; }
+  .institution-card h4 { color: #edf5f8; }
+  .institution-official, .institution-policy a { color: #a9e6d7; }
+}
+@media (max-width: 1000px) {
+  .institution-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 699px) {
+  .district-profile-current, .city-economy-explorer .city-economy { grid-template-columns: 1fr; }
+  .district-history-chart svg { overflow: visible; }
+  .district-history-chart svg text { font-size: 20px; }
+  .district-profile-current dl { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+  .district-profile-current dl > div + div { margin-top: 0; }
+  .district-profile-current dl > div:last-child { grid-column: 1 / -1; }
+}
+@media (max-width: 450px) { .institution-grid { grid-template-columns: 1fr; } }
+@media print {
+  body:has(.district-report) :is(#observablehq-header, #observablehq-sidebar, #observablehq-toc, #observablehq-footer) { display: none !important; }
+  body:has(.district-report) #observablehq-main *:not(:has(.district-report)):not(.district-report):not(.district-report *) { display: none !important; }
+  body:has(.district-report) #observablehq-main, body:has(.district-report) #observablehq-main *:has(.district-report) { display: block !important; padding: 0 !important; margin: 0 !important; width: auto !important; max-width: none !important; border: 0 !important; }
+  .district-report details::details-content { content-visibility: visible !important; display: block; }
+  .district-report { color: #000; background: #fff; padding: 0; font-size: 10pt; }
+  .district-report .district-print, .district-report summary, .district-report .district-profile-citation, .district-report .district-profile-formula { display: none !important; }
+  .district-report .district-profile-current { grid-template-columns: 1fr 1fr; }
+  .district-report .district-profile-table-wrap { overflow: visible; }
+  .district-report .district-history-chart { break-inside: avoid; max-width: 145mm; }
+  .district-report :is(article, tr, .district-profile-question, .district-profile-sources, .district-profile-citations section) { break-inside: avoid; }
+  .district-report a { color: #000; text-decoration: underline; overflow-wrap: anywhere; }
+  .district-report .district-profile-citations a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; }
+  .district-report :is(td, th) { border-color: #aaa; }
+  .district-report .district-profile-citations { border-top: 1px solid #aaa; }
 }

@@ -6,7 +6,8 @@ toc: false
 ---
 
 ```js
-import {cityNews, cityFlights, cityEconomy} from "../components/city-dashboard.js";
+import {cityNews, cityFlights} from "../components/city-dashboard.js";
+import {cityEconomyExplorer} from "../components/city-economy-explorer.js";
 import {districtExplorer} from "../components/district-explorer.js";
 const districtPopulation = await FileAttachment("../data/district_population.json").json();
 const districtIncome = await FileAttachment("../data/district_household_income.json").json();
@@ -18,6 +19,16 @@ const economy = await Promise.all([
   FileAttachment("../data/goods_exports.json").json(),
   FileAttachment("../data/port_cargo.json").json(),
   FileAttachment("../data/cpi.json").json(),
+  FileAttachment("../data/private_domestic_price.json").json(),
+  FileAttachment("../data/private_domestic_rent.json").json(),
+  FileAttachment("../data/unemployment.json").json(),
+  FileAttachment("../data/median_wage.json").json(),
+  FileAttachment("../data/household_income.json").json(),
+  FileAttachment("../data/banking_institutions.json").json(),
+  FileAttachment("../data/hkex_listings.json").json(),
+  FileAttachment("../data/money_supply.json").json(),
+  FileAttachment("../data/rd_expenditure.json").json(),
+  FileAttachment("../data/household_internet.json").json(),
 ]);
 ```
 
@@ -28,17 +39,15 @@ const economy = await Promise.all([
   <nav class="monitor-nav" aria-label="城市專區導覽"><a href="../">香港總覽</a><a href="./industries">行業・金融保險</a><a href="./technology">科技與香港</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
 </header>
 
-<nav class="city-switch" aria-label="切換觀察城市"><a href="./city" aria-current="page"><span>HK</span>香港</a><a href="./macau"><span>MO</span>澳門</a><p>各城市資料獨立列示；比較前先核對年份、單位同定義。</p></nav>
-
 <div class="city-intro"><div><span class="monitor-kicker">由城市動態，睇到公共需要</span><h2 id="city-overview">香港，如何連繫世界。</h2></div><p>由十八區人口、入息同景點，連到新聞、行業與對外貿易。先了解生活處境，再討論公共資源點分。</p></div>
-<nav class="city-section-nav" aria-label="城市面板"><a href="#city-map">01 地圖</a><a href="#city-news">02 新聞</a><a href="#city-economy-heading">03 經濟與航運</a><a href="#city-flights">04 航班</a><span>定時快照 · 官方即時入口</span></nav>
+<nav class="city-section-nav" aria-label="城市面板"><a href="#city-map">01 地圖</a><a href="#city-news">02 新聞</a><a href="#city-economy-heading">03 主題數據</a><a href="#city-flights">04 航班</a><span>定時快照 · 官方即時入口</span></nav>
 
 <div class="city-top-grid">
 
 <div id="city-map">
 
 ```js
-display(districtExplorer({population: districtPopulation, income: districtIncome, mapUrl}));
+display(districtExplorer({population: districtPopulation, income: districtIncome, mapUrl, invalidation}));
 ```
 
 </div>
@@ -57,13 +66,12 @@ display(cityNews(news, {invalidation}));
 </div>
 
 <section class="city-economic-section" aria-labelledby="city-economy-heading">
-<div class="city-section-heading"><div><span class="monitor-kicker">03 / 經濟與航運</span><h2 id="city-economy-heading">睇金額，亦睇貨運量。</h2></div><p>全港統計 · 各卡有獨立時期、單位同刻度</p></div>
+<div class="city-section-heading"><div><span class="monitor-kicker">03 / 城市主題</span><h2 id="city-economy-heading">按主題，連起城市需要。</h2></div><p>全港統計 · 各卡有獨立時期、單位同刻度</p></div>
 
 ```js
-display(cityEconomy(economy));
+display(cityEconomyExplorer(economy));
 ```
 
-<p class="city-economic-note">進口採用到岸價（CIF），出口採用離岸價（FOB），整體出口包括港產品出口及轉口。港口貨物吞吐量計重量，唔係貿易金額或貨櫃數；進出口亦唔等於政府收入。</p>
 </section>
 
 <div class="city-bottom-grid">

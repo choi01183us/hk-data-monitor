@@ -6,6 +6,7 @@ toc: false
 ---
 
 ```js
+import {financialInstitutions} from "../components/financial-institutions.js";
 import { financeCountPanel } from "../components/finance-count-panel.js";
 import { moneyHeader } from "../components/money-header.js";
 import { moneyChartView } from "../components/money-view.js";
@@ -23,7 +24,7 @@ const money = await FileAttachment("../data/money_supply.json").json();
   <nav class="monitor-nav" aria-label="金融專區導覽"><a href="../">香港總覽</a><a href="./industries">金融與保險行業</a><a href="./living-cost">住屋與生活成本</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
 </header>
 
-<section class="finance-intro" aria-labelledby="finance-question"><span class="monitor-kicker">貨幣供應 / 市場估值 / 公共財政</span><h2 id="finance-question">「市場有幾多錢」，<br>其實有幾種問法。</h2><p>銀行存款、股票市值同政府收入，講緊唔同嘅事。由 M1、M2、M3 開始，睇清每個數字嘅邊界，再連到市民生活。</p><div class="finance-jump"><a href="#institutions">銀行與上市公司</a><a href="#ipo">IPO 集資</a><a href="#global-gold">全球黃金交易</a><a href="#hkex-business">港交所業務</a><a href="#money">貨幣供應量</a><a href="#market-cap">股市市值</a><a href="#connections">連到生活與預算</a></div></section>
+<section class="finance-intro" aria-labelledby="finance-question"><span class="monitor-kicker">貨幣供應 / 市場估值 / 公共財政</span><h2 id="finance-question">「市場有幾多錢」，<br>其實有幾種問法。</h2><p>銀行存款、股票市值同政府收入，講緊唔同嘅事。由 M1、M2、M3 開始，睇清每個數字嘅邊界，再連到市民生活。</p><div class="finance-jump"><a href="#institutions">銀行與上市公司</a><a href="#financial-roles">四個金融機構</a><a href="#ipo">IPO 集資</a><a href="#global-gold">全球黃金交易</a><a href="#hkex-business">港交所業務</a><a href="#money">貨幣供應量</a><a href="#market-cap">股市市值</a><a href="#connections">連到生活與預算</a></div></section>
 
 <section class="finance-section" aria-labelledby="institutions">
   <div class="finance-heading"><span class="monitor-kicker">機構數目 / 先講清楚計邊個</span><h2 id="institutions">幾多間銀行，幾多間上市公司？</h2></div>
@@ -36,6 +37,15 @@ display(financeCountPanel(listings, listings.coverage.end));
 ```
 
   </div>
+</section>
+
+<section class="finance-section" aria-labelledby="financial-roles">
+<div class="finance-heading"><span class="monitor-kicker">四個機構 / 分清各自角色</span><h2 id="financial-roles">邊個監管，邊個營運市場？</h2></div>
+
+```js
+display(financialInstitutions());
+```
+
 </section>
 
 <section class="finance-section" aria-labelledby="money">

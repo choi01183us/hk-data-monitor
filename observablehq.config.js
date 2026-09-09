@@ -39,7 +39,6 @@ export default {
         { name: "M1、M2、M3 貨幣供應量", path: "/indicators/money_supply" },
         { name: "住屋與生活成本", path: "/explore/living-cost" },
         { name: "香港城市觀察", path: "/explore/city" },
-        { name: "澳門城市觀察", path: "/explore/macau" },
         { name: "香港行業・金融與保險", path: "/explore/industries" },
         { name: "十八區人口", path: "/indicators/district_population" },
         { name: "十八區住戶入息", path: "/indicators/district_household_income" },
@@ -170,7 +169,7 @@ export default {
 
   footer: () =>
     [
-      `<p>統計資料來自港澳官方機構；資料及地圖來源、授權條款列喺各頁。`,
+      `<p>統計資料來自香港官方機構；資料及地圖來源、授權條款列喺各頁。`,
       `本網站程式碼以 MIT 授權開源。</p>`,
       `<p><strong>本網站唔收集任何個人資料</strong> —— 冇帳戶、冇 cookie、冇分析工具。`,
       `<a href="./about/privacy">私隱說明</a></p>`,

@@ -18,7 +18,7 @@ import { createHash } from "node:crypto";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { pickDataAsOf, isDisplayed } from "../src/data/_lib/site-meta.js";
+import { pickDataAsOf, isDisplayed, selectPublishedIndicators } from "../src/data/_lib/site-meta.js";
 import { normalizeBrowserViewport } from "./lib/viewport.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -87,7 +87,7 @@ const critical = [
 // 圖表 library:大,但離線畫圖要用。install 嗰陣逐個試,失敗唔會拖冧成個 install。
 const optional = files.filter((file) => isNpm(file.path)).map((file) => file.path);
 
-// 全站有數據的統計快照中最早的截至日（包括香港及澳門專頁）。
+// 先配對真正發布到 dist 的指標附件，草稿的舊數唔影響公開站的截至日。
 // 未填數的 manual 不計入；各卡仍獨立標明真正統計期。
 const docs = [];
 let jsonBytes = 0;
@@ -103,8 +103,9 @@ const citySnapshots = join(ROOT, "src", "data", "_city_snapshots");
 for (const name of (await readdir(citySnapshots)).filter((n) => n.endsWith(".json"))) {
   jsonBytes += Buffer.byteLength(await readFile(join(citySnapshots, name), "utf8"));
 }
-const dataAsOf = pickDataAsOf(docs);
-const hidden = docs.filter((doc) => !isDisplayed(doc));
+const publishedDocs = selectPublishedIndicators(docs, files.map((file) => file.path));
+const dataAsOf = pickDataAsOf(publishedDocs);
+const hidden = publishedDocs.filter((doc) => !isDisplayed(doc));
 
 // JS／CSS 等資源檔名帶 hash；HTML 路徑唔帶，所以亦加入正規化後的內容雜湊。
 // 只改 viewport 或靜態文案而路徑不變，版本亦會變，舊快取先會退役。

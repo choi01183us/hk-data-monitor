@@ -67,12 +67,6 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   <span class="monitor-topic-entry__action">探索城市連繫 <span aria-hidden="true">↗</span></span>
 </a>
 
-<a class="monitor-topic-entry" href="./explore/macau">
-  <span class="monitor-topic-entry__icon" aria-hidden="true">MO</span>
-  <span><strong>澳門城市觀察</strong><span>澳門地圖與景點 · 人口 · 旅客 · 物價 · 經濟</span></span>
-  <span class="monitor-topic-entry__action">由香港，望向澳門 ↗</span>
-</a>
-
 <a class="monitor-topic-entry" href="./explore/finance">
   <span class="monitor-topic-entry__icon" aria-hidden="true">↗</span>
   <span><strong>貨幣與股市</strong><span>銀行與上市公司 · M1–M3 · IPO · 黃金 · 港交所業務</span></span>

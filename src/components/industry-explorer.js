@@ -1,5 +1,6 @@
 import { html } from "npm:htl";
-import { industryTopics, industrySources, industryRegulators, industryProductTypes } from "./hong-kong-industries.js";
+import {financialInstitutions} from "./financial-institutions.js";
+import { industryTopics, industrySources, industryProductTypes } from "./hong-kong-industries.js";
 
 // 純本地閱讀切換；無輸入答案、fetch、行情計算或偏好儲存。
 export function industryExplorer() {
@@ -25,9 +26,7 @@ export function industryExplorer() {
     return html`<div class="industry-financial-basics">
       <section class="industry-panel industry-regulation" aria-labelledby="industry-regulation-heading">
         <div class="industry-panel-heading"><h3 id="industry-regulation-heading">邊個負責邊一部分？</h3><span>機構職能</span></div>
-        <div class="industry-regulator-grid">${industryRegulators.map((regulator) => html`<article class="industry-regulator">
-          <span>${regulator.code}</span><h4>${regulator.name}</h4><p>${regulator.text}</p>${officialLink(industrySources[regulator.source], "睇官方職能")}
-        </article>`)}</div>
+        ${financialInstitutions()}
         <p class="industry-note">實際分工會按機構同活動而不同。例如銀行做證券業務須向證監會註冊，日常前線監管由金管局負責。${officialLink(industrySources.sfc, "查監管分工")}</p>
       </section>
       <section class="industry-panel industry-products" aria-labelledby="industry-products-heading">

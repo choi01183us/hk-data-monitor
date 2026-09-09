@@ -662,7 +662,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   );
   check("取最舊唔取最新(橫額要保守)", pickDataAsOf([displayed, filledManual]) === "2026-02-25");
   check("一個都冇顯示 -> null", pickDataAsOf([todoManual]) === null);
-  check("澳門專頁有數據亦計入全站日期，todo 仍排除", pickDataAsOf([displayed, todoManual, {indicator_id: "macau_population", updated_at: "2025-12-31", series: [{period: "2025", value: 688900}]}]) === "2025-12-31");
+  check("傳入有數據快照時計入，發布篩選另驗，todo 仍排除", pickDataAsOf([displayed, todoManual, {indicator_id: "macau_population", updated_at: "2025-12-31", series: [{period: "2025", value: 688900}]}]) === "2025-12-31");
 
   // 對返真實快照:而家 13 份入面有 2 份未填
   const realDocs = [];
@@ -820,6 +820,11 @@ const { testMacauData } = await import("./test-macau-data.mjs");
 await testMacauData(check);
 const { testMacauGeography } = await import("./test-macau-geography.mjs");
 await testMacauGeography(check);
+
+const {testDistrictHistory} = await import("./test-district-history.mjs");
+await testDistrictHistory(check);
+const {testPublishedData} = await import("./test-published-data.mjs");
+await testPublishedData(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

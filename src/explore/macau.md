@@ -1,4 +1,5 @@
 ---
+draft: true
 title: 澳門城市觀察
 keywords: 澳門 Macau Macao 人口 旅客 通脹 GDP 澳門元 地圖 大三巴 氹仔 路氹 路環 城市 比較
 sidebar: false
