@@ -26,6 +26,12 @@ const programmeLogos = {
 };
 display(programmeBrand({logos: programmeLogos}));
 `);
+const NEWS_CODE = `
+import {cityNews} from "./components/city-dashboard.js";
+const news = await FileAttachment("./data/city_news.json").json();
+display(cityNews(news, {compact: true, invalidation}));
+`;
+const NEWS = fence(NEWS_CODE);
 
 export async function testExpenditureScopeGate(check) {
   console.log("\n[R9] 政府／公共開支口徑閘 — 真實源碼突變");
@@ -54,6 +60,37 @@ export async function testExpenditureScopeGate(check) {
         .replace('  FileAttachment("./data/govt_expenditure.json")', '  FileAttachment("./data/gdp.json").json(),\n  FileAttachment("./data/govt_expenditure.json")'),
     }, false);
     await runCase("合法:首頁只讀四張原圖的計劃品牌格", {"index.md": HOME + BRAND}, false);
+    await runCase("合法:首頁獨立新聞格配原卡片及底部四標誌", {
+      "index.md": NEWS + HOME + BRAND,
+      "components/city-dashboard.js": "export const cityNews = (doc) => doc.records;",
+    }, false);
+    await runCase("合法:獨立新聞格只改空白及註解", {
+      "index.md": HOME + fence(NEWS_CODE.replace("const news", "// 與開支卡片分開\nconst news").replace("compact: true, invalidation", "compact:true,\n  invalidation")) + BRAND,
+    }, false);
+    await runCase("突變:新聞格傳 loaded 代替新聞被攔", {"index.md": HOME + NEWS.replace("cityNews(news,", "cityNews(loaded,") + BRAND}, true);
+    await runCase("突變:新聞格把開支資料塞入 options 被攔", {"index.md": HOME + NEWS.replace("compact: true, invalidation", "compact: true, invalidation, data: loaded") + BRAND}, true);
+    await runCase("突變:新聞格合併兩套開支 series 被攔", {
+      "index.md": HOME + NEWS.replace("cityNews(news,", "cityNews({...news, records: loaded.flatMap(d => d.series)},") + BRAND,
+    }, true);
+    await runCase("突變:新聞格加入開支加總被攔", {
+      "index.md": HOME + NEWS.replace("display(cityNews", "display(loaded.reduce((sum, d) => sum + d.totals[0].value, 0));\ndisplay(cityNews") + BRAND,
+    }, true);
+    for (const id of ["govt_expenditure", "public_expenditure_policy_groups", "city_flights"]) {
+      await runCase(`突變:新聞格改讀 ${id} 附件被攔`, {"index.md": HOME + NEWS.replace("./data/city_news.json", `./data/${id}.json`) + BRAND}, true);
+    }
+    await runCase("突變:新聞程式混入卡片 cell 而非獨立格被攔", {
+      "index.md": HOME.replace("const loaded", NEWS_CODE + "\nconst loaded") + BRAND,
+    }, true);
+    await runCase("突變:首頁重複新聞格被攔", {"index.md": NEWS + HOME + NEWS + BRAND}, true);
+    await runCase("突變:新聞 helper 偷讀政府開支被攔", {
+      "index.md": NEWS + HOME + BRAND,
+      "components/city-dashboard.js": GOVT + "\nexport const cityNews = (doc) => doc.records;",
+    }, true);
+    await runCase("突變:新聞 helper 間接依賴偷讀公共開支被攔", {
+      "index.md": NEWS + HOME + BRAND,
+      "components/city-dashboard.js": 'import {newsRows} from "./news-helper.js"; export const cityNews = newsRows;',
+      "components/news-helper.js": PUBLIC + "\nexport const newsRows = (doc) => doc.records;",
+    }, true);
     await runCase("突變:品牌格偷傳兩個開支數據被攔", {"index.md": HOME + BRAND.replace("logos: programmeLogos", "logos: programmeLogos, data: loaded")}, true);
     await runCase("突變:品牌格加入加總被攔", {"index.md": HOME + BRAND.replace("const programmeLogos", "display(loaded.reduce((sum,d)=>sum+d.totals[0].value,0)); const programmeLogos")}, true);
     await runCase("突變:品牌格改圖路徑為數據被攔", {"index.md": HOME + BRAND.replace("./assets/programme/hkex.png", "./data/govt_expenditure.json")}, true);

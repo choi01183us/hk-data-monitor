@@ -716,7 +716,10 @@
     "提出增加某範疇資源時，講清楚誰受惠、誰可能受影響、會減少其他開支定增加收入，以及點樣衡量成效。\n開支數字可以描述資源分配，唔會自動話畀你知邊個政策最有效或最公平。": "When proposing more resources for an area, explain who benefits, who may be affected, whether other spending would fall or revenue would rise, and how outcomes would be assessed. Expenditure figures describe allocation; they do not automatically identify the most effective or fairest policy.",
     "請各組先同意使用同一開支口徑同年度，再提出不同優先次序。追問各組採用咩公平準則：按需要、受惠人數，定改善程度？\n讓另一組指出證據限制或受影響者，再回應反對理由。若公共十組數據仍待填，先做論點同口徑練習，暫緩金額分配。": "Ask groups to agree on the expenditure definition and year before proposing priorities. What standard of fairness does each group use: need, numbers benefiting or degree of improvement? Let another group identify evidence limits or affected people, then respond to objections. If the public expenditure groups remain unfilled, practise arguments and definitions first and postpone allocating amounts.",
     "將討論整理成建議：": "Turn the discussion into a proposal:",
-    "香港銀行與認可機構數目": "Banks and authorised institutions in Hong Kong"
+    "香港銀行與認可機構數目": "Banks and authorised institutions in Hong Kong",
+    "地圖": "Map",
+    "新聞": "News",
+    "更多新聞與城市動態": "More news and city updates"
   },
   "attributes": {
     "城市專區導覽": "City navigation",
@@ -730,7 +733,8 @@
     "首頁導覽": "Home page navigation",
     "香港地圖天氣特效示範": "Weather effects demonstration on the Hong Kong map",
     "香港地理輪廓，標示新界、九龍、香港島及大嶼山。": "Outline map of Hong Kong showing the New Territories, Kowloon, Hong Kong Island and Lantau.",
-    "學習路線": "Learning routes"
+    "學習路線": "Learning routes",
+    "首頁捷徑": "Home page shortcuts"
   },
   "titles": {
     "搵唔到呢一版 | 香港數據監測站": "Page not found | Hong Kong Data Monitor",

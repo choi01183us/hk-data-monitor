@@ -70,12 +70,13 @@ export function cityMap(mapUrl) {
   return root;
 }
 
-export function cityNews(doc, {invalidation} = {}) {
-  return html`<section class="city-panel city-news" aria-labelledby="city-news-heading">
-    <div class="city-panel-heading"><div><span class="monitor-kicker">${t("02 / 新聞快照", "02 / NEWS SNAPSHOT")}</span><h2 id="city-news-heading">${t("政府新聞公報", "Government press releases")}</h2></div><span class="monitor-tag">${t("定時快照", "Scheduled snapshot")}</span></div>
-    <p class="city-panel-intro">${t("按發布時間排列。呢度係政府公報，唔涵蓋所有傳媒新聞。", "Ordered by publication time. These are government press releases, not a comprehensive news feed.")}</p>
+export function cityNews(doc, {invalidation, compact = false} = {}) {
+  const headingId = compact ? "home-news-heading" : "city-news-heading";
+  return html`<section class=${compact ? "city-panel city-news city-news--compact" : "city-panel city-news"} aria-labelledby=${headingId}>
+    <div class="city-panel-heading"><div><span class="monitor-kicker">${compact ? t("新聞快照", "NEWS SNAPSHOT") : t("02 / 新聞快照", "02 / NEWS SNAPSHOT")}</span><h2 id=${headingId}>${t("政府新聞公報", "Government press releases")}</h2></div><span class="monitor-tag">${t("定時快照", "Scheduled snapshot")}</span></div>
+    <p class="city-panel-intro">${compact ? t("定時擷取嘅政府公報節錄，並非即時新聞。", "Government press release highlights from a scheduled snapshot.") : t("按發布時間排列。呢度係政府公報，唔涵蓋所有傳媒新聞。", "Ordered by publication time. These are government press releases, not a comprehensive news feed.")}</p>
     <p class="city-panel-intro">${t("來源中文原文", "Original Chinese source")}</p>
-    <ol class="city-headlines">${doc.records.slice(0, 7).map((record) => html`<li><time datetime=${record.published_at}>${time(record.published_at)}</time><span lang="zh-HK">${external(record.url, record.title)}</span></li>`)}</ol>
+    <ol class="city-headlines">${doc.records.slice(0, compact ? 4 : 7).map((record) => html`<li><time datetime=${record.published_at}>${time(record.published_at)}</time><span lang="zh-HK">${external(record.url, record.title)}</span></li>`)}</ol>
     <div class="city-live-link">${external(doc.live_url, t("查閱今日官方新聞", "Read today's official news"))}</div>${provenance(doc, invalidation)}
   </section>`;
 }

@@ -1734,3 +1734,33 @@ body {
   .district-report :is(td, th) { border-color: #aaa; }
   .district-report .district-profile-citations { border-top: 1px solid #aaa; }
 }
+
+
+/* 首頁先展示地圖與既有新聞快照；資料卡保持各自口徑。 */
+@media screen {
+  .monitor-quick-nav { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .monitor-quick-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .9rem; border: 1px solid #38566a; border-radius: 4px; color: #d7eae9; background: #10232e; font-size: .82rem; text-decoration: none; }
+  .monitor-quick-nav a:hover { border-color: #65ddc1; color: #b4f2df; }
+  .monitor-feature { display: grid; gap: 1rem; align-items: start; margin: 1rem 0 1.5rem; }
+  .monitor-feature > * { min-width: 0; }
+  .monitor-feature > .monitor-map-panel { grid-column: auto; grid-row: auto; }
+  .monitor-feature .weather-stage { max-height: 420px; }
+  .monitor-feature .monitor-panel-heading { flex-wrap: wrap; gap: .4rem .8rem; }
+  .monitor-feature-news { scroll-margin-top: 1rem; }
+  .monitor-feature-news > .observablehq--block { margin: 0; }
+  .monitor-news-more { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: .5rem 1.1rem; margin-top: .55rem; border: 1px solid #38566a; border-radius: 3px; font-size: .8rem; text-decoration: none; background: #10232e; }
+  .city-news--compact .city-panel-heading { flex-wrap: wrap; }
+  .city-news--compact .city-headlines li { padding-block: .65rem; }
+  .city-news--compact .city-headlines a { font-size: .86rem; }
+  .city-news--compact .city-provenance { overflow-wrap: anywhere; }
+  .monitor-topics { display: grid; gap: .7rem; margin-bottom: .8rem; }
+  .monitor-topics .monitor-topic-entry { margin: 0; padding: .9rem 1rem; flex-wrap: wrap; gap: .6rem; }
+  .monitor-topics .monitor-topic-entry > span:nth-child(2) { flex: 1; min-width: 0; }
+  .monitor-topics .monitor-topic-entry__action { flex-basis: 100%; margin-left: 0; }
+  .monitor-topics .monitor-topic-entry__action > span { display: inline; }
+  @media (min-width: 700px) { .monitor-topics { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 960px) {
+    .monitor-feature { grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr); }
+    .monitor-topics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+}

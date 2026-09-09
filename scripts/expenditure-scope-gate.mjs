@@ -32,7 +32,17 @@ function isCardsOnlyHome(source) {
   const prose = source.replace(/^```js[^\n]*\n[\s\S]*?^```\s*$/gm, "");
   // Observable inline expressions / raw scripts would be extra executable paths.
   if (/\$\{|<script\b|^\s*(?:```|~~~)/im.test(prose)) return false;
-  let program = blocks.map((match) => match[1]).join("\n").replace(/\/\/[^\n]*/g, "");
+  // Only this separate news cell is allowed. Match the complete cell before the
+  // indicator attachment list is stripped, so a different JSON cannot replace news.
+  const news = `
+    import {cityNews} from "./components/city-dashboard.js";
+    const news = await FileAttachment("./data/city_news.json").json();
+    display(cityNews(news, {compact: true, invalidation}));
+  `.replace(/\s/g, "");
+  const code = blocks.map((match) => match[1].replace(/\/\/[^\n]*/g, ""));
+  const isNews = (block) => block.replace(/\s/g, "") === news;
+  if (code.filter(isNews).length > 1) return false;
+  let program = code.filter((block) => !isNews(block)).join("\n");
   const attachments = program.match(/FileAttachment\("\.\/data\/[a-z_]+\.json"\)\.json\(\),?/g) ?? [];
   if (attachments.length === 0) return false;
   for (const attachment of attachments) program = program.replace(attachment, "");
