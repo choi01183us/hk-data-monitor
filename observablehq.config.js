@@ -177,7 +177,7 @@ export default {
     ].join("");
   },
 
-  header: ({path}) => path === "/index" ? "" : `<a class="programme-context" href="${"../".repeat(Math.max(0,path.split("/").length-2)) || "./"}"><span lang="zh-HK">財策新世代</span><span lang="en-GB">NextGen Financial &amp; Policy Ambassadors</span></a>`,
+  header: ({path}) => `<a class="programme-context" href="${"../".repeat(Math.max(0,path.split("/").length-2)) || "./"}"><span lang="zh-HK">財策新世代</span><span lang="en-GB">NextGen Financial &amp; Policy Ambassadors</span></a>`,
 
   footer: () =>
     [
