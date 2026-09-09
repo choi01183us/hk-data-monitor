@@ -4,7 +4,7 @@
 import yaml from "js-yaml";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
-import { mkdtemp, mkdir, readFile, writeFile, rm } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, writeFile, rm, chmod } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -159,6 +159,45 @@ async function exerciseCommitStep(name, workflow, deploy, check, temporary) {
   check(`${name}:push 失敗唔會輸出未推送 ref`, unpushed.values.ref === undefined);
 }
 
+function weatherScheduleContract(workflow) {
+  const schedules = workflow.on?.schedule?.map((entry) => entry.cron).sort();
+  requireValue(JSON.stringify(schedules) === JSON.stringify(["37 */3 * * *", "7 * * * *"]), "城市與天氣排程須分開保留");
+  const steps = workflow.jobs.refresh.steps.filter((step) => step.env?.HKDM_CITY_SCHEDULE);
+  requireValue(steps.length === 1 && steps[0].env.HKDM_CITY_SCHEDULE === "${{ github.event.schedule }}", "天氣分流須使用觸發事件排程");
+  return steps[0].run;
+}
+
+async function exerciseWeatherRoute(workflow, check, temporary) {
+  const source = weatherScheduleContract(workflow);
+  const directory = join(temporary, "weather-route"), bin = join(directory, "bin"), script = join(directory, "route.sh");
+  await mkdir(bin, {recursive: true});
+  // Only the actual YAML shell routing runs; node is a local argument recorder.
+  const node = join(bin, "node");
+  await writeFile(node, '#!/bin/sh\nprintf "%s\\n" "$*"\n'); await chmod(node, 0o755);
+  async function route(schedule, code = source) {
+    await writeFile(script, code);
+    try {
+      const result = await exec("bash", ["--noprofile", "--norc", "-e", "-o", "pipefail", script], {
+        cwd: directory, env: {...process.env, PATH: `${bin}:${process.env.PATH}`, HKDM_CITY_SCHEDULE: schedule}
+      });
+      return result.stdout.trim();
+    } catch { return "rejected"; }
+  }
+  for (const [schedule, expected] of [
+    ["7 * * * *", "scripts/refresh-city.mjs --weather-only"],
+    ["37 */3 * * *", "scripts/refresh-city.mjs"],
+    ["", "scripts/refresh-city.mjs"],
+    ["unknown", "rejected"]
+  ]) check(`真實排程分流已知答案：${schedule || "人手觸發"}`, await route(schedule) === expected);
+  check("排程突變：漏 weather-only 會錯抓新聞及航班", await route("7 * * * *", source.replace(" --weather-only", "")) !== "scripts/refresh-city.mjs --weather-only");
+  check("排程突變：錯誤小時分流會被已知答案捉到", await route("7 * * * *", source.replace('"7 * * * *"', '"8 * * * *"')) === "rejected");
+  for (const [label, change] of [
+    ["漏每小時排程", (w) => { w.on.schedule = w.on.schedule.slice(0, 1); }],
+    ["改埋新聞頻率", (w) => { w.on.schedule[0].cron = "37 * * * *"; }],
+    ["漏觸發事件接線", (w) => { w.jobs.refresh.steps.find((s) => s.env?.HKDM_CITY_SCHEDULE).env.HKDM_CITY_SCHEDULE = "7 * * * *"; }]
+  ]) { const bad = structuredClone(workflow); change(bad); check(`天氣排程契約突變：${label}`, throws(() => weatherScheduleContract(bad))); }
+}
+
 export async function testRefreshWorkflows(check) {
   console.log("\n[刷新部署] 固定 SHA 傳遞、提交實測及共用排程鎖");
   // 先自證小 expression 讀取器，答唔啱已知答案就唔信後面接線檢查。
@@ -198,6 +237,9 @@ export async function testRefreshWorkflows(check) {
     check(`接線突變:${name}會嘈`, throws(() => verified(c, d)));
   }
   const temporary = await mkdtemp(join(tmpdir(), "hkdm-refresh-workflows-"));
-  try { for (const [name, caller] of Object.entries(callers)) await exerciseCommitStep(name, caller, deploy, check, temporary); }
+  try {
+    for (const [name, caller] of Object.entries(callers)) await exerciseCommitStep(name, caller, deploy, check, temporary);
+    await exerciseWeatherRoute(callers.city, check, temporary);
+  }
   finally { await rm(temporary, { recursive: true, force: true }); }
 }

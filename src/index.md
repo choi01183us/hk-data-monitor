@@ -67,41 +67,15 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
     </div>
     <a class="monitor-map-open" href="./explore/city#city-map">放大互動地圖 ↗</a>
   </div>
-  <section class="weather-demo" id="weather-effects" aria-label="香港地圖天氣特效示範">
-    <p class="weather-demo-note">視覺示範，唔代表香港即時天氣。</p>
-    <p class="weather-reduced-note">已跟隨系統「減少動態效果」設定，顯示靜態效果。</p>
-    <figure class="monitor-map">
-      <div class="weather-stage">
-        <img src="./assets/hong-kong-map.svg" width="900" height="560" alt="香港地理輪廓，標示新界、九龍、香港島及大嶼山。" fetchpriority="high">
-        <div class="weather-art" aria-hidden="true">
-          <div class="weather-sun"><div class="weather-sun-core"></div><div class="weather-sun-ring"></div></div>
-          <div class="weather-cloud weather-cloud-a"></div><div class="weather-cloud weather-cloud-b"></div><div class="weather-cloud weather-cloud-c"></div>
-          <div class="weather-rain">
-            <i style="--drop-x:5%;--drop-delay:-1.3s;--drop-duration:2.1s"></i><i style="--drop-x:11%;--drop-delay:-0.5s;--drop-duration:1.8s"></i>
-            <i style="--drop-x:18%;--drop-delay:-1.8s;--drop-duration:2.4s"></i><i style="--drop-x:24%;--drop-delay:-0.8s;--drop-duration:2s"></i>
-            <i style="--drop-x:30%;--drop-delay:-1.1s;--drop-duration:2.3s"></i><i style="--drop-x:36%;--drop-delay:-0.2s;--drop-duration:1.9s"></i>
-            <i style="--drop-x:43%;--drop-delay:-1.7s;--drop-duration:2.2s"></i><i style="--drop-x:49%;--drop-delay:-0.6s;--drop-duration:2.5s"></i>
-            <i style="--drop-x:55%;--drop-delay:-1.2s;--drop-duration:2s"></i><i style="--drop-x:61%;--drop-delay:-0.3s;--drop-duration:2.3s"></i>
-            <i style="--drop-x:68%;--drop-delay:-1.5s;--drop-duration:1.9s"></i><i style="--drop-x:74%;--drop-delay:-0.9s;--drop-duration:2.4s"></i>
-            <i style="--drop-x:80%;--drop-delay:-1.9s;--drop-duration:2.1s"></i><i style="--drop-x:86%;--drop-delay:-0.4s;--drop-duration:2.2s"></i>
-            <i style="--drop-x:92%;--drop-delay:-1.4s;--drop-duration:2.5s"></i><i style="--drop-x:98%;--drop-delay:-0.7s;--drop-duration:1.8s"></i>
-          </div>
-          <div class="weather-fog weather-fog-a"></div><div class="weather-fog weather-fog-b"></div>
-        </div>
-      </div>
-      <figcaption>地圖作地域定位；各指標屬全港統計，唔代表單一地區情況。</figcaption>
-    </figure>
-    <div class="weather-controls">
-      <fieldset class="weather-modes">
-        <legend>天氣特效</legend>
-        <label><input type="radio" name="weather-scene" value="sunny" checked><span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>晴空</span></label>
-        <label><input type="radio" name="weather-scene" value="rain"><span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 14a4 4 0 1 1 0-8 6 6 0 0 1 11-1 4.5 4.5 0 0 1 1 9H6m1 3-1 3m6-3-1 3m6-3-1 3"/></svg>落雨</span></label>
-        <label><input type="radio" name="weather-scene" value="fog"><span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 6h14M7 10h14M3 14h14M7 18h14"/></svg>薄霧</span></label>
-        <label><input type="radio" name="weather-scene" value="off"><span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg>關閉</span></label>
-      </fieldset>
-      <label class="weather-pause"><input type="checkbox"><span>暫停動畫</span></label>
-    </div>
-  </section>
+
+```js
+import {weatherMap} from "./components/weather-map.js";
+const weather = await FileAttachment("./data/city_weather.json").json();
+const weatherMapUrl = await FileAttachment("./assets/hong-kong-map.svg").url();
+display(weatherMap(weather, {mapUrl: weatherMapUrl, invalidation}));
+```
+
+
   <div class="monitor-map-footer">
     <span>地圖：© <a href="https://portal.csdi.gov.hk/csdi-webpage/dataset/landsd_rcd_1637221775627_85634" target="_blank" rel="noopener noreferrer">香港特別行政區政府地政總署</a>；經簡化。</span>
     <a href="./about/sources#hong-kong-map-source">地圖來源及製作說明 <span aria-hidden="true">↗</span></a>

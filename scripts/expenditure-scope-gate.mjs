@@ -39,10 +39,19 @@ function isCardsOnlyHome(source) {
     const news = await FileAttachment("./data/city_news.json").json();
     display(cityNews(news, {compact: true, invalidation}));
   `.replace(/\s/g, "");
+  // 天氣亦只准一個完整獨立 cell。先釘死資料及地圖附件,唔可以等卡片附件
+  // 被 strip 咗先驗,否則錯嘅 JSON 有機會被當成合法天氣輸入。
+  const weather = `
+    import {weatherMap} from "./components/weather-map.js";
+    const weather = await FileAttachment("./data/city_weather.json").json();
+    const weatherMapUrl = await FileAttachment("./assets/hong-kong-map.svg").url();
+    display(weatherMap(weather, {mapUrl: weatherMapUrl, invalidation}));
+  `.replace(/\s/g, "");
   const code = blocks.map((match) => match[1].replace(/\/\/[^\n]*/g, ""));
   const isNews = (block) => block.replace(/\s/g, "") === news;
-  if (code.filter(isNews).length > 1) return false;
-  let program = code.filter((block) => !isNews(block)).join("\n");
+  const isWeather = (block) => block.replace(/\s/g, "") === weather;
+  if (code.filter(isNews).length > 1 || code.filter(isWeather).length > 1) return false;
+  let program = code.filter((block) => !isNews(block) && !isWeather(block)).join("\n");
   const attachments = program.match(/FileAttachment\("\.\/data\/[a-z_]+\.json"\)\.json\(\),?/g) ?? [];
   if (attachments.length === 0) return false;
   for (const attachment of attachments) program = program.replace(attachment, "");

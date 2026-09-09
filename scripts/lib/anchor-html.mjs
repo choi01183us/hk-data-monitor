@@ -10,7 +10,7 @@ import {assertEnglishMetadata} from "../../src/components/display-text.js";
 
 const ROOT = fileURLToPath(new URL("../../", import.meta.url));
 const SCRIPT_ID = "hkdm-english-anchors";
-const CITY_FEEDS = new Set(["city_news", "city_flights"]);
+const CITY_FEEDS = new Set(["city_news", "city_flights", "city_weather"]);
 const attr = (node, name) => node.attrs?.find((item) => item.name === name)?.value;
 
 export function serialiseAnchorPayload(map) {

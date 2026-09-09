@@ -32,6 +32,13 @@ const news = await FileAttachment("./data/city_news.json").json();
 display(cityNews(news, {compact: true, invalidation}));
 `;
 const NEWS = fence(NEWS_CODE);
+const WEATHER_CODE = `
+import {weatherMap} from "./components/weather-map.js";
+const weather = await FileAttachment("./data/city_weather.json").json();
+const weatherMapUrl = await FileAttachment("./assets/hong-kong-map.svg").url();
+display(weatherMap(weather, {mapUrl: weatherMapUrl, invalidation}));
+`;
+const WEATHER = fence(WEATHER_CODE);
 
 export async function testExpenditureScopeGate(check) {
   console.log("\n[R9] 政府／公共開支口徑閘 — 真實源碼突變");
@@ -90,6 +97,56 @@ export async function testExpenditureScopeGate(check) {
       "index.md": NEWS + HOME + BRAND,
       "components/city-dashboard.js": 'import {newsRows} from "./news-helper.js"; export const cityNews = newsRows;',
       "components/news-helper.js": PUBLIC + "\nexport const newsRows = (doc) => doc.records;",
+    }, true);
+    await runCase("合法:首頁獨立天氣格連同新聞、卡片及品牌格", {
+      "index.md": WEATHER + NEWS + HOME + BRAND,
+      "components/weather-map.js": "export const weatherMap = (weather, options) => weather.stations;",
+    }, false);
+    await runCase("合法:獨立天氣格只改空白及註解", {
+      "index.md": HOME + fence(WEATHER_CODE.replace("const weather =", "// 天氣資料與開支卡片分開\nconst weather =").replace("mapUrl: weatherMapUrl, invalidation", "mapUrl:weatherMapUrl,\n invalidation")) + BRAND,
+    }, false);
+    for (const id of ["govt_expenditure", "public_expenditure_policy_groups", "city_news"]) {
+      await runCase(`突變:天氣格改讀 ${id} 附件被攔`, {
+        "index.md": WEATHER.replace("./data/city_weather.json", `./data/${id}.json`) + NEWS + HOME + BRAND,
+      }, true);
+    }
+    for (const path of ["./data/govt_expenditure.json", "./data/public_expenditure_policy_groups.json", "./assets/another-map.svg"]) {
+      await runCase(`突變:天氣地圖改讀 ${path} 被攔`, {
+        "index.md": HOME + WEATHER.replace("./assets/hong-kong-map.svg", path) + BRAND,
+      }, true);
+    }
+    await runCase("突變:天氣格傳 loaded 代替天氣被攔", {
+      "index.md": HOME + WEATHER.replace("weatherMap(weather,", "weatherMap(loaded,") + BRAND,
+    }, true);
+    await runCase("突變:天氣格把開支塞入 options 被攔", {
+      "index.md": HOME + WEATHER.replace("mapUrl: weatherMapUrl, invalidation", "mapUrl: weatherMapUrl, invalidation, data: loaded") + BRAND,
+    }, true);
+    await runCase("突變:天氣格合併兩套開支 series 被攔", {
+      "index.md": HOME + WEATHER.replace("weatherMap(weather,", "weatherMap({...weather, stations: loaded.flatMap(d => d.series)},") + BRAND,
+    }, true);
+    await runCase("突變:天氣格加入開支加總被攔", {
+      "index.md": HOME + WEATHER.replace("display(weatherMap", "display(loaded.reduce((sum, d) => sum + d.totals[0].value, 0));\ndisplay(weatherMap") + BRAND,
+    }, true);
+    await runCase("突變:首頁重複天氣格被攔", {
+      "index.md": WEATHER + NEWS + HOME + WEATHER + BRAND,
+    }, true);
+    await runCase("突變:天氣程式混入卡片 cell 被攔", {
+      "index.md": HOME.replace("const loaded", WEATHER_CODE + "\nconst loaded") + BRAND,
+    }, true);
+    await runCase("突變:天氣程式混入新聞 cell 被攔", {
+      "index.md": HOME + fence(NEWS_CODE + WEATHER_CODE) + BRAND,
+    }, true);
+    await runCase("突變:天氣程式拆成兩個 cell 被攔", {
+      "index.md": HOME + WEATHER.replace("display(weatherMap", "```\n```js\ndisplay(weatherMap") + BRAND,
+    }, true);
+    await runCase("突變:天氣 helper 直接偷讀政府開支被攔", {
+      "index.md": WEATHER + NEWS + HOME + BRAND,
+      "components/weather-map.js": GOVT + "\nexport const weatherMap = (weather) => weather.stations;",
+    }, true);
+    await runCase("突變:天氣 helper 間接偷讀公共開支被攔", {
+      "index.md": WEATHER + NEWS + HOME + BRAND,
+      "components/weather-map.js": 'import {weatherRows} from "./weather-helper.js"; export const weatherMap = weatherRows;',
+      "components/weather-helper.js": PUBLIC + "\nexport const weatherRows = (weather) => weather.stations;",
     }, true);
     await runCase("突變:品牌格偷傳兩個開支數據被攔", {"index.md": HOME + BRAND.replace("logos: programmeLogos", "logos: programmeLogos, data: loaded")}, true);
     await runCase("突變:品牌格加入加總被攔", {"index.md": HOME + BRAND.replace("const programmeLogos", "display(loaded.reduce((sum,d)=>sum+d.totals[0].value,0)); const programmeLogos")}, true);

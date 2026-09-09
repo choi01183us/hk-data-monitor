@@ -778,6 +778,8 @@ const { testTradeData } = await import("./test-trade-data.mjs");
 await testTradeData(check);
 const { testCityFeeds } = await import("./test-city-feeds.mjs");
 await testCityFeeds(check);
+const { testWeatherFeeds } = await import("./test-weather-feeds.mjs");
+await testWeatherFeeds(check);
 const { testHongKongPlaces } = await import("./test-hong-kong-places.mjs");
 await testHongKongPlaces(check);
 

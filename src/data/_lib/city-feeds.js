@@ -5,14 +5,23 @@ import { readFile, writeFile, mkdir, mkdtemp, rename, rm } from "node:fs/promise
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { fetchText, fetchJson, UpstreamError, withFixtureTransaction, politePause } from "./http.js";
+import { WEATHER_ICONS, weatherState } from "../../components/weather-state.js";
 
 const DATA_DIR = dirname(dirname(fileURLToPath(import.meta.url)));
 export const CITY_SNAPSHOT_DIR = join(DATA_DIR, "_city_snapshots");
 export const CITY_FIXTURE_DIR = join(DATA_DIR, "_city_fixtures");
-export const CITY_KINDS = Object.freeze(["news", "flights"]);
+export const CITY_KINDS = Object.freeze(["news", "flights", "weather"]);
 export const NEWS_URL = "https://www.info.gov.hk/gia/rss/general_zh.xml";
+export const WEATHER_URL = "https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc";
 const FLIGHT_BASE = "https://www.hongkongairport.com/flightinfo-rest/rest/flights/past";
 const CONFIG = Object.freeze({
+  weather: {
+    source_zh: "香港天文台",
+    source_url: "https://data.gov.hk/tc-data/dataset/hk-hko-rss-current-weather-report",
+    live_url: "https://www.hko.gov.hk/tc/wxinfo/currwx/current.htm",
+    licence: "data.gov.hk 使用條款；香港特區政府版權所有",
+    licence_url: "https://data.gov.hk/tc/terms-and-conditions",
+  },
   news: {
     source_zh: "香港特區政府新聞處",
     source_url: "https://data.gov.hk/tc-data/dataset/hk-isd-gnmis-gnmis",
@@ -113,6 +122,20 @@ export function parseNews(xml) {
   return records.sort((a, b) => b.published_at.localeCompare(a.published_at) || a.url.localeCompare(b.url));
 }
 
+/** HKO 的整份報告與天氣標記各有時刻；不可用擷取時刻冒充任何一個。 */
+export function parseWeather(body) {
+  upstream(body && typeof body === "object" && !Array.isArray(body), "天氣報告唔係物件");
+  upstream(Array.isArray(body.icon) && body.icon.length > 0 && body.icon.length <= Object.keys(WEATHER_ICONS).length && body.icon.every((code) => Number.isInteger(code) && Object.hasOwn(WEATHER_ICONS, code)), "天氣標記缺少或有未知代碼");
+  upstream(new Set(body.icon).size === body.icon.length, "天氣標記重複");
+  let report_updated_at, icon_updated_at;
+  try {
+    report_updated_at = cityTimestamp(body.updateTime);
+    icon_updated_at = cityTimestamp(body.iconUpdateTime);
+  } catch (cause) { throw new UpstreamError("天氣來源更新時刻無效", { cause }); }
+  // 保留整個標記陣列及來源次序；兩個標記可代表天氣轉變，不能只取第一個。
+  return { icons: [...body.icon], report_updated_at, icon_updated_at };
+}
+
 export function parseFlights(body, requestedDate, direction) {
   flightUrl(requestedDate, direction); // 程式設定錯 hard fail。
   upstream(Array.isArray(body) && body.length > 0, "航班回應冇日期群");
@@ -140,7 +163,7 @@ export function parseFlights(body, requestedDate, direction) {
   return { records, updated_at };
 }
 
-/** 抓取／來源回應時刻唔係內容變化；內容一樣就保留整份原檔同原錄影。 */
+/** 頂層抓取／回應時刻不計入內容；天氣 record 的報告／標記時刻仍計入。內容一樣保留原檔及錄影。 */
 export function cityContentHash(doc) {
   const { fetched_at, updated_at, content_hash, build, ...content } = doc;
   return createHash("sha256").update(JSON.stringify(content)).digest("hex");
@@ -167,6 +190,18 @@ export function validateCitySnapshot(doc) {
     }
     check(records.every((r, i) => i === 0 || records[i - 1]?.published_at >= r?.published_at), "新聞未按發布時間排序");
     check(doc.updated_at === records[0]?.published_at, "新聞截至時間唔係最新公報時間");
+  } else if (doc.kind === "weather") {
+    check(records.length === 1, "天氣只保留一份報告的標記");
+    const r = records[0];
+    check(Object.keys(r ?? {}).sort().join() === "icon_updated_at,icons,report_updated_at", "天氣只保留標記及兩個來源時刻");
+    check(Array.isArray(r?.icons) && r.icons.length > 0 && r.icons.length <= Object.keys(WEATHER_ICONS).length && r.icons.every((code) => Number.isInteger(code) && Object.hasOwn(WEATHER_ICONS, code)), "天氣標記缺少或有未知代碼");
+    if (Array.isArray(r?.icons)) check(new Set(r.icons).size === r.icons.length, "天氣標記重複");
+    for (const key of ["report_updated_at", "icon_updated_at"]) {
+      try { check(cityTimestamp(r?.[key]) === r[key], `天氣 ${key} 必須係 ISO UTC`); }
+      catch { errors.push(`天氣 ${key} 時間無效`); }
+    }
+    check(r?.report_updated_at === doc.updated_at, "天氣截至時間必須等於整份報告時間");
+    check(Date.parse(r?.icon_updated_at) <= Date.parse(doc.fetched_at) + 5 * 60000, "天氣標記時刻超前抓取時刻");
   } else {
     check(validDate(doc.requested_date), "航班要求日期無效");
     try { check(validDate(doc.requested_date) && doc.requested_date === previousHongKongDate(doc.fetched_at), "航班要求日期必須係抓取時香港前一日"); }
@@ -212,6 +247,10 @@ export async function fetchCitySnapshot(kind, { now, requestedDate, getText = fe
   const config = kindConfig(kind);
   // 生產用真實完成時間；重播由已提交快照提供原有抓取時間。
   const startedAt = now ?? new Date().toISOString();
+  if (kind === "weather") {
+    const record = parseWeather((await getJson(WEATHER_URL)).body);
+    return seal({ kind, ...config, fetched_at: now ?? new Date().toISOString(), updated_at: record.report_updated_at, records: [record] });
+  }
   if (kind === "news") {
     const { text } = await getText(NEWS_URL);
     const records = parseNews(text);
@@ -291,6 +330,10 @@ export async function loadCitySnapshot(kind, options = {}) {
 
 /** 年齡提示係 build 當刻判斷，唔冒充最近刷新失敗記錄，亦唔落磁碟。 */
 export function cityBuildMetadata(doc, now = new Date().toISOString()) {
+  if (doc.kind === "weather") {
+    const stale = weatherState(doc, cityTimestamp(now)).status === "stale";
+    return { ...doc, build: { stale, reason: stale ? "天氣報告或擷取時間超出時效範圍" : "" } };
+  }
   const oldAge = Date.parse(cityTimestamp(now)) - Date.parse(doc.fetched_at) > 6 * 3600_000;
   const oldDate = doc.kind === "flights" && doc.requested_date !== previousHongKongDate(now);
   return { ...doc, build: { stale: oldAge || oldDate, reason: oldDate ? "航班原定日期已非香港前一日" : oldAge ? "快照已超過六小時" : "" } };

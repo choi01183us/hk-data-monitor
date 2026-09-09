@@ -24,7 +24,8 @@ npm run dev            # 開發伺服器
 npm run build          # 砌站 + 生成 service worker
 npm run build:offline  # 唔上網砌(CI 用)
 npm run refresh        # 重抓全部 API 指標
-npm run refresh:city   # 更新新聞及前一日客機快照；見 docs/城市快照.md
+npm run refresh:city   # 更新新聞、前一日客機及天氣快照；見 docs/城市快照.md
+node scripts/refresh-city.mjs --weather-only # 只更新天氣，不重抓新聞／航班
 npm run validate       # 驗快照符合 SPEC 第 5 節
 npm run test:checks    # 檢查器自證 + fixture 重播 + 教學換算／引用(零網絡)
 npm run test:offline   # 離線行為測試(要 Playwright,冇就 SKIP)

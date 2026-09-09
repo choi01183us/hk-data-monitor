@@ -137,7 +137,7 @@ export async function testCityFeeds(check) {
     globalThis.fetch = async () => { throw new Error("測試禁止外部網絡"); };
     try {
       check("有快照嘅普通 loader 零網絡", (await loadCitySnapshot("news", { snapshotDir })).content_hash === goodNews.content_hash);
-      for (const kind of ["news", "flights"]) {
+      for (const kind of ["news", "flights", "weather"]) {
         const original = await readCitySnapshot(kind);
         const replayed = await replayCitySnapshot(kind);
         check(`真實 ${kind} 錄影重播內容 hash 同快照相同`, replayed.content_hash === original.content_hash);
@@ -151,7 +151,8 @@ export async function testCityFeeds(check) {
       if (source.split(before).length !== 2) throw new Error(`城市源碼突變冇精確命中:${before}`);
       const code = source.replace(before, after)
         .replace('from "jsdom"', `from ${JSON.stringify(pathToFileURL(createRequire(import.meta.url).resolve("jsdom")).href)}`)
-        .replace('from "./http.js"', `from ${JSON.stringify(new URL("../src/data/_lib/http.js", import.meta.url).href)}`);
+        .replace('from "./http.js"', `from ${JSON.stringify(new URL("../src/data/_lib/http.js", import.meta.url).href)}`)
+        .replace('from "../../components/weather-state.js"', `from ${JSON.stringify(new URL("../src/components/weather-state.js", import.meta.url).href)}`);
       const path = join(temporary, `mutant-${seq++}.mjs`); await writeFile(path, code); return import(pathToFileURL(path).href);
     }
     const timezone = await mutate("ms + 8 * 3600_000", "ms + 0 * 3600_000");

@@ -1,9 +1,11 @@
-# 新聞與航班獨立城市快照；原每週統計排程保持不變。
+# 新聞、航班及天氣共用城市快照流程；原每週統計排程保持不變。
 name: 定時更新城市快照
 on:
   schedule:
     # 每三小時；UTC :37 避開整點。GitHub 排程並非準時服務保證。
     - cron: "37 */3 * * *"
+    # 天氣每小時另抓一次；07 分讓官方約 02 分報告有時間發布。
+    - cron: "7 * * * *"
   workflow_dispatch:
     inputs:
       deploy:
@@ -34,7 +36,15 @@ jobs:
           node-version-file: .node-version
           cache: npm
       - run: npm ci
-      - run: node scripts/refresh-city.mjs
+      - name: 更新對應城市快照
+        env:
+          HKDM_CITY_SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          case "${HKDM_CITY_SCHEDULE:-}" in
+            "7 * * * *") node scripts/refresh-city.mjs --weather-only ;;
+            "37 */3 * * *"|"") node scripts/refresh-city.mjs ;;
+            *) echo "未知城市排程，停止刷新" >&2; exit 1 ;;
+          esac
       - run: npm run validate
       - run: npm run test:checks
       - name: 只提交同次快照及錄影
