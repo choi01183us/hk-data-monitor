@@ -1572,3 +1572,40 @@ body {
   .map-view-source .district-legend { padding: 0 0 .3rem; border: 0; }
   .map-view-source .district-legend span { display: inline-flex; }
 }
+
+/* 港澳雙城：保留同一地圖工具及資料卡，城市範圍明示。 */
+@media screen {
+  .city-switch { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: 1rem 0 0; }
+  .city-switch > a { display: flex; align-items: center; gap: .6rem; min-height: 44px; padding: 0 1.1rem; background: #112330; border: 1px solid #2a4052; border-radius: 3px; text-decoration: none; font-size: .9rem; }
+  .city-switch > a span { font: .7rem var(--monitor-mono); color: #a5b8c8; }
+  .city-switch > a[aria-current=page] { border-color: #65ddc1; color: #b3f2df; background: #15332f; }
+  .city-switch p { font-size: .72rem; color: var(--theme-foreground-muted); margin: 0 0 0 .5rem; }
+  .macau-page .city-intro { padding-block: 2rem; }
+  .macau-page .city-intro h2 { line-height: 1.3; }
+  .macau-compare { margin-top: 1rem; }
+  .macau-comparison-grid { display: grid; gap: 1rem; padding: .5rem 1.1rem 1rem; }
+  .macau-comparison-grid article { border-top: 1px solid #2a4052; padding-top: .9rem; }
+  .macau-comparison-grid h3 { font-size: 1rem; margin: .4rem 0; }
+  .macau-comparison-grid p { font-size: .8rem; color: var(--theme-foreground-muted); }
+  .macau-comparison-grid a { font-size: .78rem; }
+  .macau-memo { display: flex; flex-wrap: wrap; gap: 1rem 2rem; align-items: center; justify-content: space-between; padding: 2rem 0; }
+  .macau-memo > div { flex: 1 1 30rem; }
+  .macau-memo h2 { font-size: 1.3rem; margin: .5rem 0; }
+  .macau-memo p { font-size: .85rem; color: var(--theme-foreground-muted); }
+  .macau-memo > a { padding: .8rem 1rem; border: 1px solid #65ddc1; color: #b3f2df; text-decoration: none; }
+  .macau-map-search { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; padding: .6rem 1.1rem; font-size: .78rem; }
+  .macau-map-search input { flex: 1 1 12rem; width: 100%; min-width: 0; font: inherit; padding: .7rem; color: #e6f0f7; background: #112330; border: 1px solid #506b80; border-radius: 2px; }
+  .macau-page .city-map-canvas > svg { display: block; width: 100%; height: 100%; }
+  @media (min-width: 1000px) {
+    .macau-top-grid { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); }
+    .macau-comparison-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  @media (max-width: 699px) {
+    .city-switch p { flex-basis: 100%; margin: .4rem 0 0; }
+  }
+}
+@media screen {
+  .macau-page :is(.city-marker, .city-map-filters label)[data-type=culture] { color: #f6c677; }
+  .macau-page :is(.city-marker, .city-map-filters label)[data-type=urban] { color: #d7b7ff; }
+  .macau-page :is(.city-marker, .city-map-filters label)[data-type=nature] { color: #82e6b9; }
+}

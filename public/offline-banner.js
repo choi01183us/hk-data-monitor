@@ -47,7 +47,7 @@
     var banner = ensureBanner();
     var date = formatDate(dataAsOf);
     banner.querySelector(".hkdm-offline-banner__text").textContent = date
-      ? "目前為離線快取,數據截至 " + date + "。"
+      ? "目前為離線快取；全站數據截至日期最早為 " + date + "。各項統計期請看資料卡。"
       : "目前為離線快取。";
     banner.hidden = false;
   }

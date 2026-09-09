@@ -48,7 +48,7 @@ export function indicatorCard(indicator, { href } = {}) {
   // 同一個 helper 揀大字同小圖，禁止「上面係總額、下面畫其中一類」。
   const trend = cardTrend(indicator);
   const { shown, label: shownLabel } = trend;
-  const trendDescription = trend.first
+  const trendDescription = trend.first && trend.first.period !== trend.last.period
     ? `${name_zh}${shownLabel ? `（${shownLabel}）` : ""}走勢。${periodWithNote(indicator, trend.first.period)}：${formatNumber(trend.first.value, { digits: value_digits })} ${unit_zh}；${periodWithNote(indicator, trend.last.period)}：${formatNumber(trend.last.value, { digits: value_digits })} ${unit_zh}。來源：${source_zh}。各卡獨立刻度，缺值會斷線；完整圖表及資料表見指標頁。`
     : null;
 
@@ -66,7 +66,7 @@ export function indicatorCard(indicator, { href } = {}) {
     </p>
     ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;入去可以睇分類</p>` : null}
 
-    ${trend.first ? html`<div class="indicator-card__trend">
+    ${trendDescription ? html`<div class="indicator-card__trend">
       ${svg`<svg class="indicator-card__sparkline" viewBox=${`0 0 ${trend.width} ${trend.height}`} role="img" aria-label=${trendDescription} preserveAspectRatio="none">
         <title>${trendDescription}</title>
         ${trend.segments.map((segment) => segment.length === 1

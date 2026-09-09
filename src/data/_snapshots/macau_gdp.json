@@ -1,0 +1,70 @@
+{
+  "source_zh": "澳門統計暨普查局",
+  "source_en": "Statistics and Census Service, Macao SAR",
+  "licence": "澳門統計暨普查局官方統計；刊登資料須指出資料來源（原刊第1頁）",
+  "updated_at": "2025-12-31",
+  "frequency": "annual",
+  "acquisition": "manual",
+  "category": "澳門",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "indicator_id": "macau_gdp",
+  "name_zh": "澳門本地生產總值",
+  "name_en": "Macao gross domestic product at current prices",
+  "unit_zh": "澳門元",
+  "unit_en": "MOP",
+  "unit_short_zh": "澳門元",
+  "unit_source_zh": "澳門元（由原報億澳門元人手換算）",
+  "value_digits": 0,
+  "source_url": "https://www.dsec.gov.mo/getAttachment/2fdc5303-030e-4d73-b70a-f605ae31f889/C_PIB_FR_2025_Q4.aspx",
+  "source_note_zh": "原始統計及知識產權擁有人：澳門統計暨普查局。人手核對《本地生產總值》2025年第四季第1頁最後一項摘要，2025全年原值4,180.4億澳門元，為2026-02-13詳細結果的修訂數值。本檔已人手換算成418,040,000,000澳門元（4,180.4 × 100,000,000），載入時倍率為1；保留原報四捨五入至0.1億澳門元的精度，沒有換算成港元。2026-09-09核對。",
+  "question_zh": "澳門一年創造幾多經濟產出？GDP與政府收入有咩分別？",
+  "basis_zh": "2025年全年按當年價格計算的澳門本地生產總值總額，採2026-02-13詳細結果的修訂值；原報單位為億澳門元，乘100,000,000轉為澳門元（MOP）。不是實質增長率、人均GDP或政府收入。",
+  "notes_zh": "GDP衡量一個經濟體在一段期間內的生產活動規模，不能視為政府可以分配的收入，亦不等於每名居民所得。本頁採用官方詳細結果的2025年全年總額，按當年價格及澳門元列示；原報只保留至0.1億澳門元，換成澳門元不代表新增精確度。與香港GDP比較時要先核對年份、當年價格口徑及幣別；本頁沒有提供匯率換算或直接把港元和澳門元金額相比。資料為固定人手年度快照。",
+  "anchors": [
+    {
+      "id": "gdp_hundred_million",
+      "text_zh": "相當於4,180.4億澳門元",
+      "basis_zh": "418,040,000,000澳門元 ÷ 100,000,000 = 4,180.4億澳門元；保留原報精度，未換成港元。"
+    }
+  ],
+  "category_order": [
+    "本地生產總值（當年價格）"
+  ],
+  "period_notes": {
+    "2025": "2025年全年；2026-02-13詳細結果修訂值；原值4,180.4億澳門元"
+  },
+  "licence_url": "https://www.dsec.gov.mo/getAttachment/2fdc5303-030e-4d73-b70a-f605ae31f889/C_PIB_FR_2025_Q4.aspx#page=1",
+  "fetched_at": "2026-09-09T00:00:00Z",
+  "manual_status": "filled",
+  "manual_filled": "1/1",
+  "series": [
+    {
+      "period": "2025",
+      "category": "本地生產總值（當年價格）",
+      "value": 418040000000
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "本地生產總值（當年價格）",
+      "period": "2025",
+      "value": 418040000000
+    }
+  ],
+  "coverage": {
+    "start": "2025",
+    "end": "2025",
+    "points": 1,
+    "points_with_value": 1
+  },
+  "latest": {
+    "period": "2025",
+    "category": "本地生產總值（當年價格）",
+    "value": 418040000000
+  },
+  "content_hash": "sha256:630490cda96e0506",
+  "data_version": "2026.09.1"
+}

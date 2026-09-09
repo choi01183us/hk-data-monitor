@@ -2,7 +2,7 @@ import {html} from "npm:htl";
 import {normalizeMapView, zoomMapView, panMapView, focusMapView, mapTransform} from "./map-view.js";
 
 // 一個座標平面包含底圖、區界及 HTML 標記；操作只留在記憶體，唔改原始位置。
-export function mapViewport({label = "香港互動地圖"} = {}) {
+export function mapViewport({label = "香港互動地圖", resetLabel = "香港全景"} = {}) {
   let state = normalizeMapView(), selection = null, drag = null, suppressClick = false;
   const stage = html`<div class="map-stage"></div>`;
   const viewport = html`<div class="map-viewport" tabindex="0" role="group" aria-label=${`${label}；方向鍵移動，加減鍵縮放，Home 重設`}>${stage}</div>`;
@@ -14,7 +14,7 @@ export function mapViewport({label = "香港互動地圖"} = {}) {
   const pan = (dx, dy) => {state = panMapView(state, dx, dy); paint();};
   const plus = button("＋ 放大", () => zoom(.5), "放大地圖");
   const minus = button("− 縮小", () => zoom(-.5), "縮小地圖");
-  const reset = button("香港全景", () => {state = normalizeMapView(); paint();});
+  const reset = button(resetLabel, () => {state = normalizeMapView(); paint();});
   const locate = button("定位所選", () => {if (selection) {state = focusMapView(state, selection.x / 900, selection.y / 560); paint();}});
   const directions = [["←", .2, 0, "向西查看"], ["↑", 0, .2, "向北查看"], ["↓", 0, -.2, "向南查看"], ["→", -.2, 0, "向東查看"]].map(([text, dx, dy, name]) => button(text, () => pan(dx, dy), name));
   const fullscreen = button("全螢幕", async () => {

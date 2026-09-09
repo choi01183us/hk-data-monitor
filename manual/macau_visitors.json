@@ -1,0 +1,50 @@
+{
+  "source_zh": "澳門統計暨普查局",
+  "source_en": "Statistics and Census Service, Macao SAR",
+  "licence": "澳門統計暨普查局官方統計；刊登資料須指出資料來源（原刊第1頁）",
+  "updated_at": "2025-12-31",
+  "transcribed_at": "2026-09-09",
+  "frequency": "annual",
+  "acquisition": "manual",
+  "category": "澳門",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "indicator_id": "macau_visitors",
+  "name_zh": "澳門全年入境旅客",
+  "name_en": "Annual visitor arrivals in Macao",
+  "unit_zh": "人次",
+  "unit_en": "visitor arrivals",
+  "unit_short_zh": "人次",
+  "unit_source_zh": "人次",
+  "source_value_multiplier": 1,
+  "value_digits": 0,
+  "source_url": "https://www.dsec.gov.mo/getAttachment/9ff0f920-e541-4d15-bb4d-f6ead6e9aa23/C_TUR_FR_2025_Q4.aspx",
+  "source_note_zh": "原始統計及知識產權擁有人：澳門統計暨普查局。人手核對《旅遊統計》2025年全年及第4季第1頁首段，原值40,069,360人次。使用首段完整人次，沒有把表內四捨五入的千人次擴大成假精確數。原刊頁尾標示2026.02，原檔更新日期（Last-Modified）為2026-02-06；全年入境旅客數於2026-01-23發布。2026-09-09核對，無倍率換算。",
+  "question_zh": "一年有幾多旅客人次到澳門？人次等唔等於人數？",
+  "basis_zh": "2025年全年入境澳門旅客人次，包括留宿及不過夜旅客；同一人多次入境會累計多個人次，並非不重複旅客人數或年末人口。",
+  "notes_zh": "入境旅客使用「人次」作單位，同一人每次入境都可再次計入。全年累計人流和年末人口是不同統計概念，不能把兩者直接相加。本頁只保留已核對的2025年全年數字，不把單季、單月或假期人次當成全年總數；資料由人手維護。",
+  "anchors": [
+    {
+      "id": "visitors_ten_thousand",
+      "text_zh": "相當於4,006.936萬人次",
+      "basis_zh": "40,069,360人次 ÷ 10,000 = 4,006.936萬人次；同一人可多次入境，並非不重複人數。"
+    }
+  ],
+  "category_order": [
+    "全年入境旅客"
+  ],
+  "period_notes": {
+    "2025": "2025-01-01至2025-12-31全年；原報2026年2月，原檔更新於2026-02-06"
+  },
+  "series": [
+    {
+      "period": "2025",
+      "category": "全年入境旅客",
+      "value": 40069360
+    }
+  ],
+  "_maintainer_notes": "2026-09-09下載並視覺核對官方PDF第1頁首段40,069,360人次；表格的40,069.4千人次是已四捨五入數，不能乘1000取代首段精確人次。另對DSEC 2026-01-23原新聞：23,524,943不過夜 + 16,544,417留宿 = 40,069,360。原報第1頁頁尾有刊登須指出來源聲明。下次年度更新查全年及第四季旅遊統計。",
+  "licence_url": "https://www.dsec.gov.mo/getAttachment/9ff0f920-e541-4d15-bb4d-f6ead6e9aa23/C_TUR_FR_2025_Q4.aspx#page=1"
+}

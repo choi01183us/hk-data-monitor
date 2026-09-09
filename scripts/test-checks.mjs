@@ -625,7 +625,7 @@ console.log("\n[R5] Fixture 重播 — 零網絡跑完整 transform,對返快照
 }
 
 
-// ── R6. 離線橫額日期只計首頁顯示緊嘅指標 ───────────────────────
+// ── R6. 離線橫額日期只計全站有數據嘅統計快照 ───────────────────────
 //
 // 真實 bug:橫額顯示「數據截至 2026 年 2 月 25 日」,但嗰個日期嚟自
 // public_expenditure_policy_groups —— 一個 manual_status: "todo"、一個數都冇填、
@@ -662,6 +662,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   );
   check("取最舊唔取最新(橫額要保守)", pickDataAsOf([displayed, filledManual]) === "2026-02-25");
   check("一個都冇顯示 -> null", pickDataAsOf([todoManual]) === null);
+  check("澳門專頁有數據亦計入全站日期，todo 仍排除", pickDataAsOf([displayed, todoManual, {indicator_id: "macau_population", updated_at: "2025-12-31", series: [{period: "2025", value: 688900}]}]) === "2025-12-31");
 
   // 對返真實快照:而家 13 份入面有 2 份未填
   const realDocs = [];
@@ -814,6 +815,11 @@ const { testMapView } = await import("./test-map-view.mjs");
 await testMapView(check);
 const { testBrowserViewport } = await import("./test-browser-viewport.mjs");
 await testBrowserViewport(check);
+
+const { testMacauData } = await import("./test-macau-data.mjs");
+await testMacauData(check);
+const { testMacauGeography } = await import("./test-macau-geography.mjs");
+await testMacauGeography(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

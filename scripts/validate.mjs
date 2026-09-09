@@ -26,6 +26,8 @@ import { validateIndicator, REQUIRED_FIELDS } from "../src/data/_lib/schema.js";
 import { loadManualIndicator, MANUAL_DIR } from "../src/data/_lib/manual.js";
 import { assertSeparatedExpenditureSources } from "./expenditure-scope-gate.mjs";
 import { readCitySnapshot, CITY_KINDS } from "../src/data/_lib/city-feeds.js";
+import { validateMacauGeography } from "../src/data/_lib/macau-geography-check.js";
+import { macauPlaces } from "../src/components/macau-places.js";
 import { fileURLToPath } from "node:url";
 
 /**
@@ -60,6 +62,16 @@ async function main() {
   } catch (error) {
     failures += 1;
     console.error(`FAIL expenditure scopes — ${error.message}`);
+  }
+
+  try {
+    const geography = JSON.parse(await readFile(new URL("../src/data/macau-geography.json", import.meta.url), "utf8"));
+    const result = validateMacauGeography(geography, macauPlaces);
+    if (!result.ok) throw new Error(result.errors.join("；"));
+    console.log("ok   Macau geography       離線輪廓、定位及來源");
+  } catch (error) {
+    failures += 1;
+    console.error(`FAIL Macau geography — ${error.message}`);
   }
 
   for (const file of files) {

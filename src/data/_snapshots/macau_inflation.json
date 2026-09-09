@@ -1,0 +1,70 @@
+{
+  "source_zh": "澳門統計暨普查局",
+  "source_en": "Statistics and Census Service, Macao SAR",
+  "licence": "澳門統計暨普查局官方統計；刊登資料須指出資料來源（原刊第1頁）",
+  "updated_at": "2025-12-31",
+  "frequency": "annual",
+  "acquisition": "manual",
+  "category": "澳門",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "indicator_id": "macau_inflation",
+  "name_zh": "澳門全年通脹率",
+  "name_en": "Annual inflation rate in Macao",
+  "unit_zh": "%",
+  "unit_en": "%",
+  "unit_short_zh": "%",
+  "unit_source_zh": "%",
+  "value_digits": 2,
+  "source_url": "https://www.dsec.gov.mo/getAttachment/c5de5e9d-4e6e-4166-b3ac-1dd8bca276aa/C_IPC_FR_2025_M12.aspx",
+  "source_note_zh": "原始統計及知識產權擁有人：澳門統計暨普查局。人手核對《消費物價指數》2025年全年及12月第1頁首段，以及「2025年平均指數值」下通脹率一行的綜合欄，原值0.33%。來源於2026-01-23發布；2026-09-09核對。另與DSEC統計指標6021年度VAL回應核對一致，網站仍使用本次人手年度快照。",
+  "question_zh": "澳門全年平均物價升咗幾多？點解唔等於12月升幅？",
+  "basis_zh": "2025年全年綜合消費物價平均指數相對2024年全年平均指數的百分比變動；官方基期為2023年7月至2024年6月=100。採綜合指數，不採甲類、乙類或單月按年率。",
+  "notes_zh": "全年通脹率反映全年平均物價變化，不是把十二個月按年率相乘，也不是12月單月與去年12月的比較。綜合消費物價指數反映指定住戶籃子的平均價格變化；不同家庭的實際開支變化可以不同。比較香港時要使用同年的全年綜合指數平均變動率，並註明兩地消費籃子及權數不同。本頁為固定2025年人手年度資料。",
+  "anchors": [
+    {
+      "id": "inflation_index_example",
+      "text_zh": "算式示例：指數100變成100.33，升幅0.33%",
+      "basis_zh": "(100.33 - 100) ÷ 100 × 100 = 0.33%；純算式示例，不是澳門的實際指數點數。"
+    }
+  ],
+  "category_order": [
+    "綜合消費物價平均指數按年變動"
+  ],
+  "period_notes": {
+    "2025": "2025年全年平均相對2024年全年平均；來源發布於2026-01-23"
+  },
+  "licence_url": "https://www.dsec.gov.mo/getAttachment/c5de5e9d-4e6e-4166-b3ac-1dd8bca276aa/C_IPC_FR_2025_M12.aspx#page=1",
+  "fetched_at": "2026-09-09T00:00:00Z",
+  "manual_status": "filled",
+  "manual_filled": "1/1",
+  "series": [
+    {
+      "period": "2025",
+      "category": "綜合消費物價平均指數按年變動",
+      "value": 0.33
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "綜合消費物價平均指數按年變動",
+      "period": "2025",
+      "value": 0.33
+    }
+  ],
+  "coverage": {
+    "start": "2025",
+    "end": "2025",
+    "points": 1,
+    "points_with_value": 1
+  },
+  "latest": {
+    "period": "2025",
+    "category": "綜合消費物價平均指數按年變動",
+    "value": 0.33
+  },
+  "content_hash": "sha256:5f67bd420e2bab04",
+  "data_version": "2026.09.1"
+}

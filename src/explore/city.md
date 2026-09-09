@@ -28,6 +28,8 @@ const economy = await Promise.all([
   <nav class="monitor-nav" aria-label="城市專區導覽"><a href="../">香港總覽</a><a href="./industries">行業・金融保險</a><a href="./technology">科技與香港</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
 </header>
 
+<nav class="city-switch" aria-label="切換觀察城市"><a href="./city" aria-current="page"><span>HK</span>香港</a><a href="./macau"><span>MO</span>澳門</a><p>各城市資料獨立列示；比較前先核對年份、單位同定義。</p></nav>
+
 <div class="city-intro"><div><span class="monitor-kicker">由城市動態，睇到公共需要</span><h2 id="city-overview">香港，如何連繫世界。</h2></div><p>由十八區人口、入息同景點，連到新聞、行業與對外貿易。先了解生活處境，再討論公共資源點分。</p></div>
 <nav class="city-section-nav" aria-label="城市面板"><a href="#city-map">01 地圖</a><a href="#city-news">02 新聞</a><a href="#city-economy-heading">03 經濟與航運</a><a href="#city-flights">04 航班</a><span>定時快照 · 官方即時入口</span></nav>
 

@@ -87,8 +87,8 @@ const critical = [
 // 圖表 library:大,但離線畫圖要用。install 嗰陣逐個試,失敗唔會拖冧成個 install。
 const optional = files.filter((file) => isNpm(file.path)).map((file) => file.path);
 
-// 數據截至日期:**首頁真係顯示緊嗰批**入面最舊嗰個(見 site-meta.js 嘅註解)。
-// 一個未填數、首頁唔會出嘅 manual 指標,唔應該拉低橫額嘅日期。
+// 全站有數據的統計快照中最早的截至日（包括香港及澳門專頁）。
+// 未填數的 manual 不計入；各卡仍獨立標明真正統計期。
 const docs = [];
 let jsonBytes = 0;
 if (existsSync(SNAPSHOTS)) {
@@ -149,7 +149,7 @@ console.log(`  版本            ${version}`);
 console.log(`  數據截至(最舊)  ${dataAsOf ?? "(冇快照)"}`);
 if (hidden.length > 0) {
   console.log(
-    `  首頁唔顯示      ${hidden.map((doc) => doc.indicator_id).join("、")}` +
+    `  未有數據        ${hidden.map((doc) => doc.indicator_id).join("、")}` +
       `(未填數,唔計入上面個日期)`
   );
 }

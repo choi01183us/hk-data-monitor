@@ -1,0 +1,50 @@
+{
+  "source_zh": "澳門統計暨普查局",
+  "source_en": "Statistics and Census Service, Macao SAR",
+  "licence": "澳門統計暨普查局官方統計；刊登資料須指出資料來源（原刊第1頁）",
+  "updated_at": "2025-12-31",
+  "transcribed_at": "2026-09-09",
+  "frequency": "annual",
+  "acquisition": "manual",
+  "category": "澳門",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "indicator_id": "macau_population",
+  "name_zh": "澳門年末人口",
+  "name_en": "Macao population at year-end",
+  "unit_zh": "人",
+  "unit_en": "persons",
+  "unit_short_zh": "人",
+  "unit_source_zh": "人",
+  "source_value_multiplier": 1,
+  "value_digits": 0,
+  "source_url": "https://www.dsec.gov.mo/getAttachment/deb7e332-7a04-460e-b5f2-d36f8a410ebe/C_DEM_FR_2025_Q4.aspx",
+  "source_note_zh": "原始統計及知識產權擁有人：澳門統計暨普查局。人手核對《人口統計》2025年第四季第1頁首段及「主要指標」總人口（期末）本季一格，原值688,900人。來源於2026-03-16發布，資料期末為2025-12-31；2026-09-09核對，無倍率換算。",
+  "question_zh": "澳門年末有幾多人？人口與旅客人次有咩分別？",
+  "basis_zh": "澳門2025年年末總人口（期末人口估計），單位為人；只列年末一個時點，並非全年入境人流或本地居民人數。",
+  "notes_zh": "這是澳門年末的總人口估計。本地人口、總人口和入境旅客人次各有統計範圍，不能互相替代。比較香港人口時，須核對兩地人口定義及是否同為年末；不要用此年末數字代替官方人均GDP所用的人口分母。本頁只保留已核對的2025年年度資料，由人手維護。",
+  "anchors": [
+    {
+      "id": "population_ten_thousand",
+      "text_zh": "相當於68.89萬人",
+      "basis_zh": "688,900人 ÷ 10,000 = 68.89萬人；只作單位換算，仍是2025年末人口。"
+    }
+  ],
+  "category_order": [
+    "澳門總人口（年末）"
+  ],
+  "period_notes": {
+    "2025": "2025-12-31年末；來源發布於2026-03-16"
+  },
+  "series": [
+    {
+      "period": "2025",
+      "category": "澳門總人口（年末）",
+      "value": 688900
+    }
+  ],
+  "_maintainer_notes": "2026-09-09下載官方PDF並視覺核對第1頁：總人口688,900，男317,600，女371,300，兩者相加688,900。頁尾印有刊登須指出來源的使用聲明。本檔只保留總人口，其他值僅作核對。下次年度更新查DSEC人口統計第四季報告；勿以本地人口或居澳外地僱員單一群組替代。",
+  "licence_url": "https://www.dsec.gov.mo/getAttachment/deb7e332-7a04-460e-b5f2-d36f8a410ebe/C_DEM_FR_2025_Q4.aspx#page=1"
+}
