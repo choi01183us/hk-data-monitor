@@ -1,0 +1,150 @@
+{
+  "source_url": "https://portal.csdi.gov.hk/csdi-webpage/apidoc/LocationSearchAPI",
+  "endpoint": "https://www.map.gov.hk/gs/api/v1.0.0/locationSearch",
+  "source_zh": "地政總署位置搜尋 API",
+  "verified_at": "2026-09-09",
+  "spatial_reference": 2326,
+  "note": "僅保留十個經逐筆核對的原始回傳記錄；查詢結果可能包括同名建築、設施、商戶及停車場，沒有自動取首項。記錄沒有穩定 facility ID，id 是本網站識別碼。",
+  "records": [
+    {
+      "id": "peak",
+      "query": "凌霄閣",
+      "record": {
+        "addressZH": "山頂道   128號",
+        "nameZH": "山頂凌霄閣",
+        "districtZH": "中西區",
+        "x": 833486.0,
+        "y": 814712.0,
+        "nameEN": "The Peak Tower",
+        "addressEN": "128 PEAK ROAD  ",
+        "districtEN": "Central and Western District"
+      }
+    },
+    {
+      "id": "star-ferry",
+      "query": "尖沙咀天星碼頭",
+      "record": {
+        "addressZH": "尖沙咀天星碼頭",
+        "nameZH": "香港旅遊發展局-九龍旅客諮詢中心",
+        "districtZH": "油尖旺區",
+        "x": 835410.0,
+        "y": 817225.0,
+        "nameEN": "Hong Kong Tourism Board-Kowloon Visitor Centre",
+        "addressEN": "Star Ferry Concourse, Tsim Sha Tsui, Kowloon",
+        "districtEN": "Yau Tsim Mong District"
+      }
+    },
+    {
+      "id": "avenue-of-stars",
+      "query": "星光大道",
+      "record": {
+        "addressZH": "",
+        "nameZH": "星光大道",
+        "districtZH": "油尖旺區",
+        "x": 836008.0,
+        "y": 817124.0,
+        "nameEN": "AVENUE OF STARS",
+        "addressEN": "",
+        "districtEN": "Yau Tsim Mong District"
+      }
+    },
+    {
+      "id": "m-plus",
+      "query": "博物館道38號",
+      "record": {
+        "addressZH": "博物館道   38號",
+        "nameZH": "M＋",
+        "districtZH": "油尖旺區",
+        "x": 834441.0,
+        "y": 817991.0,
+        "nameEN": "M+",
+        "addressEN": "38 MUSEUM DRIVE  ",
+        "districtEN": "Yau Tsim Mong District"
+      }
+    },
+    {
+      "id": "palace-museum",
+      "query": "香港故宮文化博物館",
+      "record": {
+        "addressZH": "博物館道   8號",
+        "nameZH": "香港故宮文化博物館",
+        "districtZH": "油尖旺區",
+        "x": 834018.0,
+        "y": 818070.0,
+        "nameEN": "Hong Kong Palace Museum",
+        "addressEN": "8 MUSEUM DRIVE  ",
+        "districtEN": "Yau Tsim Mong District"
+      }
+    },
+    {
+      "id": "tai-kwun",
+      "query": "大館",
+      "record": {
+        "addressZH": "荷李活道   10號",
+        "nameZH": "大館",
+        "districtZH": "中西區",
+        "x": 833911.0,
+        "y": 815819.0,
+        "nameEN": "Tai Kwun",
+        "addressEN": "10 HOLLYWOOD ROAD  ",
+        "districtEN": "Central and Western District"
+      }
+    },
+    {
+      "id": "ocean-park",
+      "query": "海洋公園",
+      "record": {
+        "addressZH": "香港 南區 黃竹坑道180號",
+        "nameZH": "香港海洋公園",
+        "districtZH": "南區",
+        "x": 836042.019,
+        "y": 812161.342,
+        "nameEN": "OCEAN PARK",
+        "addressEN": "180 WONG CHUK HANG ROAD, Southern District, Hong Kong",
+        "districtEN": "Southern District"
+      }
+    },
+    {
+      "id": "disneyland",
+      "query": "香港迪士尼樂園",
+      "record": {
+        "addressZH": "新界大嶼山香港迪士尼樂園",
+        "nameZH": "香港迪士尼樂園",
+        "districtZH": "離島區",
+        "x": 822543.89206213,
+        "y": 818722.88704739,
+        "nameEN": "Hong Kong Disneyland Resort",
+        "addressEN": "Hong Kong Disneyland, Lantau Island, New Territories.",
+        "districtEN": "Islands District"
+      }
+    },
+    {
+      "id": "big-buddha",
+      "query": "天壇大佛",
+      "record": {
+        "addressZH": "",
+        "nameZH": "天壇大佛",
+        "districtZH": "離島區",
+        "x": 808245.0,
+        "y": 812822.0,
+        "nameEN": "Tian Tan Buddha Statue",
+        "addressEN": "",
+        "districtEN": "Islands District"
+      }
+    },
+    {
+      "id": "cheung-chau",
+      "query": "長洲",
+      "record": {
+        "addressZH": "",
+        "nameZH": "長洲",
+        "districtZH": "離島區",
+        "x": 821070.0,
+        "y": 807840.0,
+        "nameEN": "Cheung Chau",
+        "addressEN": "",
+        "districtEN": "Islands District"
+      }
+    }
+  ]
+}

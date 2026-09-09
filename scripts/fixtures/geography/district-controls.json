@@ -1,0 +1,168 @@
+{
+  "source_sha256": "db78a66409449135e3e117a9cc037ed8f13313eefd86b6b1dff19e4ca4e5fc8a",
+  "land_sha256": "dbd71908cc4385f56d37717b13d03c327b19b8e7c61012e1beacc266bd997230",
+  "controls": [
+    {
+      "id": "A",
+      "path_sha256": "511bcfcdb16d53d0f45bd4a814cab4b94976c2928b4862e9d1168ff8f1087523",
+      "x": 465.63,
+      "y": 384.8,
+      "easting": 833645.2179405179,
+      "northing": 814642.4226000002,
+      "path_rings": 4
+    },
+    {
+      "id": "B",
+      "path_sha256": "e11cbc7758eaf3abcdfc29660c0309681dca538095b446c3b65768097862de2f",
+      "x": 505.56,
+      "y": 383.57,
+      "easting": 837210.2933708807,
+      "northing": 814753.0716000004,
+      "path_rings": 2
+    },
+    {
+      "id": "C",
+      "path_sha256": "6ec9d689d3191076956d76d6a635917cd9ceedfc6b149b31633e0b2a78fb78ef",
+      "x": 550.34,
+      "y": 384.38,
+      "easting": 841209.2173351103,
+      "northing": 814680.66505,
+      "path_rings": 4
+    },
+    {
+      "id": "D",
+      "path_sha256": "69a22804465abfdb750ff8195f03d6037dc58bb05b7814a47f7b722a37e7239a",
+      "x": 537.14,
+      "y": 429.24,
+      "easting": 840029.9396484486,
+      "northing": 810674.8649999993,
+      "path_rings": 15
+    },
+    {
+      "id": "E",
+      "path_sha256": "57123b235d86ac1db4634020e38a9696383e499ec5153efe084e31fa8c84c3d8",
+      "x": 486.77,
+      "y": 336.9,
+      "easting": 835533.3385563234,
+      "northing": 818919.4866000004,
+      "path_rings": 5
+    },
+    {
+      "id": "F",
+      "path_sha256": "075e8318f1501ef1926a05a597009977f1bf5efd3d028fc46b13532cf04380e6",
+      "x": 474.74,
+      "y": 309.69,
+      "easting": 834458.6804541087,
+      "northing": 821348.6860999996,
+      "path_rings": 1
+    },
+    {
+      "id": "G",
+      "path_sha256": "5d9f376b3a5b5898da751d2168e9f0bca1cfa26c4ca78a534990356e65efc4e2",
+      "x": 508.28,
+      "y": 316.66,
+      "easting": 837453.8565021561,
+      "northing": 820726.6365999999,
+      "path_rings": 4
+    },
+    {
+      "id": "H",
+      "path_sha256": "9cae777284561b6ffa4233bc8a4b04ad79d3f11b7d97db0244742ee39b7e440a",
+      "x": 524.0,
+      "y": 292.89,
+      "easting": 838857.2447181786,
+      "northing": 822849.5275999997,
+      "path_rings": 1
+    },
+    {
+      "id": "J",
+      "path_sha256": "16d83110e6ec09a30d2a7e51e3e3d013dfaa004e0d891d52e8011c86029e4685",
+      "x": 556.76,
+      "y": 336.14,
+      "easting": 841781.797710008,
+      "northing": 818987.5605499996,
+      "path_rings": 9
+    },
+    {
+      "id": "S",
+      "path_sha256": "c346e80b2c843f20227341a562b5855564a8bb98fb0d600813636a6a1d6f36d1",
+      "x": 438.93,
+      "y": 285.2,
+      "easting": 831261.913586829,
+      "northing": 823536.1310999999,
+      "path_rings": 10
+    },
+    {
+      "id": "K",
+      "path_sha256": "e9f830a6aeb17c7093f13b1dee83ec8e908cb9b69591ec449992cc8974b4238f",
+      "x": 420.87,
+      "y": 240.96,
+      "easting": 829648.974154839,
+      "northing": 827485.6226000004,
+      "path_rings": 8
+    },
+    {
+      "id": "L",
+      "path_sha256": "8a1a9cccca60fef653d978ca97b135329391918a227aa2dc6f8a0b5b91b4739c",
+      "x": 279.87,
+      "y": 231.16,
+      "easting": 817060.2045215042,
+      "northing": 828361.1255000001,
+      "path_rings": 17
+    },
+    {
+      "id": "M",
+      "path_sha256": "c51eb51feb1045f5707ce5761f4364f320a5a50c332869b4a8c3ba8284baeada",
+      "x": 347.31,
+      "y": 153.89,
+      "easting": 823081.5566066778,
+      "northing": 835259.5786000006,
+      "path_rings": 3
+    },
+    {
+      "id": "N",
+      "path_sha256": "895e2867f79654a715b3ad61b4275f58d664d202e6d06618f1c452866377f2bb",
+      "x": 500.63,
+      "y": 83.1,
+      "easting": 836770.307457278,
+      "northing": 841580.5255499994,
+      "path_rings": 33
+    },
+    {
+      "id": "P",
+      "path_sha256": "2da77f7b4dd2589865e34b91dbf88ebc0864f1ddaa35f77390c047cc80821565",
+      "x": 482.71,
+      "y": 148.76,
+      "easting": 835170.1921349784,
+      "northing": 835717.8509999998,
+      "path_rings": 29
+    },
+    {
+      "id": "R",
+      "path_sha256": "5e937aab4bd79406026cc24fd877a20346a5c2524642fa363d97f9f78092665e",
+      "x": 530.61,
+      "y": 235.92,
+      "easting": 839447.1091571025,
+      "northing": 827935.9441,
+      "path_rings": 1
+    },
+    {
+      "id": "Q",
+      "path_sha256": "56cb4b6f769d4be89eed16e2bac09c90c01c5f2be0435f6bef882d5b826da752",
+      "x": 571.37,
+      "y": 284.08,
+      "easting": 843086.522714063,
+      "northing": 823635.4874999998,
+      "path_rings": 125
+    },
+    {
+      "id": "T",
+      "path_sha256": "2bfee90aaacc5821d21c16771a216bc5df109c12ef19e4b96d6e539289174c72",
+      "x": 219.14,
+      "y": 403.7,
+      "easting": 811637.2961942794,
+      "northing": 812955.2615999999,
+      "path_rings": 65
+    }
+  ]
+}

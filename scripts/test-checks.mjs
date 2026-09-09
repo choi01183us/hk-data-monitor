@@ -779,6 +779,13 @@ await testHongKongPlaces(check);
 const { testCityView } = await import("./test-city-view.mjs");
 await testCityView(check);
 
+const { testDistrictView } = await import("./test-district-view.mjs");
+await testDistrictView(check);
+const { testDistrictData } = await import("./test-district-data.mjs");
+await testDistrictData(check);
+const { testDistrictGeography } = await import("./test-district-geography.mjs");
+await testDistrictGeography(check);
+
 const { testRefreshWorkflows } = await import("./test-refresh-workflows.mjs");
 await testRefreshWorkflows(check);
 

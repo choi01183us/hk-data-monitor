@@ -35,6 +35,9 @@ export default {
       name: "主題探索",
       pages: [
         { name: "香港城市觀察", path: "/explore/city" },
+        { name: "香港行業・金融與保險", path: "/explore/industries" },
+        { name: "十八區人口", path: "/indicators/district_population" },
+        { name: "十八區住戶入息", path: "/indicators/district_household_income" },
         { name: "科技與香港", path: "/explore/technology" },
         { name: "本地研發總開支", path: "/indicators/rd_expenditure" },
         { name: "住戶上網率", path: "/indicators/household_internet" },

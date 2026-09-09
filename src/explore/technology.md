@@ -28,6 +28,7 @@ const indicators = await Promise.all([
   <nav class="monitor-nav" aria-label="科技專區導覽">
     <a href="../">香港總覽</a>
     <a href="./city">城市觀察</a>
+    <a href="./industries">行業・金融保險</a>
     <a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>
   </nav>
 </header>

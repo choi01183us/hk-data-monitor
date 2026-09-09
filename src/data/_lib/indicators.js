@@ -28,6 +28,8 @@ import {
 } from "../../components/anchor.js";
 import { loadFstbCsvIndicator } from "./fstb.js";
 import { loadFiscalReserves } from "./treasury.js";
+import { DISTRICT_CATEGORIES, DISTRICT_WITH_HK } from "../../components/district-categories.js";
+import { districtThousandsToPersons, verifyDistrictPopulation, verifyDistrictHouseholdIncome } from "./district-invariants.js";
 
 /**
  * 統計處指標嘅設定形狀:
@@ -43,6 +45,60 @@ import { loadFiscalReserves } from "./treasury.js";
  *   categories    [{code, label_zh}] —— 明文列出要邊幾個,連 Total("")都要寫
  */
 export const CENSTATD_INDICATORS = {
+  district_population: {
+    table: "110-06811",
+    sv: "PP",
+    stat_pres: "Raw_K_1dp_per_n",
+    cv: { DC: DISTRICT_CATEGORIES.map((district) => district.code), SEX: ["M", "F"], AGE: ["0-14", "15-24", "25-64", "65_and_over"] },
+    freq: "Y",
+    period_start: "201801",
+    pin: { SEX: "", AGE: "" },
+    category_dim: "DC",
+    categories: DISTRICT_WITH_HK,
+    unit_zh: "人",
+    unit_en: "persons",
+    unit_short_zh: "人",
+    value_digits: 0,
+    name_zh: "各區人口",
+    name_en: "Land-based non-institutional population by district",
+    category: "地區生活",
+    question_zh: "邊啲區住得最多人？公共服務應該點配合居住人口？",
+    basis_zh: "按區議會分區嘅全年陸上非住院人口，涵蓋所有性別及年齡；唔包括院舍住院人士及水上居民，唔等同年末居港人口",
+    notes_zh: "數字根據全年綜合住戶統計調查及年中人口估計編製，反映全年整體情況；原表千人乘 1,000 轉成人，公布數字已進位至最接近百位數。" +
+      "全港分類係同一張表嘅官方數字，唔係用另一個人口指標補入。地圖顯示居住人數，唔係人口密度、日間工作人口或遊客數。" +
+      "2016 年起灣仔／東區分界改變，唔可同 2015 年或以前嚴格比較；此頁由 2018 年起。各區四捨五入後相加未必完全等於全港。",
+    chart: { type: "bar", y_zero: true },
+    transform: districtThousandsToPersons,
+    verify: verifyDistrictPopulation,
+    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港陸上非住院人口" })),
+  },
+
+  district_household_income: {
+    table: "130-06806",
+    sv: "MED_DH_INC",
+    stat_pres: "Raw_hkd_d",
+    cv: { DC: DISTRICT_CATEGORIES.map((district) => district.code) },
+    freq: "Y",
+    period_start: "201801",
+    category_dim: "DC",
+    categories: DISTRICT_WITH_HK,
+    unit_zh: "港元",
+    unit_en: "HK$ per household per month",
+    unit_short_zh: "元",
+    value_digits: 0,
+    name_zh: "各區住戶月入中位數",
+    name_en: "Median monthly domestic household income by district",
+    category: "地區生活",
+    question_zh: "各區一般住戶月入有幾大差距？點樣辨認支援需要？",
+    basis_zh: "所有家庭住戶嘅每月入息中位數，包括非從事經濟活動住戶；唔係個人薪酬、平均收入或資產財富，亦冇剔除外籍家庭傭工",
+    notes_zh: "用原表 MED_DH_INC，唔用只計從事經濟活動住戶或剔除外籍家庭傭工嘅另一套數。住戶月入包括所有成員工作現金入息（未扣強積金）、租金、利息、股息、退休金及政府津貼等現金入息。" +
+      "全港分類係統計處直接公布嘅全港住戶中位數，唔係 18 區中位數嘅相加或平均。收入未扣通脹，原表進位至最接近百元；住戶人數、年齡及就業情況都會影響比較。" +
+      "地區中位數唔能夠話你知最有錢嘅人係邊個，亦唔代表區內每戶都有呢個收入。2016 年灣仔／東區分界改變，此頁由 2018 年起。",
+    chart: { type: "bar", y_zero: true },
+    verify: verifyDistrictHouseholdIncome,
+    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港住戶月入中位數（未扣通脹）" })),
+  },
+
   goods_imports: {
     table: "410-50001",
     sv: "VAL_IM",

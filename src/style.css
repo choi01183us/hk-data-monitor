@@ -1147,3 +1147,162 @@ body {
     .city-economy { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 }
+
+/* 十八區比較與代表景點；所有圖形取自本地官方資料。 */
+@media screen {
+  .district-layers { border: 0; margin: 0; padding: .5rem 1.1rem .8rem; display: flex; flex-wrap: wrap; gap: .4rem; }
+  .district-layers legend { color: var(--theme-foreground-muted); font-size: .7rem; padding: 0; }
+  .district-layers label { cursor: pointer; display: flex; align-items: center; gap: .35rem; border: 1px solid #38566a; background: #112330; border-radius: 2px; min-height: 2.4rem; padding: 0 .55rem; font-size: .75rem; }
+  .district-layers label:has(input:checked) { color: #b4f2df; background: #173a35; border-color: #65ddc1; }
+  .district-layers input { accent-color: #65ddc1; }
+  .district-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; padding: .1rem 1.1rem .5rem; }
+  .district-controls label { display: flex; flex-direction: column; gap: .3rem; font-size: .7rem; color: var(--theme-foreground-muted); }
+  .district-controls select { width: 100%; box-sizing: border-box; padding: .45rem .3rem; border: 1px solid #456074; border-radius: 2px; background: #081019; color: #e6f0f7; font: inherit; min-height: 2.5rem; }
+  .district-explorer :is(button,input,select):focus-visible { outline: 2px solid #65ddc1; outline-offset: 2px; }
+  .district-status { font-size: .71rem; color: #b1c7d6; padding: .3rem 1.1rem; margin: .2rem 0 .6rem; }
+  .district-map-wrap { position: relative; aspect-ratio: 900 / 560; background-color: #08141f; background-image: linear-gradient(#22374750 1px, transparent 1px),linear-gradient(90deg,#22374750 1px,transparent 1px); background-size: 40px 40px; }
+  .district-base-map { position: absolute; width: 100%; height: 100%; opacity: .28; }
+  .district-map-overlay { position: absolute; display: block; inset: 0; width: 100%; height: 100%; }
+  .district-area { cursor: pointer; stroke-linejoin: round; }
+  .district-area:hover, .district-area:focus { stroke: #ffffff; stroke-width: 3; outline: none; }
+  .district-legend { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .8rem; margin: 0; padding: .7rem 1.1rem; font-size: .66rem; color: #b1c7d6; border-bottom: 1px solid var(--hk-border); }
+  .district-legend > span { display: inline-flex; align-items: center; gap: .35rem; }
+  .district-legend i { display: inline-block; width: 16px; height: 12px; border: 1px solid #9fb3c2; }
+  .district-comparison { background: #112330; padding: .9rem 1.1rem; border-block: 1px solid var(--hk-border); }
+  .district-comparison-heading { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; }
+  .district-comparison-heading h3 { font-size: 1rem; margin: 0; color: #f6c677; }
+  .district-comparison-heading > span { font-size: .7rem; color: #b1c7d6; }
+  .district-comparison-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin-top: .7rem; }
+  .district-comparison-grid :is(span,strong,small) { display: block; }
+  .district-comparison-grid span { font-size: .73rem; color: #b1c7d6; }
+  .district-comparison-grid strong { font: 500 clamp(.9rem, 2vw, 1.3rem)/1.7 var(--monitor-mono); color: #e6f0f7; }
+  .district-comparison-grid small { font-size: .7rem; color: #b1c7d6; }
+  .district-comparison p { font-size: .69rem; color: #b1c7d6; margin: .8rem 0 0; }
+  .district-ranking { padding: .8rem 1.1rem; margin: 0; border-bottom: 1px solid var(--hk-border); }
+  .district-ranking summary { cursor: pointer; color: #a0ebd7; font-size: .75rem; min-height: 1.8rem; }
+  .district-ranking-list { display: grid; gap: .15rem; margin-top: .6rem; }
+  .district-ranking-list button { display: grid; grid-template-columns: 4rem minmax(1rem, 1fr) 6.5rem; gap: .5rem; align-items: center; border: 1px solid transparent; color: #d9e8f2; background: transparent; border-radius: 2px; min-height: 2.25rem; padding: .3rem .35rem; text-align: left; font: inherit; font-size: .7rem; cursor: pointer; }
+  .district-ranking-list button[aria-pressed=true] { border-color: #65ddc1; background: #15332f; }
+  .district-ranking-list strong { text-align: right; font: .68rem var(--monitor-mono); }
+  .district-rank-track { display: block; height: .45rem; background: #243b4b; }
+  .district-rank-track i { display: block; height: 100%; background: #65baa7; }
+  .district-next { padding: .6rem 1.1rem; font-size: .73rem; }
+  .district-next p { font-size: .7rem; color: #b1c7d6; margin: .4rem 0; }
+  .district-next a { display: inline-block; margin: .3rem 1rem .3rem 0; }
+  .district-sources { line-height: 1.7; }
+  .district-content .city-geography { border: 0; border-top: 1px solid var(--hk-border); }
+  .district-attraction-marker { position: absolute; transform: translate(-50%,-50%); width: 30px; height: 30px; padding: 0; border: 0; background: transparent; display: grid; place-items: center; cursor: pointer; z-index: 1; }
+  .district-attraction-marker span { width: 19px; height: 19px; display: grid; place-items: center; border-radius: 50%; color: #f6c677; border: 1px solid #f6c677; background: #162333; font: 600 11px var(--monitor-mono); }
+  .district-attraction-marker:not([aria-pressed=true]) span { width: 6px; height: 6px; overflow: hidden; font-size: 0; background: #b3dcd6; border-color: #dcefeb; }
+  .district-attraction-marker[aria-pressed=true] { z-index: 2; }
+  .district-attraction-marker[aria-pressed=true] span { outline: 2px solid #fff; outline-offset: 2px; }
+  .district-attractions { padding: .8rem 1.1rem; }
+  .district-attraction-choices { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .35rem; }
+  .district-attraction-choices button { min-height: 2.75rem; padding: .4rem; border: 1px solid #38566a; background: #112330; color: #d9e8f2; font: inherit; font-size: .8rem; cursor: pointer; border-radius: 2px; text-align: left; }
+  .district-attraction-choices button[aria-pressed=true] { border-color: #f6c677; color: #f6c677; }
+  .district-attraction-detail { padding-top: .6rem; }
+  .district-attraction-detail h3 { font-size: .9rem; margin: .3rem 0; }
+  .district-attraction-detail p { font-size: .85rem; color: #b1c7d6; margin: .4rem 0; }
+  .district-attraction-detail > span { display: block; font-size: .7rem; margin-top: .5rem; }
+  .city-industry-entry { display: grid; gap: .5rem; margin: 1rem 0; padding: 1.1rem; background: #11332f; border: 1px solid #427d6e; border-radius: 3px; text-decoration: none; }
+  .city-industry-entry strong { font-size: 1rem; color: #d4f6e9; }
+  .city-industry-entry > span:not(.monitor-kicker) { font-size: .77rem; color: #b1c7d6; }
+  .city-industry-entry b { font-size: .75rem; font-weight: 500; margin-top: .3rem; }
+  .city-wealth p { margin: .5rem 1.1rem; font-size: .75rem; color: #b1c7d6; }
+  .city-wealth > a { display: block; margin: .8rem 1.1rem; font-size: .75rem; }
+  .city-wealth .city-wealth-source { font-size: .68rem; margin-bottom: 1rem; }
+  @media (min-width: 700px) { .district-attraction-choices { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+}
+
+/* 香港行業導讀：沿用本地字型、原有色盤及原生閱讀控制。 */
+@media screen {
+  .industry-page {--industry-border:#2c4856;--industry-muted:#b4c8cf;}
+  .industry-intro {position:relative;padding:36px 32px;margin:18px 0 26px;border:1px solid var(--industry-border);border-radius:16px;background:radial-gradient(ellipse at 95% 0%,#244b54 0,transparent 55%),#0e2632;overflow:hidden;}
+  .industry-intro h2 {font-size:clamp(1.8rem,3.3vw,3rem);line-height:1.3;margin:12px 0 18px;letter-spacing:-.035em;}
+  .industry-intro p {max-width:800px;font-size:1.05rem;line-height:1.85;color:#d0dee3;}
+  .industry-intro-tags {display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .industry-intro-tags span {border:1px solid #446575;border-radius:5px;padding:5px 10px;font-size:.8rem;color:#d4eee8;}
+  .industry-choices {border:0;padding:0;margin:0;min-width:0;}
+  .industry-choices legend {color:var(--industry-muted);margin-bottom:12px;font-size:.86rem;}
+  .industry-choices>div {display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;}
+  .industry-choice {position:relative;display:flex;flex-direction:column;gap:7px;background:#102631;border:1px solid #36515e;border-radius:10px;padding:18px 15px;cursor:pointer;}
+  .industry-choice input {position:absolute;opacity:0;width:1px;height:1px;}
+  .industry-choice span {font-weight:700;color:#e4eff3;}
+  .industry-choice small {font-family:var(--monitor-mono);font-size:.7rem;letter-spacing:.08em;color:#b7c9d0;}
+  .industry-choice:has(input:checked) {border-color:#91dcc5;background:#1b403e;box-shadow:inset 0 3px #91dcc5;}
+  .industry-choice:has(input:focus-visible) {outline:3px solid #f2c477;outline-offset:4px;}
+  .industry-status {color:var(--industry-muted);font-size:.8rem;margin:12px 0 0;}
+  .industry-focus {padding:30px 0 20px;max-width:900px;}
+  .industry-focus h2 {font-size:clamp(1.6rem,2.4vw,2.25rem);line-height:1.4;margin:10px 0;}
+  .industry-focus>p {color:#c7dae0;font-size:1.05rem;line-height:1.8;}
+  .industry-overview,.industry-inquiry-layout {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .industry-panel {padding:24px;border:1px solid var(--industry-border);border-radius:12px;background:#10232e;margin-bottom:18px;min-width:0;}
+  .industry-panel h3 {font-size:1.15rem;line-height:1.5;margin:4px 0 14px;}
+  .industry-panel h4 {font-size:.97rem;line-height:1.5;margin:4px 0 8px;color:#ecf2f4;}
+  .industry-panel p,.industry-panel dd,.industry-panel li {font-size:.93rem;line-height:1.8;color:#cedde2;}
+  .industry-eyebrow {font-size:.76rem;letter-spacing:.08em;color:#a5e6d0;}
+  .industry-panel-heading {display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px;}
+  .industry-panel-heading h3 {margin:0;}
+  .industry-panel-heading>span {font-size:.75rem;color:var(--industry-muted);}
+  .industry-workflow {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:industry-step;padding:0;list-style:none;margin:24px 0 0;}
+  .industry-workflow li {position:relative;padding-top:42px;border-top:1px solid #3a5965;counter-increment:industry-step;}
+  .industry-workflow li::before {content:counter(industry-step,decimal-leading-zero);position:absolute;top:9px;font-family:var(--monitor-mono);font-size:.83rem;color:#a5e6d0;}
+  .industry-workflow strong {color:#f0f5f7;}
+  .industry-workflow p {margin-bottom:0;}
+  .industry-concepts {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:18px 0 0;}
+  .industry-concepts>div {padding:16px;border-left:2px solid #579e9a;background:#122d38;}
+  .industry-concepts dt {font-weight:700;color:#a5e6d0;}
+  .industry-concepts dd {margin:8px 0 0;}
+  .industry-career-layout {display:grid;grid-template-columns:1.7fr 1fr;gap:16px;}
+  .industry-job-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:20px;}
+  .industry-job-grid article {padding:14px;background:#17323e;border-radius:8px;}
+  .industry-job-grid p {margin-bottom:0;}
+  .industry-skills {background:#142d33;}
+  .industry-skills ul {padding-left:1.2em;}
+  .industry-skills li {margin-bottom:10px;}
+  .industry-panel .industry-note,.industry-note {color:var(--industry-muted);font-size:.83rem;line-height:1.8;}
+  .industry-caveat {border-left:3px solid #e5b86f;background:#302c27;padding:18px 22px;margin:0 0 24px;color:#e8d8c0;font-size:.93rem;line-height:1.8;border-radius:0 8px 8px 0;}
+  .industry-caveat strong {color:#f4d49f;}
+  .industry-regulator-grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:22px;}
+  .industry-regulator {padding:16px;background:#162f3b;border-radius:8px;}
+  .industry-regulator>span {font-family:var(--monitor-mono);color:#a5e6d0;letter-spacing:.08em;font-size:.82rem;}
+  .industry-regulator>a {font-size:.83rem;}
+  .industry-product-grid,.industry-source-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
+  .industry-product-grid>article {padding:16px;border:1px solid #3c5663;border-radius:8px;}
+  .industry-source-grid {margin-top:22px;}
+  .industry-resource {border-top:1px solid #3c5663;padding:14px 0;min-width:0;}
+  .industry-resource>span {display:block;color:var(--industry-muted);font-size:.77rem;margin-bottom:8px;}
+  .industry-resource>a {font-size:.98rem;line-height:1.6;font-weight:600;}
+  .industry-resource p {font-size:.82rem;margin-bottom:0;}
+  .industry-scenario {background:#143439;}
+  .industry-scenario .industry-scenario-question {font-size:1.08rem;line-height:1.8;color:#eff5f4;margin-top:24px;}
+  .industry-panel details {border-top:1px solid #48626b;padding-top:15px;margin-top:20px;}
+  .industry-panel summary {color:#a5e6d0;cursor:pointer;line-height:1.6;font-size:.9rem;font-weight:600;}
+  .industry-next {display:inline-block;margin-top:20px;font-size:.9rem;font-weight:600;}
+  .industry-related-links {display:flex;flex-wrap:wrap;gap:10px;margin-top:20px;}
+  .industry-related-links a {padding:10px 14px;border:1px solid #4d6975;border-radius:6px;font-size:.86rem;}
+  .industry-source-date {font-size:.77rem!important;color:var(--industry-muted)!important;}
+  .industry-memo {display:grid;grid-template-columns:1fr 1fr;gap:16px 28px;align-items:center;padding:28px;margin:28px 0;border:1px solid #54786f;border-radius:12px;background:#16362f;}
+  .industry-memo h2 {font-size:1.4rem;line-height:1.5;margin:10px 0 0;}
+  .industry-memo p {color:#d0e0db;line-height:1.8;}
+  .industry-memo a {font-weight:600;font-size:.9rem;}
+  .industry-page :is(a,summary):focus-visible {outline:3px solid #f2c477;outline-offset:4px;}
+}
+@media screen and (max-width:900px) {
+  .industry-choices>div {grid-template-columns:repeat(3,minmax(0,1fr));}
+  .industry-workflow,.industry-regulator-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+  .industry-career-layout {grid-template-columns:1fr;}
+  .industry-concepts {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media screen and (max-width:600px) {
+  .industry-intro {padding:24px 18px;}
+  .industry-choices>div {grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}
+  .industry-choice {padding:14px 12px;}
+  .industry-panel {padding:20px 16px;}
+  .industry-overview,.industry-inquiry-layout,.industry-concepts,.industry-product-grid,.industry-source-grid,.industry-memo {grid-template-columns:1fr;}
+  .industry-workflow,.industry-regulator-grid,.industry-job-grid {grid-template-columns:1fr;}
+  .industry-workflow {gap:20px;}
+  .industry-panel-heading {gap:6px;}
+  .industry-focus {padding-top:24px;}
+  .industry-memo {padding:24px 18px;}
+}

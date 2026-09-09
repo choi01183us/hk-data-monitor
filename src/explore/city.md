@@ -1,12 +1,15 @@
 ---
 title: 香港城市觀察
-keywords: 香港 地圖 新聞 航班 飛機 經濟 進口 出口 航運 港口 商業區 郊區 郊野 預算
+keywords: 香港 地圖 十八區 人口 入息 景點 旅遊 金融 保險 行業 新聞 航班 飛機 經濟 進口 出口 航運 港口 商業區 郊區 郊野 預算
 sidebar: false
 toc: false
 ---
 
 ```js
-import {cityMap, cityNews, cityFlights, cityEconomy} from "../components/city-dashboard.js";
+import {cityNews, cityFlights, cityEconomy} from "../components/city-dashboard.js";
+import {districtExplorer} from "../components/district-explorer.js";
+const districtPopulation = await FileAttachment("../data/district_population.json").json();
+const districtIncome = await FileAttachment("../data/district_household_income.json").json();
 const news = await FileAttachment("../data/city_news.json").json();
 const flights = await FileAttachment("../data/city_flights.json").json();
 const mapUrl = await FileAttachment("../assets/hong-kong-map.svg").url();
@@ -22,10 +25,10 @@ const economy = await Promise.all([
 
 <header class="monitor-header">
   <div class="monitor-brand"><span class="monitor-brand__mark" aria-hidden="true">HK</span><div><span class="monitor-kicker">HONG KONG / 城市・經濟・生活</span><h1 id="city">香港城市觀察</h1></div></div>
-  <nav class="monitor-nav" aria-label="城市專區導覽"><a href="../">香港總覽</a><a href="./technology">科技與香港</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
+  <nav class="monitor-nav" aria-label="城市專區導覽"><a href="../">香港總覽</a><a href="./industries">行業・金融保險</a><a href="./technology">科技與香港</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
 </header>
 
-<div class="city-intro"><div><span class="monitor-kicker">由城市動態，睇到公共需要</span><h2 id="city-overview">香港，如何連繫世界。</h2></div><p>一張地圖，連起新聞、航空同貿易。先觀察變化，再用數據問：資源應該放喺邊？</p></div>
+<div class="city-intro"><div><span class="monitor-kicker">由城市動態，睇到公共需要</span><h2 id="city-overview">香港，如何連繫世界。</h2></div><p>由十八區人口、入息同景點，連到新聞、行業與對外貿易。先了解生活處境，再討論公共資源點分。</p></div>
 <nav class="city-section-nav" aria-label="城市面板"><a href="#city-map">01 地圖</a><a href="#city-news">02 新聞</a><a href="#city-economy-heading">03 經濟與航運</a><a href="#city-flights">04 航班</a><span>定時快照 · 官方即時入口</span></nav>
 
 <div class="city-top-grid">
@@ -33,7 +36,7 @@ const economy = await Promise.all([
 <div id="city-map">
 
 ```js
-display(cityMap(mapUrl));
+display(districtExplorer({population: districtPopulation, income: districtIncome, mapUrl}));
 ```
 
 </div>
@@ -43,6 +46,9 @@ display(cityMap(mapUrl));
 ```js
 display(cityNews(news, {invalidation}));
 ```
+
+<a class="city-industry-entry" href="./industries"><span class="monitor-kicker">香港靠哪些行業連繫世界？</span><strong>金融・保險・物流・旅遊・專業服務</strong><span>由日常生活，睇到工作、技能同公共需要。</span><b>探索香港行業 ↗</b></a>
+<section class="city-panel city-wealth" aria-labelledby="wealth-heading"><div class="city-panel-heading"><div><span class="monitor-kicker">分清三種「有錢」</span><h2 id="wealth-heading">收入、財富、市值</h2></div></div><p><strong>入息</strong>係一段時間收到幾多；<strong>淨資產</strong>係資產減負債；<strong>市值</strong>係市場對公司股份嘅估值。三者唔可以互相代替。</p><p>地圖比較家庭入息，唔係個人富豪或地區財富排行榜。<a href="https://www.ifec.org.hk/web/common/static/tools/tc/net_worth" target="_blank" rel="noopener noreferrer">投委會：認識資產淨值 ↗</a></p><a href="https://www.forbes.com/lists/hong-kong-billionaires/" target="_blank" rel="noopener noreferrer">個人財富延伸：Forbes 2026 香港富豪榜 ↗</a><p class="city-wealth-source">第三方財富估算，唔係官方收入統計；排名、估算時點及方法以原榜為準。</p></section>
 
 </div>
 

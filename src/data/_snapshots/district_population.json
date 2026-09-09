@@ -1,0 +1,928 @@
+{
+  "indicator_id": "district_population",
+  "name_zh": "各區人口",
+  "name_en": "Land-based non-institutional population by district",
+  "unit_zh": "人",
+  "unit_source_zh": "千人",
+  "value_digits": 0,
+  "unit_en": "persons",
+  "unit_short_zh": "人",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=110-06811",
+  "source_note_zh": "綜合住戶統計調查 政府統計處社會分析及研究組(統計處表 110-06811:按區議會分區、性別及年齡劃分的陸上非住院人口數目)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-03-26",
+  "fetched_at": "2026-09-09T01:56:06.225Z",
+  "frequency": "annual",
+  "acquisition": "api",
+  "category": "地區生活",
+  "question_zh": "邊啲區住得最多人？公共服務應該點配合居住人口？",
+  "basis_zh": "按區議會分區嘅全年陸上非住院人口，涵蓋所有性別及年齡；唔包括院舍住院人士及水上居民，唔等同年末居港人口",
+  "notes_zh": "數字根據全年綜合住戶統計調查及年中人口估計編製，反映全年整體情況；原表千人乘 1,000 轉成人，公布數字已進位至最接近百位數。全港分類係同一張表嘅官方數字，唔係用另一個人口指標補入。地圖顯示居住人數，唔係人口密度、日間工作人口或遊客數。2016 年起灣仔／東區分界改變，唔可同 2015 年或以前嚴格比較；此頁由 2018 年起。各區四捨五入後相加未必完全等於全港。",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "vs-2018",
+      "text_zh": "對比 2018 年（全港陸上非住院人口），升咗 0.4%",
+      "basis_zh": "2018 年 7,369,200 → 2025 年 7,400,500"
+    }
+  ],
+  "category_order": [
+    "全港",
+    "中西區",
+    "灣仔區",
+    "東區",
+    "南區",
+    "油尖旺區",
+    "深水埗區",
+    "九龍城區",
+    "黃大仙區",
+    "觀塘區",
+    "葵青區",
+    "荃灣區",
+    "屯門區",
+    "元朗區",
+    "北區",
+    "大埔區",
+    "沙田區",
+    "西貢區",
+    "離島區"
+  ],
+  "series": [
+    {
+      "period": "2018",
+      "category": "中西區",
+      "value": 242500
+    },
+    {
+      "period": "2018",
+      "category": "九龍城區",
+      "value": 414600
+    },
+    {
+      "period": "2018",
+      "category": "元朗區",
+      "value": 635000
+    },
+    {
+      "period": "2018",
+      "category": "全港",
+      "value": 7369200
+    },
+    {
+      "period": "2018",
+      "category": "北區",
+      "value": 315000
+    },
+    {
+      "period": "2018",
+      "category": "南區",
+      "value": 266300
+    },
+    {
+      "period": "2018",
+      "category": "大埔區",
+      "value": 308000
+    },
+    {
+      "period": "2018",
+      "category": "屯門區",
+      "value": 494300
+    },
+    {
+      "period": "2018",
+      "category": "東區",
+      "value": 547200
+    },
+    {
+      "period": "2018",
+      "category": "沙田區",
+      "value": 680500
+    },
+    {
+      "period": "2018",
+      "category": "油尖旺區",
+      "value": 331900
+    },
+    {
+      "period": "2018",
+      "category": "深水埗區",
+      "value": 397800
+    },
+    {
+      "period": "2018",
+      "category": "灣仔區",
+      "value": 180400
+    },
+    {
+      "period": "2018",
+      "category": "荃灣區",
+      "value": 311200
+    },
+    {
+      "period": "2018",
+      "category": "葵青區",
+      "value": 507500
+    },
+    {
+      "period": "2018",
+      "category": "西貢區",
+      "value": 469100
+    },
+    {
+      "period": "2018",
+      "category": "觀塘區",
+      "value": 677700
+    },
+    {
+      "period": "2018",
+      "category": "離島區",
+      "value": 170400
+    },
+    {
+      "period": "2018",
+      "category": "黃大仙區",
+      "value": 419800
+    },
+    {
+      "period": "2019",
+      "category": "中西區",
+      "value": 240600
+    },
+    {
+      "period": "2019",
+      "category": "九龍城區",
+      "value": 420200
+    },
+    {
+      "period": "2019",
+      "category": "元朗區",
+      "value": 643900
+    },
+    {
+      "period": "2019",
+      "category": "全港",
+      "value": 7423800
+    },
+    {
+      "period": "2019",
+      "category": "北區",
+      "value": 314200
+    },
+    {
+      "period": "2019",
+      "category": "南區",
+      "value": 264800
+    },
+    {
+      "period": "2019",
+      "category": "大埔區",
+      "value": 307000
+    },
+    {
+      "period": "2019",
+      "category": "屯門區",
+      "value": 494500
+    },
+    {
+      "period": "2019",
+      "category": "東區",
+      "value": 546500
+    },
+    {
+      "period": "2019",
+      "category": "沙田區",
+      "value": 687300
+    },
+    {
+      "period": "2019",
+      "category": "油尖旺區",
+      "value": 329400
+    },
+    {
+      "period": "2019",
+      "category": "深水埗區",
+      "value": 417600
+    },
+    {
+      "period": "2019",
+      "category": "灣仔區",
+      "value": 178700
+    },
+    {
+      "period": "2019",
+      "category": "荃灣區",
+      "value": 311700
+    },
+    {
+      "period": "2019",
+      "category": "葵青區",
+      "value": 503100
+    },
+    {
+      "period": "2019",
+      "category": "西貢區",
+      "value": 472200
+    },
+    {
+      "period": "2019",
+      "category": "觀塘區",
+      "value": 689200
+    },
+    {
+      "period": "2019",
+      "category": "離島區",
+      "value": 185800
+    },
+    {
+      "period": "2019",
+      "category": "黃大仙區",
+      "value": 417100
+    },
+    {
+      "period": "2020",
+      "category": "中西區",
+      "value": 236000
+    },
+    {
+      "period": "2020",
+      "category": "九龍城區",
+      "value": 419200
+    },
+    {
+      "period": "2020",
+      "category": "元朗區",
+      "value": 639900
+    },
+    {
+      "period": "2020",
+      "category": "全港",
+      "value": 7396400
+    },
+    {
+      "period": "2020",
+      "category": "北區",
+      "value": 314500
+    },
+    {
+      "period": "2020",
+      "category": "南區",
+      "value": 261000
+    },
+    {
+      "period": "2020",
+      "category": "大埔區",
+      "value": 308000
+    },
+    {
+      "period": "2020",
+      "category": "屯門區",
+      "value": 494800
+    },
+    {
+      "period": "2020",
+      "category": "東區",
+      "value": 538600
+    },
+    {
+      "period": "2020",
+      "category": "沙田區",
+      "value": 684500
+    },
+    {
+      "period": "2020",
+      "category": "油尖旺區",
+      "value": 322300
+    },
+    {
+      "period": "2020",
+      "category": "深水埗區",
+      "value": 434100
+    },
+    {
+      "period": "2020",
+      "category": "灣仔區",
+      "value": 173500
+    },
+    {
+      "period": "2020",
+      "category": "荃灣區",
+      "value": 310000
+    },
+    {
+      "period": "2020",
+      "category": "葵青區",
+      "value": 501100
+    },
+    {
+      "period": "2020",
+      "category": "西貢區",
+      "value": 472700
+    },
+    {
+      "period": "2020",
+      "category": "觀塘區",
+      "value": 687000
+    },
+    {
+      "period": "2020",
+      "category": "離島區",
+      "value": 184300
+    },
+    {
+      "period": "2020",
+      "category": "黃大仙區",
+      "value": 414800
+    },
+    {
+      "period": "2021",
+      "category": "中西區",
+      "value": 233400
+    },
+    {
+      "period": "2021",
+      "category": "九龍城區",
+      "value": 404200
+    },
+    {
+      "period": "2021",
+      "category": "元朗區",
+      "value": 662000
+    },
+    {
+      "period": "2021",
+      "category": "全港",
+      "value": 7324600
+    },
+    {
+      "period": "2021",
+      "category": "北區",
+      "value": 305100
+    },
+    {
+      "period": "2021",
+      "category": "南區",
+      "value": 256100
+    },
+    {
+      "period": "2021",
+      "category": "大埔區",
+      "value": 313000
+    },
+    {
+      "period": "2021",
+      "category": "屯門區",
+      "value": 498400
+    },
+    {
+      "period": "2021",
+      "category": "東區",
+      "value": 525100
+    },
+    {
+      "period": "2021",
+      "category": "沙田區",
+      "value": 688200
+    },
+    {
+      "period": "2021",
+      "category": "油尖旺區",
+      "value": 306800
+    },
+    {
+      "period": "2021",
+      "category": "深水埗區",
+      "value": 424000
+    },
+    {
+      "period": "2021",
+      "category": "灣仔區",
+      "value": 165100
+    },
+    {
+      "period": "2021",
+      "category": "荃灣區",
+      "value": 316400
+    },
+    {
+      "period": "2021",
+      "category": "葵青區",
+      "value": 487200
+    },
+    {
+      "period": "2021",
+      "category": "西貢區",
+      "value": 486200
+    },
+    {
+      "period": "2021",
+      "category": "觀塘區",
+      "value": 667400
+    },
+    {
+      "period": "2021",
+      "category": "離島區",
+      "value": 183000
+    },
+    {
+      "period": "2021",
+      "category": "黃大仙區",
+      "value": 403000
+    },
+    {
+      "period": "2022",
+      "category": "中西區",
+      "value": 220800
+    },
+    {
+      "period": "2022",
+      "category": "九龍城區",
+      "value": 397300
+    },
+    {
+      "period": "2022",
+      "category": "元朗區",
+      "value": 652500
+    },
+    {
+      "period": "2022",
+      "category": "全港",
+      "value": 7259700
+    },
+    {
+      "period": "2022",
+      "category": "北區",
+      "value": 331200
+    },
+    {
+      "period": "2022",
+      "category": "南區",
+      "value": 249900
+    },
+    {
+      "period": "2022",
+      "category": "大埔區",
+      "value": 311300
+    },
+    {
+      "period": "2022",
+      "category": "屯門區",
+      "value": 500500
+    },
+    {
+      "period": "2022",
+      "category": "東區",
+      "value": 513600
+    },
+    {
+      "period": "2022",
+      "category": "沙田區",
+      "value": 684300
+    },
+    {
+      "period": "2022",
+      "category": "油尖旺區",
+      "value": 292200
+    },
+    {
+      "period": "2022",
+      "category": "深水埗區",
+      "value": 425300
+    },
+    {
+      "period": "2022",
+      "category": "灣仔區",
+      "value": 156500
+    },
+    {
+      "period": "2022",
+      "category": "荃灣區",
+      "value": 307800
+    },
+    {
+      "period": "2022",
+      "category": "葵青區",
+      "value": 482400
+    },
+    {
+      "period": "2022",
+      "category": "西貢區",
+      "value": 489800
+    },
+    {
+      "period": "2022",
+      "category": "觀塘區",
+      "value": 663600
+    },
+    {
+      "period": "2022",
+      "category": "離島區",
+      "value": 180100
+    },
+    {
+      "period": "2022",
+      "category": "黃大仙區",
+      "value": 400700
+    },
+    {
+      "period": "2023",
+      "category": "中西區",
+      "value": 232500
+    },
+    {
+      "period": "2023",
+      "category": "九龍城區",
+      "value": 411800
+    },
+    {
+      "period": "2023",
+      "category": "元朗區",
+      "value": 670000
+    },
+    {
+      "period": "2023",
+      "category": "全港",
+      "value": 7447700
+    },
+    {
+      "period": "2023",
+      "category": "北區",
+      "value": 338700
+    },
+    {
+      "period": "2023",
+      "category": "南區",
+      "value": 255900
+    },
+    {
+      "period": "2023",
+      "category": "大埔區",
+      "value": 314800
+    },
+    {
+      "period": "2023",
+      "category": "屯門區",
+      "value": 532000
+    },
+    {
+      "period": "2023",
+      "category": "東區",
+      "value": 520200
+    },
+    {
+      "period": "2023",
+      "category": "沙田區",
+      "value": 700300
+    },
+    {
+      "period": "2023",
+      "category": "油尖旺區",
+      "value": 304200
+    },
+    {
+      "period": "2023",
+      "category": "深水埗區",
+      "value": 434100
+    },
+    {
+      "period": "2023",
+      "category": "灣仔區",
+      "value": 163200
+    },
+    {
+      "period": "2023",
+      "category": "荃灣區",
+      "value": 310600
+    },
+    {
+      "period": "2023",
+      "category": "葵青區",
+      "value": 490400
+    },
+    {
+      "period": "2023",
+      "category": "西貢區",
+      "value": 503000
+    },
+    {
+      "period": "2023",
+      "category": "觀塘區",
+      "value": 666500
+    },
+    {
+      "period": "2023",
+      "category": "離島區",
+      "value": 195700
+    },
+    {
+      "period": "2023",
+      "category": "黃大仙區",
+      "value": 403800
+    },
+    {
+      "period": "2024",
+      "category": "中西區",
+      "value": 229400
+    },
+    {
+      "period": "2024",
+      "category": "九龍城區",
+      "value": 412500
+    },
+    {
+      "period": "2024",
+      "category": "元朗區",
+      "value": 671100
+    },
+    {
+      "period": "2024",
+      "category": "全港",
+      "value": 7432500
+    },
+    {
+      "period": "2024",
+      "category": "北區",
+      "value": 338400
+    },
+    {
+      "period": "2024",
+      "category": "南區",
+      "value": 254700
+    },
+    {
+      "period": "2024",
+      "category": "大埔區",
+      "value": 327900
+    },
+    {
+      "period": "2024",
+      "category": "屯門區",
+      "value": 531000
+    },
+    {
+      "period": "2024",
+      "category": "東區",
+      "value": 514400
+    },
+    {
+      "period": "2024",
+      "category": "沙田區",
+      "value": 698900
+    },
+    {
+      "period": "2024",
+      "category": "油尖旺區",
+      "value": 299700
+    },
+    {
+      "period": "2024",
+      "category": "深水埗區",
+      "value": 432300
+    },
+    {
+      "period": "2024",
+      "category": "灣仔區",
+      "value": 162000
+    },
+    {
+      "period": "2024",
+      "category": "荃灣區",
+      "value": 306200
+    },
+    {
+      "period": "2024",
+      "category": "葵青區",
+      "value": 491600
+    },
+    {
+      "period": "2024",
+      "category": "西貢區",
+      "value": 498200
+    },
+    {
+      "period": "2024",
+      "category": "觀塘區",
+      "value": 662400
+    },
+    {
+      "period": "2024",
+      "category": "離島區",
+      "value": 195300
+    },
+    {
+      "period": "2024",
+      "category": "黃大仙區",
+      "value": 406700
+    },
+    {
+      "period": "2025",
+      "category": "中西區",
+      "value": 229000
+    },
+    {
+      "period": "2025",
+      "category": "九龍城區",
+      "value": 421600
+    },
+    {
+      "period": "2025",
+      "category": "元朗區",
+      "value": 674500
+    },
+    {
+      "period": "2025",
+      "category": "全港",
+      "value": 7400500
+    },
+    {
+      "period": "2025",
+      "category": "北區",
+      "value": 335500
+    },
+    {
+      "period": "2025",
+      "category": "南區",
+      "value": 251500
+    },
+    {
+      "period": "2025",
+      "category": "大埔區",
+      "value": 326500
+    },
+    {
+      "period": "2025",
+      "category": "屯門區",
+      "value": 538700
+    },
+    {
+      "period": "2025",
+      "category": "東區",
+      "value": 503000
+    },
+    {
+      "period": "2025",
+      "category": "沙田區",
+      "value": 687300
+    },
+    {
+      "period": "2025",
+      "category": "油尖旺區",
+      "value": 296800
+    },
+    {
+      "period": "2025",
+      "category": "深水埗區",
+      "value": 429800
+    },
+    {
+      "period": "2025",
+      "category": "灣仔區",
+      "value": 160600
+    },
+    {
+      "period": "2025",
+      "category": "荃灣區",
+      "value": 298800
+    },
+    {
+      "period": "2025",
+      "category": "葵青區",
+      "value": 484900
+    },
+    {
+      "period": "2025",
+      "category": "西貢區",
+      "value": 501200
+    },
+    {
+      "period": "2025",
+      "category": "觀塘區",
+      "value": 663200
+    },
+    {
+      "period": "2025",
+      "category": "離島區",
+      "value": 196000
+    },
+    {
+      "period": "2025",
+      "category": "黃大仙區",
+      "value": 401800
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "全港",
+      "period": "2025",
+      "value": 7400500
+    },
+    {
+      "category": "中西區",
+      "period": "2025",
+      "value": 229000
+    },
+    {
+      "category": "灣仔區",
+      "period": "2025",
+      "value": 160600
+    },
+    {
+      "category": "東區",
+      "period": "2025",
+      "value": 503000
+    },
+    {
+      "category": "南區",
+      "period": "2025",
+      "value": 251500
+    },
+    {
+      "category": "油尖旺區",
+      "period": "2025",
+      "value": 296800
+    },
+    {
+      "category": "深水埗區",
+      "period": "2025",
+      "value": 429800
+    },
+    {
+      "category": "九龍城區",
+      "period": "2025",
+      "value": 421600
+    },
+    {
+      "category": "黃大仙區",
+      "period": "2025",
+      "value": 401800
+    },
+    {
+      "category": "觀塘區",
+      "period": "2025",
+      "value": 663200
+    },
+    {
+      "category": "葵青區",
+      "period": "2025",
+      "value": 484900
+    },
+    {
+      "category": "荃灣區",
+      "period": "2025",
+      "value": 298800
+    },
+    {
+      "category": "屯門區",
+      "period": "2025",
+      "value": 538700
+    },
+    {
+      "category": "元朗區",
+      "period": "2025",
+      "value": 674500
+    },
+    {
+      "category": "北區",
+      "period": "2025",
+      "value": 335500
+    },
+    {
+      "category": "大埔區",
+      "period": "2025",
+      "value": 326500
+    },
+    {
+      "category": "沙田區",
+      "period": "2025",
+      "value": 687300
+    },
+    {
+      "category": "西貢區",
+      "period": "2025",
+      "value": 501200
+    },
+    {
+      "category": "離島區",
+      "period": "2025",
+      "value": 196000
+    }
+  ],
+  "coverage": {
+    "start": "2018",
+    "end": "2025",
+    "points": 152,
+    "points_with_value": 152
+  },
+  "latest": {
+    "period": "2025",
+    "category": "黃大仙區",
+    "value": 401800
+  },
+  "content_hash": "sha256:fbd1a6908c4d03ab",
+  "data_version": "2026.09.1"
+}
