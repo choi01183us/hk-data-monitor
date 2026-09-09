@@ -25,6 +25,7 @@ import { SNAPSHOT_DIR } from "../src/data/_lib/snapshot.js";
 import { validateIndicator, REQUIRED_FIELDS } from "../src/data/_lib/schema.js";
 import { loadManualIndicator, MANUAL_DIR } from "../src/data/_lib/manual.js";
 import { assertSeparatedExpenditureSources } from "./expenditure-scope-gate.mjs";
+import { readCitySnapshot, CITY_KINDS } from "../src/data/_lib/city-feeds.js";
 import { fileURLToPath } from "node:url";
 
 /**
@@ -106,6 +107,18 @@ async function main() {
     }
   }
 
+  // 城市快照使用獨立 schema；唔混入統計 series。讀取即驗 schema/hash。
+  for (const kind of CITY_KINDS) {
+    try {
+      const doc = await readCitySnapshot(kind);
+      if (!doc) throw new Error("缺少城市快照");
+      console.log(`ok   city/${kind} ${doc.records.length} 筆 ${doc.fetched_at}`);
+    } catch (error) {
+      failures += 1;
+      console.error(`FAIL city/${kind} — ${error.message}`);
+    }
+  }
+
   // ── manual/ ──────────────────────────────────────────────────
   // 真係行一次 loader(離線),咁「十組相加對唔上總額」呢類抄錯都會喺呢度爆。
   let manualFiles = [];
@@ -139,7 +152,7 @@ async function main() {
   }
 
   console.log(
-    `\n${files.length} 份快照 + ${manualFiles.length} 份人手數據,${failures} 個唔合格。` +
+    `\n${files.length} 份指標快照 + ${CITY_KINDS.length} 份城市快照 + ${manualFiles.length} 份人手數據,${failures} 個唔合格。` +
       `\nSPEC 第 5 節必要欄位:${REQUIRED_FIELDS.join("、")}`
   );
 

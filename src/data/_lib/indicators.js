@@ -43,6 +43,82 @@ import { loadFiscalReserves } from "./treasury.js";
  *   categories    [{code, label_zh}] —— 明文列出要邊幾個,連 Total("")都要寫
  */
 export const CENSTATD_INDICATORS = {
+  goods_imports: {
+    table: "410-50001",
+    sv: "VAL_IM",
+    stat_pres: "Raw_M_hkd_d",
+    cv: {},
+    freq: "M",
+    period_start: "201801",
+    unit_zh: "港元",
+    value_digits: 0,
+    name_zh: "商品進口貨值",
+    name_en: "Value of merchandise imports",
+    unit_en: "HK$",
+    unit_short_zh: "元",
+    category: "貿易與物流",
+    question_zh: "香港每月進口幾多貨物？貨值同去年同期有咩變化？",
+    basis_zh: "每月商品進口貨值，以到岸價值（c.i.f.）計算；包括供本地使用或轉口嘅進口商品，唔包括服務貿易",
+    notes_zh: "原表百萬港元乘 1,000,000 換成港元。貨值未扣除價格變動，亦未經季節性調整；升幅唔等於實物數量增長。" +
+      "進口以到岸價值計，整體出口以離岸價值計。商品進口包括供轉口嘅貨品，唔代表全部由香港市民消費，亦唔係政府開支。" +
+      "較早月份嘅調整可能只納入同年累積總數，因此唔好自行將月份相加冒充官方年度總額。",
+    chart: { type: "line", y_zero: true },
+    transform: tradeMillionsToDollars,
+    verify: verifyGoodsImports,
+    anchors: samePeriodLastYearAnchor,
+  },
+
+  goods_exports: {
+    table: "410-50001",
+    sv: "VAL_TX",
+    stat_pres: "Raw_M_hkd_d",
+    cv: {},
+    freq: "M",
+    period_start: "201801",
+    unit_zh: "港元",
+    value_digits: 0,
+    name_zh: "商品整體出口貨值",
+    name_en: "Value of total merchandise exports",
+    unit_en: "HK$",
+    unit_short_zh: "元",
+    category: "貿易與物流",
+    question_zh: "香港每月出口貨值點變？點解要分清港產品同轉口？",
+    basis_zh: "每月商品整體出口貨值，以離岸價值（f.o.b.）計算；整體出口包括港產品出口及轉口，唔包括服務貿易",
+    notes_zh: "原表百萬港元乘 1,000,000 換成港元。貨值未扣除價格變動，亦未經季節性調整。" +
+      "整體出口包括港產品出口及轉口，唔代表全部喺香港製造，亦唔係香港嘅增加價值、企業利潤或政府收入。" +
+      "進口以到岸價值計，出口以離岸價值計；唔好把貿易貨值同 GDP 相加。較早月份嘅修訂可能只納入同年累積總數，月份之和未必等於官方年度總額。",
+    chart: { type: "line", y_zero: true },
+    transform: tradeMillionsToDollars,
+    verify: verifyGoodsExports,
+    anchors: samePeriodLastYearAnchor,
+  },
+
+  port_cargo: {
+    table: "410-55110",
+    sv: "PORT_CARGO_TP",
+    stat_pres: "Raw_K_tn_n",
+    cv: { DIRECTION: ["In", "Out"], SHIPMENT_TYPE: ["DS", "TS"] },
+    freq: "Q",
+    period_start: "201801",
+    pin: { DIRECTION: "", SHIPMENT_TYPE: "" },
+    unit_zh: "公噸",
+    value_digits: 0,
+    name_zh: "港口貨物吞吐量",
+    name_en: "Port cargo throughput",
+    unit_en: "tonnes",
+    unit_short_zh: "公噸",
+    category: "貿易與物流",
+    question_zh: "香港港口一季處理幾多貨物？物流基建同人才需求可以點理解？",
+    basis_zh: "每季抵港及離港嘅海運和河運貨物吞吐量，包括直接裝運及轉運；原表總量以重量計，唔係貨櫃數目、商品貨值或即時船隻數目",
+    notes_zh: "原表千公噸乘 1,000 換成公噸。港口貨物包括海運及河運，唔包括空運或道路貨運。" +
+      "採用統計處原表總量，唔自行把有重疊嘅總額及分項相加。轉運貨物喺抵港同離港環節均會計入吞吐量，唔可當成互不重複嘅貨物重量。" +
+      "貨物重量同貨值、貨櫃數及港口收益係不同量度；呢個季度統計唔顯示船隻當前位置。",
+    chart: { type: "line", y_zero: true },
+    transform: cargoThousandsToTonnes,
+    verify: verifyPortCargo,
+    anchors: samePeriodLastYearAnchor,
+  },
+
   rd_expenditure: {
     table: "710-86001",
     sv: "GRD_EXP",
@@ -550,6 +626,102 @@ export const CENSTATD_INDICATORS = {
     },
   },
 };
+
+export function tradeMillionsToDollars(value) {
+  return value === null ? null : value * 1e6;
+}
+
+export function cargoThousandsToTonnes(value) {
+  return value === null ? null : value * 1e3;
+}
+
+function samePeriodLastYearAnchor(series) {
+  const period = latestPeriod(series);
+  if (!period) return [];
+  const previous = `${Number(period.slice(0, 4)) - 1}${period.slice(4)}`;
+  return collectAnchors(anchorVersusYear(series, previous, { label: "去年同期" }));
+}
+
+// 呢三項均由同一來源原值逐點核對最終輸出，唔借另一個變項／分項冒充。
+// Missing flag 明文列出；新標記唔可以靜靜變 null 後剪走最新月份。
+function tradeSourceValue(row, { table, sv, unit, freq }) {
+  if (row.sv !== sv || row.svDesc !== unit || row.freq !== freq) {
+    throw new Error(`${table}:統計變項、頻率或來源單位改變`);
+  }
+  const flags = String(row.sd_value ?? "").split(",").map((flag) => flag.trim());
+  if (!flags.every((flag) => ["", "r", "p", "a", "-", "N.A.", "n.y.a."].includes(flag) || /^\[\*\d+\]$/.test(flag))) {
+    throw new Error(`${table}:未知資料狀態標記`);
+  }
+  if (row.figure !== "" && row.figure !== null && row.figure !== undefined && !Number.isFinite(Number(row.figure))) {
+    throw new Error(`${table}:來源數值格式改變`);
+  }
+  const value = toValue(row);
+  if (value !== null && (!Number.isSafeInteger(value) || value < 0)) {
+    throw new Error(`${table}:原表應為非負整數來源單位`);
+  }
+  return value;
+}
+
+function verifyTradeCoverage(expected, series, table) {
+  const trimmed = trimGaps(expected);
+  if (series.length !== trimmed.length || series.length === 0) throw new Error(`${table}:最終數列期數缺少或重複`);
+  const byPeriod = new Map(trimmed.map((point) => [point.period, point.value]));
+  const seen = new Set();
+  for (const point of series) {
+    if (seen.has(point.period) || point.category !== undefined || !byPeriod.has(point.period)) {
+      throw new Error(`${table}:最終數列期數重複或分類錯誤`);
+    }
+    seen.add(point.period);
+    if (point.value !== byPeriod.get(point.period)) throw new Error(`${table}:最終數列唔等於原表指定變項及總量換算`);
+  }
+}
+
+function verifyGoodsValue(rows, series, sv) {
+  const expected = [];
+  const periods = new Set();
+  for (const row of rows) {
+    if (!/^\d{4}(0[1-9]|1[0-2])$/.test(row.period) || row.period < "201801" || periods.has(row.period)) {
+      throw new Error("410-50001:原表月份缺少、重複或超出選取範圍");
+    }
+    periods.add(row.period);
+    const value = tradeSourceValue(row, { table: "410-50001", sv, unit: "百萬港元", freq: "M" });
+    expected.push({ period: formatPeriod("M", row.period), value: value === null ? null : value * 1000000 });
+  }
+  verifyTradeCoverage(expected, series, "410-50001");
+}
+
+export function verifyGoodsImports(rows, series) { verifyGoodsValue(rows, series, "VAL_IM"); }
+export function verifyGoodsExports(rows, series) { verifyGoodsValue(rows, series, "VAL_TX"); }
+
+export function verifyPortCargo(rows, series) {
+  const quarters = new Map();
+  for (const row of rows) {
+    if (!/^\d{4}(03|06|09|12)$/.test(row.period) || row.period < "201803") {
+      throw new Error("410-55110:原表季度格式或選取範圍改變");
+    }
+    if (!quarters.has(row.period)) quarters.set(row.period, []);
+    quarters.get(row.period).push(row);
+  }
+  const expected = [];
+  for (const [period, quarter] of quarters) {
+    if (quarter.length !== 7) throw new Error(`410-55110 ${period}:七個總量及分項缺少或重複`);
+    const values = [["", ""], ["In", ""], ["In", "DS"], ["In", "TS"], ["Out", ""], ["Out", "DS"], ["Out", "TS"]].map(([direction, shipment]) => {
+      const match = quarter.filter((row) => row.DIRECTION === direction && row.SHIPMENT_TYPE === shipment);
+      if (match.length !== 1) throw new Error(`410-55110 ${period}:方向或裝運分類缺少或重複`);
+      return tradeSourceValue(match[0], { table: "410-55110", sv: "PORT_CARGO_TP", unit: "(千公噸)", freq: "Q" });
+    });
+    const [total, inbound, directIn, transIn, outbound, directOut, transOut] = values;
+    // 三個獨立捨入至整數千公噸嘅值相減，整數殘差最多 1 千公噸。
+    // 與政府／公共開支嘅 1 百萬元門檻完全獨立，唔使用相對誤差。
+    for (const [whole, first, second] of [[total, inbound, outbound], [inbound, directIn, transIn], [outbound, directOut, transOut]]) {
+      if ([whole, first, second].every((value) => value !== null) && Math.abs(whole - first - second) > 1) {
+        throw new Error(`410-55110 ${period}:分項之和對唔上原表總量，超出 1 千公噸捨入差`);
+      }
+    }
+    expected.push({ period: formatPeriod("Q", period), value: total === null ? null : total * 1000 });
+  }
+  verifyTradeCoverage(expected, series, "410-55110");
+}
 
 /** 新科技指標驗最終切片，唔只驗來源自己一致。 */
 export function verifyRdExpenditure(rows, series) {

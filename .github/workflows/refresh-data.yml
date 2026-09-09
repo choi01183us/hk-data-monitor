@@ -51,8 +51,12 @@ jobs:
     timeout-minutes: 20
     outputs:
       committed: ${{ steps.commit.outputs.committed }}
+      ref: ${{ steps.commit.outputs.ref }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          # 排隊事件嘅 SHA 可能已舊；開始刷新時取分支最新提交，避免 push 分叉。
+          ref: ${{ github.ref_name }}
 
       - uses: actions/setup-node@v7
         with:
@@ -105,12 +109,15 @@ jobs:
             git push
             echo "committed=true" >> "$GITHUB_OUTPUT"
           fi
+          echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   deploy:
     name: 重新部署
     needs: refresh
     if: ${{ inputs.deploy != false }}
     uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.refresh.outputs.ref }}
     # ⚠️ 被叫嘅 workflow 唔會繼承上面嗰個 permissions —— 要喺呢度再寫一次。
     permissions:
       contents: read

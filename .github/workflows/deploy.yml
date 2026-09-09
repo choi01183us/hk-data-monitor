@@ -23,6 +23,11 @@ on:
       - ".github/**.md"
   workflow_dispatch:
   workflow_call:
+    inputs:
+      ref:
+        description: "刷新後已提交嘅完整 commit SHA"
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -45,6 +50,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       - uses: actions/setup-node@v7
         with:

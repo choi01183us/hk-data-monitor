@@ -34,6 +34,7 @@ export default {
     {
       name: "主題探索",
       pages: [
+        { name: "香港城市觀察", path: "/explore/city" },
         { name: "科技與香港", path: "/explore/technology" },
         { name: "本地研發總開支", path: "/indicators/rd_expenditure" },
         { name: "住戶上網率", path: "/indicators/household_internet" },
@@ -61,6 +62,9 @@ export default {
         { name: "人均本地生產總值", path: "/indicators/gdp" },
         { name: "香港人口", path: "/indicators/population" },
         { name: "四大行業佔 GDP 比重", path: "/indicators/four_key_industries" },
+        { name: "商品進口貨值", path: "/indicators/goods_imports" },
+        { name: "商品整體出口貨值", path: "/indicators/goods_exports" },
+        { name: "港口貨物吞吐量", path: "/indicators/port_cargo" },
         { name: "上市公司數目", path: "/indicators/hkex_listings" },
       ],
     },

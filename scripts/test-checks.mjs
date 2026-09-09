@@ -769,6 +769,19 @@ await testSparklines(check);
 const { testTechnologyData } = await import("./test-technology-data.mjs");
 await testTechnologyData(check);
 
+const { testTradeData } = await import("./test-trade-data.mjs");
+await testTradeData(check);
+const { testCityFeeds } = await import("./test-city-feeds.mjs");
+await testCityFeeds(check);
+const { testHongKongPlaces } = await import("./test-hong-kong-places.mjs");
+await testHongKongPlaces(check);
+
+const { testCityView } = await import("./test-city-view.mjs");
+await testCityView(check);
+
+const { testRefreshWorkflows } = await import("./test-refresh-workflows.mjs");
+await testRefreshWorkflows(check);
+
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //
 // R5 嘅突變測試前提係「改壞 transform,錄影唔跟住變」。

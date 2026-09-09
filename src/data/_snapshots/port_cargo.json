@@ -1,0 +1,187 @@
+{
+  "indicator_id": "port_cargo",
+  "name_zh": "港口貨物吞吐量",
+  "name_en": "Port cargo throughput",
+  "unit_zh": "公噸",
+  "unit_source_zh": "(千公噸)",
+  "value_digits": 0,
+  "unit_en": "tonnes",
+  "unit_short_zh": "公噸",
+  "source_zh": "政府統計處",
+  "source_en": "Census and Statistics Department, HKSAR Government",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=410-55110",
+  "source_note_zh": "政府統計處電子貿易服務及貨運統計組(統計處表 410-55110:港口貨物吞吐量)",
+  "licence": "政府統計處《知識產權公告》",
+  "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
+  "updated_at": "2026-09-03",
+  "fetched_at": "2026-09-09T01:16:58.484Z",
+  "frequency": "quarterly",
+  "acquisition": "api",
+  "category": "貿易與物流",
+  "question_zh": "香港港口一季處理幾多貨物？物流基建同人才需求可以點理解？",
+  "basis_zh": "每季抵港及離港嘅海運和河運貨物吞吐量，包括直接裝運及轉運；原表總量以重量計，唔係貨櫃數目、商品貨值或即時船隻數目",
+  "notes_zh": "原表千公噸乘 1,000 換成公噸。港口貨物包括海運及河運，唔包括空運或道路貨運。採用統計處原表總量，唔自行把有重疊嘅總額及分項相加。轉運貨物喺抵港同離港環節均會計入吞吐量，唔可當成互不重複嘅貨物重量。貨物重量同貨值、貨櫃數及港口收益係不同量度；呢個季度統計唔顯示船隻當前位置。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "anchors": [
+    {
+      "id": "vs-2025-Q2",
+      "text_zh": "對比 2025 年第 2 季（去年同期），跌咗 0.2%",
+      "basis_zh": "2025 年第 2 季 42,399,000 → 2026 年第 2 季 42,321,000"
+    }
+  ],
+  "category_order": null,
+  "series": [
+    {
+      "period": "2018-Q1",
+      "value": 65691000
+    },
+    {
+      "period": "2018-Q2",
+      "value": 66100000
+    },
+    {
+      "period": "2018-Q3",
+      "value": 61698000
+    },
+    {
+      "period": "2018-Q4",
+      "value": 65052000
+    },
+    {
+      "period": "2019-Q1",
+      "value": 59061000
+    },
+    {
+      "period": "2019-Q2",
+      "value": 69304000
+    },
+    {
+      "period": "2019-Q3",
+      "value": 67175000
+    },
+    {
+      "period": "2019-Q4",
+      "value": 67775000
+    },
+    {
+      "period": "2020-Q1",
+      "value": 57165000
+    },
+    {
+      "period": "2020-Q2",
+      "value": 67456000
+    },
+    {
+      "period": "2020-Q3",
+      "value": 63328000
+    },
+    {
+      "period": "2020-Q4",
+      "value": 61337000
+    },
+    {
+      "period": "2021-Q1",
+      "value": 49174000
+    },
+    {
+      "period": "2021-Q2",
+      "value": 55012000
+    },
+    {
+      "period": "2021-Q3",
+      "value": 55506000
+    },
+    {
+      "period": "2021-Q4",
+      "value": 54038000
+    },
+    {
+      "period": "2022-Q1",
+      "value": 42406000
+    },
+    {
+      "period": "2022-Q2",
+      "value": 52274000
+    },
+    {
+      "period": "2022-Q3",
+      "value": 49350000
+    },
+    {
+      "period": "2022-Q4",
+      "value": 48074000
+    },
+    {
+      "period": "2023-Q1",
+      "value": 41219000
+    },
+    {
+      "period": "2023-Q2",
+      "value": 44504000
+    },
+    {
+      "period": "2023-Q3",
+      "value": 45305000
+    },
+    {
+      "period": "2023-Q4",
+      "value": 43839000
+    },
+    {
+      "period": "2024-Q1",
+      "value": 42798000
+    },
+    {
+      "period": "2024-Q2",
+      "value": 45815000
+    },
+    {
+      "period": "2024-Q3",
+      "value": 43736000
+    },
+    {
+      "period": "2024-Q4",
+      "value": 44342000
+    },
+    {
+      "period": "2025-Q1",
+      "value": 41141000
+    },
+    {
+      "period": "2025-Q2",
+      "value": 42399000
+    },
+    {
+      "period": "2025-Q3",
+      "value": 41285000
+    },
+    {
+      "period": "2025-Q4",
+      "value": 44813000
+    },
+    {
+      "period": "2026-Q1",
+      "value": 42048000
+    },
+    {
+      "period": "2026-Q2",
+      "value": 42321000
+    }
+  ],
+  "latest_by_category": null,
+  "coverage": {
+    "start": "2018-Q1",
+    "end": "2026-Q2",
+    "points": 34,
+    "points_with_value": 34
+  },
+  "latest": {
+    "period": "2026-Q2",
+    "value": 42321000
+  },
+  "content_hash": "sha256:ca74b2328be7c00e",
+  "data_version": "2026.09.1"
+}

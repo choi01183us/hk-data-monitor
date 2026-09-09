@@ -1,0 +1,109 @@
+{
+  "source_zh": "香港特別行政區政府地政總署",
+  "source_url": "https://portal.csdi.gov.hk/csdi-webpage/dataset/landsd_rcd_1637221775627_85634",
+  "service_url": "https://portal.csdi.gov.hk/server/rest/services/common/landsd_rcd_1637221775627_85634/MapServer/5/query",
+  "verified_at": "2026-09-09",
+  "spatial_reference": 2326,
+  "note_zh": "只保留當次 PLACANNO 官方回應中選用的九筆原始地名標籤屬性及坐標；不是入口、中心、行政或規劃界線。",
+  "features": [
+    {
+      "attributes": {
+        "OBJECTID": 1924,
+        "TextString": "中環",
+        "TYPE": "DIS"
+      },
+      "geometry": {
+        "x": 834520.7649999997,
+        "y": 816254.3934000004
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2203,
+        "TextString": "尖沙咀",
+        "TYPE": "DIS"
+      },
+      "geometry": {
+        "x": 835798.4029999999,
+        "y": 817898.5603999998
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 189,
+        "TextString": "觀塘",
+        "TYPE": "DIS"
+      },
+      "geometry": {
+        "x": 840997.2620000001,
+        "y": 819235.6974
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2244,
+        "TextString": "九龍灣",
+        "TYPE": "DIS"
+      },
+      "geometry": {
+        "x": 839672.4119999995,
+        "y": 820580.1534000002
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 1508,
+        "TextString": "赤鱲角",
+        "TYPE": "ISL"
+      },
+      "geometry": {
+        "x": 809266.1694,
+        "y": 820706.3125
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 120,
+        "TextString": "葵青貨櫃碼頭",
+        "TYPE": "SIT"
+      },
+      "geometry": {
+        "x": 830268.5439999998,
+        "y": 822092.8234000001
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 436,
+        "TextString": "大帽山",
+        "TYPE": "HIL"
+      },
+      "geometry": {
+        "x": 831307.0546000004,
+        "y": 830116.3040999994
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 285,
+        "TextString": "北潭凹",
+        "TYPE": "VIL"
+      },
+      "geometry": {
+        "x": 852505.3037,
+        "y": 831218.0324000008
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 627,
+        "TextString": "鳳凰山",
+        "TYPE": "HIL"
+      },
+      "geometry": {
+        "x": 810303.5981999999,
+        "y": 812348.0590000004
+      }
+    }
+  ]
+}

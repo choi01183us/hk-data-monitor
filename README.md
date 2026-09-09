@@ -21,6 +21,7 @@ npm run dev          # http://localhost:3000,改完即刻見到
 | `npm run build` | 砌靜態站入 `dist/`,順埋生成 service worker |
 | `npm run build:offline` | 同上,但完全唔上網(用 repo 入面嘅快照)。CI 用呢個 |
 | `npm run refresh` | 重抓全部 API 指標。有變動先寫檔 |
+| `npm run refresh:city` | 更新政府公報及前一日客機紀錄；快照及錄影同次保存 |
 | `npm run validate` | 驗全部快照同 `manual/` 符合 SPEC 第 5 節(零網絡,`build` 開頭會自動跑) |
 | `npm run test:checks` | **檢查器自證**:故意整壞嘢,確認啲閘真係會嘈(零網絡) |
 | `npm run test:offline` | 離線行為測試(要 Playwright,冇就 SKIP) |
@@ -125,7 +126,7 @@ SPEC 第 7 節嘅 fail-soft 係為咗網絡／HTTP／上游格式變 —— 嗰�
 三道閘一齊擋:
 1. `build` 開頭 `npm run validate` —— 驗現有快照同 `manual/`(零網絡)
 2. `test:checks` 用 `src/data/_fixtures/` 重播一次完整 transform,再對返快照
-   (零網絡、0.2 秒、11 個指標)
+   (零網絡、重播所有自動指標；另驗城市快照)
 3. schema 錯誤 hard fail,唔行 fail-soft(見上面第 2 條)
 
 ### 4. 「2000-01」係 2000 年 1 月定 2000–01 年度?

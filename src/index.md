@@ -20,6 +20,9 @@ const loaded = await Promise.all([
   FileAttachment("./data/cpi.json").json(),
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
+  FileAttachment("./data/goods_imports.json").json(),
+  FileAttachment("./data/goods_exports.json").json(),
+  FileAttachment("./data/port_cargo.json").json(),
   FileAttachment("./data/rd_expenditure.json").json(),
   FileAttachment("./data/household_internet.json").json(),
   FileAttachment("./data/public_expenditure_policy_groups.json").json(),
@@ -40,11 +43,18 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
     </div>
   </div>
   <nav class="monitor-nav" aria-label="首頁導覽">
+    <a href="./explore/city">城市觀察</a>
     <a href="./explore/technology">科技與香港</a>
     <a href="#learning-routes">學習路線</a>
     <a class="monitor-nav__primary" href="./learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>
   </nav>
 </header>
+
+<a class="monitor-topic-entry" href="./explore/city">
+  <span class="monitor-topic-entry__icon" aria-hidden="true">◉</span>
+  <span><strong>香港城市觀察</strong><span>互動地圖 · 新聞快照 · 航班紀錄 · 進出口與航運</span></span>
+  <span class="monitor-topic-entry__action">探索城市連繫 <span aria-hidden="true">↗</span></span>
+</a>
 
 <a class="monitor-topic-entry" href="./explore/technology">
   <span class="monitor-topic-entry__icon" aria-hidden="true">◎</span>

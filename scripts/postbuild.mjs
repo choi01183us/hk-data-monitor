@@ -87,6 +87,11 @@ if (existsSync(SNAPSHOTS)) {
     docs.push(JSON.parse(raw));
   }
 }
+// 城市快照亦計入總 JSON 預算；唔用新聞時間掩蓋統計資料嘅較早日期。
+const citySnapshots = join(ROOT, "src", "data", "_city_snapshots");
+for (const name of (await readdir(citySnapshots)).filter((n) => n.endsWith(".json"))) {
+  jsonBytes += Buffer.byteLength(await readFile(join(citySnapshots, name), "utf8"));
+}
 const dataAsOf = pickDataAsOf(docs);
 const hidden = docs.filter((doc) => !isDisplayed(doc));
 
@@ -139,12 +144,12 @@ if (hidden.length > 0) {
 }
 console.log(`  關鍵資源        ${critical.length} 個(頁面 ${htmlPages.length} 版)`);
 console.log(`  盡量快取        ${optional.length} 個(圖表 library)`);
-console.log(`  指標 JSON       ${mb(jsonBytes)}(SPEC 第 8 節上限 ${mb(JSON_BUDGET_BYTES)})`);
+console.log(`  資料 JSON       ${mb(jsonBytes)}(SPEC 第 8 節上限 ${mb(JSON_BUDGET_BYTES)})`);
 console.log(`  整個 dist       ${mb(totalBytes)}`);
 
 if (jsonBytes > JSON_BUDGET_BYTES) {
   console.error(
-    `\nFAIL 指標 JSON 加埋 ${mb(jsonBytes)},超過 SPEC 第 8 節嘅 5 MB 上限。\n` +
+    `\nFAIL 資料 JSON 加埋 ${mb(jsonBytes)},超過 SPEC 第 8 節嘅 5 MB 上限。\n` +
       `     SPEC 講明:減指標或者減歷史年份,唔好改用 lazy loading。`
   );
   process.exit(1);

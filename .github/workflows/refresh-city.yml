@@ -1,0 +1,62 @@
+# 新聞與航班獨立城市快照；原每週統計排程保持不變。
+name: 定時更新城市快照
+on:
+  schedule:
+    # 每三小時；UTC :37 避開整點。GitHub 排程並非準時服務保證。
+    - cron: "37 */3 * * *"
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: "抓完之後部署？"
+        type: boolean
+        default: true
+concurrency:
+  group: hkdm-refresh
+  cancel-in-progress: false
+permissions:
+  contents: write
+defaults:
+  run:
+    shell: bash
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      ref: ${{ steps.commit.outputs.ref }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # 排隊事件嘅 SHA 可能已舊；開始刷新時取分支最新提交，避免 push 分叉。
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: node scripts/refresh-city.mjs
+      - run: npm run validate
+      - run: npm run test:checks
+      - name: 只提交同次快照及錄影
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A src/data/_city_snapshots/ src/data/_city_fixtures/
+          if git diff --cached --quiet; then
+            echo "城市資料內容冇變"
+          else
+            git commit -m "更新城市快照 $(date -u +%Y-%m-%d)"
+            git push
+          fi
+          echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+  deploy:
+    needs: refresh
+    if: ${{ inputs.deploy != false }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.refresh.outputs.ref }}
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
