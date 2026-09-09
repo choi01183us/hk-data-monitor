@@ -1536,3 +1536,39 @@ body {
 }
 .finance-gold-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 @media (max-width: 700px) { .finance-gold-grid { grid-template-columns: 1fr; } }
+
+/* 本地地圖縮放：底圖與標記共用一個平面；工具列不跟住放大。 */
+@media screen {
+  .monitor-map-open { display: inline-flex; align-items: center; min-height: 44px; padding: 0 .65rem; border: 1px solid #416172; border-radius: 3px; color: #b4f2df; font-size: .75rem; text-decoration: none; }
+  .map-viewer { background: #08141f; color: #d7e8f0; }
+  .map-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: .7rem; border-block: 1px solid #35505f; }
+  .map-tools > div { display: flex; align-items: center; flex-wrap: wrap; gap: .3rem; }
+  .map-tools button { min-width: 44px; min-height: 44px; padding: .45rem .6rem; border: 1px solid #486a7b; border-radius: 4px; background: #153043; color: #def4f2; font: 600 .73rem/1.3 var(--sans-serif); cursor: pointer; }
+  .map-tools button:disabled { opacity: .5; cursor: default; }
+  .map-tools button:hover:not(:disabled) { background: #24485a; }
+  .map-tools button:focus-visible, .map-viewport:focus-visible, .monitor-map-open:focus-visible { outline: 3px solid #f6c677; outline-offset: -3px; }
+  .map-zoom-level { min-width: 3rem; color: #b5e8dc; text-align: center; font: .75rem var(--monitor-mono); }
+  .map-pan-buttons { margin-left: auto; }
+  .map-viewport { position: relative; width: 100%; aspect-ratio: 900 / 560; overflow: hidden; touch-action: pan-y pinch-zoom; }
+  .map-viewport.is-zoomed { cursor: grab; touch-action: pinch-zoom; }
+  .map-viewport.is-zoomed:active { cursor: grabbing; }
+  .map-stage { width: 100%; height: 100%; transform-origin: 0 0; }
+  .map-stage > :is(.district-map-wrap, .city-map-canvas) { width: 100%; height: 100%; }
+  .map-stage img { user-select: none; -webkit-user-drag: none; }
+  .map-stage :is(.city-marker, .district-attraction-marker) { width: 44px; height: 44px; transform: translate(-50%, -50%) scale(var(--map-marker-scale, 1)); }
+  .map-stage .district-area { stroke-width: calc(.8px * var(--map-marker-scale, 1)); }
+  .map-stage .district-area[aria-pressed=true] { stroke-width: calc(2.6px * var(--map-marker-scale, 1)); }
+  .map-stage .district-area:is(:hover, :focus) { stroke-width: calc(3px * var(--map-marker-scale, 1)); }
+  .map-selection { margin: 0; padding: .65rem .85rem .25rem; font-size: .74rem; color: #dfede9; }
+  .map-help { margin: 0; padding: .25rem .85rem .7rem; font-size: .69rem; line-height: 1.8; color: #b9ceda; }
+  .map-view-source { display: none; }
+  .map-viewer:fullscreen { box-sizing: border-box; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: .6rem; overflow-y: auto; }
+  .map-viewer:fullscreen .map-tools { width: 100%; box-sizing: border-box; flex-shrink: 0; }
+  .map-viewer:fullscreen .map-viewport { flex-shrink: 0; width: min(100%, calc((100dvh - 300px) * 1.607142857)); }
+  .map-viewer:fullscreen :is(.map-selection, .map-help) { max-width: 70rem; box-sizing: border-box; }
+  .map-viewer:fullscreen .map-view-source { display: block; max-width: 70rem; padding: .25rem .85rem; font-size: .68rem; line-height: 1.7; color: #b9ceda; }
+  .map-view-source span { display: block; }
+  .map-view-source a { color: #a8e9dc; }
+  .map-view-source .district-legend { padding: 0 0 .3rem; border: 0; }
+  .map-view-source .district-legend span { display: inline-flex; }
+}

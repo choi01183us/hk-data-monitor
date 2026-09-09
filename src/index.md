@@ -105,7 +105,7 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
       <span class="monitor-kicker">地理總覽</span>
       <h2 id="hong-kong-map">讀懂香港，由這裏開始。</h2>
     </div>
-    <span class="monitor-tag">地域定位</span>
+    <a class="monitor-map-open" href="./explore/city#city-map">放大互動地圖 ↗</a>
   </div>
   <section class="weather-demo" id="weather-effects" aria-label="香港地圖天氣特效示範">
     <div class="weather-controls">

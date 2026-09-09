@@ -810,6 +810,10 @@ const { testBankingManual } = await import("./test-banking-manual.mjs");
 await testBankingManual(check);
 const { testFinanceCounts } = await import("./test-finance-counts.mjs");
 await testFinanceCounts(check);
+const { testMapView } = await import("./test-map-view.mjs");
+await testMapView(check);
+const { testBrowserViewport } = await import("./test-browser-viewport.mjs");
+await testBrowserViewport(check);
 
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //

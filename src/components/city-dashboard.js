@@ -1,4 +1,5 @@
 import {html} from "npm:htl";
+import {mapViewport} from "./map-viewport.js";
 import {hongKongPlaces, placeTypes} from "./hong-kong-places.js";
 import {citySnapshotIsOld, filterFlightRecords} from "./city-view.js";
 import {indicatorCard} from "./indicator-card.js";
@@ -24,10 +25,11 @@ function provenance(doc, invalidation) {
 
 export function cityMap(mapUrl) {
   let selected = hongKongPlaces.find((p) => p.id === "central");
+  const mapView = mapViewport({label: "香港商業交通及郊野地圖"});
   const active = new Set(placeTypes.map((t) => t.id));
   const detail = html`<div class="city-place-detail" aria-live="polite"></div>`;
   const status = html`<p class="city-map-status" role="status"></p>`;
-  const markers = hongKongPlaces.map((place, index) => html`<button type="button" class="city-marker" data-type=${place.type} data-place=${place.id} style=${{left: `${place.x / 9}%`, top: `${place.y / 5.6}%`}} aria-label=${place.label} aria-pressed="false" title=${place.label} onclick=${() => select(place)}><span>${index + 1}</span></button>`);
+  const markers = hongKongPlaces.map((place, index) => html`<button type="button" class="city-marker" data-type=${place.type} data-place=${place.id} data-map-x=${place.x} data-map-y=${place.y} style=${{left: `${place.x / 9}%`, top: `${place.y / 5.6}%`}} aria-label=${place.label} aria-pressed="false" title=${place.label} onclick=${() => select(place)}><span>${index + 1}</span></button>`);
   const choices = hongKongPlaces.map((place, index) => html`<button type="button" class="city-place-choice" data-type=${place.type} data-place=${place.id} aria-pressed="false" onclick=${() => select(place)}><span>${String(index + 1).padStart(2, "0")}</span>${place.label}</button>`);
   const filters = placeTypes.map((type) => html`<label data-type=${type.id}><input type="checkbox" checked onchange=${(event) => {
     event.target.checked ? active.add(type.id) : active.delete(type.id);
@@ -37,11 +39,12 @@ export function cityMap(mapUrl) {
   const root = html`<section class="city-panel city-geography" aria-labelledby="city-map-heading">
     <div class="city-panel-heading"><div><span class="monitor-kicker">01 / 城市地圖</span><h2 id="city-map-heading">地點背後，連住哪些需要？</h2></div><span class="monitor-tag">香港</span></div>
     <fieldset class="city-map-filters"><legend>顯示地點類別</legend>${filters}</fieldset>
-    <div class="city-map-canvas"><img src=${mapUrl} width="900" height="560" alt="香港地理輪廓；可從地圖標記或下方清單選取地點。">${markers}<span class="city-map-scale">地域定位 / 代表地點</span></div>
+    ${mapView.element}
     ${status}<div class="city-place-choices" aria-label="選取地點">${choices}</div>${detail}
     <p class="city-map-note">標記採用官方地名定位點，唔代表分區邊界；商業、交通同郊野係教學分類，可以重疊。數據連結均屬全港背景，唔代表該地區數字。</p>
     <footer class="city-provenance"><span>© 香港特別行政區政府地政總署 · 地圖經簡化</span><a href="../about/sources#hong-kong-places">地點來源與定位說明</a></footer>
   </section>`;
+  mapView.setContent(html`<div class="city-map-canvas"><img src=${mapUrl} width="900" height="560" alt="香港地理輪廓；可從地圖標記或下方清單選取地點。">${markers}</div>`, html`<span>© 香港特別行政區政府地政總署 · 地圖經簡化；標記只代表定位點。<a href="../about/sources#hong-kong-places">地點來源與定位說明 ↗</a></span>`);
   function select(place) { selected = place; render(); }
   function render() {
     for (const button of [...markers, ...choices]) {
@@ -49,6 +52,7 @@ export function cityMap(mapUrl) {
       button.setAttribute("aria-pressed", String(button.dataset.place === selected?.id));
     }
     status.textContent = selected ? `已選：${selected.label} · 可從清單選取鄰近標記` : "未選取類別。勾選上方類別可顯示地點。";
+    mapView.setSelection(selected, selected ? `已選地點：${selected.label}` : "請先勾選地點類別，再選取地點。");
     if (!selected) { detail.replaceChildren(); return; }
     const links = {
       business: [["四大行業", "../indicators/four_key_industries"], ["工資", "../indicators/median_wage"], ["科技與香港", "./technology"]],

@@ -19,6 +19,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { pickDataAsOf, isDisplayed } from "../src/data/_lib/site-meta.js";
+import { normalizeBrowserViewport } from "./lib/viewport.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
@@ -61,6 +62,16 @@ function toCleanUrl(path) {
 
 const htmlPages = files.filter((file) => file.path.endsWith(".html"));
 
+// 先移走框架固定的手機放大限制，再以真正輸出的 HTML 內容計快取版本。
+// 唔加第二個 viewport、唔靠載入後的 JS；離線首開亦用同一份修正過的 HTML。
+const htmlDigests = [];
+for (const file of htmlPages) {
+  const raw = await readFile(file.full, "utf8");
+  const normalized = normalizeBrowserViewport(raw);
+  if (normalized !== raw) await writeFile(file.full, normalized, "utf8");
+  htmlDigests.push([file.path, createHash("sha256").update(normalized).digest("hex")]);
+}
+
 // 關鍵資源:頁面、樣式、runtime、字型、資料。冇呢啲離線就乜都冇。
 // ⚠️ /_npm/ 有兩層:scoped 套件係 /_npm/@observablehq/plot@x/<hash>.js。
 //    用單層 regex 會靜靜哋漏咗 Plot —— 上線嗰陣睇落冇事,離線先發現圖畫唔到。
@@ -95,10 +106,10 @@ for (const name of (await readdir(citySnapshots)).filter((n) => n.endsWith(".jso
 const dataAsOf = pickDataAsOf(docs);
 const hidden = docs.filter((doc) => !isDisplayed(doc));
 
-// 版本 = 全部要快取嘅檔案路徑嘅雜湊。內容改咗檔名就會變(全部帶 hash),
-// 所以呢個 key 一變就代表真係有嘢唔同咗,舊快取應該退役。
+// JS／CSS 等資源檔名帶 hash；HTML 路徑唔帶，所以亦加入正規化後的內容雜湊。
+// 只改 viewport 或靜態文案而路徑不變，版本亦會變，舊快取先會退役。
 const version = createHash("sha256")
-  .update(JSON.stringify([critical, optional]))
+  .update(JSON.stringify([critical, optional, htmlDigests]))
   .digest("hex")
   .slice(0, 12);
 
