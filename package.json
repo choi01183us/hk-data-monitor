@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "observable preview",
-    "build": "npm run validate && rm -rf src/.observablehq/cache && observable build && node scripts/postbuild.mjs",
+    "build": "npm run validate && rm -rf src/.observablehq/cache && HKDM_FIXTURES=record observable build && node scripts/postbuild.mjs",
     "build:offline": "npm run validate && rm -rf src/.observablehq/cache && HKDM_OFFLINE=1 observable build && node scripts/postbuild.mjs",
     "refresh": "HKDM_REFRESH=1 HKDM_FIXTURES=record node scripts/refresh-data.mjs",
     "refresh:city": "node scripts/refresh-city.mjs",

@@ -1,3 +1,5 @@
+import {t, isEnglish} from "./locale.js";
+import {label, indicatorText, anchorText} from "./display-text.js";
 // 指標圖表 —— 全部指標頁共用。
 //
 // SPEC 第 9 節嘅硬性限制,實作喺呢度:
@@ -37,7 +39,8 @@ function narrow(width) {
 
 function yAxis(indicator) {
   return {
-    label: `${indicator.name_zh}(${indicator.unit_zh})`,
+    // The complete name and definition sit above the chart; keep its axis legible on phones.
+    label: isEnglish() ? indicatorText(indicator,"unit_zh") : `${indicatorText(indicator,"name_zh")} (${indicatorText(indicator,"unit_zh")})`,
     grid: true,
     zero: indicator.chart?.y_zero ?? false,
     tickFormat: (value) => formatChineseMagnitude(value),
@@ -47,8 +50,8 @@ function yAxis(indicator) {
 function tooltipTitle(indicator) {
   return (row) =>
     row.value === null
-      ? `${row.label}\n冇數字`
-      : `${row.label}\n${formatNumber(row.value, { digits: indicator.value_digits })} ${indicator.unit_zh}`;
+      ? `${row.label}\n${t("冇數字", "No data")}`
+      : `${row.label}\n${formatNumber(row.value, { digits: indicator.value_digits })} ${indicatorText(indicator,"unit_zh")}`;
 }
 
 /**
@@ -61,9 +64,9 @@ function toRows(indicator) {
   const rows = indicator.series.map((point) => ({
     date: toDate(point.period, { fiscal }),
     period: point.period,
-    category: point.category ?? null,
+    category: point.category ? label(point.category) : null,
     value: point.value,
-    label: point.category ? `${point.period} · ${point.category}` : point.period,
+    label: point.category ? `${point.period} · ${label(point.category)}` : point.period,
   }));
   const broken = rows.filter((row) => row.date === null).map((row) => row.period);
   if (broken.length > 0) {
@@ -92,17 +95,17 @@ function lineChart(indicator, width) {
   return Plot.plot({
     width,
     height: narrow(width) ? 260 : 360,
-    marginLeft: narrow(width) ? 54 : 66,
+    marginLeft: isEnglish() ? (narrow(width) ? 80 : 92) : (narrow(width) ? 54 : 66),
     marginBottom: 36,
     marginTop: 16,
     // 財政年度嘅刻度寫「2019–20」,唔好寫「2020」—— 個點喺 2019 年 4 月,寫 2020 會誤導
     x: fiscal
-      ? { label: null, type: "utc", tickFormat: fiscalTickLabel, ticks: narrow(width) ? 5 : 8 }
+      ? { label: null, type: "utc", tickFormat: fiscalTickLabel, ticks: narrow(width) ? (isEnglish() ? Math.max(2, Math.floor(width / 100)) : 5) : 8 }
       : { label: null, type: "utc" },
     y: yAxis(indicator),
     // domain 跟登記冊寫嘅次序 —— 否則圖例會字母排序,「其他」可以排喺「教育」前面
     color: isMulti
-      ? { legend: true, scheme: "observable10", domain: indicator.category_order ?? categories }
+      ? { legend: true, scheme: "observable10", domain: indicator.category_order?.map(label) ?? categories }
       : undefined,
     marks: [
       // 單條線先填色 —— 多條線疊住填色會互相遮住,睇唔到底下嗰條。
@@ -133,7 +136,7 @@ function barChart(indicator, width) {
   const period = indicator.chart?.period ?? indicator.coverage?.end;
   const rows = indicator.series
     .filter((point) => point.period === period && point.value !== null)
-    .map((point) => ({ category: point.category ?? indicator.name_zh, value: point.value }));
+    .map((point) => ({ category: point.category ? label(point.category) : indicatorText(indicator,"name_zh"), value: point.value }));
 
   if (rows.length === 0) {
     throw new Error(`${indicator.indicator_id}:期數 ${period} 冇任何有數嘅分類,畫唔到長條圖`);
@@ -141,20 +144,21 @@ function barChart(indicator, width) {
 
   return Plot.plot({
     width,
-    height: Math.max(180, rows.length * (narrow(width) ? 30 : 36) + 60),
-    marginLeft: narrow(width) ? 110 : 160,
+    height: Math.max(180, rows.length * (isEnglish() ? (narrow(width) ? 44 : 40) : (narrow(width) ? 30 : 36)) + 60),
+    marginLeft: isEnglish() ? (narrow(width) ? 120 : 200) : (narrow(width) ? 110 : 160),
     marginRight: 86,
     x: {
-      label: indicator.chart?.label_zh ?? `${indicator.unit_zh}(${period})`,
+      label: (isEnglish() ? indicator.chart?.label_en : indicator.chart?.label_zh) ?? `${indicatorText(indicator,"unit_zh")} (${period})`,
       grid: true,
       tickFormat: (value) => formatChineseMagnitude(value),
     },
-    y: { label: "" },
+    y: { label: "", ...(isEnglish() ? {axis:false} : {}) },
     marks: [
+      ...(isEnglish() ? [Plot.axisY({lineWidth: narrow(width) ? 10.5 : 18, fontSize:10})] : []),
       Plot.barX(rows, {
         x: "value",
         y: "category",
-        title: (row) => `${row.category}\n${formatNumber(row.value, { digits: indicator.value_digits ?? 0 })} ${indicator.unit_zh}`,
+        title: (row) => `${row.category}\n${formatNumber(row.value, { digits: indicator.value_digits ?? 0 })} ${indicatorText(indicator,"unit_zh")}`,
         sort: { y: "x", reverse: true },
         fillOpacity: 0.85,
       }),

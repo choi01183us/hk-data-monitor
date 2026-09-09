@@ -4,6 +4,7 @@ keywords: 公共開支 經常開支 政策組別 分餅 預算案 附錄B 教育
 ---
 
 ```js
+import {t} from "../components/locale.js";
 import { indicatorHeader, indicatorAnchors, indicatorNote, manualNotice } from "../components/indicator-page.js";
 import { indicatorChart } from "../components/indicator-chart.js";
 import { dataTable } from "../components/data-table.js";
@@ -38,7 +39,7 @@ display(indicatorAnchors(indicator));
 
 ```js
 const selectedView = chartViews.length > 0
-  ? view(Inputs.select(chartViews, { label: "顯示", format: (item) => item.label, value: chartViews[0] }))
+  ? view(Inputs.select(chartViews, { label: t("顯示", "Display"), format: (item) => item.label, value: chartViews[0] }))
   : null;
 ```
 

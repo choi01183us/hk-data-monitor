@@ -42,7 +42,20 @@ function isCardsOnlyHome(source) {
     const indicators = loaded.filter((indicator) => indicator.manual_status !== "todo");
     display(html\`<div class="card-grid">\${indicators.map((indicator) => indicatorCard(indicator))}</div>\`);
   `;
-  return program.replace(/\s/g, "") === expected.replace(/\s/g, "");
+  // The programme cell reads exactly four image URLs, with no indicator argument or computation.
+  // Any change to this executable shape remains a hard failure, as does a data-reading dependency.
+  const branding = `
+    import {programmeBrand} from "./components/programme-brand.js";
+    const programmeLogos = {
+      bgca: await FileAttachment("./assets/programme/bgca.png").url(),
+      hkex: await FileAttachment("./assets/programme/hkex.png").url(),
+      edb: await FileAttachment("./assets/programme/edb.png").url(),
+      hkcss: await FileAttachment("./assets/programme/hkcss.png").url()
+    };
+    display(programmeBrand({logos: programmeLogos}));
+  `;
+  const compact = program.replace(/\s/g, "");
+  return compact.replace(branding.replace(/\s/g, ""), "") === expected.replace(/\s/g, "");
 }
 
 /** Same function runs from validate/build and the mutation tests; no network. */

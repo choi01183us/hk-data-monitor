@@ -106,6 +106,18 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(handleAsset(request));
 });
 
+/** The same static HTML contains both authored languages. Other query parameters remain significant. */
+function navigationCacheKey(requestUrl) {
+  const target = new URL(requestUrl);
+  const root = new URL("./", self.location);
+  const languages = target.searchParams.getAll("lang");
+  if (target.origin === root.origin && target.pathname.startsWith(root.pathname) &&
+      languages.length === 1 && ["zh-HK", "en-GB"].includes(languages[0])) {
+    target.searchParams.delete("lang");
+  }
+  return target.href;
+}
+
 /**
  * 頁面:網絡優先,失敗就用快取。
  *
@@ -138,13 +150,13 @@ async function handleNavigation(event) {
     }
     if (response.ok) {
       const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
+      await cache.put(navigationCacheKey(request.url), response.clone());
     }
     if (resultingClientId) servedFromCache.set(resultingClientId, false);
     recentCacheServes.delete(request.url);
     return response;
   } catch {
-    const cached = await caches.match(request);
+    const cached = await caches.match(navigationCacheKey(request.url));
     if (cached) {
       noteCacheServe(resultingClientId, request.url);
       return cached;
@@ -159,10 +171,12 @@ async function handleNavigation(event) {
         headers: { "content-type": "text/html; charset=utf-8" },
       });
     }
+    const languages = new URL(request.url).searchParams.getAll("lang");
+    const english = languages.length === 1 && languages[0] === "en-GB";
     return new Response(
-      "<!doctype html><meta charset=utf-8><title>離線</title>" +
-        "<p style='font-family:system-ui;padding:2rem'>你而家離線,而且呢一版未曾快取過。" +
-        "駁返網絡再試,或者返去<a href='./'>首頁</a>。</p>",
+      english
+        ? "<!doctype html><html lang=en-GB><meta charset=utf-8><title>Offline</title><p style='font-family:system-ui;padding:2rem'>You are offline and this page has not been cached. Reconnect and try again, or return to the <a href='" + url("./?lang=en-GB") + "'>home page</a>.</p></html>"
+        : "<!doctype html><html lang=zh-HK><meta charset=utf-8><title>離線</title><p style='font-family:system-ui;padding:2rem'>你而家離線,而且呢一版未曾快取過。駁返網絡再試,或者返去<a href='" + url("./") + "'>首頁</a>。</p></html>",
       { status: 503, headers: { "content-type": "text/html; charset=utf-8" } }
     );
   }

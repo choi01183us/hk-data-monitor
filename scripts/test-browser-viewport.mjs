@@ -57,13 +57,16 @@ export async function testBrowserViewport(check) {
   }
   async function fixture(source = postbuildSource, tag = restricted) {
     const root = join(dir, `fixture-${sequence++}`);
-    for (const path of ["scripts/lib", "src/data/_lib", "src/data/_snapshots", "src/data/_city_snapshots", "public", "dist/_import", "dist/_npm/@observablehq/plot"]) await mkdir(join(root, path), {recursive: true});
+    for (const path of ["scripts/lib", "src/components", "src/data/_lib", "src/data/_snapshots", "src/data/_city_snapshots", "public", "dist/_import", "dist/_npm/@observablehq/plot"]) await mkdir(join(root, path), {recursive: true});
     const files = {
       "package.json": '{"type":"module"}',
-      "scripts/postbuild.mjs": source,
+      "scripts/postbuild.mjs": source.replace('"./lib/language-html.mjs"', JSON.stringify(new URL("./lib/language-html.mjs", import.meta.url).href)).replace('"./lib/anchor-html.mjs"', JSON.stringify(new URL("./lib/anchor-html.mjs", import.meta.url).href)),
       "scripts/lib/viewport.mjs": helperSource,
       "src/data/_lib/site-meta.js": siteMetaSource,
       "public/sw-template.js": 'const VERSION = "__VERSION__";\nconst DATE = "__DATA_AS_OF__";\nconst CRITICAL = __CRITICAL__;\nconst OPTIONAL = __OPTIONAL__;\n',
+      "src/components/locale.js": await readFile(new URL("../src/components/locale.js", import.meta.url), "utf8"),
+      "public/language-switch.js": await readFile(new URL("../public/language-switch.js", import.meta.url), "utf8"),
+      "public/language.css": await readFile(new URL("../public/language.css", import.meta.url), "utf8"),
       "public/manifest.webmanifest": "{}", "public/icon.svg": "<svg/>", "public/offline-banner.js": "// banner",
       "dist/index.html": page(tag), "dist/404.html": page(tag, "搵唔到呢一版"),
       "dist/_import/main.123.js": "// module", "dist/_npm/@observablehq/plot/plot.456.js": "// plot",
@@ -76,6 +79,7 @@ export async function testBrowserViewport(check) {
       run: () => runNode(process.execPath, [join(root, "scripts/postbuild.mjs")], {cwd: root, timeout: 15000}),
       read: (path) => readFile(join(root, "dist", path), "utf8"),
       write: (path, content) => writeFile(join(root, "dist", path), content),
+      writePublic: (path, content) => writeFile(join(root, "public", path), content),
     };
   }
   const versionOf = (sw) => sw.match(/const VERSION = "([a-f0-9]{12})";/)?.[1];
@@ -100,13 +104,17 @@ export async function testBrowserViewport(check) {
     await test.write("404.html", page(accessible, "另一頁亦有修改"));
     await test.run();
     const changedOtherPage = await test.read("sw.js");
+    await test.writePublic("language-switch.js", "// changed language controls with the same URL");
+    await test.run();
+    const changedLanguage = await test.read("sw.js");
     return {
       valid: [first, second, changed, changedOtherPage].every((sw) => /^[a-f0-9]{12}$/.test(versionOf(sw) ?? "")),
       stable: versionOf(first) === versionOf(second),
       changed: versionOf(second) !== versionOf(changed),
       otherPage: versionOf(changed) !== versionOf(changedOtherPage),
+      fixedAsset: versionOf(changedLanguage) !== versionOf(changedOtherPage) && resourcesOf(changedLanguage) === resourcesOf(changedOtherPage),
       resources: [second, changed, changedOtherPage].every((sw) => resourcesOf(first) === resourcesOf(sw)),
-      scope: resourcesOf(first) === JSON.stringify([["./404", "./", "./_import/main.123.js", "./icon.svg", "./manifest.webmanifest", "./offline-banner.js"], ["./_npm/@observablehq/plot/plot.456.js"]]),
+      scope: resourcesOf(first) === JSON.stringify([["./404", "./", "./_import/main.123.js", "./icon.svg", "./language-switch.js", "./language.css", "./locale.js", "./manifest.webmanifest", "./offline-banner.js"], ["./_npm/@observablehq/plot/plot.456.js"]]),
     };
   }
   const detects = (oracle, module) => {try {return !oracle(module);} catch {return true;}};
@@ -117,6 +125,7 @@ export async function testBrowserViewport(check) {
     check("相同 HTML 重跑版本不變", versions.stable);
     check("只改 HTML 內容而路徑不變，快取版本亦更新", versions.changed);
     check("首頁以外的 HTML 內容亦影響版本", versions.otherPage);
+    check("只改語言程式而 URL 不變仍更新快取版本", versions.fixedAsset);
     check("HTML 雜湊唔改變 precache 資源清單", versions.resources && versions.scope);
     for (const [label, tag] of [["缺少 viewport", ""], ["重複 viewport", restricted + restricted], ["不明 viewport", accessible.replace("initial-scale=1", "user-scalable=no")]]) {
       const test = await fixture(postbuildSource, tag);
@@ -135,8 +144,10 @@ export async function testBrowserViewport(check) {
     ]) check(`源碼突變：${label}會被捉到`, detects(oracles[key], await mutatedHelper(from, to)));
     for (const [label, from, to] of [
       ["刪除 postbuild 正規化掛勾", "const normalized = normalizeBrowserViewport(raw);", "const normalized = raw;"],
-      ["刪除正規化 HTML 寫入", 'if (normalized !== raw) await writeFile(file.full, normalized, "utf8");', ""],
+      ["刪除正規化 HTML 寫入", 'if (normalized !== original) await writeFile(file.full, normalized, "utf8");', ""],
     ]) check(`源碼突變：${label}會被捉到`, !await normalizedByPostbuild(replaceOnce(postbuildSource, from, to)));
+    const fixedAssetIgnored = await versionBehavior(replaceOnce(postbuildSource, 'for (const name of [...fixedAssets, "locale.js", "sw-template.js"])', 'for (const name of [])'));
+    check("源碼突變：忽略固定檔名資產內容會被捉到", !fixedAssetIgnored.fixedAsset);
     const pathOnly = await versionBehavior(replaceOnce(postbuildSource, "JSON.stringify([critical, optional, htmlDigests])", "JSON.stringify([critical, optional])"));
     check("源碼突變：版本刪除 HTML 內容雜湊會被捉到", !pathOnly.changed && !pathOnly.otherPage);
     const hashBeforeFix = await versionBehavior(replaceOnce(postbuildSource, '.update(normalized).digest("hex")', '.update(raw).digest("hex")'));

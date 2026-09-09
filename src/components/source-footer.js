@@ -1,3 +1,5 @@
+import {t, isEnglish} from "./locale.js";
+import {label, indicatorText} from "./display-text.js";
 // 來源頁腳 —— SPEC 第 2 節硬規則第 3 條嘅實作。
 //
 //   「任何顯示畀學生睇的數字,都要喺同一頁見到來源機構、來源連結、數據截至日期。
@@ -35,63 +37,62 @@ export function sourceFooter(indicator, options = {}) {
   } = indicator;
 
   return html`<section class="source-footer">
-    <h2 id="source" class="source-footer__title">資料來源</h2>
+    <h2 id="source" class="source-footer__title">${t("資料來源", "Sources and citation")}</h2>
 
     ${build?.stale ? staleWarning(build, updated_at) : null}
 
     <dl class="source-footer__list">
       <div>
-        <dt>來源機構</dt>
+        <dt>${t("來源機構", "Source institution")}</dt>
         <dd>
-          <a href=${source_url} target="_blank" rel="noopener noreferrer">${source_zh}</a>
-          <span class="source-footer__en">${source_en}</span>
-          ${source_note_zh ? html`<p class="source-footer__note">${source_note_zh}</p>` : null}
+          <a href=${source_url} target="_blank" rel="noopener noreferrer">${indicatorText(indicator,"source_zh")}</a>
+          ${isEnglish() ? null : html`<span class="source-footer__en">${source_en}</span>`}
+          ${source_note_zh ? html`<p class="source-footer__note">${indicatorText(indicator,"source_note_zh")}</p>` : null}
         </dd>
       </div>
 
       <div>
-        <dt>數據截至</dt>
+        <dt>${t("數據截至", "Data as of")}</dt>
         <dd>
           <strong>${formatDateZh(updated_at)}</strong>
           <span class="source-footer__note">
-            資料本身涵蓋 ${coverage?.start} 至 ${coverage?.end}${FREQUENCY_ZH[frequency] ? `,${FREQUENCY_ZH[frequency]}資料` : ""}
+            ${t(`資料本身涵蓋 ${coverage?.start} 至 ${coverage?.end}${FREQUENCY_ZH[frequency] ? `,${FREQUENCY_ZH[frequency]}資料` : ""}`, `Coverage: ${coverage?.start} to ${coverage?.end}; ${frequency}`)}
           </span>
         </dd>
       </div>
 
       <div>
-        <dt>單位</dt>
+        <dt>${t("單位", "Unit")}</dt>
         <dd>
-          <strong>${unit_zh}</strong>
+          <strong>${indicatorText(indicator,"unit_zh")}</strong>
           ${unit_source_zh && unit_source_zh !== unit_zh
-            ? html`<span class="source-footer__note">來源原本寫「${unit_source_zh}」</span>`
+            ? html`<span class="source-footer__note">${t(`來源原本寫「${unit_source_zh}」`, `Original source unit: ${indicatorText(indicator,"unit_source_zh")}`)}</span>`
             : null}
         </dd>
       </div>
 
       <div>
-        <dt>使用授權</dt>
+        <dt>${t("使用授權", "Licence")}</dt>
         <dd>
           ${licence_url
-            ? html`<a href=${licence_url} target="_blank" rel="noopener noreferrer">${licence}</a>`
-            : licence}
+            ? html`<a href=${licence_url} target="_blank" rel="noopener noreferrer">${label(licence)}</a>`
+            : label(licence)}
         </dd>
       </div>
 
       <div>
-        <dt>資料版本</dt>
+        <dt>${t("資料版本", "Data version")}</dt>
         <dd>
           <code>${data_version}</code>
           <span class="source-footer__note">
-            ${ACQUISITION_ZH[acquisition] ?? acquisition}${build?.built_at ? `,本頁於 ${formatRelativeZh(build.built_at)}建置` : ""}
+            ${t(ACQUISITION_ZH[acquisition] ?? acquisition, ({api:"Retrieved from an official API",manual:"Manually transcribed from official documents",derived:"Calculated from other indicators"})[acquisition] ?? acquisition)}${build?.built_at ? t(`,本頁於 ${formatRelativeZh(build.built_at)}建置`, `; page built ${formatRelativeZh(build.built_at)}`) : ""}
           </span>
         </dd>
       </div>
     </dl>
 
     <p class="source-footer__verify">
-      想自己核對?撳上面條來源連結,去返政府原本嗰版對數。
-      呢個網站唔會改動原始數字,任何換算都會喺圖表下面寫明。
+      ${t("想自己核對?撳上面條來源連結,去返政府原本嗰版對數。呢個網站唔會改動原始數字,任何換算都會喺圖表下面寫明。", "Follow the source link to check the official figures. This site retains the original data and explains any conversion below the chart.")}
     </p>
     ${citationPicker(indicator, options)}
   </section>`;
@@ -105,18 +106,18 @@ export function citationPicker(indicator, options = {}) {
     // 選項標籤亦屬於引用內容;狀態欄損壞時顯示錯誤,唔令整個來源區消失。
     for (const choice of choices) citationChoiceLabel(indicator, choice);
   } catch (error) {
-    return html`<p class="citation-status" role="status">暫時未能提供引用：${error.message}</p>`;
+    return html`<p class="citation-status" role="status">${t("暫時未能提供引用：", "Citation unavailable: ")}${error.message}</p>`;
   }
   if (choices.length === 0) {
-    return html`<p class="citation-status">未有完整有效數字可供引用；未填值唔代表零。</p>`;
+    return html`<p class="citation-status">${t("未有完整有效數字可供引用；未填值唔代表零。", "No complete valid figures are available to cite; missing values do not mean zero.")}</p>`;
   }
 
-  const periodSelect = html`<select aria-label="選擇引用期數"></select>`;
-  const measureSelect = html`<select aria-label="選擇引用分類或總額"></select>`;
-  const preview = html`<textarea class="citation-preview" readonly rows="7" aria-label="完整引用文字"></textarea>`;
+  const periodSelect = html`<select aria-label=${t("選擇引用期數", "Choose citation period")}></select>`;
+  const measureSelect = html`<select aria-label=${t("選擇引用分類或總額", "Choose citation category or total")}></select>`;
+  const preview = html`<textarea class="citation-preview" readonly rows="7" aria-label=${t("完整引用文字", "Complete citation text")}></textarea>`;
   const status = html`<p class="citation-status" role="status" aria-live="polite"></p>`;
-  const copy = html`<button type="button">複製完整引用</button>`;
-  const selectText = html`<button type="button">選取引用文字</button>`;
+  const copy = html`<button type="button">${t("複製完整引用", "Copy full citation")}</button>`;
+  const selectText = html`<button type="button">${t("選取引用文字", "Select citation text")}</button>`;
   const periodKey = (choice) => choice.from ? `${choice.from}/${choice.to}` : choice.period;
   const keys = [...new Set(choices.map(periodKey))];
   periodSelect.replaceChildren(...keys.map((key) => {
@@ -131,12 +132,12 @@ export function citationPicker(indicator, options = {}) {
       preview.value = createCitation(indicator, shown[Number(measureSelect.value)]);
       copy.disabled = false;
       selectText.disabled = false;
-      status.textContent = "引用已包括期數、口徑、單位及來源；可直接複製。";
+      status.textContent = t("引用已包括期數、口徑、單位及來源；可直接複製。", "The citation includes period, scope, unit and source, ready to copy.");
     } catch (error) {
       preview.value = "";
       copy.disabled = true;
       selectText.disabled = true;
-      status.textContent = `暫時未能提供引用：${error.message}`;
+      status.textContent = `${t("暫時未能提供引用：", "Citation unavailable: ")}${error.message}`;
     }
   }
   function updateMeasures() {
@@ -151,7 +152,7 @@ export function citationPicker(indicator, options = {}) {
   selectText.addEventListener("click", () => {
     preview.focus();
     preview.select();
-    status.textContent = "已選取引用文字，可用裝置嘅複製功能。";
+    status.textContent = t("已選取引用文字，可用裝置嘅複製功能。", "Citation selected. Use your device’s copy command.");
   });
   copy.addEventListener("click", async () => {
     const text = preview.value;
@@ -159,22 +160,22 @@ export function citationPicker(indicator, options = {}) {
     try {
       if (!navigator.clipboard?.writeText) throw new Error("clipboard unavailable");
       await navigator.clipboard.writeText(text);
-      status.textContent = "已複製完整引用。";
+      status.textContent = t("已複製完整引用。", "Full citation copied.");
     } catch {
       preview.focus();
       preview.select();
-      status.textContent = "未能自動複製。引用文字已選取，請用裝置嘅複製功能。";
+      status.textContent = t("未能自動複製。引用文字已選取，請用裝置嘅複製功能。", "Automatic copying is unavailable. The text is selected; use your device’s copy command.");
     }
   });
   updateMeasures();
   return html`<details class="citation-picker">
-    <summary>複製數字及出處</summary>
-    <p>揀期數及分類，先核對下面嘅完整引用。呢個功能離線都用到。</p>
+    <summary>${t("複製數字及出處", "Copy figures with their sources")}</summary>
+    <p>${t("揀期數及分類，先核對下面嘅完整引用。呢個功能離線都用到。", "Choose a period and category, then check the complete citation below. This also works offline.")}</p>
     <div class="citation-controls">
-      <label>期數 ${periodSelect}</label>
-      <label>分類／總額 ${measureSelect}</label>
+      <label>${t("期數", "Period")} ${periodSelect}</label>
+      <label>${t("分類／總額", "Category / total")} ${measureSelect}</label>
     </div>
-    <label>引用預覽 ${preview}</label>
+    <label>${t("引用預覽", "Citation preview")} ${preview}</label>
     <div class="citation-controls">${copy} ${selectText}</div>
     ${status}
   </details>`;
@@ -187,9 +188,8 @@ export function citationPicker(indicator, options = {}) {
  */
 function staleWarning(build, updatedAt) {
   return html`<p class="source-footer__stale" role="status">
-    <strong>留意:</strong>最近一次自動更新攞唔到新數據,
-    以下數字係上一次成功更新嗰時嘅版本(數據截至 ${formatDateZh(updatedAt)})。
-    ${build.stale_reason ? html`<span class="source-footer__note">技術原因:${build.stale_reason}</span>` : null}
+    <strong>${t("留意:", "Please note: ")}</strong>${t(`最近一次自動更新攞唔到新數據,以下數字係上一次成功更新嗰時嘅版本(數據截至 ${formatDateZh(updatedAt)})。`, `The latest update could not retrieve new data. These figures are from the last successful update (data as of ${formatDateZh(updatedAt)}).`)}
+    ${build.stale_reason ? html`<span class="source-footer__note">${t("技術原因:", "Technical reason: ")}${build.stale_reason}</span>` : null}
   </p>`;
 }
 

@@ -20,6 +20,7 @@
 import { spawn } from "node:child_process";
 import { createRequire } from "node:module";
 import { existsSync } from "node:fs";
+import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
@@ -51,6 +52,11 @@ if (!chromium) {
   process.exit(0);
 }
 
+const gdpSnapshot = JSON.parse(await readFile(join(ROOT, "src/data/_snapshots/gdp.json"), "utf8"));
+const unemploymentSnapshot = JSON.parse(await readFile(join(ROOT, "src/data/_snapshots/unemployment.json"), "utf8"));
+const gdpLatest = [...gdpSnapshot.series].reverse().find((point) => Number.isFinite(point.value));
+const exactGDP = gdpLatest.value.toLocaleString("en-GB", {maximumFractionDigits: 20});
+let browser;
 let passed = 0;
 let failed = 0;
 function check(name, condition, detail = "") {
@@ -79,9 +85,42 @@ try {
     }
   }
 
-  const browser = await chromium.launch({ channel: "chromium" });
+  browser = await chromium.launch({ channel: "chromium" });
   const context = await browser.newContext({ viewport: { width: 900, height: 1000 } });
+  const outsideRequests = [];
+  context.on("request", (request) => {
+    if (/^https?:/.test(request.url()) && !request.url().startsWith(BASE)) outsideRequests.push(request.url());
+  });
   const page = await context.newPage();
+  async function workerStatus() {
+    return page.evaluate(() => new Promise((resolve) => {
+      const timer = setTimeout(() => resolve(null), 3000);
+      navigator.serviceWorker.addEventListener("message", function handler(event) {
+        if (event.data?.type !== "hkdm:status") return;
+        clearTimeout(timer);
+        navigator.serviceWorker.removeEventListener("message", handler);
+        resolve(event.data);
+      });
+      navigator.serviceWorker.controller?.postMessage({type: "hkdm:status", url: location.href});
+    }));
+  }
+  async function readRenderedAttachment(id) {
+    return page.evaluate(async (id) => {
+      const resource = performance.getEntriesByType("resource").find((entry) => entry.name.includes(`/_file/data/${id}.`) && entry.name.endsWith(".json"));
+      if (!resource) throw new Error(`Rendered data attachment missing: ${id}`);
+      const response = await fetch(resource.name);
+      if (!response.ok) throw new Error(`Offline attachment failed: ${id}`);
+      return response.json();
+    }, id);
+  }
+  async function languageControlReachable(code) {
+    const choice = page.locator(`.hkdm-language-switch [data-language-choice="${code}"]`);
+    try {
+      await choice.scrollIntoViewIfNeeded();
+      await choice.click({trial: true, timeout: 3000});
+      return await choice.isVisible();
+    } catch {return false;}
+  }
 
   console.log("\n[離線行為] 先上線行一轉,令 HTTP 快取有嘢(唔做呢步就重現唔到個 bug)");
   await page.goto(BASE, { waitUntil: "networkidle" });
@@ -147,6 +186,63 @@ try {
   check("回 HTTP 404", response?.status() === 404, String(response?.status()));
   check("出嘅係 404 版,唔係首頁", notFound.h1 === "搵唔到呢一版" && notFound.cards === 0, `h1=${notFound.h1} cards=${notFound.cards}`);
 
+  console.log("\n[雙語離線] 英文 query 未曾載入，直接進入深層指標頁");
+  const storageBefore = await page.evaluate(() => ({local: Object.fromEntries(Object.entries(localStorage)), session: Object.fromEntries(Object.entries(sessionStorage)), cookie: document.cookie}));
+  const englishResponse = await page.goto(`${BASE}indicators/gdp?lang=en-GB#source`, {waitUntil: "load"});
+  await page.waitForSelector(".headline__item", {timeout: 20_000});
+  await page.waitForSelector(".hkdm-language-switch", {timeout: 20_000});
+  check("首次離線英文深層導航回 200，英文內容確實渲染", englishResponse?.status() === 200 && await page.locator("html").getAttribute("lang") === "en-GB" && (await page.locator(".source-footer__title").innerText()).trim() === "Sources and citation");
+  const englishStatus = await workerStatus();
+  check("英文 query 由同一份已預先快取頁面回答", englishStatus?.fromCache === true, JSON.stringify(englishStatus));
+  await page.waitForFunction(() => {const banner = document.querySelector("#hkdm-offline-banner"); return banner && !banner.hidden;});
+  check("英文離線橫額明文顯示快取狀態及資料日期", /Showing the offline cache\./.test(await page.locator("#hkdm-offline-banner").innerText()) && /data-as-of date/.test(await page.locator("#hkdm-offline-banner").innerText()));
+  check("語言切換可見且未被頁首遮擋", await languageControlReachable("zh-HK") && await languageControlReachable("en-GB"));
+
+  await page.locator(".citation-picker > summary").click();
+  await page.waitForSelector(".citation-preview:visible");
+  const citation = await page.locator(".citation-preview").inputValue();
+  check("英文引用保留快照原值、期數、單位、來源及版本", citation.includes(exactGDP) && citation.includes(gdpLatest.period) && citation.includes(gdpSnapshot.unit_en) && citation.includes(gdpSnapshot.source_url) && citation.includes(gdpSnapshot.updated_at) && citation.includes(gdpSnapshot.data_version) && citation.includes("Scope:") && citation.includes("Source:"), citation);
+  check("英文複製引用按鈕離線可用", await page.getByRole("button", {name: "Copy full citation", exact: true}).isEnabled());
+  await page.getByRole("button", {name: "Select citation text", exact: true}).click();
+  const selectedCitation = await page.locator(".citation-preview").evaluate((element) => element.selectionStart === 0 && element.selectionEnd === element.value.length);
+  check("不依賴剪貼簿權限仍能選取完整英文引用", selectedCitation);
+  const englishGDP = await readRenderedAttachment("gdp");
+  check("轉英文沒有改資料附件的原始數值或單位", JSON.stringify(englishGDP.series) === JSON.stringify(gdpSnapshot.series) && englishGDP.unit_zh === gdpSnapshot.unit_zh && englishGDP.indicator_id === "gdp");
+
+  await Promise.all([
+    page.waitForURL((url) => url.pathname.endsWith("/indicators/gdp") && !url.searchParams.has("lang") && url.hash === "#source"),
+    page.locator('[data-language-choice="zh-HK"]').click(),
+  ]);
+  await page.waitForSelector(".source-footer__title");
+  check("切回繁中保留原頁及 hash", await page.locator("html").getAttribute("lang") === "zh-HK" && (await page.locator(".source-footer__title").innerText()).trim() === "資料來源");
+  await Promise.all([
+    page.waitForURL((url) => url.pathname.endsWith("/indicators/gdp") && url.searchParams.get("lang") === "en-GB" && url.hash === "#source"),
+    page.locator('[data-language-choice="en-GB"]').click(),
+  ]);
+  await page.waitForSelector(".source-footer__title");
+  check("再切英文同樣保留原頁及 hash", await page.locator("html").getAttribute("lang") === "en-GB" && (await page.locator(".source-footer__title").innerText()).trim() === "Sources and citation");
+
+  const unemploymentResponse = await page.goto(`${BASE}indicators/unemployment?lang=en-GB#source`, {waitUntil: "load"});
+  await page.waitForSelector(".headline__item", {timeout: 20_000});
+  const englishUnemployment = await readRenderedAttachment("unemployment");
+  check("未曾在線開過的英文分類指標亦能離線渲染", unemploymentResponse?.status() === 200 && await page.locator(".data-table tbody tr").count() > 10);
+  check("原始中文 category 及分類數值保持不變", JSON.stringify(englishUnemployment.series) === JSON.stringify(unemploymentSnapshot.series) && englishUnemployment.series.some((point) => /[\u3400-\u9fff]/.test(point.category ?? "")));
+  const presentedCategories = await page.locator(".headline__label").allTextContents();
+  check("英文頁分類只在顯示時翻譯", presentedCategories.length >= 2 && presentedCategories.every((text) => text.trim() && !/[\u3400-\u9fff]/.test(text)), presentedCategories.join(" | "));
+  const storageAfter = await page.evaluate(() => ({local: Object.fromEntries(Object.entries(localStorage)), session: Object.fromEntries(Object.entries(sessionStorage)), cookie: document.cookie}));
+  check("語言選擇不新增偏好儲存或 cookie", JSON.stringify(storageAfter) === JSON.stringify(storageBefore) && (await context.cookies()).length === 0);
+
+  for (const [label, suffix] of [
+    ["不存在的英文路徑", "indicators/no-such-indicator?lang=en-GB"],
+    ["未知額外 query", "indicators/gdp?lang=en-GB&unknown=1"],
+    ["未支援語言 query", "indicators/gdp?lang=fr"],
+  ]) {
+    const unknownResponse = await page.goto(`${BASE}${suffix}`, {waitUntil: "load"});
+    await page.waitForSelector("h1");
+    const unknown = await page.evaluate(() => ({heading: document.querySelector("h1")?.innerText?.trim(), cards: document.querySelectorAll(".indicator-card").length, values: document.querySelectorAll(".headline__item").length}));
+    check(`${label} 保持 404，沒有誤用首頁或指標快取`, unknownResponse?.status() === 404 && unknown.cards === 0 && unknown.values === 0 && ["Page not found", "搵唔到呢一版"].includes(unknown.heading), JSON.stringify(unknown));
+  }
+
   console.log("\n[離線行為] 回復網絡");
   await context.setOffline(false);
   await page.goto(BASE, { waitUntil: "networkidle" });
@@ -161,8 +257,13 @@ try {
   check("回復網絡之後橫額收返", !back.bannerShown);
   check("零第三方請求", back.external === 0, `${back.external} 個`);
 
-  await browser.close();
+  await page.goto(`${BASE}indicators/gdp?lang=en-GB#source`, {waitUntil: "networkidle"});
+  await page.waitForSelector(".headline__item");
+  const onlineEnglishStatus = await workerStatus();
+  check("英文頁恢復連線後不錯報由離線快取回答", onlineEnglishStatus?.fromCache === false, JSON.stringify(onlineEnglishStatus));
+  check("雙語導航、引用及資料載入全程零站外請求", outsideRequests.length === 0, outsideRequests.join("\n"));
 } finally {
+  await browser?.close();
   server.kill();
 }
 

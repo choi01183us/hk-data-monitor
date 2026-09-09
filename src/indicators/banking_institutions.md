@@ -4,6 +4,8 @@ keywords: 銀行 持牌銀行 有限制牌照銀行 接受存款公司 金管局
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {label} from "../components/display-text.js";
 import { financeCountPanel } from "../components/finance-count-panel.js";
 import { financeCounts } from "../components/finance-counts.js";
 import { indicatorChart } from "../components/indicator-chart.js";
@@ -30,8 +32,8 @@ display(financeCountPanel(indicator, counts.period));
 <h2 id="chart">同一個月末，三種牌照</h2>
 
 ```js
-display(resize((width) => counts.rows.some((row) => row.value !== null) ? indicatorChart({ ...indicator, chart: { type: "bar", period: counts.period } }, width) : html`<p class="finance-no-data" role="status">呢個月末未有可用數字；缺值唔代表零。</p>`));
-display(indicatorAnchors({ anchors: counts.total === null ? [] : [{ id: "composition", text_zh: `三類合共 ${counts.total} 間認可機構`, basis_zh: counts.rows.map((row) => `${row.category} ${row.value}`).join(" + ") + ` = ${counts.total} 間。代表辦事處不包括在內。` }] }));
+display(resize((width) => counts.rows.some((row) => row.value !== null) ? indicatorChart({ ...indicator, chart: { type: "bar", period: counts.period } }, width) : html`<p class="finance-no-data" role="status">${t("呢個月末未有可用數字；缺值唔代表零。", "No figures are available for this month end. Missing values do not mean zero.")}</p>`));
+display(indicatorAnchors({ anchors: counts.total === null ? [] : [{ id: "composition", text_zh: `三類合共 ${counts.total} 間認可機構`, text_en: `The three categories total ${counts.total} authorised institutions`, basis_zh: counts.rows.map((row) => `${row.category} ${row.value}`).join(" + ") + ` = ${counts.total} 間。代表辦事處不包括在內。`, basis_en: counts.rows.map((row) => `${label(row.category)} ${row.value}`).join(" + ") + ` = ${counts.total} institutions. Representative offices are excluded.` }] }));
 display(indicatorNote(indicator));
 display(learningGuidance(indicator));
 display(dataTable(indicator));

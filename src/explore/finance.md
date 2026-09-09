@@ -6,6 +6,8 @@ toc: false
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {label, indicatorText} from "../components/display-text.js";
 import {financialInstitutions} from "../components/financial-institutions.js";
 import { financeCountPanel } from "../components/finance-count-panel.js";
 import { moneyHeader } from "../components/money-header.js";
@@ -53,14 +55,14 @@ display(financialInstitutions());
 
 ```js
 display(moneyHeader(money, money.coverage.end));
-display(html`<p class="finance-source">來源：<a href=${money.source_url} target="_blank" rel="noopener noreferrer">${money.source_zh} ↗</a> · 來源更新 ${formatDateZh(money.updated_at)}${money.build?.stale ? " · 最近取得失敗，顯示舊快照" : ""}</p>`);
+display(html`<p class="finance-source">${t("來源：", "Source: ")}<a href=${money.source_url} target="_blank" rel="noopener noreferrer">${indicatorText(money, "source_zh")} ↗</a>${t(" · 來源更新 ", " · Source updated ")}${formatDateZh(money.updated_at)}${money.build?.stale ? t(" · 最近取得失敗，顯示舊快照", " · Latest retrieval failed; showing the previous snapshot") : ""}</p>`);
 ```
 
 <p class="finance-note">所有貨幣折合港元；未經季節性調整。大字至小數兩位，1 萬億港元 = 1,000,000,000,000 港元。三者互相包含，唔好相加；唔等同政府可以分配嘅錢。</p>
 <div class="finance-chart">
 
 ```js
-const selectedSeries = view(Inputs.select(["全部", "M1", "M2", "M3"], { label: "顯示數列", value: "全部" }));
+const selectedSeries = view(Inputs.select(["全部", "M1", "M2", "M3"], { label: t("顯示數列", "Display series"), format: label, value: "全部" }));
 ```
 
 ```js

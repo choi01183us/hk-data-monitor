@@ -1,0 +1,7 @@
+html[lang="en-GB"] [data-language="zh-HK"],
+html:not([lang="en-GB"]) [data-language="en-GB"] { display: none !important; }
+.hkdm-language-switch { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: .4rem; max-width: 1320px; padding: .6rem 1rem; margin: 0 auto; font: .8rem/1.4 system-ui, sans-serif; }
+.hkdm-language-switch a { border: 1px solid var(--theme-foreground-fainter, #697686); border-radius: 999px; padding: .4rem .8rem; min-height: 44px; display: inline-flex; align-items: center; box-sizing: border-box; text-decoration: none; color: var(--theme-foreground, #e6edf3); }
+.hkdm-language-switch a[aria-current="true"] { background: var(--theme-foreground, #e6edf3); color: var(--theme-background, #111827); }
+.hkdm-language-switch a:focus-visible { outline: 3px solid #38bdf8; outline-offset: 3px; }
+@media print { .hkdm-language-switch { display: none; } }

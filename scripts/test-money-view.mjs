@@ -123,7 +123,8 @@ export async function testMoneyView(check) {
     if (source.split(from).length !== 2) throw new Error(`源碼突變必須精確命中一次：${from}`);
     const file = join(dir, `mutation-${seq++}.mjs`);
     // 臨時副本仍用同一份正式格式器；import 出錯要令整套測試失敗，唔當捕獲突變。
-    const mutated = source.replace(from, to).replace('"./format.js"', JSON.stringify(new URL("../src/components/format.js", import.meta.url).href));
+    const original = new URL("../src/components/money-view.js", import.meta.url);
+    const mutated = source.replace(from, to).replace(/(\bfrom\s+["'])(\.[^"']+)(["'])/g, (_, prefix, specifier, suffix) => `${prefix}${new URL(specifier, original).href}${suffix}`);
     await writeFile(file, mutated); return import(pathToFileURL(file).href);
   }
   const detects = (oracle, module) => {try {return !oracle(module);} catch {return true;}};

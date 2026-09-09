@@ -4,6 +4,8 @@ keywords: M1 M2 M3 貨幣 供應 金管局 存款 現金 金融 股票 市值
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {label} from "../components/display-text.js";
 import { indicatorChart } from "../components/indicator-chart.js";
 import { indicatorAnchors, indicatorNote } from "../components/indicator-page.js";
 import { moneyHeader } from "../components/money-header.js";
@@ -20,7 +22,7 @@ const periods = [...new Set(indicator.series.map((point) => point.period))].sort
 <p class="lede">現金同存款可以用唔同範圍量度。M1、M2、M3 逐層包含，唔可以加埋。</p>
 
 ```js
-const selectedQuarter = view(Inputs.select(periods, { label: "讀數季度", value: periods[0] }));
+const selectedQuarter = view(Inputs.select(periods, { label: t("讀數季度", "Reading quarter"), value: periods[0] }));
 ```
 
 ```js
@@ -32,7 +34,7 @@ display(moneyHeader(indicator, selectedQuarter));
 <h2 id="chart">三條線，代表三個包含範圍</h2>
 
 ```js
-const selectedSeries = view(Inputs.select(["全部", "M1", "M2", "M3"], { label: "顯示數列", value: "全部" }));
+const selectedSeries = view(Inputs.select(["全部", "M1", "M2", "M3"], { label: t("顯示數列", "Display series"), format: label, value: "全部" }));
 ```
 
 ```js

@@ -4,6 +4,8 @@ keywords: CPI 物價 通脹 食品 住屋 交通 電力 燃氣 水 衣履 生活
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {label} from "../components/display-text.js";
 import { html } from "npm:htl";
 import { indicatorAnchors, indicatorNote } from "../components/indicator-page.js";
 import { indicatorChart } from "../components/indicator-chart.js";
@@ -20,7 +22,7 @@ const months = [...new Set(indicator.series.map((point) => point.period))].sort(
 <p class="lede">同一個月，食品、住屋同交通嘅價錢升跌可以好唔同。</p>
 
 ```js
-const selectedMonth = view(Inputs.select(months, { label: "比較月份", value: months[0] }));
+const selectedMonth = view(Inputs.select(months, { label: t("比較月份", "Comparison month"), value: months[0] }));
 ```
 
 <h2 id="chart">同一月份，邊類加價較快？</h2>
@@ -30,17 +32,17 @@ const selectedMonth = view(Inputs.select(months, { label: "比較月份", value:
 ```js
 display(resize((width) => indicator.series.some((point) => point.period === selectedMonth && Number.isFinite(point.value))
   ? indicatorChart({ ...indicator, chart: { ...indicator.chart, period: selectedMonth } }, width)
-  : html`<p class="living-no-data" role="status">${selectedMonth} 未有可用分類數字；缺值唔代表零，請選其他月份。</p>`));
+  : html`<p class="living-no-data" role="status">${selectedMonth}${t(" 未有可用分類數字；缺值唔代表零，請選其他月份。", " has no available section figures. Missing values do not mean zero; choose another month.")}</p>`));
 ```
 
 <h2 id="trend">揀一類，追蹤加價速度</h2>
 
 ```js
-const selectedCategory = view(Inputs.select(indicator.category_order, { label: "物價類別", value: "食品" }));
+const selectedCategory = view(Inputs.select(indicator.category_order, { label: t("物價類別", "Price section"), format: label, value: "食品" }));
 ```
 
 ```js
-display(resize((width) => indicatorChart({ ...indicator, name_zh: `${selectedCategory}按年變動`, series: indicator.series.filter((point) => point.category === selectedCategory), chart: { type: "line", y_zero: true } }, width)));
+display(resize((width) => indicatorChart({ ...indicator, name_zh: `${selectedCategory}按年變動`, name_en: `${label(selectedCategory)}: year-on-year change`, series: indicator.series.filter((point) => point.category === selectedCategory), chart: { type: "line", y_zero: true } }, width)));
 display(indicatorAnchors({ ...indicator, anchors: cpiComponentAnchors(indicator.series, selectedMonth, selectedCategory) }));
 display(indicatorNote(indicator));
 display(learningGuidance(indicator));

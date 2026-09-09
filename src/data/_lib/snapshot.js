@@ -140,8 +140,8 @@ export async function loadIndicator(indicatorId, fetcher, options = {}) {
 
   try {
     // 錄影同快照原子更新(見 http.js 嘅 withFixtureTransaction)。
-    // 冇錄影模式嘅時候呢個 wrapper 乜都唔做,所以正常 build 零成本。
-    const fresh = finaliseIndicator(await withFixtureTransaction(fetcher), snapshot);
+    // 正常 build 及 refresh 都錄成對來源；離線／重播模式不寫錄影。
+    const fresh = await withFixtureTransaction(async () => finaliseIndicator(await fetcher(), snapshot));
     const result = await writeSnapshot(indicatorId, fresh);
     process.stderr.write(
       `[hk-data-monitor] ${indicatorId}: ${result.reason}` +

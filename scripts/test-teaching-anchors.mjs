@@ -98,15 +98,15 @@ export async function testTeachingAnchors(check) {
     check("突變:勞動人口改成所有青年 -> 斷言捉到", !youthIsCorrect(wrongYouth.CENSTATD_INDICATORS.unemployment));
     const wrongClassSize = await variant("../src/data/_lib/indicators.js", "formatNumber(latestYouth.value, { digits: 1 })", "formatNumber(latestYouth.value * 0.3, { digits: 1 })");
     check("突變:每 100 人卻沿用 30 人嘅換算 -> 斷言捉到", !youthIsCorrect(wrongClassSize.CENSTATD_INDICATORS.unemployment));
-    const wrongPercent = await variant("../src/data/_lib/indicators.js", "100 × (1 + ${latest.value} ÷ 100)", "100 × (1 + ${latest.value}% ÷ 100)");
+    const wrongPercent = await variant("../src/data/_lib/indicators.js", "按年變動 ${latest.value}%:100 × (1 + ${latest.value} ÷ 100)", "按年變動 ${latest.value}%:100 × (1 + ${latest.value}% ÷ 100)");
     check("突變:百分號再除 100 -> 斷言捉到", !priceIsCorrect(wrongPercent.CENSTATD_INDICATORS.cpi, 1.7, "101.7"));
-    const wrongZero = await variant("../src/data/_lib/indicators.js", "latest.value < 0", "latest.value <= 0");
+    const wrongZero = await variant("../src/data/_lib/indicators.js", ": latest.value < 0\n", ": latest.value <= 0\n");
     check("突變:零被歸入通縮 -> 斷言捉到", !zeroIsNeutral(wrongZero.CENSTATD_INDICATORS.cpi));
     const cpiReturn = 'return collectAnchors(\n        latest\n          ? {\n              id: "hundred-dollars",';
     const compoundedRates = await variant("../src/data/_lib/indicators.js", cpiReturn, cpiReturn.replace("return collectAnchors(",
       'return collectAnchors(\n        { id: "avg-12m", value: (withValues.slice(-12).reduce((a, p) => a * (1 + p.value / 100), 1) ** (1 / 12) - 1) * 100 },'));
     check("突變:重新加入十二個按年率幾何平均 -> 斷言捉到", !keepsOfficialRates(compoundedRates.CENSTATD_INDICATORS.cpi));
-    const wrongFiscal = await variant("../src/data/_lib/indicators.js", 'noun: "每名香港市民一年", fiscal: true', 'noun: "每名香港市民一年", fiscal: false');
+    const wrongFiscal = await variant("../src/data/_lib/indicators.js", 'noun: "每名香港市民一年", nounEn: "per Hong Kong resident per year", fiscal: true', 'noun: "每名香港市民一年", nounEn: "per Hong Kong resident per year", fiscal: false');
     check("突變:政府開支錯傳月度 -> 斷言捉到", !expenditurePerHeadIsCorrect(wrongFiscal.FISCAL_INDICATORS.govt_expenditure));
     const wrongMonthly = await variant("../src/data/_lib/indicators.js", 'noun: "每名香港市民", fiscal: false', 'noun: "每名香港市民", fiscal: true');
     check("突變:財政儲備錯傳財年 -> 斷言捉到", !reservesPerHeadIsCorrect(wrongMonthly.FISCAL_INDICATORS.fiscal_reserves));

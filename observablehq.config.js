@@ -2,8 +2,8 @@
 //
 // 幾個踩過／查過嘅位,寫低免得下次再撞:
 //
-// 1. `base` 喺 1.13.4 差唔多冇作用 —— Framework 出嘅連結全部係相對路徑
-//    (./ 同 ../),所以部署去 GitHub Pages 嘅子路徑 /hk-data-monitor/ 唔使特別設定。
+// 1. Framework 一般頁面用相對連結，但 404.html 依靠 base 定位資產。
+//    本機及專案站預設 /hk-data-monitor/；根網域部署須明示 BASE_PATH。
 //
 // 2. `observable build` 用 useStale 模式:見到 src/.observablehq/cache/ 有嘢
 //    就**唔會**再跑 data loader,即係改完 loader 都出舊數,而且唔會有任何提示。
@@ -25,10 +25,12 @@ export default {
   // GitHub Pages 專案站住喺 /<repo>/ 子路徑。
   // ⚠️ 喺 1.13.4 度 `base` 幾乎冇作用 —— Framework 出嘅連結全部本身就係相對路徑
   //    (./ 同 ../),唯一用到 base 嘅係 404.html 嗰個 <base href>。
-  //    所以唔設都唔會爛,設咗就連 404 版嘅相對連結都啱。
+  //    必須對準部署路徑，否則 404 版嘅語言及樣式資產會載入失敗。
   // ⚠️ base: "" 會掟錯(base must start with slash)。CI 嗰邊會補條斜線,
   //    因為 actions/configure-pages 對自訂網域出嘅 base_path 就係空字串。
-  base: process.env.BASE_PATH || "/",
+  // The supplied dist preview serves this project subpath; 404 must use the same base.
+  // An explicit empty BASE_PATH still means the domain root for Pages custom domains.
+  base: process.env.BASE_PATH === undefined ? "/hk-data-monitor/" : process.env.BASE_PATH || "/",
 
   pages: [
     {
@@ -127,7 +129,7 @@ export default {
 
     return [
       // Framework 冇 lang 設定,唯有自己改。影響螢幕閱讀器同中文字型選擇。
-      `<script>document.documentElement.lang="zh-HK";</script>`,
+      `<script>(function(){var values=new URLSearchParams(location.search).getAll("lang");document.documentElement.lang=values.length===1&&values[0]==="en-GB"?"en-GB":"zh-HK";})();</script>`,
       `<meta name="color-scheme" content="light dark">`,
       `<meta name="theme-color" content="#0f172a">`,
       // 用 data: URI 而唔係一個檔案 —— 保持「零第三方、零額外請求」,
@@ -135,7 +137,7 @@ export default {
       `<link rel="icon" href="data:image/svg+xml,${encodeURIComponent(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="%230f172a"/><path d="M6 22 L12 14 L17 18 L26 7" fill="none" stroke="%2338bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>'
       )}">`,
-      `<meta name="description" content="畀香港中學生用嘅公開數據網站。全部數字都有出處、有更新日期,離線都睇到。">`,
+      `<meta name="description" content="畀香港中學生用嘅公開數據網站。全部數字都有出處、有更新日期,離線都睇到。" data-en-content="Explore official Hong Kong data for secondary school learning. Every figure has a source and date, with offline access.">`,
       // 零追蹤:明文叫爬蟲唔好幫我哋建立任何使用者側寫(呢個站本身都冇資料可收)。
       `<meta name="referrer" content="no-referrer">`,
 
@@ -147,6 +149,14 @@ export default {
       `<script>
 (function(){
   var root = ${JSON.stringify(root)};
+  var languageStyle = document.createElement("link");
+  languageStyle.rel = "stylesheet";
+  languageStyle.href = root + "language.css";
+  document.head.appendChild(languageStyle);
+  var language = document.createElement("script");
+  language.type = "module";
+  language.src = root + "language-switch.js";
+  document.head.appendChild(language);
   var link = document.createElement("link");
   link.rel = "manifest";
   link.href = root + "manifest.webmanifest";
@@ -167,11 +177,14 @@ export default {
     ].join("");
   },
 
+  header: ({path}) => path === "/index" ? "" : `<a class="programme-context" href="${"../".repeat(Math.max(0,path.split("/").length-2)) || "./"}"><span lang="zh-HK">財策新世代</span><span lang="en-GB">NextGen Financial &amp; Policy Ambassadors</span></a>`,
+
   footer: () =>
     [
-      `<p>統計資料來自香港官方機構；資料及地圖來源、授權條款列喺各頁。`,
-      `本網站程式碼以 MIT 授權開源。</p>`,
-      `<p><strong>本網站唔收集任何個人資料</strong> —— 冇帳戶、冇 cookie、冇分析工具。`,
-      `<a href="./about/privacy">私隱說明</a></p>`,
+      `<p><span data-language="zh-HK" lang="zh-HK">統計資料來自香港官方機構；資料及地圖來源、授權條款列喺各頁。本網站程式碼以 MIT 授權開源。</span>`,
+      `<span data-language="en-GB" lang="en-GB">Statistics come from official Hong Kong institutions. Each page lists its data and map sources and licences. The website code is open source under the MIT licence.</span></p>`,
+      `<p><span data-language="zh-HK" lang="zh-HK"><strong>本網站唔收集任何個人資料</strong> —— 冇帳戶、冇 cookie、冇分析工具。</span>`,
+      `<span data-language="en-GB" lang="en-GB"><strong>This website collects no personal data.</strong> No accounts, cookies or analytics.</span> `,
+      `<a href="./about/privacy"><span data-language="zh-HK" lang="zh-HK">私隱說明</span><span data-language="en-GB" lang="en-GB">Privacy</span></a></p>`,
     ].join(""),
 };

@@ -1,3 +1,4 @@
+import {t} from "./locale.js";
 import { html } from "npm:htl";
 import { indicatorCard } from "./indicator-card.js";
 import { technologyTopics, technologySources } from "./technology-topics.js";
@@ -12,8 +13,8 @@ export function technologyExplorer(indicators) {
     <input type="radio" name="technology-topic" value=${topic.id} checked=${index === 0} onchange=${() => show(topic)}>
     <span>${topic.label}</span>
   </label>`);
-  const root = html`<section class="technology-explorer" aria-label="連繫科技與香港資料">
-    <fieldset class="technology-choices"><legend>揀一個探索主題</legend><div>${choices}</div></fieldset>
+  const root = html`<section class="technology-explorer" aria-label="${t("連繫科技與香港資料", "Connect technology with Hong Kong data")}">
+    <fieldset class="technology-choices"><legend>${t("揀一個探索主題", "Choose an enquiry topic")}</legend><div>${choices}</div></fieldset>
     ${status}${content}
   </section>`;
 
@@ -21,13 +22,13 @@ export function technologyExplorer(indicators) {
     return target.startsWith(".") || target.startsWith("#") ? target : `../indicators/${target}`;
   }
   function show(topic) {
-    status.textContent = `目前主題：${topic.label}`;
+    status.textContent = `${t("目前主題：", "Current topic: ")}${topic.label}`;
     const cards = topic.indicators.map((id) => {
       const indicator = byId.get(id);
       // 真缺資料就顯示缺口；唔用另一個指標冒充、亦唔把缺數填零。
       return indicator && indicator.manual_status !== "todo"
         ? indicatorCard(indicator, { href: `../indicators/${id}` })
-        : html`<p class="callout">呢項資料暫時未能提供，請先到香港總覽核對資料狀態。</p>`;
+        : html`<p class="callout">${t("呢項資料暫時未能提供，請先到香港總覽核對資料狀態。", "This information is currently unavailable. Check its status on the Hong Kong overview.")}</p>`;
     });
     content.replaceChildren(html`<div>
       <div class="technology-focus">
@@ -37,7 +38,7 @@ export function technologyExplorer(indicators) {
       </div>
 
       <section class="technology-connections" aria-labelledby="connections-heading">
-        <div class="technology-panel-heading"><h3 id="connections-heading">資料可以點連繫？</h3><span>閱讀關係 · 唔代表因果</span></div>
+        <div class="technology-panel-heading"><h3 id="connections-heading">${t("資料可以點連繫？", "How can these sources connect?")}</h3><span>${t("閱讀關係 · 唔代表因果", "Explore connections · Not proof of causation")}</span></div>
         <ol class="connection-grid">${topic.connections.map((item) => html`<li class="connection-node">
           <span class="connection-node__label">${item.label}</span>
           <strong>${item.question}</strong>
@@ -45,25 +46,25 @@ export function technologyExplorer(indicators) {
         </li>`)}</ol>
       </section>
 
-      <div class="technology-evidence-heading"><h3>並排讀數</h3><span>各卡獨立刻度 · 留意各自年份</span></div>
+      <div class="technology-evidence-heading"><h3>${t("並排讀數", "Read the figures side by side")}</h3><span>${t("各卡獨立刻度 · 留意各自年份", "Independent scales · Check each card's year")}</span></div>
       <div class="technology-evidence">${cards}</div>
-      <p class="technology-caveat"><strong>連繫之前，先分清：</strong>${topic.caveat}</p>
+      <p class="technology-caveat"><strong>${t("連繫之前，先分清：", "Before connecting the evidence: ")}</strong>${topic.caveat}</p>
 
       <div class="technology-investigate">
         <section class="technology-resources" aria-labelledby="official-resources">
-          <div class="technology-panel-heading"><h3 id="official-resources">接住查官方資料</h3><span>外部網站 · 需要連線</span></div>
+          <div class="technology-panel-heading"><h3 id="official-resources">${t("接住查官方資料", "Explore official sources next")}</h3><span>${t("外部網站 · 需要連線", "External websites · Internet connection required")}</span></div>
           ${topic.sources.map((id) => {
             const source = technologySources[id];
             return html`<article class="technology-resource"><span>${source.institution}</span><a href=${source.url} target="_blank" rel="noopener noreferrer">${source.title} <span aria-hidden="true">↗</span></a><p>${source.detail}</p></article>`;
           })}
-          <p class="technology-resource-date">來源入口核對：2026年9月8日。數據日期以各來源標示為準。</p>
+          <p class="technology-resource-date">${t("來源入口核對：2026年9月8日。數據日期以各來源標示為準。", "Source links checked on 8 September 2026. Data dates are shown by each source.")}</p>
         </section>
         <section class="technology-proposal" aria-labelledby="policy-question">
-          <div class="technology-panel-heading"><h3 id="policy-question">由問題到預算建議</h3><span>課堂探究方向</span></div>
+          <div class="technology-panel-heading"><h3 id="policy-question">${t("由問題到預算建議", "From a question to a budget proposal")}</h3><span>${t("課堂探究方向", "Classroom enquiry")}</span></div>
           <p class="technology-proposal__idea">${topic.proposal}</p>
-          <details><summary>仲欠邊啲證據？</summary><p>${topic.missing}</p></details>
-          <details><summary>點樣衡量成效？</summary><p>${topic.outcome}</p></details>
-          <a class="technology-proposal__next" href="../learn/budget-memo">整理成青年預算備忘 <span aria-hidden="true">↗</span></a>
+          <details><summary>${t("仲欠邊啲證據？", "What evidence is still missing?")}</summary><p>${topic.missing}</p></details>
+          <details><summary>${t("點樣衡量成效？", "How could outcomes be measured?")}</summary><p>${topic.outcome}</p></details>
+          <a class="technology-proposal__next" href="../learn/budget-memo">${t("整理成青年預算備忘", "Develop a youth budget memo")} <span aria-hidden="true">↗</span></a>
         </section>
       </div>
     </div>`);

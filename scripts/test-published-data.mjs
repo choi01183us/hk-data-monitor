@@ -61,13 +61,16 @@ export async function testPublishedData(check) {
   }
   async function runPostbuild(source = postbuildSource, published = ["shown", "todo"]) {
     const root = join(dir, `fixture-${sequence++}`);
-    for (const path of ["scripts/lib", "src/data/_lib", "src/data/_snapshots", "src/data/_city_snapshots", "public", "dist/_file/data"]) await mkdir(join(root, path), {recursive: true});
+    for (const path of ["scripts/lib", "src/components", "src/data/_lib", "src/data/_snapshots", "src/data/_city_snapshots", "public", "dist/_file/data"]) await mkdir(join(root, path), {recursive: true});
     const files = {
       "package.json": '{"type":"module"}',
-      "scripts/postbuild.mjs": source,
+      "scripts/postbuild.mjs": source.replace('"./lib/language-html.mjs"', JSON.stringify(new URL("./lib/language-html.mjs", import.meta.url).href)).replace('"./lib/anchor-html.mjs"', JSON.stringify(new URL("./lib/anchor-html.mjs", import.meta.url).href)),
       "scripts/lib/viewport.mjs": viewportSource,
       "src/data/_lib/site-meta.js": helperSource,
       "public/sw-template.js": 'const VERSION = "__VERSION__";\nconst DATE = "__DATA_AS_OF__";\nconst CRITICAL = __CRITICAL__;\nconst OPTIONAL = __OPTIONAL__;\n',
+      "src/components/locale.js": await readFile(new URL("../src/components/locale.js", import.meta.url), "utf8"),
+      "public/language-switch.js": await readFile(new URL("../public/language-switch.js", import.meta.url), "utf8"),
+      "public/language.css": await readFile(new URL("../public/language.css", import.meta.url), "utf8"),
       "public/manifest.webmanifest": "{}", "public/icon.svg": "<svg/>", "public/offline-banner.js": "// banner",
       "dist/index.html": '<!doctype html><html><head><meta name="viewport" content="width=device-width, initial-scale=1"></head><body>公開頁面</body></html>',
     };

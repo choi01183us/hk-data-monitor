@@ -1,3 +1,5 @@
+import { isEnglish, t } from "./locale.js";
+
 // 數字同日期嘅香港中文格式化。
 //
 // 呢個檔案係純 ESM、冇用任何瀏覽器 API，所以兩邊都食得：
@@ -25,7 +27,8 @@ export function formatNumber(value, { digits } = {}) {
  * 中文大數字：用「萬」同「億」，唔用 K / M / B。
  * 7,500,000 → 「750 萬」；56,983 → 「5.7 萬」；1.23e9 → 「12.3 億」。
  */
-export function formatChineseMagnitude(value) {
+export function formatChineseMagnitude(value, {locale} = {}) {
+  if (locale === "en-GB" || (!locale && isEnglish())) return formatEnglishMagnitude(value);
   if (value === null || value === undefined || !Number.isFinite(value)) return "—";
   const sign = value < 0 ? "−" : "";
   const magnitude = Math.abs(value);
@@ -47,10 +50,10 @@ export function formatWithUnit(value, unit, options) {
   return `${number} ${unit}`;
 }
 
-export function formatPercentChange(from, to) {
+export function formatPercentChange(from, to, {locale} = {}) {
   if (!Number.isFinite(from) || !Number.isFinite(to) || from === 0) return null;
   const change = ((to - from) / Math.abs(from)) * 100;
-  return { change, text: `${change >= 0 ? "升" : "跌"}咗 ${formatNumber(Math.abs(change), { digits: 1 })}%` };
+  return { change, text: (locale === "en-GB" || (!locale && isEnglish())) ? `${change >= 0 ? "increased" : "decreased"} by ${formatNumber(Math.abs(change), {digits:1})}%` : `${change >= 0 ? "升" : "跌"}咗 ${formatNumber(Math.abs(change), {digits:1})}%` };
 }
 
 /** ISO 時間 → 「2026 年 7 月 13 日」。日期唔啱就照回原文，好過顯示 Invalid Date。 */
@@ -58,7 +61,7 @@ export function formatDateZh(isoString, { withTime = false } = {}) {
   if (!isoString) return "—";
   const date = new Date(isoString);
   if (Number.isNaN(date.getTime())) return String(isoString);
-  const parts = new Intl.DateTimeFormat("zh-HK", {
+  const parts = new Intl.DateTimeFormat(isEnglish() ? "en-GB" : "zh-HK", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -81,7 +84,7 @@ export function formatRelativeZh(isoString, now = new Date()) {
     ["hour", 3600],
     ["minute", 60],
   ];
-  const rtf = new Intl.RelativeTimeFormat("zh-HK", { numeric: "auto" });
+  const rtf = new Intl.RelativeTimeFormat(isEnglish() ? "en-GB" : "zh-HK", { numeric: "auto" });
   for (const [unit, size] of table) {
     if (Math.abs(seconds) >= size) return rtf.format(Math.round(seconds / size), unit);
   }
@@ -145,7 +148,8 @@ export function toDate(dateLike, { fiscal = false } = {}) {
  * 擺喺呢度而唔係各自寫一份:錨點文字同指標頁大字都要用,
  * 兩邊寫法唔同嘅話,同一個期數會喺同一版出現兩種寫法。
  */
-export function formatPeriodZh(period, { fiscal = false } = {}) {
+export function formatPeriodZh(period, { fiscal = false, locale } = {}) {
+  if (locale === "en-GB" || (!locale && isEnglish())) return formatPeriodEn(period, {fiscal});
   const text = String(period ?? "");
   let match = /^(\d{4})-Q(\d)$/.exec(text);
   if (match) return `${match[1]} 年第 ${match[2]} 季`;
@@ -164,4 +168,26 @@ export function formatPeriodZh(period, { fiscal = false } = {}) {
 export function fiscalTickLabel(date) {
   const year = date.getUTCFullYear();
   return `${year}–${String(year + 1).slice(-2)}`;
+}
+
+/** English display uses international magnitudes with the same unscaled input. */
+export function formatEnglishMagnitude(value) {
+  if (!Number.isFinite(value)) return "—";
+  const magnitude = Math.abs(value);
+  for (const [scale, word] of [[1e12, "trillion"], [1e9, "billion"], [1e6, "million"], [1e3, "thousand"]]) {
+    if (magnitude >= scale) return `${formatNumber(value / scale, {digits: 2})} ${word}`;
+  }
+  return formatNumber(value);
+}
+export function formatPeriodEn(period, {fiscal = false} = {}) {
+  const text = String(period ?? "");
+  let match = /^(\d{4})-Q([1-4])$/.exec(text);
+  if (match) return `Q${match[2]} ${match[1]}`;
+  match = /^(\d{4})-(\d{2})$/.exec(text);
+  if (match) {
+    const month = Number(match[2]);
+    if (fiscal || month > 12 || month === 0) return `${match[1]}–${match[2]} financial year`;
+    return new Intl.DateTimeFormat("en-GB", {month: "long", year: "numeric", timeZone: "UTC"}).format(new Date(Date.UTC(Number(match[1]), month - 1, 1)));
+  }
+  return text;
 }

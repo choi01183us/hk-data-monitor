@@ -826,6 +826,21 @@ await testDistrictHistory(check);
 const {testPublishedData} = await import("./test-published-data.mjs");
 await testPublishedData(check);
 
+const {testLanguage} = await import("./test-language.mjs");
+await testLanguage(check);
+const {testLanguageHtml} = await import("./test-language-html.mjs");
+await testLanguageHtml(check);
+const {testProgrammeBrand} = await import("./test-programme-brand.mjs");
+await testProgrammeBrand(check);
+const {testEnglishAnchors} = await import("./test-english-anchors.mjs");
+await testEnglishAnchors(check);
+const {testDisplayText} = await import("./test-display-text.mjs");
+await testDisplayText(check);
+const {testBuildRecording} = await import("./test-build-recording.mjs");
+await testBuildRecording(check);
+const {testAnchorHtml} = await import("./test-anchor-html.mjs");
+await testAnchorHtml(check);
+
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //
 // R5 嘅突變測試前提係「改壞 transform,錄影唔跟住變」。

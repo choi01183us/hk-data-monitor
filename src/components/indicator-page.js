@@ -1,3 +1,5 @@
+import {t, isEnglish} from "./locale.js";
+import {label, indicatorText, anchorText} from "./display-text.js";
 // 指標頁嘅共用版面。
 //
 // 11 個指標頁如果各自抄一次 headline / 錨點 / 註釋嘅 markup,
@@ -33,16 +35,16 @@ export function indicatorHeader(indicator) {
   ];
 
   return html`<div>
-    ${question_zh ? html`<p class="lede">${question_zh}</p>` : null}
+    ${question_zh ? html`<p class="lede">${indicatorText(indicator,"question_zh")}</p>` : null}
     <div class="headline ${items.length > 1 ? "headline--multi" : ""}">
       ${items.map(
         (item) => html`<div class="headline__item ${item.total ? "headline__item--total" : ""}">
-          ${item.category ? html`<div class="headline__label">${item.category}</div>` : null}
+          ${item.category ? html`<div class="headline__label">${label(item.category)}</div>` : null}
           <div class="headline__number">
             <strong>${item.value === null ? "—" : headlineNumber(item.value, digits)}</strong>
-            <span class="headline__unit">${unit_zh}</span>
+            <span class="headline__unit">${indicatorText(indicator,"unit_zh")}</span>
           </div>
-          <div class="headline__period">${item.period ? formatPeriodZh(item.period, { fiscal }) : ""}${indicator.period_notes?.[item.period] ? `（${indicator.period_notes[item.period]}）` : ""}</div>
+          <div class="headline__period">${item.period ? formatPeriodZh(item.period, { fiscal }) : ""}${indicator.period_notes?.[item.period] ? `（${label(indicator.period_notes[item.period])}）` : ""}</div>
         </div>`
       )}
     </div>
@@ -72,15 +74,15 @@ export function indicatorAnchors(indicator) {
   const anchors = indicator.anchors ?? [];
   if (anchors.length === 0) return html`<div></div>`;
   return html`<div>
-    <h2 id="anchors">相當於……</h2>
+    <h2 id="anchors">${t("相當於……", "Putting the figures in context")}</h2>
     <p class="section-hint">
-      數字太大嘅時候好難有感覺。下面每一句都附埋算式,你可以自己撳計數機驗。
+      ${t("數字太大嘅時候好難有感覺。下面每一句都附埋算式,你可以自己撳計數機驗。", "Large figures can be hard to picture. Each comparison includes its calculation so you can check it yourself.")}
     </p>
     <div class="anchors">
       ${anchors.map(
         (anchor) => html`<div class="anchor">
-          <p class="anchor__text">${anchor.text_zh}</p>
-          <p class="anchor__basis">點計出嚟:${anchor.basis_zh}</p>
+          <p class="anchor__text">${anchorText(indicator, anchor, "text_zh")}</p>
+          <p class="anchor__basis">${t("點計出嚟:", "Calculation: ")}${anchorText(indicator, anchor, "basis_zh")}</p>
         </div>`
       )}
     </div>
@@ -90,7 +92,7 @@ export function indicatorAnchors(indicator) {
 /** 圖表下面嘅提醒。統計處好多表都有唔講就會誤讀嘅口徑問題。 */
 export function indicatorNote(indicator) {
   if (!indicator.notes_zh) return html`<div></div>`;
-  return html`<div class="chart-note"><strong>讀呢個數之前:</strong>${indicator.notes_zh}</div>`;
+  return html`<div class="chart-note"><strong>${t("讀呢個數之前:", "Before using this figure: ")}</strong>${indicatorText(indicator,"notes_zh")}</div>`;
 }
 
 /**
@@ -103,19 +105,15 @@ export function manualNotice(indicator) {
   if (indicator.acquisition !== "manual") return html`<div></div>`;
   if (indicator.manual_status === "filled") {
     return html`<p class="manual-notice manual-notice--ok">
-      呢個指標嘅數字係人手由官方文件抄落嚟嘅(${indicator.manual_filled} 格已填),唔係自動抓。
-      抄嘅來源同日期喺下面「資料來源」一欄。
+      ${t(`呢個指標嘅數字係人手由官方文件抄落嚟嘅(${indicator.manual_filled} 格已填),唔係自動抓。抄嘅來源同日期喺下面「資料來源」一欄。`, `These figures were transcribed manually from official documents (${indicator.manual_filled} cells filled). The source and date are listed below.`)}
     </p>`;
   }
   if (indicator.manual_status === "partial") {
     return html`<div class="manual-notice manual-notice--todo" role="status">
-      <strong>數據未填齊。</strong>已填 ${indicator.manual_filled} 格，未填嘅格唔代表零。
-      引用之前請核對年度同資料表；維護者請睇 <code>manual/README.md</code>。
+      <strong>${t("數據未填齊。", "Data are incomplete. ")}</strong>${t(`已填 ${indicator.manual_filled} 格，未填嘅格唔代表零。引用之前請核對年度同資料表；維護者請睇`, `${indicator.manual_filled} cells are filled; missing cells do not mean zero. Check the year and data table before citing. Maintainers: see `)} <code>manual/README.md</code>。
     </div>`;
   }
   return html`<div class="manual-notice manual-notice--todo" role="status">
-    <strong>數據未填。</strong>
-    呢個指標要人手由官方文件抄數(${indicator.manual_filled} 格已填),而家仲未填齊,所以首頁唔會出佢。
-    維護者請睇 <code>manual/README.md</code>。呢版唔會顯示任何估算或者預設數字。
+    <strong>${t("數據未填。", "Data have not been filled in. ")}</strong>${t(`呢個指標要人手由官方文件抄數(${indicator.manual_filled} 格已填),而家仲未填齊,所以首頁唔會出佢。維護者請睇`, `This indicator requires manual transcription (${indicator.manual_filled} cells filled), so it is currently omitted from the home page. Maintainers: see `)} <code>manual/README.md</code>${t("。呢版唔會顯示任何估算或者預設數字。", ". This page supplies no guessed or default values.")}
   </div>`;
 }

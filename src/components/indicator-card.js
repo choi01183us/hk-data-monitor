@@ -1,3 +1,5 @@
+import {t, isEnglish} from "./locale.js";
+import {label, indicatorText, anchorText} from "./display-text.js";
 // 首頁嘅指標卡。
 //
 // 一張卡要答到三樣嘢,學生先撳得落手:
@@ -43,28 +45,30 @@ export function indicatorCard(indicator, { href } = {}) {
     build,
   } = indicator;
 
+  const displayName = indicatorText(indicator, "name_zh"), displayUnit = indicatorText(indicator, "unit_zh");
   const link = href ?? `./indicators/${indicator_id}`;
   const headline = anchors[0];
   // 同一個 helper 揀大字同小圖，禁止「上面係總額、下面畫其中一類」。
   const trend = cardTrend(indicator);
   const { shown, label: shownLabel } = trend;
-  const trendDescription = trend.first && trend.first.period !== trend.last.period
+  const trendDescriptionZh = trend.first && trend.first.period !== trend.last.period
     ? `${name_zh}${shownLabel ? `（${shownLabel}）` : ""}走勢。${periodWithNote(indicator, trend.first.period)}：${formatNumber(trend.first.value, { digits: value_digits })} ${unit_zh}；${periodWithNote(indicator, trend.last.period)}：${formatNumber(trend.last.value, { digits: value_digits })} ${unit_zh}。來源：${source_zh}。各卡獨立刻度，缺值會斷線；完整圖表及資料表見指標頁。`
     : null;
 
+  const trendDescription = trendDescriptionZh && t(trendDescriptionZh, `${displayName}${shownLabel ? ` (${label(shownLabel)})` : ""} trend. ${periodWithNote(indicator, trend.first.period)}: ${formatNumber(trend.first.value, {digits:value_digits})} ${displayUnit}; ${periodWithNote(indicator, trend.last.period)}: ${formatNumber(trend.last.value, {digits:value_digits})} ${displayUnit}. Source: ${indicatorText(indicator,"source_zh")}. Each card has its own scale; missing values break the line. See the indicator page for the full chart and table.`);
   return html`<article class="indicator-panel"><a class="indicator-card" href=${link}>
-    <span class="indicator-card__category">${category ?? "指標"}</span>
+    <span class="indicator-card__category">${label(category ?? "指標")}</span>
 
-    <h2 class="indicator-card__name">${name_zh}</h2>
+    <h2 class="indicator-card__name">${displayName}</h2>
 
-    ${question_zh ? html`<p class="indicator-card__question">${question_zh}</p>` : null}
+    ${question_zh ? html`<p class="indicator-card__question">${indicatorText(indicator,"question_zh")}</p>` : null}
 
     <p class="indicator-card__value">
       <strong>${shown ? magnitudeOrExact(shown.value, value_digits) : "—"}</strong>
-      <span class="indicator-card__unit">${unit_short_zh ?? unit_zh}</span>
+      <span class="indicator-card__unit">${indicatorText(indicator, unit_short_zh ? "unit_short_zh" : "unit_zh")}</span>
       ${shown ? html`<span class="indicator-card__period">${periodWithNote(indicator, shown.period)}</span>` : null}
     </p>
-    ${shownLabel ? html`<p class="indicator-card__scope">以上係「${shownLabel}」;入去可以睇分類</p>` : null}
+    ${shownLabel ? html`<p class="indicator-card__scope">${t(`以上係「${shownLabel}」;入去可以睇分類`, `Showing ${label(shownLabel)}. Open for the breakdown.`)}</p>` : null}
 
     ${trendDescription ? html`<div class="indicator-card__trend">
       ${svg`<svg class="indicator-card__sparkline" viewBox=${`0 0 ${trend.width} ${trend.height}`} role="img" aria-label=${trendDescription} preserveAspectRatio="none">
@@ -74,19 +78,19 @@ export function indicatorCard(indicator, { href } = {}) {
           : svg`<polyline points=${segment.map((p) => `${p.x},${p.y}`).join(" ")} fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"></polyline>`)}
       </svg>`}
       <p class="indicator-card__trend-range"><span>${formatPeriodZh(trend.first.period, { fiscal: trend.fiscal })}</span><span>${formatPeriodZh(trend.last.period, { fiscal: trend.fiscal })}</span></p>
-      <p class="indicator-card__trend-caption">歷年走勢 · 各卡獨立刻度</p>
+      <p class="indicator-card__trend-caption">${t("歷年走勢 · 各卡獨立刻度", "Historical trend · Each card has its own scale")}</p>
     </div>` : null}
 
     ${headline
-      ? html`<p class="indicator-card__anchor">${headline.text_zh}</p>`
+      ? html`<p class="indicator-card__anchor">${anchorText(indicator, headline, "text_zh")}</p>`
       : null}
 
     <p class="indicator-card__meta">
-      數據截至 ${formatDateZh(updated_at)}
-      <span class="indicator-card__version">資料版本 ${data_version}</span>
-      ${build?.stale ? html`<span class="indicator-card__stale">上次更新失敗,顯示緊舊數</span>` : null}
+      ${t("數據截至", "Data as of")} ${formatDateZh(updated_at)}
+      <span class="indicator-card__version">${t("資料版本", "Data version")} ${data_version}</span>
+      ${build?.stale ? html`<span class="indicator-card__stale">${t("上次更新失敗,顯示緊舊數", "Update failed; showing the previous snapshot")}</span>` : null}
     </p>
   </a>
-  <p class="indicator-panel__source"><span>資料來源</span><a href=${source_url} target="_blank" rel="noopener noreferrer">${source_zh} <span aria-hidden="true">↗</span></a></p>
+  <p class="indicator-panel__source"><span>${t("資料來源", "Source")}</span><a href=${source_url} target="_blank" rel="noopener noreferrer">${indicatorText(indicator,"source_zh")} <span aria-hidden="true">↗</span></a></p>
   </article>`;
 }

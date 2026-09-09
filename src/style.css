@@ -5,6 +5,7 @@
  * 呢三行等同 Framework 預設嘅 theme: ["air", "near-midnight"]。
  */
 @import url("observablehq:default.css");
+@import url("./programme-brand.css");
 @import url("observablehq:theme-air.css") (prefers-color-scheme: light);
 @import url("observablehq:theme-near-midnight.css") (prefers-color-scheme: dark);
 
@@ -355,14 +356,21 @@ body {
 
 .source-footer__list {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.85rem;
   margin: 0.75rem 0 0;
 }
 
 @media (min-width: 640px) {
   .source-footer__list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* 長來源檔名及網址可換行，英文亦唔會撐闊手機版。 */
+.source-footer__list > div {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .source-footer__list dt {

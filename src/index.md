@@ -39,6 +39,18 @@ const loaded = await Promise.all([
 const indicators = loaded.filter((indicator) => indicator.manual_status !== "todo");
 ```
 
+```js
+import {programmeBrand} from "./components/programme-brand.js";
+const programmeLogos = {
+  bgca: await FileAttachment("./assets/programme/bgca.png").url(),
+  hkex: await FileAttachment("./assets/programme/hkex.png").url(),
+  edb: await FileAttachment("./assets/programme/edb.png").url(),
+  hkcss: await FileAttachment("./assets/programme/hkcss.png").url()
+};
+display(programmeBrand({logos: programmeLogos}));
+```
+
+
 <div class="monitor-home">
 
 <header class="monitor-header">

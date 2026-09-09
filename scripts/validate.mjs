@@ -27,6 +27,7 @@ import { loadManualIndicator, MANUAL_DIR } from "../src/data/_lib/manual.js";
 import { assertSeparatedExpenditureSources } from "./expenditure-scope-gate.mjs";
 import { readCitySnapshot, CITY_KINDS } from "../src/data/_lib/city-feeds.js";
 import { validateMacauGeography } from "../src/data/_lib/macau-geography-check.js";
+import {assertEnglishMetadata} from "../src/components/display-text.js";
 import { macauPlaces } from "../src/components/macau-places.js";
 import { fileURLToPath } from "node:url";
 
@@ -89,6 +90,9 @@ async function main() {
 
     const { ok, errors } = validateIndicator(doc);
     if (!ok) problems.push(...errors);
+    if (!label.startsWith("macau_")) {
+      try { assertEnglishMetadata(doc); } catch (error) { problems.push(error.message); }
+    }
 
     if (doc.indicator_id !== label) {
       problems.push(`檔名 ${label}.json 同 indicator_id "${doc.indicator_id}" 對唔上`);

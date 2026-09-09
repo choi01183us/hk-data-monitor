@@ -3,7 +3,7 @@
 // 本版明文使用可核實的統計處季末序列，唔把季末數字填成月度。
 import { CENSTATD_LICENCE, queryCenstatd, pickFrequency, formatPeriod, requiredCvDimensions, tableInfo, toValue } from "./censtatd.js";
 import { buildIndicator } from "./schema.js";
-import { anchorVersusYear } from "../../components/anchor.js";
+import { anchorVersusYear, bilingualAnchor } from "../../components/anchor.js";
 
 export const MONEY_CATEGORIES = ["M1", "M2", "M3"];
 export const MONEY_INDICATORS = { money_supply: { table: "340-45011", period_start: "199704" } };
@@ -76,8 +76,8 @@ export function moneySupplyAnchors(series) {
   const latest = selected.at(-1);
   if (!latest || latest.value === null) return [];
   const previous = `${Number(latest.period.slice(0, 4)) - 1}${latest.period.slice(4)}`;
-  const anchor = anchorVersusYear(selected, previous, { label: "M3，去年同季" });
-  return anchor ? [{ ...anchor, id: `m3-${anchor.id}`, text_zh: `M3：${anchor.text_zh}` }] : [];
+  const anchor = anchorVersusYear(selected, previous, { label: "M3，去年同季", labelEn: "M3, same quarter a year earlier" });
+  return anchor ? [bilingualAnchor({ ...anchor, id: `m3-${anchor.id}`, text_zh: `M3：${anchor.text_zh}`, text_en: `M3: ${anchor.text_en}`, basis_en: anchor.basis_en })] : [];
 }
 
 export async function loadMoneyIndicator(id) {

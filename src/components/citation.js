@@ -1,3 +1,5 @@
+import {t, isEnglish} from "./locale.js";
+import {label, indicatorText} from "./display-text.js";
 // 純函式:只引用傳入指標嘅已知值,唔抓數、唔儲存、唔猜缺少嘅期數或總額。
 // 同時供前端同 Node 自證用;唔需要 DOM 或 npm 套件。
 
@@ -16,7 +18,7 @@ export function periodWithNote(indicator, period) {
   if (note !== undefined && (typeof note !== "string" || !note.trim())) {
     throw new Error(`${period}:期數狀態必須係文字`);
   }
-  return note ? `${period}（${note}）` : period;
+  return note ? t(`${period}（${note}）`, `${period} (${label(note)})`) : period;
 }
 
 function availableRecords(indicator) {
@@ -33,7 +35,7 @@ function sameMeasure(left, right) {
 }
 
 function measureLabel(selection) {
-  return selection.kind === "total" ? "總額" : selection.category ?? "數值";
+  return label(selection.kind === "total" ? "總額" : selection.category ?? "數值");
 }
 
 /**
@@ -66,7 +68,7 @@ export function citationChoices(indicator, { comparison, period } = {}) {
 
 export function citationChoiceLabel(indicator, selection) {
   const period = selection.from
-    ? `${periodWithNote(indicator, selection.to)} 減 ${periodWithNote(indicator, selection.from)}`
+    ? `${periodWithNote(indicator, selection.to)} ${t("減", "minus")} ${periodWithNote(indicator, selection.from)}`
     : periodWithNote(indicator, selection.period);
   return { period, measure: measureLabel(selection) };
 }
@@ -97,7 +99,8 @@ export function createCitation(indicator, selection) {
     return matches[0].value;
   };
   const labels = citationChoiceLabel(indicator, selection);
-  const description = `${indicator.name_zh}，${labels.measure}`;
+  const description = t(`${indicator.name_zh}，${labels.measure}`, `${indicatorText(indicator,"name_zh")}, ${labels.measure}`);
+  const unit = indicatorText(indicator,"unit_zh");
   let statement;
   if (selection.from !== undefined || selection.to !== undefined) {
     // 重用選項閘,防同年、倒轉年份及不存在期數。
@@ -110,6 +113,15 @@ export function createCitation(indicator, selection) {
       `${exactNumber(change)} ${indicator.unit_zh}。`;
   } else {
     statement = `${description}：${labels.period}，${exactNumber(read(selection.period))} ${indicator.unit_zh}。`;
+  }
+  if (isEnglish()) {
+    if (selection.from !== undefined || selection.to !== undefined) {
+      const before = read(selection.from), after = read(selection.to);
+      statement = `${description}: ${labels.period}, nominal change ${exactNumber(after - before)} ${unit}.\nCalculation: ${periodWithNote(indicator, selection.to)} ${exactNumber(after)} ${unit} − ${periodWithNote(indicator, selection.from)} ${exactNumber(before)} ${unit} = ${exactNumber(after - before)} ${unit}.`;
+    } else {
+      statement = `${description}: ${labels.period}, ${exactNumber(read(selection.period))} ${unit}.`;
+    }
+    return `${statement}\nScope: ${indicator.basis_zh ? indicatorText(indicator, "basis_zh") : indicatorText(indicator, "name_zh")}\nSource: ${indicatorText(indicator,"source_zh")}; ${indicator.source_url}\nData as of: ${indicator.updated_at}; data version: ${indicator.data_version}.`;
   }
   const basis = typeof indicator.basis_zh === "string" && indicator.basis_zh.trim()
     ? indicator.basis_zh : indicator.name_zh;

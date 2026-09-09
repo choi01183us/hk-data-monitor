@@ -17,8 +17,9 @@ import {
   CENSTATD_LICENCE,
 } from "./censtatd.js";
 import { buildIndicator } from "./schema.js";
-import { formatNumber, formatChineseMagnitude, formatPeriodZh } from "../../components/format.js";
+import { formatEnglishMagnitude, formatPeriodEn } from "../../components/format.js";
 import {
+  formatNumber, formatChineseMagnitude, formatPeriodZh,
   anchorPerDay,
   anchorVersusYear,
   anchorMultipleOf,
@@ -45,6 +46,11 @@ import { CPI_COMPONENTS_SPEC } from "./cpi-components.js";
  *   category_dim  邊個維度做 series 嘅 category(冇就係單一條線)
  *   categories    [{code, label_zh}] —— 明文列出要邊幾個,連 Total("")都要寫
  */
+const keyIndustryEnglish = Object.freeze({
+  "金融服務": "financial services", "旅遊": "tourism", "貿易及物流": "trading and logistics",
+  "專業服務及其他工商業支援服務": "professional and other producer services",
+});
+
 export const CENSTATD_INDICATORS = {
   cpi_components: CPI_COMPONENTS_SPEC,
   district_population: {
@@ -72,7 +78,7 @@ export const CENSTATD_INDICATORS = {
     chart: { type: "bar", y_zero: true },
     transform: districtThousandsToPersons,
     verify: verifyDistrictPopulation,
-    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港陸上非住院人口" })),
+    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港陸上非住院人口", labelEn: "Hong Kong land-based non-institutional population" })),
   },
 
   district_household_income: {
@@ -98,7 +104,7 @@ export const CENSTATD_INDICATORS = {
       "地區中位數唔能夠話你知最有錢嘅人係邊個，亦唔代表區內每戶都有呢個收入。2016 年灣仔／東區分界改變，此頁由 2018 年起。",
     chart: { type: "bar", y_zero: true },
     verify: verifyDistrictHouseholdIncome,
-    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港住戶月入中位數（未扣通脹）" })),
+    anchors: (series) => collectAnchors(anchorVersusYear(series.filter((point) => point.category === "全港"), "2018", { label: "全港住戶月入中位數（未扣通脹）", labelEn: "Hong Kong median monthly household income (not adjusted for inflation)" })),
   },
 
   goods_imports: {
@@ -201,7 +207,7 @@ export const CENSTATD_INDICATORS = {
     chart: { type: "line", y_zero: true },
     transform: (value) => (value === null ? null : Math.round(value * 1_000_000)),
     verify: verifyRdExpenditure,
-    anchors: (series) => collectAnchors(anchorVersusYear(series, "2018", { label: "可直接比較嘅起點" })),
+    anchors: (series) => collectAnchors(anchorVersusYear(series, "2018", { label: "可直接比較嘅起點", labelEn: "earliest directly comparable year" })),
   },
 
   household_internet: {
@@ -230,6 +236,8 @@ export const CENSTATD_INDICATORS = {
       const latest = [...series].reverse().find((point) => Number.isFinite(point.value));
       return collectAnchors(latest ? {
         id: "internet-per-hundred-households",
+              text_en: `In ${formatPeriodEn(latest.period)}, about ${formatNumber(latest.value, {digits: 1})} of every 100 households had internet access at home`,
+              basis_en: `${latest.value}% × 100 households; the denominator is all households in that statistical year, not the population`,
         text_zh: `${formatPeriodZh(latest.period)}每 100 戶，約有 ${formatNumber(latest.value, { digits: 1 })} 戶喺家中可以上網`,
         basis_zh: `${latest.value}% × 100 戶；分母係該統計年份所有住戶，唔係人口`,
       } : null);
@@ -343,8 +351,8 @@ export const CENSTATD_INDICATORS = {
     },
     anchors: (series) =>
       collectAnchors(
-        anchorVersusYear(series, "1997-06", { label: "回歸嗰年年中" }),
-        anchorVersusYear(series, "1961-06", { label: "有紀錄最早" }),
+        anchorVersusYear(series, "1997-06", { label: "回歸嗰年年中", labelEn: "mid-year population in the year of the handover" }),
+        anchorVersusYear(series, "1961-06", { label: "有紀錄最早", labelEn: "earliest available record" }),
         // 刻意唔用「相當於幾多個體育館」呢類錨點 —— 要引入一個我驗證唔到嘅
         // 場館容量常數。呢個換成由同一條 series 計出嚟,學生驗得返。
         anchorAverageChange(series, { years: 10, noun: "人" })
@@ -390,10 +398,14 @@ export const CENSTATD_INDICATORS = {
       const latestYouth = youth.at(-1);
       const latestAll = all.at(-1);
       const peakAll = all.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
+      const youthMultiple = latestYouth && latestAll ? latestYouth.value / latestAll.value : null;
+      const peakShare = latestAll && peakAll ? (latestAll.value / peakAll.value) * 100 : null;
       return collectAnchors(
         latestYouth
           ? {
               id: "youth-per-hundred",
+              text_en: `In ${formatPeriodEn(latestYouth.period)}, about ${formatNumber(latestYouth.value, {digits: 1})} of every 100 people in the labour force aged 15–24 were unemployed`,
+              basis_en: `${latestYouth.value}% × 100 people; the denominator is employed plus unemployed people aged 15–24 in the same year, excluding students outside the labour force`,
               text_zh: `${formatPeriodZh(latestYouth.period)}每 100 名 15–24 歲青年勞動人口,約有 ${formatNumber(latestYouth.value, { digits: 1 })} 名失業人士`,
               basis_zh: `${latestYouth.value}% × 100 人;分母係同年 15–24 歲就業人士加失業人士,唔包括冇參與勞動市場嘅學生`,
             }
@@ -401,14 +413,18 @@ export const CENSTATD_INDICATORS = {
         latestYouth && latestAll && latestYouth.period === latestAll.period && latestAll.value > 0
           ? {
               id: "youth-vs-all",
-              text_zh: `${formatPeriodZh(latestYouth.period)}青年失業率係全港整體嘅 ${formatNumber(latestYouth.value / latestAll.value, { digits: 1 })} 倍`,
+              text_en: `In ${formatPeriodEn(latestYouth.period)}, the youth unemployment rate was ${formatNumber(youthMultiple, {digits: 1})} times the overall Hong Kong rate`,
+              basis_en: `Youth unemployment rate ${latestYouth.value}% ÷ overall Hong Kong unemployment rate ${latestAll.value}% in the same year`,
+              text_zh: `${formatPeriodZh(latestYouth.period)}青年失業率係全港整體嘅 ${formatNumber(youthMultiple, { digits: 1 })} 倍`,
               basis_zh: `同年青年失業率 ${latestYouth.value}% ÷ 全港整體失業率 ${latestAll.value}%`,
             }
           : null,
         peakAll && latestAll && peakAll.period !== latestAll.period
           ? {
               id: "vs-peak",
-              text_zh: `有紀錄以嚟最高係 ${peakAll.period} 年嘅 ${peakAll.value}%,而家係嗰陣嘅 ${formatNumber((latestAll.value / peakAll.value) * 100, { digits: 0 })}%`,
+              text_en: `The highest recorded rate was ${peakAll.value}% in ${formatPeriodEn(peakAll.period)}; the latest rate is ${formatNumber(peakShare, {digits: 0})}% of that level`,
+              basis_en: `${latestAll.value}% ÷ ${peakAll.value}% × 100`,
+              text_zh: `有紀錄以嚟最高係 ${peakAll.period} 年嘅 ${peakAll.value}%,而家係嗰陣嘅 ${formatNumber(peakShare, { digits: 0 })}%`,
               basis_zh: `${latestAll.value}% ÷ ${peakAll.value}% × 100`,
             }
           : null
@@ -453,19 +469,25 @@ export const CENSTATD_INDICATORS = {
       const all = series.filter((p) => p.category === "所有僱員" && p.value !== null);
       const latest = all.at(-1);
       const first = all[0];
+      const annualAmount = latest ? latest.value * 12 : null;
+      const monthlyIncrease = latest && first ? latest.value - first.value : null;
       return collectAnchors(
         latest
           ? {
               id: "per-year",
-              text_zh: `一年計就係 ${formatChineseMagnitude(latest.value * 12)} 元(未扣稅同強積金)`,
+              text_zh: `一年計就係 ${formatChineseMagnitude(annualAmount)} 元(未扣稅同強積金)`,
+              text_en: `Equivalent to HK$${formatEnglishMagnitude(annualAmount)} a year, before tax and MPF contributions`,
+              basis_en: `HK$${formatNumber(latest.value)} × 12 months`,
               basis_zh: `${formatNumber(latest.value)} 元 × 12 個月`,
             }
           : null,
-        anchorVersusYear(all, first?.period, { label: "有紀錄最早" }),
+        anchorVersusYear(all, first?.period, { label: "有紀錄最早", labelEn: "earliest available record" }),
         latest && first
           ? {
               id: "vs-first-per-year",
-              text_zh: `即係比 ${first.period} 年每個月多 ${formatNumber(latest.value - first.value)} 元`,
+              text_en: `Monthly wages are HK$${formatNumber(monthlyIncrease)} higher than in ${formatPeriodEn(first.period)}`,
+              basis_en: `HK$${formatNumber(latest.value)} − HK$${formatNumber(first.value)}`,
+              text_zh: `即係比 ${first.period} 年每個月多 ${formatNumber(monthlyIncrease)} 元`,
               basis_zh: `${formatNumber(latest.value)} − ${formatNumber(first.value)}`,
             }
           : null
@@ -502,16 +524,19 @@ export const CENSTATD_INDICATORS = {
       collectAnchors(
         (() => {
           const latest = [...series].reverse().find((p) => p.value !== null);
+          const annualAmount = latest ? latest.value * 12 : null;
           return latest
             ? {
                 id: "per-year",
-                text_zh: `一年計就係 ${formatChineseMagnitude(latest.value * 12)} 元(成個住戶加埋)`,
+                text_zh: `一年計就係 ${formatChineseMagnitude(annualAmount)} 元(成個住戶加埋)`,
+                text_en: `Equivalent to HK$${formatEnglishMagnitude(annualAmount)} a year for the whole household`,
+                basis_en: `HK$${formatNumber(latest.value)} × 12 months`,
                 basis_zh: `${formatNumber(latest.value)} 元 × 12 個月`,
               }
             : null;
         })(),
         anchorVersusYear(series, "1997"),
-        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早" })
+        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早", labelEn: "earliest available record" })
       ),
   },
 
@@ -542,18 +567,23 @@ export const CENSTATD_INDICATORS = {
     anchors: (series) => {
       const withValues = series.filter((p) => Number.isFinite(p.value));
       const latest = withValues.at(-1);
+      const basketCost = latest ? 100 * (1 + latest.value / 100) : null;
       // 輸入係按年率,唔係相接嘅按月升幅。唔可以把十二個重疊按年率當複利相乘。
       return collectAnchors(
         latest
           ? {
               id: "hundred-dollars",
-              text_zh: `舊年 100 蚊買到嘅嘢,今年要 ${formatNumber(100 * (1 + latest.value / 100), { digits: 2 })} 蚊`,
+              text_en: `A basket costing HK$100 a year earlier would now cost HK$${formatNumber(basketCost, {digits: 2})}`,
+              basis_en: `Year-on-year change for ${formatPeriodEn(latest.period)}: ${latest.value}%; 100 × (1 + ${latest.value} ÷ 100)`,
+              text_zh: `舊年 100 蚊買到嘅嘢,今年要 ${formatNumber(basketCost, { digits: 2 })} 蚊`,
               basis_zh: `${formatPeriodZh(latest.period)}按年變動 ${latest.value}%:100 × (1 + ${latest.value} ÷ 100)`,
             }
           : null,
         latest
           ? {
               id: "direction",
+              text_en: latest.value > 0 ? "Year-on-year inflation: overall prices are higher than in the same month a year earlier" : latest.value < 0 ? "Year-on-year deflation: overall prices are lower than in the same month a year earlier" : "Zero year-on-year change: overall prices are unchanged at the published precision",
+              basis_en: `Year-on-year change for ${formatPeriodEn(latest.period)}: ${latest.value}%; positive means a rise, negative means a fall, and zero means unchanged at the published precision`,
               text_zh:
                 latest.value > 0
                   ? "按年通脹:整體物價比一年前同月高"
@@ -612,14 +642,18 @@ export const CENSTATD_INDICATORS = {
         latestPeriod
           ? {
               id: "sum",
+              text_en: `The four key industries account for ${formatNumber(sum, {digits: 1})}% of GDP; HK$${formatNumber(100 - sum, {digits: 1})} of every HK$100 of output comes from other industries`,
+              basis_en: `${latest.map((p) => p.value).join(" + ")} = ${formatNumber(sum, {digits: 1})}`,
               text_zh: `四大行業加埋佔 ${formatNumber(sum, { digits: 1 })}% —— 即係每 100 蚊經濟產值,有 ${formatNumber(100 - sum, { digits: 1 })} 蚊嚟自其他行業`,
               basis_zh: `${latest.map((p) => p.value).join(" + ")} = ${formatNumber(sum, { digits: 1 })}`,
             }
           : null,
-        top ? { id: "top", text_zh: `最大嗰個係${top.category},佔 ${top.value}%`, basis_zh: `${latestPeriod} 年四個數入面最大` } : null,
+        top ? { id: "top", text_en: `The largest is ${keyIndustryEnglish[top.category]}, accounting for ${top.value}%`, basis_en: `The largest of the four figures for ${formatPeriodEn(latestPeriod)}`, text_zh: `最大嗰個係${top.category},佔 ${top.value}%`, basis_zh: `${latestPeriod} 年四個數入面最大` } : null,
         finance.length > 1 && trade.length > 1
           ? {
               id: "swap",
+              text_en: `In ${formatPeriodEn(finance[0].period)}, trading and logistics (${trade[0].value}%) exceeded financial services (${finance[0].value}%); by ${formatPeriodEn(finance.at(-1).period)}, their positions had reversed`,
+              basis_en: `Trading and logistics: ${trade[0].value}% → ${trade.at(-1).value}%; financial services: ${finance[0].value}% → ${finance.at(-1).value}%`,
               text_zh: `${finance[0].period} 年貿易及物流(${trade[0].value}%)大過金融服務(${finance[0].value}%);${finance.at(-1).period} 年已經調轉`,
               basis_zh: `貿易及物流 ${trade[0].value}% → ${trade.at(-1).value}%,金融服務 ${finance[0].value}% → ${finance.at(-1).value}%`,
             }
@@ -664,19 +698,24 @@ export const CENSTATD_INDICATORS = {
       const latest = series.filter((p) => p.period === latestPeriod && p.value !== null);
       const total = latest.reduce((acc, p) => acc + p.value, 0);
       const main = series.filter((p) => p.category === "主板" && p.value !== null);
+      const mainAnnualChange = main.length > 1 ? (main.at(-1).value - main[0].value) / (Number(main.at(-1).period) - Number(main[0].period)) : null;
       return collectAnchors(
         latestPeriod
           ? {
               id: "total",
+              text_en: `The Main Board and GEM have ${formatNumber(total)} listed companies in total`,
+              basis_en: `${latest.map((p) => `${p.category === "主板" ? "Main Board" : p.category} ${p.value}`).join(" + ")}`,
               text_zh: `主板加 GEM 一共 ${formatNumber(total)} 間公司`,
               basis_zh: `${latest.map((p) => `${p.category} ${p.value}`).join(" + ")}`,
             }
           : null,
-        anchorVersusYear(main, main[0]?.period, { label: "主板,有紀錄最早" }),
+        anchorVersusYear(main, main[0]?.period, { label: "主板,有紀錄最早", labelEn: "Main Board, earliest available record" }),
         main.length > 1
           ? {
               id: "per-year",
-              text_zh: `主板平均每年多 ${formatNumber((main.at(-1).value - main[0].value) / (Number(main.at(-1).period) - Number(main[0].period)), { digits: 0 })} 間`,
+              text_zh: `主板平均每年多 ${formatNumber(mainAnnualChange, { digits: 0 })} 間`,
+              text_en: `An average of ${formatNumber(mainAnnualChange, {digits: 0})} additional Main Board companies per year`,
+              basis_en: `(${main.at(-1).value} − ${main[0].value}) ÷ ${Number(main.at(-1).period) - Number(main[0].period)} years`,
               basis_zh: `(${main.at(-1).value} − ${main[0].value}) ÷ ${Number(main.at(-1).period) - Number(main[0].period)} 年`,
             }
           : null
@@ -697,7 +736,7 @@ function samePeriodLastYearAnchor(series) {
   const period = latestPeriod(series);
   if (!period) return [];
   const previous = `${Number(period.slice(0, 4)) - 1}${period.slice(4)}`;
-  return collectAnchors(anchorVersusYear(series, previous, { label: "去年同期" }));
+  return collectAnchors(anchorVersusYear(series, previous, { label: "去年同期", labelEn: "same period a year earlier" }));
 }
 
 // 呢三項均由同一來源原值逐點核對最終輸出，唔借另一個變項／分項冒充。
@@ -1005,19 +1044,22 @@ export const FISCAL_INDICATORS = {
       const total = latestTotal(extras);
       const edu = series.filter((p) => p.category === "教育");
       const eduLatest = [...edu].reverse().find((p) => p.value !== null);
+      const educationShare = total && eduLatest ? (eduLatest.value / total.value) * 100 : null;
       return collectAnchors(
-        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年", fiscal: true }) : null,
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年", nounEn: "per Hong Kong resident per year", fiscal: true }) : null,
         total && eduLatest && eduLatest.period === total.period
           ? {
               id: "edu-share",
-              text_zh: `每 100 元經常開支,有 ${formatNumber((eduLatest.value / total.value) * 100, { digits: 1 })} 元使喺教育`,
+              text_en: `Of every HK$100 of recurrent expenditure, HK$${formatNumber(educationShare, {digits: 1})} goes to education`,
+              basis_en: `Education HK$${formatEnglishMagnitude(eduLatest.value)} ÷ total recurrent expenditure HK$${formatEnglishMagnitude(total.value)} × 100`,
+              text_zh: `每 100 元經常開支,有 ${formatNumber(educationShare, { digits: 1 })} 元使喺教育`,
               basis_zh: `教育 ${formatChineseMagnitude(eduLatest.value)} ÷ 經常開支總額 ${formatChineseMagnitude(total.value)} × 100`,
             }
           : null,
         anchorVersusYear(
           (extras.totals ?? []).map((t) => ({ period: t.period, value: t.value })),
           "1997-98",
-          { label: "回歸嗰年,總額" }
+          { label: "回歸嗰年,總額", labelEn: "total in the year of the handover" }
         )
       );
     },
@@ -1051,12 +1093,15 @@ export const FISCAL_INDICATORS = {
       const land = series.filter((p) => p.category === "地價收入" && p.value !== null);
       const peak = land.reduce((best, p) => (best === null || p.value > best.value ? p : best), null);
       const landLatest = land.at(-1);
+      const landPeakShare = landLatest && peak ? (landLatest.value / peak.value) * 100 : null;
       return collectAnchors(
-        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年貢獻", fiscal: true }) : null,
+        total ? anchorPerCapita(total.value, total.period, extras.population, { noun: "每名香港市民一年貢獻", nounEn: "in annual revenue per Hong Kong resident", fiscal: true }) : null,
         peak && landLatest && peak.period !== landLatest.period
           ? {
               id: "land-vs-peak",
-              text_zh: `地價收入最高係 ${peak.period} 年度,最新(${landLatest.period})只係嗰陣嘅 ${formatNumber((landLatest.value / peak.value) * 100, { digits: 0 })}%`,
+              text_en: `Land premium revenue peaked in ${formatPeriodEn(peak.period, {fiscal: true})}; the latest figure (${formatPeriodEn(landLatest.period, {fiscal: true})}) is ${formatNumber(landPeakShare, {digits: 0})}% of that level`,
+              basis_en: `HK$${formatEnglishMagnitude(landLatest.value)} ÷ HK$${formatEnglishMagnitude(peak.value)} × 100`,
+              text_zh: `地價收入最高係 ${peak.period} 年度,最新(${landLatest.period})只係嗰陣嘅 ${formatNumber(landPeakShare, { digits: 0 })}%`,
               basis_zh: `${formatChineseMagnitude(landLatest.value)} ÷ ${formatChineseMagnitude(peak.value)} × 100`,
             }
           : null
@@ -1080,16 +1125,19 @@ export const FISCAL_INDICATORS = {
       const spend = extras.monthlyExpenditure ?? [];
       const last12 = spend.slice(-12);
       const avgMonthly = last12.length === 12 ? last12.reduce((a, p) => a + p.value, 0) / 12 : null;
+      const monthsCovered = latest && avgMonthly ? latest.value / avgMonthly : null;
       return collectAnchors(
         latest ? anchorPerCapita(latest.value, latest.period, extras.population, { noun: "每名香港市民", fiscal: false }) : null,
         latest && avgMonthly
           ? {
               id: "months-of-spending",
-              text_zh: `如果政府一蚊收入都冇,呢筆儲備夠使大約 ${formatNumber(latest.value / avgMonthly, { digits: 1 })} 個月`,
+              text_en: `With no government revenue, these reserves would cover about ${formatNumber(monthsCovered, {digits: 1})} months of expenditure`,
+              basis_en: `Reserves of HK$${formatEnglishMagnitude(latest.value)} ÷ average monthly expenditure over the latest 12 months of HK$${formatEnglishMagnitude(avgMonthly)}`,
+              text_zh: `如果政府一蚊收入都冇,呢筆儲備夠使大約 ${formatNumber(monthsCovered, { digits: 1 })} 個月`,
               basis_zh: `儲備 ${formatChineseMagnitude(latest.value)} ÷ 最近 12 個月平均每月開支 ${formatChineseMagnitude(avgMonthly)}`,
             }
           : null,
-        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早" })
+        anchorVersusYear(series, series[0]?.period, { label: "有紀錄最早", labelEn: "earliest available record" })
       );
     },
   },

@@ -6,6 +6,8 @@ toc: false
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {indicatorText} from "../components/display-text.js";
 import { html } from "npm:htl";
 import { indicatorCard } from "../components/indicator-card.js";
 import { indicatorChart } from "../components/indicator-chart.js";
@@ -49,14 +51,14 @@ display(html`<div class="living-card-grid">${[price, rent].map(card)}</div>`);
   <div class="living-chart-panel">
 
 ```js
-const selectedMonth = view(Inputs.select(months, { label: "比較月份", value: months[0] }));
+const selectedMonth = view(Inputs.select(months, { label: t("比較月份", "Comparison month"), value: months[0] }));
 ```
 
 ```js
 display(resize((width) => components.series.some((point) => point.period === selectedMonth && Number.isFinite(point.value))
   ? indicatorChart({ ...components, chart: { ...components.chart, period: selectedMonth } }, width)
-  : html`<p class="living-no-data" role="status">${selectedMonth} 未有可用分類數字；缺值唔代表零，請選其他月份。</p>`));
-display(html`<p class="living-source">資料來源：<a href=${components.source_url} target="_blank" rel="noopener noreferrer">${components.source_zh} · 表 510-60001A ↗</a> · 數據截至 ${formatDateZh(components.updated_at)}${components.build?.stale ? " · 上次更新失敗，顯示舊快照" : ""}</p>`);
+  : html`<p class="living-no-data" role="status">${selectedMonth}${t(" 未有可用分類數字；缺值唔代表零，請選其他月份。", " has no available section figures. Missing values do not mean zero; choose another month.")}</p>`));
+display(html`<p class="living-source">${t("資料來源：", "Source: ")}<a href=${components.source_url} target="_blank" rel="noopener noreferrer">${indicatorText(components, "source_zh")}${t(" · 表 510-60001A ↗", " · Table 510-60001A ↗")}</a>${t(" · 數據截至 ", " · Data as at ")}${formatDateZh(components.updated_at)}${components.build?.stale ? t(" · 上次更新失敗，顯示舊快照", " · Latest update failed; showing the previous snapshot") : ""}</p>`);
 ```
 
   <p class="living-source">未有可用數字嘅類別唔畫條；來源標示變動少於 0.05% 嘅格保留缺值，唔當成精確零。<a href="../indicators/cpi_components">開完整數列、類別走勢及引用 ↗</a></p>

@@ -13,11 +13,13 @@
   "use strict";
 
   var BANNER_ID = "hkdm-offline-banner";
+  var english = document.documentElement.lang === "en-GB";
 
   function formatDate(iso) {
     if (!iso) return null;
     var match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
     if (!match) return iso;
+    if (english) return new Intl.DateTimeFormat("en-GB", {day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Hong_Kong"}).format(new Date(iso + "T00:00:00Z"));
     return match[1] + " 年 " + Number(match[2]) + " 月 " + Number(match[3]) + " 日";
   }
 
@@ -34,6 +36,7 @@
       '<span class="hkdm-offline-banner__text"></span>' +
       '<button type="button" class="hkdm-offline-banner__close" aria-label="收起提示">×</button>';
 
+    banner.querySelector(".hkdm-offline-banner__close").setAttribute("aria-label", english ? "Dismiss offline message" : "收起提示");
     banner.querySelector(".hkdm-offline-banner__close").addEventListener("click", function () {
       banner.hidden = true;
     });
@@ -46,9 +49,9 @@
   function show(dataAsOf) {
     var banner = ensureBanner();
     var date = formatDate(dataAsOf);
-    banner.querySelector(".hkdm-offline-banner__text").textContent = date
-      ? "目前為離線快取；全站數據截至日期最早為 " + date + "。各項統計期請看資料卡。"
-      : "目前為離線快取。";
+    banner.querySelector(".hkdm-offline-banner__text").textContent = english
+      ? (date ? "Showing the offline cache. The earliest data-as-of date across published datasets is " + date + ". Check each card for its statistical period." : "Showing the offline cache.")
+      : (date ? "目前為離線快取；全站數據截至日期最早為 " + date + "。各項統計期請看資料卡。" : "目前為離線快取。");
     banner.hidden = false;
   }
 

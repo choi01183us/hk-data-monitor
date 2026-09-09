@@ -1,0 +1,90 @@
+/* 原圖保留、四圖同高，沿用同計劃 revision G 審閱排法。
+ * 同高安排及數碼最小尺寸仍須基金確認；本樣式唔代表已獲品牌批准。
+ * 原圖 X 高約 103/160；留白至少圖高 0.4 倍，大於半個 X。
+ */
+.programme-brand {
+  --programme-logo-height: 42px;
+  --programme-logo-clear: calc(var(--programme-logo-height) * 0.4);
+  display: grid;
+  gap: 1rem;
+  margin-block: 1.25rem 1.5rem;
+  max-width: 100%;
+}
+
+.programme-identity p { margin: 0; }
+.programme-name-zh {
+  color: var(--theme-foreground);
+  font-size: clamp(1.1rem, 3.2vw, 1.45rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+}
+.programme-name-en {
+  color: var(--theme-foreground-muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-top: 0.3rem !important;
+}
+
+.programme-logo-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: calc(var(--programme-logo-clear) * 2);
+  max-width: 100%;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: calc(var(--programme-logo-clear) * 1.25);
+  background: #fff;
+  color: #142833;
+  border: 1px solid #d2dade;
+  border-radius: 8px;
+}
+.programme-logo-band[hidden], .programme-logo-status[hidden] { display: none !important; }
+.programme-logo-group { display: flex; flex-direction: column; gap: var(--programme-logo-clear); min-width: 0; }
+.programme-logo-role { display: flex; flex-direction: column; gap: 0.15rem; align-items: flex-start; font-size: 12px; line-height: 1.3; color: #142833; }
+.programme-logo-role [lang="en-GB"] { font-weight: 400; opacity: 1; }
+.programme-logo-role [lang="zh-HK"] { font-weight: 700; }
+.programme-logo-row { display: flex; flex-wrap: nowrap; align-items: flex-end; gap: calc(var(--programme-logo-clear) * 1.25); }
+.programme-logo-band img {
+  display: block;
+  width: auto;
+  height: var(--programme-logo-height);
+  max-width: none;
+  flex: none;
+  object-fit: contain;
+  filter: none;
+  transform: none;
+  animation: none;
+  transition: none;
+  opacity: 1;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0;
+}
+.programme-logo-status { margin: 0; font-size: 0.85rem; color: var(--theme-foreground-muted); }
+
+@media (max-width: 420px) {
+  .programme-brand { --programme-logo-height: 38px; }
+}
+
+@media print {
+  .programme-name-zh, .programme-name-en, .programme-logo-status { color: #142833; }
+  .programme-brand { break-inside: avoid; }
+  .programme-logo-band { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+.programme-context { display: flex; flex-wrap: wrap; gap: .25rem .75rem; margin-block: .75rem; font-size: .8rem; color: var(--theme-foreground); text-decoration: none; }
+.programme-context [lang="zh-HK"] { font-weight: 700; }
+.programme-context [lang="en-GB"] { color: var(--theme-foreground-muted); }
+/* Programme identity stays in normal flow so it cannot cover the language controls. */
+#observablehq-header {
+  position: static;
+  height: auto;
+  margin: 0;
+  padding: .5rem 1rem;
+  left: auto;
+  right: auto;
+}
+#observablehq-header ~ #observablehq-main { margin-top: 1rem; }

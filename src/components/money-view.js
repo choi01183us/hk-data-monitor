@@ -1,5 +1,6 @@
 // 圖表換算只影響顯示；引用、下載同資料表仍用原始港元。
-import {formatNumber, formatPeriodZh} from "./format.js";
+import {formatPeriodEn} from "./format.js";
+import {formatNumber, formatPeriodZh, bilingualAnchor} from "./anchor.js";
 
 const HKD_PER_TRILLION = 1e12;
 const MONEY_CATEGORIES = ["M1", "M2", "M3"];
@@ -39,6 +40,7 @@ export function moneyChartView(indicator, category = "全部") {
     unit_short_zh: "萬億港元",
     value_digits: 2,
     basis_zh: `${indicator.basis_zh ?? ""}；圖表顯示以原始港元 ÷ 1,000,000,000,000 換成萬億港元。`,
+    ...(typeof indicator.basis_en === "string" ? {basis_en: `${indicator.basis_en}; the chart divides the original HK$ values by 1,000,000,000,000 to display HK$ trillion.`} : {}),
     category_order: categories,
     chart: {...indicator.chart, type: "line"},
     series: indicator.series.filter((row) => categories.includes(row.category)).map((row) => ({...row, value: displayValue(row.value)})),
@@ -62,17 +64,28 @@ export function moneyQuarterAnchors(indicator, period) {
     const previous = indicator.series.find((entry) => entry.period === previousPeriod && entry.category === selected.category);
     const id = `money-${selected.category.toLowerCase()}-year-on-year`;
     const scope = `${selected.category}：${formatPeriodZh(previousPeriod)} → ${formatPeriodZh(period)}`;
+    const scopeEn = `${selected.category}: ${formatPeriodEn(previousPeriod)} → ${formatPeriodEn(period)}`;
     const reason = selected.value === null ? "所選季度缺數" : !previous ? "缺少去年同季" : previous.value === null ? "去年同季缺數" : previous.value === 0 ? "去年同季為零，百分比無法計算" : null;
-    if (reason) return {id, text_zh: `${selected.category}：未能比較去年同季（${reason}）`, basis_zh: `${scope}。${reason}；唔以其他季度代替。`};
+    const reasonEn = {
+      "所選季度缺數": "the selected quarter has no data",
+      "缺少去年同季": "the same quarter a year earlier is absent",
+      "去年同季缺數": "the same quarter a year earlier has no data",
+      "去年同季為零，百分比無法計算": "the same quarter a year earlier is zero, so a percentage change cannot be calculated",
+    }[reason] ?? null;
+    if (reason) return bilingualAnchor({id, text_zh: `${selected.category}：未能比較去年同季（${reason}）`, basis_zh: `${scope}。${reason}；唔以其他季度代替。`, text_en: `${selected.category}: a year-on-year comparison is unavailable (${reasonEn})`, basis_en: `${scopeEn}. ${reasonEn}; another quarter is not substituted.`});
     const difference = selected.value - previous.value;
     const percent = difference / previous.value * 100;
     if (!Number.isFinite(percent)) throw new Error("貨幣供應量按年變化超出可計算範圍");
     const direction = difference > 0 ? "增加" : difference < 0 ? "減少" : "相差";
+    const directionEn = difference > 0 ? "increased by" : difference < 0 ? "decreased by" : "differed by";
+    const differenceTrillion = Math.abs(difference / HKD_PER_TRILLION);
     const percentText = `${percent > 0 ? "+" : percent < 0 ? "−" : ""}${formatNumber(Math.abs(percent), {digits: 2})}%`;
-    return {
+    return bilingualAnchor({
       id,
-      text_zh: `${selected.category} 比去年同季${direction} ${formatNumber(Math.abs(difference / HKD_PER_TRILLION), {digits: 2})} 萬億港元（${percentText}）`,
+      text_en: `${selected.category} ${directionEn} HK$${formatNumber(differenceTrillion, {digits: 2})} trillion compared with the same quarter a year earlier (${percentText})`,
+      basis_en: `${scopeEn}. Difference: (${selected.value} − ${previous.value}) HK$ ÷ 1,000,000,000,000; year-on-year change: (${selected.value} − ${previous.value}) ÷ ${previous.value} × 100%. Displayed figures are rounded to two decimal places.`,
+      text_zh: `${selected.category} 比去年同季${direction} ${formatNumber(differenceTrillion, {digits: 2})} 萬億港元（${percentText}）`,
       basis_zh: `${scope}。差額：（${selected.value} − ${previous.value}）港元 ÷ 1,000,000,000,000；按年變化：（${selected.value} − ${previous.value}）÷ ${previous.value} × 100%。顯示數字四捨五入至小數後兩位。`,
-    };
+    });
   });
 }

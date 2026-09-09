@@ -20,6 +20,8 @@ import { fileURLToPath } from "node:url";
 
 import { pickDataAsOf, isDisplayed, selectPublishedIndicators } from "../src/data/_lib/site-meta.js";
 import { normalizeBrowserViewport } from "./lib/viewport.mjs";
+import {localiseHtml, localiseSearchAssets} from "./lib/language-html.mjs";
+import {createEnglishAnchorInjector} from "./lib/anchor-html.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(HERE, "..");
@@ -45,6 +47,11 @@ async function walk(dir, base = dir) {
   return out;
 }
 
+// Root-level language and PWA files must be present before precache inventory and versioning.
+const fixedAssets = ["manifest.webmanifest", "icon.svg", "offline-banner.js", "language-switch.js", "language.css"];
+for (const name of fixedAssets) await copyFile(join(PUBLIC, name), join(DIST, name));
+await copyFile(join(ROOT, "src/components/locale.js"), join(DIST, "locale.js"));
+await localiseSearchAssets(DIST);
 const files = await walk(DIST);
 
 /**
@@ -65,11 +72,20 @@ const htmlPages = files.filter((file) => file.path.endsWith(".html"));
 // 先移走框架固定的手機放大限制，再以真正輸出的 HTML 內容計快取版本。
 // 唔加第二個 viewport、唔靠載入後的 JS；離線首開亦用同一份修正過的 HTML。
 const htmlDigests = [];
+const injectEnglishAnchors = createEnglishAnchorInjector({distDir: DIST, snapshotDir: SNAPSHOTS});
 for (const file of htmlPages) {
-  const raw = await readFile(file.full, "utf8");
+  const original = await readFile(file.full, "utf8");
+  const localised = await localiseHtml(original, {path:file.path});
+  const raw = await injectEnglishAnchors(localised);
   const normalized = normalizeBrowserViewport(raw);
-  if (normalized !== raw) await writeFile(file.full, normalized, "utf8");
+  if (normalized !== original) await writeFile(file.full, normalized, "utf8");
   htmlDigests.push([file.path, createHash("sha256").update(normalized).digest("hex")]);
+}
+
+// Fixed filenames have no content hash in their URL; their bytes must retire old caches too.
+for (const name of [...fixedAssets, "locale.js", "sw-template.js"]) {
+  const full = name === "sw-template.js" ? join(PUBLIC, name) : join(DIST, name);
+  htmlDigests.push([name, createHash("sha256").update(await readFile(full)).digest("hex")]);
 }
 
 // 關鍵資源:頁面、樣式、runtime、字型、資料。冇呢啲離線就乜都冇。

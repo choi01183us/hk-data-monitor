@@ -1,29 +1,30 @@
 import {html} from "npm:htl";
+import {t} from "./locale.js";
 import {normalizeMapView, zoomMapView, panMapView, focusMapView, mapTransform} from "./map-view.js";
 
 // 一個座標平面包含底圖、區界及 HTML 標記；操作只留在記憶體，唔改原始位置。
-export function mapViewport({label = "香港互動地圖", resetLabel = "香港全景"} = {}) {
+export function mapViewport({label = t("香港互動地圖", "Interactive map of Hong Kong"), resetLabel = t("香港全景", "All Hong Kong")} = {}) {
   let state = normalizeMapView(), selection = null, drag = null, suppressClick = false;
   const stage = html`<div class="map-stage"></div>`;
-  const viewport = html`<div class="map-viewport" tabindex="0" role="group" aria-label=${`${label}；方向鍵移動，加減鍵縮放，Home 重設`}>${stage}</div>`;
-  const level = html`<output class="map-zoom-level" aria-label="地圖放大倍率"></output>`;
+  const viewport = html`<div class="map-viewport" tabindex="0" role="group" aria-label=${t(`${label}；方向鍵移動，加減鍵縮放，Home 重設`, `${label}; arrow keys to pan, plus and minus to zoom, Home to reset`)}>${stage}</div>`;
+  const level = html`<output class="map-zoom-level" aria-label=${t("地圖放大倍率", "Map zoom level")}></output>`;
   const status = html`<p class="map-selection" role="status"></p>`;
   const source = html`<div class="map-view-source"></div>`;
   const button = (text, action, name = text) => html`<button type="button" aria-label=${name} onclick=${action}>${text}</button>`;
   const zoom = (delta) => {state = zoomMapView(state, delta); paint();};
   const pan = (dx, dy) => {state = panMapView(state, dx, dy); paint();};
-  const plus = button("＋ 放大", () => zoom(.5), "放大地圖");
-  const minus = button("− 縮小", () => zoom(-.5), "縮小地圖");
+  const plus = button(t("＋ 放大", "＋ Zoom in"), () => zoom(.5), t("放大地圖", "Zoom in on map"));
+  const minus = button(t("− 縮小", "− Zoom out"), () => zoom(-.5), t("縮小地圖", "Zoom out of map"));
   const reset = button(resetLabel, () => {state = normalizeMapView(); paint();});
-  const locate = button("定位所選", () => {if (selection) {state = focusMapView(state, selection.x / 900, selection.y / 560); paint();}});
-  const directions = [["←", .2, 0, "向西查看"], ["↑", 0, .2, "向北查看"], ["↓", 0, -.2, "向南查看"], ["→", -.2, 0, "向東查看"]].map(([text, dx, dy, name]) => button(text, () => pan(dx, dy), name));
-  const fullscreen = button("全螢幕", async () => {
+  const locate = button(t("定位所選", "Locate selection"), () => {if (selection) {state = focusMapView(state, selection.x / 900, selection.y / 560); paint();}});
+  const directions = [["←", .2, 0, t("向西查看", "Pan west")], ["↑", 0, .2, t("向北查看", "Pan north")], ["↓", 0, -.2, t("向南查看", "Pan south")], ["→", -.2, 0, t("向東查看", "Pan east")]].map(([text, dx, dy, name]) => button(text, () => pan(dx, dy), name));
+  const fullscreen = button(t("全螢幕", "Full screen"), async () => {
     try {
       if (document.fullscreenElement === root) await document.exitFullscreen();
       else await root.requestFullscreen();
-    } catch {status.textContent = "瀏覽器未能開啟全螢幕；仍可用放大及移動按鈕。";}
+    } catch {status.textContent = t("瀏覽器未能開啟全螢幕；仍可用放大及移動按鈕。", "This browser could not open full screen. You can still use the zoom and pan controls.");}
   });
-  const root = html`<div class="map-viewer"><div class="map-tools" role="group" aria-label="地圖檢視工具"><div>${plus}${minus}${level}</div><div>${reset}${locate}${fullscreen}</div><div class="map-pan-buttons" role="group" aria-label="移動地圖">${directions}</div></div>${viewport}${status}${source}<p class="map-help">放大後可拖移，亦可按方向按鈕。鍵盤：方向鍵、＋／−、Home。放大唔會增加底圖細節；雙指可縮放網頁。</p></div>`;
+  const root = html`<div class="map-viewer"><div class="map-tools" role="group" aria-label=${t("地圖檢視工具", "Map viewing tools")}><div>${plus}${minus}${level}</div><div>${reset}${locate}${fullscreen}</div><div class="map-pan-buttons" role="group" aria-label=${t("移動地圖", "Pan map")}>${directions}</div></div>${viewport}${status}${source}<p class="map-help">${t("放大後可拖移，亦可按方向按鈕。鍵盤：方向鍵、＋／−、Home。放大唔會增加底圖細節；雙指可縮放網頁。", "After zooming in, drag the map or use the direction buttons. Keyboard: arrow keys, +/− and Home. Zooming does not add map detail; pinch to zoom the webpage.")}</p></div>`;
   fullscreen.hidden = !document.fullscreenEnabled || typeof root.requestFullscreen !== "function";
   function paint() {
     stage.style.transform = mapTransform(state);
@@ -95,8 +96,8 @@ export function mapViewport({label = "香港互動地圖", resetLabel = "香港�
   });
   root.addEventListener("fullscreenchange", () => {
     const open = document.fullscreenElement === root;
-    fullscreen.textContent = open ? "返回頁面" : "全螢幕";
-    fullscreen.setAttribute("aria-label", open ? "返回頁面" : "全螢幕");
+    fullscreen.textContent = open ? t("返回頁面", "Return to page") : t("全螢幕", "Full screen");
+    fullscreen.setAttribute("aria-label", open ? t("返回頁面", "Return to page") : t("全螢幕", "Full screen"));
     (open ? viewport : fullscreen).focus({preventScroll: true});
   });
   root.addEventListener("keydown", (event) => {

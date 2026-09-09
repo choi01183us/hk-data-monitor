@@ -121,7 +121,7 @@ export function propertyAnchors(series) {
   const latest = series.at(-1);
   if (!latest || latest.value === null) return [];
   const previous = `${Number(latest.period.slice(0, 4)) - 1}${latest.period.slice(4)}`;
-  return collectAnchors(anchorVersusYear(series, previous, { label: "去年同月" }));
+  return collectAnchors(anchorVersusYear(series, previous, { label: "去年同月", labelEn: "same month a year earlier" }));
 }
 
 export async function loadPropertyIndicator(id) {

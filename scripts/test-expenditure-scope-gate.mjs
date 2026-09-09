@@ -16,6 +16,17 @@ const loaded = await Promise.all([
 const indicators = loaded.filter((indicator) => indicator.manual_status !== "todo");
 `) + "# 各自睇返口徑\n" + fence('display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCard(indicator))}</div>`);');
 
+const BRAND = fence(`
+import {programmeBrand} from "./components/programme-brand.js";
+const programmeLogos = {
+ bgca: await FileAttachment("./assets/programme/bgca.png").url(),
+ hkex: await FileAttachment("./assets/programme/hkex.png").url(),
+ edb: await FileAttachment("./assets/programme/edb.png").url(),
+ hkcss: await FileAttachment("./assets/programme/hkcss.png").url()
+};
+display(programmeBrand({logos: programmeLogos}));
+`);
+
 export async function testExpenditureScopeGate(check) {
   console.log("\n[R9] 政府／公共開支口徑閘 — 真實源碼突變");
   const root = await mkdtemp(join(tmpdir(), "hkdm-expenditure-scope-"));
@@ -42,6 +53,11 @@ export async function testExpenditureScopeGate(check) {
       "index.md": HOME.replace("# 各自睇返口徑", "# 更新文案").replace("const loaded", "// 新增指標\nconst loaded")
         .replace('  FileAttachment("./data/govt_expenditure.json")', '  FileAttachment("./data/gdp.json").json(),\n  FileAttachment("./data/govt_expenditure.json")'),
     }, false);
+    await runCase("合法:首頁只讀四張原圖的計劃品牌格", {"index.md": HOME + BRAND}, false);
+    await runCase("突變:品牌格偷傳兩個開支數據被攔", {"index.md": HOME + BRAND.replace("logos: programmeLogos", "logos: programmeLogos, data: loaded")}, true);
+    await runCase("突變:品牌格加入加總被攔", {"index.md": HOME + BRAND.replace("const programmeLogos", "display(loaded.reduce((sum,d)=>sum+d.totals[0].value,0)); const programmeLogos")}, true);
+    await runCase("突變:品牌格改圖路徑為數據被攔", {"index.md": HOME + BRAND.replace("./assets/programme/hkex.png", "./data/govt_expenditure.json")}, true);
+    await runCase("突變:品牌helper額外讀取開支被攔", {"index.md": HOME + BRAND, "components/programme-brand.js": PUBLIC}, true);
     await runCase("突變:兩份 series 合併同圖被攔", {
       "indicators/mixed.md": fence(`${GOVT}\n${PUBLIC}\ndisplay(indicatorChart({...govt, series: [...govt.series, ...publicData.series]}, 600));`),
     }, true);

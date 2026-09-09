@@ -4,6 +4,8 @@ keywords: 18區 地區 人口 住戶 收入 香港
 ---
 
 ```js
+import {t} from "../components/locale.js";
+import {indicatorText} from "../components/display-text.js";
 import { html } from "npm:htl";
 import { anchorVersusYear, collectAnchors } from "../components/anchor.js";
 import { indicatorAnchors, indicatorNote } from "../components/indicator-page.js";
@@ -22,15 +24,15 @@ const years = [...new Set(indicator.series.map((point) => point.period))].sort()
 <p class="lede">先睇住戶收入嘅中間位置，再討論住戶規模、生活成本同公共支援。</p>
 
 ```js
-const selectedYear = view(Inputs.select(years, { label: "比較年份", value: years[0] }));
+const selectedYear = view(Inputs.select(years, { label: t("比較年份", "Comparison year"), value: years[0] }));
 ```
 
 ```js
 const reference = indicator.series.find((point) => point.period === selectedYear && point.category === "全港");
 display(html`<div class="headline"><div class="headline__item">
-  <div class="headline__label">${selectedYear} 年 · 全港參考</div>
-  <div class="headline__number"><strong>${reference?.value == null ? "—" : formatNumber(reference.value)}</strong><span class="headline__unit">${indicator.unit_zh}</span></div>
-  <p>${indicator.basis_zh}</p>
+  <div class="headline__label">${selectedYear}${t(" 年 · 全港參考", " · Hong Kong reference")}</div>
+  <div class="headline__number"><strong>${reference?.value == null ? "—" : formatNumber(reference.value)}</strong><span class="headline__unit">${indicatorText(indicator, "unit_zh")}</span></div>
+  <p>${indicatorText(indicator, "basis_zh")}</p>
 </div></div>`);
 ```
 
@@ -45,7 +47,7 @@ display(indicatorNote(indicator));
 const baseline = indicator.series.find((point) => point.period === "2018" && point.category === "全港");
 // 只傳基準年同選取年；選取年缺數時唔借前一年作比較。
 const selectedAnchors = baseline?.value != null && reference?.value != null
-  ? collectAnchors(anchorVersusYear([baseline, reference], "2018", {label: "全港住戶月入中位數（未扣通脹）"})) : [];
+  ? collectAnchors(anchorVersusYear([baseline, reference], "2018", {label: "全港住戶月入中位數（未扣通脹）", labelEn: "Hong Kong median monthly household income (not adjusted for inflation)"})) : [];
 display(indicatorAnchors({...indicator, anchors: selectedAnchors}));
 display(learningGuidance(indicator));
 display(dataTable(indicator));
