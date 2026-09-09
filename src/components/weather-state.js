@@ -40,6 +40,20 @@ function utcTime(value) {
   return Number.isFinite(parsed) && new Date(parsed).toISOString().slice(0, 19) === value.slice(0, 19) ? parsed : NaN;
 }
 
+/** A station observation has its own timestamp; it is not a Hong Kong-wide mean. */
+export function weatherTemperature(doc, now = Date.now()) {
+  const currentTime = typeof now === "number" ? now : typeof now === "string" ? Date.parse(now) : NaN;
+  if (!Number.isFinite(currentTime)) throw new TypeError("Weather temperature requires a valid device time");
+  const unavailable = {status: "unavailable", value: null, recorded_at: null};
+  if (doc?.kind !== "weather" || !Array.isArray(doc.records) || doc.records.length !== 1) return unavailable;
+  const record = doc.records[0], temperature = record?.temperature;
+  if (temperature?.station !== "香港天文台" || temperature?.unit !== "C" || !Number.isFinite(temperature?.value)) return unavailable;
+  const timestamps = [temperature.recorded_at, record.report_updated_at, doc.fetched_at].map(utcTime);
+  if (timestamps.some((value) => !Number.isFinite(value)) || doc.updated_at !== record.report_updated_at) return unavailable;
+  const stale = doc.build?.stale === true || timestamps.some((value) => currentTime - value > 90 * 60_000 || currentTime - value < -5 * 60_000);
+  return {status: stale ? "stale" : "current", value: temperature.value, recorded_at: temperature.recorded_at};
+}
+
 /** now accepts epoch milliseconds or an ISO timestamp string. No browser or network state. */
 export function weatherState(doc, now = Date.now()) {
   const currentTime = typeof now === "number" ? now : typeof now === "string" ? Date.parse(now) : NaN;

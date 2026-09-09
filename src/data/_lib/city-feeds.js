@@ -127,13 +127,20 @@ export function parseWeather(body) {
   upstream(body && typeof body === "object" && !Array.isArray(body), "天氣報告唔係物件");
   upstream(Array.isArray(body.icon) && body.icon.length > 0 && body.icon.length <= Object.keys(WEATHER_ICONS).length && body.icon.every((code) => Number.isInteger(code) && Object.hasOwn(WEATHER_ICONS, code)), "天氣標記缺少或有未知代碼");
   upstream(new Set(body.icon).size === body.icon.length, "天氣標記重複");
-  let report_updated_at, icon_updated_at;
+  upstream(Array.isArray(body.temperature?.data), "天氣報告缺少溫度觀測資料");
+  const stations = body.temperature.data.filter((row) => row?.place === "香港天文台");
+  upstream(stations.length === 1, "香港天文台溫度觀測缺少或重複");
+  const observation = stations[0];
+  upstream(Number.isFinite(observation.value) && observation.unit === "C", "香港天文台溫度數值或攝氏單位無效");
+  let report_updated_at, icon_updated_at, recorded_at;
   try {
     report_updated_at = cityTimestamp(body.updateTime);
     icon_updated_at = cityTimestamp(body.iconUpdateTime);
+    recorded_at = cityTimestamp(body.temperature.recordTime);
   } catch (cause) { throw new UpstreamError("天氣來源更新時刻無效", { cause }); }
   // 保留整個標記陣列及來源次序；兩個標記可代表天氣轉變，不能只取第一個。
-  return { icons: [...body.icon], report_updated_at, icon_updated_at };
+  const temperature = { station: observation.place, value: observation.value, unit: observation.unit, recorded_at };
+  return { icons: [...body.icon], report_updated_at, icon_updated_at, temperature };
 }
 
 export function parseFlights(body, requestedDate, direction) {
@@ -193,7 +200,7 @@ export function validateCitySnapshot(doc) {
   } else if (doc.kind === "weather") {
     check(records.length === 1, "天氣只保留一份報告的標記");
     const r = records[0];
-    check(Object.keys(r ?? {}).sort().join() === "icon_updated_at,icons,report_updated_at", "天氣只保留標記及兩個來源時刻");
+    check(Object.keys(r ?? {}).sort().join() === "icon_updated_at,icons,report_updated_at,temperature", "天氣只保留標記、來源時刻及天文台氣溫");
     check(Array.isArray(r?.icons) && r.icons.length > 0 && r.icons.length <= Object.keys(WEATHER_ICONS).length && r.icons.every((code) => Number.isInteger(code) && Object.hasOwn(WEATHER_ICONS, code)), "天氣標記缺少或有未知代碼");
     if (Array.isArray(r?.icons)) check(new Set(r.icons).size === r.icons.length, "天氣標記重複");
     for (const key of ["report_updated_at", "icon_updated_at"]) {
@@ -202,6 +209,12 @@ export function validateCitySnapshot(doc) {
     }
     check(r?.report_updated_at === doc.updated_at, "天氣截至時間必須等於整份報告時間");
     check(Date.parse(r?.icon_updated_at) <= Date.parse(doc.fetched_at) + 5 * 60000, "天氣標記時刻超前抓取時刻");
+    const temperature = r?.temperature;
+    check(Object.keys(temperature ?? {}).sort().join() === "recorded_at,station,unit,value", "氣溫只保留觀測站、原值、單位及量度時間");
+    check(temperature?.station === "香港天文台" && temperature?.unit === "C" && Number.isFinite(temperature?.value), "氣溫觀測站、攝氏單位或數值無效");
+    try { check(cityTimestamp(temperature?.recorded_at) === temperature.recorded_at, "氣溫量度時間必須係 ISO UTC"); }
+    catch { errors.push("氣溫量度時間無效"); }
+    check(Date.parse(temperature?.recorded_at) <= Date.parse(doc.fetched_at) + 5 * 60000, "氣溫量度時間超前抓取時刻");
   } else {
     check(validDate(doc.requested_date), "航班要求日期無效");
     try { check(validDate(doc.requested_date) && doc.requested_date === previousHongKongDate(doc.fetched_at), "航班要求日期必須係抓取時香港前一日"); }

@@ -13,8 +13,14 @@
         77
       ],
       "report_updated_at": "2026-09-09T13:02:00.000Z",
-      "icon_updated_at": "2026-09-09T10:00:00.000Z"
+      "icon_updated_at": "2026-09-09T10:00:00.000Z",
+      "temperature": {
+        "station": "香港天文台",
+        "value": 29,
+        "unit": "C",
+        "recorded_at": "2026-09-09T13:00:00.000Z"
+      }
     }
   ],
-  "content_hash": "6ee2408d483723f41eb052a7bc0b36a002ce32b48299fa7523f81a6c04ac79a5"
+  "content_hash": "c0b8630574ac38e0a4d5300093c83e0d4c4dce42c16bdd14910c0a8930787739"
 }

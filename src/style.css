@@ -1322,6 +1322,11 @@ body {
   .weather-report > div { min-width: 0; }
   .weather-eyebrow { display: block; color: #b5cbd4; font-size: .64rem; letter-spacing: .04em; }
   .weather-caption { display: block; color: #d7eae9; font-size: .84rem; line-height: 1.65; font-weight: 600; overflow-wrap: anywhere; }
+  .weather-temperature { display: flex; flex-wrap: wrap; align-items: center; gap: .15rem .6rem; margin-top: .3rem; color: #d7eae9; }
+  .weather-temperature-value { font-family: var(--monitor-mono); font-size: 1.8rem; line-height: 1.2; white-space: nowrap; }
+  .weather-temperature-label, .weather-temperature-time { display: block; font-size: .66rem; line-height: 1.65; overflow-wrap: anywhere; }
+  .weather-temperature-time { color: #b5cbd4; }
+  .weather-temperature[data-status="stale"] .weather-temperature-label, .weather-temperature[data-status="unavailable"] .weather-temperature-label { color: #f3ce94; }
   .weather-badge { flex: none; margin-top: .2rem; padding: .2rem .4rem; border: 1px solid #3d6470; color: #bce7d9; font-size: .63rem; }
   .weather-demo .weather-status { margin: 0; padding: .2rem 1.1rem .3rem; color: #c4dfdf; font-size: .7rem; line-height: 1.65; }
   .weather-demo[data-weather-status="stale"] .weather-status, .weather-demo[data-weather-status="unknown"] .weather-status, .weather-demo[data-weather-status="unavailable"] .weather-status { color: #f3ce94; }
