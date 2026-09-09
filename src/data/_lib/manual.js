@@ -17,6 +17,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { buildIndicator } from "./schema.js";
+import { verifyBankingManual } from "./banking-manual.js";
 
 /** 分類相加同 expected_totals 最多差幾多(原始單位)。抄數應該係一個都唔差。 */
 const SUM_TOLERANCE_SOURCE_UNITS = 1;
@@ -139,6 +140,11 @@ export async function loadManualIndicator(id, {
       }
     }
     validatePublicExpenditure(fields, govtExpenditure);
+  }
+
+  if (id === "banking_institutions") {
+    verifyBankingManual(fields);
+    delete fields.source_components; // 逐欄抄數底稿留喺 manual，唔增加公開 schema。
   }
 
   const multiplier = Number(fields.source_value_multiplier ?? 1);

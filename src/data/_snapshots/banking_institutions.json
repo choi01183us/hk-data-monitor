@@ -1,0 +1,91 @@
+{
+  "indicator_id": "banking_institutions",
+  "name_zh": "銀行及接受存款機構數目",
+  "name_en": "Number of authorized institutions",
+  "unit_zh": "間",
+  "unit_en": "institutions",
+  "unit_short_zh": "間",
+  "unit_source_zh": "間",
+  "value_digits": 0,
+  "source_zh": "香港金融管理局",
+  "source_en": "Hong Kong Monetary Authority",
+  "source_url": "https://www.hkma.gov.hk/media/eng/doc/market-data-and-statistics/monthly-statistical-bulletin/T0301.xls",
+  "source_note_zh": "原始統計及知識產權擁有人：香港金融管理局。來源為《金融數據月報》表3.1「認可機構及本港代表辦事處數目」，本頁人手核對2026年8月底一行；各類把本地及境外註冊兩欄相加，原值單位為間，沒有倍率換算。本次API回應502，未取得可核對的自動快照，所以採用官方XLS人手資料，並非自動月度更新。",
+  "licence": "香港金融管理局《使用條款及條件》；非商業教育用途，須準確及註明原始權利人",
+  "licence_url": "https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/",
+  "updated_at": "2026-08-31",
+  "frequency": "monthly",
+  "acquisition": "manual",
+  "category": "貨幣與股市",
+  "question_zh": "香港有幾多間持牌銀行？點解認可機構總數唔一樣？",
+  "basis_zh": "月末認可機構數目；每類包含本地及境外註冊機構。包括已獲發牌或註冊但尚未運作的機構，排除本港代表辦事處；唔係零售分行、櫃員機或銀行集團數目。",
+  "notes_zh": "香港的持牌銀行、有限制牌照銀行及接受存款公司，合稱認可機構。「幾多間銀行」要先講清係只計持牌銀行，定計全部認可機構。本表唔計分行或櫃員機數目，亦唔按母公司合併成銀行集團；本港代表辦事處另列於原表，不能經營銀行業務，未加入本頁總數。原表包括已發牌或註冊但尚未運作的機構，所以唔等於所有已開門營業的銀行。只有一個已核對月末，唔作歷史升跌比較；機構數目亦唔代表銀行規模、穩健程度或金融業增加價值。",
+  "chart": {
+    "type": "bar",
+    "y_zero": true
+  },
+  "category_order": [
+    "持牌銀行",
+    "有限制牌照銀行",
+    "接受存款公司"
+  ],
+  "period_notes": {
+    "2026-08": "2026年8月底；人手核對金管局表3.1"
+  },
+  "totals": [
+    {
+      "period": "2026-08",
+      "value": 174
+    }
+  ],
+  "fetched_at": "2026-09-09T00:00:00Z",
+  "manual_status": "filled",
+  "manual_filled": "3/3",
+  "series": [
+    {
+      "period": "2026-08",
+      "category": "持牌銀行",
+      "value": 147
+    },
+    {
+      "period": "2026-08",
+      "category": "有限制牌照銀行",
+      "value": 16
+    },
+    {
+      "period": "2026-08",
+      "category": "接受存款公司",
+      "value": 11
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "持牌銀行",
+      "period": "2026-08",
+      "value": 147
+    },
+    {
+      "category": "有限制牌照銀行",
+      "period": "2026-08",
+      "value": 16
+    },
+    {
+      "category": "接受存款公司",
+      "period": "2026-08",
+      "value": 11
+    }
+  ],
+  "coverage": {
+    "start": "2026-08",
+    "end": "2026-08",
+    "points": 3,
+    "points_with_value": 3
+  },
+  "latest": {
+    "period": "2026-08",
+    "category": "接受存款公司",
+    "value": 11
+  },
+  "content_hash": "sha256:22b9d16c956e5136",
+  "data_version": "2026.09.1"
+}

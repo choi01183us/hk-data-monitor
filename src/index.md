@@ -24,6 +24,7 @@ const loaded = await Promise.all([
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
   FileAttachment("./data/money_supply.json").json(),
+  FileAttachment("./data/banking_institutions.json").json(),
   FileAttachment("./data/goods_imports.json").json(),
   FileAttachment("./data/goods_exports.json").json(),
   FileAttachment("./data/port_cargo.json").json(),
@@ -68,7 +69,7 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
 
 <a class="monitor-topic-entry" href="./explore/finance">
   <span class="monitor-topic-entry__icon" aria-hidden="true">↗</span>
-  <span><strong>貨幣與股市</strong><span>M1・M2・M3 · 股市市值官方入口 · 金融與公共財政</span></span>
+  <span><strong>貨幣與股市</strong><span>銀行與上市公司 · M1–M3 · IPO · 黃金 · 港交所業務</span></span>
   <span class="monitor-topic-entry__action">分清每種「錢」 ↗</span>
 </a>
 

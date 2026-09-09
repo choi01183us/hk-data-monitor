@@ -1,6 +1,6 @@
 # manual/ — 人手維護嘅數據
 
-> 呢份係**年度維護清單**。半年後要更新數據,睇返呢份就夠,唔使睇 code。
+> 呢份係**人手維護清單**。半年後要更新數據,睇返呢份就夠,唔使睇 code。
 > 規則(SPEC 第 6 節):**唔好寫 PDF parser,一律人手抄一次。** 自動化 PDF 解析嘅維護成本會爆。
 > 規則(SPEC 第 7 節):GitHub Actions **永遠唔碰** 呢個目錄。呢度嘅檔只有你會改。
 
@@ -84,6 +84,38 @@ JSON 入面 `licence` 暫時寫「房屋局網頁,一般政府網站版權告示
 
 **授權**：[budget.gov.hk 版權告示](https://www.budget.gov.hk/2026/chi/important.html)只准個人參考或教育用途，複製本不能轉售。本專案係教育用途。
 
+### `banking_institutions.json` — 銀行及接受存款機構數目
+
+| | |
+|---|---|
+| 原始來源 | 金管局《金融數據月報》表 3.1 [T0301.xls](https://www.hkma.gov.hk/media/eng/doc/market-data-and-statistics/monthly-statistical-bulletin/T0301.xls)，工作表 `T3.1` |
+| 本次範圍 | **2026 年 8 月底一個月份**。2026-09-09 實讀原表逐格核對；API 三次有限時查詢均回 502，因此明示為人手資料，唔假裝自動更新，亦唔寫 XLS parser 或加程式依賴 |
+| 幾時更新 | 原表每月更新；課堂使用前核對最新一期並人手抄入。GitHub Actions 不會更新本檔 |
+| 抄哪六欄 | 持牌銀行、有限制牌照銀行、接受存款公司，各有本地／境外註冊兩欄，按原表次序逐欄填 `source_components[period]` |
+| 原始總數 | 另抄原表 **所有認可機構** 至底稿 `all_ais` 及 `totals`。`lros` 是本港代表辦事處，只留底稿辨別欄位，**不加入 series 或 totals** |
+| 單位及日期 | 單位為 **間**，倍率固定 `1`。`period` 用 `YYYY-MM`，`updated_at` 用最新一期真正月末，例如 `2026-08-31`；`transcribed_at` 才填抄數日 |
+
+本次原表定位：Excel 第 **447** 行為 2026 年 8 月（年份見第 440 行）。D/E 欄 32／115、
+F/G 欄 9／7、I/K 欄 11／0、M 欄所有認可機構 174、O 欄代表辦事處 27。
+三類輸出依次為 **147、16、11**；**147 + 16 + 11 = 174**。下次更新行號會變，先核對年份、月份和表頭，唔好只靠格地址。
+`source_components` 留下原始八格底稿作逐欄核對；loader 驗完不將底稿送到網站。
+
+**讀數口徑**：原表包含已獲發牌或註冊但尚未運作的機構；唔係零售分行、櫃員機或按母公司合併後的銀行集團。
+本港代表辦事處不能經營銀行業務，亦不屬本頁三類認可機構。[現行制度](https://www.hkma.gov.hk/chi/key-functions/banking/banking-regulatory-and-supervisory-regime/the-three-tier-banking-system/)按原表及金管局說明為準。
+
+每次更新一併檢查 `series`、`totals`、`source_components`、`updated_at`、`transcribed_at`、`period_notes`、
+`source_note_zh` 和維護筆記嘅期數。未抄欄用 `null`，該類有任何一個來源欄缺值，分類值也必須 `null`，唔借舊月或填零。
+只抄一個月時用期末長條，唔由單一月份聲稱歷史升跌。
+
+**專用檢查**：三類及原表次序釘死；每類必須精確等於同牌照本地加境外兩欄；所有值只准非負整數或 `null`。
+三類填齊便必須等於原表 `all_ais`，門檻為 **零間誤差**，唔沿用公共開支嘅一百萬元門檻。
+總數不能混入代表辦事處，月份不能寫成 `YYYY-00`，截至日期必須是真正月末。
+資料及正式源碼突變見 `scripts/test-banking-manual.mjs`。底稿本身抄錯或同時交換兩套值仍需逐格對原表；檢查不代替來源核對。
+
+**授權**：[金管局《使用條款及條件》](https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/)
+第 12 段容許符合條件的非商業展示／複製，須準確並識別金管局為來源及知識產權擁有人。
+本檔採官方原始數目，只按牌照將兩個註冊地欄位相加，明示處理及教育用途；保留原表與條款入口。
+
 ## 抄完之後
 
 ```bash
@@ -99,6 +131,7 @@ git commit -m "人手更新:<邊個指標> <期數>"
 
 | 月份 | 做乜 |
 |---|---|
+| 課堂使用前 | 核對 `banking_institutions` 最新月末原表，按需要人手更新 |
 | 3 月 | 預算案出咗:抄 `public_expenditure_policy_groups`(3 個年度)|
 | 每季(1、4、7、10 月)| 房屋局出咗新一季:抄 `phr_waiting_time` 一個期數 |
 

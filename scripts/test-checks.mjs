@@ -806,6 +806,11 @@ await testMoneyData(check);
 const { testMoneyView } = await import("./test-money-view.mjs");
 await testMoneyView(check);
 
+const { testBankingManual } = await import("./test-banking-manual.mjs");
+await testBankingManual(check);
+const { testFinanceCounts } = await import("./test-finance-counts.mjs");
+await testFinanceCounts(check);
+
 // ── R8. test:checks 唔准寫錄影 ─────────────────────────────────
 //
 // R5 嘅突變測試前提係「改壞 transform,錄影唔跟住變」。

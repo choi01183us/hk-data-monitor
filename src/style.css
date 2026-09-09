@@ -1504,3 +1504,35 @@ body {
   .finance-chart > :not(figure) { margin-left: .4rem; margin-right: .4rem; }
   .money-layer { padding: 1rem .7rem; }
 }
+
+/* 金融機構：牌照／市場分類同統計日期直接放在數字旁。 */
+.finance-count-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; margin-top: 1.4rem; }
+.finance-count-grid > .observablehq { display: contents; }
+.finance-count-panel { min-width: 0; padding: 1.5rem; border: 1px solid var(--theme-foreground-fainter); border-radius: 10px; }
+.finance-count-panel h3 { margin: .5rem 0; font-size: 1.15rem; }
+.finance-count-number { display: flex; align-items: baseline; gap: .6rem; margin: .9rem 0; }
+.finance-count-number strong { font: 500 clamp(2.5rem, 4vw, 3.6rem)/1.2 var(--monospace); letter-spacing: -.055em; }
+.finance-count-period { font-size: .8rem; }
+.finance-count-panel dl { margin: 1.4rem 0 .8rem; }
+.finance-count-panel dl > div { display: flex; justify-content: space-between; gap: 1rem; padding: .7rem 0; border-top: 1px solid var(--theme-foreground-fainter); font-size: .85rem; }
+.finance-count-panel dd { margin: 0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.finance-count-equation, .finance-count-detail { font-size: .85rem; line-height: 1.8; }
+@media screen {
+  .finance-page .finance-count-panel { background: #122635; border-color: #3b5968; }
+  .finance-page .finance-count-panel h3 { color: #d9e8f0; }
+  .finance-page .finance-count-number strong { font-family: var(--monitor-mono); color: #eff7f9; }
+  .finance-page .finance-count-number span, .finance-page .finance-count-period { color: #c0d2df; }
+  .finance-page .finance-count-panel dl > div { border-color: #385463; color: #d0dfe8; }
+  .finance-page .finance-count-equation { color: #a9e6d7; }
+  .finance-guide .finance-takeaway { margin-top: 1.2rem; }
+  .finance-guide details { padding: 1rem 1.2rem; border: 1px solid #3b5968; border-radius: 6px; margin: 1rem 0; }
+  .finance-guide summary { cursor: pointer; color: #d2e9ee; font-weight: 600; }
+  .finance-guide details p { color: #c4d3de; font-size: .85rem; line-height: 1.9; }
+  .finance-guide summary:focus-visible { outline: 3px solid #f2c477; outline-offset: 4px; }
+}
+@media (max-width: 700px) {
+  .finance-count-grid { grid-template-columns: 1fr; }
+  .finance-count-panel { padding: 1.2rem; }
+}
+.finance-gold-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 700px) { .finance-gold-grid { grid-template-columns: 1fr; } }

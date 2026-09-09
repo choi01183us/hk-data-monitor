@@ -54,7 +54,7 @@ export function sourceFooter(indicator, options = {}) {
         <dd>
           <strong>${formatDateZh(updated_at)}</strong>
           <span class="source-footer__note">
-            資料本身涵蓋 ${coverage?.start} 至 ${coverage?.end}${FREQUENCY_ZH[frequency] ? `,${FREQUENCY_ZH[frequency]}更新` : ""}
+            資料本身涵蓋 ${coverage?.start} 至 ${coverage?.end}${FREQUENCY_ZH[frequency] ? `,${FREQUENCY_ZH[frequency]}資料` : ""}
           </span>
         </dd>
       </div>
@@ -194,10 +194,10 @@ function staleWarning(build, updatedAt) {
 }
 
 const FREQUENCY_ZH = {
-  annual: "每年",
-  quarterly: "每季",
-  monthly: "每月",
-  biannual: "每半年",
+  annual: "年度",
+  quarterly: "季度",
+  monthly: "月度",
+  biannual: "半年度",
   irregular: "不定期",
 };
 
