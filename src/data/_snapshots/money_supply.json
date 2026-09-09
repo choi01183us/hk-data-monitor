@@ -1,0 +1,1813 @@
+{
+  "indicator_id": "money_supply",
+  "name_zh": "貨幣供應 M1、M2、M3（所有貨幣）",
+  "name_en": "Money supply M1, M2 and M3, all currencies",
+  "unit_zh": "港元",
+  "unit_en": "HKD",
+  "unit_short_zh": "港元",
+  "unit_source_zh": "百萬港元",
+  "value_digits": 0,
+  "source_zh": "香港金融管理局（經政府統計處網站轉載）",
+  "source_en": "Hong Kong Monetary Authority, via Census and Statistics Department",
+  "source_url": "https://www.censtatd.gov.hk/tc/web_table.html?id=340-45011",
+  "source_note_zh": "原始統計及知識產權擁有人：香港金融管理局；轉載來源：政府統計處網站表 340-45011。本站只把原值由百萬港元乘 1,000,000 換成港元，並選取季末數據。金管局使用條款：https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/",
+  "licence": "政府統計處《知識產權公告》；金管局《使用條款及條件》",
+  "licence_url": "https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/",
+  "updated_at": "2026-06-15",
+  "fetched_at": "2026-09-09T05:05:59.912Z",
+  "frequency": "quarterly",
+  "acquisition": "api",
+  "category": "貨幣與股市",
+  "question_zh": "M1、M2、M3 點樣逐層包含？金融體系的貨幣存量點變？",
+  "basis_zh": "所有貨幣的 M1、M2、M3，以港元表示，未經季節性調整的季末存量；唔係只有港元貨幣，亦唔係一季累計流量",
+  "notes_zh": "M1 包括市民持有的法定紙幣及硬幣，以及持牌銀行的客戶活期存款。M2 包括 M1，再加持牌銀行的客戶儲蓄及定期存款，以及持牌銀行發行、由非認可機構持有的可轉讓存款證。M3 包括 M2，再加有限制牌照銀行及接受存款公司的客戶存款，以及這兩類機構發行、由非認可機構持有的可轉讓存款證。三者互相包含，唔可以相加、堆疊或當成三份獨立資金。數字係金融體系的貨幣存量，唔等於政府可用財政儲備、居民淨財富或銀行可隨意借出的現金；單憑升跌亦唔能推斷股價或通脹必然點變。本頁採用統計處提供的季度末序列，由 1997 年第二季開始，避開金管局註明 1997 年 4 月前後的序列中斷。來源會按認可機構修訂資料更新；最新月份請到金管局官方月度資料入口查閱。",
+  "chart": {
+    "type": "line",
+    "y_zero": true
+  },
+  "category_order": [
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "anchors": [
+    {
+      "id": "m3-vs-2025-Q1",
+      "text_zh": "M3：對比 2025 年第 1 季（M3，去年同季），升咗 9.3%",
+      "basis_zh": "2025 年第 1 季 190,946 億 → 2026 年第 1 季 208,645 億"
+    }
+  ],
+  "period_notes": {},
+  "series": [
+    {
+      "period": "1997-Q2",
+      "category": "M1",
+      "value": 226855000000
+    },
+    {
+      "period": "1997-Q2",
+      "category": "M2",
+      "value": 2784347000000
+    },
+    {
+      "period": "1997-Q2",
+      "category": "M3",
+      "value": 2871178000000
+    },
+    {
+      "period": "1997-Q3",
+      "category": "M1",
+      "value": 223656000000
+    },
+    {
+      "period": "1997-Q3",
+      "category": "M2",
+      "value": 2846131000000
+    },
+    {
+      "period": "1997-Q3",
+      "category": "M3",
+      "value": 2933342000000
+    },
+    {
+      "period": "1997-Q4",
+      "category": "M1",
+      "value": 208093000000
+    },
+    {
+      "period": "1997-Q4",
+      "category": "M2",
+      "value": 2788808000000
+    },
+    {
+      "period": "1997-Q4",
+      "category": "M3",
+      "value": 2871425000000
+    },
+    {
+      "period": "1998-Q1",
+      "category": "M1",
+      "value": 201921000000
+    },
+    {
+      "period": "1998-Q1",
+      "category": "M2",
+      "value": 2872865000000
+    },
+    {
+      "period": "1998-Q1",
+      "category": "M3",
+      "value": 2943150000000
+    },
+    {
+      "period": "1998-Q2",
+      "category": "M1",
+      "value": 188212000000
+    },
+    {
+      "period": "1998-Q2",
+      "category": "M2",
+      "value": 2847062000000
+    },
+    {
+      "period": "1998-Q2",
+      "category": "M3",
+      "value": 2908121000000
+    },
+    {
+      "period": "1998-Q3",
+      "category": "M1",
+      "value": 188737000000
+    },
+    {
+      "period": "1998-Q3",
+      "category": "M2",
+      "value": 3040678000000
+    },
+    {
+      "period": "1998-Q3",
+      "category": "M3",
+      "value": 3100220000000
+    },
+    {
+      "period": "1998-Q4",
+      "category": "M1",
+      "value": 197666000000
+    },
+    {
+      "period": "1998-Q4",
+      "category": "M2",
+      "value": 3111942000000
+    },
+    {
+      "period": "1998-Q4",
+      "category": "M3",
+      "value": 3168199000000
+    },
+    {
+      "period": "1999-Q1",
+      "category": "M1",
+      "value": 200163000000
+    },
+    {
+      "period": "1999-Q1",
+      "category": "M2",
+      "value": 3138465000000
+    },
+    {
+      "period": "1999-Q1",
+      "category": "M3",
+      "value": 3188957000000
+    },
+    {
+      "period": "1999-Q2",
+      "category": "M1",
+      "value": 201211000000
+    },
+    {
+      "period": "1999-Q2",
+      "category": "M2",
+      "value": 3175717000000
+    },
+    {
+      "period": "1999-Q2",
+      "category": "M3",
+      "value": 3220475000000
+    },
+    {
+      "period": "1999-Q3",
+      "category": "M1",
+      "value": 206408000000
+    },
+    {
+      "period": "1999-Q3",
+      "category": "M2",
+      "value": 3276350000000
+    },
+    {
+      "period": "1999-Q3",
+      "category": "M3",
+      "value": 3325784000000
+    },
+    {
+      "period": "1999-Q4",
+      "category": "M1",
+      "value": 225156000000
+    },
+    {
+      "period": "1999-Q4",
+      "category": "M2",
+      "value": 3386196000000
+    },
+    {
+      "period": "1999-Q4",
+      "category": "M3",
+      "value": 3434467000000
+    },
+    {
+      "period": "2000-Q1",
+      "category": "M1",
+      "value": 220383000000
+    },
+    {
+      "period": "2000-Q1",
+      "category": "M2",
+      "value": 3392134000000
+    },
+    {
+      "period": "2000-Q1",
+      "category": "M3",
+      "value": 3434137000000
+    },
+    {
+      "period": "2000-Q2",
+      "category": "M1",
+      "value": 215211000000
+    },
+    {
+      "period": "2000-Q2",
+      "category": "M2",
+      "value": 3469169000000
+    },
+    {
+      "period": "2000-Q2",
+      "category": "M3",
+      "value": 3511120000000
+    },
+    {
+      "period": "2000-Q3",
+      "category": "M1",
+      "value": 220206000000
+    },
+    {
+      "period": "2000-Q3",
+      "category": "M2",
+      "value": 3555526000000
+    },
+    {
+      "period": "2000-Q3",
+      "category": "M3",
+      "value": 3597562000000
+    },
+    {
+      "period": "2000-Q4",
+      "category": "M1",
+      "value": 243847000000
+    },
+    {
+      "period": "2000-Q4",
+      "category": "M2",
+      "value": 3649492000000
+    },
+    {
+      "period": "2000-Q4",
+      "category": "M3",
+      "value": 3692753000000
+    },
+    {
+      "period": "2001-Q1",
+      "category": "M1",
+      "value": 225575000000
+    },
+    {
+      "period": "2001-Q1",
+      "category": "M2",
+      "value": 3554703000000
+    },
+    {
+      "period": "2001-Q1",
+      "category": "M3",
+      "value": 3599551000000
+    },
+    {
+      "period": "2001-Q2",
+      "category": "M1",
+      "value": 227532000000
+    },
+    {
+      "period": "2001-Q2",
+      "category": "M2",
+      "value": 3607126000000
+    },
+    {
+      "period": "2001-Q2",
+      "category": "M3",
+      "value": 3650161000000
+    },
+    {
+      "period": "2001-Q3",
+      "category": "M1",
+      "value": 240430000000
+    },
+    {
+      "period": "2001-Q3",
+      "category": "M2",
+      "value": 3606651000000
+    },
+    {
+      "period": "2001-Q3",
+      "category": "M3",
+      "value": 3652297000000
+    },
+    {
+      "period": "2001-Q4",
+      "category": "M1",
+      "value": 258056000000
+    },
+    {
+      "period": "2001-Q4",
+      "category": "M2",
+      "value": 3550060000000
+    },
+    {
+      "period": "2001-Q4",
+      "category": "M3",
+      "value": 3594130000000
+    },
+    {
+      "period": "2002-Q1",
+      "category": "M1",
+      "value": 261826000000
+    },
+    {
+      "period": "2002-Q1",
+      "category": "M2",
+      "value": 3440703000000
+    },
+    {
+      "period": "2002-Q1",
+      "category": "M3",
+      "value": 3482344000000
+    },
+    {
+      "period": "2002-Q2",
+      "category": "M1",
+      "value": 268128000000
+    },
+    {
+      "period": "2002-Q2",
+      "category": "M2",
+      "value": 3498564000000
+    },
+    {
+      "period": "2002-Q2",
+      "category": "M3",
+      "value": 3542710000000
+    },
+    {
+      "period": "2002-Q3",
+      "category": "M1",
+      "value": 273872000000
+    },
+    {
+      "period": "2002-Q3",
+      "category": "M2",
+      "value": 3471011000000
+    },
+    {
+      "period": "2002-Q3",
+      "category": "M3",
+      "value": 3516908000000
+    },
+    {
+      "period": "2002-Q4",
+      "category": "M1",
+      "value": 295650000000
+    },
+    {
+      "period": "2002-Q4",
+      "category": "M2",
+      "value": 3518326000000
+    },
+    {
+      "period": "2002-Q4",
+      "category": "M3",
+      "value": 3561852000000
+    },
+    {
+      "period": "2003-Q1",
+      "category": "M1",
+      "value": 299885000000
+    },
+    {
+      "period": "2003-Q1",
+      "category": "M2",
+      "value": 3507321000000
+    },
+    {
+      "period": "2003-Q1",
+      "category": "M3",
+      "value": 3548561000000
+    },
+    {
+      "period": "2003-Q2",
+      "category": "M1",
+      "value": 321238000000
+    },
+    {
+      "period": "2003-Q2",
+      "category": "M2",
+      "value": 3583583000000
+    },
+    {
+      "period": "2003-Q2",
+      "category": "M3",
+      "value": 3626092000000
+    },
+    {
+      "period": "2003-Q3",
+      "category": "M1",
+      "value": 349192000000
+    },
+    {
+      "period": "2003-Q3",
+      "category": "M2",
+      "value": 3671198000000
+    },
+    {
+      "period": "2003-Q3",
+      "category": "M3",
+      "value": 3712282000000
+    },
+    {
+      "period": "2003-Q4",
+      "category": "M1",
+      "value": 413423000000
+    },
+    {
+      "period": "2003-Q4",
+      "category": "M2",
+      "value": 3813442000000
+    },
+    {
+      "period": "2003-Q4",
+      "category": "M3",
+      "value": 3858044000000
+    },
+    {
+      "period": "2004-Q1",
+      "category": "M1",
+      "value": 436345000000
+    },
+    {
+      "period": "2004-Q1",
+      "category": "M2",
+      "value": 3812041000000
+    },
+    {
+      "period": "2004-Q1",
+      "category": "M3",
+      "value": 3858504000000
+    },
+    {
+      "period": "2004-Q2",
+      "category": "M1",
+      "value": 447638000000
+    },
+    {
+      "period": "2004-Q2",
+      "category": "M2",
+      "value": 3827314000000
+    },
+    {
+      "period": "2004-Q2",
+      "category": "M3",
+      "value": 3875750000000
+    },
+    {
+      "period": "2004-Q3",
+      "category": "M1",
+      "value": 445001000000
+    },
+    {
+      "period": "2004-Q3",
+      "category": "M2",
+      "value": 3908156000000
+    },
+    {
+      "period": "2004-Q3",
+      "category": "M3",
+      "value": 3948801000000
+    },
+    {
+      "period": "2004-Q4",
+      "category": "M1",
+      "value": 484494000000
+    },
+    {
+      "period": "2004-Q4",
+      "category": "M2",
+      "value": 4166706000000
+    },
+    {
+      "period": "2004-Q4",
+      "category": "M3",
+      "value": 4189544000000
+    },
+    {
+      "period": "2005-Q1",
+      "category": "M1",
+      "value": 464340000000
+    },
+    {
+      "period": "2005-Q1",
+      "category": "M2",
+      "value": 4164250000000
+    },
+    {
+      "period": "2005-Q1",
+      "category": "M3",
+      "value": 4189596000000
+    },
+    {
+      "period": "2005-Q2",
+      "category": "M1",
+      "value": 438286000000
+    },
+    {
+      "period": "2005-Q2",
+      "category": "M2",
+      "value": 4166961000000
+    },
+    {
+      "period": "2005-Q2",
+      "category": "M3",
+      "value": 4192238000000
+    },
+    {
+      "period": "2005-Q3",
+      "category": "M1",
+      "value": 431190000000
+    },
+    {
+      "period": "2005-Q3",
+      "category": "M2",
+      "value": 4243288000000
+    },
+    {
+      "period": "2005-Q3",
+      "category": "M3",
+      "value": 4270883000000
+    },
+    {
+      "period": "2005-Q4",
+      "category": "M1",
+      "value": 434684000000
+    },
+    {
+      "period": "2005-Q4",
+      "category": "M2",
+      "value": 4379057000000
+    },
+    {
+      "period": "2005-Q4",
+      "category": "M3",
+      "value": 4407188000000
+    },
+    {
+      "period": "2006-Q1",
+      "category": "M1",
+      "value": 438946000000
+    },
+    {
+      "period": "2006-Q1",
+      "category": "M2",
+      "value": 4522812000000
+    },
+    {
+      "period": "2006-Q1",
+      "category": "M3",
+      "value": 4551810000000
+    },
+    {
+      "period": "2006-Q2",
+      "category": "M1",
+      "value": 447433000000
+    },
+    {
+      "period": "2006-Q2",
+      "category": "M2",
+      "value": 4636476000000
+    },
+    {
+      "period": "2006-Q2",
+      "category": "M3",
+      "value": 4666865000000
+    },
+    {
+      "period": "2006-Q3",
+      "category": "M1",
+      "value": 470385000000
+    },
+    {
+      "period": "2006-Q3",
+      "category": "M2",
+      "value": 4856145000000
+    },
+    {
+      "period": "2006-Q3",
+      "category": "M3",
+      "value": 4886502000000
+    },
+    {
+      "period": "2006-Q4",
+      "category": "M1",
+      "value": 491648000000
+    },
+    {
+      "period": "2006-Q4",
+      "category": "M2",
+      "value": 5054332000000
+    },
+    {
+      "period": "2006-Q4",
+      "category": "M3",
+      "value": 5089741000000
+    },
+    {
+      "period": "2007-Q1",
+      "category": "M1",
+      "value": 534403000000
+    },
+    {
+      "period": "2007-Q1",
+      "category": "M2",
+      "value": 5271685000000
+    },
+    {
+      "period": "2007-Q1",
+      "category": "M3",
+      "value": 5302796000000
+    },
+    {
+      "period": "2007-Q2",
+      "category": "M1",
+      "value": 643395000000
+    },
+    {
+      "period": "2007-Q2",
+      "category": "M2",
+      "value": 5593808000000
+    },
+    {
+      "period": "2007-Q2",
+      "category": "M3",
+      "value": 5624126000000
+    },
+    {
+      "period": "2007-Q3",
+      "category": "M1",
+      "value": 633018000000
+    },
+    {
+      "period": "2007-Q3",
+      "category": "M2",
+      "value": 5944495000000
+    },
+    {
+      "period": "2007-Q3",
+      "category": "M3",
+      "value": 5975806000000
+    },
+    {
+      "period": "2007-Q4",
+      "category": "M1",
+      "value": 616709000000
+    },
+    {
+      "period": "2007-Q4",
+      "category": "M2",
+      "value": 6106348000000
+    },
+    {
+      "period": "2007-Q4",
+      "category": "M3",
+      "value": 6139758000000
+    },
+    {
+      "period": "2008-Q1",
+      "category": "M1",
+      "value": 621011000000
+    },
+    {
+      "period": "2008-Q1",
+      "category": "M2",
+      "value": 5984508000000
+    },
+    {
+      "period": "2008-Q1",
+      "category": "M3",
+      "value": 6017338000000
+    },
+    {
+      "period": "2008-Q2",
+      "category": "M1",
+      "value": 611147000000
+    },
+    {
+      "period": "2008-Q2",
+      "category": "M2",
+      "value": 5907278000000
+    },
+    {
+      "period": "2008-Q2",
+      "category": "M3",
+      "value": 5944671000000
+    },
+    {
+      "period": "2008-Q3",
+      "category": "M1",
+      "value": 597914000000
+    },
+    {
+      "period": "2008-Q3",
+      "category": "M2",
+      "value": 6052619000000
+    },
+    {
+      "period": "2008-Q3",
+      "category": "M3",
+      "value": 6091633000000
+    },
+    {
+      "period": "2008-Q4",
+      "category": "M1",
+      "value": 645833000000
+    },
+    {
+      "period": "2008-Q4",
+      "category": "M2",
+      "value": 6268058000000
+    },
+    {
+      "period": "2008-Q4",
+      "category": "M3",
+      "value": 6300751000000
+    },
+    {
+      "period": "2009-Q1",
+      "category": "M1",
+      "value": 690327000000
+    },
+    {
+      "period": "2009-Q1",
+      "category": "M2",
+      "value": 6234079000000
+    },
+    {
+      "period": "2009-Q1",
+      "category": "M3",
+      "value": 6265738000000
+    },
+    {
+      "period": "2009-Q2",
+      "category": "M1",
+      "value": 759881000000
+    },
+    {
+      "period": "2009-Q2",
+      "category": "M2",
+      "value": 6485032000000
+    },
+    {
+      "period": "2009-Q2",
+      "category": "M3",
+      "value": 6514058000000
+    },
+    {
+      "period": "2009-Q3",
+      "category": "M1",
+      "value": 908031000000
+    },
+    {
+      "period": "2009-Q3",
+      "category": "M2",
+      "value": 6638110000000
+    },
+    {
+      "period": "2009-Q3",
+      "category": "M3",
+      "value": 6665330000000
+    },
+    {
+      "period": "2009-Q4",
+      "category": "M1",
+      "value": 901819000000
+    },
+    {
+      "period": "2009-Q4",
+      "category": "M2",
+      "value": 6602310000000
+    },
+    {
+      "period": "2009-Q4",
+      "category": "M3",
+      "value": 6626843000000
+    },
+    {
+      "period": "2010-Q1",
+      "category": "M1",
+      "value": 944516000000
+    },
+    {
+      "period": "2010-Q1",
+      "category": "M2",
+      "value": 6596941000000
+    },
+    {
+      "period": "2010-Q1",
+      "category": "M3",
+      "value": 6623605000000
+    },
+    {
+      "period": "2010-Q2",
+      "category": "M1",
+      "value": 903577000000
+    },
+    {
+      "period": "2010-Q2",
+      "category": "M2",
+      "value": 6578941000000
+    },
+    {
+      "period": "2010-Q2",
+      "category": "M3",
+      "value": 6599938000000
+    },
+    {
+      "period": "2010-Q3",
+      "category": "M1",
+      "value": 1075764000000
+    },
+    {
+      "period": "2010-Q3",
+      "category": "M2",
+      "value": 6989179000000
+    },
+    {
+      "period": "2010-Q3",
+      "category": "M3",
+      "value": 7010349000000
+    },
+    {
+      "period": "2010-Q4",
+      "category": "M1",
+      "value": 1017227000000
+    },
+    {
+      "period": "2010-Q4",
+      "category": "M2",
+      "value": 7136271000000
+    },
+    {
+      "period": "2010-Q4",
+      "category": "M3",
+      "value": 7156260000000
+    },
+    {
+      "period": "2011-Q1",
+      "category": "M1",
+      "value": 1047137000000
+    },
+    {
+      "period": "2011-Q1",
+      "category": "M2",
+      "value": 7374716000000
+    },
+    {
+      "period": "2011-Q1",
+      "category": "M3",
+      "value": 7399132000000
+    },
+    {
+      "period": "2011-Q2",
+      "category": "M1",
+      "value": 1093570000000
+    },
+    {
+      "period": "2011-Q2",
+      "category": "M2",
+      "value": 7626662000000
+    },
+    {
+      "period": "2011-Q2",
+      "category": "M3",
+      "value": 7649796000000
+    },
+    {
+      "period": "2011-Q3",
+      "category": "M1",
+      "value": 1119185000000
+    },
+    {
+      "period": "2011-Q3",
+      "category": "M2",
+      "value": 7769534000000
+    },
+    {
+      "period": "2011-Q3",
+      "category": "M3",
+      "value": 7788982000000
+    },
+    {
+      "period": "2011-Q4",
+      "category": "M1",
+      "value": 1127320000000
+    },
+    {
+      "period": "2011-Q4",
+      "category": "M2",
+      "value": 8057530000000
+    },
+    {
+      "period": "2011-Q4",
+      "category": "M3",
+      "value": 8081079000000
+    },
+    {
+      "period": "2012-Q1",
+      "category": "M1",
+      "value": 1179311000000
+    },
+    {
+      "period": "2012-Q1",
+      "category": "M2",
+      "value": 8261020000000
+    },
+    {
+      "period": "2012-Q1",
+      "category": "M3",
+      "value": 8279034000000
+    },
+    {
+      "period": "2012-Q2",
+      "category": "M1",
+      "value": 1216981000000
+    },
+    {
+      "period": "2012-Q2",
+      "category": "M2",
+      "value": 8318695000000
+    },
+    {
+      "period": "2012-Q2",
+      "category": "M3",
+      "value": 8335293000000
+    },
+    {
+      "period": "2012-Q3",
+      "category": "M1",
+      "value": 1294493000000
+    },
+    {
+      "period": "2012-Q3",
+      "category": "M2",
+      "value": 8581471000000
+    },
+    {
+      "period": "2012-Q3",
+      "category": "M3",
+      "value": 8600621000000
+    },
+    {
+      "period": "2012-Q4",
+      "category": "M1",
+      "value": 1377359000000
+    },
+    {
+      "period": "2012-Q4",
+      "category": "M2",
+      "value": 8950005000000
+    },
+    {
+      "period": "2012-Q4",
+      "category": "M3",
+      "value": 8970396000000
+    },
+    {
+      "period": "2013-Q1",
+      "category": "M1",
+      "value": 1390746000000
+    },
+    {
+      "period": "2013-Q1",
+      "category": "M2",
+      "value": 9047164000000
+    },
+    {
+      "period": "2013-Q1",
+      "category": "M3",
+      "value": 9069868000000
+    },
+    {
+      "period": "2013-Q2",
+      "category": "M1",
+      "value": 1428400000000
+    },
+    {
+      "period": "2013-Q2",
+      "category": "M2",
+      "value": 9219621000000
+    },
+    {
+      "period": "2013-Q2",
+      "category": "M3",
+      "value": 9242688000000
+    },
+    {
+      "period": "2013-Q3",
+      "category": "M1",
+      "value": 1483998000000
+    },
+    {
+      "period": "2013-Q3",
+      "category": "M2",
+      "value": 9726413000000
+    },
+    {
+      "period": "2013-Q3",
+      "category": "M3",
+      "value": 9750025000000
+    },
+    {
+      "period": "2013-Q4",
+      "category": "M1",
+      "value": 1510895000000
+    },
+    {
+      "period": "2013-Q4",
+      "category": "M2",
+      "value": 10056437000000
+    },
+    {
+      "period": "2013-Q4",
+      "category": "M3",
+      "value": 10085243000000
+    },
+    {
+      "period": "2014-Q1",
+      "category": "M1",
+      "value": 1522509000000
+    },
+    {
+      "period": "2014-Q1",
+      "category": "M2",
+      "value": 10145621000000
+    },
+    {
+      "period": "2014-Q1",
+      "category": "M3",
+      "value": 10177899000000
+    },
+    {
+      "period": "2014-Q2",
+      "category": "M1",
+      "value": 1628109000000
+    },
+    {
+      "period": "2014-Q2",
+      "category": "M2",
+      "value": 10599021000000
+    },
+    {
+      "period": "2014-Q2",
+      "category": "M3",
+      "value": 10632038000000
+    },
+    {
+      "period": "2014-Q3",
+      "category": "M1",
+      "value": 1677934000000
+    },
+    {
+      "period": "2014-Q3",
+      "category": "M2",
+      "value": 10911011000000
+    },
+    {
+      "period": "2014-Q3",
+      "category": "M3",
+      "value": 10947313000000
+    },
+    {
+      "period": "2014-Q4",
+      "category": "M1",
+      "value": 1708724000000
+    },
+    {
+      "period": "2014-Q4",
+      "category": "M2",
+      "value": 11011372000000
+    },
+    {
+      "period": "2014-Q4",
+      "category": "M3",
+      "value": 11048944000000
+    },
+    {
+      "period": "2015-Q1",
+      "category": "M1",
+      "value": 1941490000000
+    },
+    {
+      "period": "2015-Q1",
+      "category": "M2",
+      "value": 11345002000000
+    },
+    {
+      "period": "2015-Q1",
+      "category": "M3",
+      "value": 11378200000000
+    },
+    {
+      "period": "2015-Q2",
+      "category": "M1",
+      "value": 1916960000000
+    },
+    {
+      "period": "2015-Q2",
+      "category": "M2",
+      "value": 11436355000000
+    },
+    {
+      "period": "2015-Q2",
+      "category": "M3",
+      "value": 11469057000000
+    },
+    {
+      "period": "2015-Q3",
+      "category": "M1",
+      "value": 2018828000000
+    },
+    {
+      "period": "2015-Q3",
+      "category": "M2",
+      "value": 11445509000000
+    },
+    {
+      "period": "2015-Q3",
+      "category": "M3",
+      "value": 11481267000000
+    },
+    {
+      "period": "2015-Q4",
+      "category": "M1",
+      "value": 1971146000000
+    },
+    {
+      "period": "2015-Q4",
+      "category": "M2",
+      "value": 11618441000000
+    },
+    {
+      "period": "2015-Q4",
+      "category": "M3",
+      "value": 11655019000000
+    },
+    {
+      "period": "2016-Q1",
+      "category": "M1",
+      "value": 2076634000000
+    },
+    {
+      "period": "2016-Q1",
+      "category": "M2",
+      "value": 11747635000000
+    },
+    {
+      "period": "2016-Q1",
+      "category": "M3",
+      "value": 11783190000000
+    },
+    {
+      "period": "2016-Q2",
+      "category": "M1",
+      "value": 2089932000000
+    },
+    {
+      "period": "2016-Q2",
+      "category": "M2",
+      "value": 11791318000000
+    },
+    {
+      "period": "2016-Q2",
+      "category": "M3",
+      "value": 11828214000000
+    },
+    {
+      "period": "2016-Q3",
+      "category": "M1",
+      "value": 2234444000000
+    },
+    {
+      "period": "2016-Q3",
+      "category": "M2",
+      "value": 12390203000000
+    },
+    {
+      "period": "2016-Q3",
+      "category": "M3",
+      "value": 12431638000000
+    },
+    {
+      "period": "2016-Q4",
+      "category": "M1",
+      "value": 2213970000000
+    },
+    {
+      "period": "2016-Q4",
+      "category": "M2",
+      "value": 12508127000000
+    },
+    {
+      "period": "2016-Q4",
+      "category": "M3",
+      "value": 12551331000000
+    },
+    {
+      "period": "2017-Q1",
+      "category": "M1",
+      "value": 2228810000000
+    },
+    {
+      "period": "2017-Q1",
+      "category": "M2",
+      "value": 12928850000000
+    },
+    {
+      "period": "2017-Q1",
+      "category": "M3",
+      "value": 12977811000000
+    },
+    {
+      "period": "2017-Q2",
+      "category": "M1",
+      "value": 2299020000000
+    },
+    {
+      "period": "2017-Q2",
+      "category": "M2",
+      "value": 13314695000000
+    },
+    {
+      "period": "2017-Q2",
+      "category": "M3",
+      "value": 13361692000000
+    },
+    {
+      "period": "2017-Q3",
+      "category": "M1",
+      "value": 2393467000000
+    },
+    {
+      "period": "2017-Q3",
+      "category": "M2",
+      "value": 13484438000000
+    },
+    {
+      "period": "2017-Q3",
+      "category": "M3",
+      "value": 13533592000000
+    },
+    {
+      "period": "2017-Q4",
+      "category": "M1",
+      "value": 2431461000000
+    },
+    {
+      "period": "2017-Q4",
+      "category": "M2",
+      "value": 13755255000000
+    },
+    {
+      "period": "2017-Q4",
+      "category": "M3",
+      "value": 13803837000000
+    },
+    {
+      "period": "2018-Q1",
+      "category": "M1",
+      "value": 2473438000000
+    },
+    {
+      "period": "2018-Q1",
+      "category": "M2",
+      "value": 13935534000000
+    },
+    {
+      "period": "2018-Q1",
+      "category": "M3",
+      "value": 13987761000000
+    },
+    {
+      "period": "2018-Q2",
+      "category": "M1",
+      "value": 2519925000000
+    },
+    {
+      "period": "2018-Q2",
+      "category": "M2",
+      "value": 13979948000000
+    },
+    {
+      "period": "2018-Q2",
+      "category": "M3",
+      "value": 14032525000000
+    },
+    {
+      "period": "2018-Q3",
+      "category": "M1",
+      "value": 2445424000000
+    },
+    {
+      "period": "2018-Q3",
+      "category": "M2",
+      "value": 14116664000000
+    },
+    {
+      "period": "2018-Q3",
+      "category": "M3",
+      "value": 14175405000000
+    },
+    {
+      "period": "2018-Q4",
+      "category": "M1",
+      "value": 2421598000000
+    },
+    {
+      "period": "2018-Q4",
+      "category": "M2",
+      "value": 14348059000000
+    },
+    {
+      "period": "2018-Q4",
+      "category": "M3",
+      "value": 14403688000000
+    },
+    {
+      "period": "2019-Q1",
+      "category": "M1",
+      "value": 2418572000000
+    },
+    {
+      "period": "2019-Q1",
+      "category": "M2",
+      "value": 14485182000000
+    },
+    {
+      "period": "2019-Q1",
+      "category": "M3",
+      "value": 14545033000000
+    },
+    {
+      "period": "2019-Q2",
+      "category": "M1",
+      "value": 2428901000000
+    },
+    {
+      "period": "2019-Q2",
+      "category": "M2",
+      "value": 14536903000000
+    },
+    {
+      "period": "2019-Q2",
+      "category": "M3",
+      "value": 14594039000000
+    },
+    {
+      "period": "2019-Q3",
+      "category": "M1",
+      "value": 2469077000000
+    },
+    {
+      "period": "2019-Q3",
+      "category": "M2",
+      "value": 14507927000000
+    },
+    {
+      "period": "2019-Q3",
+      "category": "M3",
+      "value": 14547864000000
+    },
+    {
+      "period": "2019-Q4",
+      "category": "M1",
+      "value": 2484738000000
+    },
+    {
+      "period": "2019-Q4",
+      "category": "M2",
+      "value": 14745872000000
+    },
+    {
+      "period": "2019-Q4",
+      "category": "M3",
+      "value": 14786375000000
+    },
+    {
+      "period": "2020-Q1",
+      "category": "M1",
+      "value": 2614612000000
+    },
+    {
+      "period": "2020-Q1",
+      "category": "M2",
+      "value": 14803474000000
+    },
+    {
+      "period": "2020-Q1",
+      "category": "M3",
+      "value": 14845663000000
+    },
+    {
+      "period": "2020-Q2",
+      "category": "M1",
+      "value": 2838473000000
+    },
+    {
+      "period": "2020-Q2",
+      "category": "M2",
+      "value": 15102579000000
+    },
+    {
+      "period": "2020-Q2",
+      "category": "M3",
+      "value": 15142575000000
+    },
+    {
+      "period": "2020-Q3",
+      "category": "M1",
+      "value": 3576701000000
+    },
+    {
+      "period": "2020-Q3",
+      "category": "M2",
+      "value": 15845097000000
+    },
+    {
+      "period": "2020-Q3",
+      "category": "M3",
+      "value": 15883405000000
+    },
+    {
+      "period": "2020-Q4",
+      "category": "M1",
+      "value": 3231921000000
+    },
+    {
+      "period": "2020-Q4",
+      "category": "M2",
+      "value": 15606608000000
+    },
+    {
+      "period": "2020-Q4",
+      "category": "M3",
+      "value": 15644043000000
+    },
+    {
+      "period": "2021-Q1",
+      "category": "M1",
+      "value": 3386579000000
+    },
+    {
+      "period": "2021-Q1",
+      "category": "M2",
+      "value": 15760021000000
+    },
+    {
+      "period": "2021-Q1",
+      "category": "M3",
+      "value": 15797352000000
+    },
+    {
+      "period": "2021-Q2",
+      "category": "M1",
+      "value": 3866519000000
+    },
+    {
+      "period": "2021-Q2",
+      "category": "M2",
+      "value": 16231151000000
+    },
+    {
+      "period": "2021-Q2",
+      "category": "M3",
+      "value": 16270817000000
+    },
+    {
+      "period": "2021-Q3",
+      "category": "M1",
+      "value": 3579632000000
+    },
+    {
+      "period": "2021-Q3",
+      "category": "M2",
+      "value": 16065611000000
+    },
+    {
+      "period": "2021-Q3",
+      "category": "M3",
+      "value": 16104828000000
+    },
+    {
+      "period": "2021-Q4",
+      "category": "M1",
+      "value": 3490858000000
+    },
+    {
+      "period": "2021-Q4",
+      "category": "M2",
+      "value": 16272650000000
+    },
+    {
+      "period": "2021-Q4",
+      "category": "M3",
+      "value": 16310866000000
+    },
+    {
+      "period": "2022-Q1",
+      "category": "M1",
+      "value": 3570957000000
+    },
+    {
+      "period": "2022-Q1",
+      "category": "M2",
+      "value": 16393669000000
+    },
+    {
+      "period": "2022-Q1",
+      "category": "M3",
+      "value": 16428066000000
+    },
+    {
+      "period": "2022-Q2",
+      "category": "M1",
+      "value": 3319053000000
+    },
+    {
+      "period": "2022-Q2",
+      "category": "M2",
+      "value": 16303463000000
+    },
+    {
+      "period": "2022-Q2",
+      "category": "M3",
+      "value": 16339898000000
+    },
+    {
+      "period": "2022-Q3",
+      "category": "M1",
+      "value": 3036349000000
+    },
+    {
+      "period": "2022-Q3",
+      "category": "M2",
+      "value": 16332813000000
+    },
+    {
+      "period": "2022-Q3",
+      "category": "M3",
+      "value": 16367268000000
+    },
+    {
+      "period": "2022-Q4",
+      "category": "M1",
+      "value": 2769343000000
+    },
+    {
+      "period": "2022-Q4",
+      "category": "M2",
+      "value": 16536625000000
+    },
+    {
+      "period": "2022-Q4",
+      "category": "M3",
+      "value": 16569431000000
+    },
+    {
+      "period": "2023-Q1",
+      "category": "M1",
+      "value": 2712678000000
+    },
+    {
+      "period": "2023-Q1",
+      "category": "M2",
+      "value": 16619681000000
+    },
+    {
+      "period": "2023-Q1",
+      "category": "M3",
+      "value": 16653624000000
+    },
+    {
+      "period": "2023-Q2",
+      "category": "M1",
+      "value": 2582312000000
+    },
+    {
+      "period": "2023-Q2",
+      "category": "M2",
+      "value": 16552573000000
+    },
+    {
+      "period": "2023-Q2",
+      "category": "M3",
+      "value": 16587509000000
+    },
+    {
+      "period": "2023-Q3",
+      "category": "M1",
+      "value": 2502111000000
+    },
+    {
+      "period": "2023-Q3",
+      "category": "M2",
+      "value": 16785739000000
+    },
+    {
+      "period": "2023-Q3",
+      "category": "M3",
+      "value": 16820252000000
+    },
+    {
+      "period": "2023-Q4",
+      "category": "M1",
+      "value": 2598203000000
+    },
+    {
+      "period": "2023-Q4",
+      "category": "M2",
+      "value": 17195266000000
+    },
+    {
+      "period": "2023-Q4",
+      "category": "M3",
+      "value": 17234052000000
+    },
+    {
+      "period": "2024-Q1",
+      "category": "M1",
+      "value": 2556002000000
+    },
+    {
+      "period": "2024-Q1",
+      "category": "M2",
+      "value": 17186277000000
+    },
+    {
+      "period": "2024-Q1",
+      "category": "M3",
+      "value": 17226182000000
+    },
+    {
+      "period": "2024-Q2",
+      "category": "M1",
+      "value": 2646669000000
+    },
+    {
+      "period": "2024-Q2",
+      "category": "M2",
+      "value": 17774310000000
+    },
+    {
+      "period": "2024-Q2",
+      "category": "M3",
+      "value": 17816783000000
+    },
+    {
+      "period": "2024-Q3",
+      "category": "M1",
+      "value": 2824711000000
+    },
+    {
+      "period": "2024-Q3",
+      "category": "M2",
+      "value": 18209671000000
+    },
+    {
+      "period": "2024-Q3",
+      "category": "M3",
+      "value": 18251104000000
+    },
+    {
+      "period": "2024-Q4",
+      "category": "M1",
+      "value": 2748458000000
+    },
+    {
+      "period": "2024-Q4",
+      "category": "M2",
+      "value": 18458425000000
+    },
+    {
+      "period": "2024-Q4",
+      "category": "M3",
+      "value": 18501577000000
+    },
+    {
+      "period": "2025-Q1",
+      "category": "M1",
+      "value": 2866480000000
+    },
+    {
+      "period": "2025-Q1",
+      "category": "M2",
+      "value": 19048522000000
+    },
+    {
+      "period": "2025-Q1",
+      "category": "M3",
+      "value": 19094640000000
+    },
+    {
+      "period": "2025-Q2",
+      "category": "M1",
+      "value": 3215396000000
+    },
+    {
+      "period": "2025-Q2",
+      "category": "M2",
+      "value": 19819929000000
+    },
+    {
+      "period": "2025-Q2",
+      "category": "M3",
+      "value": 19868342000000
+    },
+    {
+      "period": "2025-Q3",
+      "category": "M1",
+      "value": 3072110000000
+    },
+    {
+      "period": "2025-Q3",
+      "category": "M2",
+      "value": 20237578000000
+    },
+    {
+      "period": "2025-Q3",
+      "category": "M3",
+      "value": 20282074000000
+    },
+    {
+      "period": "2025-Q4",
+      "category": "M1",
+      "value": 3109917000000
+    },
+    {
+      "period": "2025-Q4",
+      "category": "M2",
+      "value": 20602349000000
+    },
+    {
+      "period": "2025-Q4",
+      "category": "M3",
+      "value": 20648542000000
+    },
+    {
+      "period": "2026-Q1",
+      "category": "M1",
+      "value": 3317132000000
+    },
+    {
+      "period": "2026-Q1",
+      "category": "M2",
+      "value": 20819733000000
+    },
+    {
+      "period": "2026-Q1",
+      "category": "M3",
+      "value": 20864507000000
+    }
+  ],
+  "latest_by_category": [
+    {
+      "category": "M1",
+      "period": "2026-Q1",
+      "value": 3317132000000
+    },
+    {
+      "category": "M2",
+      "period": "2026-Q1",
+      "value": 20819733000000
+    },
+    {
+      "category": "M3",
+      "period": "2026-Q1",
+      "value": 20864507000000
+    }
+  ],
+  "coverage": {
+    "start": "1997-Q2",
+    "end": "2026-Q1",
+    "points": 348,
+    "points_with_value": 348
+  },
+  "latest": {
+    "period": "2026-Q1",
+    "category": "M3",
+    "value": 20864507000000
+  },
+  "content_hash": "sha256:e3e77f521a605d3d",
+  "data_version": "2026.09.1"
+}

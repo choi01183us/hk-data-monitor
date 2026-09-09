@@ -34,6 +34,8 @@ export default {
     {
       name: "主題探索",
       pages: [
+        { name: "貨幣與股市", path: "/explore/finance" },
+        { name: "M1、M2、M3 貨幣供應量", path: "/indicators/money_supply" },
         { name: "住屋與生活成本", path: "/explore/living-cost" },
         { name: "香港城市觀察", path: "/explore/city" },
         { name: "香港行業・金融與保險", path: "/explore/industries" },

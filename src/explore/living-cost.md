@@ -24,7 +24,7 @@ const card = (indicator) => indicatorCard(indicator, { href: `../indicators/${in
 
 <header class="monitor-header">
   <div class="monitor-brand"><span class="monitor-brand__mark" aria-hidden="true">HK</span><div><span class="monitor-kicker">香港生活觀察 · 從數字到需要</span><h1 id="living-cost">住屋與生活成本</h1></div></div>
-  <nav class="monitor-nav" aria-label="生活成本專區導覽"><a href="../">香港總覽</a><a href="./city">城市觀察</a><a href="./industries">行業與工作</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
+  <nav class="monitor-nav" aria-label="生活成本專區導覽"><a href="../">香港總覽</a><a href="./finance">貨幣與股市</a><a href="./city">城市觀察</a><a href="./industries">行業與工作</a><a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 ↗</a></nav>
 </header>
 
 <section class="living-hero" aria-labelledby="living-question">

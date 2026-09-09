@@ -34,6 +34,7 @@ const event = async (name) => appendFile(join(root, "events.txt"), name + "\\n")
 export const CENSTATD_INDICATORS = scenario.target === "csd" ? { sample: {} } : {};
 export const FISCAL_INDICATORS = scenario.target === "fiscal" ? { sample: {} } : {};
 export const PROPERTY_INDICATORS = scenario.target === "property" ? { sample: {} } : {};
+export const MONEY_INDICATORS = scenario.target === "money" ? { sample: {} } : {};
 export const resetTableMetaCache = () => {};
 export async function readSnapshot() { return existsSync(snapshot) ? JSON.parse(await readFile(snapshot, "utf8")) : null; }
 async function load() {
@@ -43,7 +44,7 @@ async function load() {
   if (scenario.failure === "name-only") { const error = new Error("name 唔係 instanceof"); error.name = "UpstreamError"; throw error; }
   return { updated_at: "2026-08-27", series: [{ period: "2026-07", value: 2 }] };
 }
-export { load as loadCenstatdIndicator, load as loadFiscalIndicator, load as loadPropertyIndicator };
+export { load as loadCenstatdIndicator, load as loadFiscalIndicator, load as loadPropertyIndicator, load as loadMoneyIndicator };
 export function finaliseIndicator(doc, previous) {
   // 同步函式嘅事件寫入以暫存記錄收集，transaction 結束前先 flush。
   transactionEvents.push("finalise");
@@ -72,7 +73,7 @@ export async function writeSnapshot(id, doc) {
   return { written: true, reason: existed ? "changed" : "created", data_version: doc.data_version };
 }
 `);
-    const expectedImports = new Set(["../src/data/_lib/indicators.js", "../src/data/_lib/property.js", "../src/data/_lib/snapshot.js", "../src/data/_lib/http.js", "../src/data/_lib/censtatd.js"]);
+    const expectedImports = new Set(["../src/data/_lib/indicators.js", "../src/data/_lib/property.js", "../src/data/_lib/money.js", "../src/data/_lib/snapshot.js", "../src/data/_lib/http.js", "../src/data/_lib/censtatd.js"]);
     function wire(text) {
       const seen = new Set();
       const wired = text.replace(/(\bfrom\s+["'])(\.[^"']+)(["'])/g, (_, prefix, specifier, suffix) => {
@@ -124,7 +125,7 @@ export async function writeSnapshot(id, doc) {
     check("普通 Error 冒充 name=UpstreamError 仍退出 1", named.code === 1 && named.snapshot === INITIAL);
     const write = await run({ target: "property", previous: true, failure: "write" });
     check("磁碟寫入錯誤退出 1，唔當 fail-soft", write.code === 1 && write.summary.includes("snapshot write failed"));
-    for (const target of ["csd", "fiscal"]) {
+    for (const target of ["csd", "fiscal", "money"]) {
       const hard = await run({ target, previous: true, failure: "ordinary" });
       const soft = await run({ target, previous: true, failure: "upstream" });
       check(`${target} target 同樣區分普通 Error / UpstreamError`, hard.code === 1 && soft.code === 0 && hard.snapshot === INITIAL && soft.snapshot === INITIAL);

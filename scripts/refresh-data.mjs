@@ -16,6 +16,7 @@ import { appendFile } from "node:fs/promises";
 
 import { CENSTATD_INDICATORS, FISCAL_INDICATORS, loadCenstatdIndicator, loadFiscalIndicator } from "../src/data/_lib/indicators.js";
 import { PROPERTY_INDICATORS, loadPropertyIndicator } from "../src/data/_lib/property.js";
+import { MONEY_INDICATORS, loadMoneyIndicator } from "../src/data/_lib/money.js";
 import { readSnapshot, finaliseIndicator, writeSnapshot } from "../src/data/_lib/snapshot.js";
 import { withFixtureTransaction, UpstreamError } from "../src/data/_lib/http.js";
 import { resetTableMetaCache } from "../src/data/_lib/censtatd.js";
@@ -24,6 +25,7 @@ const TARGETS = [
   ...Object.keys(CENSTATD_INDICATORS).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
   ...Object.keys(FISCAL_INDICATORS).map((id) => ({ id, load: () => loadFiscalIndicator(id) })),
   ...Object.keys(PROPERTY_INDICATORS).map((id) => ({ id, load: () => loadPropertyIndicator(id) })),
+  ...Object.keys(MONEY_INDICATORS).map((id) => ({ id, load: () => loadMoneyIndicator(id) })),
 ];
 
 const results = [];

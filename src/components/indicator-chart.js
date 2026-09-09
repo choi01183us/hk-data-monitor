@@ -48,7 +48,7 @@ function tooltipTitle(indicator) {
   return (row) =>
     row.value === null
       ? `${row.label}\n冇數字`
-      : `${row.label}\n${formatNumber(row.value)} ${indicator.unit_zh}`;
+      : `${row.label}\n${formatNumber(row.value, { digits: indicator.value_digits })} ${indicator.unit_zh}`;
 }
 
 /**

@@ -17,7 +17,7 @@ import { industryExplorer } from "../components/industry-explorer.js";
     <div><span class="monitor-kicker">香港點樣運作 · 行業與生活</span><h1 id="industries">香港行業探索</h1></div>
   </div>
   <nav class="monitor-nav" aria-label="行業專區導覽">
-    <a href="../">香港總覽</a>
+    <a href="../">香港總覽</a><a href="./finance">貨幣與股市</a>
     <a href="./city">城市觀察</a>
     <a href="./technology">科技與香港</a>
     <a class="monitor-nav__primary" href="../learn/budget-memo">寫青年預算備忘 <span aria-hidden="true">↗</span></a>

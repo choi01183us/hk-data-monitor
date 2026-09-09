@@ -38,6 +38,7 @@ export function industryExplorer() {
       <section class="industry-panel industry-market-reading" aria-labelledby="industry-market-reading">
         <div class="industry-panel-heading"><h3 id="industry-market-reading">學睇市場，先讀原始資料</h3><span>香港交易所官方入口 · 需要連線</span></div>
         <div class="industry-source-grid">${["hkexMarkets", "hkexNews", "ipo"].map(resource)}</div>
+        <p><a href="./finance">M1、M2、M3 與股市市值：用數據理解金融 ↗</a></p>
         <p class="industry-note">留意公司數目、市值、成交額及集資額各有自己嘅定義。本頁提供閱讀入口，唔提供買賣或保單推薦。</p>
       </section>
     </div>`;

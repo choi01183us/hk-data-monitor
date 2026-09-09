@@ -23,6 +23,7 @@ const loaded = await Promise.all([
   FileAttachment("./data/private_domestic_rent.json").json(),
   FileAttachment("./data/four_key_industries.json").json(),
   FileAttachment("./data/hkex_listings.json").json(),
+  FileAttachment("./data/money_supply.json").json(),
   FileAttachment("./data/goods_imports.json").json(),
   FileAttachment("./data/goods_exports.json").json(),
   FileAttachment("./data/port_cargo.json").json(),
@@ -49,6 +50,7 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   </div>
   <nav class="monitor-nav" aria-label="首頁導覽">
     <a href="./explore/city">城市觀察</a>
+    <a href="./explore/finance">貨幣・股市</a>
     <a href="./explore/industries">行業・金融保險</a>
     <a href="./explore/technology">科技與香港</a>
     <a href="./explore/living-cost">住屋・生活成本</a>
@@ -62,6 +64,12 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   <span class="monitor-topic-entry__icon" aria-hidden="true">◉</span>
   <span><strong>香港城市觀察</strong><span>十八區人口與入息 · 旅遊景點 · 新聞航班 · 進出口航運</span></span>
   <span class="monitor-topic-entry__action">探索城市連繫 <span aria-hidden="true">↗</span></span>
+</a>
+
+<a class="monitor-topic-entry" href="./explore/finance">
+  <span class="monitor-topic-entry__icon" aria-hidden="true">↗</span>
+  <span><strong>貨幣與股市</strong><span>M1・M2・M3 · 股市市值官方入口 · 金融與公共財政</span></span>
+  <span class="monitor-topic-entry__action">分清每種「錢」 ↗</span>
 </a>
 
 <a class="monitor-topic-entry" href="./explore/industries">
