@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-09",
-  "fetched_at": "2026-09-10T08:46:19.926Z",
-  "updated_at": "2026-09-10T08:43:04.000Z",
+  "fetched_at": "2026-09-10T13:46:04.868Z",
+  "updated_at": "2026-09-10T13:12:02.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7352,22 +7352,6 @@
         }
       ],
       "status": "到閘口 22:12",
-      "statusCode": null
-    },
-    {
-      "direction": "arrival",
-      "scheduled_date": "2026-09-09",
-      "time": "22:20",
-      "airports": [
-        "XMN"
-      ],
-      "flights": [
-        {
-          "no": "CX 979D",
-          "airline": "CPA"
-        }
-      ],
-      "status": "預計 23:25",
       "statusCode": null
     },
     {
@@ -16172,5 +16156,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "a762fd25c5f3297c0d5f0eec06b5640bce0ce08cbb46c30034491cad2af31253"
+  "content_hash": "98bc8f626b87fd79d5782ab61da3dfe13fa2e9e4ac097fc5aaf3329da53fad0f"
 }
