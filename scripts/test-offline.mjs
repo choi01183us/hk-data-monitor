@@ -243,6 +243,27 @@ try {
     check(`${label} 保持 404，沒有誤用首頁或指標快取`, unknownResponse?.status() === 404 && unknown.cards === 0 && unknown.values === 0 && ["Page not found", "搵唔到呢一版"].includes(unknown.heading), JSON.stringify(unknown));
   }
 
+  console.log("\n[公共服務離線] 未曾在線開過的三主題及完整引用");
+  for (const locale of ["zh-HK", "en-GB"]) {
+    const suffix = locale === "en-GB" ? "?lang=en-GB" : "";
+    const servicesResponse = await page.goto(`${BASE}explore/public-services${suffix}`, {waitUntil: "load"});
+    await page.waitForSelector(".service-table tbody tr", {timeout: 20_000});
+    const serviceStatus = await workerStatus();
+    check(`${locale} 公共服務新頁由離線預快取回答`, servicesResponse?.status() === 200 && serviceStatus?.fromCache === true && await page.locator(".service-table tbody tr").count() === 8);
+    check(`${locale} 主題初始選中狀態明確，唔係空白 ARIA 屬性`, await page.locator(".service-topics button").nth(0).getAttribute("aria-pressed") === "true");
+    await page.locator(".service-topics button").nth(1).click();
+    check(`${locale} 教育綱領切換保留精確金額`, await page.locator(".service-table tbody tr").count() === 10 && await page.locator(".service-amount strong").innerText() === "31,905.4");
+    await page.locator(".service-topics button").nth(2).click();
+    check(`${locale} 醫療綱領切換保留精確金額`, await page.locator(".service-table tbody tr").count() === 12 && await page.locator(".service-amount strong").innerText() === "103,059.1");
+    await page.locator(".service-table-heading select").selectOption("change");
+    check(`${locale} 重新排序後仍標示所選醫管局綱領`, await page.locator('.service-table button[aria-pressed="true"]').count() === 1 && (await page.locator('.service-table button[aria-pressed="true"]').getAttribute("data-programme")).startsWith("140/3 "));
+    await page.locator(".service-detail .citation-picker > summary").click();
+    const serviceCitation = await page.locator(".service-detail .citation-preview").inputValue();
+    check(`${locale} 所選醫管局引用不借其它綱領或期數`, serviceCitation.includes("140/3") && serviceCitation.includes("103,059,100,000") && serviceCitation.includes("2026-27") && serviceCitation.includes("fin_provision.csv"));
+    const programmeData = await readRenderedAttachment("service_programme_provision");
+    check(`${locale} 離線仍有90點原始綱領數據，沒有跨綱領總額`, programmeData.series.length === 90 && !programmeData.totals && !(await page.locator(".observablehq--error").count()));
+  }
+
   console.log("\n[離線行為] 回復網絡");
   await context.setOffline(false);
   await page.goto(BASE, { waitUntil: "networkidle" });

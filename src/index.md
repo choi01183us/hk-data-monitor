@@ -98,6 +98,12 @@ display(cityNews(news, {compact: true, invalidation}));
 
 <div class="monitor-topics">
 
+<a class="monitor-topic-entry" href="./explore/public-services">
+  <span class="monitor-topic-entry__icon" aria-hidden="true">◎</span>
+  <span><strong>公共服務與預算</strong><span>社福 · 教育 · 醫療 · 30 個服務綱領 · 三年撥款與需要</span></span>
+  <span class="monitor-topic-entry__action">睇清資源點照顧需要 ↗</span>
+</a>
+
 <a class="monitor-topic-entry" href="./explore/city">
   <span class="monitor-topic-entry__icon" aria-hidden="true">◉</span>
   <span><strong>香港城市觀察</strong><span>十八區人口與入息 · 旅遊景點 · 新聞航班 · 進出口航運</span></span>

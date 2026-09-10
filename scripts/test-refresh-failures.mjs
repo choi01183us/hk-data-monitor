@@ -14,6 +14,7 @@ export async function testRefreshFailures(check) {
   console.log("\n[每週刷新失敗] 真正 script 的錯誤類型、退出碼及交易順序");
   const original = new URL("./refresh-data.mjs", import.meta.url);
   const source = await readFile(original, "utf8");
+  const recordingSource = await readFile(new URL("./record-fixtures.mjs", import.meta.url), "utf8");
   const temporary = await mkdtemp(join(tmpdir(), "hkdm-refresh-failures-"));
   let sequence = 0;
   try {
@@ -31,10 +32,14 @@ const root = process.env.HKDM_REFRESH_CASE_DIR;
 const scenario = JSON.parse(await readFile(join(root, "scenario.json"), "utf8"));
 const snapshot = join(root, "snapshot.json");
 const event = async (name) => appendFile(join(root, "events.txt"), name + "\\n");
+const touched = new Set();
+export const fixtureDir = () => join(root, "fixtures");
+export const fixturesTouched = () => new Set(touched);
 export const CENSTATD_INDICATORS = scenario.target === "csd" ? { sample: {} } : {};
 export const FISCAL_INDICATORS = scenario.target === "fiscal" ? { sample: {} } : {};
 export const PROPERTY_INDICATORS = scenario.target === "property" ? { sample: {} } : {};
 export const MONEY_INDICATORS = scenario.target === "money" ? { sample: {} } : {};
+export const SERVICE_INDICATORS = scenario.target === "service" ? { sample: {} } : {};
 export const resetTableMetaCache = () => {};
 export async function readSnapshot() { return existsSync(snapshot) ? JSON.parse(await readFile(snapshot, "utf8")) : null; }
 async function load() {
@@ -44,7 +49,7 @@ async function load() {
   if (scenario.failure === "name-only") { const error = new Error("name 唔係 instanceof"); error.name = "UpstreamError"; throw error; }
   return { updated_at: "2026-08-27", series: [{ period: "2026-07", value: 2 }] };
 }
-export { load as loadCenstatdIndicator, load as loadFiscalIndicator, load as loadPropertyIndicator, load as loadMoneyIndicator };
+export { load as loadCenstatdIndicator, load as loadFiscalIndicator, load as loadPropertyIndicator, load as loadMoneyIndicator, load as loadServiceProgrammeIndicator };
 export function finaliseIndicator(doc, previous) {
   // 同步函式嘅事件寫入以暫存記錄收集，transaction 結束前先 flush。
   transactionEvents.push("finalise");
@@ -58,6 +63,10 @@ export async function withFixtureTransaction(fn) {
     const result = await fn();
     for (const name of transactionEvents.splice(0)) await event(name);
     await event("commit");
+    if (process.env.HKDM_FIXTURES === "record") {
+      await writeFile(join(fixtureDir(), "source.gz"), "new mock source");
+      touched.add("source.gz");
+    }
     return result;
   } catch (error) {
     for (const name of transactionEvents.splice(0)) await event(name);
@@ -73,14 +82,14 @@ export async function writeSnapshot(id, doc) {
   return { written: true, reason: existed ? "changed" : "created", data_version: doc.data_version };
 }
 `);
-    const expectedImports = new Set(["../src/data/_lib/indicators.js", "../src/data/_lib/property.js", "../src/data/_lib/money.js", "../src/data/_lib/snapshot.js", "../src/data/_lib/http.js", "../src/data/_lib/censtatd.js"]);
-    function wire(text) {
+    const expectedImports = new Set(["../src/data/_lib/indicators.js", "../src/data/_lib/property.js", "../src/data/_lib/money.js", "../src/data/_lib/service-budget.js", "../src/data/_lib/snapshot.js", "../src/data/_lib/http.js", "../src/data/_lib/censtatd.js"]);
+    function wire(text, dependencies = expectedImports) {
       const seen = new Set();
       const wired = text.replace(/(\bfrom\s+["'])(\.[^"']+)(["'])/g, (_, prefix, specifier, suffix) => {
-        if (!expectedImports.has(specifier) || seen.has(specifier)) throw new Error(`刷新 mock 必須明文匹配唯一依賴：${specifier}`);
+        if (!dependencies.has(specifier) || seen.has(specifier)) throw new Error(`刷新 mock 必須明文匹配唯一依賴：${specifier}`);
         seen.add(specifier); return `${prefix}${supportUrl}${suffix}`;
       });
-      if (seen.size !== expectedImports.size) throw new Error("刷新 mock 漏咗依賴，禁止接觸真資料");
+      if (seen.size !== dependencies.size) throw new Error("刷新 mock 漏咗依賴，禁止接觸真資料");
       return wired;
     }
     async function run(scenario, script = source) {
@@ -104,6 +113,31 @@ export async function writeSnapshot(id, doc) {
       const snapshot = await readFile(join(root, "snapshot.json"), "utf8").catch((error) => { if (error.code === "ENOENT") return null; throw error; });
       return { code, output, snapshot, events: (await readFile(join(root, "events.txt"), "utf8")).trim().split("\n"), summary: await readFile(join(root, "summary.md"), "utf8") };
     }
+    // 重錄腳本有獨立的 registry；若漏接新來源，孤兒清理會誤刪它的舊錄影。
+    // 同樣實跑 production script，所有來源及錄影路徑只指向本次暫存目錄。
+    async function runRecording(scenario, script = recordingSource) {
+      const root = join(temporary, `record-${sequence++}`); await mkdir(root);
+      await mkdir(join(root, "fixtures"));
+      await writeFile(join(root, "scenario.json"), JSON.stringify(scenario));
+      await writeFile(join(root, "events.txt"), "");
+      await writeFile(join(root, "fixtures", "source.gz"), "previous mock source");
+      await writeFile(join(root, "fixtures", "orphan.gz"), "unused mock source");
+      const dependencies = new Set([...expectedImports].filter((name) => name !== "../src/data/_lib/snapshot.js"));
+      const scriptPath = join(root, "record.mjs"); await writeFile(scriptPath, wire(script, dependencies));
+      let code = 0, output = "";
+      try {
+        const result = await exec(process.execPath, [scriptPath], {
+          cwd: root, timeout: 10000, maxBuffer: 1024 * 1024,
+          env: { ...process.env, HKDM_REFRESH_CASE_DIR: root, HKDM_FIXTURES: "record", HKDM_FIXTURE_DIR: join(root, "fixtures") },
+        });
+        output = result.stdout + result.stderr;
+      } catch (error) {
+        if (typeof error.code !== "number") throw error;
+        code = error.code; output = (error.stdout ?? "") + (error.stderr ?? "");
+      }
+      const fixture = async (name) => readFile(join(root, "fixtures", name), "utf8").catch((error) => { if (error.code === "ENOENT") return null; throw error; });
+      return { code, output, events: (await readFile(join(root, "events.txt"), "utf8")).trim().split("\n"), source: await fixture("source.gz"), orphan: await fixture("orphan.gz") };
+    }
 
     // 三類已知答案，先證明 child-process 觀察到實際成功、拒絕、保留舊檔。
     const happy = await run({ target: "property", previous: true });
@@ -125,10 +159,23 @@ export async function writeSnapshot(id, doc) {
     check("普通 Error 冒充 name=UpstreamError 仍退出 1", named.code === 1 && named.snapshot === INITIAL);
     const write = await run({ target: "property", previous: true, failure: "write" });
     check("磁碟寫入錯誤退出 1，唔當 fail-soft", write.code === 1 && write.summary.includes("snapshot write failed"));
-    for (const target of ["csd", "fiscal", "money"]) {
+    for (const target of ["csd", "fiscal", "money", "service"]) {
       const hard = await run({ target, previous: true, failure: "ordinary" });
       const soft = await run({ target, previous: true, failure: "upstream" });
       check(`${target} target 同樣區分普通 Error / UpstreamError`, hard.code === 1 && soft.code === 0 && hard.snapshot === INITIAL && soft.snapshot === INITIAL);
+    }
+    for (const target of ["csd", "fiscal", "property", "money", "service"]) {
+      const recorded = await runRecording({ target });
+      check(`${target} registry 接到真正重錄腳本，成功才保留新錄影並清孤兒`, recorded.code === 0 && recorded.events.join(",") === "begin,load,commit" && recorded.source === "new mock source" && recorded.orphan === null);
+    }
+    const recordingFailure = await runRecording({ target: "service", failure: "upstream" });
+    check("服務綱領重錄失敗退出1，舊錄影及孤兒均不變", recordingFailure.code === 1 && recordingFailure.events.join(",") === "begin,load,rollback" && recordingFailure.source === "previous mock source" && recordingFailure.orphan === "unused mock source");
+    for (const [name, before, after, scenario, rejects] of [
+      ["漏接服務綱領 registry", "  ...Object.keys(SERVICE_INDICATORS).map((id) => ({ id, load: () => loadServiceProgrammeIndicator(id) })),", "", { target: "service" }, (result) => result.source !== "new mock source" && !result.events.includes("load")],
+      ["失敗仍清孤兒", "if (failed === 0 && existsSync(dir))", "if (existsSync(dir))", { target: "service", failure: "upstream" }, (result) => result.source !== "previous mock source" || result.orphan !== "unused mock source"],
+    ]) {
+      if (recordingSource.split(before).length !== 2) throw new Error(`重錄突變必須精確命中一次：${before}`);
+      check(`真正 record script 突變：${name} 被反例捉到`, rejects(await runRecording(scenario, recordingSource.replace(before, after))));
     }
 
     for (const [name, before, after, scenario, rejects] of [
@@ -136,6 +183,7 @@ export async function writeSnapshot(id, doc) {
       ["把上游故障全當 hard fail", "const hardFailed = !(error instanceof UpstreamError);", "const hardFailed = true;", { target: "property", previous: true, failure: "upstream" }, (result) => result.code !== 0],
       ["取消首次抓取閘", "if (hardFailures.length > 0 || orphans.length > 0)", "if (hardFailures.length > 0)", { target: "property", previous: false, failure: "upstream" }, (result) => result.code !== 1],
       ["schema 驗證移出 fixture 交易", "const fresh = await withFixtureTransaction(async () => finaliseIndicator(await load(), previous));", "const fresh = finaliseIndicator(await withFixtureTransaction(load), previous);", { target: "property", previous: true, failure: "schema" }, (result) => result.events.includes("commit") && !result.events.includes("rollback")],
+      ["漏接服務綱領 registry", "  ...Object.keys(SERVICE_INDICATORS).map((id) => ({ id, load: () => loadServiceProgrammeIndicator(id) })),", "", { target: "service", previous: true, failure: "ordinary" }, (result) => result.code !== 1 && !result.events.includes("load")],
     ]) {
       if (source.split(before).length !== 2) throw new Error(`刷新突變必須精確命中一次：${before}`);
       check(`真正 refresh script 突變：${name} 被反例捉到`, rejects(await run(scenario, source.replace(before, after))));

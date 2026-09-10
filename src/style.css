@@ -1765,3 +1765,97 @@ body {
     .monitor-topics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
 }
+
+/* 公共服務：單一綱領跨年，保留原值與需要證據。 */
+.service-page { --service-accent: #65ddc1; }
+.service-hero { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: center; padding: 3.4rem 0 2.5rem; }
+.service-hero h2 { font-size: clamp(2rem, 3.9vw, 3.8rem); line-height: 1.25; letter-spacing: -.045em; margin: .7rem 0 1.2rem; }
+.service-hero p { line-height: 1.85; color: var(--theme-foreground-muted); }
+.service-edition { padding: 2rem; border: 1px solid var(--hk-border); border-radius: 12px; background: linear-gradient(125deg, #163443, #10232f); position: relative; }
+.service-edition > strong { display: block; margin: .7rem 0; font: 600 clamp(2.3rem, 4vw, 3.8rem) ui-monospace, monospace; color: #83e6d0; letter-spacing: -.06em; }
+.service-edition > p { font-size: .8rem; }
+.service-edition dl { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--hk-border); margin: 1.5rem 0 0; padding-top: 1.3rem; }
+.service-edition dt { font: 600 1.7rem ui-monospace, monospace; color: #e6f0f7; }
+.service-edition dd { margin: .4rem 0 0; font-size: .78rem; color: #b8c9d6; }
+.service-scope { padding: 1rem 1.3rem; border-left: 3px solid var(--theme-foreground-focus); background: var(--hk-surface); font-size: .88rem; margin-bottom: 2.5rem; }
+.service-scope p { margin: .5rem 0 0; line-height: 1.75; }
+.service-explorer { margin: 2rem 0 3rem; }
+.service-page .living-section-heading > div, .service-explorer .living-section-heading > div { margin-left: 0; }
+.service-topics { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; margin: 1.6rem 0 .6rem; }
+.service-topics button { display: grid; grid-template-columns: auto 1fr; gap: .35rem .7rem; text-align: left; padding: 1.1rem 1.3rem; color: var(--theme-foreground); border: 1px solid var(--hk-border); border-radius: 7px; background: var(--theme-background-alt); cursor: pointer; }
+.service-topics button > span { grid-row: span 2; font-size: 1.8rem; align-self: center; color: var(--theme-foreground-focus); }
+.service-topics small { color: var(--theme-foreground-muted); }
+.service-topics button[aria-pressed="true"] { border-color: var(--theme-foreground-focus); box-shadow: inset 0 -3px var(--theme-foreground-focus); }
+.service-topic-note { font-size: .85rem; color: var(--theme-foreground-muted); min-height: 1.6em; }
+.service-select-label { display: flex; align-items: center; flex-wrap: wrap; gap: .7rem 1.2rem; margin: 1.5rem 0 1rem; font-size: .85rem; }
+.service-explorer select { max-width: 100%; border: 1px solid var(--hk-border); border-radius: 5px; background: var(--theme-background-alt); color: var(--theme-foreground); padding: .7rem; font: inherit; }
+.service-detail { border: 1px solid var(--hk-border); border-radius: 10px; padding: 1.6rem; background: var(--theme-background-alt); }
+.service-reading { display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; }
+.service-reading__intro h3 { margin: .7rem 0; font-size: 1.7rem; line-height: 1.4; }
+.service-reading__intro p { line-height: 1.8; font-size: .88rem; color: var(--theme-foreground-muted); }
+.service-amount { display: flex; flex-wrap: wrap; align-items: baseline; gap: .6rem; margin-top: 1.5rem; }
+.service-amount strong { font: 600 clamp(2rem, 4vw, 3.2rem) ui-monospace, monospace; letter-spacing: -.04em; }
+.service-amount span { font-size: .8rem; color: var(--theme-foreground-muted); }
+.service-date { margin: .5rem 0; }
+.service-reading__intro .service-delta { color: var(--theme-foreground-focus); }
+.service-trend { min-width: 0; }
+.service-trend h4 { font-size: .88rem; margin: 0 0 1.3rem; }
+.service-bars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.service-bar-column { text-align: center; min-width: 0; font-variant-numeric: tabular-nums; }
+.service-bar-column > strong { display: block; font-size: .86rem; }
+.service-bar-track { height: 115px; display: flex; align-items: end; border-bottom: 1px solid var(--hk-border); margin: .5rem 0 .7rem; }
+.service-bar { width: 70%; margin-inline: auto; background: #8aa8be; border-radius: 4px 4px 0 0; }
+.service-bar--1 { background: #6296b4; }
+.service-bar--2 { background: #65ddc1; }
+.service-bar-column > span { font: .8rem ui-monospace, monospace; }
+.service-bar-column > small { display: block; margin-top: .3rem; color: var(--theme-foreground-muted); font-size: .7rem; }
+.service-explanation { display: grid; grid-template-columns: 1fr 1fr; gap: 1.7rem; margin: 1.5rem 0; border-top: 1px solid var(--hk-border); padding-top: 1.5rem; }
+.service-explanation p { font-size: .83rem; line-height: 1.8; color: var(--theme-foreground-muted); }
+.service-explanation a { font-size: .78rem; }
+.service-small { font-size: .76rem; line-height: 1.75; color: var(--theme-foreground-muted); }
+.service-table-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .6rem; margin-top: 2rem; }
+.service-table-heading h3 { font-size: 1.15rem; }
+.service-table-heading label { font-size: .78rem; }
+.service-table-wrap { overflow-x: auto; border: 1px solid var(--hk-border); border-radius: 8px; }
+.service-table { display: table; max-width: none; width: 100%; min-width: 640px; margin: 0; font-size: .82rem; border-collapse: collapse; }
+.service-table caption { text-align: left; padding: 1rem; font-size: .8rem; color: var(--theme-foreground-muted); }
+.service-table :is(th, td) { padding: .75rem 1rem; border-top: 1px solid var(--hk-border); vertical-align: middle; text-align: right; font-variant-numeric: tabular-nums; }
+.service-table th:first-child { text-align: left; min-width: 190px; }
+.service-table thead th { font-weight: 500; color: var(--theme-foreground-muted); }
+.service-table button { display: block; width: 100%; border: 0; border-left: 2px solid transparent; padding: .3rem .5rem; background: transparent; color: var(--theme-foreground); text-align: left; font: inherit; cursor: pointer; }
+.service-table button[aria-pressed="true"] { color: var(--theme-foreground-focus); border-left-color: currentColor; }
+.service-table button small { display: block; margin-top: .4rem; font-size: .69rem; color: var(--theme-foreground-muted); }
+.service-evidence-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.5rem 0; }
+.service-evidence-grid article { min-width: 0; padding: 1.4rem; border: 1px solid var(--hk-border); border-radius: 8px; background: var(--theme-background-alt); }
+.service-evidence-grid h3 { font-size: 1.05rem; line-height: 1.5; margin: .3rem 0 1rem; }
+.service-evidence-grid p { font-size: .85rem; line-height: 1.9; color: var(--theme-foreground-muted); }
+.service-evidence-grid ul { padding-left: 1.1rem; }
+.service-evidence-grid li, .service-evidence-grid a { font-size: .8rem; line-height: 1.75; }
+.service-evidence-grid li { margin-top: .65rem; }
+.service-page .source-footer { margin-top: 2rem; }
+@media (max-width: 760px) {
+  .service-hero { grid-template-columns: 1fr; gap: 1rem; padding: 1.7rem 0; }
+  .service-edition { padding: 1.3rem; }
+  .service-reading, .service-explanation, .service-evidence-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .service-topics { gap: .4rem; }
+  .service-topics button { display: flex; flex-direction: column; gap: .3rem; padding: .9rem .6rem; font-size: .85rem; }
+  .service-topics button > span { align-self: start; font-size: 1.3rem; }
+  .service-topics small { font-size: .68rem; }
+  .service-detail { padding: 1rem; }
+  .service-select-label select { width: 100%; }
+  .service-amount strong { font-size: 2.2rem; }
+}
+@media print {
+  .service-page { --service-accent: #075943; }
+  .service-hero { padding: 1rem 0; gap: 1rem; }
+  .service-edition { background: none; }
+  .service-edition :is(strong, dt, dd) { color: #111; }
+  .service-page :is(p, small, a) { color: #111; }
+  .service-topics, .service-select-label, .service-table-heading label { display: none; }
+  .service-table-wrap { overflow: visible; }
+  .service-table { min-width: 0; font-size: 8pt; }
+  .service-table :is(th, td) { padding: .3rem; }
+  .service-table th:first-child { min-width: 0; }
+  .service-detail, .service-evidence-grid article { break-inside: avoid; }
+  .service-bar { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}

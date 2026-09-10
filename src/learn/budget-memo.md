@@ -13,9 +13,12 @@ keywords: 青年 預算 備忘 工作紙 證據 引用 建議 成本 資金 取�
 未揀議題，可以先行[香港人點生活](./hong-kong)或[公共資源點分](./public-finance)。
 唔需要搵數字湊一個已經決定嘅答案：證據不足時，清楚寫低仲欠咩資料。
 
+[公共服務與預算：逐項研究社福、教育及醫療](../explore/public-services)。綱領撥款同政策組別經常開支係唔同口徑，先讀定義，再連起服務需要及成效。
+
 <div class="memo-worksheet">
 
 <section class="memo-step" aria-labelledby="memo-problem">
+
 <h2 id="memo-problem">1. 問題：你想改善咩？</h2>
 
 用一句話界定需要、對象同範圍。描述可查證嘅情況，避免只寫「加強支援」或「改善民生」。

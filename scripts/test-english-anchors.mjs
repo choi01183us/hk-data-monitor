@@ -89,7 +89,7 @@ export async function testEnglishAnchors(check) {
   globalThis.fetch = () => { requests += 1; throw new Error("English anchor generation attempted a network request"); };
   try {
     const baseline = await buildEnglishAnchorMap();
-    check("All 25 Hong Kong snapshot anchors and content hashes survive English generation", Object.keys(baseline).length === 25 && !Object.keys(baseline).some((id) => id.startsWith("macau_")));
+    check("All 26 Hong Kong snapshot anchors and content hashes survive English generation", Object.keys(baseline).length === 26 && Object.hasOwn(baseline, "service_programme_provision") && !Object.keys(baseline).some((id) => id.startsWith("macau_")));
     const serialised = serialiseEnglishAnchors(baseline);
     check("Generated English map pins the original source calculation", baseline.cpi["hundred-dollars"].text_zh === cpi.anchors[0].text_zh && baseline.cpi["hundred-dollars"].basis_zh === cpi.anchors[0].basis_zh);
     for (const date of ["2020-03-31T23:59:59Z", "2026-04-01T00:00:00Z", "2032-04-01T00:00:00Z"]) {

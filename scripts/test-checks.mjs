@@ -567,12 +567,14 @@ console.log("\n[R5] Fixture 重播 — 零網絡跑完整 transform,對返快照
     const { finaliseIndicator } = await import("../src/data/_lib/snapshot.js");
     const { PROPERTY_INDICATORS, loadPropertyIndicator } = await import("../src/data/_lib/property.js");
     const { MONEY_INDICATORS, loadMoneyIndicator } = await import("../src/data/_lib/money.js");
+    const { SERVICE_INDICATORS, loadServiceProgrammeIndicator } = await import("../src/data/_lib/service-budget.js");
 
     const targets = [
       ...Object.keys(censtatd).map((id) => ({ id, load: () => loadCenstatdIndicator(id) })),
       ...Object.keys(fiscal).map((id) => ({ id, load: () => loadFiscalIndicator(id) })),
       ...Object.keys(PROPERTY_INDICATORS).map((id) => ({ id, load: () => loadPropertyIndicator(id) })),
       ...Object.keys(MONEY_INDICATORS).map((id) => ({ id, load: () => loadMoneyIndicator(id) })),
+      ...Object.keys(SERVICE_INDICATORS).map((id) => ({ id, load: () => loadServiceProgrammeIndicator(id) })),
     ];
 
     if (!existsSync(join(HERE_ROOT, "src", "data", "_fixtures"))) {
@@ -808,6 +810,8 @@ const { testMoneyData } = await import("./test-money-data.mjs");
 await testMoneyData(check);
 const { testMoneyView } = await import("./test-money-view.mjs");
 await testMoneyView(check);
+const { runServiceBudgetTests } = await import("./test-service-budget.mjs");
+await runServiceBudgetTests(check);
 
 const { testBankingManual } = await import("./test-banking-manual.mjs");
 await testBankingManual(check);

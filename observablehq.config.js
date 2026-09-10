@@ -36,6 +36,7 @@ export default {
     {
       name: "主題探索",
       pages: [
+        { name: "公共服務與預算", path: "/explore/public-services" },
         { name: "貨幣與股市", path: "/explore/finance" },
         { name: "銀行與認可機構數目", path: "/indicators/banking_institutions" },
         { name: "M1、M2、M3 貨幣供應量", path: "/indicators/money_supply" },

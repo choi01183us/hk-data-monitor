@@ -173,3 +173,10 @@ CPI 私人房屋租金涵蓋新訂、續訂及現行租約，自住業主亦用�
 [NYC Population FactFinder 官方項目](https://github.com/NYCPlanning/labs-factfinder)、
 [Dublin Economic Monitor](https://www.dublineconomy.ie/resources/)。
 本站借鏡城市概況、選區觀察及指標分類，沒有複製外站設計、數字或程式，亦無合作或背書關係。
+
+
+<h2 id="service-budget-source">公共服務綱領財政撥款</h2>
+
+[2026 預算案財政撥款 CSV](https://www.budget.gov.hk/2026/chi/csv/fin_provision.csv) 提供六個總目共 30 個綱領的三年數字；政府機構及受資助機構只在同一綱領內按原表合併。各 PDF 的定義及註腳優先，分類與服務重組須每年核對。資料依 data.gov.hk 使用條款提供。
+
+[公共服務與預算](../explore/public-services) 連起撥款、服務需要與成效；綱領撥款包括部分非經常及非經營開支，不能代替政策組別經常開支總額。

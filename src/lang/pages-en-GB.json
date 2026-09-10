@@ -719,7 +719,17 @@
     "香港銀行與認可機構數目": "Banks and authorised institutions in Hong Kong",
     "地圖": "Map",
     "新聞": "News",
-    "更多新聞與城市動態": "More news and city updates"
+    "更多新聞與城市動態": "More news and city updates",
+    "公共服務與預算": "Public services and the Budget",
+    "公共服務綱領財政撥款": "Financial provision for public service programmes",
+    "公共服務與預算：連起撥款、服務需要與成效": "Public services and the Budget: connect provision, needs and outcomes",
+    "社福 · 教育 · 醫療 · 30 個服務綱領 · 三年撥款與需要": "Welfare · Education · Health · 30 programmes · Three years of provision and needs",
+    "睇清資源點照顧需要 ↗": "See how resources meet needs ↗",
+    "公共服務與預算：逐項研究社福、教育及醫療": "Public services and the Budget: explore welfare, education and health programmes",
+    "。綱領撥款同政策組別經常開支係唔同口徑，先讀定義，再連起服務需要及成效。": ". Programme provision and recurrent spending by policy group have different scopes. Read the definitions before connecting spending with needs and outcomes.",
+    "2026 預算案財政撥款 CSV": "2026 Budget financial provision CSV",
+    "提供六個總目共 30 個綱領的三年數字；政府機構及受資助機構只在同一綱領內按原表合併。各 PDF 的定義及註腳優先，分類與服務重組須每年核對。資料依 data.gov.hk 使用條款提供。": "provides three years of figures for 30 programmes under six heads. Government and subvented sectors are combined only within the same programme, as in the source. PDF definitions and footnotes take precedence; classifications and service restructuring require annual review. Data is provided under data.gov.hk terms and conditions.",
+    "連起撥款、服務需要與成效；綱領撥款包括部分非經常及非經營開支，不能代替政策組別經常開支總額。": "connects provision, needs and outcomes. Programme provision includes some non-recurrent and non-operating expenditure and cannot replace recurrent spending totals by policy group."
   },
   "attributes": {
     "城市專區導覽": "City navigation",
@@ -773,7 +783,9 @@
     "失業率 | 香港數據監測站": "Unemployment rate | Hong Kong Data Monitor",
     "寫青年預算備忘 | 香港數據監測站": "Writing a youth budget memorandum | Hong Kong Data Monitor",
     "香港人點生活 | 香港數據監測站": "Life in Hong Kong | Hong Kong Data Monitor",
-    "公共資源點分 | 香港數據監測站": "Sharing public resources | Hong Kong Data Monitor"
+    "公共資源點分 | 香港數據監測站": "Sharing public resources | Hong Kong Data Monitor",
+    "公共服務與預算 | 香港數據監測站": "Public services and the Budget | Hong Kong Data Monitor",
+    "公共服務綱領財政撥款 | 香港數據監測站": "Financial provision for public service programmes | Hong Kong Data Monitor"
   },
   "pages": {
     "/404": {
@@ -939,6 +951,14 @@
       "title": "公共資源點分",
       "title_en": "Sharing public resources",
       "keywords_en": "public resources recurrent spending expenditure government revenue reserves allocation"
+    },
+    "/explore/public-services": {
+      "title": "公共服務與預算",
+      "title_en": "Public services and the Budget"
+    },
+    "/indicators/service_programme_provision": {
+      "title": "公共服務綱領財政撥款",
+      "title_en": "Financial provision for public service programmes"
     }
   }
 }

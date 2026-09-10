@@ -1,4 +1,8 @@
+import {SERVICE_PROGRAMMES, SERVICE_PERIODS} from "../components/service-programmes.js";
 export const labels = {
+  ...Object.fromEntries(SERVICE_PROGRAMMES.map((p) => [p.category, `${p.head}/${p.programme} ${p.name_en}`])),
+  ...Object.fromEntries(SERVICE_PERIODS.map((p) => [p.status_zh, p.status_en])),
+  "公共服務與預算": "Public services and the Budget",
   "貨幣與股市": "Money and markets",
   "持牌銀行": "Licensed banks",
   "有限制牌照銀行": "Restricted licence banks",

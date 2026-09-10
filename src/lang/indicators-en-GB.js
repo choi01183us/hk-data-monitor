@@ -1,4 +1,6 @@
+import {SERVICE_TEXT} from "../components/service-programmes.js";
 export const indicatorEnglish = {
+  service_programme_provision: Object.fromEntries(["question", "basis", "notes", "source_note"].map((key) => [`${key}_zh`, {zh: SERVICE_TEXT[`${key}_zh`], en: SERVICE_TEXT[`${key}_en`]}])),
   "district_household_income": {
     "question_zh": {
       "zh": "各區一般住戶月入有幾大差距？點樣辨認支援需要？",
