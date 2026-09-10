@@ -1481,3 +1481,31 @@ CI 真瀏覽器驗證，不入網站 bundle。SPEC 原文未擅自修改，亦�
 - 只有公屋manual及其正式快照改數；公共十組、其他指標快照及錄影未改。
   真機與師生試用仍待實際裝置及參與者，沒有把Chromium模擬或空白記錄填成通過。
   本輪修改一次本機提交；發布待完成GitHub登入授權。
+
+## 33. 首次 GitHub Pages 上線及城市更新實跑（2026-09-10）
+
+擁有人回覆已登入後接續§32：核對發現原CLI憑證仍欠workflow scope，重新完成裝置授權後才推送。
+沒有把瀏覽器登入當成CLI已獲權限；沒有另開服務或改用其它部署平台。
+
+- 建立公開儲存庫[choi01183us/hk-data-monitor](https://github.com/choi01183us/hk-data-monitor)，
+  設定`origin`並首次推送`e877867`。Pages使用workflow模式、強制HTTPS，
+  [正式網址](https://choi01183us.github.io/hk-data-monitor/)已回HTTP200。
+- 首次[部署run 34456725310](https://github.com/choi01183us/hk-data-monitor/actions/runs/34456725310)
+  成功。CI先自證、build、實跑同一dist離線測試，再上載／部署；沒有跳過失敗閘。
+  GitHub上的test:checks為2,703通過／0失敗，本機為2,705：逐條比較，差別只是新checkout未有dist，
+  原流程兩項已建置sw.js文字檢查不執行；其後正式建置的90項離線驗證全過。
+- 人手觸發一次既有[城市更新run 34456942399](https://github.com/choi01183us/hk-data-monitor/actions/runs/34456942399)，
+  新聞、前一日客機紀錄及天氣均成功刷新並連同同次錄影提交`2fb490c`。
+  後續workflow_call確實checkout該新SHA，重新自證、建置、90項離線驗證及部署全部成功。
+  沒有改人手檔、統計指標快照、來源定義或任何門檻；本機已fast-forward同步該資料提交。
+- 這是workflow_dispatch實跑，不冒稱已驗過schedule事件。三份workflow均active，
+  原有每小時天氣、每三小時城市資料及每週統計排程已在GitHub啟用；實際準時性仍受平台排程影響。
+- 最終發布版本`2abc4c355e7c`。直接在正式HTTPS網址以新desktop Chromium context驗證，
+  **28通過／0失敗**：在線只導航首頁；確認三個目標頁已預快取；以未快取請求失敗獨立證明斷網後，
+  首次離線開中英公屋、公共30點及老師材料。3個公屋原值／口徑／引用、公共PDF引用、
+  真正HTTP404、離線404、恢復連線與零站外請求／JavaScript錯誤均通過。
+  實際worker script及scope均精確對應正式URL，沒有以舊local cache冒充新部署。
+- 本機dist同步為這次已上載且已測試的GitHub artifact，版本與正式站相同；原本機輸出保留在暫存備份。
+  沒有再建一份未測的發佈輸出。QA腳本／截圖留在暫存目錄，不加入repo或網站。
+- README與部署文件已補正式網址及Actions入口。§32所述登入阻礙已解除；
+  iPhone／Android真機、加入主畫面及真人課堂試用仍需實際裝置／參與者，未填成通過。

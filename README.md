@@ -4,6 +4,8 @@
 
 配合三個課堂活動:**模擬社會體驗**、**資源裁定會議(分餅)**、**青年預算備忘**。
 
+[正式網站](https://choi01183us.github.io/hk-data-monitor/) · [建置及更新紀錄](https://github.com/choi01183us/hk-data-monitor/actions)
+
 規格見 [`SPEC.md`](SPEC.md) —— **改嘢之前先讀佢**。任何指令同規格有衝突,停低問,唔好自行決定。
 
 ---
