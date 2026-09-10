@@ -53,9 +53,17 @@ const indicators = loaded.filter((indicator) => indicator.manual_status !== "tod
   <nav class="monitor-quick-nav" aria-label="首頁捷徑">
     <a href="#hong-kong-map">地圖</a>
     <a href="#home-news">新聞</a>
+    <a href="./learn/classroom">課堂任務</a>
     <a href="#indicators">數據</a>
   </nav>
 </header>
+
+<nav class="home-classroom" aria-label="揀今日嘅課堂任務">
+  <strong>今日想解答咩？</strong>
+  <a href="./learn/classroom#simulation">生活點揀 <span aria-hidden="true">↗</span></a>
+  <a href="./learn/classroom#allocation">資源點分 <span aria-hidden="true">↗</span></a>
+  <a href="./learn/classroom#memorandum">建議點寫 <span aria-hidden="true">↗</span></a>
+</nav>
 
 <div class="monitor-feature">
 
@@ -157,17 +165,17 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 </div>
 
 <nav class="learning-routes" aria-label="學習路線">
-  <a class="learning-route" href="./learn/hong-kong">
+  <a class="learning-route" href="./learn/classroom#simulation">
     <span class="learning-route__eyebrow">模擬社會體驗</span>
     <strong>香港人點生活</strong>
     <span>由工資、家庭入息、物價同就業，理解唔同生活處境。</span>
   </a>
-  <a class="learning-route" href="./learn/public-finance">
+  <a class="learning-route" href="./learn/classroom#allocation">
     <span class="learning-route__eyebrow">資源裁定會議 · 分餅</span>
     <strong>公共資源點分</strong>
     <span>先分清開支口徑，再衡量需要、資金來源同取捨。</span>
   </a>
-  <a class="learning-route" href="./learn/budget-memo">
+  <a class="learning-route" href="./learn/classroom#memorandum">
     <span class="learning-route__eyebrow">由證據到建議</span>
     <strong>寫青年預算備忘</strong>
     <span>跟住工作紙，寫清問題、證據、成本同預期成效。</span>

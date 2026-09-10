@@ -76,6 +76,7 @@ export function industryExplorer() {
         <section class="industry-panel industry-scenario" aria-labelledby="industry-scenario-heading">
           <div class="industry-panel-heading"><h3 id="industry-scenario-heading">${t("如果係你，會先問乜？", "What would you ask first?")}</h3><span>${t("虛構課堂情境", "Fictional classroom scenario")}</span></div>
           <p class="industry-scenario-question">${topic.scenario}</p>
+          ${topic.financial ? html`<p><a href="../learn/money-flow">${t("落手做：資金去咗邊？", "Try it: where does the money go?")}</a></p>` : null}
           <details><summary>${t("打開討論提示", "Open discussion prompts")}</summary><ul>${topic.prompts.map((prompt) => html`<li>${prompt}</li>`)}</ul></details>
         </section>
         <section class="industry-panel industry-budget" aria-labelledby="industry-budget-heading">

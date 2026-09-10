@@ -6,6 +6,7 @@
  */
 @import url("observablehq:default.css");
 @import url("./programme-brand.css");
+@import url("./classroom.css");
 @import url("observablehq:theme-air.css") (prefers-color-scheme: light);
 @import url("observablehq:theme-near-midnight.css") (prefers-color-scheme: dark);
 

@@ -810,6 +810,8 @@ const { testMoneyData } = await import("./test-money-data.mjs");
 await testMoneyData(check);
 const { testMoneyView } = await import("./test-money-view.mjs");
 await testMoneyView(check);
+const {testMoneyFlow} = await import("./test-money-flow.mjs");
+await testMoneyFlow(check);
 const { runServiceBudgetTests } = await import("./test-service-budget.mjs");
 await runServiceBudgetTests(check);
 

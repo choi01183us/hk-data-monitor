@@ -5,6 +5,8 @@ sidebar: false
 toc: false
 ---
 
+<p class="classroom-links"><a href="../learn/money-flow">落手做：資金去咗邊？</a></p>
+
 ```js
 import {t} from "../components/locale.js";
 import {label, indicatorText} from "../components/display-text.js";

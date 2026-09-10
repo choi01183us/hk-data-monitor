@@ -1,0 +1,80 @@
+/* Guided learning reuses the site's colour tokens and local assets. */
+.home-classroom { display: flex; align-items: center; flex-wrap: wrap; gap: .55rem 1rem; padding: .8rem 1rem; margin: 0 0 1rem; border: 1px solid var(--hk-border); border-radius: 8px; background: var(--hk-surface); }
+.home-classroom strong { font-size: .85rem; margin-right: auto; }
+.home-classroom a { padding: .45rem .65rem; font-size: .85rem; text-decoration: none; }
+.classroom-route { padding: 1.5rem; margin: 2rem 0; }
+.classroom-route h2 { font-size: clamp(1.3rem, 3vw, 1.8rem); line-height: 1.5; }
+.classroom-steps { padding-left: 1.4rem; }
+.classroom-steps li { margin: 1.25rem 0; padding-left: .35rem; }
+.classroom-steps li::marker { color: var(--theme-foreground-focus); font-weight: 700; }
+.classroom-steps a { font-weight: 600; }
+.classroom-steps p { margin: .35rem 0; color: var(--theme-foreground-muted); font-size: .92rem; }
+.classroom-output { padding: 1rem 1.2rem; border-left: 3px solid var(--theme-foreground-focus); background: var(--hk-surface); }
+.classroom-output h3 { font-size: 1.05rem; margin: 0 0 .6rem; }
+.classroom-output p { margin: 0; font-size: .9rem; }
+.classroom-links, .worksheet-print-controls { display: flex; flex-wrap: wrap; gap: .65rem 1rem; margin: 1.4rem 0; }
+.classroom-links a { font-size: .85rem; }
+.classroom-button { min-height: 44px; padding: .75rem 1rem; border: 1px solid var(--theme-foreground-focus); border-radius: 6px; color: var(--theme-background); background: var(--theme-foreground-focus); font: 600 .9rem var(--sans-serif); cursor: pointer; }
+.classroom-button-secondary { background: var(--theme-background-alt); color: var(--theme-foreground); border-color: var(--hk-border); }
+.money-case-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .5rem; margin: 1.5rem 0 0; }
+.money-case-nav button { min-height: 75px; padding: .85rem; border: 1px solid var(--hk-border); border-radius: 7px; background: var(--theme-background-alt); color: var(--theme-foreground); font: 600 .9rem var(--sans-serif); cursor: pointer; text-align: left; }
+.money-case-nav small { display: block; margin-bottom: .4rem; color: var(--theme-foreground-muted); font: .8rem ui-monospace, monospace; }
+.money-case-nav button[aria-pressed="true"] { border-color: var(--theme-foreground-focus); box-shadow: inset 0 -3px var(--theme-foreground-focus); }
+.money-case { padding: 1.5rem; margin: 1rem 0; border: 1px solid var(--hk-border); border-radius: 9px; }
+.money-scenario h2 { margin: .5rem 0 1rem; font-size: 1.8rem; }
+.money-scenario > p { line-height: 1.85; }
+.money-questions { display: grid; grid-template-columns: 1fr 1.2fr; gap: 1.3rem; margin: 1.8rem 0; }
+.money-questions fieldset { border: 0; min-width: 0; padding: 0; margin: 0; }
+.money-questions legend { font-weight: 700; margin-bottom: .8rem; padding: 0; }
+.money-hint { color: var(--theme-foreground-muted); font-size: .8rem; margin: 0 0 .6rem; }
+.money-option { display: flex; gap: .7rem; align-items: start; min-height: 44px; box-sizing: border-box; padding: .8rem; margin: .5rem 0; border: 1px solid var(--hk-border); border-radius: 5px; cursor: pointer; font-size: .9rem; line-height: 1.65; }
+.money-option:has(input:checked) { border-color: var(--theme-foreground-focus); background: var(--hk-surface); }
+.money-option input { margin: .35rem 0 0; flex: none; accent-color: var(--theme-foreground-focus); }
+.money-status { min-height: 1.8em; font-weight: 600; font-size: .9rem; }
+.money-feedback { border-top: 1px solid var(--hk-border); margin-top: 1.1rem; padding-top: 1.4rem; }
+.money-flow-diagram { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; text-align: center; padding: 1.2rem; border: 1px solid var(--theme-foreground-focus); border-radius: 6px; }
+.money-flow-diagram > :nth-child(2) { color: var(--theme-foreground-focus); font-size: 1.6rem; }
+.money-feedback p { font-size: .92rem; line-height: 1.85; }
+.money-discuss { background: var(--hk-surface); padding: 1rem 1.2rem; border-left: 3px solid var(--theme-foreground-focus); }
+.money-discuss p { margin-bottom: 0; }
+.money-local-note { font-size: .8rem; color: var(--theme-foreground-muted); }
+.assessment-question, .assessment-criterion { border: 1px solid var(--hk-border); border-radius: 8px; padding: 1.2rem; margin: 1rem 0; }
+.assessment-question h3, .assessment-criterion h3 { margin-top: 0; font-size: 1.1rem; }
+.assessment-response { min-height: 3rem; }
+.assessment-teacher { margin: 2rem 0; padding: 1.2rem; border: 1px solid var(--hk-border); border-radius: 8px; }
+.assessment-teacher > summary { font-weight: 700; cursor: pointer; min-height: 44px; }
+.assessment-rubric { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.assessment-criterion { margin: 0; font-size: .87rem; }
+.assessment-answer-guide li { margin: 1rem 0; }
+.assessment-table-wrap { overflow-x: auto; }
+.assessment-class-table { display: table; width: 100%; font-size: .85rem; }
+.assessment-class-table :is(th, td) { padding: .6rem; }
+.assessment-class-table caption { text-align: left; margin: .6rem 0; }
+@media (max-width: 600px) {
+  .home-classroom { gap: .35rem; }
+  .home-classroom strong { width: 100%; }
+  .classroom-route, .money-case, .assessment-teacher { padding: 1rem; }
+  .money-case-nav { grid-template-columns: 1fr 1fr; }
+  .money-questions, .assessment-rubric { grid-template-columns: 1fr; }
+  .money-flow-diagram { gap: .6rem; padding: .8rem; font-size: .9rem; }
+}
+@media print {
+  .home-classroom, .classroom-links, .worksheet-print-controls, .assessment-screen-only, .teacher-only, .money-case-nav, .money-check, .money-status, .money-local-note { display: none !important; }
+  .memo-step.classroom-route { break-inside: auto; padding: .7rem; margin: 1rem 0; }
+  .classroom-steps li, .classroom-output, .assessment-question, .assessment-criterion, .assessment-answer-guide li { break-inside: avoid; }
+  .classroom-route :is(h2, h3), .assessment-page :is(h2, h3) { break-after: avoid; }
+  .assessment-page { font-size: 10pt; }
+  .assessment-page p { line-height: 1.5; }
+  .assessment-question { padding: .7rem; margin: .6rem 0; }
+  .assessment-response { min-height: 2.2rem !important; }
+  .assessment-teacher { padding: 0; border: 0; }
+  .assessment-rubric { display: block; }
+  .assessment-criterion { margin: .65rem 0; padding: .7rem; }
+  .assessment-table-wrap { overflow: visible; break-inside: avoid; }
+  .classroom-teacher { break-inside: avoid; }
+  html[data-worksheet-print="teacher"] .assessment-student { display: none !important; }
+  html[data-worksheet-print="teacher"] .assessment-teacher { display: block !important; }
+  html[data-worksheet-print="teacher"] .assessment-teacher > summary { display: none; }
+  .money-questions { display: block; }
+  .money-questions fieldset { break-inside: avoid; margin: 1rem 0; }
+}

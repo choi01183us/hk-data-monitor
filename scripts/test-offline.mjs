@@ -24,6 +24,7 @@ import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
+import {testClassroomOffline} from "./test-classroom-offline.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 8791;
@@ -263,6 +264,8 @@ try {
     const programmeData = await readRenderedAttachment("service_programme_provision");
     check(`${locale} 離線仍有90點原始綱領數據，沒有跨綱領總額`, programmeData.series.length === 90 && !programmeData.totals && !(await page.locator(".observablehq--error").count()));
   }
+
+  await testClassroomOffline({page, context, base: BASE, check, workerStatus});
 
   console.log("\n[離線行為] 回復網絡");
   await context.setOffline(false);
