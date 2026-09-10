@@ -114,7 +114,8 @@ jobs:
   deploy:
     name: 重新部署
     needs: refresh
-    if: ${{ inputs.deploy != false }}
+    # schedule 冇 inputs；空字串與 false 在 Actions 寬鬆比較中相等。
+    if: ${{ github.event_name == 'schedule' || inputs.deploy == true }}
     uses: ./.github/workflows/deploy.yml
     with:
       ref: ${{ needs.refresh.outputs.ref }}

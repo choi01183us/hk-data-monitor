@@ -50,6 +50,14 @@
 .assessment-class-table { display: table; width: 100%; font-size: .85rem; }
 .assessment-class-table :is(th, td) { padding: .6rem; }
 .assessment-class-table caption { text-align: left; margin: .6rem 0; }
+.assessment-public-rubric { margin: 2rem 0; }
+.assessment-record-context { border: 1px solid var(--hk-border); padding: .7rem; line-height: 2; }
+.teacher-section { margin: 2rem 0; }
+.teacher-guide :is(h2, h3) { line-height: 1.5; }
+.teacher-lesson, .teacher-calibration { padding: 1.2rem; border: 1px solid var(--hk-border); border-radius: 8px; margin: 1.2rem 0; }
+.teacher-example { border-left: 3px solid var(--theme-foreground-focus); padding: .3rem 1rem; margin: 1rem 0; }
+.teacher-guide li { margin: .7rem 0; }
+.teacher-guide .memo-response { min-height: 3rem; }
 @media (max-width: 600px) {
   .home-classroom { gap: .35rem; }
   .home-classroom strong { width: 100%; }
@@ -59,7 +67,7 @@
   .money-flow-diagram { gap: .6rem; padding: .8rem; font-size: .9rem; }
 }
 @media print {
-  .home-classroom, .classroom-links, .worksheet-print-controls, .assessment-screen-only, .teacher-only, .money-case-nav, .money-check, .money-status, .money-local-note { display: none !important; }
+  .home-classroom, .classroom-links, .worksheet-print-controls, .assessment-screen-only, .teacher-only, .assessment-public-rubric, .money-case-nav, .money-check, .money-status, .money-local-note { display: none !important; }
   .memo-step.classroom-route { break-inside: auto; padding: .7rem; margin: 1rem 0; }
   .classroom-steps li, .classroom-output, .assessment-question, .assessment-criterion, .assessment-answer-guide li { break-inside: avoid; }
   .classroom-route :is(h2, h3), .assessment-page :is(h2, h3) { break-after: avoid; }
@@ -67,14 +75,23 @@
   .assessment-page p { line-height: 1.5; }
   .assessment-question { padding: .7rem; margin: .6rem 0; }
   .assessment-response { min-height: 2.2rem !important; }
-  .assessment-teacher { padding: 0; border: 0; }
+  .assessment-teacher { padding: 0; border: 0; margin-block: 1rem; }
+  .assessment-record p { margin-block: .25rem; }
   .assessment-rubric { display: block; }
   .assessment-criterion { margin: .65rem 0; padding: .7rem; }
   .assessment-table-wrap { overflow: visible; break-inside: avoid; }
   .classroom-teacher { break-inside: avoid; }
-  html[data-worksheet-print="teacher"] .assessment-student { display: none !important; }
+  html:is([data-worksheet-print="teacher"], [data-worksheet-print="rubric"]) .assessment-student { display: none !important; }
+  html:is([data-worksheet-print="teacher"], [data-worksheet-print="rubric"]) .assessment-public-rubric { display: block !important; }
   html[data-worksheet-print="teacher"] .assessment-teacher { display: block !important; }
   html[data-worksheet-print="teacher"] .assessment-teacher > summary { display: none; }
   .money-questions { display: block; }
   .money-questions fieldset { break-inside: avoid; margin: 1rem 0; }
+  .teacher-guide { font-size: 10pt; }
+  .teacher-guide :is(h2, h3, h4) { break-after: avoid; }
+  .teacher-guide :is(li, .teacher-example, .teacher-role-card, .memo-response) { break-inside: avoid; }
+  .teacher-guide section[aria-labelledby="teacher-role-card"] { break-inside: avoid; }
+  .teacher-glossary dt { break-after: avoid; }
+  .teacher-glossary dd { break-inside: avoid; }
+  .teacher-lesson, .teacher-calibration { break-inside: auto; padding: .7rem; margin: 1rem 0; }
 }

@@ -34,7 +34,7 @@ export function moneyFlowExercise() {
       const recipientLabel = moneyRecipients().find(([id]) => id === item.recipient)[1];
       feedback.replaceChildren(html`<div>
         <div class="money-flow-diagram" aria-label=${t("呢個情境嘅正確資金流向", "Correct money flow for this case")}><span>${item.payer}</span><span aria-hidden="true">→</span><strong>${recipientLabel}</strong></div>
-        <p><strong>${t("收款者：", "Recipient: ")}</strong>${result.recipientCorrect ? t("判斷正確。", "Correct.") : t("再睇清楚係新股定現有股份，以及本次邊個收款。", "Check whether shares are new or existing, and who receives this payment.")}</p>
+        <p><strong>${t("收款者：", "Recipient: ")}</strong>${result.recipientCorrect ? t("判斷正確。", "Correct.") : item.recipientHint}</p>
         <p><strong>${t("責任與風險：", "Responsibilities and risks: ")}</strong>${item.options.find(([id]) => id === item.responsibility)[1]}</p>
         <p>${item.explanation}</p>
         <div class="money-discuss"><strong>${t("同身邊同學講清楚", "Explain it to a classmate")}</strong><p>${item.question}</p></div>

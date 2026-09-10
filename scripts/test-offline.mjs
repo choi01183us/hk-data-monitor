@@ -4,9 +4,8 @@
 //   npm run test:offline        (要先 npm run build)
 //
 // 點解要分開一個 script,唔併入 test:checks:
-//   呢個要開真瀏覽器。Playwright **唔係**本專案嘅依賴(SPEC 第 3 節:避免引入
-//   額外 runtime 依賴),所以 test:checks 保持純 node、離線、秒跑,
-//   而呢個係「有得跑就跑,冇就明明白白講聲跳過」。
+//   呢個要開真瀏覽器。Playwright 係版本釘死嘅 devDependency，唔會進入網站。
+//   test:checks 保持純 node、離線；正式離線驗證缺套件／瀏覽器一律失敗。
 //
 // 釘住嘅真實 bug:
 //   GitHub Pages 對每個檔送 cache-control: max-age=600,而且改唔到(冇 _headers 支援)。
@@ -25,32 +24,29 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
 import {testClassroomOffline} from "./test-classroom-offline.mjs";
+import {testBudgetClassroomOffline} from "./test-budget-classroom-offline.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 8791;
-const BASE = `http://localhost:${PORT}/hk-data-monitor/`;
+const BASE_PATH = process.env.BASE_PATH || "/hk-data-monitor/";
+if (!/^\/(?:[a-zA-Z0-9_-]+\/)*$/.test(BASE_PATH)) throw new Error("BASE_PATH 必須係 / 或以 / 包住嘅站內子路徑");
+const BASE = `http://localhost:${PORT}${BASE_PATH}`;
 
 if (!existsSync(join(ROOT, "dist", "sw.js"))) {
   console.error("FAIL 搵唔到 dist/sw.js。行 `npm run build` 先。");
   process.exit(1);
 }
 
-// Playwright 唔係本專案依賴。搵得到就跑,搵唔到就跳過 —— 唔好扮綠。
+// 只用本 repo npm ci 安裝嘅版本；唔借 HOME／其他 repo 嘅套件。
 const require = createRequire(import.meta.url);
 let chromium;
-for (const from of [import.meta.url, `${process.env.HOME}/x.js`, `${ROOT}/../beetle-scanner-exhibit/x.js`]) {
-  try {
-    ({ chromium } = require(createRequire(from).resolve("playwright")));
-    break;
-  } catch {
-    // 試下一個
-  }
-}
-if (!chromium) {
-  console.log("SKIP 搵唔到 Playwright,跳過離線行為測試。");
-  console.log("     裝法:npm i -D playwright && npx playwright install chromium");
-  console.log("     (源碼層守衛喺 `npm run test:checks` 嘅 [R4] 一節,嗰個唔使瀏覽器。)");
-  process.exit(0);
+try {
+  ({ chromium } = require(join(ROOT, "node_modules/playwright")));
+  if (typeof chromium?.launch !== "function") throw new Error("Chromium launcher 缺少");
+} catch (error) {
+  console.error(`FAIL 無法載入本專案 Playwright：${error.message}`);
+  console.error("     請行 npm ci，再行 npx --no-install playwright install chromium。");
+  process.exit(1);
 }
 
 const gdpSnapshot = JSON.parse(await readFile(join(ROOT, "src/data/_snapshots/gdp.json"), "utf8"));
@@ -70,7 +66,7 @@ function check(name, condition, detail = "") {
   }
 }
 
-const server = spawn(process.execPath, [join(ROOT, "tools", "serve-dist.mjs"), "--port", String(PORT)], {
+const server = spawn(process.execPath, [join(ROOT, "tools", "serve-dist.mjs"), "--port", String(PORT), "--base", BASE_PATH], {
   stdio: "ignore",
 });
 process.on("exit", () => server.kill());
@@ -129,7 +125,7 @@ try {
   await page.waitForTimeout(3500); // 等 service worker install 埋 optional 資源
 
   const scope = await page.evaluate(async () => (await navigator.serviceWorker.ready).scope);
-  check("service worker scope 係子路徑,唔係 origin 根", scope.endsWith("/hk-data-monitor/"), scope);
+  check("service worker scope 精確等於部署 base", scope === BASE, scope);
 
   await page.goto(`${BASE}indicators/gdp`, { waitUntil: "networkidle" });
   await page.waitForTimeout(800);
@@ -266,6 +262,7 @@ try {
   }
 
   await testClassroomOffline({page, context, base: BASE, check, workerStatus});
+  await testBudgetClassroomOffline({page, base: BASE, check, workerStatus, readRenderedAttachment});
 
   console.log("\n[離線行為] 回復網絡");
   await context.setOffline(false);

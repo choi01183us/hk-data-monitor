@@ -167,18 +167,18 @@ display(html`<div class="card-grid">${indicators.map((indicator) => indicatorCar
 <nav class="learning-routes" aria-label="學習路線">
   <a class="learning-route" href="./learn/classroom#simulation">
     <span class="learning-route__eyebrow">模擬社會體驗</span>
-    <strong>香港人點生活</strong>
-    <span>由工資、家庭入息、物價同就業，理解唔同生活處境。</span>
+    <strong>完成角色決策紀錄</strong>
+    <span>跟住模擬社會任務，引用生活數據，解釋角色嘅選擇同代價。</span>
   </a>
   <a class="learning-route" href="./learn/classroom#allocation">
     <span class="learning-route__eyebrow">資源裁定會議 · 分餅</span>
-    <strong>公共資源點分</strong>
-    <span>先分清開支口徑，再衡量需要、資金來源同取捨。</span>
+    <strong>提出資源優先次序</strong>
+    <span>跟住分餅任務，核對公共開支，提出取捨並回應另一組意見。</span>
   </a>
   <a class="learning-route" href="./learn/classroom#memorandum">
-    <span class="learning-route__eyebrow">由證據到建議</span>
-    <strong>寫青年預算備忘</strong>
-    <span>跟住工作紙，寫清問題、證據、成本同預期成效。</span>
+    <span class="learning-route__eyebrow">青年預算備忘</span>
+    <strong>由證據寫到建議</strong>
+    <span>跟住備忘任務查證據，再用工作紙寫草稿、互評同修訂。</span>
   </a>
 </nav>
 

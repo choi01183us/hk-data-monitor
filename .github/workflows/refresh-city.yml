@@ -62,7 +62,8 @@ jobs:
           echo "ref=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
   deploy:
     needs: refresh
-    if: ${{ inputs.deploy != false }}
+    # schedule 冇 inputs；只喺人手觸發時讀部署選項。
+    if: ${{ github.event_name == 'schedule' || inputs.deploy == true }}
     uses: ./.github/workflows/deploy.yml
     with:
       ref: ${{ needs.refresh.outputs.ref }}

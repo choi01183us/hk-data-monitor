@@ -2,7 +2,8 @@ import {html} from "npm:htl";
 import {t} from "./locale.js";
 
 // The default browser print command always prints the pupil sheet only.
-// A deliberate teacher print temporarily opens the guide and restores its UI afterwards.
+// Rubric printing excludes both the questions and answers. A deliberate teacher
+// print opens both teacher sections and restores every details state afterwards.
 export function worksheetPrintControls({invalidation} = {}) {
   let restore = null;
   const reset = () => { restore?.(); restore = null; };
@@ -14,13 +15,17 @@ export function worksheetPrintControls({invalidation} = {}) {
   };
   const print = (mode) => {
     reset();
-    const guide = document.querySelector(".assessment-teacher");
-    const wasOpen = guide?.open;
+    const details = Array.from(document.querySelectorAll(".assessment-page details"));
+    const previousStates = details.map((section) => [section, section.open]);
     document.documentElement.dataset.worksheetPrint = mode;
-    if (guide && mode === "teacher") guide.open = true;
+    if (mode === "teacher") {
+      for (const section of details) {
+        if (section.matches(".assessment-teacher")) section.open = true;
+      }
+    }
     restore = () => {
       delete document.documentElement.dataset.worksheetPrint;
-      if (guide) guide.open = wasOpen;
+      for (const [section, wasOpen] of previousStates) section.open = wasOpen;
     };
     try { window.print(); } catch (error) { reset(); throw error; }
   };
@@ -30,6 +35,7 @@ export function worksheetPrintControls({invalidation} = {}) {
   invalidation?.then(() => { reset(); window.removeEventListener("afterprint", reset); window.removeEventListener("hashchange", openLinkedGuide); });
   return html`<div class="worksheet-print-controls">
     <button type="button" class="classroom-button" data-print-sheet="student" onclick=${() => print("student")}>${t("列印學生題目", "Print pupil questions")}</button>
-    <button type="button" class="classroom-button classroom-button-secondary" data-print-sheet="teacher" onclick=${() => print("teacher")}>${t("列印教師指引與評分表", "Print teacher guide and rubric")}</button>
+    <button type="button" class="classroom-button classroom-button-secondary" data-print-sheet="rubric" onclick=${() => print("rubric")}>${t("列印評議準則", "Print assessment rubric")}</button>
+    <button type="button" class="classroom-button classroom-button-secondary" data-print-sheet="teacher" onclick=${() => print("teacher")}>${t("列印教師指引、準則與記錄", "Print teacher guide, rubric and record")}</button>
   </div>`;
 }

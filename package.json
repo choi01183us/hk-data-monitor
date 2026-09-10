@@ -21,6 +21,7 @@
     "clean": "rm -rf dist src/.observablehq/cache"
   },
   "devDependencies": {
-    "@observablehq/framework": "1.13.4"
+    "@observablehq/framework": "1.13.4",
+    "playwright": "1.61.1"
   }
 }

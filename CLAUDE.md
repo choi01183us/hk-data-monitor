@@ -17,18 +17,22 @@
 Observable Framework 1.13.4 + Observable Plot。**冇 React、冇 CSS framework、冇測試框架、冇額外 runtime 依賴**
 (SPEC 第 3 節)。純 vanilla ESM。
 
+2026-09-10 擁有人批准的工具例外：`playwright` 1.61.1 為 devDependency，
+只供真瀏覽器離線驗證；不加入 production bundle。`npm ci` 後先
+`npx --no-install playwright install chromium`，缺套件／瀏覽器必須 fail。
+
 ## 指令
 
 ```bash
 npm run dev            # 開發伺服器
 npm run build          # 砌站 + 生成 service worker
-npm run build:offline  # 唔上網砌(CI 用)
+npm run build:offline  # 資料用 repo 快照；套件初次下載仍需網絡
 npm run refresh        # 重抓全部 API 指標
 npm run refresh:city   # 更新新聞、前一日客機及天氣快照；見 docs/城市快照.md
 node scripts/refresh-city.mjs --weather-only # 只更新天氣，不重抓新聞／航班
 npm run validate       # 驗快照符合 SPEC 第 5 節
 npm run test:checks    # 檢查器自證 + fixture 重播 + 教學換算／引用(零網絡)
-npm run test:offline   # 離線行為測試(要 Playwright,冇就 SKIP)
+npm run test:offline   # 離線行為測試(本專案 Playwright + Chromium；缺工具會失敗)
 npm run fixtures       # 重錄上游回應做 fixture
 ```
 

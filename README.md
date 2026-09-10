@@ -11,7 +11,7 @@
 ## 快速開始
 
 ```bash
-npm install
+npm ci
 npm run dev          # http://localhost:3000,改完即刻見到
 ```
 
@@ -19,17 +19,24 @@ npm run dev          # http://localhost:3000,改完即刻見到
 |---|---|
 | `npm run dev` | 開發伺服器 |
 | `npm run build` | 砌靜態站入 `dist/`,順埋生成 service worker |
-| `npm run build:offline` | 同上,但完全唔上網(用 repo 入面嘅快照)。CI 用呢個 |
+| `npm run build:offline` | 資料用 repo 快照；首次建置仍需下載 Framework 套件。CI 設 HKDM_OFFLINE=1 |
 | `npm run refresh` | 重抓全部 API 指標。有變動先寫檔 |
 | `npm run refresh:city` | 更新政府公報及前一日客機紀錄；快照及錄影同次保存 |
 | `npm run validate` | 驗全部快照同 `manual/` 符合 SPEC 第 5 節(零網絡,`build` 開頭會自動跑) |
 | `npm run test:checks` | **檢查器自證**:故意整壞嘢,確認啲閘真係會嘈(零網絡) |
-| `npm run test:offline` | 離線行為測試(要 Playwright,冇就 SKIP) |
+| `npm run test:offline` | 離線行為測試(本專案 Playwright + Chromium；缺工具會失敗) |
 | `npm run fixtures` | 重錄上游回應做離線測試用嘅 fixture |
 | `node tools/serve-dist.mjs` | 喺 `:8787/hk-data-monitor/` 模擬 GitHub Pages,驗離線同子路徑 |
 | `node scripts/explore-table.mjs 310-31001` | 探統計處一張表有咩 sv / cv 代碼 |
 
 ---
+
+## 離線驗證工具
+
+`playwright` 1.61.1 只用作開發測試，版本列入 package-lock，唔會加入網站資源。
+先 `npm ci`，再 `npx --no-install playwright install chromium`（Linux CI 加 `--with-deps`）。
+`npm run build` 後執行 `npm run test:offline`；缺套件或 Chromium 必須失敗，唔用 SKIP 當通過。
+CI 喺上載同一份 `dist/` 前實跑離線測試；`BASE_PATH=/` 可驗根網域，預設為 `/hk-data-monitor/`。
 
 ## 個站點運作
 

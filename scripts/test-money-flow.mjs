@@ -11,6 +11,22 @@ const ANSWERS = [
   ["secondary", "seller", "market-risk", "capital"],
   ["grant", "company", "accountability", "free"],
 ];
+// Reviewed teaching prompts, independent of the production case metadata. Shared
+// with the browser test so it checks the displayed prompt, not merely its presence.
+export const EXPECTED_MONEY_RECIPIENT_HINTS = {
+  "zh-HK": {
+    loan: "沿住已放款嘅商業貸款睇：銀行付款，邊間公司收到買設備嘅錢？",
+    "new-shares": "本例係公司發行新股：認購款交畀發行公司，唔係出售舊股嘅投資者。",
+    secondary: "今次公司冇發新股：甲買乙持有嘅股份，股票價款流向賣方乙。",
+    grant: "睇返培訓資助嘅支付安排：政府將公帑發放畀接受培訓資助嘅維修公司。",
+  },
+  "en-GB": {
+    loan: "Follow the business loan that has been paid out: the bank pays, and which company receives the equipment funding?",
+    "new-shares": "This company issues new shares: subscription proceeds go to the issuing company, rather than an investor selling existing shares.",
+    secondary: "The company issues no new shares here: A buys B's existing shares, so the purchase price goes to seller B.",
+    grant: "Check the training grant's payment arrangement: the government pays public money to the repair company receiving the grant.",
+  },
+};
 const same = (actual, expected) => JSON.stringify(actual) === JSON.stringify(expected);
 const throws = (fn) => {try {fn(); return false;} catch {return true;}};
 const result = (complete, recipientCorrect, responsibilityCorrect, correct) => ({complete, recipientCorrect, responsibilityCorrect, correct});
@@ -30,6 +46,17 @@ export async function testMoneyFlow(check) {
   const unknownCaseRejected = (module) => ["unknown", "toString", null, undefined].every((id) => throws(() => module.assessMoneyFlow(id)));
   const unknownRecipientRejected = (module) => ["government", "", 0, false, {}, []].every((recipient) => throws(() => module.assessMoneyFlow("loan", {recipient, responsibility: "repay"})));
   const unknownResponsibilityRejected = (module) => ["unknown", "accountability", "", 0, false, {}, []].every((responsibility) => throws(() => module.assessMoneyFlow("loan", {recipient: "company", responsibility})));
+  const hintsCorrect = (module, language) => {
+    const previous = Object.getOwnPropertyDescriptor(globalThis, "document");
+    try {
+      Object.defineProperty(globalThis, "document", {configurable: true, writable: true, value: {documentElement: {lang: language}}});
+      return same(module.moneyFlowCases().map(({id, recipientHint}) => [id, recipientHint]),
+        ANSWERS.map(([id]) => [id, EXPECTED_MONEY_RECIPIENT_HINTS[language][id]]));
+    } finally {
+      if (previous) Object.defineProperty(globalThis, "document", previous);
+      else delete globalThis.document;
+    }
+  };
 
   const previousDocument = Object.getOwnPropertyDescriptor(globalThis, "document");
   try {
@@ -45,10 +72,11 @@ export async function testMoneyFlow(check) {
       check(`${language}：未知情境拒絕，唔借第一題答案`, unknownCaseRejected(money));
       check(`${language}：未知收款者及錯類型拒絕`, unknownRecipientRejected(money));
       check(`${language}：未知責任、其他題責任及錯類型拒絕`, unknownResponsibilityRejected(money));
+      check(`${language}：四題收款提示逐項符合情境，貸款及公共資助唔借股票提示`, hintsCorrect(money, language));
       const cases = money.moneyFlowCases();
       titles[language] = cases.map(({title}) => title);
       check(`${language}：每題有情境、付款者、選項、解釋及追問`, cases.every((item) =>
-        [item.title, item.scenario, item.payer, item.explanation, item.question, ...item.options.map(([, label]) => label)]
+        [item.title, item.scenario, item.payer, item.recipientHint, item.explanation, item.question, ...item.options.map(([, label]) => label)]
           .every((text) => typeof text === "string" && text.trim().length > 0)));
       check(`${language}：收款選項維持公司、賣方同交易所，唔隨語言改答案鍵`, same(money.moneyRecipients().map(([id]) => id), ["company", "seller", "exchange"]));
     }
@@ -85,6 +113,13 @@ export async function testMoneyFlow(check) {
       ["刪除未知收款者閘", 'if (recipient !== null && !moneyRecipients().some(([id]) => id === recipient)) throw new Error("Unknown recipient");', "", unknownRecipientRejected],
       ["刪除未知責任閘", 'if (responsibility !== null && !item.options.some(([id]) => id === responsibility)) throw new Error("Unknown responsibility");', "", unknownResponsibilityRejected],
     ]) check(`源碼突變：${label}會被捉到`, detects(oracle, await mutation(from, to)));
+    const hintSource = (id) => `recipientHint: t(${JSON.stringify(EXPECTED_MONEY_RECIPIENT_HINTS["zh-HK"][id])}, ${JSON.stringify(EXPECTED_MONEY_RECIPIENT_HINTS["en-GB"][id])})`;
+    for (const [id, label] of [["loan", "貸款"], ["grant", "公共資助"]]) {
+      const mutated = await mutation(hintSource(id), hintSource("new-shares"));
+      for (const language of ["zh-HK", "en-GB"]) {
+        check(`源碼突變：${language} ${label}錯用新股提示會被捉到`, detects((module) => hintsCorrect(module, language), mutated));
+      }
+    }
   } finally {
     await rm(directory, {recursive: true, force: true});
   }

@@ -1,5 +1,7 @@
 // Called by test-offline.mjs after its network-disconnection proof and before
 // reconnecting. These three pages have not been visited while online.
+import {EXPECTED_MONEY_RECIPIENT_HINTS} from "./test-money-flow.mjs";
+
 export async function testClassroomOffline({page, context, base, check, workerStatus}) {
   const errors = [];
   const onError = (error) => errors.push(error.message);
@@ -86,6 +88,7 @@ export async function testClassroomOffline({page, context, base, check, workerSt
         emptyRejected && partialRejected && wrongRejected && changedCleared);
 
       const results = [];
+      const hintResults = [];
       for (const [id, recipient, responsibility] of correctCases) {
         await page.locator('[data-case="' + id + '"]').click();
         const clean = await page.locator(".money-case input:checked").count() === 0 &&
@@ -103,10 +106,17 @@ export async function testClassroomOffline({page, context, base, check, workerSt
         const localised = locale !== "en-GB" || await englishOnly();
         await page.locator('input[name="money-recipient"][value="exchange"]').check();
         const cleared = await feedback.isHidden() && (await status.innerText()).trim() !== correctText;
+        await page.locator(".money-check").click();
+        const recipientFeedback = (await page.locator(".money-feedback > div > p").first().innerText()).trim();
+        const recipientPrefix = locale === "en-GB" ? "Recipient: " : "收款者：";
+        hintResults.push({id, wrongRejected: (await status.innerText()).trim() === wrongText,
+          correctHint: recipientFeedback === recipientPrefix + EXPECTED_MONEY_RECIPIENT_HINTS[locale][id]});
         results.push({id, clean, correct, cleared, localised});
       }
       check(locale + " 四種金流逐題答對且收款者正確，換題及改答案清除舊結果",
         results.every((result) => result.clean && result.correct && result.cleared && result.localised), JSON.stringify(results));
+      check(locale + " 四題錯收款者實際顯示該題提示，貸款及資助唔借新股提示",
+        hintResults.every((result) => result.wrongRejected && result.correctHint), JSON.stringify(hintResults));
 
       await page.reload({waitUntil: "load"});
       await page.waitForSelector(".money-case input");
@@ -119,19 +129,25 @@ export async function testClassroomOffline({page, context, base, check, workerSt
       const assessmentResponse = await page.goto(base + "learn/assessment" + suffix, {waitUntil: "load"});
       await page.waitForSelector('[data-print-sheet="teacher"]');
       const assessmentStatus = await workerStatus();
-      check(locale + " 評議頁離線顯示五題並預設收起教師答案",
+      const teacherSections = page.locator(".assessment-teacher");
+      const allTeacherSectionsClosed = async () => await teacherSections.evaluateAll((sections) =>
+        sections.length === 2 && sections.every((section) => !section.open));
+      check(locale + " 評議頁離線顯示五題及公開準則，答案與班級記錄各自收起",
         assessmentResponse?.status() === 200 && assessmentStatus?.fromCache === true &&
         await page.locator(".assessment-question").count() === 5 &&
-        await page.locator(".assessment-teacher").evaluate((guide) => !guide.open) &&
+        await allTeacherSectionsClosed() &&
+        await page.locator("#assessment-rubric").isVisible() &&
         await page.locator(".assessment-page input, .assessment-page textarea").count() === 0 &&
         (locale !== "en-GB" || await englishOnly()) && await noObservableError());
 
-      await page.locator(".assessment-teacher > summary").click();
+      await teacherSections.evaluateAll((sections) => sections.forEach((section) => {section.open = true;}));
       await page.emulateMedia({media: "print"});
-      check(locale + " 瀏覽器預設列印只顯示學生題目，即使教師答案已展開",
+      check(locale + " 瀏覽器預設列印只顯示學生題目，即使兩個教師區已展開",
         await page.locator(".assessment-student").isVisible() &&
-        await page.locator(".assessment-teacher").isHidden() &&
+        await page.locator(".assessment-answers").isHidden() &&
+        await page.locator(".assessment-record").isHidden() &&
         await page.locator(".assessment-answer-guide").isHidden() &&
+        await page.locator(".assessment-public-rubric").isHidden() &&
         await page.locator(".worksheet-print-controls").isHidden());
       await page.emulateMedia({media: "screen"});
 
@@ -139,41 +155,72 @@ export async function testClassroomOffline({page, context, base, check, workerSt
         window.__hkdmClassroomPrintProbe = {original: window.print, calls: []};
         window.print = () => window.__hkdmClassroomPrintProbe.calls.push({
           mode: document.documentElement.dataset.worksheetPrint,
-          open: document.querySelector(".assessment-teacher").open,
+          open: Array.from(document.querySelectorAll(".assessment-teacher"), (section) => section.open),
         });
       });
       const printResults = [];
-      // Student printing must restore an already-open guide. Teacher printing must
-      // temporarily open a closed guide and restore the closed state afterwards.
-      for (const [mode, initiallyOpen] of [["student", true], ["teacher", false]]) {
-        await page.locator(".assessment-teacher").evaluate((guide, open) => {guide.open = open;}, initiallyOpen);
+      // Mixed open/closed states catch implementations that restore only the first
+      // details. An open answers section must never leak into student/rubric print.
+      for (const [mode, initialStates] of [["student", [true, false]], ["rubric", [true, true]], ["teacher", [false, true]]]) {
+        await teacherSections.evaluateAll((sections, states) => {
+          sections.forEach((section, index) => {section.open = states[index];});
+        }, initialStates);
         await page.locator('[data-print-sheet="' + mode + '"]').click();
         const printCall = await page.evaluate(() => window.__hkdmClassroomPrintProbe.calls.at(-1));
         await page.emulateMedia({media: "print"});
+        const questionsVisible = await page.locator(".assessment-student").isVisible();
+        const answersVisible = await page.locator(".assessment-answer-guide").isVisible();
+        const rubricVisible = await page.locator("#assessment-rubric").isVisible();
+        const recordVisible = await page.locator(".assessment-class-table").isVisible();
         const correctContent = mode === "student"
-          ? await page.locator(".assessment-student").isVisible() && await page.locator(".assessment-teacher").isHidden()
-          : await page.locator(".assessment-student").isHidden() &&
-            await page.locator(".assessment-answer-guide").isVisible() &&
-            await page.locator("#assessment-rubric").isVisible() &&
-            await page.locator(".assessment-class-table").isVisible();
+          ? questionsVisible && !answersVisible && !rubricVisible && !recordVisible
+          : mode === "rubric"
+            ? !questionsVisible && !answersVisible && rubricVisible && !recordVisible
+            : !questionsVisible && answersVisible && rubricVisible && recordVisible;
         await page.evaluate(() => window.dispatchEvent(new Event("afterprint")));
         await page.emulateMedia({media: "screen"});
-        const restored = await page.evaluate((open) =>
+        const restored = await page.evaluate((states) =>
           !document.documentElement.hasAttribute("data-worksheet-print") &&
-          document.querySelector(".assessment-teacher").open === open, initiallyOpen);
-        printResults.push({mode, correctContent, restored, called: printCall?.mode === mode && printCall.open === true});
+          Array.from(document.querySelectorAll(".assessment-teacher")).every((section, index) => section.open === states[index]), initialStates);
+        const expectedPrintStates = mode === "teacher" ? [true, true] : initialStates;
+        printResults.push({mode, correctContent, restored,
+          called: printCall?.mode === mode && JSON.stringify(printCall.open) === JSON.stringify(expectedPrintStates)});
       }
-      check(locale + " 學生／教師列印按鈕隔離內容，列印後恢復原來展開狀態",
+      check(locale + " 題目／準則／教師三種列印隔離內容，印後恢復每個區原來狀態",
         printResults.every((result) => result.correctContent && result.restored && result.called), JSON.stringify(printResults));
       await restorePrint();
 
+      // A direct deep link starts a fresh document. A same-document hash change
+      // intentionally preserves the teacher sections opened during print tests.
+      await page.goto(base + "learn/classroom" + suffix, {waitUntil: "load"});
       await page.goto(base + "learn/assessment" + suffix + "#assessment-rubric", {waitUntil: "load"});
       await page.waitForSelector('[data-print-sheet="teacher"]');
-      await page.waitForFunction(() => document.querySelector(".assessment-teacher")?.open === true);
-      check(locale + " 評分表深層連結打開教師指引，展開內容完整翻譯",
+      check(locale + " 評議準則深連結可讀四面向，唔會展開答案或班級記錄",
         await page.locator("#assessment-rubric").isVisible() &&
         await page.locator(".assessment-criterion").count() === 4 &&
+        await allTeacherSectionsClosed() && await page.locator(".assessment-answer-guide").isHidden() &&
         (locale !== "en-GB" || await englishOnly()) && await noObservableError());
+
+      // Follow the actual pupil-facing memo link, rather than only testing a URL.
+      await page.goto(base + "learn/budget-memo" + suffix, {waitUntil: "load"});
+      await page.locator('a[href*="assessment"][href$="#assessment-rubric"]').click();
+      await page.waitForSelector('[data-print-sheet="teacher"]');
+      check(locale + " 學生由備忘互評入口開準則，仍然收起小測答案",
+        await page.locator("#assessment-rubric").isVisible() &&
+        await allTeacherSectionsClosed() && await page.locator(".assessment-answer-guide").isHidden() &&
+        await page.locator("html").getAttribute("lang") === locale);
+
+      // Teacher links only open their own containing details. A later rubric
+      // hash change does not silently alter either teacher section's state.
+      await page.evaluate(() => {window.location.hash = "assessment-class-record";});
+      await page.waitForFunction(() => document.querySelector(".assessment-record")?.open === true);
+      const recordOnly = await page.locator(".assessment-answers").evaluate((section) => !section.open);
+      await page.evaluate(() => {window.location.hash = "assessment-rubric";});
+      await page.waitForFunction(() => window.location.hash === "#assessment-rubric");
+      check(locale + " 教師班級記錄深連結只開記錄，回準則唔會開小測答案",
+        recordOnly && await page.locator(".assessment-answers").evaluate((section) => !section.open) &&
+        await page.locator(".assessment-record-context").isVisible() &&
+        (locale !== "en-GB" || await englishOnly()));
     }
     check("課堂雙語離線互動全程沒有 JavaScript 錯誤", errors.length === 0, errors.join("\n"));
   } finally {

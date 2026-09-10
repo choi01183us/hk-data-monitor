@@ -18,6 +18,8 @@ keywords: 課前 課後 小測 評議 評量 證據 口徑 取捨 成效 工作�
 
 <a href="./budget-memo">青年預算備忘工作紙</a>
 
+<a href="#assessment-rubric">自評／互評準則</a>
+
 </nav>
 
 <p>呢份係本站編寫嘅教學工作紙，題數同評議級別係課堂設計，唔係官方統計或認證標準。答案寫喺紙上或校方文件；本頁唔收集、唔儲存答案，唔使填姓名或個人家庭資料。</p>
@@ -109,9 +111,9 @@ display(worksheetPrintControls({invalidation}));
 
 </section>
 
-<details class="assessment-teacher teacher-only" id="assessment-teacher">
+<details class="assessment-teacher assessment-answers teacher-only" id="assessment-teacher">
 
-<summary>老師用：答案、評議準則同班級記錄</summary>
+<summary>老師用：概念答案與追問</summary>
 
 <p>答案放喺呢個可展開區，學生亦可開啟。要做課前小測，先派學生版或請同學暫時唔睇答案；本頁唔係保密測驗系統。</p>
 
@@ -147,7 +149,13 @@ display(worksheetPrintControls({invalidation}));
 
 </ul>
 
+</details>
+
+<section class="assessment-public-rubric" aria-labelledby="assessment-rubric">
+
 <h2 id="assessment-rubric">備忘評議：四個面向</h2>
+
+<p>學生同老師都可以用呢份準則做自評、互評同修改作品。閱讀或列印評議準則唔會展開小測答案；要睇答案，請另行打開「老師用：概念答案與追問」。</p>
 
 <p>每個面向分開記 0、1 或 2 級，再寫一句可行嘅修改建議。唔需要加總成排名；評議證據同推理，唔以是否支持某個政策、政黨或老師立場決定級別。</p>
 
@@ -213,9 +221,19 @@ display(worksheetPrintControls({invalidation}));
 
 <p>成本未能核實時，應保留「待查」並說明缺口；誠實列出未知值得肯定，但唔代表已完成可行性評估。</p>
 
+</section>
+
+<details class="assessment-teacher assessment-record teacher-only" id="assessment-record">
+
+<summary>老師留底：匿名班級記錄</summary>
+
 <h2 id="assessment-class-record">老師留底：匿名班級總數</h2>
 
 <p>下表只係空白紙本範本，唔會自動填數或上傳。由老師按校方安排保管工作紙，只整理班級總數；唔記姓名、學號、個人代碼或家庭收入，亦唔將個別作答上載本網站。</p>
+
+<p class="assessment-record-context">課前日期＿＿＿＿；課後日期＿＿＿＿；班別代號＿＿＿＿；所用教材版本／日期＿＿＿＿。</p>
+
+<p>以上欄位只供老師喺紙本記錄教學情況，班別代號由老師自訂，唔用嚟識別個別學生。列印時請記低所用教材版本或日期，方便之後核對兩次係咪用相同題目。</p>
 
 <div class="assessment-table-wrap">
 
@@ -225,15 +243,15 @@ display(worksheetPrintControls({invalidation}));
 
 <thead><tr><th scope="col">題目</th><th scope="col">課前：作答／到位</th><th scope="col">課後：作答／到位</th></tr></thead><tbody>
 
-<tr><th scope="row">1. 收入</th><td>＿＿ / ＿＿</td><td>＿＿ / ＿＿</td></tr>
+<tr><th scope="row">1. 收入</th><td>____ / ____</td><td>____ / ____</td></tr>
 
-<tr><th scope="row">2. 通脹</th><td>＿＿ / ＿＿</td><td>＿＿ / ＿＿</td></tr>
+<tr><th scope="row">2. 通脹</th><td>____ / ____</td><td>____ / ____</td></tr>
 
-<tr><th scope="row">3. 開支口徑</th><td>＿＿ / ＿＿</td><td>＿＿ / ＿＿</td></tr>
+<tr><th scope="row">3. 開支口徑</th><td>____ / ____</td><td>____ / ____</td></tr>
 
-<tr><th scope="row">4. 股票交易</th><td>＿＿ / ＿＿</td><td>＿＿ / ＿＿</td></tr>
+<tr><th scope="row">4. 股票交易</th><td>____ / ____</td><td>____ / ____</td></tr>
 
-<tr><th scope="row">5. 服務成效</th><td>＿＿ / ＿＿</td><td>＿＿ / ＿＿</td></tr>
+<tr><th scope="row">5. 服務成效</th><td>____ / ____</td><td>____ / ____</td></tr>
 
 </tbody></table></div>
 

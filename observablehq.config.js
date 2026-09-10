@@ -56,6 +56,7 @@ export default {
         { name: "帶住任務，讀懂香港", path: "/learn/classroom" },
         { name: "資金去咗邊？", path: "/learn/money-flow" },
         { name: "前後測與評分準則", path: "/learn/assessment" },
+        { name: "老師備課與示例", path: "/learn/teacher-guide" },
         { name: "香港人點生活", path: "/learn/hong-kong" },
         { name: "公共資源點分", path: "/learn/public-finance" },
         { name: "寫青年預算備忘", path: "/learn/budget-memo" },

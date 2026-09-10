@@ -41,220 +41,224 @@
     "社區及對外事務",
     "輔助服務"
   ],
-  "fetched_at": "2026-02-25T00:00:00Z",
-  "manual_status": "todo",
-  "manual_filled": "0/30",
+  "fetched_at": "2026-09-10T00:00:00Z",
+  "manual_status": "filled",
+  "manual_filled": "30/30",
   "series": [
     {
       "period": "2024-25",
       "category": "教育",
-      "value": null
+      "value": 105281000000
     },
     {
       "period": "2024-25",
       "category": "社會福利",
-      "value": null
+      "value": 116887000000
     },
     {
       "period": "2024-25",
       "category": "衞生",
-      "value": null
+      "value": 109247000000
     },
     {
       "period": "2024-25",
       "category": "保安",
-      "value": null
+      "value": 59167000000
     },
     {
       "period": "2024-25",
       "category": "基礎建設",
-      "value": null
+      "value": 33655000000
     },
     {
       "period": "2024-25",
       "category": "環境及食物",
-      "value": null
+      "value": 25358000000
     },
     {
       "period": "2024-25",
       "category": "經濟",
-      "value": null
+      "value": 21857000000
     },
     {
       "period": "2024-25",
       "category": "房屋",
-      "value": null
+      "value": 20394000000
     },
     {
       "period": "2024-25",
       "category": "社區及對外事務",
-      "value": null
+      "value": 18039000000
     },
     {
       "period": "2024-25",
       "category": "輔助服務",
-      "value": null
+      "value": 73663000000
     },
     {
       "period": "2025-26",
       "category": "教育",
-      "value": null
+      "value": 101991000000
     },
     {
       "period": "2025-26",
       "category": "社會福利",
-      "value": null
+      "value": 123614000000
     },
     {
       "period": "2025-26",
       "category": "衞生",
-      "value": null
+      "value": 114347000000
     },
     {
       "period": "2025-26",
       "category": "保安",
-      "value": null
+      "value": 58840000000
     },
     {
       "period": "2025-26",
       "category": "基礎建設",
-      "value": null
+      "value": 33394000000
     },
     {
       "period": "2025-26",
       "category": "環境及食物",
-      "value": null
+      "value": 25484000000
     },
     {
       "period": "2025-26",
       "category": "經濟",
-      "value": null
+      "value": 22020000000
     },
     {
       "period": "2025-26",
       "category": "房屋",
-      "value": null
+      "value": 21430000000
     },
     {
       "period": "2025-26",
       "category": "社區及對外事務",
-      "value": null
+      "value": 18418000000
     },
     {
       "period": "2025-26",
       "category": "輔助服務",
-      "value": null
+      "value": 77410000000
     },
     {
       "period": "2026-27",
       "category": "教育",
-      "value": null
+      "value": 102308000000
     },
     {
       "period": "2026-27",
       "category": "社會福利",
-      "value": null
+      "value": 135865000000
     },
     {
       "period": "2026-27",
       "category": "衞生",
-      "value": null
+      "value": 118881000000
     },
     {
       "period": "2026-27",
       "category": "保安",
-      "value": null
+      "value": 60517000000
     },
     {
       "period": "2026-27",
       "category": "基礎建設",
-      "value": null
+      "value": 35001000000
     },
     {
       "period": "2026-27",
       "category": "環境及食物",
-      "value": null
+      "value": 26728000000
     },
     {
       "period": "2026-27",
       "category": "經濟",
-      "value": null
+      "value": 22875000000
     },
     {
       "period": "2026-27",
       "category": "房屋",
-      "value": null
+      "value": 22635000000
     },
     {
       "period": "2026-27",
       "category": "社區及對外事務",
-      "value": null
+      "value": 18913000000
     },
     {
       "period": "2026-27",
       "category": "輔助服務",
-      "value": null
+      "value": 81310000000
     }
   ],
   "latest_by_category": [
     {
       "category": "教育",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 102308000000
     },
     {
       "category": "社會福利",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 135865000000
     },
     {
       "category": "衞生",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 118881000000
     },
     {
       "category": "保安",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 60517000000
     },
     {
       "category": "基礎建設",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 35001000000
     },
     {
       "category": "環境及食物",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 26728000000
     },
     {
       "category": "經濟",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 22875000000
     },
     {
       "category": "房屋",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 22635000000
     },
     {
       "category": "社區及對外事務",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 18913000000
     },
     {
       "category": "輔助服務",
-      "period": null,
-      "value": null
+      "period": "2026-27",
+      "value": 81310000000
     }
   ],
   "coverage": {
     "start": "2024-25",
     "end": "2026-27",
     "points": 30,
-    "points_with_value": 0
+    "points_with_value": 30
   },
-  "latest": null,
-  "content_hash": "sha256:fea177575852158f",
-  "data_version": "2026.09.1"
+  "latest": {
+    "period": "2026-27",
+    "category": "輔助服務",
+    "value": 81310000000
+  },
+  "content_hash": "sha256:aaccd97a747e22e6",
+  "data_version": "2026.09.2"
 }

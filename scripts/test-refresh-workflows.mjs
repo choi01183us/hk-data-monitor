@@ -1,5 +1,5 @@
 // 離線驗實際 workflow YAML 同原 commit step；push 只到測試暫存目錄嘅 bare repo。
-// 呢個唔係 GitHub runner 模擬器：只支援本專案 ref 接線用嘅屬性讀取及 ||。
+// 呢個唔係 GitHub runner 模擬器：只支援本專案 ref 接線及部署條件用嘅小型語法。
 // 新 expression 語法一律拒絕，避免測試睇唔明仍報綠。
 import yaml from "js-yaml";
 import { execFile } from "node:child_process";
@@ -29,6 +29,82 @@ function expression(value, context) {
   return result;
 }
 
+// 只接受 dotted paths、無跳脫嘅單引號字串、布林、== / != 及 ||。
+// 依官方規則：缺屬性係 ''；異類型比較轉數值；字串比較忽略大小寫。
+// 完整解析所有分支先計算，未知語法唔會被 OR 短路遮住；唔執行 YAML 內嘅 JS。
+function condition(source, context) {
+  const match = typeof source === "string" && source.match(/^\$\{\{\s*(.*?)\s*\}\}$/);
+  requireValue(match, "部署條件必須來自明文 expression");
+  const atom = "(?:true|false|'[^'|]*'|[a-z_][a-z_0-9]*(?:\\.[a-z_][a-z_0-9]*)+)";
+  const comparison = new RegExp(`^\\s*(${atom})(?:\\s*(==|!=)\\s*(${atom}))?\\s*$`);
+  const read = (token) => {
+    if (token === "true" || token === "false") return token === "true";
+    if (token.startsWith("'")) return token.slice(1, -1);
+    let value = context;
+    for (const key of token.split(".")) value = value?.[key];
+    if (value === undefined) return "";
+    requireValue(typeof value === "string" || typeof value === "boolean", "部署條件出現未支援嘅值類型");
+    return value;
+  };
+  const equals = (left, right) => {
+    if (typeof left !== typeof right) return Number(left) === Number(right);
+    return typeof left === "string" ? left.toLowerCase() === right.toLowerCase() : left === right;
+  };
+  const terms = match[1].split("||").map((term) => {
+    const parsed = term.match(comparison);
+    requireValue(parsed, "未支援嘅部署條件語法");
+    const left = read(parsed[1]);
+    if (!parsed[2]) return Boolean(left);
+    const same = equals(left, read(parsed[3]));
+    return parsed[2] === "==" ? same : !same;
+  });
+  return terms.some(Boolean);
+}
+
+function deployTriggerContract(workflow, name) {
+  const input = workflow.on?.workflow_dispatch?.inputs?.deploy;
+  requireValue(input?.type === "boolean" && input.default === true, `${name}:人手部署 input 必須係預設 true 嘅 boolean`);
+  for (const [label, context, expected] of [
+    ["排程缺 inputs", {github: {event_name: "schedule"}}, true],
+    ["人手 true", {github: {event_name: "workflow_dispatch"}, inputs: {deploy: true}}, true],
+    ["人手 false", {github: {event_name: "workflow_dispatch"}, inputs: {deploy: false}}, false]
+  ]) requireValue(condition(workflow.jobs?.deploy?.if, context) === expected, `${name}:${label} 部署選擇錯誤`);
+}
+
+// 只支援呢份 YAML 現有嘅忽略樣式及舊錯誤樣式；唔假裝實作完整 GitHub glob。
+function ignoredPath(path, patterns) {
+  const matches = patterns.map((pattern) => {
+    if (pattern === "*.md") return !path.includes("/") && path.endsWith(".md");
+    if (pattern === "**.md") return path.endsWith(".md");
+    if (pattern === "docs/**") return path.startsWith("docs/");
+    if (pattern === "manual/README.md") return path === pattern;
+    if (pattern === ".github/**.md") return path.startsWith(".github/") && path.endsWith(".md");
+    throw new Error(`未支援嘅忽略樣式：${pattern}`);
+  });
+  return matches.some(Boolean);
+}
+
+function deployArtifactContract(deploy) {
+  const job = deploy.jobs?.build, steps = job?.steps ?? [];
+  const position = (run) => steps.findIndex((step) => step.run?.trim() === run);
+  const install = position("npm ci"), checks = position("npm run test:checks");
+  const browser = position("npx --no-install playwright install --with-deps chromium");
+  const build = position("npm run build"), offline = position("npm run test:offline");
+  const upload = steps.findIndex((step) => /^actions\/upload-pages-artifact@/.test(step.uses ?? ""));
+  requireValue(install >= 0 && checks > install && browser > checks && build > browser && offline === build + 1 && upload === offline + 1, "必須先裝測試工具及驗證，再 build、驗原 dist、直接上載同一 artifact");
+  requireValue(steps[upload].with?.path === "dist", "上載位置必須係已驗證嘅 dist");
+  requireValue(steps[build].env?.BASE_PATH === "${{ steps.pages.outputs.base_path }}/" && steps[offline].env?.BASE_PATH === steps[build].env.BASE_PATH, "離線測試必須使用同一部署 base");
+  requireValue(!job["continue-on-error"], "建置失敗唔可以繼續部署");
+  for (const index of [install, checks, browser, build, offline, upload]) {
+    requireValue(!steps[index]["continue-on-error"] && !steps[index].if, "驗證及上載步驟唔可以略過或吞錯");
+  }
+  const patterns = deploy.on?.push?.["paths-ignore"];
+  requireValue(Array.isArray(patterns), "部署 push 必須明文保留網站內容");
+  for (const path of ["src/index.md", "src/learn/classroom.md", "src/lang/en-GB.json", "src/components/locale.js", "manual/public_expenditure_policy_groups.json"]) {
+    requireValue(!ignoredPath(path, patterns), `${path}:網站內容改動唔可以忽略部署`);
+  }
+}
+
 function checkoutStep(deploy) {
   const steps = deploy.jobs?.build?.steps?.filter((step) => /^actions\/checkout@/.test(step.uses ?? "")) ?? [];
   requireValue(steps.length === 1, "部署 checkout 缺少或重複");
@@ -44,6 +120,7 @@ function refreshBranch(caller, eventSha) {
 function contract(callers, deploy) {
   requireValue(deploy.on?.workflow_call?.inputs?.ref?.type === "string", "被呼叫部署須聲明 ref 字串 input");
   for (const [name, workflow] of Object.entries(callers)) {
+    deployTriggerContract(workflow, name);
     requireValue(workflow.concurrency?.group === "hkdm-refresh" && workflow.concurrency?.["cancel-in-progress"] === false, `${name}:兩個刷新須共用非取消鎖`);
     requireValue(refreshBranch(workflow, OLD_SHA) === "main", `${name}:刷新開始時須取分支最新提交，唔用排隊事件舊 SHA`);
     const job = workflow.jobs?.refresh;
@@ -58,6 +135,7 @@ function contract(callers, deploy) {
     requireValue(job.outputs?.ref && workflow.jobs.deploy.with?.ref, `${name}:ref 接線缺少`);
   }
   requireValue(checkoutStep(deploy).with?.ref, "部署 checkout 冇固定 ref");
+  deployArtifactContract(deploy);
 }
 
 function routedSha(caller, deploy, emittedSha, eventSha) {
@@ -199,7 +277,35 @@ async function exerciseWeatherRoute(workflow, check, temporary) {
 }
 
 export async function testRefreshWorkflows(check) {
-  console.log("\n[刷新部署] 固定 SHA 傳遞、提交實測及共用排程鎖");
+  console.log("\n[刷新部署] 事件條件、固定 SHA、提交實測及部署前離線驗證");
+  for (const [label, source, context, expected] of [
+    ["缺屬性等於 false", "${{ inputs.deploy == false }}", {}, true],
+    ["舊式排程條件會拒絕", "${{ inputs.deploy != false }}", {github: {event_name: "schedule"}}, false],
+    ["真 boolean 保留", "${{ inputs.deploy == true }}", {inputs: {deploy: true}}, true],
+    ["字串 false 唔係 boolean true", "${{ inputs.deploy == true }}", {inputs: {deploy: "false"}}, false],
+    ["字串比較忽略大小寫", "${{ github.event_name == 'schedule' }}", {github: {event_name: "SCHEDULE"}}, true],
+    ["OR 取後項", "${{ false || inputs.deploy }}", {inputs: {deploy: true}}, true],
+    ["OR 兩項 false", "${{ false || inputs.deploy }}", {inputs: {deploy: false}}, false],
+  ]) {
+    requireValue(condition(source, context) === expected, `部署條件工具已知答案失敗：${label}`);
+    check(`部署條件工具自證：${label}`, true);
+  }
+  for (const source of ["${{ true || unknown() }}", "${{ !inputs.deploy }}", "${{ inputs.deploy && true }}", "${{ inputs.deploy = true }}"]) {
+    const rejected = throws(() => condition(source, {inputs: {deploy: true}}));
+    requireValue(rejected, `部署條件工具誤接納未知語法：${source}`);
+    check(`部署條件工具拒絕未知語法：${source}`, rejected);
+  }
+  for (const [path, patterns, expected] of [
+    ["README.md", ["*.md"], true],
+    ["src/index.md", ["*.md"], false],
+    ["src/learn/classroom.md", ["**.md"], true],
+    ["docs/課堂任務.md", ["docs/**"], true],
+    ["src/lang/en-GB.json", ["*.md", "docs/**"], false],
+  ]) {
+    requireValue(ignoredPath(path, patterns) === expected, `路徑工具已知答案失敗：${path}`);
+    check(`部署路徑工具自證：${path}`, true);
+  }
+  check("未知路徑樣式必須拒絕", throws(() => ignoredPath("src/index.md", ["src/**"])));
   // 先自證小 expression 讀取器，答唔啱已知答案就唔信後面接線檢查。
   for (const [label, source, context, expected] of [
     ["明文 ref 優先", "${{ inputs.ref || github.sha }}", { inputs: { ref: NEW_SHA }, github: { sha: OLD_SHA } }, NEW_SHA],
@@ -216,7 +322,26 @@ export async function testRefreshWorkflows(check) {
   const callers = { city: await load("refresh-city.yml"), statistics: await load("refresh-data.yml") };
   const deploy = await load("deploy.yml");
   check("兩份真實 YAML 共用鎖、先驗再提交同固定 SHA 接線", !throws(() => verified(callers, deploy)));
+  for (const [name, workflow] of Object.entries(callers)) {
+    for (const [event, input, expected] of [["schedule", undefined, true], ["workflow_dispatch", true, true], ["workflow_dispatch", false, false]]) {
+      const context = {github: {event_name: event}, ...(input === undefined ? {} : {inputs: {deploy: input}})};
+      check(`${name}:實際 YAML ${event} deploy=${input ?? "缺少"}`, condition(workflow.jobs.deploy.if, context) === expected);
+    }
+  }
   for (const [name, mutate] of [
+    ["城市排程回舊錯誤條件", (c) => { c.city.jobs.deploy.if = "${{ inputs.deploy != false }}"; }],
+    ["統計排程回舊錯誤條件", (c) => { c.statistics.jobs.deploy.if = "${{ inputs.deploy != false }}"; }],
+    ["人手 false 都部署", (c) => { c.city.jobs.deploy.if = "${{ true }}"; }],
+    ["deploy input 變字串", (c) => { c.city.on.workflow_dispatch.inputs.deploy.type = "string"; }],
+    ["部署忽略所有 Markdown", (_, d) => { d.on.push["paths-ignore"] = ["**.md"]; }],
+    ["部署漏自證", (_, d) => { d.jobs.build.steps = d.jobs.build.steps.filter((s) => s.run !== "npm run test:checks"); }],
+    ["部署漏裝瀏覽器", (_, d) => { d.jobs.build.steps = d.jobs.build.steps.filter((s) => !s.run?.startsWith("npx --no-install playwright")); }],
+    ["部署漏離線測試", (_, d) => { d.jobs.build.steps = d.jobs.build.steps.filter((s) => s.run !== "npm run test:offline"); }],
+    ["離線失敗仍上載", (_, d) => { d.jobs.build.steps.find((s) => s.run === "npm run test:offline")["continue-on-error"] = true; }],
+    ["離線步驟可以略過", (_, d) => { d.jobs.build.steps.find((s) => s.run === "npm run test:offline").if = "${{ false }}"; }],
+    ["離線測試後再 build", (_, d) => { d.jobs.build.steps.splice(d.jobs.build.steps.findIndex((s) => s.run === "npm run test:offline") + 1, 0, {run: "npm run build"}); }],
+    ["上載另一份未驗 artifact", (_, d) => { d.jobs.build.steps.find((s) => /^actions\/upload-pages-artifact@/.test(s.uses ?? "")).with.path = "other-dist"; }],
+    ["離線測試漏部署 base", (_, d) => { delete d.jobs.build.steps.find((s) => s.run === "npm run test:offline").env.BASE_PATH; }],
     ["刷新 checkout 回事件舊 SHA", (c) => { c.city.jobs.refresh.steps.find((s) => /^actions\/checkout@/.test(s.uses ?? "")).with.ref = "${{ github.sha }}"; }],
     ["刷新 checkout 冇明文分支", (c) => { delete c.statistics.jobs.refresh.steps.find((s) => /^actions\/checkout@/.test(s.uses ?? "")).with.ref; }],
     ["漏 caller job output", (c) => { delete c.city.jobs.refresh.outputs.ref; }],

@@ -666,7 +666,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   check("一個都冇顯示 -> null", pickDataAsOf([todoManual]) === null);
   check("傳入有數據快照時計入，發布篩選另驗，todo 仍排除", pickDataAsOf([displayed, todoManual, {indicator_id: "macau_population", updated_at: "2025-12-31", series: [{period: "2025", value: 688900}]}]) === "2025-12-31");
 
-  // 對返真實快照:而家 13 份入面有 2 份未填
+  // 對返真實快照：公共十組已填，公屋輪候仍待核對。
   const realDocs = [];
   for (const id of ["gdp", "median_wage", "public_expenditure_policy_groups", "phr_waiting_time"]) {
     const doc = await readSnapshot(id);
@@ -674,8 +674,8 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   }
   if (realDocs.length === 4) {
     check(
-      "真實快照:兩個未填嘅 manual 指標唔會拉低日期",
-      pickDataAsOf(realDocs) === "2026-03-23",
+      "真實快照:已填公共開支計入截至日期，未填公屋唔當資料",
+      pickDataAsOf(realDocs) === "2026-02-25",
       `而家係 ${pickDataAsOf(realDocs)}`
     );
   }
@@ -797,6 +797,8 @@ await testDistrictGeography(check);
 
 const { testRefreshWorkflows } = await import("./test-refresh-workflows.mjs");
 await testRefreshWorkflows(check);
+const {testOfflineTooling} = await import("./test-offline-tooling.mjs");
+await testOfflineTooling(check);
 
 const { testCpiComponents } = await import("./test-cpi-components.mjs");
 await testCpiComponents(check);
