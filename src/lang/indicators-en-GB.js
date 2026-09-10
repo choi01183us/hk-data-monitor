@@ -399,16 +399,20 @@ export const indicatorEnglish = {
   },
   "phr_waiting_time": {
     "question_zh": {
-      "zh": "申請公屋,要等幾耐?",
-      "en": "How long do applicants wait for public rental housing?"
+      "zh": "已獲編配公屋嘅申請者，平均等咗幾耐？",
+      "en": "How long did applicants who were housed wait, on average?"
+    },
+    "basis_zh": {
+      "zh": "過去12個月獲安排入住者的輪候時間平均數；一般申請者包括家庭申請者及長者一人申請者，唔包括配額及計分制下的非長者一人申請者。輪候由登記至首次配屋，扣除凍結時段；唔係今日新申請者的預計輪候時間。",
+      "en": "Average waiting time among applicants housed in the past 12 months. General applicants include family and elderly one-person applicants; non-elderly one-person applicants under the Quota and Points System are excluded. Waiting runs from registration to the first flat offer, excluding frozen periods. It is not a forecast for new applicants today."
     },
     "notes_zh": {
-      "zh": "官方同時公布兩個定義唔同嘅數字:「綜合輪候時間」(CWT)計埋簡約公屋,「平均輪候時間」(AWT)只計傳統公屋,所以 AWT 一定長過 CWT。兩個都係一般申請者(家庭同長者家庭)嘅數;長者一人申請者另有優先計劃,輪候時間短好多。呢啲數字係人手由房屋局網頁抄落嚟嘅,唔係自動抓。",
-      "en": "The official composite waiting time includes Light Public Housing, whereas average waiting time covers traditional public rental housing only; the latter is therefore longer. Both concern general applicants, including families and elderly families. Elderly one-person applicants have separate priority arrangements and much shorter waits. These figures require manual transcription from the Housing Bureau website."
+      "zh": "綜合輪候時間（CWT）涵蓋傳統出租公屋及簡約公屋；平均輪候時間（AWT）只計傳統出租公屋。長者一人申請者係一般申請者的一部分，圖中第三項係傳統公屋AWT的分組，唔係額外一組可相加的人。三項涵蓋範圍有重疊，平均數唔可以相加；CWT與AWT的大小關係亦唔係定義所保證。平均數反映過去12個月獲安排入住者的經歷，唔代表仍在等候的所有人，亦唔保證新申請者等相同時間。圖只展示一個已核對季度，唔聲稱歷史升跌。",
+      "en": "Composite waiting time (CWT) covers traditional public rental housing and Light Public Housing; average waiting time (AWT) covers traditional public rental housing only. Elderly one-person applicants form part of general applicants: the third measure is a subgroup of traditional PRH AWT. The groups overlap, so their averages must not be added. Their definitions do not guarantee which average is larger. These averages describe applicants housed in the past 12 months, not everyone still waiting, and do not promise the same wait for new applicants. Only one checked quarter is shown, without claims about historical change."
     },
     "source_note_zh": {
-      "zh": "房屋局「公屋輪候時間」網頁,數字喺文字段落入面,冇表格、冇 CSV。歷史數列要由季度 PDF 逐季抄。",
-      "en": "Housing Bureau public rental housing waiting-time webpage. Figures appear in prose, without a table or CSV; a historical series requires transcription from quarterly PDFs."
+      "zh": "房屋局「公屋綜合輪候時間」網頁；人手核對中英文同一期文字段落。本次只收錄截至2026年6月底的三個平均數，未收錄歷史數列，並非自動更新。",
+      "en": "Housing Bureau “Composite Waiting Time for Subsidised Rental Housing” webpage, checked manually against the Chinese and English text for the same quarter. Only the three end-June 2026 averages are recorded here. No historical series or automatic updates."
     }
   },
   "gdp": {

@@ -133,6 +133,7 @@ function lineChart(indicator, width) {
  * 喺手機更加睇唔到。
  */
 function barChart(indicator, width) {
+  const housingChinese = indicator.indicator_id === "phr_waiting_time" && !isEnglish();
   const period = indicator.chart?.period ?? indicator.coverage?.end;
   const rows = indicator.series
     .filter((point) => point.period === period && point.value !== null)
@@ -144,7 +145,7 @@ function barChart(indicator, width) {
 
   return Plot.plot({
     width,
-    height: Math.max(180, rows.length * (isEnglish() ? (narrow(width) ? 44 : 40) : (narrow(width) ? 30 : 36)) + 60),
+    height: Math.max(180, rows.length * (isEnglish() || housingChinese ? (narrow(width) ? 44 : 40) : (narrow(width) ? 30 : 36)) + 60),
     marginLeft: isEnglish() ? (narrow(width) ? 120 : 200) : (narrow(width) ? 110 : 160),
     marginRight: 86,
     x: {
@@ -152,9 +153,11 @@ function barChart(indicator, width) {
       grid: true,
       tickFormat: (value) => formatChineseMagnitude(value),
     },
-    y: { label: "", ...(isEnglish() ? {axis:false} : {}) },
+    y: { label: "", ...(isEnglish() || housingChinese ? {axis:false} : {}) },
     marks: [
       ...(isEnglish() ? [Plot.axisY({lineWidth: narrow(width) ? 10.5 : 18, fontSize:10})] : []),
+      // Plot 只在空格或連字號斷行；中文公屋標籤按口徑分行，完整原名仍留在 tooltip／引用。
+      ...(housingChinese ? [Plot.axisY({fontSize:10, tickFormat: (value) => String(value).replace("(", "\n(").replace("申請者", "申請者\n")})] : []),
       Plot.barX(rows, {
         x: "value",
         y: "category",

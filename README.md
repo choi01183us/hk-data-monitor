@@ -59,6 +59,7 @@ findings.md                  第 0 步探路實測結果 —— 半年後要更�
 manual/README.md             人手抄數據嘅年度維護清單
 docs/架構.md                 **三層防護邊層防乜 + 量度工具要自證** —— 開工前睇一眼
 docs/手機驗收清單.md          改完 UI 要喺真機跑一次
+docs/課堂試用記錄.md          老師與小組學生試用嘅空白記錄
 docs/部署.md                 部署上 GitHub Pages 嘅步驟
 docs/分階段指令.md            開發流程(第 0 至 6 步)
 

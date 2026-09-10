@@ -25,6 +25,7 @@ import { fileURLToPath } from "node:url";
 import { setTimeout as sleep } from "node:timers/promises";
 import {testClassroomOffline} from "./test-classroom-offline.mjs";
 import {testBudgetClassroomOffline} from "./test-budget-classroom-offline.mjs";
+import {testHousingOffline} from "./test-housing-offline.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 8791;
@@ -263,6 +264,7 @@ try {
 
   await testClassroomOffline({page, context, base: BASE, check, workerStatus});
   await testBudgetClassroomOffline({page, base: BASE, check, workerStatus, readRenderedAttachment});
+  await testHousingOffline({page, base: BASE, check, workerStatus, readRenderedAttachment});
 
   console.log("\n[離線行為] 回復網絡");
   await context.setOffline(false);

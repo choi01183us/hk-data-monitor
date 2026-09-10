@@ -18,6 +18,7 @@ import { fileURLToPath } from "node:url";
 
 import { buildIndicator } from "./schema.js";
 import { verifyBankingManual } from "./banking-manual.js";
+import { verifyHousingManual } from "./housing-manual.js";
 
 /** 分類相加同 expected_totals 最多差幾多(原始單位)。抄數應該係一個都唔差。 */
 const SUM_TOLERANCE_SOURCE_UNITS = 1;
@@ -141,6 +142,8 @@ export async function loadManualIndicator(id, {
     }
     validatePublicExpenditure(fields, govtExpenditure);
   }
+
+  if (id === "phr_waiting_time") verifyHousingManual(fields);
 
   if (id === "banking_institutions") {
     verifyBankingManual(fields);

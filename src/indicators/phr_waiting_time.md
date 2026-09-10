@@ -22,7 +22,9 @@ display(indicatorHeader(indicator));
 display(indicatorAnchors(indicator));
 ```
 
-<h2 id="chart">數據</h2>
+<h2 id="chart">已核對季度的平均輪候時間</h2>
+
+<p>先分清邊類申請者、傳統公屋定包括簡約公屋，再引用季度及單位。三項唔係三批互不重疊的人，亦唔係今日申請後要等幾耐的承諾。</p>
 
 ```js
 // 未填數就唔畫圖 —— 一張空圖同一張錯圖一樣誤導

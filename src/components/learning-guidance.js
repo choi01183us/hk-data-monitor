@@ -147,7 +147,7 @@ const guidance = {
     route: "public-finance",
   },
   phr_waiting_time: {
-    can: t("填妥後，可按同一定義睇官方輪候時間，分清綜合輪候時間、傳統公屋輪候時間同長者一人申請者。", "Once completed, read official waiting times under consistent definitions, distinguishing composite waiting time, traditional public rental housing waiting time and elderly one-person applicants."),
+    can: t("可分清三個已獲安排入住群組的平均輪候時間；長者一人係一般申請者的一部分，唔係可以另外相加的人數。", "Distinguish average waits for three groups of applicants who were housed. Elderly one-person applicants form part of general applicants, not an additional population to add."),
     cannot: t("唔同輪候定義唔可以接成一條趨勢；官方平均數亦唔保證今日新申請嘅個人會等相同時間。", "Different waiting-time definitions cannot be joined into a single trend. An official average does not guarantee that a new applicant today will wait the same length of time."),
     question: t("比較房屋措施成效之前，點樣確保兩個輪候數字講緊同一類申請者同住屋安排？", "Before comparing housing measures, how can you ensure both waiting-time figures refer to the same applicants and housing arrangements?"),
     route: "public-finance",

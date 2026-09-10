@@ -9,17 +9,17 @@
   "source_zh": "房屋局",
   "source_en": "Housing Bureau, HKSAR Government",
   "source_url": "https://www.hb.gov.hk/tc/publications/housing/cwt/index.html",
-  "source_note_zh": "房屋局「公屋輪候時間」網頁,數字喺文字段落入面,冇表格、冇 CSV。歷史數列要由季度 PDF 逐季抄。",
+  "source_note_zh": "房屋局「公屋綜合輪候時間」網頁；人手核對中英文同一期文字段落。本次只收錄截至2026年6月底的三個平均數，未收錄歷史數列，並非自動更新。",
   "licence": "房屋局網頁(政府網站一般版權告示,冇獨立開放數據授權)",
   "licence_url": "https://www.hb.gov.hk/tc/common/copyright.html",
   "updated_at": "2026-06-30",
   "frequency": "quarterly",
   "acquisition": "manual",
   "category": "房屋",
-  "question_zh": "申請公屋,要等幾耐?",
-  "notes_zh": "官方同時公布兩個定義唔同嘅數字:「綜合輪候時間」(CWT)計埋簡約公屋,「平均輪候時間」(AWT)只計傳統公屋,所以 AWT 一定長過 CWT。兩個都係一般申請者(家庭同長者家庭)嘅數;長者一人申請者另有優先計劃,輪候時間短好多。呢啲數字係人手由房屋局網頁抄落嚟嘅,唔係自動抓。",
+  "question_zh": "已獲編配公屋嘅申請者，平均等咗幾耐？",
+  "notes_zh": "綜合輪候時間（CWT）涵蓋傳統出租公屋及簡約公屋；平均輪候時間（AWT）只計傳統出租公屋。長者一人申請者係一般申請者的一部分，圖中第三項係傳統公屋AWT的分組，唔係額外一組可相加的人。三項涵蓋範圍有重疊，平均數唔可以相加；CWT與AWT的大小關係亦唔係定義所保證。平均數反映過去12個月獲安排入住者的經歷，唔代表仍在等候的所有人，亦唔保證新申請者等相同時間。圖只展示一個已核對季度，唔聲稱歷史升跌。",
   "chart": {
-    "type": "line",
+    "type": "bar",
     "y_zero": true
   },
   "category_order": [
@@ -27,50 +27,55 @@
     "平均輪候時間(只計傳統公屋)",
     "長者一人申請者平均輪候時間"
   ],
-  "fetched_at": "2026-06-30T00:00:00Z",
-  "manual_status": "todo",
-  "manual_filled": "0/3",
+  "basis_zh": "過去12個月獲安排入住者的輪候時間平均數；一般申請者包括家庭申請者及長者一人申請者，唔包括配額及計分制下的非長者一人申請者。輪候由登記至首次配屋，扣除凍結時段；唔係今日新申請者的預計輪候時間。",
+  "fetched_at": "2026-09-10T00:00:00Z",
+  "manual_status": "filled",
+  "manual_filled": "3/3",
   "series": [
     {
       "period": "2026-Q2",
       "category": "綜合輪候時間(含簡約公屋)",
-      "value": null
+      "value": 4.8
     },
     {
       "period": "2026-Q2",
       "category": "平均輪候時間(只計傳統公屋)",
-      "value": null
+      "value": 5.5
     },
     {
       "period": "2026-Q2",
       "category": "長者一人申請者平均輪候時間",
-      "value": null
+      "value": 3.9
     }
   ],
   "latest_by_category": [
     {
       "category": "綜合輪候時間(含簡約公屋)",
-      "period": null,
-      "value": null
+      "period": "2026-Q2",
+      "value": 4.8
     },
     {
       "category": "平均輪候時間(只計傳統公屋)",
-      "period": null,
-      "value": null
+      "period": "2026-Q2",
+      "value": 5.5
     },
     {
       "category": "長者一人申請者平均輪候時間",
-      "period": null,
-      "value": null
+      "period": "2026-Q2",
+      "value": 3.9
     }
   ],
   "coverage": {
     "start": "2026-Q2",
     "end": "2026-Q2",
     "points": 3,
-    "points_with_value": 0
+    "points_with_value": 3
   },
-  "latest": null,
-  "content_hash": "sha256:c9d58fcbc4c82a25",
-  "data_version": "2026.09.1"
+  "latest": {
+    "period": "2026-Q2",
+    "category": "長者一人申請者平均輪候時間",
+    "value": 3.9
+  },
+  "content_hash": "sha256:c11f90116742d985",
+  "data_version": "2026.09.2"
 }

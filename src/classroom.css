@@ -90,7 +90,7 @@
   .teacher-guide { font-size: 10pt; }
   .teacher-guide :is(h2, h3, h4) { break-after: avoid; }
   .teacher-guide :is(li, .teacher-example, .teacher-role-card, .memo-response) { break-inside: avoid; }
-  .teacher-guide section[aria-labelledby="teacher-role-card"] { break-inside: avoid; }
+  .teacher-guide section:is([aria-labelledby="teacher-role-card"], [aria-labelledby="teacher-trial"]) { break-inside: avoid; }
   .teacher-glossary dt { break-after: avoid; }
   .teacher-glossary dd { break-inside: avoid; }
   .teacher-lesson, .teacher-calibration { break-inside: auto; padding: .7rem; margin: 1rem 0; }

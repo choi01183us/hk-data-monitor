@@ -666,7 +666,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   check("一個都冇顯示 -> null", pickDataAsOf([todoManual]) === null);
   check("傳入有數據快照時計入，發布篩選另驗，todo 仍排除", pickDataAsOf([displayed, todoManual, {indicator_id: "macau_population", updated_at: "2025-12-31", series: [{period: "2025", value: 688900}]}]) === "2025-12-31");
 
-  // 對返真實快照：公共十組已填，公屋輪候仍待核對。
+  // 對返真實快照：公共十組及公屋輪候已核對填入。
   const realDocs = [];
   for (const id of ["gdp", "median_wage", "public_expenditure_policy_groups", "phr_waiting_time"]) {
     const doc = await readSnapshot(id);
@@ -674,7 +674,7 @@ console.log("\n[R6] 離線橫額日期 — 未填數嘅指標唔可以拉低佢"
   }
   if (realDocs.length === 4) {
     check(
-      "真實快照:已填公共開支計入截至日期，未填公屋唔當資料",
+      "真實快照:已填人手數據計入，以最早的公共開支日期為準",
       pickDataAsOf(realDocs) === "2026-02-25",
       `而家係 ${pickDataAsOf(realDocs)}`
     );
@@ -819,6 +819,8 @@ await runServiceBudgetTests(check);
 
 const { testBankingManual } = await import("./test-banking-manual.mjs");
 await testBankingManual(check);
+const {testHousingManual} = await import("./test-housing-manual.mjs");
+await testHousingManual(check);
 const { testFinanceCounts } = await import("./test-finance-counts.mjs");
 await testFinanceCounts(check);
 const { testMapView } = await import("./test-map-view.mjs");
