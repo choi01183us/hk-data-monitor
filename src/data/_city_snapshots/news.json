@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-12T11:11:52.546Z",
-  "updated_at": "2026-09-12T11:00:05.000Z",
+  "fetched_at": "2026-09-12T15:46:15.839Z",
+  "updated_at": "2026-09-12T12:45:00.000Z",
   "records": [
+    {
+      "title": "衞生防護中心調查一宗懷疑食物中毒個案群組",
+      "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091200735.htm",
+      "published_at": "2026-09-12T12:45:00.000Z"
+    },
     {
       "title": "超過1 500名教師於敬師日慶典獲表揚（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091100568.htm",
@@ -502,12 +507,7 @@
       "title": "​勞工處就大埔宏福苑火災中違反職業安全及健康法例的事項提出檢控",
       "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900662.htm",
       "published_at": "2026-09-09T11:42:36.000Z"
-    },
-    {
-      "title": "「天宮課堂．港澳專場」成功舉行　港澳青年感受國家航天工程輝煌成就（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900635.htm",
-      "published_at": "2026-09-09T11:30:00.000Z"
     }
   ],
-  "content_hash": "1302c4bc9b21ef560152a1f0d0a6e9eb0c31139626effa2904ae54659450be28"
+  "content_hash": "574b0a12a8d16fc27fc3ae157a8581959c8af4852f2f9a5d4122aa2536182e53"
 }
