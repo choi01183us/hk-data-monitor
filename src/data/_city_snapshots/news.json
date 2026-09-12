@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-11T23:30:18.998Z",
-  "updated_at": "2026-09-11T22:00:00.000Z",
+  "fetched_at": "2026-09-12T04:55:46.701Z",
+  "updated_at": "2026-09-12T03:30:00.000Z",
   "records": [
+    {
+      "title": "特區政府強烈反對外部勢力污衊抹黑法庭就「支聯會」案的判刑",
+      "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091200292.htm",
+      "published_at": "2026-09-12T03:30:00.000Z"
+    },
+    {
+      "title": "銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091200310.htm",
+      "published_at": "2026-09-12T03:23:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091200241.htm",
+      "published_at": "2026-09-12T01:30:00.000Z"
+    },
     {
       "title": "全港賣旗日",
       "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091000328.htm",
@@ -492,22 +507,7 @@
       "title": "一名入境旅客進口未完稅香煙及另類吸煙產品罪成判囚（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900558.htm",
       "published_at": "2026-09-09T09:58:00.000Z"
-    },
-    {
-      "title": "衞生防護中心調查兩宗猴痘確診個案",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900533.htm",
-      "published_at": "2026-09-09T09:45:00.000Z"
-    },
-    {
-      "title": "終審法院首席法官哀悼香港特區首任行政長官董建華逝世",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900538.htm",
-      "published_at": "2026-09-09T09:25:00.000Z"
-    },
-    {
-      "title": "「幻彩詠香江」暫停",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900545.htm",
-      "published_at": "2026-09-09T09:20:00.000Z"
     }
   ],
-  "content_hash": "fcab5b541b4c90f16470064aa245912d4ac192ce21daee7ea8177412c20e2adc"
+  "content_hash": "f2c0e1288ebeeb82dd8b69321439048dcb6bdf0b52a1d79dee4ec2fdb5a13d8b"
 }
