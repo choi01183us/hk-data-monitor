@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-13T05:18:02.136Z",
-  "updated_at": "2026-09-13T03:00:00.000Z",
+  "fetched_at": "2026-09-13T12:14:41.038Z",
+  "updated_at": "2026-09-13T08:11:51.000Z",
   "records": [
+    {
+      "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091300496.htm",
+      "published_at": "2026-09-13T08:11:51.000Z"
+    },
     {
       "title": "酒牌局周二舉行會議",
       "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091000620.htm",
@@ -502,12 +507,7 @@
       "title": "香港海關於機場偵破三宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900795.htm",
       "published_at": "2026-09-09T14:45:00.000Z"
-    },
-    {
-      "title": "​「一帶一路高峰論壇」開拓商貿新機遇　推動高質量發展（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900660.htm",
-      "published_at": "2026-09-09T13:18:00.000Z"
     }
   ],
-  "content_hash": "0199da8430c6753ea9718bb21b56fcf640b258c9bb269e2faadc2ad7323f0f42"
+  "content_hash": "8e4b26ad2cd981d92802a00ba2eb018d056b35f0caa591cc0d671784cab45b6f"
 }
