@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-13",
-  "fetched_at": "2026-09-13T16:36:15.682Z",
-  "updated_at": "2026-09-13T16:36:09.000Z",
+  "fetched_at": "2026-09-13T21:05:28.105Z",
+  "updated_at": "2026-09-13T21:05:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7000,7 +7000,7 @@
           "airline": "ETD"
         }
       ],
-      "status": "到閘口 21:29",
+      "status": "到閘口 21:30",
       "statusCode": null
     },
     {
@@ -8531,7 +8531,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 00:43 (14/09/2026)",
+      "status": "到閘口 00:47 (14/09/2026)",
       "statusCode": null
     },
     {
@@ -17040,7 +17040,7 @@
           "airline": "ANZ"
         }
       ],
-      "status": "啟航 22:46",
+      "status": "啟航 22:45",
       "statusCode": null
     },
     {
@@ -17176,7 +17176,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "啟航 23:11",
+      "status": "啟航 23:10",
       "statusCode": null
     },
     {
@@ -17232,7 +17232,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:39",
       "statusCode": null
     },
     {
@@ -17300,7 +17300,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:44",
       "statusCode": null
     },
     {
@@ -17340,7 +17340,7 @@
           "airline": "ANZ"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:43",
       "statusCode": null
     },
     {
@@ -17360,7 +17360,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:31",
       "statusCode": null
     },
     {
@@ -17380,7 +17380,7 @@
           "airline": "DLH"
         }
       ],
-      "status": "最後召集",
+      "status": "啟航 00:05 (14/09/2026)",
       "statusCode": null
     },
     {
@@ -17396,9 +17396,9 @@
           "airline": "ANA"
         }
       ],
-      "status": "最後召集",
+      "status": "啟航 23:53",
       "statusCode": null
     }
   ],
-  "content_hash": "8bf09a3bf2c1345b902f12d75fd0291810ac757bb7051d5c88e450b29f46a40d"
+  "content_hash": "a3b644bde3ed7635660338ab4e31e2303212587045d0f199b37f18d52f26e9e0"
 }
