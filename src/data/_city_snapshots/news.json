@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-13T12:14:41.038Z",
-  "updated_at": "2026-09-13T08:11:51.000Z",
+  "fetched_at": "2026-09-13T16:36:13.726Z",
+  "updated_at": "2026-09-13T13:40:00.000Z",
   "records": [
+    {
+      "title": "香港海關偵破懷疑非法進口動物案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091300790.htm",
+      "published_at": "2026-09-13T13:40:00.000Z"
+    },
     {
       "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091300496.htm",
@@ -502,12 +507,7 @@
       "title": "​數個泳灘懸掛紅旗",
       "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000258.htm",
       "published_at": "2026-09-10T02:26:00.000Z"
-    },
-    {
-      "title": "香港海關於機場偵破三宗入境旅客販毒案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900795.htm",
-      "published_at": "2026-09-09T14:45:00.000Z"
     }
   ],
-  "content_hash": "8e4b26ad2cd981d92802a00ba2eb018d056b35f0caa591cc0d671784cab45b6f"
+  "content_hash": "274f4f770146be5742e7e1993d8dffb746b6f9ab71c5b0107d2deb2264ee6280"
 }
