@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-12T15:46:15.839Z",
-  "updated_at": "2026-09-12T12:45:00.000Z",
+  "fetched_at": "2026-09-13T05:18:02.136Z",
+  "updated_at": "2026-09-13T03:00:00.000Z",
   "records": [
+    {
+      "title": "酒牌局周二舉行會議",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091000620.htm",
+      "published_at": "2026-09-13T03:00:00.000Z"
+    },
+    {
+      "title": "香港海關提醒非本地珠寶參展商有關貴金屬及寶石交易商監管制度下提交現金交易報告的法定要求",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091100455.htm",
+      "published_at": "2026-09-13T02:38:50.000Z"
+    },
+    {
+      "title": "多個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091300280.htm",
+      "published_at": "2026-09-13T02:15:34.000Z"
+    },
+    {
+      "title": "裝備升級　訓練革新",
+      "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091100534.htm",
+      "published_at": "2026-09-13T02:00:00.000Z"
+    },
     {
       "title": "衞生防護中心調查一宗懷疑食物中毒個案群組",
       "url": "https://www.info.gov.hk/gia/general/202609/12/P2026091200735.htm",
@@ -487,27 +507,7 @@
       "title": "​「一帶一路高峰論壇」開拓商貿新機遇　推動高質量發展（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900660.htm",
       "published_at": "2026-09-09T13:18:00.000Z"
-    },
-    {
-      "title": "駐柏林經貿辦在法蘭克福國際汽車零部件、汽車技術及服務展覽會推廣香港卓越工業（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900732.htm",
-      "published_at": "2026-09-09T12:53:00.000Z"
-    },
-    {
-      "title": "醫管局沉痛哀悼全國政協原副主席、香港特區首任行政長官董建華逝世",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900718.htm",
-      "published_at": "2026-09-09T12:19:29.000Z"
-    },
-    {
-      "title": "​香港海關在觀塘搗破兩個懷疑私煙貯存倉庫（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900631.htm",
-      "published_at": "2026-09-09T12:15:00.000Z"
-    },
-    {
-      "title": "​勞工處就大埔宏福苑火災中違反職業安全及健康法例的事項提出檢控",
-      "url": "https://www.info.gov.hk/gia/general/202609/09/P2026090900662.htm",
-      "published_at": "2026-09-09T11:42:36.000Z"
     }
   ],
-  "content_hash": "574b0a12a8d16fc27fc3ae157a8581959c8af4852f2f9a5d4122aa2536182e53"
+  "content_hash": "0199da8430c6753ea9718bb21b56fcf640b258c9bb269e2faadc2ad7323f0f42"
 }

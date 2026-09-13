@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-12",
-  "fetched_at": "2026-09-12T23:14:04.466Z",
-  "updated_at": "2026-09-12T23:10:06.000Z",
+  "fetched_at": "2026-09-13T05:18:04.250Z",
+  "updated_at": "2026-09-13T05:13:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7871,7 +7871,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 16:30 (13/09/2026)",
+      "status": "預計 17:20 (13/09/2026)",
       "statusCode": null
     },
     {
@@ -16932,5 +16932,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "b1427737e86c8e1ec16a253765280f5dc67d68f9fe8f8077b8aa55c88cf74050"
+  "content_hash": "0751c8185a3b06b994296c118d8f0ea822f5714d450c3c9f939df7bd4bf2c693"
 }
