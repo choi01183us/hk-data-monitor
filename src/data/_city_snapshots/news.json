@@ -5,9 +5,109 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-14T05:21:46.713Z",
-  "updated_at": "2026-09-14T04:48:00.000Z",
+  "fetched_at": "2026-09-14T13:15:50.729Z",
+  "updated_at": "2026-09-14T12:57:58.000Z",
   "records": [
+    {
+      "title": "就一宗區議員被判罪成個案進行調查",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400714.htm",
+      "published_at": "2026-09-14T12:57:58.000Z"
+    },
+    {
+      "title": "政制及內地事務局局長出席香港工商界婦女慶祝中華人民共和國成立77週年午餐會致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400752.htm",
+      "published_at": "2026-09-14T12:57:03.000Z"
+    },
+    {
+      "title": "衞生防護中心調查一宗猴痘確診個案",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400703.htm",
+      "published_at": "2026-09-14T11:40:00.000Z"
+    },
+    {
+      "title": "衞生防護中心錄得一宗兒童感染流感的嚴重個案",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400702.htm",
+      "published_at": "2026-09-14T11:26:00.000Z"
+    },
+    {
+      "title": "還押在囚人士昏迷送院後不治",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400680.htm",
+      "published_at": "2026-09-14T11:15:00.000Z"
+    },
+    {
+      "title": "衞生署公布退伍軍人病個案最新情況",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400676.htm",
+      "published_at": "2026-09-14T10:55:00.000Z"
+    },
+    {
+      "title": "終審法院首席法官於韓國出席第二十屆亞太區首席法官會議",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400257.htm",
+      "published_at": "2026-09-14T10:00:00.000Z"
+    },
+    {
+      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400555.htm",
+      "published_at": "2026-09-14T09:55:00.000Z"
+    },
+    {
+      "title": "司法機構舉辦商業法庭常設國際論壇督導小組會議（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400266.htm",
+      "published_at": "2026-09-14T09:30:00.000Z"
+    },
+    {
+      "title": "香港網絡安全業界代表團出席2026年國家網絡安全宣傳周活動（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400476.htm",
+      "published_at": "2026-09-14T08:45:00.000Z"
+    },
+    {
+      "title": "二零二六年第二季製造及廢棄物管理業的工業生產指數和生產者價格指數臨時統計數字",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400296.htm",
+      "published_at": "2026-09-14T08:30:00.000Z"
+    },
+    {
+      "title": "二零二六年第二季香港本地居民總收入及對外初次收入流量數字",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400317.htm",
+      "published_at": "2026-09-14T08:30:00.000Z"
+    },
+    {
+      "title": "外匯基金分析帳目",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400432.htm",
+      "published_at": "2026-09-14T08:30:00.000Z"
+    },
+    {
+      "title": "​《香港第一個五年規劃》、《施政報告》及相關刊物星期三公開派發",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400481.htm",
+      "published_at": "2026-09-14T08:11:00.000Z"
+    },
+    {
+      "title": "行政長官將向立法會公布《香港第一個五年規劃》及發表《施政報告》",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400495.htm",
+      "published_at": "2026-09-14T07:50:00.000Z"
+    },
+    {
+      "title": "多倫多經貿辦支持香港電影參與多倫多國際電影節（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400311.htm",
+      "published_at": "2026-09-14T07:45:00.000Z"
+    },
+    {
+      "title": "港匯指數",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400186.htm",
+      "published_at": "2026-09-14T07:40:00.000Z"
+    },
+    {
+      "title": "文創處率領業界參與第51屆多倫多國際電影節（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400369.htm",
+      "published_at": "2026-09-14T07:38:00.000Z"
+    },
+    {
+      "title": "日本進口水產的檢測情況",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400487.htm",
+      "published_at": "2026-09-14T07:26:00.000Z"
+    },
+    {
+      "title": "勞工顧問委員會僱員代表選舉現接受登記及提名",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400267.htm",
+      "published_at": "2026-09-14T07:00:00.000Z"
+    },
     {
       "title": "勞工及福利局局長出席長者安居協會三十周年「智慧養老　平安生活」論壇致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400362.htm",
@@ -404,110 +504,10 @@
       "published_at": "2026-09-10T11:29:00.000Z"
     },
     {
-      "title": "署理海關關長與老撾副總理會面（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000563.htm",
-      "published_at": "2026-09-10T11:20:00.000Z"
-    },
-    {
       "title": "​房屋局局長與立法會議員考察北部都會區後會見傳媒談話內容（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000725.htm",
       "published_at": "2026-09-10T11:20:00.000Z"
-    },
-    {
-      "title": "衞生防護中心調查一宗猴痘確診個案",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000673.htm",
-      "published_at": "2026-09-10T11:06:00.000Z"
-    },
-    {
-      "title": "​署理環境及生態局局長與立法會議員考察北部都會區後會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000684.htm",
-      "published_at": "2026-09-10T11:05:00.000Z"
-    },
-    {
-      "title": "香港金管局、香港交易所、迪拜金管局和納斯達克迪拜成立策略工作小組深化兩地金融市場合作（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000336.htm",
-      "published_at": "2026-09-10T10:25:00.000Z"
-    },
-    {
-      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000582.htm",
-      "published_at": "2026-09-10T10:20:00.000Z"
-    },
-    {
-      "title": "與銀行有關的騙案通知",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000585.htm",
-      "published_at": "2026-09-10T10:20:00.000Z"
-    },
-    {
-      "title": "香港海關「迅網」行動檢獲約三百九十萬元懷疑冒牌物品（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000610.htm",
-      "published_at": "2026-09-10T10:08:00.000Z"
-    },
-    {
-      "title": "一人涉嫌非法銷售及管有含未標示受管制藥物成分的產品被捕（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000580.htm",
-      "published_at": "2026-09-10T09:55:00.000Z"
-    },
-    {
-      "title": "政府委任建造業創新及科技基金督導委員會成員",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000275.htm",
-      "published_at": "2026-09-10T09:30:00.000Z"
-    },
-    {
-      "title": "香港海關偵破非法進口懷疑屬受管制瀕危物種活龜（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000553.htm",
-      "published_at": "2026-09-10T08:55:00.000Z"
-    },
-    {
-      "title": "婚禮布置公司男東主不當地接受付款被判罪成",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000548.htm",
-      "published_at": "2026-09-10T08:50:00.000Z"
-    },
-    {
-      "title": "二零二六年第二季建造工程完成量統計數字",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000330.htm",
-      "published_at": "2026-09-10T08:30:00.000Z"
-    },
-    {
-      "title": "二零二六年第二季服務行業按季業務收益指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000338.htm",
-      "published_at": "2026-09-10T08:30:00.000Z"
-    },
-    {
-      "title": "香港海關成功檢控一間貨運代理沒有根據及按照出口許可證而輸出中藥材及中成藥",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000453.htm",
-      "published_at": "2026-09-10T07:50:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000238.htm",
-      "published_at": "2026-09-10T07:45:00.000Z"
-    },
-    {
-      "title": "銀線灣泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000506.htm",
-      "published_at": "2026-09-10T07:45:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000492.htm",
-      "published_at": "2026-09-10T07:22:00.000Z"
-    },
-    {
-      "title": "民航處處長到馬來西亞出席亞太地區民航局局長會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000299.htm",
-      "published_at": "2026-09-10T07:00:00.000Z"
-    },
-    {
-      "title": "二○二六年聖誕平郵截郵日期",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000314.htm",
-      "published_at": "2026-09-10T04:05:00.000Z"
-    },
-    {
-      "title": "「中國內地電影展2026」展現影壇創作潛能（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000281.htm",
-      "published_at": "2026-09-10T04:00:00.000Z"
     }
   ],
-  "content_hash": "6e16759e59a5caea2122d3c82911836577e7f1bee5926c46428be02342f3f4a7"
+  "content_hash": "fa0492f018595f40511c3ce614fcab42f159b0f9f3608555ba2c5b3a6d02e645"
 }
