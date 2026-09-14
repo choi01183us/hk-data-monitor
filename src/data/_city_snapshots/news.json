@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-14T13:15:50.729Z",
-  "updated_at": "2026-09-14T12:57:58.000Z",
+  "fetched_at": "2026-09-14T19:56:06.500Z",
+  "updated_at": "2026-09-14T16:47:00.000Z",
   "records": [
+    {
+      "title": "紐約經貿辦擴大與亞特蘭大的經貿、學術和文化聯繫並推廣人才入境計劃（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091400803.htm",
+      "published_at": "2026-09-14T16:47:00.000Z"
+    },
+    {
+      "title": "東華三院黃大仙醫院甲型流感病毒個案組群最新公布",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400825.htm",
+      "published_at": "2026-09-14T14:17:08.000Z"
+    },
+    {
+      "title": "香港海關於機場檢獲約二百二十六萬元懷疑大麻花（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400816.htm",
+      "published_at": "2026-09-14T14:14:29.000Z"
+    },
     {
       "title": "就一宗區議員被判罪成個案進行調查",
       "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400714.htm",
@@ -492,22 +507,7 @@
       "title": "再錄得兩宗兒童感染流感嚴重個案　衞生署籲市民於九月十七日開展季節性流感疫苗接種計劃後盡快接種",
       "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000672.htm",
       "published_at": "2026-09-10T11:45:00.000Z"
-    },
-    {
-      "title": "行政長官與深圳市委書記會面（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000331.htm",
-      "published_at": "2026-09-10T11:30:00.000Z"
-    },
-    {
-      "title": "發展局局長與立法會議員考察北部都會區後會見傳媒開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000709.htm",
-      "published_at": "2026-09-10T11:29:00.000Z"
-    },
-    {
-      "title": "​房屋局局長與立法會議員考察北部都會區後會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000725.htm",
-      "published_at": "2026-09-10T11:20:00.000Z"
     }
   ],
-  "content_hash": "fa0492f018595f40511c3ce614fcab42f159b0f9f3608555ba2c5b3a6d02e645"
+  "content_hash": "10ca1141cbaabffa7e9af9bb8ae53ff88aaa563f89af038114905eeb91c96150"
 }
