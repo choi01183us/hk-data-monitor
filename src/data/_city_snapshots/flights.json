@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-13",
-  "fetched_at": "2026-09-13T21:05:28.105Z",
-  "updated_at": "2026-09-13T21:05:04.000Z",
+  "fetched_at": "2026-09-14T05:21:48.971Z",
+  "updated_at": "2026-09-14T05:20:25.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -4699,11 +4699,11 @@
       ],
       "flights": [
         {
-          "no": "HB 309",
+          "no": "HB 309Z",
           "airline": "HGB"
         }
       ],
-      "status": "預計 10:50 (14/09/2026)",
+      "status": "到閘口 11:13 (14/09/2026)",
       "statusCode": null
     },
     {
@@ -17400,5 +17400,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "a3b644bde3ed7635660338ab4e31e2303212587045d0f199b37f18d52f26e9e0"
+  "content_hash": "7133c42f674f90649498661584cd448062735bee8284b7e77c6869d22b127009"
 }

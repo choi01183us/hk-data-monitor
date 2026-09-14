@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-13T16:36:13.726Z",
-  "updated_at": "2026-09-13T13:40:00.000Z",
+  "fetched_at": "2026-09-14T05:21:46.713Z",
+  "updated_at": "2026-09-14T04:48:00.000Z",
   "records": [
+    {
+      "title": "勞工及福利局局長出席長者安居協會三十周年「智慧養老　平安生活」論壇致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400362.htm",
+      "published_at": "2026-09-14T04:48:00.000Z"
+    },
+    {
+      "title": "財政司司長出席長者安居協會三十周年「智慧養老　平安生活」論壇致辭（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400331.htm",
+      "published_at": "2026-09-14T04:15:00.000Z"
+    },
+    {
+      "title": "社署邀請合資格人士或機構申請資訊科技計劃協助殘疾人士",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400281.htm",
+      "published_at": "2026-09-14T04:00:00.000Z"
+    },
+    {
+      "title": "教育局提醒家長遞交小一入學申請表",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400192.htm",
+      "published_at": "2026-09-14T03:30:00.000Z"
+    },
+    {
+      "title": "共創多元文化工作間招聘會提供逾二千二百個優質職位空缺",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091100245.htm",
+      "published_at": "2026-09-14T03:00:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400238.htm",
+      "published_at": "2026-09-14T02:20:00.000Z"
+    },
     {
       "title": "香港海關偵破懷疑非法進口動物案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/13/P2026091300790.htm",
@@ -477,37 +507,7 @@
       "title": "「中國內地電影展2026」展現影壇創作潛能（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000281.htm",
       "published_at": "2026-09-10T04:00:00.000Z"
-    },
-    {
-      "title": "法國小提琴名家雷諾‧卡普松十月來港演繹布拉姆斯全套小提琴奏鳴曲（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026090900408.htm",
-      "published_at": "2026-09-10T03:00:00.000Z"
-    },
-    {
-      "title": "機電署公布二○二六年八月份石油氣品質化驗結果",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000270.htm",
-      "published_at": "2026-09-10T03:00:00.000Z"
-    },
-    {
-      "title": "兩名業主不遵從清拆令被判罰款合共逾十五萬元",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000286.htm",
-      "published_at": "2026-09-10T03:00:00.000Z"
-    },
-    {
-      "title": "政府公布成立香港知識產權學院先導計劃督導委員會及委任成員",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000303.htm",
-      "published_at": "2026-09-10T03:00:00.000Z"
-    },
-    {
-      "title": "六個公務員學位職系招聘工作星期六展開",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026090900422.htm",
-      "published_at": "2026-09-10T02:30:00.000Z"
-    },
-    {
-      "title": "​數個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000258.htm",
-      "published_at": "2026-09-10T02:26:00.000Z"
     }
   ],
-  "content_hash": "274f4f770146be5742e7e1993d8dffb746b6f9ab71c5b0107d2deb2264ee6280"
+  "content_hash": "6e16759e59a5caea2122d3c82911836577e7f1bee5926c46428be02342f3f4a7"
 }
