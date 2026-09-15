@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-14T19:56:06.500Z",
-  "updated_at": "2026-09-14T16:47:00.000Z",
+  "fetched_at": "2026-09-15T05:13:19.810Z",
+  "updated_at": "2026-09-15T04:45:00.000Z",
   "records": [
+    {
+      "title": "三星灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091500307.htm",
+      "published_at": "2026-09-15T04:45:00.000Z"
+    },
+    {
+      "title": "財經事務及庫務局局長在第十二屆海峽兩岸暨港澳經貿論壇主題演講全文（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091500265.htm",
+      "published_at": "2026-09-15T03:58:00.000Z"
+    },
+    {
+      "title": "​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091500220.htm",
+      "published_at": "2026-09-15T02:19:52.000Z"
+    },
     {
       "title": "紐約經貿辦擴大與亞特蘭大的經貿、學術和文化聯繫並推廣人才入境計劃（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091400803.htm",
@@ -492,22 +507,7 @@
       "title": "阿曼蘇哈爾國際銀行於香港開設亞太區辦事處推進全球發展（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/10/P2026090900584.htm",
       "published_at": "2026-09-10T12:28:59.000Z"
-    },
-    {
-      "title": "東華三院黃大仙醫院甲型流感病毒個案組群",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000742.htm",
-      "published_at": "2026-09-10T12:14:00.000Z"
-    },
-    {
-      "title": "發展局局長與立法會議員考察北部都會區後會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000761.htm",
-      "published_at": "2026-09-10T12:04:00.000Z"
-    },
-    {
-      "title": "再錄得兩宗兒童感染流感嚴重個案　衞生署籲市民於九月十七日開展季節性流感疫苗接種計劃後盡快接種",
-      "url": "https://www.info.gov.hk/gia/general/202609/10/P2026091000672.htm",
-      "published_at": "2026-09-10T11:45:00.000Z"
     }
   ],
-  "content_hash": "10ca1141cbaabffa7e9af9bb8ae53ff88aaa563f89af038114905eeb91c96150"
+  "content_hash": "33c44286a004a960270b7b5da4d40238c539bbaba7e065a6b8a747cad2bf311e"
 }
