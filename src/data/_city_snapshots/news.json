@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-15T12:02:25.834Z",
-  "updated_at": "2026-09-15T11:10:00.000Z",
+  "fetched_at": "2026-09-15T21:41:45.204Z",
+  "updated_at": "2026-09-15T17:40:00.000Z",
   "records": [
+    {
+      "title": "駐迪拜經貿辦在哈薩克斯坦舉辦晚宴　深化香港與中亞樞紐對樞紐合作（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600020.htm",
+      "published_at": "2026-09-15T17:40:00.000Z"
+    },
     {
       "title": "香港海關在珠寶展宣傳貴金屬及寶石交易商監管制度（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/15/P2026091500620.htm",
@@ -502,12 +507,7 @@
       "title": "原訟法庭就「支聯會煽動顛覆國家政權」案判刑",
       "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100387.htm",
       "published_at": "2026-09-11T05:20:00.000Z"
-    },
-    {
-      "title": "投資推廣署亮相2026 Inclusion．外灘大會　發揮香港「AI+」及「金融+」雙引擎優勢　協助中國內地企業拓展全球市場（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026090800332.htm",
-      "published_at": "2026-09-11T04:12:00.000Z"
     }
   ],
-  "content_hash": "80847af10f692ae479ae4b0eea44c29b48222ed3eba6ea2eaa9e72428500239a"
+  "content_hash": "a7883c866c9cb75d407f7784a7734f60cf73290197dca1536f874a55c9b7b3d0"
 }
