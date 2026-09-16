@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-16T11:58:07.595Z",
-  "updated_at": "2026-09-16T11:55:00.000Z",
+  "fetched_at": "2026-09-16T17:14:48.465Z",
+  "updated_at": "2026-09-16T15:22:00.000Z",
   "records": [
+    {
+      "title": "《香港第一個五年規劃》和二○二六年《施政報告》記者會答問內容（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600714.htm",
+      "published_at": "2026-09-16T15:22:00.000Z"
+    },
+    {
+      "title": "香港海關於機場偵破兩宗毒品案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600779.htm",
+      "published_at": "2026-09-16T14:43:47.000Z"
+    },
+    {
+      "title": "《香港第一個五年規劃》和二○二六年《施政報告》記者會開場發言（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600719.htm",
+      "published_at": "2026-09-16T14:02:00.000Z"
+    },
+    {
+      "title": "醫院管理局歡迎《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》及《行政長官2026年施政報告》",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600744.htm",
+      "published_at": "2026-09-16T13:46:10.000Z"
+    },
+    {
+      "title": "民政事務總署設立弔唁處悼念董建華先生",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600746.htm",
+      "published_at": "2026-09-16T13:37:50.000Z"
+    },
+    {
+      "title": "政務司副司長出席香港教育界慶祝中華人民共和國成立七十七周年聯歡晚宴致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600527.htm",
+      "published_at": "2026-09-16T12:21:08.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長出席「第十七屆海峽兩岸暨港澳地區藝術論壇──融創之夜」致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600683.htm",
@@ -477,37 +507,7 @@
       "title": "​《香港第一個五年規劃》、《施政報告》及相關刊物星期三公開派發",
       "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400481.htm",
       "published_at": "2026-09-14T08:11:00.000Z"
-    },
-    {
-      "title": "行政長官將向立法會公布《香港第一個五年規劃》及發表《施政報告》",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400495.htm",
-      "published_at": "2026-09-14T07:50:00.000Z"
-    },
-    {
-      "title": "多倫多經貿辦支持香港電影參與多倫多國際電影節（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400311.htm",
-      "published_at": "2026-09-14T07:45:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400186.htm",
-      "published_at": "2026-09-14T07:40:00.000Z"
-    },
-    {
-      "title": "文創處率領業界參與第51屆多倫多國際電影節（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400369.htm",
-      "published_at": "2026-09-14T07:38:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400487.htm",
-      "published_at": "2026-09-14T07:26:00.000Z"
-    },
-    {
-      "title": "勞工顧問委員會僱員代表選舉現接受登記及提名",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400267.htm",
-      "published_at": "2026-09-14T07:00:00.000Z"
     }
   ],
-  "content_hash": "5bd6f53126798c273a7de01ba440fd77d3e3068008e96c21328aa3ba2bfb166c"
+  "content_hash": "8689059dfe79dadf0dd23ff64d2ff8dcd0aea6e49bdf42692934b640f7ce8607"
 }
