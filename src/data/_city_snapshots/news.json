@@ -5,9 +5,89 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-15T21:41:45.204Z",
-  "updated_at": "2026-09-15T17:40:00.000Z",
+  "fetched_at": "2026-09-16T05:08:13.621Z",
+  "updated_at": "2026-09-16T05:05:00.000Z",
   "records": [
+    {
+      "title": "《行政長官2026年施政報告》全文（三）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600226.htm",
+      "published_at": "2026-09-16T05:05:00.000Z"
+    },
+    {
+      "title": "《行政長官2026年施政報告》全文（二）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600212.htm",
+      "published_at": "2026-09-16T05:02:00.000Z"
+    },
+    {
+      "title": "《行政長官2026年施政報告》全文（一）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600201.htm",
+      "published_at": "2026-09-16T04:29:00.000Z"
+    },
+    {
+      "title": "政府公布《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600306.htm",
+      "published_at": "2026-09-16T04:28:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（八）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600172.htm",
+      "published_at": "2026-09-16T04:25:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（七）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600164.htm",
+      "published_at": "2026-09-16T04:15:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（六）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600162.htm",
+      "published_at": "2026-09-16T04:10:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（五）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600156.htm",
+      "published_at": "2026-09-16T03:54:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（四）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600155.htm",
+      "published_at": "2026-09-16T03:42:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（三）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600148.htm",
+      "published_at": "2026-09-16T03:32:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（二）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600140.htm",
+      "published_at": "2026-09-16T03:21:00.000Z"
+    },
+    {
+      "title": "《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》全文（一）",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600126.htm",
+      "published_at": "2026-09-16T03:12:00.000Z"
+    },
+    {
+      "title": "​​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600245.htm",
+      "published_at": "2026-09-16T02:27:00.000Z"
+    },
+    {
+      "title": "醫院管理局就瑪嘉烈醫院不明氣體報告的公布",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600215.htm",
+      "published_at": "2026-09-16T01:55:00.000Z"
+    },
+    {
+      "title": "賽馬日跑馬地特別交通措施",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600209.htm",
+      "published_at": "2026-09-16T01:35:28.000Z"
+    },
+    {
+      "title": "將軍澳致命交通意外",
+      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600132.htm",
+      "published_at": "2026-09-15T23:33:28.000Z"
+    },
     {
       "title": "駐迪拜經貿辦在哈薩克斯坦舉辦晚宴　深化香港與中亞樞紐對樞紐合作（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600020.htm",
@@ -427,87 +507,7 @@
       "title": "申訴專員學院為立法會議員辦事處及議員助理舉辦專題講座（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100517.htm",
       "published_at": "2026-09-11T09:35:00.000Z"
-    },
-    {
-      "title": "蚊傳疾病登革熱和基孔肯雅熱的最新情況",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100487.htm",
-      "published_at": "2026-09-11T09:15:57.000Z"
-    },
-    {
-      "title": "文化體育及旅遊局召開會議統籌內地國慶黃金周旅客訪港預備工作（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100335.htm",
-      "published_at": "2026-09-11T09:15:00.000Z"
-    },
-    {
-      "title": "政府公布銀色債券認購及配發結果",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100532.htm",
-      "published_at": "2026-09-11T09:13:00.000Z"
-    },
-    {
-      "title": "智慧交通基金批出五個項目",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100351.htm",
-      "published_at": "2026-09-11T09:00:00.000Z"
-    },
-    {
-      "title": "衞生署署長在北京拜訪國家市場監督管理總局及中國藥品檢定研究院（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100422.htm",
-      "published_at": "2026-09-11T08:50:00.000Z"
-    },
-    {
-      "title": "勞工及福利局局長和人才辦總監會見傳媒談話內容",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100457.htm",
-      "published_at": "2026-09-11T08:40:00.000Z"
-    },
-    {
-      "title": "反非法勞工行動拘二十人（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100482.htm",
-      "published_at": "2026-09-11T08:30:00.000Z"
-    },
-    {
-      "title": "​金管局「2026綠色金融科技研討會」促進智慧金融推動淨零轉型（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091000681.htm",
-      "published_at": "2026-09-11T08:15:00.000Z"
-    },
-    {
-      "title": "勞工處調查深水埗致命工作意外",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100480.htm",
-      "published_at": "2026-09-11T08:07:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100218.htm",
-      "published_at": "2026-09-11T08:00:00.000Z"
-    },
-    {
-      "title": "環保署公布泳灘等級",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100439.htm",
-      "published_at": "2026-09-11T08:00:00.000Z"
-    },
-    {
-      "title": "衞生署繼續嚴厲打擊禁煙區違例吸煙（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100444.htm",
-      "published_at": "2026-09-11T08:00:00.000Z"
-    },
-    {
-      "title": "本港水域紅潮報告",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100463.htm",
-      "published_at": "2026-09-11T07:56:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100472.htm",
-      "published_at": "2026-09-11T07:55:00.000Z"
-    },
-    {
-      "title": "​選舉委員會界別分組選舉活動指引今日發表",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100307.htm",
-      "published_at": "2026-09-11T07:00:00.000Z"
-    },
-    {
-      "title": "原訟法庭就「支聯會煽動顛覆國家政權」案判刑",
-      "url": "https://www.info.gov.hk/gia/general/202609/11/P2026091100387.htm",
-      "published_at": "2026-09-11T05:20:00.000Z"
     }
   ],
-  "content_hash": "a7883c866c9cb75d407f7784a7734f60cf73290197dca1536f874a55c9b7b3d0"
+  "content_hash": "976921fb459a3a83e581a94b720af523b8856dd015cf0b1b876ff079b01dc6ca"
 }
