@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-17",
-  "fetched_at": "2026-09-17T17:13:34.284Z",
-  "updated_at": "2026-09-17T17:11:09.000Z",
+  "fetched_at": "2026-09-17T21:40:20.676Z",
+  "updated_at": "2026-09-17T21:40:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7322,7 +7322,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "著陸於 23:24",
+      "status": "到閘口 23:28",
       "statusCode": null
     },
     {
@@ -7914,7 +7914,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 23:27",
+      "status": "到閘口 23:38",
       "statusCode": null
     },
     {
@@ -7946,7 +7946,7 @@
           "airline": "JNA"
         }
       ],
-      "status": "預計 23:34",
+      "status": "到閘口 23:44",
       "statusCode": null
     },
     {
@@ -7966,7 +7966,7 @@
           "airline": "HHN"
         }
       ],
-      "status": "預計 23:33",
+      "status": "到閘口 23:43",
       "statusCode": null
     },
     {
@@ -7982,7 +7982,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:27",
+      "status": "到閘口 23:29",
       "statusCode": null
     },
     {
@@ -8110,7 +8110,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 23:36",
+      "status": "到閘口 23:48",
       "statusCode": null
     },
     {
@@ -8126,7 +8126,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "預計 23:57",
+      "status": "到閘口 23:59",
       "statusCode": null
     },
     {
@@ -8142,7 +8142,7 @@
           "airline": "APJ"
         }
       ],
-      "status": "預計 23:31",
+      "status": "到閘口 23:40",
       "statusCode": null
     },
     {
@@ -16442,5 +16442,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "44faa71e97e82730711af862921cf2975d2e89a90538af0a209dda77581abe6b"
+  "content_hash": "ac02f1d6ebb6e55463ba106492e885ddc233eef82e26f5ec918f72f8f26756e8"
 }
