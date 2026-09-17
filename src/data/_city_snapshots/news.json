@@ -5,9 +5,34 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-16T17:14:48.465Z",
-  "updated_at": "2026-09-16T15:22:00.000Z",
+  "fetched_at": "2026-09-17T05:14:16.403Z",
+  "updated_at": "2026-09-17T04:36:00.000Z",
   "records": [
+    {
+      "title": "政府張貼收回土地公告以進行沙頭角口岸重建與相關工程",
+      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700259.htm",
+      "published_at": "2026-09-17T04:36:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局局長出席2026年國家網絡安全宣傳周——香港分論壇致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700288.htm",
+      "published_at": "2026-09-17T03:11:00.000Z"
+    },
+    {
+      "title": "​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700249.htm",
+      "published_at": "2026-09-17T02:15:29.000Z"
+    },
+    {
+      "title": "警方呼籲市民提供秀茂坪失蹤女童消息（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700182.htm",
+      "published_at": "2026-09-17T00:39:31.000Z"
+    },
+    {
+      "title": "調整基本利率",
+      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700139.htm",
+      "published_at": "2026-09-17T00:05:29.000Z"
+    },
     {
       "title": "《香港第一個五年規劃》和二○二六年《施政報告》記者會答問內容（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600714.htm",
@@ -482,32 +507,7 @@
       "title": "司法機構舉辦商業法庭常設國際論壇督導小組會議（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400266.htm",
       "published_at": "2026-09-14T09:30:00.000Z"
-    },
-    {
-      "title": "香港網絡安全業界代表團出席2026年國家網絡安全宣傳周活動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400476.htm",
-      "published_at": "2026-09-14T08:45:00.000Z"
-    },
-    {
-      "title": "二零二六年第二季製造及廢棄物管理業的工業生產指數和生產者價格指數臨時統計數字",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400296.htm",
-      "published_at": "2026-09-14T08:30:00.000Z"
-    },
-    {
-      "title": "二零二六年第二季香港本地居民總收入及對外初次收入流量數字",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400317.htm",
-      "published_at": "2026-09-14T08:30:00.000Z"
-    },
-    {
-      "title": "外匯基金分析帳目",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400432.htm",
-      "published_at": "2026-09-14T08:30:00.000Z"
-    },
-    {
-      "title": "​《香港第一個五年規劃》、《施政報告》及相關刊物星期三公開派發",
-      "url": "https://www.info.gov.hk/gia/general/202609/14/P2026091400481.htm",
-      "published_at": "2026-09-14T08:11:00.000Z"
     }
   ],
-  "content_hash": "8689059dfe79dadf0dd23ff64d2ff8dcd0aea6e49bdf42692934b640f7ce8607"
+  "content_hash": "8959461408d2f78b23ec340139594a5a1f03feb9c04e501bce622037e83252fd"
 }
