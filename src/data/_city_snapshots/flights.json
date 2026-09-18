@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-18",
-  "fetched_at": "2026-09-18T16:40:34.470Z",
-  "updated_at": "2026-09-18T16:40:07.000Z",
+  "fetched_at": "2026-09-18T21:10:40.163Z",
+  "updated_at": "2026-09-18T21:04:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8402,7 +8402,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "著陸於 00:12 (19/09/2026)",
+      "status": "到閘口 00:21 (19/09/2026)",
       "statusCode": null
     },
     {
@@ -17370,5 +17370,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "436dc0be682513a881ac7451188bc52b7f35235e55a5117e5ba5ec85e651e23e"
+  "content_hash": "a62b43fddce8e61898d081e329ee087b8e0f0c99c661664fe649ca2a5c04b2e9"
 }
