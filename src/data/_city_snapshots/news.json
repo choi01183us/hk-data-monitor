@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-18T16:40:32.395Z",
-  "updated_at": "2026-09-18T14:47:28.000Z",
+  "fetched_at": "2026-09-18T23:32:27.516Z",
+  "updated_at": "2026-09-18T22:01:54.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900137.htm",
+      "published_at": "2026-09-18T22:01:54.000Z"
+    },
+    {
+      "title": "分區賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091700304.htm",
+      "published_at": "2026-09-18T22:00:00.000Z"
+    },
     {
       "title": "大埔致命交通意外",
       "url": "https://www.info.gov.hk/gia/general/202609/18/P2026091800832.htm",
@@ -497,17 +507,7 @@
       "title": "醫院管理局就瑪嘉烈醫院不明氣體報告的公布（二）",
       "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600646.htm",
       "published_at": "2026-09-16T11:30:00.000Z"
-    },
-    {
-      "title": "​香港海運港口發展局歡迎《香港第一個五年規劃》及《施政報告》",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600658.htm",
-      "published_at": "2026-09-16T11:27:00.000Z"
-    },
-    {
-      "title": "入境事務處推出「Go香港」流動應用程式",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600598.htm",
-      "published_at": "2026-09-16T11:25:00.000Z"
     }
   ],
-  "content_hash": "4042545886ecafd65ad10a800a71de898b7ff1e86d32bf47e1f5a39182590d40"
+  "content_hash": "b9ca9028a47e43368a47add42124d78d5a14b536733d9e4a827853848a33e0dc"
 }
