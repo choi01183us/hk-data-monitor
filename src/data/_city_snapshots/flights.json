@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-19",
-  "fetched_at": "2026-09-19T16:01:36.528Z",
-  "updated_at": "2026-09-19T16:01:03.000Z",
+  "fetched_at": "2026-09-19T20:56:21.848Z",
+  "updated_at": "2026-09-19T20:56:06.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -3098,7 +3098,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "預計 01:11 (20/09/2026)",
+      "status": "到閘口 01:18 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -7575,7 +7575,7 @@
           "airline": "THA"
         }
       ],
-      "status": "預計 22:34",
+      "status": "到閘口 22:42",
       "statusCode": null
     },
     {
@@ -7779,7 +7779,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "預計 22:46",
+      "status": "到閘口 22:59",
       "statusCode": null
     },
     {
@@ -7955,7 +7955,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "著陸於 22:18",
+      "status": "到閘口 22:33",
       "statusCode": null
     },
     {
@@ -7991,7 +7991,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "著陸於 22:27",
+      "status": "到閘口 22:38",
       "statusCode": null
     },
     {
@@ -8007,7 +8007,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "著陸於 22:22",
+      "status": "到閘口 22:31",
       "statusCode": null
     },
     {
@@ -8023,7 +8023,7 @@
           "airline": "ESR"
         }
       ],
-      "status": "預計 22:43",
+      "status": "到閘口 22:53",
       "statusCode": null
     },
     {
@@ -8055,7 +8055,7 @@
           "airline": "ACA"
         }
       ],
-      "status": "著陸於 22:20",
+      "status": "到閘口 22:35",
       "statusCode": null
     },
     {
@@ -8095,7 +8095,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 23:14",
+      "status": "到閘口 23:16",
       "statusCode": null
     },
     {
@@ -8131,7 +8131,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:33",
+      "status": "到閘口 23:42",
       "statusCode": null
     },
     {
@@ -8147,7 +8147,7 @@
           "airline": "SIA"
         }
       ],
-      "status": "預計 22:37",
+      "status": "到閘口 22:51",
       "statusCode": null
     },
     {
@@ -8167,7 +8167,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 22:41",
+      "status": "到閘口 22:55",
       "statusCode": null
     },
     {
@@ -8183,7 +8183,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 22:39",
+      "status": "到閘口 22:44",
       "statusCode": null
     },
     {
@@ -8215,7 +8215,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "預計 23:20",
+      "status": "到閘口 23:30",
       "statusCode": null
     },
     {
@@ -8235,7 +8235,7 @@
           "airline": "CCA"
         }
       ],
-      "status": "預計 23:37",
+      "status": "到閘口 23:46",
       "statusCode": null
     },
     {
@@ -8255,7 +8255,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 22:56",
+      "status": "到閘口 23:03",
       "statusCode": null
     },
     {
@@ -8271,7 +8271,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 00:07 (20/09/2026)",
+      "status": "到閘口 00:11 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -8291,7 +8291,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 22:44",
+      "status": "到閘口 22:58",
       "statusCode": null
     },
     {
@@ -8311,7 +8311,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:43",
+      "status": "到閘口 23:55",
       "statusCode": null
     },
     {
@@ -8331,7 +8331,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 22:58",
+      "status": "到閘口 23:03",
       "statusCode": null
     },
     {
@@ -8347,7 +8347,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "預計 22:49",
+      "status": "到閘口 23:06",
       "statusCode": null
     },
     {
@@ -8367,7 +8367,7 @@
           "airline": "CCA"
         }
       ],
-      "status": "預計 22:36",
+      "status": "到閘口 22:54",
       "statusCode": null
     },
     {
@@ -8387,7 +8387,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 23:11",
+      "status": "到閘口 23:17",
       "statusCode": null
     },
     {
@@ -8403,7 +8403,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 22:59",
+      "status": "到閘口 23:07",
       "statusCode": null
     },
     {
@@ -8419,7 +8419,7 @@
           "airline": "JNA"
         }
       ],
-      "status": "預計 23:12",
+      "status": "到閘口 23:14",
       "statusCode": null
     },
     {
@@ -8439,7 +8439,7 @@
           "airline": "HHN"
         }
       ],
-      "status": "預計 23:15",
+      "status": "到閘口 23:18",
       "statusCode": null
     },
     {
@@ -8455,7 +8455,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 02:15 (20/09/2026)",
+      "status": "到閘口 01:53 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -8471,7 +8471,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "",
+      "status": "到閘口 23:36",
       "statusCode": null
     },
     {
@@ -8487,7 +8487,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 00:04 (20/09/2026)",
+      "status": "到閘口 00:06 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -8507,7 +8507,7 @@
           "airline": "EVA"
         }
       ],
-      "status": "預計 23:14",
+      "status": "到閘口 23:26",
       "statusCode": null
     },
     {
@@ -8527,7 +8527,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 01:00 (20/09/2026)",
+      "status": "到閘口 00:51 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -8547,7 +8547,7 @@
           "airline": "CSH"
         }
       ],
-      "status": "預計 23:22",
+      "status": "到閘口 23:37",
       "statusCode": null
     },
     {
@@ -8571,7 +8571,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 23:22",
+      "status": "到閘口 23:30",
       "statusCode": null
     },
     {
@@ -8587,7 +8587,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:26",
+      "status": "到閘口 23:37",
       "statusCode": null
     },
     {
@@ -8619,7 +8619,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 23:40",
+      "status": "到閘口 23:49",
       "statusCode": null
     },
     {
@@ -8635,7 +8635,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 00:01 (20/09/2026)",
+      "status": "到閘口 00:12 (20/09/2026)",
       "statusCode": null
     },
     {
@@ -8651,7 +8651,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "預計 23:25",
+      "status": "到閘口 23:43",
       "statusCode": null
     },
     {
@@ -8667,7 +8667,7 @@
           "airline": "APJ"
         }
       ],
-      "status": "預計 23:38",
+      "status": "到閘口 23:40",
       "statusCode": null
     },
     {
@@ -17096,7 +17096,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 23:02",
+      "status": "啟航 23:00",
       "statusCode": null
     },
     {
@@ -17372,7 +17372,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:48",
       "statusCode": null
     },
     {
@@ -17392,7 +17392,7 @@
           "airline": "DLH"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:57",
       "statusCode": null
     },
     {
@@ -17408,9 +17408,9 @@
           "airline": "ANA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:49",
       "statusCode": null
     }
   ],
-  "content_hash": "64d3d6b17a0c9a9a815f7e26b3fb78f8dc049ac5589a179a415b93bdcc0955f3"
+  "content_hash": "5933389b300b979795090031cd865e38b1b86371b6f3c5564d3400dddfdda9be"
 }
