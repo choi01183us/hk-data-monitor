@@ -5,9 +5,34 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-19T11:25:08.289Z",
-  "updated_at": "2026-09-19T11:00:00.000Z",
+  "fetched_at": "2026-09-19T16:01:34.265Z",
+  "updated_at": "2026-09-19T14:45:00.000Z",
   "records": [
+    {
+      "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900831.htm",
+      "published_at": "2026-09-19T14:45:00.000Z"
+    },
+    {
+      "title": "香港海關檢獲懷疑受管制屬瀕危物種的活龜（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900801.htm",
+      "published_at": "2026-09-19T13:47:00.000Z"
+    },
+    {
+      "title": "第六屆粵港澳大灣區律師執業考試順利舉行",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900756.htm",
+      "published_at": "2026-09-19T13:00:00.000Z"
+    },
+    {
+      "title": "「向國旗敬禮」港澳青少年升旗隊代表訪京團在北京考察交流（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900415.htm",
+      "published_at": "2026-09-19T12:15:00.000Z"
+    },
+    {
+      "title": "​哥連臣角火葬場附近明日交通安排的澄清",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900731.htm",
+      "published_at": "2026-09-19T11:50:29.000Z"
+    },
     {
       "title": "立法會研究「生態＋旅遊」事宜小組委員會考察香港聯合國教科文組織世界地質公園的黃竹角咀、東平洲及印洲塘（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900604.htm",
@@ -482,32 +507,7 @@
       "title": "香港海關檢獲約一百萬元懷疑冒牌貨物（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700495.htm",
       "published_at": "2026-09-17T08:00:00.000Z"
-    },
-    {
-      "title": "香港海關於機場檢獲約七十五萬元懷疑可卡因（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700491.htm",
-      "published_at": "2026-09-17T07:46:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700219.htm",
-      "published_at": "2026-09-17T07:45:00.000Z"
-    },
-    {
-      "title": "政府張貼收回土地公告以推行兩個土瓜灣市區重建項目",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700257.htm",
-      "published_at": "2026-09-17T06:58:00.000Z"
-    },
-    {
-      "title": "一名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700435.htm",
-      "published_at": "2026-09-17T06:35:00.000Z"
-    },
-    {
-      "title": "《香港第一個五年規劃》和二○二六年《施政報告》立法會行政長官互動交流答問會開場發言（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700430.htm",
-      "published_at": "2026-09-17T06:15:00.000Z"
     }
   ],
-  "content_hash": "ab83d96657d9730d65748f4219a33e23d3550ca5c8a99567257ecc3938e54684"
+  "content_hash": "2b0cd52fbdd383b44f9e600161b700a4d58f07726ec92c020508b42d78e04279"
 }
