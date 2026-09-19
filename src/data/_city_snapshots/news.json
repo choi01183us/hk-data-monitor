@@ -5,9 +5,84 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-19T04:56:57.995Z",
-  "updated_at": "2026-09-19T04:20:00.000Z",
+  "fetched_at": "2026-09-19T11:25:08.289Z",
+  "updated_at": "2026-09-19T11:00:00.000Z",
   "records": [
+    {
+      "title": "立法會研究「生態＋旅遊」事宜小組委員會考察香港聯合國教科文組織世界地質公園的黃竹角咀、東平洲及印洲塘（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900604.htm",
+      "published_at": "2026-09-19T11:00:00.000Z"
+    },
+    {
+      "title": "​香港海關於機場偵破兩宗旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900631.htm",
+      "published_at": "2026-09-19T09:55:00.000Z"
+    },
+    {
+      "title": "​香港海關檢獲約一百萬元懷疑走私銀磚（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900557.htm",
+      "published_at": "2026-09-19T09:42:02.000Z"
+    },
+    {
+      "title": "衞生防護中心調查一宗猴痘確診個案",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900587.htm",
+      "published_at": "2026-09-19T09:30:00.000Z"
+    },
+    {
+      "title": "香港海關偵破歷來最大宗經海路販運估計市值達一億二千五百萬元懷疑大麻花案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091800693.htm",
+      "published_at": "2026-09-19T09:25:53.000Z"
+    },
+    {
+      "title": "房屋局局長在《香港第一個五年規劃》和二○二六年《施政報告》有關國際航運中心和航空樞紐及房屋提量提質措施記者會開場發言（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900543.htm",
+      "published_at": "2026-09-19T09:20:00.000Z"
+    },
+    {
+      "title": "民政事務總署開放臨時避暑中心",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900598.htm",
+      "published_at": "2026-09-19T09:00:00.000Z"
+    },
+    {
+      "title": "康文署舉行「全民動起來暨活力亞運觀賞站啓動禮」（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091800459.htm",
+      "published_at": "2026-09-19T08:22:00.000Z"
+    },
+    {
+      "title": "財經事務及庫務局局長在建亞理財智醒嘉年華—社區金融安全與活力推廣日活動致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091800674.htm",
+      "published_at": "2026-09-19T08:07:00.000Z"
+    },
+    {
+      "title": "「保安局青少年制服團隊領袖論壇」舉行年度匯報（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900475.htm",
+      "published_at": "2026-09-19T08:05:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局副局長出席「全民動起來暨活力亞運觀賞站啓動禮」致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900448.htm",
+      "published_at": "2026-09-19T06:28:00.000Z"
+    },
+    {
+      "title": "​運輸及物流局局長在《香港第一個五年規劃》和二○二六年《施政報告》有關國際航運中心和航空樞紐及房屋提量提質措施記者會開場發言（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900406.htm",
+      "published_at": "2026-09-19T06:18:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長在《香港第一個五年規劃》和二○二六年《施政報告》有關文化體育及旅遊發展機遇措施記者會開場發言（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900376.htm",
+      "published_at": "2026-09-19T05:07:00.000Z"
+    },
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900396.htm",
+      "published_at": "2026-09-19T05:01:23.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900393.htm",
+      "published_at": "2026-09-19T05:00:35.000Z"
+    },
     {
       "title": "政務司副司長出席「保安局青少年制服團隊領袖論壇」年度匯報致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900335.htm",
@@ -432,82 +507,7 @@
       "title": "《香港第一個五年規劃》和二○二六年《施政報告》立法會行政長官互動交流答問會開場發言（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700430.htm",
       "published_at": "2026-09-17T06:15:00.000Z"
-    },
-    {
-      "title": "流浮山火警特別通知",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700422.htm",
-      "published_at": "2026-09-17T06:11:00.000Z"
-    },
-    {
-      "title": "流浮山三級火警",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700411.htm",
-      "published_at": "2026-09-17T05:56:15.000Z"
-    },
-    {
-      "title": "柴灣謀殺案",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700417.htm",
-      "published_at": "2026-09-17T05:56:07.000Z"
-    },
-    {
-      "title": "政府張貼收回土地公告以進行沙頭角口岸重建與相關工程",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700259.htm",
-      "published_at": "2026-09-17T04:36:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長出席2026年國家網絡安全宣傳周——香港分論壇致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700288.htm",
-      "published_at": "2026-09-17T03:11:00.000Z"
-    },
-    {
-      "title": "​數個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700249.htm",
-      "published_at": "2026-09-17T02:15:29.000Z"
-    },
-    {
-      "title": "警方呼籲市民提供秀茂坪失蹤女童消息（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700182.htm",
-      "published_at": "2026-09-17T00:39:31.000Z"
-    },
-    {
-      "title": "調整基本利率",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700139.htm",
-      "published_at": "2026-09-17T00:05:29.000Z"
-    },
-    {
-      "title": "《香港第一個五年規劃》和二○二六年《施政報告》記者會答問內容（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600714.htm",
-      "published_at": "2026-09-16T15:22:00.000Z"
-    },
-    {
-      "title": "香港海關於機場偵破兩宗毒品案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600779.htm",
-      "published_at": "2026-09-16T14:43:47.000Z"
-    },
-    {
-      "title": "《香港第一個五年規劃》和二○二六年《施政報告》記者會開場發言（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600719.htm",
-      "published_at": "2026-09-16T14:02:00.000Z"
-    },
-    {
-      "title": "醫院管理局歡迎《香港特別行政區經濟和社會發展第一個五年規劃（2026—2030年）》及《行政長官2026年施政報告》",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600744.htm",
-      "published_at": "2026-09-16T13:46:10.000Z"
-    },
-    {
-      "title": "民政事務總署設立弔唁處悼念董建華先生",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600746.htm",
-      "published_at": "2026-09-16T13:37:50.000Z"
-    },
-    {
-      "title": "政務司副司長出席香港教育界慶祝中華人民共和國成立七十七周年聯歡晚宴致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600527.htm",
-      "published_at": "2026-09-16T12:21:08.000Z"
-    },
-    {
-      "title": "文化體育及旅遊局局長出席「第十七屆海峽兩岸暨港澳地區藝術論壇──融創之夜」致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/16/P2026091600683.htm",
-      "published_at": "2026-09-16T11:55:00.000Z"
     }
   ],
-  "content_hash": "1613376919a460952fdf4771ca470b7a761b2ac6058442796548867b1d2ccd95"
+  "content_hash": "ab83d96657d9730d65748f4219a33e23d3550ca5c8a99567257ecc3938e54684"
 }
