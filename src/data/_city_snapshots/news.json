@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-19T16:01:34.265Z",
-  "updated_at": "2026-09-19T14:45:00.000Z",
+  "fetched_at": "2026-09-19T23:26:58.367Z",
+  "updated_at": "2026-09-19T22:03:04.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000141.htm",
+      "published_at": "2026-09-19T22:03:04.000Z"
+    },
     {
       "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/19/P2026091900831.htm",
@@ -499,15 +504,10 @@
       "published_at": "2026-09-17T08:12:00.000Z"
     },
     {
-      "title": "二○二六年第二季《公開資料守則》統計數字發表",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700432.htm",
-      "published_at": "2026-09-17T08:00:00.000Z"
-    },
-    {
       "title": "香港海關檢獲約一百萬元懷疑冒牌貨物（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700495.htm",
       "published_at": "2026-09-17T08:00:00.000Z"
     }
   ],
-  "content_hash": "2b0cd52fbdd383b44f9e600161b700a4d58f07726ec92c020508b42d78e04279"
+  "content_hash": "b489eca3aa1d2302edeecab453dde4fa1c0628d1be3a2f16def3ee48cc1da5a2"
 }
