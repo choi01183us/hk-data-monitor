@@ -5,11 +5,21 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-20T11:45:04.272Z",
-  "updated_at": "2026-09-20T10:50:00.000Z",
+  "fetched_at": "2026-09-20T16:26:19.628Z",
+  "updated_at": "2026-09-20T15:07:35.000Z",
   "records": [
     {
-      "title": "「向國旗敬禮」港澳青少年升旗隊代表訪京團在天安門廣場參加升旗儀式（附圖）",
+      "title": "香港海關打擊展覽攤位售賣懷疑侵權首飾（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000755.htm",
+      "published_at": "2026-09-20T15:07:35.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀劉慕裳、何詩蓓、簡綽桐、李芯瑤、馬紫玲和王欣桐奪得兩面亞運銀牌",
+      "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000718.htm",
+      "published_at": "2026-09-20T14:02:00.000Z"
+    },
+    {
+      "title": "「向國旗敬禮」港澳青少年升旗隊代表訪京團在天安門廣場參加升旗儀式（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000576.htm",
       "published_at": "2026-09-20T10:50:00.000Z"
     },
@@ -497,17 +507,7 @@
       "title": "《香港第一個五年規劃》和二○二六年《施政報告》立法會行政長官互動交流答問會總結發言（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700630.htm",
       "published_at": "2026-09-17T10:18:00.000Z"
-    },
-    {
-      "title": "《香港第一個五年規劃》和二○二六年《施政報告》立法會行政長官互動交流答問會答問內容（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700628.htm",
-      "published_at": "2026-09-17T10:17:00.000Z"
-    },
-    {
-      "title": "衞生防護中心調查一宗基孔肯雅熱本地個案（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/17/P2026091700609.htm",
-      "published_at": "2026-09-17T10:15:00.000Z"
     }
   ],
-  "content_hash": "6c13d42a7bf703eb49fcb3f206ddd0ec90d81b20d45bde630ee10fcfd6ebbbb8"
+  "content_hash": "ef486a0b461e154273bd5d775ea4ac4885d35e1938ec02c82fca3acf49c8c807"
 }
