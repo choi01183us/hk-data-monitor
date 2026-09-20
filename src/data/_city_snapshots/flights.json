@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-20",
-  "fetched_at": "2026-09-20T16:26:22.489Z",
-  "updated_at": "2026-09-20T16:26:08.000Z",
+  "fetched_at": "2026-09-20T21:01:20.336Z",
+  "updated_at": "2026-09-20T21:01:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7116,7 +7116,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "到閘口 20:11",
+      "status": "到閘口 20:12",
       "statusCode": null
     },
     {
@@ -8271,7 +8271,7 @@
           "airline": "ESR"
         }
       ],
-      "status": "到閘口 22:51",
+      "status": "到閘口 22:52",
       "statusCode": null
     },
     {
@@ -8591,7 +8591,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "到閘口 22:51",
+      "status": "到閘口 22:53",
       "statusCode": null
     },
     {
@@ -8675,7 +8675,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "到閘口 23:10",
+      "status": "到閘口 23:09",
       "statusCode": null
     },
     {
@@ -8943,7 +8943,7 @@
           "airline": "APJ"
         }
       ],
-      "status": "預計 00:34 (21/09/2026)",
+      "status": "到閘口 00:37 (21/09/2026)",
       "statusCode": null
     },
     {
@@ -9735,7 +9735,7 @@
           "airline": "BTN"
         }
       ],
-      "status": "啟航 03:16",
+      "status": "啟航 03:15",
       "statusCode": null
     },
     {
@@ -11489,7 +11489,7 @@
           "airline": "CEB"
         }
       ],
-      "status": "啟航 09:41",
+      "status": "啟航 09:40",
       "statusCode": null
     },
     {
@@ -14258,7 +14258,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "啟航 15:41",
+      "status": "啟航 15:40",
       "statusCode": null
     },
     {
@@ -14539,7 +14539,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "啟航 16:22",
+      "status": "啟航 16:20",
       "statusCode": null
     },
     {
@@ -15427,7 +15427,7 @@
           "airline": "PAL"
         }
       ],
-      "status": "啟航 18:16",
+      "status": "啟航 18:15",
       "statusCode": null
     },
     {
@@ -15559,7 +15559,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "啟航 18:41",
+      "status": "啟航 18:40",
       "statusCode": null
     },
     {
@@ -16287,7 +16287,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 20:17",
+      "status": "啟航 20:15",
       "statusCode": null
     },
     {
@@ -17752,9 +17752,9 @@
           "airline": "ANA"
         }
       ],
-      "status": "預計 02:10 (21/09/2026)",
+      "status": "啟航 02:24 (21/09/2026)",
       "statusCode": null
     }
   ],
-  "content_hash": "18f9103a56aa166a0e20e0e1afe8472fef30541b0d4b7bc1ff6cd3fb692926d4"
+  "content_hash": "2f0b0cb4c1167c3d9b16b8c28b30cd5a0c1a8018a0ca10d6181a6b356f59aa2a"
 }
