@@ -13,8 +13,8 @@
   "source_note_zh": "政府統計處綜合住戶統計調查組（三）(統計處表 130-06102:家庭住戶統計數字)",
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
-  "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T12:17:57.874Z",
+  "updated_at": "2026-09-17",
+  "fetched_at": "2026-09-21T00:18:14.632Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "就業",
@@ -220,6 +220,6 @@
     "period": "2025",
     "value": 30000
   },
-  "content_hash": "sha256:50abc3b1e9e1df9d",
-  "data_version": "2026.09.5"
+  "content_hash": "sha256:b10488063025e7ff",
+  "data_version": "2026.09.6"
 }

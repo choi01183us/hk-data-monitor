@@ -13,8 +13,8 @@
   "source_note_zh": "政府統計處綜合住戶統計調查組（三）(統計處表 210-06401:按年齡及性別劃分的失業人數及失業率)",
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
-  "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T12:17:42.324Z",
+  "updated_at": "2026-09-17",
+  "fetched_at": "2026-09-21T00:18:04.886Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "就業",
@@ -481,6 +481,6 @@
     "category": "全港整體",
     "value": 3.7
   },
-  "content_hash": "sha256:de4420669349111e",
-  "data_version": "2026.09.5"
+  "content_hash": "sha256:694ae95f7a38b331",
+  "data_version": "2026.09.6"
 }

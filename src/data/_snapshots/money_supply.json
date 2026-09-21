@@ -13,8 +13,8 @@
   "source_note_zh": "原始統計及知識產權擁有人：香港金融管理局；轉載來源：政府統計處網站表 340-45011。本站只把原值由百萬港元乘 1,000,000 換成港元，並選取季末數據。金管局使用條款：https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/",
   "licence": "政府統計處《知識產權公告》；金管局《使用條款及條件》",
   "licence_url": "https://www.hkma.gov.hk/chi/other-information/terms-and-conditions-of-use/",
-  "updated_at": "2026-06-15",
-  "fetched_at": "2026-09-09T05:05:59.912Z",
+  "updated_at": "2026-09-15",
+  "fetched_at": "2026-09-21T00:18:57.599Z",
   "frequency": "quarterly",
   "acquisition": "api",
   "category": "貨幣與股市",
@@ -32,9 +32,9 @@
   ],
   "anchors": [
     {
-      "id": "m3-vs-2025-Q1",
-      "text_zh": "M3：對比 2025 年第 1 季（M3，去年同季），升咗 9.3%",
-      "basis_zh": "2025 年第 1 季 190,946 億 → 2026 年第 1 季 208,645 億"
+      "id": "m3-vs-2025-Q2",
+      "text_zh": "M3：對比 2025 年第 2 季（M3，去年同季），升咗 9.2%",
+      "basis_zh": "2025 年第 2 季 198,683 億 → 2026 年第 2 季 216,874 億"
     }
   ],
   "period_notes": {},
@@ -1778,36 +1778,51 @@
       "period": "2026-Q1",
       "category": "M3",
       "value": 20864507000000
+    },
+    {
+      "period": "2026-Q2",
+      "category": "M1",
+      "value": 3481515000000
+    },
+    {
+      "period": "2026-Q2",
+      "category": "M2",
+      "value": 21642629000000
+    },
+    {
+      "period": "2026-Q2",
+      "category": "M3",
+      "value": 21687407000000
     }
   ],
   "latest_by_category": [
     {
       "category": "M1",
-      "period": "2026-Q1",
-      "value": 3317132000000
+      "period": "2026-Q2",
+      "value": 3481515000000
     },
     {
       "category": "M2",
-      "period": "2026-Q1",
-      "value": 20819733000000
+      "period": "2026-Q2",
+      "value": 21642629000000
     },
     {
       "category": "M3",
-      "period": "2026-Q1",
-      "value": 20864507000000
+      "period": "2026-Q2",
+      "value": 21687407000000
     }
   ],
   "coverage": {
     "start": "1997-Q2",
-    "end": "2026-Q1",
-    "points": 348,
-    "points_with_value": 348
+    "end": "2026-Q2",
+    "points": 351,
+    "points_with_value": 351
   },
   "latest": {
-    "period": "2026-Q1",
+    "period": "2026-Q2",
     "category": "M3",
-    "value": 20864507000000
+    "value": 21687407000000
   },
-  "content_hash": "sha256:e3e77f521a605d3d",
-  "data_version": "2026.09.1"
+  "content_hash": "sha256:15569a676e736714",
+  "data_version": "2026.09.2"
 }
