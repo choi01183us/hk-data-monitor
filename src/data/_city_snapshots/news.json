@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-21T13:15:02.376Z",
-  "updated_at": "2026-09-21T12:42:00.000Z",
+  "fetched_at": "2026-09-21T20:06:22.599Z",
+  "updated_at": "2026-09-21T13:50:00.000Z",
   "records": [
+    {
+      "title": "食環署打擊外傭假日聚集點無牌擺賣阻礙通道（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/21/P2026092100779.htm",
+      "published_at": "2026-09-21T13:50:00.000Z"
+    },
+    {
+      "title": "特區政府歡迎《區域全面經濟伙伴關係協定》成立「加入工作組」",
+      "url": "https://www.info.gov.hk/gia/general/202609/21/P2026092100782.htm",
+      "published_at": "2026-09-21T13:31:52.000Z"
+    },
     {
       "title": "「向國旗敬禮」港澳青少年升旗隊代表訪京團獲國家領導人接見",
       "url": "https://www.info.gov.hk/gia/general/202609/21/P2026092100739.htm",
@@ -497,17 +507,7 @@
       "title": "勞工及福利局局長在《香港第一個五年規劃》和二○二六年《施政報告》有關支援長幼和醫療衞生改革措施記者會開場發言（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/18/P2026091800687.htm",
       "published_at": "2026-09-18T11:38:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長在《香港第一個五年規劃》和二○二六年《施政報告》有關人工智能時代和國際創新科技中心措施記者會開場發言（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/18/P2026091800567.htm",
-      "published_at": "2026-09-18T11:26:00.000Z"
-    },
-    {
-      "title": "律政司司長在《香港第一個五年規劃》和二○二六年《施政報告》有關人工智能時代和國際創新科技中心措施記者會開場發言（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/18/P2026091800646.htm",
-      "published_at": "2026-09-18T11:25:00.000Z"
     }
   ],
-  "content_hash": "714324527c90dde92fd7d95291b12fe510178db185092426c7badb115d65417e"
+  "content_hash": "6fccf3df4aaea2baade707e066e9382f77dfe6feae554c57e70be926c38631a2"
 }
