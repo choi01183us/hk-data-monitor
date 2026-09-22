@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-22",
-  "fetched_at": "2026-09-22T17:12:51.259Z",
-  "updated_at": "2026-09-22T17:11:02.000Z",
+  "fetched_at": "2026-09-22T21:37:10.901Z",
+  "updated_at": "2026-09-22T21:35:48.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7131,7 +7131,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "預計 01:28 (23/09/2026)",
+      "status": "到閘口 01:32 (23/09/2026)",
       "statusCode": null
     },
     {
@@ -8526,7 +8526,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 00:34 (23/09/2026)",
+      "status": "到閘口 00:40 (23/09/2026)",
       "statusCode": null
     },
     {
@@ -8710,7 +8710,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "預計 00:51 (23/09/2026)",
+      "status": "到閘口 00:59 (23/09/2026)",
       "statusCode": null
     },
     {
@@ -17426,5 +17426,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "3b8c7524f5fdb6192ffbd27d64be41f6c95836fa88c12991ec7dc5b0b726400a"
+  "content_hash": "9ae4655c321b85db85d9ae4ec6080e1dc5ddde3d518561f1fd4abc7fd8de1b9a"
 }

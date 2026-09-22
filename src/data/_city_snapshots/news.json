@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-22T17:12:49.145Z",
-  "updated_at": "2026-09-22T12:23:00.000Z",
+  "fetched_at": "2026-09-22T21:37:07.673Z",
+  "updated_at": "2026-09-22T17:49:37.000Z",
   "records": [
+    {
+      "title": "特區政府強烈不滿和反對歐洲聯盟委員會年度報告",
+      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300047.htm",
+      "published_at": "2026-09-22T17:49:37.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長恭賀何詩蓓、蔡俊彥、劉子龍及梁穎儀勇奪亞運獎牌（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200671.htm",
@@ -502,12 +507,7 @@
       "title": "赤柱正灘泳灘紅旗除下",
       "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000475.htm",
       "published_at": "2026-09-20T07:15:00.000Z"
-    },
-    {
-      "title": "香港簽署修訂香港與東盟投資協定第一議定書（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000405.htm",
-      "published_at": "2026-09-20T06:00:00.000Z"
     }
   ],
-  "content_hash": "737f7430b6409086e56797bfd4c8f257d1f33f67d3ce570e50a34845e4342039"
+  "content_hash": "2df72bc66a6c6e795d34fa8eff4ae2e53bc8bdee71410196ecb938335b395b85"
 }
