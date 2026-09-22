@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-22T21:37:07.673Z",
-  "updated_at": "2026-09-22T17:49:37.000Z",
+  "fetched_at": "2026-09-22T23:47:17.726Z",
+  "updated_at": "2026-09-22T23:40:00.000Z",
   "records": [
+    {
+      "title": "駐華盛頓經貿辦「經貿一站通」活動——香港作為國際金融中心座談會 （附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300135.htm",
+      "published_at": "2026-09-22T23:40:00.000Z"
+    },
     {
       "title": "特區政府強烈不滿和反對歐洲聯盟委員會年度報告",
       "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300047.htm",
@@ -502,12 +507,7 @@
       "title": "擁有口腔健康　才有整體健康",
       "url": "https://www.info.gov.hk/gia/general/202609/20/P2026091800458.htm",
       "published_at": "2026-09-20T08:00:00.000Z"
-    },
-    {
-      "title": "赤柱正灘泳灘紅旗除下",
-      "url": "https://www.info.gov.hk/gia/general/202609/20/P2026092000475.htm",
-      "published_at": "2026-09-20T07:15:00.000Z"
     }
   ],
-  "content_hash": "2df72bc66a6c6e795d34fa8eff4ae2e53bc8bdee71410196ecb938335b395b85"
+  "content_hash": "b661f5e403623e575e69f2a1a1cf659966faff013408159d68d29ac594f62f14"
 }
