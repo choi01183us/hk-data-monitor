@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-21",
-  "fetched_at": "2026-09-22T00:15:11.139Z",
-  "updated_at": "2026-09-22T00:10:06.000Z",
+  "fetched_at": "2026-09-22T05:18:31.883Z",
+  "updated_at": "2026-09-22T05:18:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6547,7 +6547,7 @@
       ],
       "flights": [
         {
-          "no": "CX 549",
+          "no": "CX 549D",
           "airline": "CPA"
         },
         {
@@ -6559,7 +6559,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "預計 11:44 (22/09/2026)",
+      "status": "到閘口 11:57 (22/09/2026)",
       "statusCode": null
     },
     {
@@ -7862,7 +7862,7 @@
       ],
       "flights": [
         {
-          "no": "CX 505",
+          "no": "CX 505D",
           "airline": "CPA"
         },
         {
@@ -7878,7 +7878,7 @@
           "airline": "AAL"
         }
       ],
-      "status": "預計 18:06 (22/09/2026)",
+      "status": "預計 18:20 (22/09/2026)",
       "statusCode": null
     },
     {
@@ -17474,5 +17474,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "cb61c8b79f72fc15e002e236428d736e3a7d4c2bf23744a32920577505546ed9"
+  "content_hash": "7694ba4ad388b8f6eaee396eb251eee00867047e6c530f367b2142b860ee1e23"
 }
