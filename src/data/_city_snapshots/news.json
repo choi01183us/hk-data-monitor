@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-23T12:02:04.312Z",
-  "updated_at": "2026-09-23T11:55:00.000Z",
+  "fetched_at": "2026-09-23T17:25:10.239Z",
+  "updated_at": "2026-09-23T12:10:00.000Z",
   "records": [
+    {
+      "title": "衞生署參與世衞西太平洋區域的大型衞生演習　 強化應對食源性疾病的應急和跨部門協作機制（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300686.htm",
+      "published_at": "2026-09-23T12:10:00.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長恭賀曾綺婷、簡綽桐、洪晧崴、李智剛、鄧宇軒及陳紫晴勇奪亞運獎牌（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300666.htm",
@@ -502,12 +507,7 @@
       "title": "美國明尼蘇達州Wright縣禽肉及禽類產品暫停進口",
       "url": "https://www.info.gov.hk/gia/general/202609/21/P2026092100477.htm",
       "published_at": "2026-09-21T09:35:00.000Z"
-    },
-    {
-      "title": "民政事務總署開放臨時避暑中心",
-      "url": "https://www.info.gov.hk/gia/general/202609/21/P2026092100555.htm",
-      "published_at": "2026-09-21T09:00:00.000Z"
     }
   ],
-  "content_hash": "30cdddc69c5f844ed3e059c7fecba1d19d9f29fe4381ed55fc61eb7f9d9b1ed2"
+  "content_hash": "5ee8a25ecac305bb1d33bfcfa69f648b365b91b774ef63199283e7822fdd4487"
 }
