@@ -5,11 +5,31 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-24T12:08:05.625Z",
-  "updated_at": "2026-09-24T11:59:27.000Z",
+  "fetched_at": "2026-09-24T17:30:08.270Z",
+  "updated_at": "2026-09-24T15:48:00.000Z",
   "records": [
     {
-      "title": "落實香港廢紙回收升級轉型　推動循環經濟",
+      "title": "商經局在摩納哥遊艇展推廣全新大型展覽「世界鑑賞家盛典」（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300667.htm",
+      "published_at": "2026-09-24T15:48:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀趙顯臻、梁宇航、洪詠甄、張菀珊、梁穎桉、何詩蓓、陳廸麟、林新棟及方凱申勇奪亞運獎牌（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400782.htm",
+      "published_at": "2026-09-24T14:15:00.000Z"
+    },
+    {
+      "title": "元朗聯合狗隻捕捉行動總結",
+      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400771.htm",
+      "published_at": "2026-09-24T13:45:00.000Z"
+    },
+    {
+      "title": "香港海關檢獲約二百二十萬元懷疑氯胺酮及懷疑私煙（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400639.htm",
+      "published_at": "2026-09-24T13:05:00.000Z"
+    },
+    {
+      "title": "落實香港廢紙回收升級轉型　推動循環經濟（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400690.htm",
       "published_at": "2026-09-24T11:59:27.000Z"
     },
@@ -24,7 +44,7 @@
       "published_at": "2026-09-24T11:45:00.000Z"
     },
     {
-      "title": "​政務司司長出席第六屆「華泰輕鐵叮叮樂」中秋免費乘車日活動啓動禮致辭（只有中文）（附圖）",
+      "title": "​政務司司長出席第六屆「華泰輕鐵叮叮樂」中秋免費乘車日活動啓動禮致辭（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400634.htm",
       "published_at": "2026-09-24T10:58:00.000Z"
     },
@@ -487,27 +507,7 @@
       "title": "​署理勞工及福利局局長會見傳媒談話內容（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200604.htm",
       "published_at": "2026-09-22T10:00:00.000Z"
-    },
-    {
-      "title": "巴士安全卓越獎鼓勵提升培訓及善用科技加強安全文化（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200320.htm",
-      "published_at": "2026-09-22T09:40:00.000Z"
-    },
-    {
-      "title": "環境及生態局局長在立法會環境事務委員會政策簡報會就《香港第一個五年規劃》和二○二六年《施政報告》作簡報的開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200569.htm",
-      "published_at": "2026-09-22T09:13:00.000Z"
-    },
-    {
-      "title": "香港代表團出席第二十一屆海峽兩岸暨香港、澳門警學研討會（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200548.htm",
-      "published_at": "2026-09-22T09:00:00.000Z"
-    },
-    {
-      "title": "外匯基金票據投標結果",
-      "url": "https://www.info.gov.hk/gia/general/202609/22/P2026092200504.htm",
-      "published_at": "2026-09-22T08:42:00.000Z"
     }
   ],
-  "content_hash": "2a3bbb23fe2ad14e5bc751bb6763209743e7d237e2742ef389fb12854f426548"
+  "content_hash": "53646f8f2f71e6bc80240f5c6be97d3952a19500d82f041d914147cb07349cbf"
 }
