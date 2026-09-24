@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-24",
-  "fetched_at": "2026-09-24T17:30:10.432Z",
-  "updated_at": "2026-09-24T17:29:04.000Z",
+  "fetched_at": "2026-09-24T21:44:19.231Z",
+  "updated_at": "2026-09-24T21:44:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7456,7 +7456,7 @@
           "airline": "EVA"
         }
       ],
-      "status": "到閘口 21:47",
+      "status": "到閘口 21:49",
       "statusCode": null
     },
     {
@@ -8342,7 +8342,7 @@
           "airline": "CXA"
         }
       ],
-      "status": "到閘口 23:54",
+      "status": "到閘口 23:57",
       "statusCode": null
     },
     {
@@ -8522,7 +8522,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "到閘口 23:04",
+      "status": "到閘口 23:06",
       "statusCode": null
     },
     {
@@ -17594,7 +17594,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 23:22",
+      "status": "啟航 23:20",
       "statusCode": null
     },
     {
@@ -17782,5 +17782,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "38e91dbae29b16b379e01275ae26660fe88e9b078b2196f57f6a9ceb9505e2f8"
+  "content_hash": "4de99d33ee0e414d7071592c3d42d21d78272af06c133c12f06aad46f471dacb"
 }
