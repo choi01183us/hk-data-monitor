@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-25",
-  "fetched_at": "2026-09-25T17:29:42.033Z",
-  "updated_at": "2026-09-25T17:29:05.000Z",
+  "fetched_at": "2026-09-25T21:47:02.932Z",
+  "updated_at": "2026-09-25T21:43:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -9122,7 +9122,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 01:29 (26/09/2026)",
+      "status": "到閘口 01:35 (26/09/2026)",
       "statusCode": null
     },
     {
@@ -18594,5 +18594,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "cb01b317925bb8569827d1d13d007bf12efa6d45e3a50d50e5c8f35131adb94b"
+  "content_hash": "08c09c43192fd455c44e915efa185fb81598f413cfd22d81824e1038e0d98af8"
 }
