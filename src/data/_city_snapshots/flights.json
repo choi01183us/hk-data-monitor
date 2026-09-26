@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-26",
-  "fetched_at": "2026-09-26T16:41:40.834Z",
-  "updated_at": "2026-09-26T16:40:31.000Z",
+  "fetched_at": "2026-09-26T21:26:33.421Z",
+  "updated_at": "2026-09-26T21:26:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8623,7 +8623,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "著陸於 00:24 (27/09/2026)",
+      "status": "到閘口 00:32 (27/09/2026)",
       "statusCode": null
     },
     {
@@ -8883,7 +8883,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "著陸於 00:29 (27/09/2026)",
+      "status": "到閘口 00:32 (27/09/2026)",
       "statusCode": null
     },
     {
@@ -8923,7 +8923,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 00:42 (27/09/2026)",
+      "status": "到閘口 00:44 (27/09/2026)",
       "statusCode": null
     },
     {
@@ -17852,7 +17852,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 00:24",
+      "status": "啟航 00:24 (27/09/2026)",
       "statusCode": null
     },
     {
@@ -18036,5 +18036,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "521f3632f5b3f46d0086ed0db9a61780896c5b9481b5f4075eebf9f19dbff039"
+  "content_hash": "a87fb8fb1f22ffeb380ae6883ba6634c9a5394e748439a854cb5a0d65629f7ae"
 }
