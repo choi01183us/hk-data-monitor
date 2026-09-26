@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-26T16:41:38.558Z",
-  "updated_at": "2026-09-26T11:48:00.000Z",
+  "fetched_at": "2026-09-26T23:48:27.741Z",
+  "updated_at": "2026-09-26T22:46:09.000Z",
   "records": [
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202609/27/P2026092700141.htm",
+      "published_at": "2026-09-26T22:46:09.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202609/27/P2026092700139.htm",
+      "published_at": "2026-09-26T22:45:54.000Z"
+    },
     {
       "title": "​文化體育及旅遊局局長恭賀陳諾思、鄭曉為、梁雅蕾、符妤名、陳樂熹、何柏霖、何思朗、梁天晴、陳善鈺、李衍熙、黃育祥和葉文豪勇奪亞運獎牌",
       "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600558.htm",
@@ -497,17 +507,7 @@
       "title": "保安局局長出席立法會保安事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400257.htm",
       "published_at": "2026-09-24T02:50:08.000Z"
-    },
-    {
-      "title": "數個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400237.htm",
-      "published_at": "2026-09-24T02:40:00.000Z"
-    },
-    {
-      "title": "醫院管理局中秋節翌日假期家庭醫學門診服務安排",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300501.htm",
-      "published_at": "2026-09-24T02:30:00.000Z"
     }
   ],
-  "content_hash": "b4f2ef32f5f00aa9901d56b3bff59b0a10ab04bf34d8e847c2dedde98dcf3348"
+  "content_hash": "465a4e7686bfd9c9aa1ea7fdc9339262d16b0576847793e3784fde0b6268acf6"
 }

@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-26",
-  "fetched_at": "2026-09-26T21:26:33.421Z",
-  "updated_at": "2026-09-26T21:26:05.000Z",
+  "fetched_at": "2026-09-26T23:48:30.850Z",
+  "updated_at": "2026-09-26T23:47:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8903,7 +8903,7 @@
           "airline": "EVA"
         }
       ],
-      "status": "到閘口 23:10",
+      "status": "到閘口 23:11",
       "statusCode": null
     },
     {
@@ -18036,5 +18036,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "a87fb8fb1f22ffeb380ae6883ba6634c9a5394e748439a854cb5a0d65629f7ae"
+  "content_hash": "f0bb489ba6b2403c4d9a191c07158ee33d611ccb567c64a9ad10f66856af9fdb"
 }
