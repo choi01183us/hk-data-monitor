@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-25T17:29:38.873Z",
-  "updated_at": "2026-09-25T12:15:26.000Z",
+  "fetched_at": "2026-09-26T05:22:17.328Z",
+  "updated_at": "2026-09-26T03:30:00.000Z",
   "records": [
+    {
+      "title": "財政司司長訪問卡塔爾",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600212.htm",
+      "published_at": "2026-09-26T03:30:00.000Z"
+    },
+    {
+      "title": "衞生署與世衞《煙草控制框架公約》秘書處新任首長舉行會議　深化控煙的合作和交流（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600254.htm",
+      "published_at": "2026-09-26T03:02:00.000Z"
+    },
+    {
+      "title": "​康文署提醒市民切勿煲蠟、放孔明燈或亂拋垃圾",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092200291.htm",
+      "published_at": "2026-09-26T03:00:00.000Z"
+    },
+    {
+      "title": "升旗及降旗儀式暫停",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600269.htm",
+      "published_at": "2026-09-26T02:22:13.000Z"
+    },
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600184.htm",
+      "published_at": "2026-09-25T22:47:55.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600175.htm",
+      "published_at": "2026-09-25T22:47:40.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長恭賀張家朗、蔡俊彥、梁千雨、何承謙、吳家祺勇奪亞運獎牌",
       "url": "https://www.info.gov.hk/gia/general/202609/25/P2026092500710.htm",
@@ -477,37 +507,7 @@
       "title": "衞生署參與世衞西太平洋區域的大型衞生演習　 強化應對食源性疾病的應急和跨部門協作機制（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300686.htm",
       "published_at": "2026-09-23T12:10:00.000Z"
-    },
-    {
-      "title": "文化體育及旅遊局局長恭賀曾綺婷、簡綽桐、洪晧崴、李智剛、鄧宇軒及陳紫晴勇奪亞運獎牌（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300666.htm",
-      "published_at": "2026-09-23T11:55:00.000Z"
-    },
-    {
-      "title": "文創處資助第十四屆動畫支援計劃舉行啟動典禮（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300504.htm",
-      "published_at": "2026-09-23T11:50:00.000Z"
-    },
-    {
-      "title": "中秋節特別交通安排",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300672.htm",
-      "published_at": "2026-09-23T11:31:57.000Z"
-    },
-    {
-      "title": "入境處打擊外傭違反逗留條件拘二十人（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300647.htm",
-      "published_at": "2026-09-23T11:28:00.000Z"
-    },
-    {
-      "title": "教育局局長率領香港教育界國慶訪京暨專業交流團訪問北京（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300506.htm",
-      "published_at": "2026-09-23T11:00:00.000Z"
-    },
-    {
-      "title": "政務司司長主持節慶安排跨部門工作小組會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300603.htm",
-      "published_at": "2026-09-23T10:25:00.000Z"
     }
   ],
-  "content_hash": "6b6c85c77572f8a54c13ac62c4b032792f027fe0e16d642a458ec52f8077dcbc"
+  "content_hash": "b136daaf776f1838671f8dd51b0a6b0d3afe9819133346e191b1043ffbc8b34b"
 }
