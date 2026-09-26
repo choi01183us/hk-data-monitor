@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-26T11:43:12.020Z",
-  "updated_at": "2026-09-26T11:13:00.000Z",
+  "fetched_at": "2026-09-26T16:41:38.558Z",
+  "updated_at": "2026-09-26T11:48:00.000Z",
   "records": [
+    {
+      "title": "​文化體育及旅遊局局長恭賀陳諾思、鄭曉為、梁雅蕾、符妤名、陳樂熹、何柏霖、何思朗、梁天晴、陳善鈺、李衍熙、黃育祥和葉文豪勇奪亞運獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600558.htm",
+      "published_at": "2026-09-26T11:48:00.000Z"
+    },
     {
       "title": "教育局局長展開上海訪問行程（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600303.htm",
@@ -502,12 +507,7 @@
       "title": "醫院管理局中秋節翌日假期家庭醫學門診服務安排",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300501.htm",
       "published_at": "2026-09-24T02:30:00.000Z"
-    },
-    {
-      "title": "擴大「為來港參與指定界別短期活動的訪客提供入境便利計劃」",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300503.htm",
-      "published_at": "2026-09-24T02:16:00.000Z"
     }
   ],
-  "content_hash": "22337066270e4b5e0adce5888a6a648f13b589a829d542351f72d3df08285b47"
+  "content_hash": "b4f2ef32f5f00aa9901d56b3bff59b0a10ab04bf34d8e847c2dedde98dcf3348"
 }
