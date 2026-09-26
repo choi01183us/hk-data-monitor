@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-26T05:22:17.328Z",
-  "updated_at": "2026-09-26T03:30:00.000Z",
+  "fetched_at": "2026-09-26T11:43:12.020Z",
+  "updated_at": "2026-09-26T11:13:00.000Z",
   "records": [
+    {
+      "title": "教育局局長展開上海訪問行程（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600303.htm",
+      "published_at": "2026-09-26T11:13:00.000Z"
+    },
+    {
+      "title": "一名區議員辭去席位",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600472.htm",
+      "published_at": "2026-09-26T09:00:00.000Z"
+    },
+    {
+      "title": "民政事務總署開放臨時避暑中心",
+      "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600485.htm",
+      "published_at": "2026-09-26T09:00:00.000Z"
+    },
     {
       "title": "財政司司長訪問卡塔爾",
       "url": "https://www.info.gov.hk/gia/general/202609/26/P2026092600212.htm",
@@ -492,22 +507,7 @@
       "title": "擴大「為來港參與指定界別短期活動的訪客提供入境便利計劃」",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300503.htm",
       "published_at": "2026-09-24T02:16:00.000Z"
-    },
-    {
-      "title": "擴大「特邀人士入境便利計劃」",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300510.htm",
-      "published_at": "2026-09-24T02:15:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長展開斯洛伐克訪問行程（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092300714.htm",
-      "published_at": "2026-09-24T01:00:00.000Z"
-    },
-    {
-      "title": "衞生署參與世衞西太平洋區域的大型衞生演習　 強化應對食源性疾病的應急和跨部門協作機制（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/23/P2026092300686.htm",
-      "published_at": "2026-09-23T12:10:00.000Z"
     }
   ],
-  "content_hash": "b136daaf776f1838671f8dd51b0a6b0d3afe9819133346e191b1043ffbc8b34b"
+  "content_hash": "22337066270e4b5e0adce5888a6a648f13b589a829d542351f72d3df08285b47"
 }
