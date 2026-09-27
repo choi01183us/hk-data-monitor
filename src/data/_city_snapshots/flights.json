@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-27",
-  "fetched_at": "2026-09-27T17:13:23.842Z",
-  "updated_at": "2026-09-27T17:13:10.000Z",
+  "fetched_at": "2026-09-27T21:32:34.164Z",
+  "updated_at": "2026-09-27T21:32:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8787,7 +8787,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "著陸於 23:29",
+      "status": "到閘口 23:47",
       "statusCode": null
     },
     {
@@ -8807,7 +8807,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:50",
+      "status": "到閘口 00:10 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -8947,7 +8947,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "預計 23:41",
+      "status": "到閘口 00:02 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -8999,7 +8999,7 @@
           "airline": "JNA"
         }
       ],
-      "status": "著陸於 23:32",
+      "status": "到閘口 23:53",
       "statusCode": null
     },
     {
@@ -9019,7 +9019,7 @@
           "airline": "HHN"
         }
       ],
-      "status": "著陸於 23:27",
+      "status": "到閘口 23:40",
       "statusCode": null
     },
     {
@@ -9039,7 +9039,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "著陸於 23:20",
+      "status": "到閘口 23:34",
       "statusCode": null
     },
     {
@@ -9055,7 +9055,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:39",
+      "status": "到閘口 00:03 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9071,7 +9071,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:48",
+      "status": "到閘口 00:05 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9091,7 +9091,7 @@
           "airline": "EVA"
         }
       ],
-      "status": "著陸於 23:30",
+      "status": "到閘口 23:47",
       "statusCode": null
     },
     {
@@ -9111,7 +9111,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 23:45",
+      "status": "到閘口 00:01 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9131,7 +9131,7 @@
           "airline": "CSH"
         }
       ],
-      "status": "著陸於 23:22",
+      "status": "到閘口 23:46",
       "statusCode": null
     },
     {
@@ -9155,7 +9155,7 @@
           "airline": "ETD"
         }
       ],
-      "status": "預計 00:01 (28/09/2026)",
+      "status": "到閘口 00:18 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9187,7 +9187,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 23:34",
+      "status": "到閘口 23:51",
       "statusCode": null
     },
     {
@@ -9203,7 +9203,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 00:20 (28/09/2026)",
+      "status": "到閘口 00:34 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9219,7 +9219,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "預計 23:46",
+      "status": "到閘口 00:02 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -9235,7 +9235,7 @@
           "airline": "APJ"
         }
       ],
-      "status": "預計 23:43",
+      "status": "到閘口 23:57",
       "statusCode": null
     },
     {
@@ -16863,7 +16863,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 20:17",
+      "status": "啟航 20:15",
       "statusCode": null
     },
     {
@@ -17375,7 +17375,7 @@
           "airline": "AAR"
         }
       ],
-      "status": "啟航 21:07",
+      "status": "啟航 21:05",
       "statusCode": null
     },
     {
@@ -18144,7 +18144,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "啟航 23:12",
+      "status": "啟航 23:10",
       "statusCode": null
     },
     {
@@ -18360,7 +18360,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "啟航 00:02 (28/09/2026)",
+      "status": "啟航 00:00 (28/09/2026)",
       "statusCode": null
     },
     {
@@ -18400,5 +18400,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "695e9818ea02b49c9fe061f9df2b592f8cb63ee8d69a081dd198e6aa7ee8cb34"
+  "content_hash": "211aa5beb76a17f0b69fdd53803b7b93a6176888a3666138d9cecf81186d8a7b"
 }
