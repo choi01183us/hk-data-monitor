@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-27T05:38:23.817Z",
-  "updated_at": "2026-09-27T04:55:00.000Z",
+  "fetched_at": "2026-09-27T12:22:33.601Z",
+  "updated_at": "2026-09-27T10:54:09.000Z",
   "records": [
+    {
+      "title": "​文化體育及旅遊局局長恭賀李嘉兒、鄧銘漮、謝依霖、黎卓楠、方凱申、何瑋桁、劉昊峯、吳浩天勇奪亞運獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202609/27/P2026092700539.htm",
+      "published_at": "2026-09-27T10:54:09.000Z"
+    },
+    {
+      "title": "​民政事務總署開放臨時避暑中心",
+      "url": "https://www.info.gov.hk/gia/general/202609/27/P2026092700449.htm",
+      "published_at": "2026-09-27T09:00:00.000Z"
+    },
     {
       "title": "民政及青年事務局局長會見傳媒談話內容（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202609/27/P2026092700311.htm",
@@ -497,17 +507,7 @@
       "title": "醫患同守望　中秋慶團圓（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400304.htm",
       "published_at": "2026-09-24T04:00:00.000Z"
-    },
-    {
-      "title": "第六屆學校推薦直接錄取計劃十月接受報名",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400209.htm",
-      "published_at": "2026-09-24T03:30:00.000Z"
-    },
-    {
-      "title": "硬幣收集計劃",
-      "url": "https://www.info.gov.hk/gia/general/202609/24/P2026092400229.htm",
-      "published_at": "2026-09-24T03:00:00.000Z"
     }
   ],
-  "content_hash": "a4662966d93e07962c04c77e44ecae60e4d967d67439c24ef42090600ae2d1b5"
+  "content_hash": "7f656f850c4b1a0f3e8413992746f069348e41a3f83b824900823014028ebd20"
 }
