@@ -13,8 +13,8 @@
   "source_note_zh": "政府統計處貿易資料分析組(統計處表 410-50001:對外商品貿易總計數字)",
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
-  "updated_at": "2026-08-25",
-  "fetched_at": "2026-09-09T01:16:53.791Z",
+  "updated_at": "2026-09-24",
+  "fetched_at": "2026-09-28T00:47:43.702Z",
   "frequency": "monthly",
   "acquisition": "api",
   "category": "貿易與物流",
@@ -27,9 +27,9 @@
   },
   "anchors": [
     {
-      "id": "vs-2025-07",
-      "text_zh": "對比 2025 年 7 月（去年同期），升咗 50.7%",
-      "basis_zh": "2025 年 7 月 4,463 億 → 2026 年 7 月 6,725 億"
+      "id": "vs-2025-08",
+      "text_zh": "對比 2025 年 8 月（去年同期），升咗 53%",
+      "basis_zh": "2025 年 8 月 4,366 億 → 2026 年 8 月 6,679 億"
     }
   ],
   "category_order": null,
@@ -445,19 +445,23 @@
     {
       "period": "2026-07",
       "value": 672518000000
+    },
+    {
+      "period": "2026-08",
+      "value": 667851000000
     }
   ],
   "latest_by_category": null,
   "coverage": {
     "start": "2018-01",
-    "end": "2026-07",
-    "points": 103,
-    "points_with_value": 103
+    "end": "2026-08",
+    "points": 104,
+    "points_with_value": 104
   },
   "latest": {
-    "period": "2026-07",
-    "value": 672518000000
+    "period": "2026-08",
+    "value": 667851000000
   },
-  "content_hash": "sha256:7a7c0248edf78979",
-  "data_version": "2026.09.1"
+  "content_hash": "sha256:6b74604472797f61",
+  "data_version": "2026.09.2"
 }

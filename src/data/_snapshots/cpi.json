@@ -13,8 +13,8 @@
   "source_note_zh": "按月零售物價統計調查 政府統計處消費物價指數組(統計處表 510-60001:消費物價指數（2019年10月至2020年9月 = 100）)",
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
-  "updated_at": "2026-08-20",
-  "fetched_at": "2026-09-05T12:18:05.388Z",
+  "updated_at": "2026-09-23",
+  "fetched_at": "2026-09-28T00:48:35.879Z",
   "frequency": "monthly",
   "acquisition": "api",
   "category": "物價",
@@ -29,12 +29,12 @@
     {
       "id": "hundred-dollars",
       "text_zh": "舊年 100 蚊買到嘅嘢,今年要 101.7 蚊",
-      "basis_zh": "2026 年 7 月按年變動 1.7%:100 × (1 + 1.7 ÷ 100)"
+      "basis_zh": "2026 年 8 月按年變動 1.7%:100 × (1 + 1.7 ÷ 100)"
     },
     {
       "id": "direction",
       "text_zh": "按年通脹:整體物價比一年前同月高",
-      "basis_zh": "2026 年 7 月按年變動 1.7%;正數係上升,負數係下降,零係按公布精度不變"
+      "basis_zh": "2026 年 8 月按年變動 1.7%;正數係上升,負數係下降,零係按公布精度不變"
     }
   ],
   "category_order": null,
@@ -2190,19 +2190,23 @@
     {
       "period": "2026-07",
       "value": 1.7
+    },
+    {
+      "period": "2026-08",
+      "value": 1.7
     }
   ],
   "latest_by_category": null,
   "coverage": {
     "start": "1981-10",
-    "end": "2026-07",
-    "points": 538,
-    "points_with_value": 537
+    "end": "2026-08",
+    "points": 539,
+    "points_with_value": 538
   },
   "latest": {
-    "period": "2026-07",
+    "period": "2026-08",
     "value": 1.7
   },
-  "content_hash": "sha256:06cf07816c66fee9",
-  "data_version": "2026.09.5"
+  "content_hash": "sha256:3ddfeb7c0ddcbfcb",
+  "data_version": "2026.09.6"
 }
