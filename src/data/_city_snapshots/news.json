@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-28T14:23:28.422Z",
-  "updated_at": "2026-09-28T13:25:34.000Z",
+  "fetched_at": "2026-09-29T01:12:43.296Z",
+  "updated_at": "2026-09-29T01:00:00.000Z",
   "records": [
+    {
+      "title": "財政司司長在卡塔爾出席亞投行年會（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900026.htm",
+      "published_at": "2026-09-29T01:00:00.000Z"
+    },
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900010.htm",
+      "published_at": "2026-09-28T22:45:47.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900008.htm",
+      "published_at": "2026-09-28T22:45:33.000Z"
+    },
     {
       "title": "駐布魯塞爾經貿辦舉辦商業研討會促進香港與愛爾蘭創科交流（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800652.htm",
@@ -492,22 +507,7 @@
       "title": "石澳泳灘懸掛紅旗",
       "url": "https://www.info.gov.hk/gia/general/202609/25/P2026092500254.htm",
       "published_at": "2026-09-25T02:48:00.000Z"
-    },
-    {
-      "title": "重陽節前後柴灣特別交通及公共運輸安排",
-      "url": "https://www.info.gov.hk/gia/general/202609/25/P2026092400571.htm",
-      "published_at": "2026-09-25T02:00:00.000Z"
-    },
-    {
-      "title": "二○二六年地方選區、功能界別及選舉委員會界別分組正式選民／投票人登記冊今日發表",
-      "url": "https://www.info.gov.hk/gia/general/202609/25/P2026092400440.htm",
-      "published_at": "2026-09-25T01:30:00.000Z"
-    },
-    {
-      "title": "中秋節薄扶林舞火龍活動華富特別交通及運輸安排",
-      "url": "https://www.info.gov.hk/gia/general/202609/25/P2026092500043.htm",
-      "published_at": "2026-09-25T01:03:18.000Z"
     }
   ],
-  "content_hash": "a4bc195ac71403b0a4b519f08c460e58742862ec6d014fb6a195995faa51f863"
+  "content_hash": "c44622f09d769019fb6afa328c072fdd7625353b7f528cdcb7f6aa871a6c7dbf"
 }

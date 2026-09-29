@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-28",
-  "fetched_at": "2026-09-28T21:21:00.958Z",
-  "updated_at": "2026-09-28T21:20:06.000Z",
+  "fetched_at": "2026-09-29T01:12:46.642Z",
+  "updated_at": "2026-09-29T01:12:29.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7986,7 +7986,7 @@
           "airline": "THA"
         }
       ],
-      "status": "",
+      "status": "取消",
       "statusCode": null
     },
     {
@@ -18146,5 +18146,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "135b98314107ce164b5f47e15673dd9a4f884b999656853ef91d9356ceef37bb"
+  "content_hash": "d24715ccd95028d8b5c6b7752ded5aa35692fe3ec8ff4723d804709e1b6d8b49"
 }
