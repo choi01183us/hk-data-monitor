@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-09-29",
-  "fetched_at": "2026-09-29T18:13:35.483Z",
-  "updated_at": "2026-09-29T18:13:05.000Z",
+  "fetched_at": "2026-09-29T22:32:48.694Z",
+  "updated_at": "2026-09-29T22:31:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -4638,7 +4638,7 @@
           "airline": "CCA"
         }
       ],
-      "status": "預計 03:45 (30/09/2026)",
+      "status": "到閘口 03:54 (30/09/2026)",
       "statusCode": null
     },
     {
@@ -7990,7 +7990,7 @@
           "airline": "THA"
         }
       ],
-      "status": "預計 07:00 (30/09/2026)",
+      "status": "延遲",
       "statusCode": null
     },
     {
@@ -18098,5 +18098,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "f90f3d0ec9428a659561e5b34dac19fb09a73c97bec2321d11a5354c4c7c5758"
+  "content_hash": "baef7fde2eed61b1313b57c4379c27a071463805a2a9db7125bc880cda0ae2b9"
 }
