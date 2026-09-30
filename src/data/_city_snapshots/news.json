@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-30T12:56:28.056Z",
-  "updated_at": "2026-09-30T12:38:15.000Z",
+  "fetched_at": "2026-09-30T20:16:13.917Z",
+  "updated_at": "2026-09-30T14:27:40.000Z",
   "records": [
+    {
+      "title": "警務處國家安全處採取拘捕行動",
+      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000849.htm",
+      "published_at": "2026-09-30T14:27:40.000Z"
+    },
+    {
+      "title": "衞生署聯同警方搗破非法供應及／或管有屬未經註冊藥物針劑療程的處所（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000649.htm",
+      "published_at": "2026-09-30T13:42:53.000Z"
+    },
+    {
+      "title": "食環署展開「天羅行動」兩周專項巡查　加強打擊食物業處所蟲鼠及衞生問題",
+      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000755.htm",
+      "published_at": "2026-09-30T13:11:06.000Z"
+    },
     {
       "title": "食安中心在海南雞飯樣本檢出沙門氏菌",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000742.htm",
@@ -492,22 +507,7 @@
       "title": "駐布魯塞爾經貿辦舉辦商業研討會促進香港與愛爾蘭創科交流（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800652.htm",
       "published_at": "2026-09-28T13:25:34.000Z"
-    },
-    {
-      "title": "文化體育及旅遊局局長恭賀杜凱琹、吳詠琳、鄭嘉軒、郭浩樺、江子健、李嘉慶、鄧幸展、徐琛淇勇奪亞運獎牌",
-      "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800767.htm",
-      "published_at": "2026-09-28T13:05:00.000Z"
-    },
-    {
-      "title": "啟德醫院十月五日分階段投入服務（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800610.htm",
-      "published_at": "2026-09-28T12:22:00.000Z"
-    },
-    {
-      "title": "駐柏林經貿辦支持香港電影在蘇黎世電影節大放異彩（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800709.htm",
-      "published_at": "2026-09-28T12:13:00.000Z"
     }
   ],
-  "content_hash": "8d14602c35a4659424d54d16703e1e3ee5216974ab94a66ce811b808e5bb2190"
+  "content_hash": "75e9bb4bf3d46b2d3fa71efb59111814926af23b86387a9091d32c7eaba12d9f"
 }
