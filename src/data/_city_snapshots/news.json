@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-01T10:25:05.473Z",
-  "updated_at": "2026-10-01T09:45:00.000Z",
+  "fetched_at": "2026-10-01T18:33:06.842Z",
+  "updated_at": "2026-10-01T12:10:00.000Z",
   "records": [
+    {
+      "title": "行政長官出席國慶七十七周年煙花大匯演致辭（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100649.htm",
+      "published_at": "2026-10-01T12:10:00.000Z"
+    },
+    {
+      "title": "旅遊事務專員內地國慶黃金周視察景點（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100432.htm",
+      "published_at": "2026-10-01T12:00:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀朱浚瑋、李思穎、梁穎儀、麥曉彤、普珺麗、阿輝、祥杰、黎卓楠、劉子均、梁子軒、鄧銘漮勇奪亞運獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100592.htm",
+      "published_at": "2026-10-01T11:35:00.000Z"
+    },
     {
       "title": "​香港海關於機場偵破三宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100509.htm",
@@ -492,22 +507,7 @@
       "title": "僱主因違反「補充勞工優化計劃」本地招聘規定被行政制裁",
       "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900285.htm",
       "published_at": "2026-09-29T04:00:00.000Z"
-    },
-    {
-      "title": "響應世界心臟日　衞生署呼籲市民實踐健康生活「強身護心」",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900219.htm",
-      "published_at": "2026-09-29T03:35:00.000Z"
-    },
-    {
-      "title": "行政長官出席香港新聞界慶祝中華人民共和國成立七十七周年活動致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900278.htm",
-      "published_at": "2026-09-29T03:12:00.000Z"
-    },
-    {
-      "title": "醫院管理局國慶日假期家庭醫學門診服務安排",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900242.htm",
-      "published_at": "2026-09-29T03:06:00.000Z"
     }
   ],
-  "content_hash": "dbf25cdcc32affa1a86d15bbf373e4afde5b99fd964b8f70c610af47d094bc77"
+  "content_hash": "b2dd6b3c50c6d051e0e383676bf952f0d6f9b67ddbb3cb1431e4dc8ed814c778"
 }
