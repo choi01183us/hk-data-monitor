@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-09-30T20:16:13.917Z",
-  "updated_at": "2026-09-30T14:27:40.000Z",
+  "fetched_at": "2026-10-01T00:47:20.600Z",
+  "updated_at": "2026-10-01T00:01:07.000Z",
   "records": [
+    {
+      "title": "賽馬會仁愛堂游泳池暫時關閉",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100179.htm",
+      "published_at": "2026-10-01T00:01:07.000Z"
+    },
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100149.htm",
+      "published_at": "2026-09-30T22:45:26.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100147.htm",
+      "published_at": "2026-09-30T22:45:12.000Z"
+    },
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100135.htm",
+      "published_at": "2026-09-30T22:02:42.000Z"
+    },
     {
       "title": "警務處國家安全處採取拘捕行動",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000849.htm",
@@ -487,27 +507,7 @@
       "title": "政府就本港護士人力規劃及就業情況作出說明",
       "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092800860.htm",
       "published_at": "2026-09-29T01:55:28.000Z"
-    },
-    {
-      "title": "財政司司長在卡塔爾出席亞投行年會（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900026.htm",
-      "published_at": "2026-09-29T01:00:00.000Z"
-    },
-    {
-      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900010.htm",
-      "published_at": "2026-09-28T22:45:47.000Z"
-    },
-    {
-      "title": "酷熱天氣警告已發出",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900008.htm",
-      "published_at": "2026-09-28T22:45:33.000Z"
-    },
-    {
-      "title": "駐布魯塞爾經貿辦舉辦商業研討會促進香港與愛爾蘭創科交流（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/28/P2026092800652.htm",
-      "published_at": "2026-09-28T13:25:34.000Z"
     }
   ],
-  "content_hash": "75e9bb4bf3d46b2d3fa71efb59111814926af23b86387a9091d32c7eaba12d9f"
+  "content_hash": "6ac018f85be3e964aa999b64eade42fcb1cbca4362f7a3aa2d61050073e78418"
 }
