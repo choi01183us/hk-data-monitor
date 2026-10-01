@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-01T00:47:20.600Z",
-  "updated_at": "2026-10-01T00:01:07.000Z",
+  "fetched_at": "2026-10-01T10:25:05.473Z",
+  "updated_at": "2026-10-01T09:45:00.000Z",
   "records": [
+    {
+      "title": "​香港海關於機場偵破三宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100509.htm",
+      "published_at": "2026-10-01T09:45:00.000Z"
+    },
+    {
+      "title": "民政事務總署開放臨時避暑中心",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100498.htm",
+      "published_at": "2026-10-01T09:00:00.000Z"
+    },
+    {
+      "title": "醫務衞生局局長會見傳媒談醫院管理局招聘護士情況（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100486.htm",
+      "published_at": "2026-10-01T08:45:17.000Z"
+    },
+    {
+      "title": "醫院管理局升旗儀式慶祝中華人民共和國成立七十七周年（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100297.htm",
+      "published_at": "2026-10-01T05:00:15.000Z"
+    },
+    {
+      "title": "康文署提醒市民欣賞煙花匯演時保持地方清潔",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026093000435.htm",
+      "published_at": "2026-10-01T04:00:00.000Z"
+    },
+    {
+      "title": "勞工處提醒僱主及僱員在工作暑熱警告生效期間採取預防中暑措施",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100292.htm",
+      "published_at": "2026-10-01T03:30:00.000Z"
+    },
+    {
+      "title": "行政長官國慶酒會致辭（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100210.htm",
+      "published_at": "2026-10-01T01:25:00.000Z"
+    },
     {
       "title": "賽馬會仁愛堂游泳池暫時關閉",
       "url": "https://www.info.gov.hk/gia/general/202610/01/P2026100100179.htm",
@@ -472,42 +507,7 @@
       "title": "醫院管理局國慶日假期家庭醫學門診服務安排",
       "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900242.htm",
       "published_at": "2026-09-29T03:06:00.000Z"
-    },
-    {
-      "title": "運輸署署長呼籲的士業界在內地國慶黃金周期間秉持優質服務（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900265.htm",
-      "published_at": "2026-09-29T03:05:00.000Z"
-    },
-    {
-      "title": "海帆道公園明日啓用（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092800303.htm",
-      "published_at": "2026-09-29T03:00:00.000Z"
-    },
-    {
-      "title": "東九文化中心推出「東九開箱2026」系列節目（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092800440.htm",
-      "published_at": "2026-09-29T03:00:00.000Z"
-    },
-    {
-      "title": "政府公布研究局成員任命",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900260.htm",
-      "published_at": "2026-09-29T03:00:00.000Z"
-    },
-    {
-      "title": "勞工處提醒僱主及僱員在工作暑熱警告生效期間採取預防中暑措施",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092900289.htm",
-      "published_at": "2026-09-29T02:51:01.000Z"
-    },
-    {
-      "title": "行政長官在首屆華人發展論壇致辭（只有中文）（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092800553.htm",
-      "published_at": "2026-09-29T02:00:00.000Z"
-    },
-    {
-      "title": "政府就本港護士人力規劃及就業情況作出說明",
-      "url": "https://www.info.gov.hk/gia/general/202609/29/P2026092800860.htm",
-      "published_at": "2026-09-29T01:55:28.000Z"
     }
   ],
-  "content_hash": "6ac018f85be3e964aa999b64eade42fcb1cbca4362f7a3aa2d61050073e78418"
+  "content_hash": "dbf25cdcc32affa1a86d15bbf373e4afde5b99fd964b8f70c610af47d094bc77"
 }
