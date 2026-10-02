@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-02T13:04:48.594Z",
-  "updated_at": "2026-10-02T11:42:00.000Z",
+  "fetched_at": "2026-10-02T20:06:19.538Z",
+  "updated_at": "2026-10-02T13:45:00.000Z",
   "records": [
+    {
+      "title": "香港海關拘捕瑜伽中心董事涉嫌以不良營商手法銷售服務",
+      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200770.htm",
+      "published_at": "2026-10-02T13:45:00.000Z"
+    },
+    {
+      "title": "文創處資助業界參與中國國際漫畫節動漫遊戲展（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200726.htm",
+      "published_at": "2026-10-02T13:30:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀喬澔鏗、普令行、江芷棋、黃曦慧、貝俊龍、陳善鈺、何子樂、李嘉兒、謝依霖、李思穎、張瑋桓、王康怡勇奪亞運獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200801.htm",
+      "published_at": "2026-10-02T13:02:00.000Z"
+    },
     {
       "title": "運輸及物流局局長在立法會經濟發展事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200677.htm",
@@ -492,22 +507,7 @@
       "title": "勞工處提醒僱主及僱員在工作暑熱警告生效期間採取預防中暑措施",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000236.htm",
       "published_at": "2026-09-30T02:10:39.000Z"
-    },
-    {
-      "title": "香港五所大學續居世界百強  助力鞏固國際教育樞紐地位",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000156.htm",
-      "published_at": "2026-09-30T00:15:00.000Z"
-    },
-    {
-      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000005.htm",
-      "published_at": "2026-09-29T22:46:00.000Z"
-    },
-    {
-      "title": "酷熱天氣警告已發出",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000002.htm",
-      "published_at": "2026-09-29T22:45:00.000Z"
     }
   ],
-  "content_hash": "177cc58d6d6c30dce3b62f88d68aec1fa0705ba5ce5d1d76421ed8b19d9ca9fa"
+  "content_hash": "db9adfa4cad0d14f9d93549937ec8da20d7c996871cdf03d6d64cc3591499161"
 }
