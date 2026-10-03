@@ -23,7 +23,8 @@ npm run dev          # http://localhost:3000,改完即刻見到
 | `npm run build` | 砌靜態站入 `dist/`,順埋生成 service worker |
 | `npm run build:offline` | 資料用 repo 快照；首次建置仍需下載 Framework 套件。CI 設 HKDM_OFFLINE=1 |
 | `npm run refresh` | 重抓全部 API 指標。有變動先寫檔 |
-| `npm run refresh:city` | 更新政府公報及前一日客機紀錄；快照及錄影同次保存 |
+| `npm run refresh:city` | 更新政府公報、前一日客機紀錄及天氣報告；快照及錄影同次保存。見 [`docs/城市快照.md`](docs/城市快照.md) |
+| `node scripts/refresh-city.mjs --weather-only` | 只更新天氣快照，唔重抓新聞／航班 |
 | `npm run validate` | 驗全部快照同 `manual/` 符合 SPEC 第 5 節(零網絡,`build` 開頭會自動跑) |
 | `npm run test:checks` | **檢查器自證**:故意整壞嘢,確認啲閘真係會嘈(零網絡) |
 | `npm run test:offline` | 離線行為測試(本專案 Playwright + Chromium；缺工具會失敗) |
