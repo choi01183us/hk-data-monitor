@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-03T00:41:47.912Z",
-  "updated_at": "2026-10-02T23:33:28.000Z",
+  "fetched_at": "2026-10-03T09:23:41.502Z",
+  "updated_at": "2026-10-03T06:38:00.000Z",
   "records": [
+    {
+      "title": "懲教署舉辦「懲教先鋒領袖」名譽顧問委員會就職典禮暨學員升級禮（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100200336.htm",
+      "published_at": "2026-10-03T06:38:00.000Z"
+    },
+    {
+      "title": "勞工及福利局局長會見傳媒談話內容（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300294.htm",
+      "published_at": "2026-10-03T02:54:45.000Z"
+    },
+    {
+      "title": "大埔龍尾泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300284.htm",
+      "published_at": "2026-10-03T02:11:59.000Z"
+    },
     {
       "title": "升旗儀式取消",
       "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300188.htm",
@@ -492,22 +507,7 @@
       "title": "漁護署展開特別執法行動打擊非法餵飼行為",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000306.htm",
       "published_at": "2026-09-30T04:27:00.000Z"
-    },
-    {
-      "title": "知識產權融資沙盒參與銀行完成首批試點個案的融資審批",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092900621.htm",
-      "published_at": "2026-09-30T04:25:00.000Z"
-    },
-    {
-      "title": "政府公布知識產權融資沙盒首批成功試點個案及推出專利估值先導支援計劃",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092900625.htm",
-      "published_at": "2026-09-30T04:16:00.000Z"
-    },
-    {
-      "title": "​黃金泳灘紅旗除下",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000301.htm",
-      "published_at": "2026-09-30T04:15:00.000Z"
     }
   ],
-  "content_hash": "7a0dfcf8d2d8a1ed033f134133d4865c8a4e7bd5c6df89b246f2bbeb15e4cd56"
+  "content_hash": "99bb5d1fb315f4dd0e710166d9cb2f0bc575fb8a733b39589f0329fa45950fd2"
 }
