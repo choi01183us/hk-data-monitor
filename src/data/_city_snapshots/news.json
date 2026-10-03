@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-03T14:24:06.510Z",
-  "updated_at": "2026-10-03T12:35:00.000Z",
+  "fetched_at": "2026-10-03T18:48:14.030Z",
+  "updated_at": "2026-10-03T14:25:25.000Z",
   "records": [
+    {
+      "title": "文化體育及旅遊局局長恭賀中國香港足球代表隊勇奪二○二六年國際足協東盟挑戰盃（第二級別）冠軍",
+      "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300798.htm",
+      "published_at": "2026-10-03T14:25:25.000Z"
+    },
     {
       "title": "駐新加坡經貿辦支持香港口琴演奏家何卓彥於新加坡舉行音樂會及交流活動（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300702.htm",
@@ -479,11 +484,6 @@
       "published_at": "2026-09-30T07:20:00.000Z"
     },
     {
-      "title": "丙午年中秋綵燈會延長至十月七日",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092800518.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
-    },
-    {
       "title": "機電署署長出席現有商廈接駁啟德區域供冷系統意向書簽署儀式（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092900436.htm",
       "published_at": "2026-09-30T07:00:00.000Z"
@@ -509,5 +509,5 @@
       "published_at": "2026-09-30T07:00:00.000Z"
     }
   ],
-  "content_hash": "193e3f270630a5286ba24358f2941dc3652c418ec439a8794c315076bd076551"
+  "content_hash": "cca675b446153047500aa84e98938e7ee47d13f4471e822f0a425cd50678bc9d"
 }
