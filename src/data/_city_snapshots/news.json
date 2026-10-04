@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-03T18:48:14.030Z",
-  "updated_at": "2026-10-03T14:25:25.000Z",
+  "fetched_at": "2026-10-04T06:14:55.983Z",
+  "updated_at": "2026-10-04T06:00:00.000Z",
   "records": [
+    {
+      "title": "行政長官祝賀中國香港運動員在第二十屆亞洲運動會取得佳績",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400326.htm",
+      "published_at": "2026-10-04T06:00:00.000Z"
+    },
+    {
+      "title": "大埔龍尾泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400357.htm",
+      "published_at": "2026-10-04T05:56:00.000Z"
+    },
+    {
+      "title": "​勞工及福利局局長會見傳媒談話內容（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400344.htm",
+      "published_at": "2026-10-04T05:48:00.000Z"
+    },
+    {
+      "title": "酒牌局周二舉行會議",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100200205.htm",
+      "published_at": "2026-10-04T03:00:00.000Z"
+    },
+    {
+      "title": "​財庫局局長出訪意大利和瑞士",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100200400.htm",
+      "published_at": "2026-10-04T02:00:00.000Z"
+    },
+    {
+      "title": "​立標明真　鑑藥惠民",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100200675.htm",
+      "published_at": "2026-10-04T02:00:00.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長恭賀中國香港足球代表隊勇奪二○二六年國際足協東盟挑戰盃（第二級別）冠軍",
       "url": "https://www.info.gov.hk/gia/general/202610/03/P2026100300798.htm",
@@ -477,37 +507,7 @@
       "title": "日本進口水產的檢測情況",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000454.htm",
       "published_at": "2026-09-30T07:35:00.000Z"
-    },
-    {
-      "title": "漁護署在內地國慶黃金周於郊遊熱點的部署",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000368.htm",
-      "published_at": "2026-09-30T07:20:00.000Z"
-    },
-    {
-      "title": "機電署署長出席現有商廈接駁啟德區域供冷系統意向書簽署儀式（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092900436.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
-    },
-    {
-      "title": "食安中心公布八月份食物安全報告",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026092900516.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
-    },
-    {
-      "title": "​康文署呼籲市民欣賞煙花時保持地方整潔",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000230.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
-    },
-    {
-      "title": "長者學苑發展基金接受撥款申請",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000277.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
-    },
-    {
-      "title": "業主屢不遵從清拆令被判罰款逾十五萬元",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000409.htm",
-      "published_at": "2026-09-30T07:00:00.000Z"
     }
   ],
-  "content_hash": "cca675b446153047500aa84e98938e7ee47d13f4471e822f0a425cd50678bc9d"
+  "content_hash": "266b41dcb6f0521c3ebd1b1dd694c40d7770f344ceaa0f3227df55be2e0d83f8"
 }
