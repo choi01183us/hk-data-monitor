@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-03",
-  "fetched_at": "2026-10-03T18:48:16.263Z",
-  "updated_at": "2026-10-03T18:47:42.000Z",
+  "fetched_at": "2026-10-03T23:59:55.323Z",
+  "updated_at": "2026-10-03T23:59:19.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -5747,7 +5747,7 @@
           "airline": "RNA"
         }
       ],
-      "status": "預計 03:18 (04/10/2026)",
+      "status": "到閘口 03:24 (04/10/2026)",
       "statusCode": null
     },
     {
@@ -15863,7 +15863,7 @@
           "airline": "RNA"
         }
       ],
-      "status": "預計 04:30 (04/10/2026)",
+      "status": "啟航 04:43 (04/10/2026)",
       "statusCode": null
     },
     {
@@ -18024,5 +18024,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "4fd6016a9721e5f27cef7816dbf3108833dae5305e5fb5b79b25fc21ddb1f0e0"
+  "content_hash": "702847f6ca7594b6227a17b31e1c36672ab46b83a69b990fc4a837a0a51f20b5"
 }
