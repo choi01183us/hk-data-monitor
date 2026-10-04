@@ -5,9 +5,34 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-04T06:14:55.983Z",
-  "updated_at": "2026-10-04T06:00:00.000Z",
+  "fetched_at": "2026-10-04T12:48:20.090Z",
+  "updated_at": "2026-10-04T12:20:39.000Z",
   "records": [
+    {
+      "title": "僱主／承建商及僱員須注意在暴雨下工作時的電力安全",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400662.htm",
+      "published_at": "2026-10-04T12:20:39.000Z"
+    },
+    {
+      "title": "渠務署籲請市民報告水浸",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400657.htm",
+      "published_at": "2026-10-04T12:20:26.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長出席「第五屆國慶盃男子三人籃球賽」致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400570.htm",
+      "published_at": "2026-10-04T10:35:00.000Z"
+    },
+    {
+      "title": "新界東北堆填區擴建部分今日全面啓用",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100200231.htm",
+      "published_at": "2026-10-04T09:00:00.000Z"
+    },
+    {
+      "title": "保安局舉辦皇崗口岸社區體驗日（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400252.htm",
+      "published_at": "2026-10-04T08:57:26.000Z"
+    },
     {
       "title": "行政長官祝賀中國香港運動員在第二十屆亞洲運動會取得佳績",
       "url": "https://www.info.gov.hk/gia/general/202610/04/P2026100400326.htm",
@@ -469,16 +494,6 @@
       "published_at": "2026-09-30T08:58:00.000Z"
     },
     {
-      "title": "政府首五個月（即截至二○二六年八月三十一日）的財務狀況",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000360.htm",
-      "published_at": "2026-09-30T08:30:00.000Z"
-    },
-    {
-      "title": "外匯基金資產負債表摘要及貨幣發行局帳目",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000457.htm",
-      "published_at": "2026-09-30T08:30:00.000Z"
-    },
-    {
       "title": "國際儲備及外匯流動性數據",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000461.htm",
       "published_at": "2026-09-30T08:30:00.000Z"
@@ -492,22 +507,7 @@
       "title": "二○二六年八月份貨幣統計數字",
       "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000478.htm",
       "published_at": "2026-09-30T08:30:00.000Z"
-    },
-    {
-      "title": "《危險藥物條例》修訂令於十月二日刊憲",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000425.htm",
-      "published_at": "2026-09-30T08:00:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000188.htm",
-      "published_at": "2026-09-30T07:45:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202609/30/P2026093000454.htm",
-      "published_at": "2026-09-30T07:35:00.000Z"
     }
   ],
-  "content_hash": "266b41dcb6f0521c3ebd1b1dd694c40d7770f344ceaa0f3227df55be2e0d83f8"
+  "content_hash": "f901c926a919e91b6a9cb56fe0053dcd17a843ccfdd8488e58f1a9b023aaef3c"
 }
