@@ -13,8 +13,8 @@
   "source_note_zh": "原始 CSV：https://www.rvd.gov.hk/datagovhk/1.4M.csv；基期及註記：https://www.rvd.gov.hk/datagovhk/Data_Dic.pdf（表 1.4）；技術附註：https://www.rvd.gov.hk/doc/tc/statistics/15_technotes.pdf",
   "licence": "data.gov.hk 使用條款",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "updated_at": "2026-08-27",
-  "fetched_at": "2026-09-09T04:25:12.475Z",
+  "updated_at": "2026-09-28",
+  "fetched_at": "2026-10-05T00:57:42.441Z",
   "frequency": "monthly",
   "acquisition": "api",
   "category": "住屋與生活成本",
@@ -27,15 +27,15 @@
   },
   "anchors": [
     {
-      "id": "vs-2025-07",
-      "text_zh": "對比 2025 年 7 月（去年同月），升咗 11.6%",
-      "basis_zh": "2025 年 7 月 288.1 → 2026 年 7 月 321.5"
+      "id": "vs-2025-08",
+      "text_zh": "對比 2025 年 8 月（去年同月），升咗 11%",
+      "basis_zh": "2025 年 8 月 288.8 → 2026 年 8 月 320.5"
     }
   ],
   "period_notes": {
-    "2026-05": "臨時數字，日後可能修訂",
     "2026-06": "臨時數字，日後可能修訂",
-    "2026-07": "臨時數字，日後可能修訂"
+    "2026-07": "臨時數字，日後可能修訂",
+    "2026-08": "臨時數字，日後可能修訂"
   },
   "series": [
     {
@@ -1640,7 +1640,7 @@
     },
     {
       "period": "2026-05",
-      "value": 322.4
+      "value": 322.6
     },
     {
       "period": "2026-06",
@@ -1648,20 +1648,24 @@
     },
     {
       "period": "2026-07",
-      "value": 321.5
+      "value": 320.3
+    },
+    {
+      "period": "2026-08",
+      "value": 320.5
     }
   ],
   "latest_by_category": null,
   "coverage": {
     "start": "1993-01",
-    "end": "2026-07",
-    "points": 403,
-    "points_with_value": 403
+    "end": "2026-08",
+    "points": 404,
+    "points_with_value": 404
   },
   "latest": {
-    "period": "2026-07",
-    "value": 321.5
+    "period": "2026-08",
+    "value": 320.5
   },
-  "content_hash": "sha256:54a47ec5660cd268",
-  "data_version": "2026.09.1"
+  "content_hash": "sha256:bd7aa72e6d3af1b4",
+  "data_version": "2026.10.1"
 }

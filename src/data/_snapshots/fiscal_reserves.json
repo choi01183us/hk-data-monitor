@@ -13,8 +13,8 @@
   "source_note_zh": "庫務署「政府財務狀況」新聞稿數據檔,2019-20 至 2026-27 共 8 個財政年度",
   "licence": "data.gov.hk 使用條款",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "updated_at": "2026-07-31",
-  "fetched_at": "2026-09-05T05:42:25.601Z",
+  "updated_at": "2026-08-31",
+  "fetched_at": "2026-10-05T00:57:40.006Z",
   "frequency": "monthly",
   "acquisition": "api",
   "category": "公共財政",
@@ -28,18 +28,18 @@
   "anchors": [
     {
       "id": "per-capita",
-      "text_zh": "相當於每名香港市民約 HK$85,917",
-      "basis_zh": "6,460 億 元 ÷ 2026 年 6 月人口 752 萬 人"
+      "text_zh": "相當於每名香港市民約 HK$85,997",
+      "basis_zh": "6,466 億 元 ÷ 2026 年 6 月人口 752 萬 人"
     },
     {
       "id": "months-of-spending",
-      "text_zh": "如果政府一蚊收入都冇,呢筆儲備夠使大約 9.9 個月",
-      "basis_zh": "儲備 6,460 億 ÷ 最近 12 個月平均每月開支 655 億"
+      "text_zh": "如果政府一蚊收入都冇,呢筆儲備夠使大約 9.8 個月",
+      "basis_zh": "儲備 6,466 億 ÷ 最近 12 個月平均每月開支 659 億"
     },
     {
       "id": "vs-2019-04",
-      "text_zh": "對比 2019 年 4 月（有紀錄最早），跌咗 45.1%",
-      "basis_zh": "2019 年 4 月 11,765 億 → 2026 年 7 月 6,460 億"
+      "text_zh": "對比 2019 年 4 月（有紀錄最早），跌咗 45%",
+      "basis_zh": "2019 年 4 月 11,765 億 → 2026 年 8 月 6,466 億"
     }
   ],
   "period_notes": {
@@ -400,19 +400,23 @@
     {
       "period": "2026-07",
       "value": 645952800000
+    },
+    {
+      "period": "2026-08",
+      "value": 646551200000
     }
   ],
   "latest_by_category": null,
   "coverage": {
     "start": "2019-04",
-    "end": "2026-07",
-    "points": 88,
-    "points_with_value": 88
+    "end": "2026-08",
+    "points": 89,
+    "points_with_value": 89
   },
   "latest": {
-    "period": "2026-07",
-    "value": 645952800000
+    "period": "2026-08",
+    "value": 646551200000
   },
-  "content_hash": "sha256:941e49d514cd9c41",
-  "data_version": "2026.09.3"
+  "content_hash": "sha256:70e183d93fde25dd",
+  "data_version": "2026.10.1"
 }

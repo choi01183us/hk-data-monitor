@@ -13,8 +13,8 @@
   "source_note_zh": "香港交易及結算所有限公司(統計處表 340-95003:在香港交易所上市的公司數目、總市值、所有上市證券平均每日成交金額、新證券發行數目及新證券發行集資金額)",
   "licence": "政府統計處《知識產權公告》",
   "licence_url": "https://www.censtatd.gov.hk/tc/page_31.html",
-  "updated_at": "2026-06-30",
-  "fetched_at": "2026-09-05T12:18:20.342Z",
+  "updated_at": "2026-09-30",
+  "fetched_at": "2026-10-05T00:57:16.608Z",
   "frequency": "annual",
   "acquisition": "api",
   "category": "經濟",
@@ -231,6 +231,6 @@
     "category": "主板",
     "value": 2374
   },
-  "content_hash": "sha256:8382873b768e1be9",
-  "data_version": "2026.09.5"
+  "content_hash": "sha256:a447cb9be3680f7a",
+  "data_version": "2026.10.1"
 }
