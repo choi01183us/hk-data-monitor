@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-04",
-  "fetched_at": "2026-10-04T18:45:13.155Z",
-  "updated_at": "2026-10-04T18:44:31.000Z",
+  "fetched_at": "2026-10-05T15:12:08.624Z",
+  "updated_at": "2026-10-05T14:45:33.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -18252,7 +18252,7 @@
           "airline": "QFA"
         }
       ],
-      "status": "預計 02:20 (06/10/2026)",
+      "status": "取消",
       "statusCode": null
     },
     {
@@ -18594,30 +18594,6 @@
     {
       "direction": "departure",
       "scheduled_date": "2026-10-04",
-      "time": "23:25",
-      "airports": [
-        "FRA"
-      ],
-      "flights": [
-        {
-          "no": "LH 797",
-          "airline": "DLH"
-        },
-        {
-          "no": "CX 6799",
-          "airline": "CPA"
-        },
-        {
-          "no": "NZ 4213",
-          "airline": "ANZ"
-        }
-      ],
-      "status": "延遲",
-      "statusCode": null
-    },
-    {
-      "direction": "departure",
-      "scheduled_date": "2026-10-04",
       "time": "23:35",
       "airports": [
         "HND"
@@ -18708,5 +18684,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "dc441c43e8f17e49b6bfd4f928869a4879b588191859f97a73ad18de555d3453"
+  "content_hash": "512240365a8aa75a24cc7c86cb916d65775b3b08adb3be2fdf5451e47f581fbb"
 }
