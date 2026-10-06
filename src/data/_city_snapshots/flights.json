@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-05",
-  "fetched_at": "2026-10-05T22:09:12.561Z",
-  "updated_at": "2026-10-05T22:07:05.000Z",
+  "fetched_at": "2026-10-06T06:47:29.283Z",
+  "updated_at": "2026-10-06T06:47:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -17886,19 +17886,16 @@
       "scheduled_date": "2026-10-05",
       "time": "22:05",
       "airports": [
+        "CEB",
         "SYD"
       ],
       "flights": [
         {
-          "no": "HX 017D",
+          "no": "HX 017",
           "airline": "CRK"
-        },
-        {
-          "no": "TK 9226",
-          "airline": "THY"
         }
       ],
-      "status": "延遲",
+      "status": "啟航 22:17",
       "statusCode": null
     },
     {
@@ -18450,5 +18447,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "ee98ac7a17a9ce7f9089113be60a248c24c90e7b2e5ea83d7cf618f289a775a1"
+  "content_hash": "3660400cfdd448a7f04c401cb0c01d3380e9122a415f9e3470d0da007a473b21"
 }

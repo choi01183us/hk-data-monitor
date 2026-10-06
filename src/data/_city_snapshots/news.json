@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-05T15:12:06.432Z",
-  "updated_at": "2026-10-05T12:40:00.000Z",
+  "fetched_at": "2026-10-06T06:47:27.229Z",
+  "updated_at": "2026-10-06T05:30:00.000Z",
   "records": [
+    {
+      "title": "​行政長官於行政會議前會見傳媒開場發言及答問內容（附短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600309.htm",
+      "published_at": "2026-10-06T05:30:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局局長出席立法會資訊科技及廣播事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600279.htm",
+      "published_at": "2026-10-06T04:08:00.000Z"
+    },
+    {
+      "title": "僱主因違反「補充勞工優化計劃」本地招聘規定被行政制裁",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600244.htm",
+      "published_at": "2026-10-06T04:00:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長出席立法會資訊科技及廣播事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600290.htm",
+      "published_at": "2026-10-06T03:57:00.000Z"
+    },
+    {
+      "title": "商務及經濟發展局局長出席立法會資訊科技及廣播事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600265.htm",
+      "published_at": "2026-10-06T03:18:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/06/P2026100600205.htm",
+      "published_at": "2026-10-06T02:38:00.000Z"
+    },
     {
       "title": "預先包裝冷藏蝦肉樣本檢出硝基呋喃類代謝物",
       "url": "https://www.info.gov.hk/gia/general/202610/05/P2026100500739.htm",
@@ -477,37 +507,7 @@
       "title": "重陽節特別交通安排",
       "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200278.htm",
       "published_at": "2026-10-02T06:30:00.000Z"
-    },
-    {
-      "title": "教育局局長出席立法會教育事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200378.htm",
-      "published_at": "2026-10-02T06:22:00.000Z"
-    },
-    {
-      "title": "​財政司司長出席「中銀關愛進社區」齊賀國慶暨樂齡健康服務啟動禮致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200334.htm",
-      "published_at": "2026-10-02T04:40:00.000Z"
-    },
-    {
-      "title": "​香港海關檢獲約一百八十八萬元懷疑私煙（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200305.htm",
-      "published_at": "2026-10-02T04:10:00.000Z"
-    },
-    {
-      "title": "政府委任低碳綠色科研基金評審委員會成員",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026093000246.htm",
-      "published_at": "2026-10-02T03:30:00.000Z"
-    },
-    {
-      "title": "政府建議修訂法例便利綠色船用燃料加注作業",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200243.htm",
-      "published_at": "2026-10-02T03:12:00.000Z"
-    },
-    {
-      "title": "兩座歷史建築列為法定古蹟（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/02/P2026100200245.htm",
-      "published_at": "2026-10-02T03:05:00.000Z"
     }
   ],
-  "content_hash": "872236da1b51b0a497bf02e271415180fba827cac4a0e9b36cb82b6e83097f2b"
+  "content_hash": "69a13b72a4c78a202121d269cc6cfac3857bdf0c111e579f28620b101333e344"
 }
