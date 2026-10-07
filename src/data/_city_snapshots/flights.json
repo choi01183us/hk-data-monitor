@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-06",
-  "fetched_at": "2026-10-06T22:45:34.721Z",
-  "updated_at": "2026-10-06T22:40:43.000Z",
+  "fetched_at": "2026-10-07T06:22:13.194Z",
+  "updated_at": "2026-10-07T06:20:08.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6679,7 +6679,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 22:00 (07/10/2026)",
+      "status": "預計 22:21 (07/10/2026)",
       "statusCode": null
     },
     {
@@ -18098,7 +18098,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 08:15 (07/10/2026)",
+      "status": "啟航 08:35 (07/10/2026)",
       "statusCode": null
     },
     {
@@ -18650,5 +18650,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "f74768beaf3c86b461726af9f6053d6e62997543dd7b46b57c7f2d66c3c6bf22"
+  "content_hash": "956deff5572f69b8874b806430334784d2c0475b7b78415c16142928e5f54d06"
 }
