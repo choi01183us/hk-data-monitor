@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-07T13:48:06.709Z",
-  "updated_at": "2026-10-07T13:37:00.000Z",
+  "fetched_at": "2026-10-07T20:45:00.958Z",
+  "updated_at": "2026-10-07T14:30:00.000Z",
   "records": [
+    {
+      "title": "勞工處高度關注今日在東涌發生的致命工作意外",
+      "url": "https://www.info.gov.hk/gia/general/202610/07/P2026100700703.htm",
+      "published_at": "2026-10-07T14:30:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉今日接獲307份提名表格",
+      "url": "https://www.info.gov.hk/gia/general/202610/07/P2026100700728.htm",
+      "published_at": "2026-10-07T13:57:00.000Z"
+    },
     {
       "title": "香港海關於機場偵破一宗旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/07/P2026100700700.htm",
@@ -497,17 +507,7 @@
       "title": "​兩名入境旅客進口未完稅香煙罪成判囚（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/05/P2026100500673.htm",
       "published_at": "2026-10-05T11:22:00.000Z"
-    },
-    {
-      "title": "第四屆人力資源規劃委員會召開第七次會議",
-      "url": "https://www.info.gov.hk/gia/general/202610/05/P2026100500441.htm",
-      "published_at": "2026-10-05T11:15:00.000Z"
-    },
-    {
-      "title": "房屋局局長在立法會房屋事務委員會政策簡報會就《香港第一個五年規劃》及二○二六年《施政報告》作簡報開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/05/P2026100500662.htm",
-      "published_at": "2026-10-05T11:02:00.000Z"
     }
   ],
-  "content_hash": "397a02c7d8cdc2eb2969bb834d03174ca9de5c9c1ac6dfd63ed8d9756b248389"
+  "content_hash": "e80c4504d95edba44f3c81950809cc8cdd409ae3be663f1b94b07d2be732f647"
 }
