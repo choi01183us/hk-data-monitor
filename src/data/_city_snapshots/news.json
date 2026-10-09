@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-08T18:59:01.383Z",
-  "updated_at": "2026-10-08T12:49:30.000Z",
+  "fetched_at": "2026-10-09T01:22:05.352Z",
+  "updated_at": "2026-10-08T19:10:00.000Z",
   "records": [
+    {
+      "title": "香港特別行政區政府強烈反對《2026年美國販運人口報告》",
+      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900067.htm",
+      "published_at": "2026-10-08T19:10:00.000Z"
+    },
     {
       "title": "選舉委員會界別分組一般選舉今日再接獲164份提名表格",
       "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800630.htm",
@@ -502,12 +507,7 @@
       "title": "賽馬日跑馬地特別交通措施",
       "url": "https://www.info.gov.hk/gia/general/202610/07/P2026100700186.htm",
       "published_at": "2026-10-07T01:16:34.000Z"
-    },
-    {
-      "title": "紅色火災危險警告",
-      "url": "https://www.info.gov.hk/gia/general/202610/07/P2026100700141.htm",
-      "published_at": "2026-10-06T23:47:33.000Z"
     }
   ],
-  "content_hash": "de5f2c4685b93e6360e609008e5970c93e48b43e73cebb1660f164c30a757a77"
+  "content_hash": "0cab76fac712285f168c633e27ec03db17b7d53a9ce13b6d22b97f8d83fc2d59"
 }
