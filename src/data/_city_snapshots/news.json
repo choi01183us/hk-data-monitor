@@ -5,11 +5,21 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-10T06:18:56.941Z",
-  "updated_at": "2026-10-10T04:40:31.000Z",
+  "fetched_at": "2026-10-10T12:58:40.179Z",
+  "updated_at": "2026-10-10T10:45:00.000Z",
   "records": [
     {
-      "title": "「漁農自然Chill好玩」博覽展示本地漁農自然生態多樣性",
+      "title": "文創處和電影發展局率領業界參與韓國釜山國際電影節及亞洲內容暨電影市場展　展示香港文創新動能（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000439.htm",
+      "published_at": "2026-10-10T10:45:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉今日再接獲72份提名表格",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000395.htm",
+      "published_at": "2026-10-10T07:32:00.000Z"
+    },
+    {
+      "title": "「漁農自然Chill好玩」博覽展示本地漁農自然生態多樣性（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/10/P2026100900454.htm",
       "published_at": "2026-10-10T04:40:31.000Z"
     },
@@ -497,17 +507,7 @@
       "title": "九月份白紋伊蚊誘蚊器指數持續回落",
       "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800468.htm",
       "published_at": "2026-10-08T09:15:00.000Z"
-    },
-    {
-      "title": "立法會：創新科技及工業局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第三節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800484.htm",
-      "published_at": "2026-10-08T09:08:00.000Z"
-    },
-    {
-      "title": "於二○二七年到期的銀色債券系列的第四個付息日息率",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800434.htm",
-      "published_at": "2026-10-08T08:30:00.000Z"
     }
   ],
-  "content_hash": "5e665555a5e6a271a674aaa2ef79311dc1320c23267180082c9754d0eba3fd5b"
+  "content_hash": "75fe44d0ac8558aaeae7d11e89f06c48970266791ce957c3202fbd04f0a9c99c"
 }
