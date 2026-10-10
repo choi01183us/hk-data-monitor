@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-09T22:50:40.718Z",
-  "updated_at": "2026-10-09T22:04:10.000Z",
+  "fetched_at": "2026-10-10T06:18:56.941Z",
+  "updated_at": "2026-10-10T04:40:31.000Z",
   "records": [
+    {
+      "title": "「漁農自然Chill好玩」博覽展示本地漁農自然生態多樣性",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026100900454.htm",
+      "published_at": "2026-10-10T04:40:31.000Z"
+    },
+    {
+      "title": "非法攜帶未經徹底煮熟的野味、肉類、家禽和蛋類會被檢控",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026100900731.htm",
+      "published_at": "2026-10-10T04:30:00.000Z"
+    },
+    {
+      "title": "律政司副司長在粵港澳大灣區法律與政策論壇2026致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000302.htm",
+      "published_at": "2026-10-10T04:18:00.000Z"
+    },
+    {
+      "title": "運輸署自動駕駛車輛應用促進工作組視察北大嶼山東涌測試項目（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026100900582.htm",
+      "published_at": "2026-10-10T04:17:00.000Z"
+    },
+    {
+      "title": "衞生防護中心正調查一宗猴痘確診個案 並繼續多管齊下堵截傳播鏈",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000247.htm",
+      "published_at": "2026-10-10T03:00:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000220.htm",
+      "published_at": "2026-10-10T01:26:16.000Z"
+    },
+    {
+      "title": "​多倫多經貿辦支持香港天籟敦煌樂團首登加拿大演出（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/10/P2026100700622.htm",
+      "published_at": "2026-10-10T00:42:00.000Z"
+    },
     {
       "title": "黃色火災危險警告",
       "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000149.htm",
@@ -472,42 +507,7 @@
       "title": "於二○二七年到期的銀色債券系列的第四個付息日息率",
       "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800434.htm",
       "published_at": "2026-10-08T08:30:00.000Z"
-    },
-    {
-      "title": "​香港海關在北區進行跨部門反私煙宣傳活動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100700273.htm",
-      "published_at": "2026-10-08T07:53:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800415.htm",
-      "published_at": "2026-10-08T07:50:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800167.htm",
-      "published_at": "2026-10-08T07:45:00.000Z"
-    },
-    {
-      "title": "懲教人員制止還押在囚人士襲擊職員",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800388.htm",
-      "published_at": "2026-10-08T07:30:00.000Z"
-    },
-    {
-      "title": "東京經貿辦在韓國推廣《香港第一個五年規劃》的創科發展（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100500591.htm",
-      "published_at": "2026-10-08T07:00:00.000Z"
-    },
-    {
-      "title": "四名業主不遵從清拆令被判罰款合共逾十一萬元",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800338.htm",
-      "published_at": "2026-10-08T07:00:00.000Z"
-    },
-    {
-      "title": "僱主因違反安全法例被判罰款",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800342.htm",
-      "published_at": "2026-10-08T06:48:00.000Z"
     }
   ],
-  "content_hash": "5107642a3fd500f7a4ab1e4c2b3a82f0e8bb754dfb88f21463aa4980b8cf8280"
+  "content_hash": "5e665555a5e6a271a674aaa2ef79311dc1320c23267180082c9754d0eba3fd5b"
 }
