@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-10",
-  "fetched_at": "2026-10-10T19:28:34.553Z",
-  "updated_at": "2026-10-10T19:26:04.000Z",
+  "fetched_at": "2026-10-11T06:19:37.271Z",
+  "updated_at": "2026-10-11T06:17:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -4843,7 +4843,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "預計 19:05 (11/10/2026)",
+      "status": "預計 19:09 (11/10/2026)",
       "statusCode": null
     },
     {
@@ -18000,5 +18000,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "f8d23d8d119b34395ecb7db21df215e878ee97fd205a95409f84a04423ec7c66"
+  "content_hash": "aeb38f07feaf051fa82c4ff729b41a4043d4ad63411df7c785a903fe43da3de2"
 }
