@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-10T12:58:40.179Z",
-  "updated_at": "2026-10-10T10:45:00.000Z",
+  "fetched_at": "2026-10-11T00:24:02.314Z",
+  "updated_at": "2026-10-10T22:01:29.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/11/P2026101100143.htm",
+      "published_at": "2026-10-10T22:01:29.000Z"
+    },
     {
       "title": "文創處和電影發展局率領業界參與韓國釜山國際電影節及亞洲內容暨電影市場展　展示香港文創新動能（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/10/P2026101000439.htm",
@@ -502,12 +507,7 @@
       "title": "​立法會：財政司副司長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第三節）致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800508.htm",
       "published_at": "2026-10-08T09:24:00.000Z"
-    },
-    {
-      "title": "九月份白紋伊蚊誘蚊器指數持續回落",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800468.htm",
-      "published_at": "2026-10-08T09:15:00.000Z"
     }
   ],
-  "content_hash": "75fe44d0ac8558aaeae7d11e89f06c48970266791ce957c3202fbd04f0a9c99c"
+  "content_hash": "3352c85104424b00bfb4f2d4a464ad1e57c92934814d76fe06f0a9c135df1118"
 }
