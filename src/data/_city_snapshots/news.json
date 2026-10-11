@@ -5,16 +5,21 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-11T13:24:01.065Z",
-  "updated_at": "2026-10-11T08:53:38.000Z",
+  "fetched_at": "2026-10-11T19:40:16.957Z",
+  "updated_at": "2026-10-11T14:00:00.000Z",
   "records": [
+    {
+      "title": "香港海關於機場偵破一宗入境旅客販毒案件（二）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/11/P2026101100654.htm",
+      "published_at": "2026-10-11T14:00:00.000Z"
+    },
     {
       "title": "衞生署舉辦「齒生伴你」嘉年華　推廣全生命周期口腔健康（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/11/P2026100900646.htm",
       "published_at": "2026-10-11T08:53:38.000Z"
     },
     {
-      "title": "行政長官出席皇崗口岸開通儀式（附圖）",
+      "title": "行政長官出席皇崗口岸開通儀式（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/11/P2026101100370.htm",
       "published_at": "2026-10-11T07:20:47.000Z"
     },
@@ -34,7 +39,7 @@
       "published_at": "2026-10-11T03:00:00.000Z"
     },
     {
-      "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
+      "title": "香港海關於機場偵破一宗入境旅客販毒案件（一）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/11/P2026101100218.htm",
       "published_at": "2026-10-11T02:30:00.000Z"
     },
@@ -502,12 +507,7 @@
       "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100800554.htm",
       "published_at": "2026-10-08T11:20:00.000Z"
-    },
-    {
-      "title": "​駐布魯塞爾經貿辦支持西班牙動態影像節　重拾香港電影光影記憶（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/08/P2026100600300.htm",
-      "published_at": "2026-10-08T11:12:00.000Z"
     }
   ],
-  "content_hash": "bccba3ae763485ba5f8d213ddb404c5b8c846dc22bf97d8aad15253669e96778"
+  "content_hash": "01f460ccb7e201b124f15cbaeac83afd56d67d3295adc99b43e4c70ae4689e58"
 }
