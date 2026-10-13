@@ -5,11 +5,41 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-13T10:58:58.608Z",
-  "updated_at": "2026-10-13T10:30:00.000Z",
+  "fetched_at": "2026-10-13T19:29:08.167Z",
+  "updated_at": "2026-10-13T13:48:00.000Z",
   "records": [
     {
-      "title": "​財政司司長繼續訪問南京（附圖）",
+      "title": "香港海關檢獲約一千八百萬元懷疑走私藥劑製品（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300671.htm",
+      "published_at": "2026-10-13T13:48:00.000Z"
+    },
+    {
+      "title": "女子被暫控謀殺",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300687.htm",
+      "published_at": "2026-10-13T13:46:34.000Z"
+    },
+    {
+      "title": "衞生防護中心正調查一宗猴痘確診個案　並繼續多管齊下堵截傳播鏈",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300607.htm",
+      "published_at": "2026-10-13T12:46:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉今日再接獲108份提名表格",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300593.htm",
+      "published_at": "2026-10-13T12:00:00.000Z"
+    },
+    {
+      "title": "​財政司司長在慶祝中華人民共和國成立七十七周年暨香港專業聯盟成立二十五周年晚宴致辭（只有中文）（附短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101200241.htm",
+      "published_at": "2026-10-13T11:45:00.000Z"
+    },
+    {
+      "title": "善用街市空間跨部門工作組召開首次會議（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300577.htm",
+      "published_at": "2026-10-13T11:40:00.000Z"
+    },
+    {
+      "title": "​財政司司長繼續訪問南京（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300547.htm",
       "published_at": "2026-10-13T10:30:00.000Z"
     },
@@ -477,37 +507,7 @@
       "title": "選舉委員會界別分組一般選舉今日再接獲225份提名表格",
       "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900741.htm",
       "published_at": "2026-10-09T12:41:00.000Z"
-    },
-    {
-      "title": "​立法會：公務員事務局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第六節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900732.htm",
-      "published_at": "2026-10-09T12:20:57.000Z"
-    },
-    {
-      "title": "立法會：民政及青年事務局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第六節）致辭全文（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900717.htm",
-      "published_at": "2026-10-09T12:20:00.000Z"
-    },
-    {
-      "title": "立法會：發展局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第六節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900720.htm",
-      "published_at": "2026-10-09T12:10:29.000Z"
-    },
-    {
-      "title": "「建造業安全卓越大獎」表揚業界安全典範（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900302.htm",
-      "published_at": "2026-10-09T12:00:50.000Z"
-    },
-    {
-      "title": "勞工及福利局局長為建造業安全卓越大獎2026分享會暨頒獎典禮致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900658.htm",
-      "published_at": "2026-10-09T11:54:49.000Z"
-    },
-    {
-      "title": "立法會：政務司司長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900710.htm",
-      "published_at": "2026-10-09T11:50:00.000Z"
     }
   ],
-  "content_hash": "6298bf7928928edf2d4074b8f99d7e2de01843ebcb5644bbe5fcc5873c0b3b61"
+  "content_hash": "89e3c2139c9ec401a023192641e79b5795f5522a0c2bd9398795bd75c623ea88"
 }
