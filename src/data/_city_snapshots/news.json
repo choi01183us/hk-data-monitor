@@ -5,11 +5,146 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-13T02:41:43.433Z",
-  "updated_at": "2026-10-13T02:25:00.000Z",
+  "fetched_at": "2026-10-13T10:58:58.608Z",
+  "updated_at": "2026-10-13T10:30:00.000Z",
   "records": [
     {
-      "title": "行政長官出席香港中華聯誼會「2026科技＋新質生產力高峰論壇」致辭（只有中文）",
+      "title": "​財政司司長繼續訪問南京（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300547.htm",
+      "published_at": "2026-10-13T10:30:00.000Z"
+    },
+    {
+      "title": "司法機構呼籲市民慎防可疑電郵",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300526.htm",
+      "published_at": "2026-10-13T10:26:00.000Z"
+    },
+    {
+      "title": "空氣質素健康指數風險級別已達嚴重水平",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300513.htm",
+      "published_at": "2026-10-13T09:54:06.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長出席海洋公園50周年慶典巡禮致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300488.htm",
+      "published_at": "2026-10-13T09:15:00.000Z"
+    },
+    {
+      "title": "​香港海關在深圳灣管制站偵破一宗走私未完稅製成煙草案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300479.htm",
+      "published_at": "2026-10-13T09:05:00.000Z"
+    },
+    {
+      "title": "外匯基金票據投標結果",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300373.htm",
+      "published_at": "2026-10-13T08:55:00.000Z"
+    },
+    {
+      "title": "投資推廣署歡迎榮耀持續擴展香港業務　為香港創科生態增添動力（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101200551.htm",
+      "published_at": "2026-10-13T08:41:44.000Z"
+    },
+    {
+      "title": "行政長官嘉許「向國旗敬禮」訪京團成員（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300446.htm",
+      "published_at": "2026-10-13T08:40:59.000Z"
+    },
+    {
+      "title": "​香港海關在觀塘搗破一個懷疑私煙貯存倉庫（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300429.htm",
+      "published_at": "2026-10-13T08:35:00.000Z"
+    },
+    {
+      "title": "香港電視娛樂、無綫及有線寬頻開電視免費電視牌照獲續期",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300300.htm",
+      "published_at": "2026-10-13T08:30:00.000Z"
+    },
+    {
+      "title": "行政長官出席「向國旗敬禮」訪京團嘉許禮暨紅軍長征勝利九十周年展覽啟動禮致辭（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300431.htm",
+      "published_at": "2026-10-13T08:30:00.000Z"
+    },
+    {
+      "title": "港匯指數",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300195.htm",
+      "published_at": "2026-10-13T08:00:00.000Z"
+    },
+    {
+      "title": "日本進口水產的檢測情況",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300411.htm",
+      "published_at": "2026-10-13T07:43:00.000Z"
+    },
+    {
+      "title": "二○二六年聖誕空郵截郵日期",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300397.htm",
+      "published_at": "2026-10-13T07:40:00.000Z"
+    },
+    {
+      "title": "環境及生態局局長在立法會食物安全及環境衞生事務委員會會議就規管在新界飼養綿羊、山羊及牛隻開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300413.htm",
+      "published_at": "2026-10-13T07:40:00.000Z"
+    },
+    {
+      "title": "運輸及物流局高度關注民航意外調查機構就波音747-481 BDSF型貨機意外發表的臨時聲明",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300253.htm",
+      "published_at": "2026-10-13T07:37:00.000Z"
+    },
+    {
+      "title": "民航意外調查機構發表波音747-481 BDSF型貨機意外調查的臨時聲明",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300245.htm",
+      "published_at": "2026-10-13T07:35:00.000Z"
+    },
+    {
+      "title": "申訴專員主動調查康樂及文化事務署管理室內健身室的成效（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300361.htm",
+      "published_at": "2026-10-13T07:30:00.000Z"
+    },
+    {
+      "title": "一名入境旅客進口未完稅香煙及另類吸煙產品罪成判囚（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300393.htm",
+      "published_at": "2026-10-13T07:25:00.000Z"
+    },
+    {
+      "title": "「出售居者有其屋計劃單位2025」將於十月二十一日起開始選樓",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101200533.htm",
+      "published_at": "2026-10-13T07:00:00.000Z"
+    },
+    {
+      "title": "新界區農曆年宵市場攤位下周二起公開競投",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300189.htm",
+      "published_at": "2026-10-13T07:00:00.000Z"
+    },
+    {
+      "title": "​香港卓越獎學金計劃接受申請",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300145.htm",
+      "published_at": "2026-10-13T06:30:00.000Z"
+    },
+    {
+      "title": "財經事務及庫務局局長在點金國際香港總部開業典禮致辭全文（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300314.htm",
+      "published_at": "2026-10-13T05:03:00.000Z"
+    },
+    {
+      "title": "​財政司司長在南京出席「蘇港攜手‧揚帆啟航」伴航內地企業走向全球推介大會致辭（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300319.htm",
+      "published_at": "2026-10-13T05:03:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局局長出席香港中華聯誼會「2026科技+新質生產力高峰論壇」致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300297.htm",
+      "published_at": "2026-10-13T04:56:00.000Z"
+    },
+    {
+      "title": "​創新科技及工業局常任秘書長出席「立足香港‧融貫未來」—企業出海與金融賦能峰會午宴致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300258.htm",
+      "published_at": "2026-10-13T04:50:00.000Z"
+    },
+    {
+      "title": "康文署設「活力亞運觀賞站」 播放亞殘運會賽事",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300233.htm",
+      "published_at": "2026-10-13T04:00:00.000Z"
+    },
+    {
+      "title": "行政長官出席香港中華聯誼會「2026科技＋新質生產力高峰論壇」致辭（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300228.htm",
       "published_at": "2026-10-13T02:25:00.000Z"
     },
@@ -369,145 +504,10 @@
       "published_at": "2026-10-09T11:54:49.000Z"
     },
     {
-      "title": "《稅款豁免（宏福苑）令》刊憲",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900694.htm",
-      "published_at": "2026-10-09T11:50:00.000Z"
-    },
-    {
       "title": "立法會：政務司司長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論總結發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900710.htm",
       "published_at": "2026-10-09T11:50:00.000Z"
-    },
-    {
-      "title": "跨部門協作確保新舊皇崗口岸無縫銜接（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900649.htm",
-      "published_at": "2026-10-09T11:36:00.000Z"
-    },
-    {
-      "title": "​行政長官感謝立法會通過支持有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900572.htm",
-      "published_at": "2026-10-09T11:30:00.000Z"
-    },
-    {
-      "title": "電影發展基金資助兩部本地電影舉行首映",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900571.htm",
-      "published_at": "2026-10-09T11:15:00.000Z"
-    },
-    {
-      "title": "立法會：保安局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第六節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900669.htm",
-      "published_at": "2026-10-09T11:12:00.000Z"
-    },
-    {
-      "title": "衞生署響應2026世界精神衞生日　特設「心靈補給站」倡建共融社區（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900553.htm",
-      "published_at": "2026-10-09T11:10:00.000Z"
-    },
-    {
-      "title": "勞工及福利局局長會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900661.htm",
-      "published_at": "2026-10-09T10:55:00.000Z"
-    },
-    {
-      "title": "​行政長官出席香港中國企業協會成立35周年酒會致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900632.htm",
-      "published_at": "2026-10-09T10:27:00.000Z"
-    },
-    {
-      "title": "一名入境旅客進口未完稅香煙及另類吸煙產品罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900608.htm",
-      "published_at": "2026-10-09T10:05:00.000Z"
-    },
-    {
-      "title": "司法機構呼籲市民慎防偽冒電郵及虛假傳票",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900603.htm",
-      "published_at": "2026-10-09T10:04:00.000Z"
-    },
-    {
-      "title": "​二○二六年度跨部門山火暨攀山拯救行動演習（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900440.htm",
-      "published_at": "2026-10-09T09:55:00.000Z"
-    },
-    {
-      "title": "立法會：房屋局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第五節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900601.htm",
-      "published_at": "2026-10-09T09:40:00.000Z"
-    },
-    {
-      "title": "蚊傳疾病登革熱和基孔肯雅熱的最新情況",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900419.htm",
-      "published_at": "2026-10-09T09:30:00.000Z"
-    },
-    {
-      "title": "反非法勞工行動拘二十人（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900514.htm",
-      "published_at": "2026-10-09T09:30:00.000Z"
-    },
-    {
-      "title": "​維園年宵市場攤位競投完結",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900575.htm",
-      "published_at": "2026-10-09T09:30:00.000Z"
-    },
-    {
-      "title": "「亞藝無疆」藝術節《聲之墨境》呈獻中東樂韻與即興書法的跨界對話（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900458.htm",
-      "published_at": "2026-10-09T09:20:00.000Z"
-    },
-    {
-      "title": "香港電台與深圳廣播電影電視集團簽署合作備忘錄（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900467.htm",
-      "published_at": "2026-10-09T09:15:00.000Z"
-    },
-    {
-      "title": "保安局局長就皇崗口岸正式開通會見傳媒談話內容（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900418.htm",
-      "published_at": "2026-10-09T09:06:00.000Z"
-    },
-    {
-      "title": "​立法會：民政及青年事務局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第五節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900549.htm",
-      "published_at": "2026-10-09T09:05:00.000Z"
-    },
-    {
-      "title": "水務諮詢委員會全力支持《香港第一個五年規劃》建設香港成為國家水利高質量發展的國際樞紐",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900351.htm",
-      "published_at": "2026-10-09T09:00:00.000Z"
-    },
-    {
-      "title": "基礎建設債券計劃及政府可持續債券計劃下特區政府機構債券暫定發行時間表及委任的第一市場交易商",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900506.htm",
-      "published_at": "2026-10-09T09:00:00.000Z"
-    },
-    {
-      "title": "二○二六年十月至十二月車牌號碼網上拍賣",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900540.htm",
-      "published_at": "2026-10-09T09:00:00.000Z"
-    },
-    {
-      "title": "立法會：勞工及福利局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第五節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900559.htm",
-      "published_at": "2026-10-09T09:00:00.000Z"
-    },
-    {
-      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900525.htm",
-      "published_at": "2026-10-09T08:52:00.000Z"
-    },
-    {
-      "title": "​立法會：環境及生態局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第五節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900522.htm",
-      "published_at": "2026-10-09T08:50:00.000Z"
-    },
-    {
-      "title": "加拿大部分地區禽肉及禽類產品暫停進口",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900433.htm",
-      "published_at": "2026-10-09T08:45:00.000Z"
-    },
-    {
-      "title": "食環署公布十月份第一批白紋伊蚊誘蚊器指數（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900527.htm",
-      "published_at": "2026-10-09T08:43:00.000Z"
     }
   ],
-  "content_hash": "6638ea5f81e5770ffa6a23b76de85ae8709525fa547ec6f6479923d49d316579"
+  "content_hash": "6298bf7928928edf2d4074b8f99d7e2de01843ebcb5644bbe5fcc5873c0b3b61"
 }
