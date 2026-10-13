@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-12T21:22:48.322Z",
-  "updated_at": "2026-10-12T14:57:56.000Z",
+  "fetched_at": "2026-10-13T02:41:43.433Z",
+  "updated_at": "2026-10-13T02:25:00.000Z",
   "records": [
+    {
+      "title": "行政長官出席香港中華聯誼會「2026科技＋新質生產力高峰論壇」致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300228.htm",
+      "published_at": "2026-10-13T02:25:00.000Z"
+    },
+    {
+      "title": "​石澳泳灘及大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300216.htm",
+      "published_at": "2026-10-13T02:15:00.000Z"
+    },
     {
       "title": "駐布魯塞爾經貿辦首度於鹿特丹KINO電影院呈獻香港電影專題節目（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/12/P2026101200688.htm",
@@ -497,17 +507,7 @@
       "title": "食環署公布十月份第一批白紋伊蚊誘蚊器指數（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900527.htm",
       "published_at": "2026-10-09T08:43:00.000Z"
-    },
-    {
-      "title": "衞生署持續嚴厲打擊禁煙區違例吸煙",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900497.htm",
-      "published_at": "2026-10-09T08:40:00.000Z"
-    },
-    {
-      "title": "立法會：醫務衞生局局長就有關《香港第一個五年規劃》的議案及二○二六年《施政報告》致謝議案合併辯論（第五節）致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/09/P2026100900523.htm",
-      "published_at": "2026-10-09T08:36:00.000Z"
     }
   ],
-  "content_hash": "1ab99e1eda5d3a89608fb0959308d2fb2de9549ca22388fe0f5894d9ecfd4786"
+  "content_hash": "6638ea5f81e5770ffa6a23b76de85ae8709525fa547ec6f6479923d49d316579"
 }
