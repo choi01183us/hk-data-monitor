@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-14T12:17:35.925Z",
-  "updated_at": "2026-10-14T12:04:00.000Z",
+  "fetched_at": "2026-10-14T17:32:35.746Z",
+  "updated_at": "2026-10-14T13:00:00.000Z",
   "records": [
+    {
+      "title": "香港海關採取全港性執法行動打擊私煙零售點（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400624.htm",
+      "published_at": "2026-10-14T13:00:00.000Z"
+    },
+    {
+      "title": "駐柏林經貿辦於第二十六屆歐洲生物技術論壇推廣香港在生物技術領域的優勢（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400732.htm",
+      "published_at": "2026-10-14T12:50:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉今日再接獲28份提名表格",
+      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400724.htm",
+      "published_at": "2026-10-14T12:16:38.000Z"
+    },
     {
       "title": "立法會：醫務衞生局局長就「共建健康活力香港，貢獻『健康中國』建設」議員議案總結發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400740.htm",
@@ -492,22 +507,7 @@
       "title": "創新科技及工業局局長出席香港中華聯誼會「2026科技+新質生產力高峰論壇」致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300297.htm",
       "published_at": "2026-10-13T04:56:00.000Z"
-    },
-    {
-      "title": "​創新科技及工業局常任秘書長出席「立足香港‧融貫未來」—企業出海與金融賦能峰會午宴致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300258.htm",
-      "published_at": "2026-10-13T04:50:00.000Z"
-    },
-    {
-      "title": "康文署設「活力亞運觀賞站」 播放亞殘運會賽事",
-      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300233.htm",
-      "published_at": "2026-10-13T04:00:00.000Z"
-    },
-    {
-      "title": "行政長官出席香港中華聯誼會「2026科技＋新質生產力高峰論壇」致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/13/P2026101300228.htm",
-      "published_at": "2026-10-13T02:25:00.000Z"
     }
   ],
-  "content_hash": "e8fa2d28a4b8372c1ef18de3acafd2cf5e564b590f7be4ca1ecb2b71d9aa3e77"
+  "content_hash": "74c29f1fc14cec03de27c691dd52fdb46ed08897cabc33400d37d91f367751bb"
 }
