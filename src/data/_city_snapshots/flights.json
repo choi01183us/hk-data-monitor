@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-14",
-  "fetched_at": "2026-10-14T17:32:38.011Z",
-  "updated_at": "2026-10-14T17:32:09.000Z",
+  "fetched_at": "2026-10-14T21:53:51.797Z",
+  "updated_at": "2026-10-14T21:53:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8639,7 +8639,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 02:01 (15/10/2026)",
+      "status": "到閘口 02:02 (15/10/2026)",
       "statusCode": null
     },
     {
@@ -17448,5 +17448,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "7902bcf00091f78a9bb5ef9087e5c80c44c47f73595a9023c0e31f1534c07bdd"
+  "content_hash": "d373bf5bb53a5da72845c058e1ec038f11686f468f918858673dc0a151704070"
 }
