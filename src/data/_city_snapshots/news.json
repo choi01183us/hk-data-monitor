@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-16T11:50:06.015Z",
-  "updated_at": "2026-10-16T11:42:00.000Z",
+  "fetched_at": "2026-10-16T16:53:16.574Z",
+  "updated_at": "2026-10-16T15:19:04.000Z",
   "records": [
+    {
+      "title": "香港海關特別行動打擊懷疑冒牌硬碟加工工場及儲存倉庫（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600451.htm",
+      "published_at": "2026-10-16T15:19:04.000Z"
+    },
+    {
+      "title": "​食安中心檢出綠豆水晶粉皮及其製品樣本不符合防腐劑規定",
+      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600665.htm",
+      "published_at": "2026-10-16T13:00:00.000Z"
+    },
+    {
+      "title": "三名入境旅客進口未完稅香煙及另類吸煙產品罪成判囚（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600662.htm",
+      "published_at": "2026-10-16T12:33:52.000Z"
+    },
+    {
+      "title": "​財政司司長在曼谷出席國際貨幣基金組織及世界銀行集團年會（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600656.htm",
+      "published_at": "2026-10-16T12:05:00.000Z"
+    },
     {
       "title": "食環署公布十月份第二批白紋伊蚊誘蚊器指數（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600620.htm",
@@ -29,7 +49,7 @@
       "published_at": "2026-10-16T10:40:00.000Z"
     },
     {
-      "title": "「粵艇南下」首航　實現粵港遊艇自由行雙向通航",
+      "title": "「粵艇南下」首航　實現粵港遊艇自由行雙向通航（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600508.htm",
       "published_at": "2026-10-16T10:33:00.000Z"
     },
@@ -487,27 +507,7 @@
       "title": "​行政長官出席紀念孫中山先生誕辰160周年座談會致辭（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400585.htm",
       "published_at": "2026-10-14T08:36:00.000Z"
-    },
-    {
-      "title": "香港海關加強打擊內河船走私澳門的執法行動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400502.htm",
-      "published_at": "2026-10-14T08:35:00.000Z"
-    },
-    {
-      "title": "立法會六題：滙流升級計劃",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400519.htm",
-      "published_at": "2026-10-14T08:35:00.000Z"
-    },
-    {
-      "title": "外匯基金分析帳目",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400234.htm",
-      "published_at": "2026-10-14T08:30:00.000Z"
-    },
-    {
-      "title": "食環署「天羅行動」首階段專項巡查成效顯著　即日開展第二階段行動巡查公眾街市（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400566.htm",
-      "published_at": "2026-10-14T08:30:00.000Z"
     }
   ],
-  "content_hash": "b403756f93db6357228f8127928aee2b55d321adb8704154e221ac5b846f992d"
+  "content_hash": "f2fc1f30a0f9d3595b9652e4a59acda991c3e1c5878217af74621ead71c81382"
 }
