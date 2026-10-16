@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-16T16:53:16.574Z",
-  "updated_at": "2026-10-16T15:19:04.000Z",
+  "fetched_at": "2026-10-16T23:51:23.400Z",
+  "updated_at": "2026-10-16T22:00:00.000Z",
   "records": [
+    {
+      "title": "全港賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101500245.htm",
+      "published_at": "2026-10-16T22:00:00.000Z"
+    },
     {
       "title": "香港海關特別行動打擊懷疑冒牌硬碟加工工場及儲存倉庫（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600451.htm",
@@ -502,12 +507,7 @@
       "title": "香港歷史博物館展覽回顧香港達德學院育才之路（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400247.htm",
       "published_at": "2026-10-14T08:37:00.000Z"
-    },
-    {
-      "title": "​行政長官出席紀念孫中山先生誕辰160周年座談會致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400585.htm",
-      "published_at": "2026-10-14T08:36:00.000Z"
     }
   ],
-  "content_hash": "f2fc1f30a0f9d3595b9652e4a59acda991c3e1c5878217af74621ead71c81382"
+  "content_hash": "6d331e76698626d93a049260598a9442010255725802a5c46d3f4fb73fea8e04"
 }
