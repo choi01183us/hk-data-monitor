@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-16T23:51:23.400Z",
-  "updated_at": "2026-10-16T22:00:00.000Z",
+  "fetched_at": "2026-10-17T04:54:34.540Z",
+  "updated_at": "2026-10-17T03:14:03.000Z",
   "records": [
+    {
+      "title": "​昂船洲火警特別通知",
+      "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101700279.htm",
+      "published_at": "2026-10-17T03:14:03.000Z"
+    },
+    {
+      "title": "醫院管理局重陽節翌日假期家庭醫學門診服務安排",
+      "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101600419.htm",
+      "published_at": "2026-10-17T03:00:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101700190.htm",
+      "published_at": "2026-10-17T01:55:59.000Z"
+    },
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101700208.htm",
+      "published_at": "2026-10-17T01:46:03.000Z"
+    },
     {
       "title": "全港賣旗日",
       "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101500245.htm",
@@ -487,27 +507,7 @@
       "title": "10年期港元特區政府機構債券將於十月二十一日透過重開進行投標",
       "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400565.htm",
       "published_at": "2026-10-14T09:46:00.000Z"
-    },
-    {
-      "title": "香港海關檢獲懷疑屬受管制瀕危物種乾魚翅（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400622.htm",
-      "published_at": "2026-10-14T09:45:00.000Z"
-    },
-    {
-      "title": "​財政司司長將赴泰國出席國際貨幣基金組織及世界銀行集團年會",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400448.htm",
-      "published_at": "2026-10-14T09:00:00.000Z"
-    },
-    {
-      "title": "「智方便」推出「AI助手」功能",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400475.htm",
-      "published_at": "2026-10-14T09:00:00.000Z"
-    },
-    {
-      "title": "香港歷史博物館展覽回顧香港達德學院育才之路（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400247.htm",
-      "published_at": "2026-10-14T08:37:00.000Z"
     }
   ],
-  "content_hash": "6d331e76698626d93a049260598a9442010255725802a5c46d3f4fb73fea8e04"
+  "content_hash": "cc9530087c48ad705313d7bc65bc8a1d1e265f1073d8fa5e0bc287b526c1c8a1"
 }
