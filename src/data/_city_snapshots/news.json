@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-18T05:02:21.382Z",
-  "updated_at": "2026-10-18T03:50:00.000Z",
+  "fetched_at": "2026-10-18T11:37:10.673Z",
+  "updated_at": "2026-10-18T09:30:00.000Z",
   "records": [
+    {
+      "title": "行政長官哀悼吳康民逝世",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800434.htm",
+      "published_at": "2026-10-18T09:30:00.000Z"
+    },
+    {
+      "title": "衞生防護中心調查侵入性肺炎球菌病死亡個案",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800336.htm",
+      "published_at": "2026-10-18T09:20:00.000Z"
+    },
+    {
+      "title": "皇崗口岸旅客出入境最新情況（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800416.htm",
+      "published_at": "2026-10-18T08:51:50.000Z"
+    },
+    {
+      "title": "警方呼籲市民提供上水失蹤男子消息（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800397.htm",
+      "published_at": "2026-10-18T08:07:04.000Z"
+    },
+    {
+      "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800379.htm",
+      "published_at": "2026-10-18T07:45:00.000Z"
+    },
+    {
+      "title": "​文化體育及旅遊局局長出席「Chill．凡西九嘉年華」致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800373.htm",
+      "published_at": "2026-10-18T07:25:34.000Z"
+    },
+    {
+      "title": "食環署提醒市民萬聖節攜狗外出用膳須守法依規（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800238.htm",
+      "published_at": "2026-10-18T06:00:00.000Z"
+    },
     {
       "title": "律政司司長在2026貿仲粵港澳大灣區爭議解決高峰論壇致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800230.htm",
@@ -469,45 +504,10 @@
       "published_at": "2026-10-15T04:52:00.000Z"
     },
     {
-      "title": "立即交回填妥的物業詳情申報表",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101400334.htm",
-      "published_at": "2026-10-15T03:00:00.000Z"
-    },
-    {
-      "title": "大型體育活動事務委員會向三項活動頒授「M」品牌認可",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500180.htm",
-      "published_at": "2026-10-15T03:00:00.000Z"
-    },
-    {
-      "title": "業主不遵從清拆令及修葺令被判罰款十萬元",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500192.htm",
-      "published_at": "2026-10-15T03:00:00.000Z"
-    },
-    {
-      "title": "​醫務衞生局局長明日率團前往北京出席2026世界傳統醫藥大會",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500239.htm",
-      "published_at": "2026-10-15T03:00:00.000Z"
-    },
-    {
       "title": "幼稚園概覽網上版今日發布",
       "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500253.htm",
       "published_at": "2026-10-15T03:00:00.000Z"
-    },
-    {
-      "title": "多個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500197.htm",
-      "published_at": "2026-10-15T02:43:00.000Z"
-    },
-    {
-      "title": "​粉嶺游泳池重新開放",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500211.htm",
-      "published_at": "2026-10-15T01:54:27.000Z"
-    },
-    {
-      "title": "香港海關採取全港性執法行動打擊私煙零售點（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400624.htm",
-      "published_at": "2026-10-14T13:00:00.000Z"
     }
   ],
-  "content_hash": "81f753a75a77e8f4799ea53ea05d2ea418bd74812886881121bf3dfed11ecfeb"
+  "content_hash": "00b84b80b1870412b9e21b40addacc7f92865acd78e8c8e818423f7fdc4842bb"
 }
