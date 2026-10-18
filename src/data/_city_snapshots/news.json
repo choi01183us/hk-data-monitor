@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-17T11:06:53.012Z",
-  "updated_at": "2026-10-17T10:40:00.000Z",
+  "fetched_at": "2026-10-18T05:02:21.382Z",
+  "updated_at": "2026-10-18T03:50:00.000Z",
   "records": [
+    {
+      "title": "律政司司長在2026貿仲粵港澳大灣區爭議解決高峰論壇致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800230.htm",
+      "published_at": "2026-10-18T03:50:00.000Z"
+    },
+    {
+      "title": "酒牌局周二舉行會議",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101500428.htm",
+      "published_at": "2026-10-18T03:00:00.000Z"
+    },
+    {
+      "title": "銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800190.htm",
+      "published_at": "2026-10-18T02:15:00.000Z"
+    },
+    {
+      "title": "大灣區專員在倫敦推廣灣區機遇與香港優勢（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101600488.htm",
+      "published_at": "2026-10-18T02:00:00.000Z"
+    },
+    {
+      "title": "君子之球　鍛煉身手",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101600536.htm",
+      "published_at": "2026-10-18T02:00:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800162.htm",
+      "published_at": "2026-10-18T01:20:00.000Z"
+    },
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800132.htm",
+      "published_at": "2026-10-18T00:18:00.000Z"
+    },
     {
       "title": "文化體育及旅遊局局長出席香港演藝學院《第四幕》慈善放映會致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/17/P2026101700573.htm",
@@ -472,42 +507,7 @@
       "title": "香港海關採取全港性執法行動打擊私煙零售點（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400624.htm",
       "published_at": "2026-10-14T13:00:00.000Z"
-    },
-    {
-      "title": "駐柏林經貿辦於第二十六屆歐洲生物技術論壇推廣香港在生物技術領域的優勢（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400732.htm",
-      "published_at": "2026-10-14T12:50:00.000Z"
-    },
-    {
-      "title": "選舉委員會界別分組一般選舉今日再接獲28份提名表格",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400724.htm",
-      "published_at": "2026-10-14T12:16:38.000Z"
-    },
-    {
-      "title": "立法會：醫務衞生局局長就「共建健康活力香港，貢獻『健康中國』建設」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400740.htm",
-      "published_at": "2026-10-14T12:04:00.000Z"
-    },
-    {
-      "title": "立法會：運輸及物流局局長就「積極配合國家《十五五規劃綱要》，促進粵港澳大灣區港口、機場和軌道交通協同發展」議員議案開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400738.htm",
-      "published_at": "2026-10-14T12:01:00.000Z"
-    },
-    {
-      "title": "香港海關「時盾」行動檢獲逾七百六十萬元懷疑冒牌物品（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400677.htm",
-      "published_at": "2026-10-14T11:08:00.000Z"
-    },
-    {
-      "title": "駐布魯塞爾經貿辦再度支持香港電影亮相加泰羅尼亞錫切斯國際奇幻電影節（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101300591.htm",
-      "published_at": "2026-10-14T10:55:00.000Z"
-    },
-    {
-      "title": "​立法會七題：關注青少年沉迷網絡",
-      "url": "https://www.info.gov.hk/gia/general/202610/14/P2026101400542.htm",
-      "published_at": "2026-10-14T10:52:00.000Z"
     }
   ],
-  "content_hash": "037ab592e1be36e7b0c20bf4760cfd3012d1316a1f1c5328de0d63fb886a2a5d"
+  "content_hash": "81f753a75a77e8f4799ea53ea05d2ea418bd74812886881121bf3dfed11ecfeb"
 }
