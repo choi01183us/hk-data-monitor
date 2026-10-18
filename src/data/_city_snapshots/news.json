@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-18T11:37:10.673Z",
-  "updated_at": "2026-10-18T09:30:00.000Z",
+  "fetched_at": "2026-10-18T23:35:11.313Z",
+  "updated_at": "2026-10-18T22:00:50.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900104.htm",
+      "published_at": "2026-10-18T22:00:50.000Z"
+    },
     {
       "title": "行政長官哀悼吳康民逝世",
       "url": "https://www.info.gov.hk/gia/general/202610/18/P2026101800434.htm",
@@ -502,12 +507,7 @@
       "title": "香港太空館推出全新立體球幕電影《尋星探宇3D》（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500249.htm",
       "published_at": "2026-10-15T04:52:00.000Z"
-    },
-    {
-      "title": "幼稚園概覽網上版今日發布",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500253.htm",
-      "published_at": "2026-10-15T03:00:00.000Z"
     }
   ],
-  "content_hash": "00b84b80b1870412b9e21b40addacc7f92865acd78e8c8e818423f7fdc4842bb"
+  "content_hash": "eb1dc5ee15a9c326869a24334f86dd774bcfe7a401959293576e1f70d14416b3"
 }
