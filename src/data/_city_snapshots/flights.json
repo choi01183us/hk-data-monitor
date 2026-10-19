@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-18",
-  "fetched_at": "2026-10-18T23:35:14.406Z",
-  "updated_at": "2026-10-18T23:35:00.000Z",
+  "fetched_at": "2026-10-19T05:11:36.795Z",
+  "updated_at": "2026-10-19T05:11:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -4951,7 +4951,7 @@
           "airline": "AAL"
         }
       ],
-      "status": "預計 11:55 (19/10/2026)",
+      "status": "到閘口 12:49 (19/10/2026)",
       "statusCode": null
     },
     {
@@ -16087,7 +16087,7 @@
       ],
       "flights": [
         {
-          "no": "HX 072D",
+          "no": "HX 072",
           "airline": "CRK"
         }
       ],
@@ -18388,5 +18388,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "b28ebf5c5aed94bfe5d94b33e382cb4dcf59d884e970bc0ae0a0ef3ffc8bfd14"
+  "content_hash": "16fda3ccb42acac0ef3b897c17497fe000c42dca4f87ec05ee40ee61e5040d7d"
 }

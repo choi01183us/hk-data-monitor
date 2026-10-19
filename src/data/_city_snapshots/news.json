@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-18T23:35:11.313Z",
-  "updated_at": "2026-10-18T22:00:50.000Z",
+  "fetched_at": "2026-10-19T05:11:33.629Z",
+  "updated_at": "2026-10-19T04:00:00.000Z",
   "records": [
+    {
+      "title": "人才辦聯同香港和內地企業於英國倫敦舉辦人才機遇展（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101600304.htm",
+      "published_at": "2026-10-19T04:00:00.000Z"
+    },
+    {
+      "title": "清水灣第二灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900265.htm",
+      "published_at": "2026-10-19T03:50:46.000Z"
+    },
+    {
+      "title": "行政長官與亞洲基礎設施投資銀行行長會面（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900136.htm",
+      "published_at": "2026-10-19T03:30:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900208.htm",
+      "published_at": "2026-10-19T02:42:51.000Z"
+    },
+    {
+      "title": "運輸及物流局局長赴上海出席北外灘國際航運論壇",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101800610.htm",
+      "published_at": "2026-10-19T01:30:00.000Z"
+    },
+    {
+      "title": "律政司司長赴文萊出席中國—東盟成員國總檢察長會議",
+      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101800390.htm",
+      "published_at": "2026-10-19T01:00:00.000Z"
+    },
     {
       "title": "黃色火災危險警告",
       "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900104.htm",
@@ -477,37 +507,7 @@
       "title": "日本進口水產的檢測情況",
       "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500491.htm",
       "published_at": "2026-10-15T08:22:00.000Z"
-    },
-    {
-      "title": "​第36屆世界海關組織亞太區地區聯繫會議圓滿舉行（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500256.htm",
-      "published_at": "2026-10-15T08:00:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500171.htm",
-      "published_at": "2026-10-15T07:45:00.000Z"
-    },
-    {
-      "title": "再多一款新藥在「1+」機制下獲批註冊",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500398.htm",
-      "published_at": "2026-10-15T07:40:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長出席具身智能國際應用訓練場開幕典禮致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500429.htm",
-      "published_at": "2026-10-15T07:15:00.000Z"
-    },
-    {
-      "title": "金管局公布「ART」框架推動銀行業負責任應用人工智能（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500191.htm",
-      "published_at": "2026-10-15T06:30:00.000Z"
-    },
-    {
-      "title": "香港太空館推出全新立體球幕電影《尋星探宇3D》（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/15/P2026101500249.htm",
-      "published_at": "2026-10-15T04:52:00.000Z"
     }
   ],
-  "content_hash": "eb1dc5ee15a9c326869a24334f86dd774bcfe7a401959293576e1f70d14416b3"
+  "content_hash": "3e7f46edf727fdd9f158c812b2bbc234d555b021a09698be54ead65c8ce8753b"
 }
