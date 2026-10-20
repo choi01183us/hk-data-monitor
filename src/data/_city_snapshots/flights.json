@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-20",
-  "fetched_at": "2026-10-20T17:28:01.780Z",
-  "updated_at": "2026-10-20T17:27:09.000Z",
+  "fetched_at": "2026-10-20T21:49:02.055Z",
+  "updated_at": "2026-10-20T21:48:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6699,7 +6699,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "到閘口 19:37",
+      "status": "到閘口 19:38",
       "statusCode": null
     },
     {
@@ -9382,7 +9382,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 01:01",
+      "status": "啟航 01:00",
       "statusCode": null
     },
     {
@@ -9414,7 +9414,7 @@
           "airline": "ACA"
         }
       ],
-      "status": "啟航 01:01",
+      "status": "啟航 01:00",
       "statusCode": null
     },
     {
@@ -9482,7 +9482,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "啟航 01:12",
+      "status": "啟航 01:10",
       "statusCode": null
     },
     {
@@ -9594,7 +9594,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 01:31",
+      "status": "啟航 01:30",
       "statusCode": null
     },
     {
@@ -9930,7 +9930,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 07:16",
+      "status": "啟航 07:15",
       "statusCode": null
     },
     {
@@ -11004,7 +11004,7 @@
           "airline": "JAL"
         }
       ],
-      "status": "啟航 08:52",
+      "status": "啟航 08:50",
       "statusCode": null
     },
     {
@@ -13713,7 +13713,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "啟航 13:47",
+      "status": "啟航 13:45",
       "statusCode": null
     },
     {
@@ -13813,7 +13813,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "啟航 13:52",
+      "status": "啟航 13:50",
       "statusCode": null
     },
     {
@@ -14221,7 +14221,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "啟航 14:46",
+      "status": "啟航 14:45",
       "statusCode": null
     },
     {
@@ -16373,7 +16373,7 @@
           "airline": "THY"
         }
       ],
-      "status": "啟航 19:31",
+      "status": "啟航 19:30",
       "statusCode": null
     },
     {
@@ -16781,7 +16781,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 20:31",
+      "status": "啟航 20:30",
       "statusCode": null
     },
     {
@@ -17269,7 +17269,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "啟航 21:26",
+      "status": "啟航 21:25",
       "statusCode": null
     },
     {
@@ -18010,7 +18010,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:46",
       "statusCode": null
     },
     {
@@ -18050,7 +18050,7 @@
           "airline": "ANZ"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:37",
       "statusCode": null
     },
     {
@@ -18110,7 +18110,7 @@
           "airline": "DLH"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 00:05 (21/10/2026)",
       "statusCode": null
     },
     {
@@ -18126,9 +18126,9 @@
           "airline": "ANA"
         }
       ],
-      "status": "最後召集",
+      "status": "啟航 23:51",
       "statusCode": null
     }
   ],
-  "content_hash": "339e1a1f2df47bb2caf4e09f5f423e80b9f19c3158795a053b86be6f22240471"
+  "content_hash": "4acfddcef597bfe54c813673c53ea8000bbffb2611c071b2283fc7719cd0eb25"
 }
