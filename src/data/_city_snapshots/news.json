@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-20T12:00:04.461Z",
-  "updated_at": "2026-10-20T11:30:00.000Z",
+  "fetched_at": "2026-10-20T17:27:59.485Z",
+  "updated_at": "2026-10-20T17:21:01.000Z",
   "records": [
+    {
+      "title": "駐布魯塞爾經貿辦加強與意大利西西里的經貿、學術及文化交流（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102000723.htm",
+      "published_at": "2026-10-20T17:21:01.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀鍾婉萍、林嘉雯、湯雅婷、余翠怡、焦瑾珊、王婷莛、陳睿琳、黃翰林、王志賢、彭穎加、王愉程、林恩羽勇奪亞殘運會獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000735.htm",
+      "published_at": "2026-10-20T14:30:57.000Z"
+    },
+    {
+      "title": "衞生署加強打擊提供未經註冊藥劑製品針劑療程的處所（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000710.htm",
+      "published_at": "2026-10-20T14:01:59.000Z"
+    },
+    {
+      "title": "​二○二六年亞太經合組織財長會在港揭幕（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000246.htm",
+      "published_at": "2026-10-20T12:20:00.000Z"
+    },
     {
       "title": "衞生署積極跟進懷疑有註冊中醫師濫發病假證明書",
       "url": "https://www.info.gov.hk/gia/general/202610/20/P2026102000519.htm",
@@ -484,30 +504,10 @@
       "published_at": "2026-10-16T08:00:00.000Z"
     },
     {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600187.htm",
-      "published_at": "2026-10-16T07:45:00.000Z"
-    },
-    {
       "title": "香港科學館「2026未來科學大獎展覽」展示獲獎者研究成果（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600215.htm",
       "published_at": "2026-10-16T07:45:00.000Z"
-    },
-    {
-      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600417.htm",
-      "published_at": "2026-10-16T07:25:00.000Z"
-    },
-    {
-      "title": "「傳承啓智　孫中山先生誕辰160周年」親子問答比賽接受報名",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600252.htm",
-      "published_at": "2026-10-16T07:00:00.000Z"
-    },
-    {
-      "title": "93.2%宏福苑業主限期屆滿前簽署《買賣協議》",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600413.htm",
-      "published_at": "2026-10-16T07:00:00.000Z"
     }
   ],
-  "content_hash": "52cc4f4e070cc73bcfb2948c9d97cf0e859ea975d697a28cd017085eb9ed78c4"
+  "content_hash": "194201f6db4653d5b0d8c0dc432ff966f8dd6f8ea05ea4dc041174474fc2a19f"
 }
