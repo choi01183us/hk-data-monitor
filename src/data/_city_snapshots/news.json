@@ -5,9 +5,69 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-20T17:27:59.485Z",
-  "updated_at": "2026-10-20T17:21:01.000Z",
+  "fetched_at": "2026-10-21T05:13:01.317Z",
+  "updated_at": "2026-10-21T05:06:00.000Z",
   "records": [
+    {
+      "title": "立法會三題：改善無障礙設施",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100345.htm",
+      "published_at": "2026-10-21T05:06:00.000Z"
+    },
+    {
+      "title": "​立法會十五題：優化旅遊資訊宣傳平台",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100270.htm",
+      "published_at": "2026-10-21T04:44:29.000Z"
+    },
+    {
+      "title": "立法會十八題：小額錢債審裁處處理的申索",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100360.htm",
+      "published_at": "2026-10-21T04:40:00.000Z"
+    },
+    {
+      "title": "​立法會：政務司司長提交回應政府帳目委員會第八十五及八十六號報告書政府覆文致辭",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100355.htm",
+      "published_at": "2026-10-21T04:23:00.000Z"
+    },
+    {
+      "title": "​立法會十四題：協助保健食品業拓展內地市場",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100255.htm",
+      "published_at": "2026-10-21T04:00:00.000Z"
+    },
+    {
+      "title": "立法會十九題：餐飲服務業申請輸入勞工的情況",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100257.htm",
+      "published_at": "2026-10-21T03:50:00.000Z"
+    },
+    {
+      "title": "立法會十六題：外籍家庭傭工的管理",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100249.htm",
+      "published_at": "2026-10-21T03:35:00.000Z"
+    },
+    {
+      "title": "政府委任香港話劇團有限公司理事會成員",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100184.htm",
+      "published_at": "2026-10-21T03:30:00.000Z"
+    },
+    {
+      "title": "立法會十二題：接受整筆撥款津助的非政府機構的人手編制",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100247.htm",
+      "published_at": "2026-10-21T03:26:06.000Z"
+    },
+    {
+      "title": "賽馬日跑馬地特別交通措施",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100199.htm",
+      "published_at": "2026-10-21T01:14:52.000Z"
+    },
+    {
+      "title": "天氣酷熱　衞生署提醒市民預防高溫引發的疾病",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100119.htm",
+      "published_at": "2026-10-20T22:46:16.000Z"
+    },
+    {
+      "title": "酷熱天氣警告已發出",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100117.htm",
+      "published_at": "2026-10-20T22:46:02.000Z"
+    },
     {
       "title": "駐布魯塞爾經貿辦加強與意大利西西里的經貿、學術及文化交流（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102000723.htm",
@@ -447,67 +507,7 @@
       "title": "醫務衞生局局長與北京市中醫藥管理局局長會面（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600299.htm",
       "published_at": "2026-10-16T09:08:00.000Z"
-    },
-    {
-      "title": "終審法院其他普通法適用地區非常任法官任命",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600441.htm",
-      "published_at": "2026-10-16T09:05:00.000Z"
-    },
-    {
-      "title": "資深司法人員任命：終審法院其他普通法適用地區非常任法官",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600280.htm",
-      "published_at": "2026-10-16T09:00:00.000Z"
-    },
-    {
-      "title": "政府再度委任證監會非執行董事",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600356.htm",
-      "published_at": "2026-10-16T09:00:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600517.htm",
-      "published_at": "2026-10-16T08:50:00.000Z"
-    },
-    {
-      "title": "​律政司司長出席海南法律周深化瓊港法律服務合作（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600423.htm",
-      "published_at": "2026-10-16T08:43:00.000Z"
-    },
-    {
-      "title": "二零二六年第四季業務展望",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600345.htm",
-      "published_at": "2026-10-16T08:30:00.000Z"
-    },
-    {
-      "title": "​署理財政司司長在「粵艇南下」首航儀式致辭（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600495.htm",
-      "published_at": "2026-10-16T08:28:00.000Z"
-    },
-    {
-      "title": "車公誕市場攤位十月三十日公開競投",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101500179.htm",
-      "published_at": "2026-10-16T08:14:17.000Z"
-    },
-    {
-      "title": "運輸署呼籲重陽節假期前後市民和旅客應預早計劃跨境行程",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600266.htm",
-      "published_at": "2026-10-16T08:05:00.000Z"
-    },
-    {
-      "title": "皇崗口岸人流高峰時段特別交通及運輸安排（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600323.htm",
-      "published_at": "2026-10-16T08:00:00.000Z"
-    },
-    {
-      "title": "環保署公布泳灘等級",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600371.htm",
-      "published_at": "2026-10-16T08:00:00.000Z"
-    },
-    {
-      "title": "香港科學館「2026未來科學大獎展覽」展示獲獎者研究成果（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/16/P2026101600215.htm",
-      "published_at": "2026-10-16T07:45:00.000Z"
     }
   ],
-  "content_hash": "194201f6db4653d5b0d8c0dc432ff966f8dd6f8ea05ea4dc041174474fc2a19f"
+  "content_hash": "6d42688beca9f43df55302e3a7cfbdc89a9afa77fed3b3f72ec4c6b361a08461"
 }
