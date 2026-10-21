@@ -5,11 +5,36 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-21T12:15:34.190Z",
-  "updated_at": "2026-10-21T12:10:00.000Z",
+  "fetched_at": "2026-10-21T17:35:53.565Z",
+  "updated_at": "2026-10-21T14:38:00.000Z",
   "records": [
     {
-      "title": "創新科技及工業局常任秘書長出席香港政協青年聯會互動交流分享會致辭（只有中文）",
+      "title": "特區政府回應世界正義工程《2026年法治指數》",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100888.htm",
+      "published_at": "2026-10-21T14:38:00.000Z"
+    },
+    {
+      "title": "文化體育及旅遊局局長恭賀劉慧茵、楊曉林、梁育榮、張沅、吳卓恩、龍子健、余翠怡、湯雅婷、洪泳朗勇奪亞殘運會獎牌",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100889.htm",
+      "published_at": "2026-10-21T14:25:00.000Z"
+    },
+    {
+      "title": "香港海關於機場偵破一宗航空入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100792.htm",
+      "published_at": "2026-10-21T12:48:00.000Z"
+    },
+    {
+      "title": "​文化體育及旅遊局局長會見傳媒談話內容（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100804.htm",
+      "published_at": "2026-10-21T12:27:00.000Z"
+    },
+    {
+      "title": "懲教署「和諧二十五號」演習測試應變能力（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100243.htm",
+      "published_at": "2026-10-21T12:15:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局常任秘書長出席香港政協青年聯會互動交流分享會致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100624.htm",
       "published_at": "2026-10-21T12:10:00.000Z"
     },
@@ -482,32 +507,7 @@
       "title": "清水灣第二灣泳灘懸掛紅旗",
       "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900265.htm",
       "published_at": "2026-10-19T03:50:46.000Z"
-    },
-    {
-      "title": "行政長官與亞洲基礎設施投資銀行行長會面（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900136.htm",
-      "published_at": "2026-10-19T03:30:00.000Z"
-    },
-    {
-      "title": "數個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900208.htm",
-      "published_at": "2026-10-19T02:42:51.000Z"
-    },
-    {
-      "title": "運輸及物流局局長赴上海出席北外灘國際航運論壇",
-      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101800610.htm",
-      "published_at": "2026-10-19T01:30:00.000Z"
-    },
-    {
-      "title": "律政司司長赴文萊出席中國—東盟成員國總檢察長會議",
-      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101800390.htm",
-      "published_at": "2026-10-19T01:00:00.000Z"
-    },
-    {
-      "title": "黃色火災危險警告",
-      "url": "https://www.info.gov.hk/gia/general/202610/19/P2026101900104.htm",
-      "published_at": "2026-10-18T22:00:50.000Z"
     }
   ],
-  "content_hash": "b0b9a1c7722d2a7cc43d72135d9e193895d10f3436e2e6e51906899bd7b88d11"
+  "content_hash": "da471ddb0f162c05bd2b0bfd758221b23f2b66db76a391cb5ee5323f5f47a2bc"
 }
