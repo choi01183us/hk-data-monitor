@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-23T17:23:15.608Z",
-  "updated_at": "2026-10-23T13:45:00.000Z",
+  "fetched_at": "2026-10-23T23:58:02.147Z",
+  "updated_at": "2026-10-23T22:00:00.000Z",
   "records": [
+    {
+      "title": "分區賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102200286.htm",
+      "published_at": "2026-10-23T22:00:00.000Z"
+    },
     {
       "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300748.htm",
@@ -502,12 +507,7 @@
       "title": "​文化體育及旅遊局局長會見傳媒談話內容（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100804.htm",
       "published_at": "2026-10-21T12:27:00.000Z"
-    },
-    {
-      "title": "懲教署「和諧二十五號」演習測試應變能力（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100243.htm",
-      "published_at": "2026-10-21T12:15:00.000Z"
     }
   ],
-  "content_hash": "ca289100aec86c08cc6916c6f4fe1143133fd367870b128a919b2f827c4abad6"
+  "content_hash": "50dcc889e0fb25d7149a85b6dd77977c09d4de1b3f74c782d049caa64cce386c"
 }
