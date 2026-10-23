@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-23",
-  "fetched_at": "2026-10-23T17:23:17.925Z",
-  "updated_at": "2026-10-23T17:23:12.000Z",
+  "fetched_at": "2026-10-23T21:36:03.826Z",
+  "updated_at": "2026-10-23T21:35:06.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6088,7 +6088,7 @@
           "airline": "UAE"
         }
       ],
-      "status": "預計 00:07 (24/10/2026)",
+      "status": "到閘口 00:15 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -8487,7 +8487,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "預計 23:59",
+      "status": "到閘口 00:06 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -8931,7 +8931,7 @@
           "airline": "CRK"
         }
       ],
-      "status": "預計 23:56",
+      "status": "到閘口 00:04 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -8963,7 +8963,7 @@
           "airline": "JNA"
         }
       ],
-      "status": "預計 00:05 (24/10/2026)",
+      "status": "到閘口 00:12 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -8983,7 +8983,7 @@
           "airline": "HHN"
         }
       ],
-      "status": "預計 00:27 (24/10/2026)",
+      "status": "到閘口 00:27 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -9091,7 +9091,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 00:30 (24/10/2026)",
+      "status": "到閘口 00:36 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -9199,7 +9199,7 @@
           "airline": "JJP"
         }
       ],
-      "status": "預計 00:09 (24/10/2026)",
+      "status": "到閘口 00:23 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -17134,7 +17134,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 02:02 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -17739,7 +17739,7 @@
           "airline": "UAE"
         }
       ],
-      "status": "預備登機",
+      "status": "啟航 02:01 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -18411,7 +18411,7 @@
           "airline": "ANA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 01:14 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -18427,9 +18427,9 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 06:05 (24/10/2026)",
+      "status": "取消",
       "statusCode": null
     }
   ],
-  "content_hash": "242b4a67f0845e222770c72c7b4c0037d2f369df16c6703c2a79cac00ca24f93"
+  "content_hash": "9c7ce0edcad9ac93841a4f468449fe39629ee0b5f297ef1264c9963a67831ce0"
 }
