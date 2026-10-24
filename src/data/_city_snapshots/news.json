@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-24T16:11:52.870Z",
-  "updated_at": "2026-10-24T10:07:00.000Z",
+  "fetched_at": "2026-10-24T23:36:01.722Z",
+  "updated_at": "2026-10-24T22:02:05.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202610/25/P2026102500143.htm",
+      "published_at": "2026-10-24T22:02:05.000Z"
+    },
     {
       "title": "「創新科技嘉年華2026」展示科研成果　領航夢想高飛（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102300332.htm",
@@ -502,12 +507,7 @@
       "title": "​一名入境旅客管有未完稅香煙罪成判囚（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/22/P2026102200369.htm",
       "published_at": "2026-10-22T04:45:00.000Z"
-    },
-    {
-      "title": "香港海關偵破懷疑非法進口動物案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/22/P2026102200323.htm",
-      "published_at": "2026-10-22T04:12:39.000Z"
     }
   ],
-  "content_hash": "32d0ccc1d9f0441075b8100de53e6b455a28838baef65eadeb32f6b788d5b371"
+  "content_hash": "0d37fd8c82369d85ae55ccc41b00fe0ef5bcbb1b6e499af7ee8f00609125e359"
 }
