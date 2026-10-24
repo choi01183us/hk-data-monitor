@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-23",
-  "fetched_at": "2026-10-24T04:57:14.899Z",
-  "updated_at": "2026-10-24T04:55:22.000Z",
+  "fetched_at": "2026-10-24T11:29:20.641Z",
+  "updated_at": "2026-10-24T11:14:39.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -2839,7 +2839,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 20:30 (24/10/2026)",
+      "status": "預計 20:26 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -4715,7 +4715,7 @@
           "airline": "ETD"
         }
       ],
-      "status": "預計 21:05 (24/10/2026)",
+      "status": "預計 21:08 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -5119,7 +5119,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 13:49 (24/10/2026)",
+      "status": "到閘口 14:03 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -8443,7 +8443,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 14:00 (24/10/2026)",
+      "status": "到閘口 14:10 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -10371,7 +10371,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 16:25 (24/10/2026)",
+      "status": "啟航 16:40 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -11457,7 +11457,7 @@
           "airline": "ETD"
         }
       ],
-      "status": "預計 14:25 (24/10/2026)",
+      "status": "啟航 14:27 (24/10/2026)",
       "statusCode": null
     },
     {
@@ -12666,7 +12666,7 @@
       ],
       "flights": [
         {
-          "no": "HX 658D",
+          "no": "HX 658",
           "airline": "CRK"
         },
         {
@@ -12674,7 +12674,7 @@
           "airline": "ETD"
         }
       ],
-      "status": "預計 17:45 (24/10/2026)",
+      "status": "取消",
       "statusCode": null
     },
     {
@@ -18431,5 +18431,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "2c46689517e6a25cf4d24eb360f444d14b8dda88bc48db1aa222c7bddd8d0412"
+  "content_hash": "35bdefd2ff0e4f9d23e8b30c131236962f60e0fe4b5e8bdafb4fbaf70135c2bd"
 }
