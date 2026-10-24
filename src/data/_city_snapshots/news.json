@@ -5,7 +5,7 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-24T11:29:18.727Z",
+  "fetched_at": "2026-10-24T16:11:52.870Z",
   "updated_at": "2026-10-24T10:07:00.000Z",
   "records": [
     {
@@ -29,7 +29,7 @@
       "published_at": "2026-10-24T08:32:00.000Z"
     },
     {
-      "title": "財政司司長出席「創新科技嘉年華2026」開幕儀式致辭（只有中文）（附圖）",
+      "title": "財政司司長出席「創新科技嘉年華2026」開幕儀式致辭（只有中文）（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102400501.htm",
       "published_at": "2026-10-24T07:52:00.000Z"
     },
@@ -509,5 +509,5 @@
       "published_at": "2026-10-22T04:12:39.000Z"
     }
   ],
-  "content_hash": "06510d0e4dd1db5790a56262dc28e258d59c88284175f8956a986cb88485f25f"
+  "content_hash": "32d0ccc1d9f0441075b8100de53e6b455a28838baef65eadeb32f6b788d5b371"
 }
