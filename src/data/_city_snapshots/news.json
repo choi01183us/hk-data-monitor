@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-23T23:58:02.147Z",
-  "updated_at": "2026-10-23T22:00:00.000Z",
+  "fetched_at": "2026-10-24T04:57:12.133Z",
+  "updated_at": "2026-10-24T04:55:00.000Z",
   "records": [
+    {
+      "title": "清水灣第二灣泳灘紅旗除下",
+      "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102400377.htm",
+      "published_at": "2026-10-24T04:55:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102400257.htm",
+      "published_at": "2026-10-24T02:28:00.000Z"
+    },
     {
       "title": "分區賣旗日",
       "url": "https://www.info.gov.hk/gia/general/202610/24/P2026102200286.htm",
@@ -497,17 +507,7 @@
       "title": "文化體育及旅遊局局長恭賀劉慧茵、楊曉林、梁育榮、張沅、吳卓恩、龍子健、余翠怡、湯雅婷、洪泳朗勇奪亞殘運會獎牌",
       "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100889.htm",
       "published_at": "2026-10-21T14:25:00.000Z"
-    },
-    {
-      "title": "香港海關於機場偵破一宗航空入境旅客販毒案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100792.htm",
-      "published_at": "2026-10-21T12:48:00.000Z"
-    },
-    {
-      "title": "​文化體育及旅遊局局長會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/21/P2026102100804.htm",
-      "published_at": "2026-10-21T12:27:00.000Z"
     }
   ],
-  "content_hash": "50dcc889e0fb25d7149a85b6dd77977c09d4de1b3f74c782d049caa64cce386c"
+  "content_hash": "11ba4c200e9aa975232fe7307b441dcf495e76e70b62a579afc0d9f1437eae9b"
 }
