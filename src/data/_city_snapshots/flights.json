@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-25",
-  "fetched_at": "2026-10-25T21:09:50.586Z",
-  "updated_at": "2026-10-25T21:09:04.000Z",
+  "fetched_at": "2026-10-25T23:30:05.610Z",
+  "updated_at": "2026-10-25T23:29:40.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -18302,7 +18302,7 @@
           "airline": "PAL"
         }
       ],
-      "status": "預備登機",
+      "status": "啟航 05:41 (26/10/2026)",
       "statusCode": null
     },
     {
@@ -18594,5 +18594,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "05ed10a4b0f8c255ab146be7e2c8bdc2974c05dd7e9c04abc33116ed6fd4aad9"
+  "content_hash": "bbe3b26098e2a76003409e000a006e70cf89ecdfb405aaead3617666d602a407"
 }
