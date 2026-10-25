@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-25T11:56:12.866Z",
-  "updated_at": "2026-10-25T11:50:54.000Z",
+  "fetched_at": "2026-10-25T16:44:14.345Z",
+  "updated_at": "2026-10-25T12:58:00.000Z",
   "records": [
+    {
+      "title": "香港特區全面融入綠色「一帶一路」發展大局（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/25/P2026102300757.htm",
+      "published_at": "2026-10-25T12:58:00.000Z"
+    },
     {
       "title": "香港海關於機場檢獲約一百三十萬元懷疑可卡因（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/25/P2026102500632.htm",
@@ -499,15 +504,10 @@
       "published_at": "2026-10-22T08:15:00.000Z"
     },
     {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202610/22/P2026102200201.htm",
-      "published_at": "2026-10-22T08:00:00.000Z"
-    },
-    {
       "title": "鄉郊代表選舉活動指引今日發表",
       "url": "https://www.info.gov.hk/gia/general/202610/22/P2026102200509.htm",
       "published_at": "2026-10-22T08:00:00.000Z"
     }
   ],
-  "content_hash": "6865ada374b5e23b3508ac321f306958a3723479b7822ae4044836fdff316c73"
+  "content_hash": "cdcc0dcb28b754daeac5f12c69ffcf211a26f0610dbfcc7f24eb1cfe1244d59a"
 }
