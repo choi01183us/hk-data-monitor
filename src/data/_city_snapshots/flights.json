@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-25",
-  "fetched_at": "2026-10-25T16:44:17.108Z",
-  "updated_at": "2026-10-25T16:44:13.000Z",
+  "fetched_at": "2026-10-25T21:09:50.586Z",
+  "updated_at": "2026-10-25T21:09:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8053,7 +8053,7 @@
           "airline": "PAL"
         }
       ],
-      "status": "預計 03:45 (26/10/2026)",
+      "status": "到閘口 04:43 (26/10/2026)",
       "statusCode": null
     },
     {
@@ -9190,7 +9190,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 01:22 (26/10/2026)",
+      "status": "到閘口 01:37 (26/10/2026)",
       "statusCode": null
     },
     {
@@ -18302,7 +18302,7 @@
           "airline": "PAL"
         }
       ],
-      "status": "預計 04:50 (26/10/2026)",
+      "status": "預備登機",
       "statusCode": null
     },
     {
@@ -18474,7 +18474,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "啟航 00:26",
+      "status": "啟航 00:26 (26/10/2026)",
       "statusCode": null
     },
     {
@@ -18594,5 +18594,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "ab88e790b8059ff9b40797b523732ca53fff22ad898319b88c137a3445df0e44"
+  "content_hash": "05ed10a4b0f8c255ab146be7e2c8bdc2974c05dd7e9c04abc33116ed6fd4aad9"
 }
