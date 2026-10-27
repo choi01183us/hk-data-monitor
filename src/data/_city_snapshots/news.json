@@ -5,9 +5,49 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-27T09:17:52.102Z",
-  "updated_at": "2026-10-27T09:00:00.000Z",
+  "fetched_at": "2026-10-27T15:30:45.246Z",
+  "updated_at": "2026-10-27T14:48:00.000Z",
   "records": [
+    {
+      "title": "香港海關打擊藥店不良營商手法",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700621.htm",
+      "published_at": "2026-10-27T14:48:00.000Z"
+    },
+    {
+      "title": "香港郵政提醒市民切勿在非官方途徑下載香港郵政流動應用程式",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700678.htm",
+      "published_at": "2026-10-27T14:40:00.000Z"
+    },
+    {
+      "title": "第二十一屆國際環保博覽舉行　鞏固香港綠色科技及綠色金融樞紐地位（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700547.htm",
+      "published_at": "2026-10-27T12:18:00.000Z"
+    },
+    {
+      "title": "丹麥和美國部分地區禽肉及禽類產品暫停進口",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700535.htm",
+      "published_at": "2026-10-27T11:23:00.000Z"
+    },
+    {
+      "title": "粵港清潔生產合作專責小組會議推進兩地清潔生產合作（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700227.htm",
+      "published_at": "2026-10-27T10:36:00.000Z"
+    },
+    {
+      "title": "公務員事務局率團到粵閩大學舉辦職業講座（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700198.htm",
+      "published_at": "2026-10-27T10:35:00.000Z"
+    },
+    {
+      "title": "與銀行有關的騙案通知",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700513.htm",
+      "published_at": "2026-10-27T10:00:00.000Z"
+    },
+    {
+      "title": "外匯基金票據投標結果",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700454.htm",
+      "published_at": "2026-10-27T09:20:00.000Z"
+    },
     {
       "title": "香港海關偵破一宗海路走私案件並檢獲約一千萬元私煙（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700476.htm",
@@ -467,47 +507,7 @@
       "title": "港匯指數",
       "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300214.htm",
       "published_at": "2026-10-23T07:50:00.000Z"
-    },
-    {
-      "title": "屋宇署八月批出十份建築圖則",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300227.htm",
-      "published_at": "2026-10-23T07:45:00.000Z"
-    },
-    {
-      "title": "一名男子因非法進口另類吸煙產品被判監四星期",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300503.htm",
-      "published_at": "2026-10-23T07:20:00.000Z"
-    },
-    {
-      "title": "寄往北馬其頓的郵遞服務恢復正常",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300508.htm",
-      "published_at": "2026-10-23T07:20:00.000Z"
-    },
-    {
-      "title": "二○二六年十月二十三日人民幣國債投標結果",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300480.htm",
-      "published_at": "2026-10-23T07:15:00.000Z"
-    },
-    {
-      "title": "七名候選人獲提名參加勞工顧問委員會僱員代表選舉",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300278.htm",
-      "published_at": "2026-10-23T07:00:00.000Z"
-    },
-    {
-      "title": "為中環注入新元素　提升區域活力（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300462.htm",
-      "published_at": "2026-10-23T07:00:00.000Z"
-    },
-    {
-      "title": "機電工程署就區域供冷系統和集中式多建築供冷系統優化計劃推出更新版《香港建築物能源效益註冊計劃》及作業指引",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102200340.htm",
-      "published_at": "2026-10-23T06:42:00.000Z"
-    },
-    {
-      "title": "長洲東灣泳灘紅旗除下",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300478.htm",
-      "published_at": "2026-10-23T06:36:00.000Z"
     }
   ],
-  "content_hash": "d8ab095dbd64bae8d681e03272ff1869f6998812c4a052a4fd68326f6b296fd0"
+  "content_hash": "091d946ef3a28b60766bb59e4894620e04d80b6d42c746ee4e96493a89c81da2"
 }
