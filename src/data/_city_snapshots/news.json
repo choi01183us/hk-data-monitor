@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-26T13:28:40.304Z",
-  "updated_at": "2026-10-26T13:00:00.000Z",
+  "fetched_at": "2026-10-27T09:17:52.102Z",
+  "updated_at": "2026-10-27T09:00:00.000Z",
   "records": [
+    {
+      "title": "香港海關偵破一宗海路走私案件並檢獲約一千萬元私煙（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700476.htm",
+      "published_at": "2026-10-27T09:00:00.000Z"
+    },
+    {
+      "title": "日本進口水產的檢測情況",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700450.htm",
+      "published_at": "2026-10-27T08:00:00.000Z"
+    },
+    {
+      "title": "港匯指數",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700194.htm",
+      "published_at": "2026-10-27T07:45:00.000Z"
+    },
+    {
+      "title": "康文署流動圖書館四、八及十一暫停服務",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700248.htm",
+      "published_at": "2026-10-27T06:10:00.000Z"
+    },
+    {
+      "title": "兩名僱主因違反「補充勞工優化計劃」規定被行政制裁",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700285.htm",
+      "published_at": "2026-10-27T04:00:00.000Z"
+    },
+    {
+      "title": "香港海關偵破非註冊貴金屬及寶石交易商進行指明交易的案件",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700311.htm",
+      "published_at": "2026-10-27T03:57:00.000Z"
+    },
+    {
+      "title": "​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/27/P2026102700199.htm",
+      "published_at": "2026-10-27T01:30:00.000Z"
+    },
     {
       "title": "漁護署要求畜養人依法妥善控制狗隻",
       "url": "https://www.info.gov.hk/gia/general/202610/26/P2026102600700.htm",
@@ -472,42 +507,7 @@
       "title": "長洲東灣泳灘紅旗除下",
       "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300478.htm",
       "published_at": "2026-10-23T06:36:00.000Z"
-    },
-    {
-      "title": "​財經事務及庫務局局長在香港經濟日報財富管理大獎頒獎典禮2026致辭全文（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300457.htm",
-      "published_at": "2026-10-23T06:20:00.000Z"
-    },
-    {
-      "title": "警方呼籲市民提供觀塘失蹤男子消息（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300450.htm",
-      "published_at": "2026-10-23T05:52:30.000Z"
-    },
-    {
-      "title": "政制及內地事務局局長出席新界鄉議局一百周年「文化香港：中華文明傳播中的歷史擔當」研討會致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300397.htm",
-      "published_at": "2026-10-23T05:23:09.000Z"
-    },
-    {
-      "title": "醫務衞生局公布社區藥房計劃（社區）啓動病人配對安排及基層醫療共同治理網絡診症共付額年度調整",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300291.htm",
-      "published_at": "2026-10-23T05:11:17.000Z"
-    },
-    {
-      "title": "香港特區立法會強烈譴責並堅決反對英國發表「香港半年報告」",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300344.htm",
-      "published_at": "2026-10-23T04:50:00.000Z"
-    },
-    {
-      "title": "​香港海關檢獲懷疑屬受管制瀕危物種活龜（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300391.htm",
-      "published_at": "2026-10-23T04:40:00.000Z"
-    },
-    {
-      "title": "香港電台與成都市廣播電視台簽署合作備忘錄（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/23/P2026102300277.htm",
-      "published_at": "2026-10-23T04:15:00.000Z"
     }
   ],
-  "content_hash": "28371ef94b934f2b6a6c12dafacba9b563638515b3b0c697a9922c944629b84f"
+  "content_hash": "d8ab095dbd64bae8d681e03272ff1869f6998812c4a052a4fd68326f6b296fd0"
 }
