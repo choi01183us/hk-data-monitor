@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-10-28",
-  "fetched_at": "2026-10-28T18:27:57.361Z",
-  "updated_at": "2026-10-28T17:31:04.000Z",
+  "fetched_at": "2026-10-28T22:47:30.687Z",
+  "updated_at": "2026-10-28T22:47:07.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8735,7 +8735,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "到閘口 23:17",
+      "status": "到閘口 23:18",
       "statusCode": null
     },
     {
@@ -17755,5 +17755,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "391f7f9dff14f40762de9f12643ad13c4017386b2ae4f3dfc63f74f731c0d1b4"
+  "content_hash": "21c47c5c3e2b1f586eb9ebf23f10dc68de420181c41cca1cad94b662c4828717"
 }
