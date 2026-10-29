@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-29T13:37:06.337Z",
-  "updated_at": "2026-10-29T13:30:00.000Z",
+  "fetched_at": "2026-10-29T20:29:43.604Z",
+  "updated_at": "2026-10-29T15:29:00.000Z",
   "records": [
+    {
+      "title": "公務員事務局局長和公務員敍用委員會主席會見傳媒答問內容（附短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900809.htm",
+      "published_at": "2026-10-29T15:29:00.000Z"
+    },
+    {
+      "title": "​行政會議非官守議員發表聲明",
+      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900785.htm",
+      "published_at": "2026-10-29T13:56:00.000Z"
+    },
     {
       "title": "​文化體育及旅遊局局長會見傳媒談話內容（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900744.htm",
@@ -497,17 +507,7 @@
       "title": "立法會二題：調查私人樓宇滲水的新程序",
       "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800359.htm",
       "published_at": "2026-10-28T05:10:00.000Z"
-    },
-    {
-      "title": "立法會二十二題：加強對機場員工的職業安全健康保障",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800319.htm",
-      "published_at": "2026-10-28T04:50:00.000Z"
-    },
-    {
-      "title": "立法會十六題：提升公共充電設施的充電效率",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800312.htm",
-      "published_at": "2026-10-28T04:35:00.000Z"
     }
   ],
-  "content_hash": "0dcee3d5f36454657bb0368afa53e3c6e07081bf0405bb330031c81f06ee3bf9"
+  "content_hash": "1a7e0129f23d98aa24dd99cdcca14a88d26af75ed80490e894e60225d026cf44"
 }
