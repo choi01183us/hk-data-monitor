@@ -5,9 +5,294 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-29T20:29:43.604Z",
-  "updated_at": "2026-10-29T15:29:00.000Z",
+  "fetched_at": "2026-10-30T10:24:17.476Z",
+  "updated_at": "2026-10-30T10:15:00.000Z",
   "records": [
+    {
+      "title": "政府委任香港管弦協會有限公司董事局成員",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000257.htm",
+      "published_at": "2026-10-30T10:15:00.000Z"
+    },
+    {
+      "title": "醫院管理局回應個人資料私隱專員公署調查報告",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000342.htm",
+      "published_at": "2026-10-30T09:45:00.000Z"
+    },
+    {
+      "title": "《2026年證券及期貨（修訂）條例草案》刊憲",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000568.htm",
+      "published_at": "2026-10-30T09:35:00.000Z"
+    },
+    {
+      "title": "「全民計碳大行動——全民計碳宣傳活動巡禮」展示本港減碳階段成果（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000215.htm",
+      "published_at": "2026-10-30T09:33:00.000Z"
+    },
+    {
+      "title": "蚊傳疾病登革熱和基孔肯雅熱的最新情況",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000482.htm",
+      "published_at": "2026-10-30T09:30:00.000Z"
+    },
+    {
+      "title": "反非法勞工行動拘十人（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000580.htm",
+      "published_at": "2026-10-30T09:30:00.000Z"
+    },
+    {
+      "title": "政府公布打擊樓宇維修工程圍標措施",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000398.htm",
+      "published_at": "2026-10-30T09:25:00.000Z"
+    },
+    {
+      "title": "香港海關偵破非法進口懷疑屬受管制瀕危物種活雀鳥（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000553.htm",
+      "published_at": "2026-10-30T09:21:00.000Z"
+    },
+    {
+      "title": "財政司副司長兼署理房屋局局長和發展局局長於改革樓宇維修監管制度和支援服務記者會的開場發言（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000490.htm",
+      "published_at": "2026-10-30T09:15:00.000Z"
+    },
+    {
+      "title": "運輸署收到八份網約車服務牌照申請　反應積極",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000246.htm",
+      "published_at": "2026-10-30T09:07:16.000Z"
+    },
+    {
+      "title": "綜合廢物管理設施第一期（I.PARK1）恢復運作",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000547.htm",
+      "published_at": "2026-10-30T09:00:00.000Z"
+    },
+    {
+      "title": "律政司副司長在深圳出席TVB大灣區企業可持續發展會議2026致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000567.htm",
+      "published_at": "2026-10-30T08:56:00.000Z"
+    },
+    {
+      "title": "香港海關偵破非註冊貴金屬及寶石交易商進行指明交易的案件",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000543.htm",
+      "published_at": "2026-10-30T08:47:00.000Z"
+    },
+    {
+      "title": "日本進口水產的檢測情況",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000539.htm",
+      "published_at": "2026-10-30T08:35:00.000Z"
+    },
+    {
+      "title": "政府首六個月（即截至二○二六年九月三十日）的財務狀況",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900608.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "外匯基金資產負債表摘要及貨幣發行局帳目",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000452.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "國際儲備及外匯流動性數據",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000473.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "二○二六年九月住宅按揭統計調查結果",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000483.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "二○二六年第三季末負資產住宅按揭貸款",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000497.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "二○二六年九月份貨幣統計數字",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000506.htm",
+      "published_at": "2026-10-30T08:30:00.000Z"
+    },
+    {
+      "title": "48名分間單位規管租賃業主因違反相關法例規定而被定罪",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000520.htm",
+      "published_at": "2026-10-30T08:25:00.000Z"
+    },
+    {
+      "title": "31個需要競逐的選舉委員會界別分組將於十一月二十二日舉行的選舉進行投票",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000276.htm",
+      "published_at": "2026-10-30T08:15:00.000Z"
+    },
+    {
+      "title": "港匯指數",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000193.htm",
+      "published_at": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "title": "環保署公布泳灘等級",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000309.htm",
+      "published_at": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "title": "婦女自強基金接受二○二六至二七年度第二輪申請",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000415.htm",
+      "published_at": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "title": "醫院管理局發布最新一期《風險通報》",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000424.htm",
+      "published_at": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "title": "候選人資格審查委員會就選舉委員會候選人或獲提名人提名及當然委員登記作出裁定",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000431.htm",
+      "published_at": "2026-10-30T08:00:00.000Z"
+    },
+    {
+      "title": "二○二五至二○二六年度大嶼山保育基金批出10個項目",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000503.htm",
+      "published_at": "2026-10-30T07:42:00.000Z"
+    },
+    {
+      "title": "香港海關在深圳灣管制站偵破一宗走私未完稅製成煙草案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000478.htm",
+      "published_at": "2026-10-30T07:40:00.000Z"
+    },
+    {
+      "title": "水口教育中心建造工程招標",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000492.htm",
+      "published_at": "2026-10-30T07:25:00.000Z"
+    },
+    {
+      "title": "延長亞太經合組織商務旅遊證持有人入境逗留期限",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000202.htm",
+      "published_at": "2026-10-30T07:15:00.000Z"
+    },
+    {
+      "title": "勞工及福利局局長會見傳媒談話內容（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000458.htm",
+      "published_at": "2026-10-30T07:12:00.000Z"
+    },
+    {
+      "title": "食安中心公布九月份食物安全報告",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900331.htm",
+      "published_at": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "title": "環保署公布九月份檢控數字",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000280.htm",
+      "published_at": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "title": "公眾游泳池十一月八日起供應暖水",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000436.htm",
+      "published_at": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "title": "一名入境旅客進口未完稅香煙罪成判囚（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000461.htm",
+      "published_at": "2026-10-30T07:00:00.000Z"
+    },
+    {
+      "title": "署理環境及生態局局長出席「全民計碳大行動——全民計碳宣傳活動巡禮」致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000411.htm",
+      "published_at": "2026-10-30T06:53:00.000Z"
+    },
+    {
+      "title": "署理環境及生態局局長出席香港電動漁船啟航儀式暨「綠色能源促進藍色經濟發展」圓桌會議後會見傳媒談話內容（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000371.htm",
+      "published_at": "2026-10-30T05:52:00.000Z"
+    },
+    {
+      "title": "財經事務及庫務局局長在上海出席「滬港聯心、助企遠航──2026年滬港合作交流論壇暨服務中資企業出海專題研討會」開場致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000291.htm",
+      "published_at": "2026-10-30T05:14:00.000Z"
+    },
+    {
+      "title": "財經事務及庫務局局長在上海出席滬港金融合作第十次工作會議開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000315.htm",
+      "published_at": "2026-10-30T05:12:00.000Z"
+    },
+    {
+      "title": "財庫局局長率金融監管機構與滬方舉行會議加強金融合作（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000268.htm",
+      "published_at": "2026-10-30T05:10:00.000Z"
+    },
+    {
+      "title": "最新出版年報《香港2025》現正發售（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000296.htm",
+      "published_at": "2026-10-30T04:30:00.000Z"
+    },
+    {
+      "title": "「共創明『Teen』計劃」招募第五期學員",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000235.htm",
+      "published_at": "2026-10-30T04:00:00.000Z"
+    },
+    {
+      "title": "大型體育活動事務委員會向三項活動頒授「M」品牌認可",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000283.htm",
+      "published_at": "2026-10-30T04:00:00.000Z"
+    },
+    {
+      "title": "署理環境及生態局局長出席香港電動漁船啟航儀式暨「綠色能源促進藍色經濟發展」圓桌會議致辭（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000303.htm",
+      "published_at": "2026-10-30T03:46:00.000Z"
+    },
+    {
+      "title": "署理財經事務及庫務局局長在香港證券業協會47周年金融創新論壇致辭全文（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000297.htm",
+      "published_at": "2026-10-30T03:42:00.000Z"
+    },
+    {
+      "title": "石澳泳灘及大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000272.htm",
+      "published_at": "2026-10-30T03:10:00.000Z"
+    },
+    {
+      "title": "​公司法改革常務委員會發表二○二五至二六年度周年報告書",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900386.htm",
+      "published_at": "2026-10-30T03:00:00.000Z"
+    },
+    {
+      "title": "強制性公積金計劃上訴委員會任命",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900395.htm",
+      "published_at": "2026-10-30T03:00:00.000Z"
+    },
+    {
+      "title": "強制性公積金計劃諮詢委員會任命",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900400.htm",
+      "published_at": "2026-10-30T03:00:00.000Z"
+    },
+    {
+      "title": "​政府委任證券及期貨事務監察委員會程序覆檢委員會成員",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900451.htm",
+      "published_at": "2026-10-30T03:00:00.000Z"
+    },
+    {
+      "title": "「有問有答《基本法》問答比賽」接受報名",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900482.htm",
+      "published_at": "2026-10-30T03:00:00.000Z"
+    },
+    {
+      "title": "​發放破產欠薪保障基金特惠款項個案刊憲",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000234.htm",
+      "published_at": "2026-10-30T02:45:00.000Z"
+    },
+    {
+      "title": "委任地產代理監管局成員",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102800540.htm",
+      "published_at": "2026-10-30T02:30:00.000Z"
+    },
+    {
+      "title": "《2026年野生動物保護（修訂）條例草案》刊憲",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900478.htm",
+      "published_at": "2026-10-30T02:00:00.000Z"
+    },
+    {
+      "title": "勞工處舉辦殘疾僱員生產能力評估講座",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026102900283.htm",
+      "published_at": "2026-10-30T01:30:00.000Z"
+    },
+    {
+      "title": "​清水灣第二灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000195.htm",
+      "published_at": "2026-10-30T01:28:00.000Z"
+    },
     {
       "title": "公務員事務局局長和公務員敍用委員會主席會見傳媒答問內容（附短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900809.htm",
@@ -222,292 +507,7 @@
       "title": "政府公開就大埔宏福苑火災成立的獨立委員會報告",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900476.htm",
       "published_at": "2026-10-29T07:47:00.000Z"
-    },
-    {
-      "title": "​香港海關檢獲懷疑受管制屬瀕危物種的活龜（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900311.htm",
-      "published_at": "2026-10-29T07:40:00.000Z"
-    },
-    {
-      "title": "香港海關偵破兩宗利用遠洋船走私約二千六百萬元貨物案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900472.htm",
-      "published_at": "2026-10-29T07:30:00.000Z"
-    },
-    {
-      "title": "旺角新鮮糧食店被罰暫停營業十四天",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102700530.htm",
-      "published_at": "2026-10-29T07:00:00.000Z"
-    },
-    {
-      "title": "衞生署HIV測試服務網站恢復正常運作",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900275.htm",
-      "published_at": "2026-10-29T06:40:00.000Z"
-    },
-    {
-      "title": "香港海關與內地及澳門海關聯手打擊跨境轉運冒牌貨物活動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900373.htm",
-      "published_at": "2026-10-29T06:35:00.000Z"
-    },
-    {
-      "title": "民航處榮獲可持續碳中和卓越大獎（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900295.htm",
-      "published_at": "2026-10-29T05:33:25.000Z"
-    },
-    {
-      "title": "「香港網絡安全攻防演練——以攻築防2026」今日展開（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900334.htm",
-      "published_at": "2026-10-29T04:35:00.000Z"
-    },
-    {
-      "title": "立法會︰教育局局長就「推動新時代下的教師專業發展」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900363.htm",
-      "published_at": "2026-10-29T04:35:00.000Z"
-    },
-    {
-      "title": "寄往澳洲的郵遞服務延誤",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900368.htm",
-      "published_at": "2026-10-29T04:32:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長出席「香港網絡安全攻防演練──以攻築防2026」開幕典禮致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900354.htm",
-      "published_at": "2026-10-29T04:23:00.000Z"
-    },
-    {
-      "title": "僱主因違反「補充勞工優化計劃」規定被行政制裁",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900253.htm",
-      "published_at": "2026-10-29T04:00:00.000Z"
-    },
-    {
-      "title": "北部都會區馬拉松二○二六人流安全管理措施及特別交通安排",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900339.htm",
-      "published_at": "2026-10-29T03:53:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局常任秘書長出席國宏嘉信深港科創種子基金啓動發佈會致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900190.htm",
-      "published_at": "2026-10-29T02:54:00.000Z"
-    },
-    {
-      "title": "響應世界中風關注日　衞生署呼籲透過「談笑用兵」識別中風和實踐健康生活",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900257.htm",
-      "published_at": "2026-10-29T02:53:00.000Z"
-    },
-    {
-      "title": "金管局回應美聯儲議息決定",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900259.htm",
-      "published_at": "2026-10-29T02:30:00.000Z"
-    },
-    {
-      "title": "​多個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900218.htm",
-      "published_at": "2026-10-29T01:34:25.000Z"
-    },
-    {
-      "title": "立法會︰發展局副局長就「加快舊區重建」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800698.htm",
-      "published_at": "2026-10-28T13:27:47.000Z"
-    },
-    {
-      "title": "​行政長官哀悼國務院原副總理劉延東逝世",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800673.htm",
-      "published_at": "2026-10-28T12:13:00.000Z"
-    },
-    {
-      "title": "立法會：教育局局長就「推動新時代下的教師專業發展」議員議案開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800679.htm",
-      "published_at": "2026-10-28T12:06:00.000Z"
-    },
-    {
-      "title": "政務司司長會見傳媒答問內容（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800699.htm",
-      "published_at": "2026-10-28T11:52:00.000Z"
-    },
-    {
-      "title": "政務司司長主持皇崗口岸港方口岸區跨部門工作小組會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800650.htm",
-      "published_at": "2026-10-28T11:45:00.000Z"
-    },
-    {
-      "title": "立法會十九題：智能低空交通管理系統",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800371.htm",
-      "published_at": "2026-10-28T11:30:00.000Z"
-    },
-    {
-      "title": "衞生防護中心調查一宗猴痘確診個案",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800659.htm",
-      "published_at": "2026-10-28T11:16:58.000Z"
-    },
-    {
-      "title": "​運輸及物流局局長會見傳媒開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800644.htm",
-      "published_at": "2026-10-28T11:13:00.000Z"
-    },
-    {
-      "title": "​保安局局長會見傳媒開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800648.htm",
-      "published_at": "2026-10-28T11:06:00.000Z"
-    },
-    {
-      "title": "​香港海關在東區模範邨進行跨部門反私煙宣傳活動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800309.htm",
-      "published_at": "2026-10-28T10:30:00.000Z"
-    },
-    {
-      "title": "​香港海關拘捕球衣零售商的一名負責人",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800558.htm",
-      "published_at": "2026-10-28T10:05:00.000Z"
-    },
-    {
-      "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800566.htm",
-      "published_at": "2026-10-28T10:05:00.000Z"
-    },
-    {
-      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800567.htm",
-      "published_at": "2026-10-28T10:00:00.000Z"
-    },
-    {
-      "title": "​政務司司長會見傳媒開場發言（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800587.htm",
-      "published_at": "2026-10-28T09:55:00.000Z"
-    },
-    {
-      "title": "與銀行有關的騙案通知",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800557.htm",
-      "published_at": "2026-10-28T09:45:00.000Z"
-    },
-    {
-      "title": "警方呼籲市民提供大埔失蹤男子消息（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800541.htm",
-      "published_at": "2026-10-28T09:10:26.000Z"
-    },
-    {
-      "title": "一名入境旅客管有未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800508.htm",
-      "published_at": "2026-10-28T08:40:00.000Z"
-    },
-    {
-      "title": "立法會一題：提升香港國際航空樞紐地位",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800374.htm",
-      "published_at": "2026-10-28T08:37:28.000Z"
-    },
-    {
-      "title": "​二零二六年九月份對外商品貿易統計",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800327.htm",
-      "published_at": "2026-10-28T08:30:00.000Z"
-    },
-    {
-      "title": "環保署與業界舉辦聯合研討會　推動綠色經濟與科技創新（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800438.htm",
-      "published_at": "2026-10-28T08:30:00.000Z"
-    },
-    {
-      "title": "​保安局發布《安仔與熊仔：維護國安小公民》教育繪本（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800440.htm",
-      "published_at": "2026-10-28T08:08:00.000Z"
-    },
-    {
-      "title": "沙咀懲教所青少年在囚人士考獲良好成績（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102700458.htm",
-      "published_at": "2026-10-28T08:00:00.000Z"
-    },
-    {
-      "title": "土地註冊處發表營運基金年報",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800251.htm",
-      "published_at": "2026-10-28T08:00:00.000Z"
-    },
-    {
-      "title": "機電工程營運基金公布業績",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800325.htm",
-      "published_at": "2026-10-28T08:00:00.000Z"
-    },
-    {
-      "title": "立法會四題：學校網絡及用地的規劃",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800467.htm",
-      "published_at": "2026-10-28T08:00:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800489.htm",
-      "published_at": "2026-10-28T07:50:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800202.htm",
-      "published_at": "2026-10-28T07:45:00.000Z"
-    },
-    {
-      "title": "立法會︰發展局局長就「加快舊區重建」議員議案開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800479.htm",
-      "published_at": "2026-10-28T07:42:00.000Z"
-    },
-    {
-      "title": "立法會九題：簡樸房規管制度與租戶安置",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800339.htm",
-      "published_at": "2026-10-28T07:20:00.000Z"
-    },
-    {
-      "title": "​立法會十八題：學校午膳減鹽計劃",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800288.htm",
-      "published_at": "2026-10-28T07:00:00.000Z"
-    },
-    {
-      "title": "立法會十一題：流感高峰期的應對措施",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800289.htm",
-      "published_at": "2026-10-28T07:00:00.000Z"
-    },
-    {
-      "title": "​立法會十題：推動香港新型工業化發展",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800363.htm",
-      "published_at": "2026-10-28T07:00:00.000Z"
-    },
-    {
-      "title": "立法會二十一題：城中學舍計劃",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800400.htm",
-      "published_at": "2026-10-28T07:00:00.000Z"
-    },
-    {
-      "title": "立法會五題：提升政府資料互聯互通",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800408.htm",
-      "published_at": "2026-10-28T06:34:00.000Z"
-    },
-    {
-      "title": "立法會二十題：替代定額罰款的措施",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800316.htm",
-      "published_at": "2026-10-28T06:25:00.000Z"
-    },
-    {
-      "title": "銀礦灣泳灘紅旗除下",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800430.htm",
-      "published_at": "2026-10-28T06:21:00.000Z"
-    },
-    {
-      "title": "立法會：商務及經濟發展局局長動議二讀《2026年稅務（修訂）（知識產權開支的稅項扣除）條例草案》發言全文（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800416.htm",
-      "published_at": "2026-10-28T06:02:00.000Z"
-    },
-    {
-      "title": "立法會六題：保障兒童的安全及權利",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800406.htm",
-      "published_at": "2026-10-28T06:00:00.000Z"
-    },
-    {
-      "title": "立法會：財經事務及庫務局局長動議二讀《追加撥款（2025-2026年度）條例草案》發言全文（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800409.htm",
-      "published_at": "2026-10-28T05:30:00.000Z"
-    },
-    {
-      "title": "立法會三題：為創科初創企業的產品提供試用途徑",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800384.htm",
-      "published_at": "2026-10-28T05:15:00.000Z"
-    },
-    {
-      "title": "立法會二題：調查私人樓宇滲水的新程序",
-      "url": "https://www.info.gov.hk/gia/general/202610/28/P2026102800359.htm",
-      "published_at": "2026-10-28T05:10:00.000Z"
     }
   ],
-  "content_hash": "1a7e0129f23d98aa24dd99cdcca14a88d26af75ed80490e894e60225d026cf44"
+  "content_hash": "05ebd00ae0673b25730f9b224fe00dd739ae7eee0d8aae2f21d9a92afef20869"
 }
