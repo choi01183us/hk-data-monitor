@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-30T18:10:12.579Z",
-  "updated_at": "2026-10-30T14:30:00.000Z",
+  "fetched_at": "2026-10-30T22:36:42.592Z",
+  "updated_at": "2026-10-30T22:00:00.000Z",
   "records": [
+    {
+      "title": "全港賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202610/31/P2026102900246.htm",
+      "published_at": "2026-10-30T22:00:00.000Z"
+    },
     {
       "title": "政府公布新一屆場地伙伴計劃委員會任命",
       "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000641.htm",
@@ -502,12 +507,7 @@
       "title": "食安中心跟進懷疑違反《食物安全命令》日本進口水產品",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900594.htm",
       "published_at": "2026-10-29T09:50:00.000Z"
-    },
-    {
-      "title": "政府張貼收回及徵用土地公告以進行河套區發展—東面連接道路工程",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900313.htm",
-      "published_at": "2026-10-29T09:38:00.000Z"
     }
   ],
-  "content_hash": "625c1549887f718e4bc7a8ed836341a6f531537cafee77fff29f73738622a67a"
+  "content_hash": "c6e7a1ebd5df1b2c241212e80ba0323a0b3b1933921737e5588829fedf6936d5"
 }
