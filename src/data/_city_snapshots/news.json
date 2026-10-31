@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-10-31T12:59:22.877Z",
-  "updated_at": "2026-10-31T11:57:00.000Z",
+  "fetched_at": "2026-10-31T19:29:52.068Z",
+  "updated_at": "2026-10-31T14:03:00.000Z",
   "records": [
+    {
+      "title": "香港優秀藝文節目和展覽亮相第六屆「粵港澳大灣區文化藝術節」（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103000481.htm",
+      "published_at": "2026-10-31T14:03:00.000Z"
+    },
     {
       "title": "香港海關檢獲懷疑受管制屬瀕危物種的活龜（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103100611.htm",
@@ -502,12 +507,7 @@
       "title": "​文化體育及旅遊局副局長出席「竹墨之間——華萼交輝樓藏品捐贈展」開幕典禮暨捐贈儀式致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900447.htm",
       "published_at": "2026-10-29T10:46:00.000Z"
-    },
-    {
-      "title": "​承建商因違反安全法例被判罰款",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900642.htm",
-      "published_at": "2026-10-29T10:45:00.000Z"
     }
   ],
-  "content_hash": "2ef0348a1a6104586d0e5dbf87b7e7fec58b66574785b884075776c0a089af8a"
+  "content_hash": "4c4dc6c0cc6cf89877b6a6f47ddea95385a61d7861286375e43a00fd1b8863fa"
 }
