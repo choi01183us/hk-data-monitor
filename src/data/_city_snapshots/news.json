@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-01T06:43:45.630Z",
-  "updated_at": "2026-11-01T06:25:00.000Z",
+  "fetched_at": "2026-11-01T16:16:19.989Z",
+  "updated_at": "2026-11-01T12:55:27.000Z",
   "records": [
+    {
+      "title": "「香港參與第27屆深圳讀書月」在深圳開幕（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/01/P2026110100586.htm",
+      "published_at": "2026-11-01T12:55:27.000Z"
+    },
+    {
+      "title": "民安隊舉辦音樂會慶祝樂隊成立五十周年（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/01/P2026103000284.htm",
+      "published_at": "2026-11-01T09:30:00.000Z"
+    },
     {
       "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/01/P2026110100435.htm",
@@ -497,17 +507,7 @@
       "title": "公務員事務局局長會見傳媒開場發言（只有中文）（附短片）",
       "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900713.htm",
       "published_at": "2026-10-29T12:16:00.000Z"
-    },
-    {
-      "title": "​一名入境旅客管有未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900706.htm",
-      "published_at": "2026-10-29T12:15:00.000Z"
-    },
-    {
-      "title": "粵港澳大灣區發展辦公室舉辦「GoGBA大灣區發展日」 助企業把握「十五五」大灣區新機遇（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900559.htm",
-      "published_at": "2026-10-29T12:12:28.000Z"
     }
   ],
-  "content_hash": "b50369ae64af904ae89a4801feaf5fb2ef023e8f48ba28e2277d4d936ae142bc"
+  "content_hash": "581b3b0f25c46bf25f3dffb4cc86d8299952d984ed8b8c3d1d1e48615454c9cc"
 }
