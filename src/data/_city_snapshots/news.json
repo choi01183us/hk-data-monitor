@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-01T16:16:19.989Z",
-  "updated_at": "2026-11-01T12:55:27.000Z",
+  "fetched_at": "2026-11-02T06:42:13.669Z",
+  "updated_at": "2026-11-02T06:35:00.000Z",
   "records": [
+    {
+      "title": "香港金融科技周2026",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200254.htm",
+      "published_at": "2026-11-02T06:35:00.000Z"
+    },
+    {
+      "title": "成為《關於內地與香港特別行政區法院就仲裁程序相互協助保全的安排》指定機構新一輪申請展開",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200258.htm",
+      "published_at": "2026-11-02T05:12:00.000Z"
+    },
+    {
+      "title": "馬來西亞頂尖敲擊樂團演繹《銅話鼓事》　綻放甘美蘭音樂獨特魅力（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200262.htm",
+      "published_at": "2026-11-02T04:45:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局局長前赴浙江出席世界互聯網大會烏鎮峰會",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200173.htm",
+      "published_at": "2026-11-02T04:00:00.000Z"
+    },
+    {
+      "title": "行政長官訪問北京和上海",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200220.htm",
+      "published_at": "2026-11-02T04:00:00.000Z"
+    },
+    {
+      "title": "漁護署種植三十株「希望珊瑚」　慶祝海岸公園三十周年",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200246.htm",
+      "published_at": "2026-11-02T03:45:00.000Z"
+    },
+    {
+      "title": "大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200191.htm",
+      "published_at": "2026-11-02T01:33:36.000Z"
+    },
     {
       "title": "「香港參與第27屆深圳讀書月」在深圳開幕（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/01/P2026110100586.htm",
@@ -472,42 +507,7 @@
       "title": "​清水灣第二灣泳灘懸掛紅旗",
       "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000195.htm",
       "published_at": "2026-10-30T01:28:00.000Z"
-    },
-    {
-      "title": "公務員事務局局長和公務員敍用委員會主席會見傳媒答問內容（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900809.htm",
-      "published_at": "2026-10-29T15:29:00.000Z"
-    },
-    {
-      "title": "​行政會議非官守議員發表聲明",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900785.htm",
-      "published_at": "2026-10-29T13:56:00.000Z"
-    },
-    {
-      "title": "​文化體育及旅遊局局長會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900744.htm",
-      "published_at": "2026-10-29T13:30:00.000Z"
-    },
-    {
-      "title": "有關就大埔宏福苑火災成立的獨立委員會報告相關事宜記者會答問內容（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900693.htm",
-      "published_at": "2026-10-29T12:44:00.000Z"
-    },
-    {
-      "title": "香港藝術館獲「華萼交輝樓」捐贈藏品並推出新展覽（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900236.htm",
-      "published_at": "2026-10-29T12:24:22.000Z"
-    },
-    {
-      "title": "公務員敍用委員會主席會見傳媒開場發言（只有中文）（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900702.htm",
-      "published_at": "2026-10-29T12:18:00.000Z"
-    },
-    {
-      "title": "公務員事務局局長會見傳媒開場發言（只有中文）（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202610/29/P2026102900713.htm",
-      "published_at": "2026-10-29T12:16:00.000Z"
     }
   ],
-  "content_hash": "581b3b0f25c46bf25f3dffb4cc86d8299952d984ed8b8c3d1d1e48615454c9cc"
+  "content_hash": "fcca8641b511c92eba20a647cd3675f674134ddcb2442eaccb9433e110814d71"
 }
