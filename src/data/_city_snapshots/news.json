@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-02T19:43:29.021Z",
-  "updated_at": "2026-11-02T15:20:00.000Z",
+  "fetched_at": "2026-11-03T03:01:45.977Z",
+  "updated_at": "2026-11-03T02:15:00.000Z",
   "records": [
+    {
+      "title": "銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/03/P2026110300201.htm",
+      "published_at": "2026-11-03T02:15:00.000Z"
+    },
+    {
+      "title": "咪錶泊車系統故障　正緊急搶修",
+      "url": "https://www.info.gov.hk/gia/general/202611/03/P2026110300212.htm",
+      "published_at": "2026-11-03T01:56:11.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/03/P2026110300196.htm",
+      "published_at": "2026-11-03T01:30:00.000Z"
+    },
+    {
+      "title": "屯門致命交通意外",
+      "url": "https://www.info.gov.hk/gia/general/202611/03/P2026110300165.htm",
+      "published_at": "2026-11-03T00:25:04.000Z"
+    },
     {
       "title": "​駐柏林經貿辦於維也納推廣香港綠色轉型經驗（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/02/P2026110200719.htm",
@@ -487,27 +507,7 @@
       "title": "香港海關在深圳灣管制站偵破一宗走私未完稅製成煙草案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000478.htm",
       "published_at": "2026-10-30T07:40:00.000Z"
-    },
-    {
-      "title": "水口教育中心建造工程招標",
-      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000492.htm",
-      "published_at": "2026-10-30T07:25:00.000Z"
-    },
-    {
-      "title": "延長亞太經合組織商務旅遊證持有人入境逗留期限",
-      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000202.htm",
-      "published_at": "2026-10-30T07:15:00.000Z"
-    },
-    {
-      "title": "勞工及福利局局長會見傳媒談話內容（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000458.htm",
-      "published_at": "2026-10-30T07:12:00.000Z"
-    },
-    {
-      "title": "一名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/30/P2026103000461.htm",
-      "published_at": "2026-10-30T07:00:00.000Z"
     }
   ],
-  "content_hash": "2e69fd0c5d72c3d24d2eea049286d68d7bbe544278a67c4c798edef52b47b5c0"
+  "content_hash": "3fe6dbef2e6e0cd7bf8c707caf2c99bd2cf9aae806885aa40a4cc7ff42c4aea1"
 }
