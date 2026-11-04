@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-03T19:44:48.332Z",
-  "updated_at": "2026-11-03T16:02:33.000Z",
+  "fetched_at": "2026-11-04T01:36:25.417Z",
+  "updated_at": "2026-11-04T01:30:00.000Z",
   "records": [
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110400191.htm",
+      "published_at": "2026-11-04T01:30:00.000Z"
+    },
+    {
+      "title": "賽馬日跑馬地特別交通措施",
+      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110400170.htm",
+      "published_at": "2026-11-04T00:58:48.000Z"
+    },
+    {
+      "title": "​麗都灣泳灘及更生灣泳灘暫停開放",
+      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110300392.htm",
+      "published_at": "2026-11-04T00:30:00.000Z"
+    },
     {
       "title": "商經局局長出席亞太區經濟合作組織部長級視像會議（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110300384.htm",
@@ -492,22 +507,7 @@
       "title": "衞生防護中心錄得一宗兒童感染流感嚴重個案",
       "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103100371.htm",
       "published_at": "2026-10-31T08:39:08.000Z"
-    },
-    {
-      "title": "​香港法律周2026星期一展開",
-      "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103100298.htm",
-      "published_at": "2026-10-31T07:00:00.000Z"
-    },
-    {
-      "title": "「香港博物館節2026」精彩節目十一月登場（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103000362.htm",
-      "published_at": "2026-10-31T06:35:00.000Z"
-    },
-    {
-      "title": "長洲東灣泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202610/31/P2026103100380.htm",
-      "published_at": "2026-10-31T06:22:33.000Z"
     }
   ],
-  "content_hash": "d4bd9316792278c1a78d5fb5b44cc777196d2c1dad10e4966ec316cbaefe5714"
+  "content_hash": "9cfef6dfac671f0c31d82966ffd762721c45f2504b3d71270cfcdb1cfa397014"
 }
