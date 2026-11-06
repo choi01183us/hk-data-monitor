@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-05T20:13:05.343Z",
-  "updated_at": "2026-11-05T14:35:18.000Z",
+  "fetched_at": "2026-11-06T01:45:24.747Z",
+  "updated_at": "2026-11-06T01:27:56.000Z",
   "records": [
+    {
+      "title": "大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/06/P2026110600191.htm",
+      "published_at": "2026-11-06T01:27:56.000Z"
+    },
+    {
+      "title": "香港郵政公布二○二七年一月至六月郵票發行資訊",
+      "url": "https://www.info.gov.hk/gia/general/202611/06/P2026110500521.htm",
+      "published_at": "2026-11-06T01:00:00.000Z"
+    },
     {
       "title": "勞工處高度關注今日在沙田發生的致命工作意外",
       "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500811.htm",
@@ -497,17 +507,7 @@
       "title": "賽馬日跑馬地特別交通措施",
       "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110400170.htm",
       "published_at": "2026-11-04T00:58:48.000Z"
-    },
-    {
-      "title": "​麗都灣泳灘及更生灣泳灘暫停開放",
-      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110300392.htm",
-      "published_at": "2026-11-04T00:30:00.000Z"
-    },
-    {
-      "title": "商經局局長出席亞太區經濟合作組織部長級視像會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110300384.htm",
-      "published_at": "2026-11-03T16:02:33.000Z"
     }
   ],
-  "content_hash": "6998c5c6b2c444753e6026f42dc88e22813386dad929110cbf30ed1eac5ce6a9"
+  "content_hash": "eda9753bdb7a62f8a6712e7ae32626bea4a620357dec3b82a620cbe56f1e0871"
 }
