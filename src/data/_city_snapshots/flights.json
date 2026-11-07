@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-06",
-  "fetched_at": "2026-11-06T19:38:56.065Z",
-  "updated_at": "2026-11-06T19:38:05.000Z",
+  "fetched_at": "2026-11-07T01:07:15.716Z",
+  "updated_at": "2026-11-07T01:06:07.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7607,7 +7607,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 05:07 (07/11/2026)",
+      "status": "到閘口 05:52 (07/11/2026)",
       "statusCode": null
     },
     {
@@ -17730,5 +17730,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "43027b257ba3433eaecab5d67231782756666e8a39d024f960db8b88fde5748c"
+  "content_hash": "ba16d92e5dcb1b3af2eb75e6b5012a2d494e4d1cb8917704b0ebfdfeb654a652"
 }

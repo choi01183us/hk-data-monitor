@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-06T19:38:53.335Z",
-  "updated_at": "2026-11-06T18:57:00.000Z",
+  "fetched_at": "2026-11-07T01:07:12.596Z",
+  "updated_at": "2026-11-06T22:00:00.000Z",
   "records": [
+    {
+      "title": "分區賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202611/07/P2026110500203.htm",
+      "published_at": "2026-11-06T22:00:00.000Z"
+    },
     {
       "title": "元朗三級火警（二）",
       "url": "https://www.info.gov.hk/gia/general/202611/07/P2026110700080.htm",
@@ -502,12 +507,7 @@
       "title": "水務諮詢委員會展開廣東省東江水供水系統考察行程（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110400272.htm",
       "published_at": "2026-11-04T11:25:00.000Z"
-    },
-    {
-      "title": "香港海關檢獲懷疑受管制屬瀕危物種的活龜（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/04/P2026110400679.htm",
-      "published_at": "2026-11-04T11:05:00.000Z"
     }
   ],
-  "content_hash": "a2728ac1a0b8bef67bcd3b7292a8d7aafc1a8da4a23a5ecd744321771285254e"
+  "content_hash": "ad037250e29b9b3fc1c16c951f1ded80e0c240834fb5ce0b2787f30470b7854c"
 }
