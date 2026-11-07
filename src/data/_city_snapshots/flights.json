@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-07",
-  "fetched_at": "2026-11-07T17:50:14.734Z",
-  "updated_at": "2026-11-07T17:46:03.000Z",
+  "fetched_at": "2026-11-07T22:14:12.201Z",
+  "updated_at": "2026-11-07T22:13:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -8194,7 +8194,7 @@
           "airline": "WJA"
         }
       ],
-      "status": "預計 02:49 (08/11/2026)",
+      "status": "到閘口 02:43 (08/11/2026)",
       "statusCode": null
     },
     {
@@ -8254,7 +8254,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "著陸於 00:23 (08/11/2026)",
+      "status": "到閘口 00:25 (08/11/2026)",
       "statusCode": null
     },
     {
@@ -17358,5 +17358,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "d87e8d4d1c18d72c00f6ba60fcf15593a5dec48505bd563671bc57e686744c77"
+  "content_hash": "962addeb714f18a811d6441bccb48a368edba68829c09cbc68761e50278abeb6"
 }
