@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-07T10:37:38.121Z",
-  "updated_at": "2026-11-07T10:30:00.000Z",
+  "fetched_at": "2026-11-07T17:50:12.501Z",
+  "updated_at": "2026-11-07T12:43:58.000Z",
   "records": [
+    {
+      "title": "警務處舉辦「LOL Party 2026」禁毒嘉年華　慶祝禁毒領袖學院成立五周年（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/07/P2026110700684.htm",
+      "published_at": "2026-11-07T12:43:58.000Z"
+    },
     {
       "title": "香港海關關長率團訪問廣州海關（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/07/P2026110600662.htm",
@@ -502,12 +507,7 @@
       "title": "創新科技及工業局常任秘書長出席香港2026浙江大學科技創新論壇致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500261.htm",
       "published_at": "2026-11-05T04:18:00.000Z"
-    },
-    {
-      "title": "招標承投赤柱村道88號政府物業租用權",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110400581.htm",
-      "published_at": "2026-11-05T04:12:00.000Z"
     }
   ],
-  "content_hash": "a279f4441b7277edc138a65bd981c233c1a12090a51932620e6cfd0798bd59a6"
+  "content_hash": "6a7e5c32b869703370ccfd1ca14cba5cc95549937283975dd28ce51ea62d46f7"
 }
