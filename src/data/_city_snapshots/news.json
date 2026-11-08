@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-08T06:36:08.788Z",
-  "updated_at": "2026-11-08T03:36:33.000Z",
+  "fetched_at": "2026-11-08T13:48:53.291Z",
+  "updated_at": "2026-11-08T12:15:00.000Z",
   "records": [
+    {
+      "title": "香港海關檢獲懷疑屬受管制瀕危物種乾魚翅（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800503.htm",
+      "published_at": "2026-11-08T12:15:00.000Z"
+    },
+    {
+      "title": "環境及生態局局長前往土耳其出席第31屆聯合國氣候變化大會",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110600252.htm",
+      "published_at": "2026-11-08T08:00:00.000Z"
+    },
+    {
+      "title": "懲教人員制止在囚人士襲擊職員",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800450.htm",
+      "published_at": "2026-11-08T07:40:00.000Z"
+    },
     {
       "title": "醫務衞生局局長在廣州出席中山大學醫學高質量發展大會暨醫科辦學160周年論壇致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800273.htm",
@@ -492,22 +507,7 @@
       "title": "立法會：醫務衞生局副局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500466.htm",
       "published_at": "2026-11-05T07:28:00.000Z"
-    },
-    {
-      "title": "行政長官在上海出席第九屆虹橋國際經濟論壇「對接『十五五』 服務國家發展　香港新機遇」香港分論壇致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500469.htm",
-      "published_at": "2026-11-05T07:18:00.000Z"
-    },
-    {
-      "title": "立法會：創新科技及工業局副局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500422.htm",
-      "published_at": "2026-11-05T06:28:00.000Z"
-    },
-    {
-      "title": "立法會：勞工及福利局局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500425.htm",
-      "published_at": "2026-11-05T06:24:00.000Z"
     }
   ],
-  "content_hash": "80e95df2458c3203ef8439f6ee2847b8f8333af0f43b909ee71ae44179a0f3b9"
+  "content_hash": "f955867469b6945de00a6e3a8855a7fac5d6eaa1b1d8dad2c8c5bb934923bff1"
 }
