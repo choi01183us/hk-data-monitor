@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-07T17:50:12.501Z",
-  "updated_at": "2026-11-07T12:43:58.000Z",
+  "fetched_at": "2026-11-08T06:36:08.788Z",
+  "updated_at": "2026-11-08T03:36:33.000Z",
   "records": [
+    {
+      "title": "醫務衞生局局長在廣州出席中山大學醫學高質量發展大會暨醫科辦學160周年論壇致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800273.htm",
+      "published_at": "2026-11-08T03:36:33.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800259.htm",
+      "published_at": "2026-11-08T02:10:54.000Z"
+    },
+    {
+      "title": "熱飯暖心　扶危濟困",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110600621.htm",
+      "published_at": "2026-11-08T02:00:00.000Z"
+    },
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800242.htm",
+      "published_at": "2026-11-08T01:48:44.000Z"
+    },
     {
       "title": "警務處舉辦「LOL Party 2026」禁毒嘉年華　慶祝禁毒領袖學院成立五周年（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/07/P2026110700684.htm",
@@ -487,27 +507,7 @@
       "title": "立法會：勞工及福利局局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500425.htm",
       "published_at": "2026-11-05T06:24:00.000Z"
-    },
-    {
-      "title": "立法會：房屋局副局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500407.htm",
-      "published_at": "2026-11-05T05:52:00.000Z"
-    },
-    {
-      "title": "原訟法庭就「黃之鋒串謀勾結案」判刑",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500417.htm",
-      "published_at": "2026-11-05T05:51:00.000Z"
-    },
-    {
-      "title": "​世界頂尖大學校長論壇2026提升香港在全球高等教育領域的影響力（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500324.htm",
-      "published_at": "2026-11-05T05:21:00.000Z"
-    },
-    {
-      "title": "創新科技及工業局常任秘書長出席香港2026浙江大學科技創新論壇致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500261.htm",
-      "published_at": "2026-11-05T04:18:00.000Z"
     }
   ],
-  "content_hash": "6a7e5c32b869703370ccfd1ca14cba5cc95549937283975dd28ce51ea62d46f7"
+  "content_hash": "80e95df2458c3203ef8439f6ee2847b8f8333af0f43b909ee71ae44179a0f3b9"
 }
