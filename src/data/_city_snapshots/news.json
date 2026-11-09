@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-08T13:48:53.291Z",
-  "updated_at": "2026-11-08T12:15:00.000Z",
+  "fetched_at": "2026-11-09T01:09:50.664Z",
+  "updated_at": "2026-11-08T22:14:52.000Z",
   "records": [
+    {
+      "title": "紅色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202611/09/P2026110900110.htm",
+      "published_at": "2026-11-08T22:14:52.000Z"
+    },
     {
       "title": "香港海關檢獲懷疑屬受管制瀕危物種乾魚翅（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/08/P2026110800503.htm",
@@ -502,12 +507,7 @@
       "title": "日本進口水產的檢測情況",
       "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500493.htm",
       "published_at": "2026-11-05T07:40:00.000Z"
-    },
-    {
-      "title": "立法會：醫務衞生局副局長就「貫徹『居家安老為本』，構建長者友善社區」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/05/P2026110500466.htm",
-      "published_at": "2026-11-05T07:28:00.000Z"
     }
   ],
-  "content_hash": "f955867469b6945de00a6e3a8855a7fac5d6eaa1b1d8dad2c8c5bb934923bff1"
+  "content_hash": "98ab1c4186fafec988108ad428885cbbe50bfe8c7234fd55b6be55cb9d489ae8"
 }
