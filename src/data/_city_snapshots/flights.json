@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-11",
-  "fetched_at": "2026-11-11T17:24:05.541Z",
-  "updated_at": "2026-11-11T17:23:16.000Z",
+  "fetched_at": "2026-11-12T00:57:41.648Z",
+  "updated_at": "2026-11-12T00:57:05.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6969,7 +6969,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "預計 02:28 (12/11/2026)",
+      "status": "到閘口 02:31 (12/11/2026)",
       "statusCode": null
     },
     {
@@ -16260,7 +16260,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "啟航 01:09",
+      "status": "啟航 01:09 (12/11/2026)",
       "statusCode": null
     },
     {
@@ -16648,5 +16648,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "f4c03e7b30994288f9fd8463a2199585234271e9a245b0e48d06abd069daa0a0"
+  "content_hash": "76471e7813ccb15b669da09b4f4400ced81321115c454941dc46960419bdb0a8"
 }
