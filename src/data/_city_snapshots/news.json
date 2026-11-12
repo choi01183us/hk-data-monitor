@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-12T11:44:33.806Z",
-  "updated_at": "2026-11-12T11:12:45.000Z",
+  "fetched_at": "2026-11-12T20:20:45.537Z",
+  "updated_at": "2026-11-12T14:49:40.000Z",
   "records": [
+    {
+      "title": "中區傷人案改列謀殺案",
+      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200722.htm",
+      "published_at": "2026-11-12T14:49:40.000Z"
+    },
+    {
+      "title": "​​香港海關舉行「Customs YES」暑期工作實習計劃2026證書頒發典禮（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200245.htm",
+      "published_at": "2026-11-12T13:35:00.000Z"
+    },
+    {
+      "title": "​香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200561.htm",
+      "published_at": "2026-11-12T12:50:00.000Z"
+    },
+    {
+      "title": "「日新萬象—孫中山形象的塑造與呈現」專題展覽　回顧孫中山先生的光輝人生（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200263.htm",
+      "published_at": "2026-11-12T12:45:00.000Z"
+    },
     {
       "title": "全球交易公司IMC13個月內兩度擴充香港業務　鞏固亞太區營運樞紐地位（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200359.htm",
@@ -487,27 +507,7 @@
       "title": "政府與港鐵公司簽訂北環線全線項目協議（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000471.htm",
       "published_at": "2026-11-10T09:33:00.000Z"
-    },
-    {
-      "title": "​市民十一月十七日起可以底價租用農曆年宵市場尚餘攤位",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026110600544.htm",
-      "published_at": "2026-11-10T09:10:00.000Z"
-    },
-    {
-      "title": "漁護署於長洲進行捕捉無人看管狗隻行動",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000468.htm",
-      "published_at": "2026-11-10T09:10:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000501.htm",
-      "published_at": "2026-11-10T08:45:00.000Z"
-    },
-    {
-      "title": "外匯基金票據投標結果",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000488.htm",
-      "published_at": "2026-11-10T08:35:00.000Z"
     }
   ],
-  "content_hash": "9b5400c35d3c3f2e87ac421398061fa914265f3c7dd695c8a6d329abc1c980b7"
+  "content_hash": "4aad66d177254196e06918dfeea0ed4b9b18e4cc5bec977bba51dd7af445aef6"
 }
