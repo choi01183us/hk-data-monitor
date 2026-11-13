@@ -5,9 +5,24 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-12T20:20:45.537Z",
-  "updated_at": "2026-11-12T14:49:40.000Z",
+  "fetched_at": "2026-11-13T02:03:57.460Z",
+  "updated_at": "2026-11-13T02:00:00.000Z",
   "records": [
+    {
+      "title": "環境及生態局局長繼續在土耳其出席第31屆聯合國氣候變化大會（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111200643.htm",
+      "published_at": "2026-11-13T02:00:00.000Z"
+    },
+    {
+      "title": "​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300184.htm",
+      "published_at": "2026-11-13T01:32:00.000Z"
+    },
+    {
+      "title": "二○二七鄉郊一般選舉日期刊憲",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300172.htm",
+      "published_at": "2026-11-13T01:30:00.000Z"
+    },
     {
       "title": "中區傷人案改列謀殺案",
       "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200722.htm",
@@ -492,22 +507,7 @@
       "title": "食環署選出傑出廁所事務員（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000472.htm",
       "published_at": "2026-11-10T10:10:00.000Z"
-    },
-    {
-      "title": "​一名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000536.htm",
-      "published_at": "2026-11-10T10:02:00.000Z"
-    },
-    {
-      "title": "油街實現新展覽重新演繹羅浮山　以當代視覺臥遊山水（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000292.htm",
-      "published_at": "2026-11-10T09:45:00.000Z"
-    },
-    {
-      "title": "政府與港鐵公司簽訂北環線全線項目協議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/10/P2026111000471.htm",
-      "published_at": "2026-11-10T09:33:00.000Z"
     }
   ],
-  "content_hash": "4aad66d177254196e06918dfeea0ed4b9b18e4cc5bec977bba51dd7af445aef6"
+  "content_hash": "636265e0ddf32f02fc35e44682637d6f950232b4f733345e092e99c58b5e533f"
 }
