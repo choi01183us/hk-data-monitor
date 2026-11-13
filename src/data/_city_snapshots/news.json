@@ -5,9 +5,34 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-13T11:27:42.630Z",
-  "updated_at": "2026-11-13T10:42:00.000Z",
+  "fetched_at": "2026-11-13T19:58:15.435Z",
+  "updated_at": "2026-11-13T19:56:16.000Z",
   "records": [
+    {
+      "title": "渠務署籲請市民報告水浸",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400134.htm",
+      "published_at": "2026-11-13T19:56:16.000Z"
+    },
+    {
+      "title": "警方呼籲市民提供長洲失蹤女子消息（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300797.htm",
+      "published_at": "2026-11-13T15:25:49.000Z"
+    },
+    {
+      "title": "粉嶺火警特別通知",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300773.htm",
+      "published_at": "2026-11-13T14:44:26.000Z"
+    },
+    {
+      "title": "尋回馬鞍山失蹤女童",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300761.htm",
+      "published_at": "2026-11-13T14:16:14.000Z"
+    },
+    {
+      "title": "​行政長官出席香港新聞工作者聯會創立30周年聯歡晚會致辭（只有中文）（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300645.htm",
+      "published_at": "2026-11-13T11:29:00.000Z"
+    },
     {
       "title": "​一名早前公布的兒童流感嚴重個案患者病逝",
       "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300611.htm",
@@ -84,7 +109,7 @@
       "published_at": "2026-11-13T08:30:00.000Z"
     },
     {
-      "title": "二零二六年第三季經濟表現及二零二六年本地生產總值和物價最新預測（附圖）",
+      "title": "二零二六年第三季經濟表現及二零二六年本地生產總值和物價最新預測（附圖／短片）",
       "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300294.htm",
       "published_at": "2026-11-13T08:30:00.000Z"
     },
@@ -482,32 +507,7 @@
       "title": "僱主因違反安全法例被判罰款",
       "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100602.htm",
       "published_at": "2026-11-11T10:22:00.000Z"
-    },
-    {
-      "title": "預先包裝牛奶樣本菌落計數超出法例標準",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100524.htm",
-      "published_at": "2026-11-11T09:35:00.000Z"
-    },
-    {
-      "title": "韓國和荷蘭部分地區禽肉及禽類產品暫停進口",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100538.htm",
-      "published_at": "2026-11-11T09:35:00.000Z"
-    },
-    {
-      "title": "警務處成立香港國際警務學院　深化國際警務協作（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100536.htm",
-      "published_at": "2026-11-11T09:26:23.000Z"
-    },
-    {
-      "title": "​香港海關偵破非註冊貴金屬及寶石交易商進行指明交易的案件",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100532.htm",
-      "published_at": "2026-11-11T09:25:00.000Z"
-    },
-    {
-      "title": "「千姿百態的觀葉植物」園藝教育展覽九龍公園舉行免費入場（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100345.htm",
-      "published_at": "2026-11-11T09:18:00.000Z"
     }
   ],
-  "content_hash": "5a4e912cea3934ddd04f6f262d0bc8ee8e50d2cb584c4c62e304aa6dee6899b1"
+  "content_hash": "415a6dbe331b319cd404662228a6dfe11634d12bb837816c31882d280ec0d18d"
 }
