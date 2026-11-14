@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-14T10:50:53.049Z",
-  "updated_at": "2026-11-14T09:30:00.000Z",
+  "fetched_at": "2026-11-14T18:26:23.252Z",
+  "updated_at": "2026-11-14T11:40:38.000Z",
   "records": [
+    {
+      "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400626.htm",
+      "published_at": "2026-11-14T11:40:38.000Z"
+    },
     {
       "title": "​「器官捐贈日2026」推廣活動今日舉行　向年輕一代傳播無私大愛種子（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111300646.htm",
@@ -502,12 +507,7 @@
       "title": "衞生署澄清有關新冠疫苗的接種安排",
       "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100704.htm",
       "published_at": "2026-11-11T13:00:00.000Z"
-    },
-    {
-      "title": "駐新加坡經貿辦為經「經貿一站通」平台訪問新加坡的香港珠寶業代表團合辦商務交流午宴（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100675.htm",
-      "published_at": "2026-11-11T12:55:00.000Z"
     }
   ],
-  "content_hash": "d16d88f637dc8130462f3d5a081de04d4653daaec88ef02c6ccadd2d3b20bb2b"
+  "content_hash": "7748a1475a908a2de6816543dcd6595957aad7e5b965c6df28505a6d178062c0"
 }
