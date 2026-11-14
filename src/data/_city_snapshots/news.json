@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-13T19:58:15.435Z",
-  "updated_at": "2026-11-13T19:56:16.000Z",
+  "fetched_at": "2026-11-14T01:41:02.555Z",
+  "updated_at": "2026-11-13T22:00:00.000Z",
   "records": [
+    {
+      "title": "全港賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111200397.htm",
+      "published_at": "2026-11-13T22:00:00.000Z"
+    },
+    {
+      "title": "僱主／承建商及僱員須注意在暴雨下工作時的電力安全",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400136.htm",
+      "published_at": "2026-11-13T19:56:34.000Z"
+    },
     {
       "title": "渠務署籲請市民報告水浸",
       "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400134.htm",
@@ -497,17 +507,7 @@
       "title": "立法會十五題：本港醫療人力及就業情況",
       "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100330.htm",
       "published_at": "2026-11-11T10:50:00.000Z"
-    },
-    {
-      "title": "​香港海關打擊走私凍肉執法行動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100569.htm",
-      "published_at": "2026-11-11T10:45:00.000Z"
-    },
-    {
-      "title": "僱主因違反安全法例被判罰款",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100602.htm",
-      "published_at": "2026-11-11T10:22:00.000Z"
     }
   ],
-  "content_hash": "415a6dbe331b319cd404662228a6dfe11634d12bb837816c31882d280ec0d18d"
+  "content_hash": "6421e5ff526c3db0f61ba04d2245958be65afb53c6547c446ddd00a0065c76c4"
 }
