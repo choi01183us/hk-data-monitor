@@ -5,9 +5,44 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-14T01:41:02.555Z",
-  "updated_at": "2026-11-13T22:00:00.000Z",
+  "fetched_at": "2026-11-14T10:50:53.049Z",
+  "updated_at": "2026-11-14T09:30:00.000Z",
   "records": [
+    {
+      "title": "​「器官捐贈日2026」推廣活動今日舉行　向年輕一代傳播無私大愛種子（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111300646.htm",
+      "published_at": "2026-11-14T09:30:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局局長出席2026年中銀國際「科創菁英・賦能興港」青年科技人才助學培育計畫頒獎典禮致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400511.htm",
+      "published_at": "2026-11-14T09:00:00.000Z"
+    },
+    {
+      "title": "​運輸署呼籲市民提防偽冒汽車安全氣袋召回信息",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400467.htm",
+      "published_at": "2026-11-14T07:18:00.000Z"
+    },
+    {
+      "title": "保安局副局長勉勵警察學院結業學員「忠誠護國安　勇毅保家園」（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400379.htm",
+      "published_at": "2026-11-14T04:48:00.000Z"
+    },
+    {
+      "title": "創新科技及工業局常任秘書長出席南京理工大學香港科創研究院揭牌儀式致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111300380.htm",
+      "published_at": "2026-11-14T02:30:00.000Z"
+    },
+    {
+      "title": "​響應「世界糖尿病日」　定期篩查均衡飲食　及早行動降低風險",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111300652.htm",
+      "published_at": "2026-11-14T02:30:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400284.htm",
+      "published_at": "2026-11-14T01:51:48.000Z"
+    },
     {
       "title": "全港賣旗日",
       "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111200397.htm",
@@ -472,42 +507,7 @@
       "title": "駐新加坡經貿辦為經「經貿一站通」平台訪問新加坡的香港珠寶業代表團合辦商務交流午宴（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100675.htm",
       "published_at": "2026-11-11T12:55:00.000Z"
-    },
-    {
-      "title": "​立法會十三題：支援法律及爭議解決服務業",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100513.htm",
-      "published_at": "2026-11-11T12:30:00.000Z"
-    },
-    {
-      "title": "衞生防護中心調查一宗猴痘確診個案",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100693.htm",
-      "published_at": "2026-11-11T12:03:00.000Z"
-    },
-    {
-      "title": "​三名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100640.htm",
-      "published_at": "2026-11-11T11:30:00.000Z"
-    },
-    {
-      "title": "提防偽冒「智安存」的欺詐事件",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100639.htm",
-      "published_at": "2026-11-11T11:22:00.000Z"
-    },
-    {
-      "title": "屏山天水圍游泳池暫時關閉",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100650.htm",
-      "published_at": "2026-11-11T11:13:00.000Z"
-    },
-    {
-      "title": "研究資助局舉辦工作坊暨項目海報展示　推動本地自資學位界別進行卓越研究（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100278.htm",
-      "published_at": "2026-11-11T10:55:00.000Z"
-    },
-    {
-      "title": "立法會十五題：本港醫療人力及就業情況",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100330.htm",
-      "published_at": "2026-11-11T10:50:00.000Z"
     }
   ],
-  "content_hash": "6421e5ff526c3db0f61ba04d2245958be65afb53c6547c446ddd00a0065c76c4"
+  "content_hash": "d16d88f637dc8130462f3d5a081de04d4653daaec88ef02c6ccadd2d3b20bb2b"
 }
