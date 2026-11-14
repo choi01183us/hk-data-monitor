@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-14T18:26:23.252Z",
-  "updated_at": "2026-11-14T11:40:38.000Z",
+  "fetched_at": "2026-11-14T22:41:30.325Z",
+  "updated_at": "2026-11-14T22:02:16.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202611/15/P2026111500156.htm",
+      "published_at": "2026-11-14T22:02:16.000Z"
+    },
     {
       "title": "香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/14/P2026111400626.htm",
@@ -502,12 +507,7 @@
       "title": "文化體育及旅遊局局長出席2026傑出商界女領袖選舉頒獎典禮致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100717.htm",
       "published_at": "2026-11-11T13:15:00.000Z"
-    },
-    {
-      "title": "衞生署澄清有關新冠疫苗的接種安排",
-      "url": "https://www.info.gov.hk/gia/general/202611/11/P2026111100704.htm",
-      "published_at": "2026-11-11T13:00:00.000Z"
     }
   ],
-  "content_hash": "7748a1475a908a2de6816543dcd6595957aad7e5b965c6df28505a6d178062c0"
+  "content_hash": "32616b16702e685b808be95476a4ce9d4a249134d295bd059f9a499b45d5f4c6"
 }
