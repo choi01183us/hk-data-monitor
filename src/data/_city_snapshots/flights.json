@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-14",
-  "fetched_at": "2026-11-14T18:26:25.395Z",
-  "updated_at": "2026-11-14T18:25:05.000Z",
+  "fetched_at": "2026-11-15T07:04:25.368Z",
+  "updated_at": "2026-11-15T06:53:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -6071,7 +6071,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "預計 21:43 (15/11/2026)",
+      "status": "預計 23:07 (15/11/2026)",
       "statusCode": null
     },
     {
@@ -6703,7 +6703,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "預計 22:59 (15/11/2026)",
+      "status": "預計 22:34 (15/11/2026)",
       "statusCode": null
     },
     {
@@ -17498,5 +17498,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "a5d7d64ef8883873b2088bb6528e462a3d4081fed41c53f5938974db67eec6b0"
+  "content_hash": "aab04f01dd69a0d0e9acc7053b35acb12dc3cb62cd4d7953fff7d4ff197beccf"
 }
