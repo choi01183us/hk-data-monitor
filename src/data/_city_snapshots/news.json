@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-15T07:04:23.265Z",
-  "updated_at": "2026-11-15T03:00:00.000Z",
+  "fetched_at": "2026-11-15T16:31:57.579Z",
+  "updated_at": "2026-11-15T10:55:00.000Z",
   "records": [
+    {
+      "title": "文創處資助業界在上海國際童書展設立香港館（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/15/P2026111500539.htm",
+      "published_at": "2026-11-15T10:55:00.000Z"
+    },
+    {
+      "title": "天秀路游泳池暫時關閉",
+      "url": "https://www.info.gov.hk/gia/general/202611/15/P2026111500506.htm",
+      "published_at": "2026-11-15T09:10:00.000Z"
+    },
     {
       "title": "酒牌局周二舉行會議",
       "url": "https://www.info.gov.hk/gia/general/202611/15/P2026111200507.htm",
@@ -494,20 +504,10 @@
       "published_at": "2026-11-12T03:30:00.000Z"
     },
     {
-      "title": "​大型體育活動事務委員會向三項活動頒授「M」品牌認可",
-      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200193.htm",
-      "published_at": "2026-11-12T03:00:00.000Z"
-    },
-    {
       "title": "五名業主不遵從清拆令被判罰款合共逾三十二萬元",
       "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200233.htm",
       "published_at": "2026-11-12T03:00:00.000Z"
-    },
-    {
-      "title": "​行政長官出席孫中山先生誕辰160周年紀念儀式致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200244.htm",
-      "published_at": "2026-11-12T02:50:00.000Z"
     }
   ],
-  "content_hash": "e52b048c4d6fa1b769e4132947265899d0e577dc3cab9009862484a77a09bd05"
+  "content_hash": "391354ea8e7eb72ee2ec2bbb80dbea2092ebb8493c2eba9950a9ef9f3d304977"
 }
