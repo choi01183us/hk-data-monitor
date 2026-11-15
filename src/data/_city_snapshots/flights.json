@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-15",
-  "fetched_at": "2026-11-15T16:32:00.359Z",
-  "updated_at": "2026-11-15T16:31:54.000Z",
+  "fetched_at": "2026-11-15T23:06:17.190Z",
+  "updated_at": "2026-11-15T21:36:06.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7639,7 +7639,7 @@
           "airline": "QTR"
         }
       ],
-      "status": "著陸於 00:27 (16/11/2026)",
+      "status": "到閘口 00:31 (16/11/2026)",
       "statusCode": null
     },
     {
@@ -8874,7 +8874,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 02:45 (16/11/2026)",
+      "status": "到閘口 02:36 (16/11/2026)",
       "statusCode": null
     },
     {
@@ -8922,7 +8922,7 @@
           "airline": "ALK"
         }
       ],
-      "status": "預計 00:33 (16/11/2026)",
+      "status": "到閘口 00:40 (16/11/2026)",
       "statusCode": null
     },
     {
@@ -17794,7 +17794,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "啟航 00:21",
+      "status": "啟航 00:21 (16/11/2026)",
       "statusCode": null
     },
     {
@@ -17854,5 +17854,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "2529ec5df9d53f19849edbc26a693b77bd14b413672954dbf7ae72f04ba44159"
+  "content_hash": "d745f7817b57722c7047d90e937d2c7bf3624805cf75da4bef26c36f9b90e656"
 }
