@@ -5,22 +5,22 @@
   "live_url": "https://www.hko.gov.hk/tc/wxinfo/currwx/current.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-17T16:24:52.319Z",
-  "updated_at": "2026-11-17T16:02:00.000Z",
+  "fetched_at": "2026-11-17T22:12:26.965Z",
+  "updated_at": "2026-11-17T22:02:00.000Z",
   "records": [
     {
       "icons": [
-        76
+        52
       ],
-      "report_updated_at": "2026-11-17T16:02:00.000Z",
-      "icon_updated_at": "2026-11-17T15:15:00.000Z",
+      "report_updated_at": "2026-11-17T22:02:00.000Z",
+      "icon_updated_at": "2026-11-17T22:00:00.000Z",
       "temperature": {
         "station": "香港天文台",
-        "value": 25,
+        "value": 24,
         "unit": "C",
-        "recorded_at": "2026-11-17T16:00:00.000Z"
+        "recorded_at": "2026-11-17T22:00:00.000Z"
       }
     }
   ],
-  "content_hash": "d45652f8868ce7ce8bfc3efc9e86744affffb400e7dedfeb664e074a18ab403a"
+  "content_hash": "45ce3a4616717de7d91876b6448cdb5bb07df0a598dc9484e6161e238bf91a8b"
 }
