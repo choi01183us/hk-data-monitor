@@ -5,9 +5,39 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-16T19:47:46.488Z",
-  "updated_at": "2026-11-16T13:35:00.000Z",
+  "fetched_at": "2026-11-17T04:08:26.703Z",
+  "updated_at": "2026-11-17T03:57:28.000Z",
   "records": [
+    {
+      "title": "警方呼籲市民提供屯門失蹤男子消息（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700295.htm",
+      "published_at": "2026-11-17T03:57:28.000Z"
+    },
+    {
+      "title": "​《由協助到自主：香港金融服務業人工智能應用、管治與合規》報告",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111600684.htm",
+      "published_at": "2026-11-17T03:20:00.000Z"
+    },
+    {
+      "title": "​行政長官在灼見名家周年論壇暨十二周年慶典致辭（只有中文）（附短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111600280.htm",
+      "published_at": "2026-11-17T03:00:00.000Z"
+    },
+    {
+      "title": "​韓國得獎合家歡偶劇《幻想空間》十二月首度來港展開奇幻之旅（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111600443.htm",
+      "published_at": "2026-11-17T03:00:00.000Z"
+    },
+    {
+      "title": "還押在囚人士昏迷送院後不治",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700232.htm",
+      "published_at": "2026-11-17T02:50:00.000Z"
+    },
+    {
+      "title": "銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700190.htm",
+      "published_at": "2026-11-17T01:26:00.000Z"
+    },
     {
       "title": "香港電影亮相波蘭五味亞洲電影節（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/16/P2026111600686.htm",
@@ -477,37 +507,7 @@
       "title": "創新科技及工業局局長出席國星宇航上市儀式致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300206.htm",
       "published_at": "2026-11-13T02:10:00.000Z"
-    },
-    {
-      "title": "環境及生態局局長繼續在土耳其出席第31屆聯合國氣候變化大會（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111200643.htm",
-      "published_at": "2026-11-13T02:00:00.000Z"
-    },
-    {
-      "title": "​數個泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300184.htm",
-      "published_at": "2026-11-13T01:32:00.000Z"
-    },
-    {
-      "title": "二○二七鄉郊一般選舉日期刊憲",
-      "url": "https://www.info.gov.hk/gia/general/202611/13/P2026111300172.htm",
-      "published_at": "2026-11-13T01:30:00.000Z"
-    },
-    {
-      "title": "中區傷人案改列謀殺案",
-      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200722.htm",
-      "published_at": "2026-11-12T14:49:40.000Z"
-    },
-    {
-      "title": "​​香港海關舉行「Customs YES」暑期工作實習計劃2026證書頒發典禮（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200245.htm",
-      "published_at": "2026-11-12T13:35:00.000Z"
-    },
-    {
-      "title": "​香港海關於機場偵破一宗入境旅客販毒案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/12/P2026111200561.htm",
-      "published_at": "2026-11-12T12:50:00.000Z"
     }
   ],
-  "content_hash": "597fd51ed08182f97bfc70726be267091331228ab5f315c34b64f6a5a3566b74"
+  "content_hash": "2cb93ff3f82788c73c8cb2d239b37e046c4bb8d63c3a388cc8452920e00cb96a"
 }
