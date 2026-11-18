@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-17",
-  "fetched_at": "2026-11-17T16:24:50.909Z",
-  "updated_at": "2026-11-17T16:01:51.000Z",
+  "fetched_at": "2026-11-18T01:13:39.845Z",
+  "updated_at": "2026-11-18T01:12:04.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -398,7 +398,7 @@
           "airline": "MAS"
         }
       ],
-      "status": "預計 02:20 (19/11/2026)",
+      "status": "預計 03:37 (19/11/2026)",
       "statusCode": null
     },
     {
@@ -819,7 +819,7 @@
       ],
       "flights": [
         {
-          "no": "CX 843",
+          "no": "CX 843D",
           "airline": "CPA"
         },
         {
@@ -831,7 +831,7 @@
           "airline": "MAS"
         }
       ],
-      "status": "預計 15:35 (18/11/2026)",
+      "status": "預計 16:10 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -6344,7 +6344,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "預計 00:40 (18/11/2026)",
+      "status": "到閘口 00:49 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -7434,7 +7434,7 @@
           "airline": "SWR"
         }
       ],
-      "status": "預計 00:01 (18/11/2026)",
+      "status": "到閘口 00:05 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -7675,7 +7675,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "預計 00:47 (18/11/2026)",
+      "status": "到閘口 00:56 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -7975,7 +7975,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 01:12 (18/11/2026)",
+      "status": "到閘口 01:18 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -8263,7 +8263,7 @@
           "airline": "ALK"
         }
       ],
-      "status": "預計 00:17 (18/11/2026)",
+      "status": "到閘口 00:21 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -8279,7 +8279,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "著陸於 23:57",
+      "status": "到閘口 00:01 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16271,7 +16271,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "現正登機",
+      "status": "啟航 00:38 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16551,7 +16551,7 @@
           "airline": "ANZ"
         }
       ],
-      "status": "",
+      "status": "啟航 00:29 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16611,7 +16611,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 00:04 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16671,7 +16671,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "預計 01:30 (18/11/2026)",
+      "status": "啟航 02:10 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16695,5 +16695,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "a9300b947a7df4b703b91a9af5cab70257342a73d42db64def1fbd93497ef780"
+  "content_hash": "85298f2e56e3767e5bb6472b60d5414c944c6e85ac05f335630305105a8c2b35"
 }
