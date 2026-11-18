@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-17",
-  "fetched_at": "2026-11-18T01:13:39.845Z",
-  "updated_at": "2026-11-18T01:12:04.000Z",
+  "fetched_at": "2026-11-18T12:08:54.365Z",
+  "updated_at": "2026-11-18T10:07:44.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -398,7 +398,7 @@
           "airline": "MAS"
         }
       ],
-      "status": "預計 03:37 (19/11/2026)",
+      "status": "取消",
       "statusCode": null
     },
     {
@@ -831,7 +831,7 @@
           "airline": "MAS"
         }
       ],
-      "status": "預計 16:10 (18/11/2026)",
+      "status": "到閘口 16:23 (18/11/2026)",
       "statusCode": null
     },
     {
@@ -16695,5 +16695,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "85298f2e56e3767e5bb6472b60d5414c944c6e85ac05f335630305105a8c2b35"
+  "content_hash": "7583494a7f728d113ff91920402cdf221ea5f1e7282d5270456d2a4268424a58"
 }
