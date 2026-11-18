@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-18T12:08:53.198Z",
-  "updated_at": "2026-11-18T12:05:18.000Z",
+  "fetched_at": "2026-11-18T20:51:04.232Z",
+  "updated_at": "2026-11-18T15:57:00.000Z",
   "records": [
+    {
+      "title": "設計營商周2026及DesignInspire創意設計博覽開幕（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800257.htm",
+      "published_at": "2026-11-18T15:57:00.000Z"
+    },
+    {
+      "title": "食環署再奪最佳公廁兩項殊榮",
+      "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800769.htm",
+      "published_at": "2026-11-18T15:00:00.000Z"
+    },
     {
       "title": "立法會：教育局局長就「深化國際教育樞紐建設，構建國際升學首選地」議員議案開場發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800688.htm",
@@ -497,17 +507,7 @@
       "title": "港匯指數",
       "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700184.htm",
       "published_at": "2026-11-17T07:45:00.000Z"
-    },
-    {
-      "title": "懲教署與香港理工大學簽訂合作備忘錄推動職業治療發展（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700245.htm",
-      "published_at": "2026-11-17T07:06:28.000Z"
-    },
-    {
-      "title": "教育局與中國科學院學部工作局簽署合作備忘錄（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700322.htm",
-      "published_at": "2026-11-17T07:00:00.000Z"
     }
   ],
-  "content_hash": "8936a66becc5ff493750a884cc3d7dfab5e4073ff900c3ff02242285192b706e"
+  "content_hash": "490675f99c34ff8f245029805eacc0ff0bd33da252f5b2f04e44aa4aa4c74af8"
 }
