@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-19T12:02:55.221Z",
-  "updated_at": "2026-11-19T11:02:00.000Z",
+  "fetched_at": "2026-11-19T20:55:21.036Z",
+  "updated_at": "2026-11-19T13:48:00.000Z",
   "records": [
+    {
+      "title": "「見龍在田：赤洲與中國內地恐龍化石展」開幕（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900241.htm",
+      "published_at": "2026-11-19T13:48:00.000Z"
+    },
+    {
+      "title": "2026香港資訊及通訊科技獎踏入二十周年 表揚卓越創科成果（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900414.htm",
+      "published_at": "2026-11-19T12:10:00.000Z"
+    },
     {
       "title": "發展局局長出席「見龍在田：赤洲與中國內地恐龍化石展」開幕典禮致辭（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900572.htm",
@@ -497,17 +507,7 @@
       "title": "賽馬日跑馬地特別交通措施",
       "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800192.htm",
       "published_at": "2026-11-18T01:30:30.000Z"
-    },
-    {
-      "title": "尋回屯門失蹤男子",
-      "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800190.htm",
-      "published_at": "2026-11-18T01:28:35.000Z"
-    },
-    {
-      "title": "選舉管理委員會主席主持危機管理委員會會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700431.htm",
-      "published_at": "2026-11-17T13:17:28.000Z"
     }
   ],
-  "content_hash": "c3eb91fc179e23927e17ac5ab533f26cbafafe2148456555c47900e990320df1"
+  "content_hash": "1a17ab704850f018ae55f26893d735cef6146198fad6b9430ca506ff8428f861"
 }
