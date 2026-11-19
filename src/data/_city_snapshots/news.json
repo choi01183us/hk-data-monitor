@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-18T20:51:04.232Z",
-  "updated_at": "2026-11-18T15:57:00.000Z",
+  "fetched_at": "2026-11-19T02:45:04.209Z",
+  "updated_at": "2026-11-19T01:30:00.000Z",
   "records": [
+    {
+      "title": "銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900180.htm",
+      "published_at": "2026-11-19T01:30:00.000Z"
+    },
+    {
+      "title": "駐倫敦經貿辦在芬蘭Slush 2026推廣《香港第一個五年規劃》的創科機遇（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111800587.htm",
+      "published_at": "2026-11-19T01:00:00.000Z"
+    },
     {
       "title": "設計營商周2026及DesignInspire創意設計博覽開幕（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800257.htm",
@@ -497,17 +507,7 @@
       "title": "創新科技及工業局局長出席立法會工商及創新科技事務委員會會議就《香港第一個五年規劃》下五大研發機構的布局的開場發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700466.htm",
       "published_at": "2026-11-17T08:15:00.000Z"
-    },
-    {
-      "title": "​食環署加強巡查食物業處所　提高業界良好衞生意識",
-      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700410.htm",
-      "published_at": "2026-11-17T07:52:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202611/17/P2026111700184.htm",
-      "published_at": "2026-11-17T07:45:00.000Z"
     }
   ],
-  "content_hash": "490675f99c34ff8f245029805eacc0ff0bd33da252f5b2f04e44aa4aa4c74af8"
+  "content_hash": "fa1aaae95bedb5d9655f5ea6583b2019191dec3e11c009767d42caa446c83f49"
 }
