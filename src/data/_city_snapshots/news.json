@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-19T20:55:21.036Z",
-  "updated_at": "2026-11-19T13:48:00.000Z",
+  "fetched_at": "2026-11-20T02:31:26.238Z",
+  "updated_at": "2026-11-20T01:35:00.000Z",
   "records": [
+    {
+      "title": "​駐華盛頓經貿辦推廣香港營商機遇（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000145.htm",
+      "published_at": "2026-11-20T01:35:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000207.htm",
+      "published_at": "2026-11-20T01:31:54.000Z"
+    },
     {
       "title": "「見龍在田：赤洲與中國內地恐龍化石展」開幕（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900241.htm",
@@ -497,17 +507,7 @@
       "title": "業主不遵從清拆令被判罰款逾十二萬元",
       "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800200.htm",
       "published_at": "2026-11-18T03:00:00.000Z"
-    },
-    {
-      "title": "財政司司長出席「投資中國·選擇陝西」優勢產業資本香港懇談會致辭（只有中文）（附圖 ／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800246.htm",
-      "published_at": "2026-11-18T02:45:00.000Z"
-    },
-    {
-      "title": "賽馬日跑馬地特別交通措施",
-      "url": "https://www.info.gov.hk/gia/general/202611/18/P2026111800192.htm",
-      "published_at": "2026-11-18T01:30:30.000Z"
     }
   ],
-  "content_hash": "1a17ab704850f018ae55f26893d735cef6146198fad6b9430ca506ff8428f861"
+  "content_hash": "97f7d645e1c472b604f372e9af34d4fa6c920c609dac130c553950d6122c17ef"
 }
