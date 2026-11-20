@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-19",
-  "fetched_at": "2026-11-20T02:31:29.388Z",
-  "updated_at": "2026-11-20T02:30:33.000Z",
+  "fetched_at": "2026-11-20T12:05:39.278Z",
+  "updated_at": "2026-11-20T12:03:35.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -4502,7 +4502,7 @@
           "airline": "BKP"
         }
       ],
-      "status": "預計 14:35 (20/11/2026)",
+      "status": "到閘口 14:57 (20/11/2026)",
       "statusCode": null
     },
     {
@@ -17043,5 +17043,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "c3a32bc9b96164459a662f01586587418d488b5e331984240dea42a6999ac47a"
+  "content_hash": "69c10a8b87e4bfc9d0455c08c4e3d0cc0cebad6f6d7ea2c846715651bc9a0a34"
 }
