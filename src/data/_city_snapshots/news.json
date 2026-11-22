@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-21T11:39:35.913Z",
-  "updated_at": "2026-11-21T11:22:00.000Z",
+  "fetched_at": "2026-11-22T01:31:39.225Z",
+  "updated_at": "2026-11-21T22:01:00.000Z",
   "records": [
+    {
+      "title": "黃色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200118.htm",
+      "published_at": "2026-11-21T22:01:00.000Z"
+    },
     {
       "title": "選管會主席巡視選舉委員會界別分組一般選舉投票站及中央點票站（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/21/P2026112100416.htm",
@@ -502,12 +507,7 @@
       "title": "銀線灣泳灘懸掛紅旗",
       "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900180.htm",
       "published_at": "2026-11-19T01:30:00.000Z"
-    },
-    {
-      "title": "駐倫敦經貿辦在芬蘭Slush 2026推廣《香港第一個五年規劃》的創科機遇（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111800587.htm",
-      "published_at": "2026-11-19T01:00:00.000Z"
     }
   ],
-  "content_hash": "e182efee9bacdd7b65b1ff39adacd7b20b05d5a2e6303bf58502bf1180275f3d"
+  "content_hash": "c922df5a3d2c1e2c7d8d21fb900c8c5837a2f13e1579a248d08918eb6870c0ad"
 }
