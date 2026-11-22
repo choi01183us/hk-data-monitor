@@ -5,9 +5,114 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-22T01:31:39.225Z",
-  "updated_at": "2026-11-21T22:01:00.000Z",
+  "fetched_at": "2026-11-22T11:54:42.575Z",
+  "updated_at": "2026-11-22T11:48:00.000Z",
   "records": [
+    {
+      "title": "選舉委員會界別分組一般選舉中央點票站（包括新聞中心）公眾人士區域只餘少量入場名額",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200562.htm",
+      "published_at": "2026-11-22T11:48:00.000Z"
+    },
+    {
+      "title": "「亞裔藝采+2026」今日舉行　展示三十個國家和地區多元民族風采（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200306.htm",
+      "published_at": "2026-11-22T11:26:45.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率臨時數字",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200488.htm",
+      "published_at": "2026-11-22T10:18:00.000Z"
+    },
+    {
+      "title": "香港海關於機場偵破兩宗旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200402.htm",
+      "published_at": "2026-11-22T09:20:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1700）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200463.htm",
+      "published_at": "2026-11-22T09:18:00.000Z"
+    },
+    {
+      "title": "政務司副司長出席香港海事青年團周年匯操2026致辭（只有中文）（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200454.htm",
+      "published_at": "2026-11-22T09:05:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1600）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200431.htm",
+      "published_at": "2026-11-22T08:20:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1500）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200416.htm",
+      "published_at": "2026-11-22T07:20:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1400）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200366.htm",
+      "published_at": "2026-11-22T06:30:00.000Z"
+    },
+    {
+      "title": "民政及青年事務局局長會見傳媒談話內容（三）（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200364.htm",
+      "published_at": "2026-11-22T06:28:41.000Z"
+    },
+    {
+      "title": "民政及青年事務局局長會見傳媒談話內容（二）（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200362.htm",
+      "published_at": "2026-11-22T06:28:06.000Z"
+    },
+    {
+      "title": "民政及青年事務局局長會見傳媒談話內容（一）（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200360.htm",
+      "published_at": "2026-11-22T06:27:22.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1300）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200328.htm",
+      "published_at": "2026-11-22T05:20:00.000Z"
+    },
+    {
+      "title": "選管會呼籲選舉委員會界別分組一般選舉投票人今日踴躍投票（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200289.htm",
+      "published_at": "2026-11-22T05:05:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1200）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200292.htm",
+      "published_at": "2026-11-22T04:17:00.000Z"
+    },
+    {
+      "title": "​選舉委員會界別分組一般選舉投票率（1100）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200261.htm",
+      "published_at": "2026-11-22T03:23:00.000Z"
+    },
+    {
+      "title": "酒牌局周二舉行會議",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026111900545.htm",
+      "published_at": "2026-11-22T03:00:00.000Z"
+    },
+    {
+      "title": "香港電影亮相2026年多倫多木蘭國際電影節（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112100135.htm",
+      "published_at": "2026-11-22T02:35:00.000Z"
+    },
+    {
+      "title": "選舉委員會界別分組一般選舉投票率（1000）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200233.htm",
+      "published_at": "2026-11-22T02:25:00.000Z"
+    },
+    {
+      "title": "香港海關偵破一宗毒品案件並檢獲約七百萬元懷疑冰毒（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200205.htm",
+      "published_at": "2026-11-22T02:10:00.000Z"
+    },
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200203.htm",
+      "published_at": "2026-11-22T02:03:25.000Z"
+    },
     {
       "title": "黃色火災危險警告",
       "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200118.htm",
@@ -402,112 +507,7 @@
       "title": "國際青年人才交流基地正式成立（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900265.htm",
       "published_at": "2026-11-19T10:42:00.000Z"
-    },
-    {
-      "title": "​香港海關在彩盈邨進行跨部門反私煙宣傳活動（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900374.htm",
-      "published_at": "2026-11-19T10:12:00.000Z"
-    },
-    {
-      "title": "一名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900526.htm",
-      "published_at": "2026-11-19T10:05:00.000Z"
-    },
-    {
-      "title": "香港銀行同業結算有限公司提醒公眾慎防偽冒網站",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900507.htm",
-      "published_at": "2026-11-19T09:55:00.000Z"
-    },
-    {
-      "title": "哈薩克斯坦品牌ADILI在港開設首間海外門店　彰顯香港與中亞日益緊密的聯繫（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111800439.htm",
-      "published_at": "2026-11-19T09:30:00.000Z"
-    },
-    {
-      "title": "衞生署轄下醫療器械諮詢委員會舉行首次會議（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900211.htm",
-      "published_at": "2026-11-19T09:30:00.000Z"
-    },
-    {
-      "title": "香港知識產權學院啓動　培育跨專業人才推動創新成果轉化（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900250.htm",
-      "published_at": "2026-11-19T09:00:00.000Z"
-    },
-    {
-      "title": "挪威、英國和荷蘭部分地區禽肉及禽類產品暫停進口",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900361.htm",
-      "published_at": "2026-11-19T09:00:00.000Z"
-    },
-    {
-      "title": "日本進口水產的檢測情況",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900440.htm",
-      "published_at": "2026-11-19T08:55:00.000Z"
-    },
-    {
-      "title": "行政長官在深圳出席亞太經合組織領導人非正式會議（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900435.htm",
-      "published_at": "2026-11-19T08:50:00.000Z"
-    },
-    {
-      "title": "​行政長官在深圳會見傳媒談話內容（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900421.htm",
-      "published_at": "2026-11-19T08:18:00.000Z"
-    },
-    {
-      "title": "署理商務及經濟發展局局長出席香港知識產權學院開幕典禮致辭全文（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900420.htm",
-      "published_at": "2026-11-19T08:10:00.000Z"
-    },
-    {
-      "title": "立法會：創新科技及工業局局長就「全面提升大學科研成果轉化能力，全力支援北都大學城『政、產、學、研、投』協同發展」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900402.htm",
-      "published_at": "2026-11-19T08:07:00.000Z"
-    },
-    {
-      "title": "港匯指數",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900170.htm",
-      "published_at": "2026-11-19T08:00:00.000Z"
-    },
-    {
-      "title": "二○二六年選舉委員會界別分組一般選舉星期日舉行　投票人須依正確程序投票（附短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900352.htm",
-      "published_at": "2026-11-19T08:00:00.000Z"
-    },
-    {
-      "title": "立法會：教育局副局長就「全面提升大學科研成果轉化能力，全力支援北都大學城『政、產、學、研、投』協同發展」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900400.htm",
-      "published_at": "2026-11-19T07:36:00.000Z"
-    },
-    {
-      "title": "教育局公布二○二七／二八學年指定專業／界別課程資助計劃──副學位課程",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900216.htm",
-      "published_at": "2026-11-19T07:00:00.000Z"
-    },
-    {
-      "title": "屋宇署九月批出十六份建築圖則",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900260.htm",
-      "published_at": "2026-11-19T07:00:00.000Z"
-    },
-    {
-      "title": "立法會：創新科技及工業局局長就「全面提升大學科研成果轉化能力，全力支援北都大學城『政、產、學、研、投』協同發展」議員議案開場發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900295.htm",
-      "published_at": "2026-11-19T04:43:00.000Z"
-    },
-    {
-      "title": "立法會：教育局副局長就「深化國際教育樞紐建設，構建國際升學首選地」議員議案總結發言（只有中文）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900291.htm",
-      "published_at": "2026-11-19T04:35:00.000Z"
-    },
-    {
-      "title": "​財庫局局長在盧森堡展示香港的金融實力（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111800406.htm",
-      "published_at": "2026-11-19T04:00:00.000Z"
-    },
-    {
-      "title": "銀線灣泳灘懸掛紅旗",
-      "url": "https://www.info.gov.hk/gia/general/202611/19/P2026111900180.htm",
-      "published_at": "2026-11-19T01:30:00.000Z"
     }
   ],
-  "content_hash": "c922df5a3d2c1e2c7d8d21fb900c8c5837a2f13e1579a248d08918eb6870c0ad"
+  "content_hash": "5a0902f3e25c1031530fc7d397f1b65b6c5a8795ca36d056421281392abef7ba"
 }
