@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-22T19:55:48.688Z",
-  "updated_at": "2026-11-22T15:59:00.000Z",
+  "fetched_at": "2026-11-23T01:56:01.756Z",
+  "updated_at": "2026-11-23T01:40:30.000Z",
   "records": [
+    {
+      "title": "​數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300206.htm",
+      "published_at": "2026-11-23T01:40:30.000Z"
+    },
+    {
+      "title": "二○二七鄉郊一般選舉明日起接受提名",
+      "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112000650.htm",
+      "published_at": "2026-11-23T01:30:00.000Z"
+    },
     {
       "title": "​香港特區立法會欣見選舉委員會選舉圓滿舉行",
       "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200770.htm",
@@ -497,17 +507,7 @@
       "title": "​《2026年虛擬資產服務法例（修訂）條例草案》刊憲",
       "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000578.htm",
       "published_at": "2026-11-20T09:15:00.000Z"
-    },
-    {
-      "title": "國家財政部透過香港金融管理局的債務工具中央結算系統發行人民幣國債",
-      "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000517.htm",
-      "published_at": "2026-11-20T09:05:00.000Z"
-    },
-    {
-      "title": "兩名入境旅客進口未完稅香煙罪成判囚（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/20/P2026112000581.htm",
-      "published_at": "2026-11-20T09:05:00.000Z"
     }
   ],
-  "content_hash": "8e2d88101241542ea4bfc0f0af8652b362b72549081060bb0aae2460e5b1a221"
+  "content_hash": "a24bd50ba4c81a983b273612fd5130abe04cd2c017f34dbe16e33a7b7745610c"
 }
