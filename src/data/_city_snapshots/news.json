@@ -5,9 +5,34 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-23T13:33:10.143Z",
-  "updated_at": "2026-11-23T12:50:00.000Z",
+  "fetched_at": "2026-11-24T02:31:19.980Z",
+  "updated_at": "2026-11-24T01:20:23.000Z",
   "records": [
+    {
+      "title": "數個泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400186.htm",
+      "published_at": "2026-11-24T01:20:23.000Z"
+    },
+    {
+      "title": "財政司司長率領代表團訪問英國劍橋（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400101.htm",
+      "published_at": "2026-11-24T01:00:00.000Z"
+    },
+    {
+      "title": "「大埔宏福苑援助基金」推出業主及罹難者家屬新生活支援補助",
+      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400134.htm",
+      "published_at": "2026-11-23T23:00:00.000Z"
+    },
+    {
+      "title": "​駐柏林經貿辦支持香港代表團參加「經貿一站通」下的杜塞爾多夫國際醫療展（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300743.htm",
+      "published_at": "2026-11-23T13:55:00.000Z"
+    },
+    {
+      "title": "國際刑警組織第94屆全體大會特別區域管制及交通安排",
+      "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300684.htm",
+      "published_at": "2026-11-23T13:50:30.000Z"
+    },
     {
       "title": "一名入境旅客管有未完稅香煙罪成判囚（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/23/P2026112300727.htm",
@@ -482,32 +507,7 @@
       "title": "選舉委員會界別分組一般選舉投票率（1200）",
       "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200292.htm",
       "published_at": "2026-11-22T04:17:00.000Z"
-    },
-    {
-      "title": "​選舉委員會界別分組一般選舉投票率（1100）",
-      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200261.htm",
-      "published_at": "2026-11-22T03:23:00.000Z"
-    },
-    {
-      "title": "酒牌局周二舉行會議",
-      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026111900545.htm",
-      "published_at": "2026-11-22T03:00:00.000Z"
-    },
-    {
-      "title": "香港電影亮相2026年多倫多木蘭國際電影節（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112100135.htm",
-      "published_at": "2026-11-22T02:35:00.000Z"
-    },
-    {
-      "title": "選舉委員會界別分組一般選舉投票率（1000）",
-      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200233.htm",
-      "published_at": "2026-11-22T02:25:00.000Z"
-    },
-    {
-      "title": "香港海關偵破一宗毒品案件並檢獲約七百萬元懷疑冰毒（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/22/P2026112200205.htm",
-      "published_at": "2026-11-22T02:10:00.000Z"
     }
   ],
-  "content_hash": "19fd02dae93bb0f0faff28d738418c9da8a23ff3651b43285c6219d61ed35a9a"
+  "content_hash": "cd46b026b27f17c957815aae04507c8e3b090dac1919c999b493aec715a24cf6"
 }
