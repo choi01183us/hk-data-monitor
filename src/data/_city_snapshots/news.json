@@ -5,9 +5,14 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-24T14:11:20.094Z",
-  "updated_at": "2026-11-24T12:51:00.000Z",
+  "fetched_at": "2026-11-25T00:03:44.190Z",
+  "updated_at": "2026-11-24T14:13:00.000Z",
   "records": [
+    {
+      "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400761.htm",
+      "published_at": "2026-11-24T14:13:00.000Z"
+    },
     {
       "title": "駐柏林經貿辦在慕尼黑教育展推廣「留學香港」品牌（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400644.htm",
@@ -172,11 +177,6 @@
       "title": "​醫管局公布委任高層管理人員（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400230.htm",
       "published_at": "2026-11-24T04:24:38.000Z"
-    },
-    {
-      "title": "駐柏林經貿辦支持香港代表團參加「經貿一站通」下的杜塞爾多夫國際醫療展（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400322.htm",
-      "published_at": "2026-11-24T04:08:00.000Z"
     },
     {
       "title": "僱主因違反「補充勞工優化計劃」規定被行政制裁",
@@ -509,5 +509,5 @@
       "published_at": "2026-11-22T14:06:00.000Z"
     }
   ],
-  "content_hash": "5078462d93af4c4633442581dcd88c633aed51ca007a773ff621f1b069ab9e05"
+  "content_hash": "a5075f1ac304888895e00cf3af0547b724c7a27076414d358683daa4354a9290"
 }
