@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-25T19:32:35.340Z",
-  "updated_at": "2026-11-25T18:55:43.000Z",
+  "fetched_at": "2026-11-26T03:43:42.170Z",
+  "updated_at": "2026-11-26T03:12:00.000Z",
   "records": [
+    {
+      "title": "立法會：教育局副局長就「把握香港參與國家航天發展及北都大學城建設機遇，全方位助力香港航天科技發展邁向新高度」議員議案開場發言（只有中文）",
+      "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112600230.htm",
+      "published_at": "2026-11-26T03:12:00.000Z"
+    },
+    {
+      "title": "​行政長官在2026粵港澳大灣區服務貿易大會（廣州）開幕式暨「AI+」服務貿易專題對接活動致辭（只有中文）（附短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112500391.htm",
+      "published_at": "2026-11-26T03:00:00.000Z"
+    },
+    {
+      "title": "大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112600157.htm",
+      "published_at": "2026-11-26T01:35:00.000Z"
+    },
+    {
+      "title": "財政司司長展開荷蘭訪問行程（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112600077.htm",
+      "published_at": "2026-11-26T01:00:00.000Z"
+    },
     {
       "title": "將軍澳致命交通意外",
       "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112600057.htm",
@@ -487,27 +507,7 @@
       "title": "​律政司副司長在中國企業出海香港高峰會致辭（只有中文）（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400429.htm",
       "published_at": "2026-11-24T06:45:00.000Z"
-    },
-    {
-      "title": "特首政策組組長出席紫荊雜誌社第十一屆「一國兩制」與基本法研討會致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400356.htm",
-      "published_at": "2026-11-24T05:30:45.000Z"
-    },
-    {
-      "title": "二○二六年十一月二十四日人民幣央行票據投標結果",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400329.htm",
-      "published_at": "2026-11-24T04:35:00.000Z"
-    },
-    {
-      "title": "​醫管局公布委任高層管理人員（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400230.htm",
-      "published_at": "2026-11-24T04:24:38.000Z"
-    },
-    {
-      "title": "僱主因違反「補充勞工優化計劃」規定被行政制裁",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400275.htm",
-      "published_at": "2026-11-24T04:00:00.000Z"
     }
   ],
-  "content_hash": "c1ff2ac4b93c304ecbc8d4f60d41575bb93a917e6d58a3ce08be5c16da554652"
+  "content_hash": "8ede8f7ff26a4b22515eace3a99da028d536bb8e924b851437fa517ec2adc5bf"
 }
