@@ -5,9 +5,19 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-27T13:00:32.075Z",
-  "updated_at": "2026-11-27T11:45:50.000Z",
+  "fetched_at": "2026-11-27T23:40:23.275Z",
+  "updated_at": "2026-11-27T22:01:38.000Z",
   "records": [
+    {
+      "title": "紅色火災危險警告",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112800145.htm",
+      "published_at": "2026-11-27T22:01:38.000Z"
+    },
+    {
+      "title": "全港賣旗日",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112600226.htm",
+      "published_at": "2026-11-27T22:00:00.000Z"
+    },
     {
       "title": "立法會議員與元朗和黃大仙區議會舉行會議（附圖）",
       "url": "https://www.info.gov.hk/gia/general/202611/27/P2026112700690.htm",
@@ -497,17 +507,7 @@
       "title": "軟雪糕樣本總含菌量超出法例上限",
       "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500587.htm",
       "published_at": "2026-11-25T11:23:03.000Z"
-    },
-    {
-      "title": "創新科技及工業局局長出席「皖港攜手．揚帆啟航」伴航內地企業走向全球交流活動致辭（只有中文）（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500573.htm",
-      "published_at": "2026-11-25T11:03:00.000Z"
-    },
-    {
-      "title": "​第八次粵港澳大灣區法律部門聯席會議深化三地法治建設合作（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500524.htm",
-      "published_at": "2026-11-25T10:35:00.000Z"
     }
   ],
-  "content_hash": "f932307521d74dbef7eb68688ac3d008512299931ab276c918dfe806623584bd"
+  "content_hash": "0036202e3071305cca242b7a07aa0b0111357245abacf22a8be71aae9bb5dd9e"
 }
