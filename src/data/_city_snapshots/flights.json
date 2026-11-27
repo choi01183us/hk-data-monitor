@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-26",
-  "fetched_at": "2026-11-27T01:53:56.008Z",
-  "updated_at": "2026-11-27T01:53:29.000Z",
+  "fetched_at": "2026-11-27T13:00:34.254Z",
+  "updated_at": "2026-11-27T12:05:18.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -13411,7 +13411,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "預計 13:50 (27/11/2026)",
+      "status": "啟航 14:50 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -17284,5 +17284,5 @@
       "statusCode": null
     }
   ],
-  "content_hash": "ba25fdaedee27820dd9bec5d9bb623a7970235d882f9b5bb35fd8ac79a728924"
+  "content_hash": "e5e808fc03f28836906902e67d806d885ff98c39ddee2c0af1bdb778201d28ad"
 }
