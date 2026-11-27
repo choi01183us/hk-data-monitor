@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-26T17:14:36.329Z",
-  "updated_at": "2026-11-26T13:31:00.000Z",
+  "fetched_at": "2026-11-27T01:53:52.928Z",
+  "updated_at": "2026-11-27T01:30:00.000Z",
   "records": [
+    {
+      "title": "大浪灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/27/P2026112700170.htm",
+      "published_at": "2026-11-27T01:30:00.000Z"
+    },
+    {
+      "title": "美國領先金融科技Clear Street設立香港首個持牌業務據點　拓展亞太版圖（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/27/P2026112600360.htm",
+      "published_at": "2026-11-27T01:00:00.000Z"
+    },
+    {
+      "title": "《數碼平台工作者補償條例草案》刊憲",
+      "url": "https://www.info.gov.hk/gia/general/202611/27/P2026112600362.htm",
+      "published_at": "2026-11-27T01:00:00.000Z"
+    },
+    {
+      "title": "財政司司長率領代表團繼續訪問荷蘭（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/27/P2026112700078.htm",
+      "published_at": "2026-11-27T01:00:00.000Z"
+    },
     {
       "title": "尊重市民心意　妥善處理宏福苑悼念花束",
       "url": "https://www.info.gov.hk/gia/general/202611/26/P2026112600650.htm",
@@ -487,27 +507,7 @@
       "title": "賽馬日跑馬地特別交通措施",
       "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500167.htm",
       "published_at": "2026-11-25T01:11:11.000Z"
-    },
-    {
-      "title": "財政司司長在倫敦與工商金融界交流（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500129.htm",
-      "published_at": "2026-11-25T01:00:00.000Z"
-    },
-    {
-      "title": "香港海關於機場偵破兩宗入境旅客販毒案件（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400761.htm",
-      "published_at": "2026-11-24T14:13:00.000Z"
-    },
-    {
-      "title": "駐柏林經貿辦在慕尼黑教育展推廣「留學香港」品牌（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400644.htm",
-      "published_at": "2026-11-24T12:51:00.000Z"
-    },
-    {
-      "title": "伊利沙伯醫院甲型流感病毒個案組群",
-      "url": "https://www.info.gov.hk/gia/general/202611/24/P2026112400657.htm",
-      "published_at": "2026-11-24T12:13:52.000Z"
     }
   ],
-  "content_hash": "1f840b89baabde918f8a86e0e2e1cc9c614074b25f6b8809759a7fdae9d5d14a"
+  "content_hash": "3d3ea02060d89eb1c524471257038c7765ac8c68ccb5719ac4ec9f1a916e58a2"
 }

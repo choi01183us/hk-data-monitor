@@ -6,8 +6,8 @@
   "licence": "data.gov.hk 使用條款；香港機場管理局版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
   "requested_date": "2026-11-26",
-  "fetched_at": "2026-11-26T17:14:37.583Z",
-  "updated_at": "2026-11-26T15:23:56.000Z",
+  "fetched_at": "2026-11-27T01:53:56.008Z",
+  "updated_at": "2026-11-27T01:53:29.000Z",
   "records": [
     {
       "direction": "arrival",
@@ -7232,7 +7232,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 23:35",
+      "status": "到閘口 23:40",
       "statusCode": null
     },
     {
@@ -8195,7 +8195,7 @@
           "airline": "BKP"
         }
       ],
-      "status": "預計 00:25 (27/11/2026)",
+      "status": "到閘口 00:36 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -8271,7 +8271,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:34",
+      "status": "到閘口 23:42",
       "statusCode": null
     },
     {
@@ -8379,7 +8379,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:41",
+      "status": "到閘口 23:46",
       "statusCode": null
     },
     {
@@ -8395,7 +8395,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 00:01 (27/11/2026)",
+      "status": "到閘口 00:10 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -8431,7 +8431,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 23:26",
+      "status": "到閘口 23:26",
       "statusCode": null
     },
     {
@@ -8451,7 +8451,7 @@
           "airline": "HHN"
         }
       ],
-      "status": "預計 23:29",
+      "status": "到閘口 23:33",
       "statusCode": null
     },
     {
@@ -8467,7 +8467,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "預計 23:22",
+      "status": "到閘口 23:31",
       "statusCode": null
     },
     {
@@ -8487,7 +8487,7 @@
           "airline": "CHH"
         }
       ],
-      "status": "預計 23:39",
+      "status": "到閘口 23:45",
       "statusCode": null
     },
     {
@@ -8511,7 +8511,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 23:52",
+      "status": "到閘口 23:56",
       "statusCode": null
     },
     {
@@ -8527,7 +8527,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:30",
+      "status": "到閘口 23:36",
       "statusCode": null
     },
     {
@@ -8560,7 +8560,7 @@
           "airline": "HGB"
         }
       ],
-      "status": "預計 23:32",
+      "status": "到閘口 23:35",
       "statusCode": null
     },
     {
@@ -8576,7 +8576,7 @@
           "airline": "HKE"
         }
       ],
-      "status": "預計 23:54",
+      "status": "到閘口 23:59",
       "statusCode": null
     },
     {
@@ -13403,7 +13403,7 @@
       ],
       "flights": [
         {
-          "no": "NH 860",
+          "no": "NH 860D",
           "airline": "ANA"
         },
         {
@@ -13411,7 +13411,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "延遲",
+      "status": "預計 13:50 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -16996,7 +16996,7 @@
           "airline": "UAL"
         }
       ],
-      "status": "啟航 23:02",
+      "status": "啟航 23:00",
       "statusCode": null
     },
     {
@@ -17012,7 +17012,7 @@
           "airline": "PAL"
         }
       ],
-      "status": "最後召集",
+      "status": "啟航 23:46",
       "statusCode": null
     },
     {
@@ -17080,7 +17080,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:18",
       "statusCode": null
     },
     {
@@ -17128,7 +17128,7 @@
           "airline": "BAW"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:25",
       "statusCode": null
     },
     {
@@ -17144,7 +17144,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:31",
       "statusCode": null
     },
     {
@@ -17164,7 +17164,7 @@
           "airline": "CPA"
         }
       ],
-      "status": "截止登機",
+      "status": "啟航 23:44",
       "statusCode": null
     },
     {
@@ -17184,7 +17184,7 @@
           "airline": "THY"
         }
       ],
-      "status": "預計 00:50 (27/11/2026)",
+      "status": "啟航 00:51 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -17208,7 +17208,7 @@
           "airline": "ANZ"
         }
       ],
-      "status": "現正登機",
+      "status": "啟航 23:53",
       "statusCode": null
     },
     {
@@ -17224,7 +17224,7 @@
           "airline": "ETH"
         }
       ],
-      "status": "預備登機",
+      "status": "啟航 00:07 (27/11/2026)",
       "statusCode": null
     },
     {
@@ -17260,7 +17260,7 @@
           "airline": "MGL"
         }
       ],
-      "status": "現正登機",
+      "status": "啟航 23:59",
       "statusCode": null
     },
     {
@@ -17280,9 +17280,9 @@
           "airline": "CPA"
         }
       ],
-      "status": "現正登機",
+      "status": "啟航 23:56",
       "statusCode": null
     }
   ],
-  "content_hash": "1a026eaaebcfcfdfb4533ddc3b197ee9cda481e208c9ac134c29e31eafb1eca9"
+  "content_hash": "ba25fdaedee27820dd9bec5d9bb623a7970235d882f9b5bb35fd8ac79a728924"
 }
