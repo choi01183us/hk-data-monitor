@@ -5,9 +5,29 @@
   "live_url": "https://www.info.gov.hk/gia/general/ctoday.htm",
   "licence": "data.gov.hk 使用條款；香港特區政府版權所有",
   "licence_url": "https://data.gov.hk/tc/terms-and-conditions",
-  "fetched_at": "2026-11-27T23:40:23.275Z",
-  "updated_at": "2026-11-27T22:01:38.000Z",
+  "fetched_at": "2026-11-28T08:21:00.888Z",
+  "updated_at": "2026-11-28T06:00:00.000Z",
   "records": [
+    {
+      "title": "切勿誤信虛假信息訛稱無需證明便可申請免試簽發香港駕照",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112700530.htm",
+      "published_at": "2026-11-28T06:00:00.000Z"
+    },
+    {
+      "title": "衞生署舉辦「全球同抗愛滋病運動2026」啓動禮　為觀塘海濱戶外藝術展覽和HIV測試月揭開序幕（附圖）",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112700499.htm",
+      "published_at": "2026-11-28T05:39:16.000Z"
+    },
+    {
+      "title": "赤柱正灘泳灘及銀線灣泳灘懸掛紅旗",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112800238.htm",
+      "published_at": "2026-11-28T02:25:00.000Z"
+    },
+    {
+      "title": "財政司司長率領代表團與荷蘭金融及創科界交流（附圖／短片）",
+      "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112800074.htm",
+      "published_at": "2026-11-28T01:00:00.000Z"
+    },
     {
       "title": "紅色火災危險警告",
       "url": "https://www.info.gov.hk/gia/general/202611/28/P2026112800145.htm",
@@ -487,27 +507,7 @@
       "title": "立法會：醫務衞生局局長就「檢視醫療保險成效，提升醫療服務效率」議員議案開場發言（只有中文）",
       "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500621.htm",
       "published_at": "2026-11-25T12:26:00.000Z"
-    },
-    {
-      "title": "香港代表揚威「創客中國」國際中小企業創新創業大賽總決賽（附圖）",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500501.htm",
-      "published_at": "2026-11-25T12:05:00.000Z"
-    },
-    {
-      "title": "​康文署公布資訊保安事故",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500564.htm",
-      "published_at": "2026-11-25T11:35:00.000Z"
-    },
-    {
-      "title": "行政長官出席香港中華總商會第55屆會董就職典禮晚宴致辭（只有中文）（附圖／短片）",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500594.htm",
-      "published_at": "2026-11-25T11:25:00.000Z"
-    },
-    {
-      "title": "軟雪糕樣本總含菌量超出法例上限",
-      "url": "https://www.info.gov.hk/gia/general/202611/25/P2026112500587.htm",
-      "published_at": "2026-11-25T11:23:03.000Z"
     }
   ],
-  "content_hash": "0036202e3071305cca242b7a07aa0b0111357245abacf22a8be71aae9bb5dd9e"
+  "content_hash": "41507b4249940d736ce746efeac4a6d8c45db9680547c88eca7721728acf00d4"
 }
